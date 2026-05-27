@@ -1,0 +1,35 @@
+# 更强但更吃显存的配置：tiny/full 结果正常后再试。
+train_list: data_catalog/train.txt
+val_list: data_catalog/val.txt
+save_dir: checkpoints/stronger_base32
+
+seed: 42
+epochs: 60
+batch_size: 1
+val_batch_size: 1
+num_workers: 0
+patch_size: 512
+val_patch_size: 512
+max_train_samples: 0
+max_val_samples: 240
+
+feature_mode: strong
+model_base: 32
+gn_groups: 8
+init_alpha3d: 0.80
+lr: 0.00015
+min_lr: 0.000001
+weight_decay: 0.0001
+grad_clip: 1.0
+amp: true
+
+data_max_value: 4095
+psnr_max_value: 4095
+allow_value_clip: false
+compute_ssim: true
+
+lam_grad: 0.15
+lam_tv: 0.002
+lam_motion: 0.008
+lam_oracle: 0.04
+oracle_tau: 0.012

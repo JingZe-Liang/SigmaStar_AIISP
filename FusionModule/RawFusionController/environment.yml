@@ -1,0 +1,15 @@
+name: rawfusion
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - numpy
+  - h5py
+  - pyyaml
+  - pillow
+  - matplotlib
+  - tqdm
+  - pip:
+      # Install torch/torchvision manually with the CUDA wheel command in README.md.
+      - -r requirements.txt

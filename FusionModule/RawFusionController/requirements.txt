@@ -1,0 +1,7 @@
+# Install PyTorch separately first. See README.md.
+numpy>=1.26
+h5py>=3.10
+tqdm>=4.66
+PyYAML>=6.0
+Pillow>=10.0
+matplotlib>=3.8

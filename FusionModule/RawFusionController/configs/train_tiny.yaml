@@ -1,0 +1,41 @@
+# 快速冒烟配置：先确认环境、数据读取、训练/验证能跑通。
+train_list: data_catalog/train_tiny.txt
+val_list: data_catalog/val_tiny.txt
+save_dir: checkpoints/tiny_debug
+
+seed: 42
+epochs: 3
+batch_size: 1
+val_batch_size: 1
+num_workers: 0
+
+# RTX 5060 8GB 推荐从 384 起步；显存够再调到 512。
+patch_size: 384
+# 0 表示验证时整图验证。若太慢，可改成 512 或设置 max_val_samples。
+val_patch_size: 512
+max_train_samples: 0
+max_val_samples: 60
+
+feature_mode: strong
+model_base: 24
+gn_groups: 8
+init_alpha3d: 0.80
+
+lr: 0.0002
+min_lr: 0.000002
+weight_decay: 0.0001
+grad_clip: 1.0
+amp: true
+
+# RAW 12bit packed in uint16
+data_max_value: 4095
+psnr_max_value: 4095
+allow_value_clip: false
+compute_ssim: true
+
+# loss weights
+lam_grad: 0.15
+lam_tv: 0.002
+lam_motion: 0.01
+lam_oracle: 0.03
+oracle_tau: 0.015

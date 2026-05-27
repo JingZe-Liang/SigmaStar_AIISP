@@ -1,0 +1,13 @@
+{
+  "list": "D:\\zhuo mian\\raw_fusion_controller\\raw_fusion_controller\\data_catalog\\val.txt",
+  "files": 16,
+  "frames": 480,
+  "2dnr_psnr": 41.001939029002415,
+  "2dnr_mse": 1331.4164218612325,
+  "3dnr_psnr": 44.94599030951021,
+  "3dnr_mse": 536.9190106192875,
+  "avg_50_50_psnr": 43.92307230377263,
+  "avg_50_50_mse": 679.5173998167544,
+  "oracle_pixelwise_psnr": 46.77069134248918,
+  "oracle_pixelwise_mse": 352.7269783169691
+}

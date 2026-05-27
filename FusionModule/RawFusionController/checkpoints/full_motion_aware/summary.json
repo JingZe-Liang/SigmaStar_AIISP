@@ -1,0 +1,4 @@
+{
+  "best_val_ai_psnr": 42.66389428735681,
+  "best_path": "checkpoints\\full_motion_aware\\best.pt"
+}

@@ -1,0 +1,14 @@
+D:\zhuo mian\H5\scene_5\shard_0.h5
+D:\zhuo mian\H5\scene_5\shard_1.h5
+D:\zhuo mian\H5\scene_5\shard_2.h5
+D:\zhuo mian\H5\scene_5\shard_3.h5
+D:\zhuo mian\H5\scene_5\shard_4.h5
+D:\zhuo mian\H5\scene_5\shard_5.h5
+D:\zhuo mian\H5\scene_9\shard_0.h5
+D:\zhuo mian\H5\scene_9\shard_1.h5
+D:\zhuo mian\H5\scene_9\shard_2.h5
+D:\zhuo mian\H5\scene_9\shard_3.h5
+D:\zhuo mian\H5\scene_9\shard_4.h5
+D:\zhuo mian\H5\scene_9\shard_5.h5
+D:\zhuo mian\H5\scene_9\shard_6.h5
+D:\zhuo mian\H5\scene_9\shard_7.h5

@@ -1,0 +1,26 @@
+[
+  {
+    "frame": 0,
+    "fused_png": "frame_0000_fused.png",
+    "alpha_png": "frame_0000_alpha3d.png",
+    "compare_png": "frame_0000_compare.png",
+    "alpha_mean": 0.6510475873947144,
+    "alpha_var": 0.003074049483984709
+  },
+  {
+    "frame": 1,
+    "fused_png": "frame_0001_fused.png",
+    "alpha_png": "frame_0001_alpha3d.png",
+    "compare_png": "frame_0001_compare.png",
+    "alpha_mean": 0.6495288014411926,
+    "alpha_var": 0.003265063278377056
+  },
+  {
+    "frame": 2,
+    "fused_png": "frame_0002_fused.png",
+    "alpha_png": "frame_0002_alpha3d.png",
+    "compare_png": "frame_0002_compare.png",
+    "alpha_mean": 0.6550688147544861,
+    "alpha_var": 0.0037201291415840387
+  }
+]

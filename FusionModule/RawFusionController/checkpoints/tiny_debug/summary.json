@@ -1,0 +1,4 @@
+{
+  "best_val_ai_psnr": 41.935950382167135,
+  "best_path": "checkpoints\\tiny_debug\\best.pt"
+}
