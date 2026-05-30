@@ -1,0 +1,11 @@
+# Python >= 3.10
+
+# Core runtime and training dependencies.
+numpy
+h5py
+torch
+
+# Optional: enables the fused CUDA selective-scan backend when
+# scan_backend="mamba_ssm"; the code falls back to the reference backend
+# when this package is not installed.
+# mamba-ssm
