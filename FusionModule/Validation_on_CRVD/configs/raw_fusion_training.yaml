@@ -1,0 +1,23 @@
+root: "E:/CRVD_dataset"
+noisy_dir: "indoor_raw_noisy"
+gt_dir: "indoor_raw_gt"
+nr2d_dir: "2DNR_bilateral"
+nr3d_dir: "3DNR_vbm3d"
+cfa: "GBRG"
+noisy_pick: "fixed"
+fixed_noisy_id: 1
+device: "cuda"
+epochs: 10
+lr: 0.0001
+batch_size: 1
+num_workers: 8
+shuffle: true
+gate_plane: "R"
+train_use_all_24_perms: true
+perms_per_batch: 24
+data_range: 1.0
+out_dir: "./runs_gate"
+val_csv: "val_metrics_by_scene.csv"
+model_type: "UnetGateNet"
+base_ch: 16
+Train_portion: 0.8 #11个场景，四舍五入
