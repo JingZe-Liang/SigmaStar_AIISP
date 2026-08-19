@@ -1,0 +1,5 @@
+{
+  "source": "D:\\BaiduNetdiskDownload\\company\\shdarkroom\\645x\\raw_stream_1920x1080_16bit@RG_[Shutter=79999,SenserG=131072,IspG=5167,R=2120,G=1024,B=1956].raw",
+  "two_d": "D:\\BaiduNetdiskDownload\\company\\denoise\\mis20s1_2D&3D\\raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x\\denoised.raw",
+  "three_d": "D:\\BaiduNetdiskDownload\\company\\denoise\\mis20s1_2D&3D\\raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x\\fused.raw"
+}
