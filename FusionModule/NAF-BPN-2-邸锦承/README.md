@@ -2,6 +2,14 @@
 
 这是 `pipeline3_mask_md_finetune` 的可上传代码版本。工程用于在没有 clean GT 的公司 RAW 视频上，对原版 NAF-BPN 做严格版自监督微调。
 
+效果：通过网盘分享的文件：原版_645x_comparison.mp4
+链接: https://pan.baidu.com/s/1yaG-TD7I-ve61mCPMRh7JA?pwd=9jib 提取码: 9jib 
+--来自百度网盘超级会员v4的分享
+
+通过网盘分享的文件：现版本_645x_comparison.mp4
+链接: https://pan.baidu.com/s/1JMKtxJa4Y7ZrZqQeDOnPYQ?pwd=h549 提取码: h549 
+--来自百度网盘超级会员v4的分享
+
 ## 方法概览
 
 - source/noisy 与 2DNR/3DNR 先按各自 black level 转到统一线性域。
