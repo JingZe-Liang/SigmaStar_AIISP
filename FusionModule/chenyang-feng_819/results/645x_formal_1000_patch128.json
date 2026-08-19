@@ -1,0 +1,34 @@
+{
+  "proxy_mae_2dnr": 0.004981731770801818,
+  "proxy_mae_ai": 0.004981731770801818,
+  "proxy_improvement": 0.0,
+  "mean_alignment_trust": 0.9487599395215511,
+  "patches": 48,
+  "steps": 1000,
+  "last_loss": 0.012544754892587662,
+  "model": "LocalAlignResidualUNet",
+  "architecture": "dual_branch_26ch_v1",
+  "input_channels": 26,
+  "target_mode": "future_t1_t2_consensus_plus_pairwise_n2n",
+  "target_variance_scale": 0.0025,
+  "alignment_mode": "farneback",
+  "ema_decay": 0.995,
+  "selection_proxy_improvement": 0.0,
+  "minimum_selection_improvement": 2e-05,
+  "accepted_against_2dnr": false,
+  "train_frame_range": [
+    2,
+    119
+  ],
+  "selection_frame_range": [
+    135,
+    155
+  ],
+  "report_frame_range": [
+    169,
+    198
+  ],
+  "cfa": "RGGB",
+  "source": "/HardDisk/jingzeliang/Data/SigmaStar_project/given_dataset/Sigmastar_7_30/shdarkroom/645x/raw_stream_1920x1080_16bit@RG_[Shutter=79999,SenserG=131072,IspG=5167,R=2120,G=1024,B=1956].raw",
+  "denoised": "/HardDisk/jingzeliang/Data/SigmaStar_project/given_dataset/mis20s1_2D&3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/2dnr.raw"
+}

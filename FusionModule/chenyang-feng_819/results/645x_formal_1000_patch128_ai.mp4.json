@@ -1,0 +1,32 @@
+{
+  "tool": "local-align-rggb-render",
+  "two_dnr": "/HardDisk/jingzeliang/Data/SigmaStar_project/given_dataset/mis20s1_2D&3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/2dnr.raw",
+  "three_dnr": "/HardDisk/jingzeliang/Data/SigmaStar_project/given_dataset/mis20s1_2D&3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/3dnr.raw",
+  "ai_output": "runs/645x_formal_1000_patch128_fused.raw",
+  "output": "results/645x_formal_1000_patch128_ai.mp4",
+  "source_frame_count": 200,
+  "rendered_frame_count": 200,
+  "frame_step": 1,
+  "input_size": [
+    1920,
+    1080
+  ],
+  "output_panel_size": [
+    1920,
+    1080
+  ],
+  "panel_order": [
+    "local-align AI"
+  ],
+  "layout": "ai",
+  "cfa": "RGGB",
+  "black_level": 300.0,
+  "white_level": 4095.0,
+  "white_balance": [
+    2.0703125,
+    1.0,
+    1.91015625
+  ],
+  "fixed_exposure": 1.9958445351970424,
+  "reference_white_quantile": 0.35072872042655945
+}
