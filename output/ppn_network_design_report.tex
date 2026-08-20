@@ -1,0 +1,361 @@
+\documentclass[UTF8,zihao=-4]{ctexart}
+
+\usepackage[a4paper,left=2.6cm,right=2.6cm,top=2.7cm,bottom=2.7cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{titlesec}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=black
+}
+
+\definecolor{deepgray}{RGB}{55,55,55}
+
+\pagestyle{fancy}
+\setlength{\headheight}{15pt}
+\fancyhf{}
+\lhead{\small 阶段 1 PPN 网络设计说明书}
+\rhead{\small AI-ISP RAW 域融合验证}
+\cfoot{\small \thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\titleformat{\section}
+  {\Large\bfseries\color{black}}
+  {\thesection}{0.8em}{}
+\titleformat{\subsection}
+  {\large\bfseries\color{deepgray}}
+  {\thesubsection}{0.8em}{}
+\setlist[itemize]{leftmargin=2em,itemsep=0.25em,topsep=0.25em}
+\setlist[enumerate]{leftmargin=2.2em,itemsep=0.25em,topsep=0.25em}
+\renewcommand{\arraystretch}{1.28}
+
+\begin{document}
+
+\begin{titlepage}
+  \centering
+  \vspace*{3.1cm}
+  {\Huge\bfseries 阶段 1 PPN 验证网络\par}
+  \vspace{0.5cm}
+  {\Huge\bfseries 设计说明书\par}
+  \vspace{0.9cm}
+  {\Large RAW 域 2DNR/3DNR 融合参数预测\par}
+  \vfill
+  {\large \today\par}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\section{阶段目标与 PPN 定位}
+
+阶段 1 的核心任务不是直接训练一个端到端网络去替代完整 ISP，也不是让网络从 RAW 图像直接生成最终 sRGB 图像，而是验证一种更可控的 AI-ISP 协同方式：传统 RAW 域降噪模块继续承担明确的专家职责，AI 网络只负责预测融合参数。这样既保留了传统链路可解释、可拆解、便于调参的优点，又把最难人工设定的空间自适应控制问题交给数据驱动模型学习。
+
+本文中的 PPN 指 Parameter Prediction Network，即参数预测网络。它的输出不是去噪后的图像，而是一张逐像素控制图。该控制图决定同一位置应更信任单帧空间降噪结果，还是更信任多帧时域降噪结果。换言之，PPN 是 2DNR 与 3DNR 之上的控制层，而不是新的独立降噪专家。
+
+阶段 1 采用 U-Net 作为验证网络，主要原因有三点。第一，U-Net 的编码器--解码器结构可以同时获得局部边缘细节与较大范围上下文，适合判断运动边缘、静止背景和纹理区域。第二，跳跃连接能够保证输出控制图与 RAW 像素位置精确对齐。第三，结构足够轻量，便于在阶段 1 中高效验证数据处理、融合公式与监督方式。
+
+本说明书聚焦阶段 1 的验证网络设计，说明 PPN 如何在 RAW 域预测两路降噪结果的融合参数，并形成可训练、可评价、可迁移到自采 RAW 视频数据的设计闭环。
+
+\section{前期准备：数据处理与算子仿真}
+
+\subsection{RAW 数据规范化}
+
+PPN 的输入链路建立在 RAW-first 原则上。原始视频帧保持 Bayer mosaic 形式，不先做 demosaic，也不转到 RGB 或 YUV 域。这样可以避免颜色插值带来的额外伪影，并让 2DNR、3DNR 和 PPN 都在最接近传感器输出的线性信号上工作。
+
+自采数据进入训练流程前，需要统一以下约束：
+
+\begin{itemize}
+  \item \textbf{位深约束}：按传感器有效位深保存，例如 12 bit 信号可存放在 16 bit 容器中。
+  \item \textbf{黑白电平约束}：记录或约定 black level 与 white level，用于归一化、加噪与指标计算。
+  \item \textbf{CFA 相位约束}：裁剪起点和裁剪尺寸保持偶数，避免破坏 $2\times2$ Bayer 单元相位。
+  \item \textbf{时序约束}：同一 scene 内帧序号连续，保证前后帧差分具有真实运动意义。
+\end{itemize}
+
+这些约束使阶段验证数据和后续自建数据具有一致的工程接口。即使验证阶段采用标准 RAW 视频组织方式，后续只要自采裁剪数据满足相同 RAW 规范，就可以继续复用相同的专家算子输出和 PPN 训练流程。
+
+\subsection{加噪仿真}
+
+为了让网络学习真实 RAW 噪声下的融合策略，噪声视频不宜仅通过简单高斯噪声构造。更合理的方式是同时模拟信号相关噪声和信号无关噪声。设 $I_{\mathrm{clean}}$ 为干净 RAW，$BL$ 为 black level，$WL$ 为 white level，同 ISO 下的 dark frame 为 $D_i$，则先估计暗场固定底纹：
+
+\[
+DS_{\mathrm{iso}}=\frac{1}{N}\sum_{i=1}^{N}D_i,
+\qquad
+R_k=D_k-DS_{\mathrm{iso}}.
+\]
+
+其中 $R_k$ 表示随机采样 dark frame 后去除平均底纹得到的暗场残差。再用 Poisson 分布模拟 shot noise，并叠加暗场残差：
+
+\[
+I_{\mathrm{noisy}}=
+\operatorname{clip}\left(
+K\cdot\operatorname{Poisson}\left(
+\frac{\max(I_{\mathrm{clean}}-BL,0)}{K}
+\right)+BL+R_k,\ 0,\ WL
+\right).
+\]
+
+这里 $K$ 可由 ISO 与系统增益近似确定。该噪声模型保留了 RAW 域中“信号越强，shot noise 方差越大”的物理特征，同时引入读出噪声、暗电流残差和固定模式噪声等成分，更适合构造 noisy-clean 配对训练数据。
+
+\subsection{2DNR、3DNR 与 MD 的角色}
+
+在网络训练前，noisy RAW 会离线经过 2DNR 与 3DNR 两条专家分支。两类专家的能力和风险不同，正是 PPN 需要学习融合控制的原因。
+
+\begin{table}[htbp]
+\centering
+\caption{前置算子在 PPN 数据准备中的作用}
+\begin{tabularx}{\textwidth}{>{\bfseries}p{2.3cm} X X}
+\toprule
+算子 & 主要作用 & 对 PPN 的意义 \\
+\midrule
+2DNR & 在单帧空间邻域内降噪，常见实现包括双边滤波或 Bayer RAW 联合双边滤波。 & 运动区域更安全，不会引入历史帧拖影；但静止区域降噪上限有限。 \\
+3DNR & 利用相邻帧或历史背景进行时域降噪。 & 静止区域可显著降低随机噪声；但运动区域可能出现 ghosting 或边缘残留。 \\
+MD & 根据相邻帧差异估计运动强度图。 & 帮助理解 2DNR/3DNR 何时切换，也为样本检查与拖影分析提供参考。 \\
+加噪 & 将 clean RAW 构造成更接近传感器输出的 noisy RAW。 & 提供可监督训练所需的 noisy-clean 配对，使网络看到真实噪声统计。 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+简单 MD 的核心可写为：
+
+\[
+M_t=\sigma\left(20\cdot G_\sigma(|X_t-X_{t-1}|)-5\right),
+\]
+
+其中 $G_\sigma$ 表示空间高斯平滑，$M_t$ 越接近 1 表示局部帧间变化越明显。传统手工融合可直接使用 $M_t$ 构造 3DNR 权重，但这种方法依赖阈值和运动检测质量。PPN 的设计目标则是让网络从相邻帧特征中学习更灵活的门控图。
+
+\subsection{训练数据包组织}
+
+完成加噪和专家分支处理后，每个训练样本应包含：
+
+\begin{itemize}
+  \item noisy RAW 序列，用于保留原始噪声和时序信息；
+  \item 2DNR 输出序列，作为安全但可能残留噪声的空间专家；
+  \item 3DNR 输出序列，作为强降噪但可能拖影的时域专家；
+  \item clean 或高质量参考 RAW，作为监督目标；
+  \item 可选的 MD 结果或诊断图，用于检查运动区域和拖影风险。
+\end{itemize}
+
+U-Net 验证网络本身主要从 2DNR 相邻帧平面构造门控输入，2DNR 与 3DNR 则共同参与最终融合。这样做的好处是：网络不需要从 noisy RAW 中重新学习完整降噪，而是集中学习“何处该偏向哪一个专家”。
+
+\section{数据表示与样本流动}
+
+\subsection{Bayer 四平面表示}
+
+输入 RAW 保持 Bayer mosaic 后，可按 CFA 模式拆成四个子平面：
+
+\[
+\mathcal{P}=\{R,\ G_1,\ G_2,\ B\}.
+\]
+
+若原始 RAW 尺寸为 $H\times W$，拆分后每个子平面尺寸为 $\frac{H}{2}\times\frac{W}{2}$。例如，对于 GBRG 排布，四个采样位置会按 $2\times2$ 单元映射到对应颜色平面。训练和验证阶段，融合后的四个平面还会按原 CFA 相位重新拼回 Bayer mosaic，用于计算 RAW 域损失和指标。
+
+这种表示方式有两个优势。第一，卷积不会把不同颜色采样点错误混合为普通灰度邻域。第二，网络输出的门控图仍能对应 RAW 空间位置，后续可以自然回到完整 Bayer 图。
+
+\subsection{视频输入到门控输入}
+
+验证链路接收正常连续 RAW 视频输入，而不依赖固定长度片段。设一段输入视频为：
+
+\[
+\mathcal{V}=\{X_1,X_2,\ldots,X_T\}.
+\]
+
+网络在视频上按相邻帧滑窗构造门控输入。对选定门控平面 $C$，第 $t$ 帧对应的输入为：
+
+\[
+Z_t=
+\operatorname{concat}\left(
+D^{2D}_{t-1,C},\
+D^{2D}_{t,C},\
+D^{2D}_{t,C}-D^{2D}_{t-1,C}
+\right),
+\qquad t=2,\ldots,T.
+\]
+
+其中 $D^{2D}_{t,C}$ 表示 2DNR 输出在第 $t$ 帧、颜色平面 $C$ 上的图像。三通道分别表示前一帧、当前帧和差分图。前一帧提供时间参考，当前帧提供待控制内容，差分图突出运动和时序不一致区域。因此，输入可以是任意长度的真实视频；训练和验证只是在视频内部抽取相邻帧对来形成网络样本。
+
+\begin{table}[htbp]
+\centering
+\caption{PPN 验证网络的主要张量流}
+\begin{tabularx}{\textwidth}{>{\bfseries}p{2.6cm} p{4.2cm} X}
+\toprule
+阶段 & 张量形式 & 含义 \\
+\midrule
+RAW 输入 & $H\times W$ & 单通道 Bayer mosaic。 \\
+CFA 拆分 & $4\times H/2\times W/2$ & 分为 $R/G_1/G_2/B$ 四个子平面。 \\
+视频序列 & $T\times H/2\times W/2$ & 单一门控平面的连续视频帧。 \\
+门控输入 & $(T-1)\times3\times H/2\times W/2$ & 相邻帧滑窗，每组为前帧、当前帧、差分。 \\
+U-Net 输出 & $(T-1)\times1\times H/2\times W/2$ & 逐像素 2DNR 融合权重。 \\
+融合输出 & $(T-1)\times4\times H/2\times W/2$ & 四个 Bayer 平面的融合结果。 \\
+监督图像 & $(T-1)\times H\times W$ & 重新拼回 mosaic 后与目标 RAW 计算损失。 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+自采裁剪数据进入该流程后，只要保持位深、CFA、裁剪相位和时序编号一致，网络看到的相邻帧差分就具有稳定含义。此时训练样本直接对应真实拍摄裁剪的 RAW 视频片段，门控图学习目标与视觉展示数据来源保持一致。
+
+\section{U-Net 验证网络结构}
+
+\subsection{整体结构}
+
+PPN 验证网络采用两级下采样、两级上采样的轻量 U-Net。为避免与原始 RAW 尺寸混淆，本节用 $h\times w$ 表示拆分后的单个 Bayer 子平面尺寸，即 $h=H/2,\ w=W/2$。网络输入为 $[B,3,h,w]$，输出为 $[B,1,h,w]$。其中 $B$ 可以理解为批量维度与时间帧对维度合并后的数量。
+
+\begin{figure}[htbp]
+\centering
+\resizebox{0.96\textwidth}{!}{%
+\begin{tikzpicture}[
+  node distance=0.9cm and 1.1cm,
+  block/.style={draw=deepgray, rounded corners=3pt, fill=white, minimum width=2.55cm, minimum height=0.78cm, align=center},
+  op/.style={draw=deepgray, rounded corners=3pt, fill=white, minimum width=2.2cm, minimum height=0.72cm, align=center},
+  arrow/.style={->, line width=0.7pt, color=deepgray},
+  skip/.style={->, dashed, line width=0.7pt, color=deepgray}
+]
+\node[block] (input) {门控输入\\$[I_{t-1}, I_t, I_t-I_{t-1}]$};
+\node[block, right=of input] (enc1) {编码块 $E_1$\\$3\!\to\!C$};
+\node[op, right=of enc1] (down1) {下采样\\$h,w\!\to\!h/2,w/2$};
+\node[block, right=of down1] (enc2) {编码块 $E_2$\\$C\!\to\!2C$};
+\node[op, right=of enc2] (down2) {下采样\\$h/2,w/2\!\to\!h/4,w/4$};
+\node[block, below=1.1cm of down2] (bn) {瓶颈\\$2C\!\to\!4C$};
+\node[op, left=of bn] (up1) {上采样\\$4C\!\to\!2C$，拼接 $E_2$};
+\node[block, left=of up1] (dec1) {解码块 $D_1$\\$4C\!\to\!2C$};
+\node[op, left=of dec1] (up2) {上采样\\$2C\!\to\!C$，拼接 $E_1$};
+\node[block, left=of up2] (dec2) {解码块 $D_2$\\$2C\!\to\!C$};
+\node[block, left=of dec2] (out) {$1\times1$ Conv + Sigmoid\\门控图 $x$};
+
+\draw[arrow] (input) -- (enc1);
+\draw[arrow] (enc1) -- (down1);
+\draw[arrow] (down1) -- (enc2);
+\draw[arrow] (enc2) -- (down2);
+\draw[arrow] (down2) -- (bn);
+\draw[arrow] (bn) -- (up1);
+\draw[arrow] (up1) -- (dec1);
+\draw[arrow] (dec1) -- (up2);
+\draw[arrow] (up2) -- (dec2);
+\draw[arrow] (dec2) -- (out);
+\draw[skip] (enc2.south) |- (up1.north);
+\draw[skip] (enc1.south) |- (up2.north);
+\end{tikzpicture}
+}
+\caption{U-Net 验证网络的数据流、上采样拼接与跳跃连接}
+\end{figure}
+
+\subsection{编码器}
+
+第一层编码器将三通道输入映射为 $C$ 个基础通道，并经过两次 $3\times3$ 卷积和 ReLU 激活。该层主要捕获局部边缘、噪声纹理和相邻帧差分中的细粒度变化。随后最大池化将空间分辨率降为一半。
+
+第二层编码器将通道数提升到 $2C$，继续通过两次 $3\times3$ 卷积提取更抽象的区域特征。此时网络的感受野扩大，可以综合判断局部区域是稳定背景、运动物体、边缘过渡还是纹理噪声。
+
+\subsection{瓶颈层}
+
+瓶颈层在四分之一分辨率上把通道数提升到 $4C$。对于 PPN 来说，瓶颈层不是为了生成图像内容，而是为了完成区域级控制判断：哪些区域应更多使用时域信息，哪些区域应抑制历史帧贡献。较低分辨率的上下文有助于减少孤立噪点对门控图的干扰。
+
+\subsection{解码器与跳跃连接}
+
+解码器分两级恢复分辨率。第一次上采样后与第二层编码特征拼接，第二次上采样后与第一层编码特征拼接。跳跃连接的作用是把浅层空间细节重新引入门控预测，避免输出只保留粗区域判断。
+
+最终权重图必须与 RAW 子平面逐像素对齐。如果运动边缘被过度平滑，3DNR 可能在边缘处留下拖影；如果静止纹理被误判为运动，融合结果又会失去 3DNR 的降噪收益。因此，U-Net 同时利用高层上下文和浅层细节，是验证阶段较合适的结构选择。
+
+\subsection{Sigmoid 输出}
+
+输出层使用 $1\times1$ 卷积将通道数压缩到 1，再经过 Sigmoid 得到连续门控图：
+
+\[
+x_t=\sigma\left(\operatorname{Conv}_{1\times1}(\Phi_t)\right),
+\qquad x_t\in[0,1].
+\]
+
+其中 $\Phi_t$ 表示解码器输出的特征图。$x_t$ 不是图像亮度，也不是二值运动 mask，而是逐像素融合参数。连续权重比硬切换更稳定，可以在运动边缘、半透明拖影和弱纹理区域形成平滑过渡。
+
+\section{PPN 门控融合机制}
+
+\subsection{融合公式}
+
+PPN 输出的权重图直接控制 2DNR 与 3DNR 的混合。对时间 $t$、颜色平面 $c$ 和像素位置 $(i,j)$，融合公式为：
+
+\[
+F_{t,c}(i,j)
+=x_t(i,j)D^{2D}_{t,c}(i,j)
++\left(1-x_t(i,j)\right)D^{3D}_{t,c}(i,j).
+\]
+
+其中 $D^{2D}_{t,c}$ 是 2DNR 结果，$D^{3D}_{t,c}$ 是 3DNR 结果，$F_{t,c}$ 是融合后的 RAW 子平面。$x_t$ 越接近 1，输出越偏向 2DNR；$x_t$ 越接近 0，输出越偏向 3DNR。
+
+\subsection{控制语义}
+
+2DNR 和 3DNR 的互补性决定了门控图的学习目标。运动区域、物体边缘和帧间差异大的位置，应提高 $x_t$，更多保留 2DNR，以减少 3DNR 的历史帧拖影。静止背景、纹理稳定区域和噪声主导区域，应降低 $x_t$，更多利用 3DNR 的时域平均能力。
+
+与手工融合相比，PPN 的关键优势在于融合参数不是固定公式直接给出，而是通过监督学习从数据中拟合。传统规则可以写为：
+
+\[
+w_{3D}=\sigma((\tau-M_t)s),
+\]
+
+其中 $M_t$ 是运动图，$\tau$ 是阈值，$s$ 是 Sigmoid 陡峭程度。这种方式清晰但依赖阈值调节。PPN 则把相邻帧结构交给 U-Net 处理，让网络学习更细致的空间权重分布，同时仍然保持“两个专家 + 一个控制器”的可解释框架。
+
+\section{监督训练与验证方式}
+
+\subsection{监督目标}
+
+训练阶段，PPN 对连续视频中的相邻帧滑窗逐一预测门控图。若输入视频长度为 $T$，则形成 $(T-1)$ 张门控图，并分别作用到对应时刻 2DNR 和 3DNR 的四个 Bayer 平面。融合后的四平面会被重新拼回 mosaic：
+
+\[
+F_t=\operatorname{Mosaic}(F_{t,R},F_{t,G_1},F_{t,G_2},F_{t,B}).
+\]
+
+目标图像也以相同方式组织：
+
+\[
+G_t=\operatorname{Mosaic}(G_{t,R},G_{t,G_1},G_{t,G_2},G_{t,B}).
+\]
+
+训练损失采用 L1 重建误差：
+
+\[
+\mathcal{L}_{\mathrm{rec}}
+=\frac{1}{(T-1)|\Omega|}
+\sum_{t=2}^{T}\sum_{(i,j)\in\Omega}
+\left|F_t(i,j)-G_t(i,j)\right|.
+\]
+
+该损失直接约束最终融合 RAW 与目标 RAW 的像素级一致性。网络不需要人工标注“某个位置应该使用多少 2DNR”，而是通过融合误差反向学习合适的门控图。
+
+\subsection{训练策略}
+
+训练时按 scene 划分训练集与验证集，避免同一场景的相邻帧同时出现在训练和验证中造成信息泄露。训练数据还可以进行颜色平面排列增强，使网络在不同颜色平面和局部排列下学习更稳健的控制规律。
+
+验证阶段，同时记录融合结果、2DNR 基线和 3DNR 基线相对于目标 RAW 的指标。PSNR 可写为：
+
+\[
+\operatorname{PSNR}=10\log_{10}\frac{\mathrm{MAX}^2}{\operatorname{MSE}}.
+\]
+
+SSIM 用于辅助观察结构相似性。若 PPN 设计有效，融合结果不应简单退化为固定 2DNR 或固定 3DNR，而应在不同区域自适应继承二者优势。
+
+\section{阶段 1 交付价值与范围说明}
+
+\subsection{交付价值}
+
+该 PPN 验证网络已经完成阶段 1 方法有效性的验证：在 RAW 域保留 2DNR 与 3DNR 两路专家结果，并由 U-Net 输出逐像素融合参数后，融合链路能够形成稳定、可监督、可评价的闭环。验证结果表明，AI 可以有效承担传统 RAW 域降噪链路中的控制器角色，而不是必须直接替代所有传统模块。
+
+阶段 1 的交付价值不仅是一个网络结构图，而是一套可复用的方法闭环：RAW 数据规范化、专家结果生成、门控参数预测、RAW 域融合、监督训练和指标对比均已打通。这说明“AI 预测融合参数控制传统降噪分支”的路线具备工程可行性，也为后续在自采裁剪 RAW 视频数据上的训练、展示和迭代提供了稳定接口。
+
+\subsection{阶段交付范围}
+
+本说明书交付的是阶段 1 的 PPN 融合控制验证方案，重点在于证明参数预测网络能够有效控制 2DNR 与 3DNR 两路专家分支，并形成可训练、可验证、可迁移到真实自采数据的 RAW 域融合流程。完整 ISP 集成、部署级网络压缩、硬件适配和更复杂的时空特征设计属于后续阶段的工程展开内容，并不影响本阶段对方法有效性的验证结论。
+
+换言之，阶段 1 已经完成的是“方法是否成立”的核心验证，而不是把所有系统工程问题一次性纳入同一份交付物中。本阶段产出的数据组织方式、门控网络、融合公式和监督训练方式，已经构成后续阶段继续扩展的基础；后续无论引入多平面输入、显式运动先验、时序一致性损失，还是替换为更强的轻量时空网络，都建立在本阶段已经验证成立的 PPN 控制思想之上。
+
+\section{结论}
+
+阶段 1 的 PPN 验证网络以 U-Net 为参数预测器，以 2DNR 和 3DNR 为专家分支，以逐像素门控图为控制变量，实现了 RAW 域空间降噪与时域降噪的自适应融合。该方案避免了端到端替代完整 ISP 的高复杂度，同时比手工运动阈值融合更具学习能力。通过合理的数据准备、专家结果缓存、CFA 保持、L1 监督和基线指标对比，该网络能够清晰验证“AI 控制传统降噪链路”的阶段 1 思路，并为后续自建 RAW 视频数据集上的训练和展示提供可复用框架。
+
+\end{document}
