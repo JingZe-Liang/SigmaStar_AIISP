@@ -1,0 +1,679 @@
+{
+  "raw_contract": {
+    "width": 1920,
+    "height": 1080,
+    "cfa": "RGGB",
+    "source_shift": 4,
+    "source_black": 252,
+    "candidate_black": 300,
+    "white": 4095
+  },
+  "scenes": {
+    "128x": {
+      "scene": "128x",
+      "configured_motion_threshold_dn": 17.5,
+      "configured_disagreement_threshold_dn": 163.0,
+      "streams": {
+        "source": {
+          "path": "D:\\zhuo mian\\Sigmastar_7_30\\shdarkroom\\128x\\raw_stream_1920x1080_16bit@RG_[Shutter=54992,SenserG=131072,IspG=1024,R=2159,G=1024,B=1849].raw",
+          "bytes": 829440000,
+          "frames": 200,
+          "sample_frames": [
+            0,
+            1,
+            2,
+            10,
+            50,
+            100,
+            150,
+            199
+          ],
+          "stored_min": 992,
+          "stored_max": 65520,
+          "value_min": 62,
+          "value_max": 4095,
+          "value_quantiles": {
+            "0.0": 62.0,
+            "0.001": 228.0,
+            "0.01": 244.0,
+            "0.5": 468.0,
+            "0.99": 4095.0,
+            "0.999": 4095.0,
+            "1.0": 4095.0
+          },
+          "stored_low4_nonzero_fraction": 0.0
+        },
+        "denoised": {
+          "path": "D:\\zhuo mian\\mis20s1_2D&3D\\raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x\\denoised.raw",
+          "bytes": 829440000,
+          "frames": 200,
+          "sample_frames": [
+            0,
+            1,
+            2,
+            10,
+            50,
+            100,
+            150,
+            199
+          ],
+          "stored_min": 159,
+          "stored_max": 4095,
+          "value_min": 159,
+          "value_max": 4095,
+          "value_quantiles": {
+            "0.0": 159.0,
+            "0.001": 307.0,
+            "0.01": 310.0,
+            "0.5": 522.0,
+            "0.99": 4095.0,
+            "0.999": 4095.0,
+            "1.0": 4095.0
+          },
+          "stored_low4_nonzero_fraction": 0.939439380787037
+        },
+        "fused": {
+          "path": "D:\\zhuo mian\\mis20s1_2D&3D\\raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x\\fused.raw",
+          "bytes": 829440000,
+          "frames": 200,
+          "sample_frames": [
+            0,
+            1,
+            2,
+            10,
+            50,
+            100,
+            150,
+            199
+          ],
+          "stored_min": 191,
+          "stored_max": 4095,
+          "value_min": 191,
+          "value_max": 4095,
+          "value_quantiles": {
+            "0.0": 191.0,
+            "0.001": 286.0,
+            "0.01": 302.0,
+            "0.5": 520.0,
+            "0.99": 4094.0,
+            "0.999": 4095.0,
+            "1.0": 4095.0
+          },
+          "stored_low4_nonzero_fraction": 0.9382444782021605
+        }
+      },
+      "concat_checks": {
+        "denoised": {
+          "directory": "D:\\zhuo mian\\mis20s1_2D&3D\\raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x\\denoised",
+          "checks": [
+            {
+              "frame": 0,
+              "exists": true,
+              "exact_match": true
+            },
+            {
+              "frame": 199,
+              "exists": true,
+              "exact_match": true
+            }
+          ]
+        },
+        "fused": {
+          "directory": "D:\\zhuo mian\\mis20s1_2D&3D\\raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x\\fused",
+          "checks": [
+            {
+              "frame": 0,
+              "exists": true,
+              "exact_match": true
+            },
+            {
+              "frame": 199,
+              "exists": true,
+              "exact_match": true
+            }
+          ]
+        }
+      },
+      "temporal_alignment": {
+        "denoised_to_source": {
+          "best_lag": 0,
+          "best_correlation": 0.9969819041043041,
+          "scores": [
+            {
+              "lag": -10,
+              "correlation": -0.073672525963944
+            },
+            {
+              "lag": -9,
+              "correlation": -0.04981049387763701
+            },
+            {
+              "lag": -8,
+              "correlation": -0.04676117597762738
+            },
+            {
+              "lag": -7,
+              "correlation": -0.03402314672571578
+            },
+            {
+              "lag": -6,
+              "correlation": -0.039350043758234386
+            },
+            {
+              "lag": -5,
+              "correlation": -0.03812120029813429
+            },
+            {
+              "lag": -4,
+              "correlation": -0.04971618483665438
+            },
+            {
+              "lag": -3,
+              "correlation": -0.03587993980810517
+            },
+            {
+              "lag": -2,
+              "correlation": 0.013450664525050603
+            },
+            {
+              "lag": -1,
+              "correlation": 0.3718044555563518
+            },
+            {
+              "lag": 0,
+              "correlation": 0.9969819041043041
+            },
+            {
+              "lag": 1,
+              "correlation": 0.37106621958806135
+            },
+            {
+              "lag": 2,
+              "correlation": 0.012335729036879527
+            },
+            {
+              "lag": 3,
+              "correlation": -0.04035870586047542
+            },
+            {
+              "lag": 4,
+              "correlation": -0.05620466024259851
+            },
+            {
+              "lag": 5,
+              "correlation": -0.04340488027443008
+            },
+            {
+              "lag": 6,
+              "correlation": -0.04450344055794266
+            },
+            {
+              "lag": 7,
+              "correlation": -0.03757985406235674
+            },
+            {
+              "lag": 8,
+              "correlation": -0.05093625414143306
+            },
+            {
+              "lag": 9,
+              "correlation": -0.053892075194932276
+            },
+            {
+              "lag": 10,
+              "correlation": -0.07807163441633053
+            }
+          ]
+        },
+        "fused_to_source": {
+          "best_lag": 0,
+          "best_correlation": 0.9967022859610001,
+          "scores": [
+            {
+              "lag": -10,
+              "correlation": -0.0742654187353934
+            },
+            {
+              "lag": -9,
+              "correlation": -0.05015609460542556
+            },
+            {
+              "lag": -8,
+              "correlation": -0.04680615816348805
+            },
+            {
+              "lag": -7,
+              "correlation": -0.0339754766838345
+            },
+            {
+              "lag": -6,
+              "correlation": -0.03960331669313847
+            },
+            {
+              "lag": -5,
+              "correlation": -0.03872204986933499
+            },
+            {
+              "lag": -4,
+              "correlation": -0.05023722253550142
+            },
+            {
+              "lag": -3,
+              "correlation": -0.0362962513697184
+            },
+            {
+              "lag": -2,
+              "correlation": 0.013904593385282292
+            },
+            {
+              "lag": -1,
+              "correlation": 0.3738008596045748
+            },
+            {
+              "lag": 0,
+              "correlation": 0.9967022859610001
+            },
+            {
+              "lag": 1,
+              "correlation": 0.37384175344126697
+            },
+            {
+              "lag": 2,
+              "correlation": 0.013759874318681154
+            },
+            {
+              "lag": 3,
+              "correlation": -0.04014660905681577
+            },
+            {
+              "lag": 4,
+              "correlation": -0.0562275014951694
+            },
+            {
+              "lag": 5,
+              "correlation": -0.04329866497884246
+            },
+            {
+              "lag": 6,
+              "correlation": -0.04420255435490992
+            },
+            {
+              "lag": 7,
+              "correlation": -0.03738352813570683
+            },
+            {
+              "lag": 8,
+              "correlation": -0.05067938158561589
+            },
+            {
+              "lag": 9,
+              "correlation": -0.05365615364249055
+            },
+            {
+              "lag": 10,
+              "correlation": -0.07790582097119604
+            }
+          ]
+        }
+      },
+      "threshold_estimation": {
+        "temporal_blur_dn_quantiles": {
+          "0.5": 0.6681484580039978,
+          "0.75": 1.840910792350769,
+          "0.9": 4.924495220184326,
+          "0.95": 11.450469017028809,
+          "0.99": 235.45623779296875,
+          "0.995": 495.1203918457031,
+          "0.999": 1719.91162109375
+        },
+        "candidate_blur_dn_quantiles": {
+          "0.5": 2.301079511642456,
+          "0.75": 5.784900665283203,
+          "0.9": 12.96359634399414,
+          "0.95": 21.152864456176758,
+          "0.99": 63.63545608520508,
+          "0.995": 101.63278198242188,
+          "0.999": 175.23358154296875
+        },
+        "recommended_motion_threshold_dn": 10.050247132778168,
+        "recommended_disagreement_threshold_dn": 44.10693049430847
+      }
+    },
+    "645x": {
+      "scene": "645x",
+      "configured_motion_threshold_dn": 6.5,
+      "configured_disagreement_threshold_dn": 50.0,
+      "streams": {
+        "source": {
+          "path": "D:\\zhuo mian\\Sigmastar_7_30\\shdarkroom\\645x\\raw_stream_1920x1080_16bit@RG_[Shutter=79999,SenserG=131072,IspG=5167,R=2120,G=1024,B=1956].raw",
+          "bytes": 829440000,
+          "frames": 200,
+          "sample_frames": [
+            0,
+            1,
+            2,
+            10,
+            50,
+            100,
+            150,
+            199
+          ],
+          "stored_min": 1056,
+          "stored_max": 65520,
+          "value_min": 66,
+          "value_max": 4095,
+          "value_quantiles": {
+            "0.0": 66.0,
+            "0.001": 220.0,
+            "0.01": 236.0,
+            "0.5": 292.0,
+            "0.99": 896.0,
+            "0.999": 1632.0,
+            "1.0": 4095.0
+          },
+          "stored_low4_nonzero_fraction": 0.0
+        },
+        "denoised": {
+          "path": "D:\\zhuo mian\\mis20s1_2D&3D\\raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x\\denoised.raw",
+          "bytes": 829440000,
+          "frames": 200,
+          "sample_frames": [
+            0,
+            1,
+            2,
+            10,
+            50,
+            100,
+            150,
+            199
+          ],
+          "stored_min": 272,
+          "stored_max": 1502,
+          "value_min": 272,
+          "value_max": 1502,
+          "value_quantiles": {
+            "0.0": 272.0,
+            "0.001": 303.0,
+            "0.01": 305.0,
+            "0.5": 342.0,
+            "0.99": 924.0,
+            "0.999": 1213.0,
+            "1.0": 1502.0
+          },
+          "stored_low4_nonzero_fraction": 0.9439817226080247
+        },
+        "fused": {
+          "path": "D:\\zhuo mian\\mis20s1_2D&3D\\raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x\\fused.raw",
+          "bytes": 829440000,
+          "frames": 200,
+          "sample_frames": [
+            0,
+            1,
+            2,
+            10,
+            50,
+            100,
+            150,
+            199
+          ],
+          "stored_min": 240,
+          "stored_max": 1052,
+          "value_min": 240,
+          "value_max": 1052,
+          "value_quantiles": {
+            "0.0": 240.0,
+            "0.001": 279.0,
+            "0.01": 291.0,
+            "0.5": 342.0,
+            "0.99": 922.0,
+            "0.999": 1052.0,
+            "1.0": 1052.0
+          },
+          "stored_low4_nonzero_fraction": 0.9395531322337963
+        }
+      },
+      "concat_checks": {
+        "denoised": {
+          "directory": "D:\\zhuo mian\\mis20s1_2D&3D\\raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x\\denoised",
+          "checks": [
+            {
+              "frame": 0,
+              "exists": true,
+              "exact_match": true
+            },
+            {
+              "frame": 199,
+              "exists": true,
+              "exact_match": true
+            }
+          ]
+        },
+        "fused": {
+          "directory": "D:\\zhuo mian\\mis20s1_2D&3D\\raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x\\fused",
+          "checks": [
+            {
+              "frame": 0,
+              "exists": true,
+              "exact_match": true
+            },
+            {
+              "frame": 199,
+              "exists": true,
+              "exact_match": true
+            }
+          ]
+        }
+      },
+      "temporal_alignment": {
+        "denoised_to_source": {
+          "best_lag": 0,
+          "best_correlation": 0.9525217229497116,
+          "scores": [
+            {
+              "lag": -10,
+              "correlation": -0.17267693606530513
+            },
+            {
+              "lag": -9,
+              "correlation": -0.2201345042881456
+            },
+            {
+              "lag": -8,
+              "correlation": -0.249680331102885
+            },
+            {
+              "lag": -7,
+              "correlation": -0.21923282623214435
+            },
+            {
+              "lag": -6,
+              "correlation": -0.16766216227613123
+            },
+            {
+              "lag": -5,
+              "correlation": -0.11334978052199066
+            },
+            {
+              "lag": -4,
+              "correlation": -0.06221257619717805
+            },
+            {
+              "lag": -3,
+              "correlation": 0.005524155938251014
+            },
+            {
+              "lag": -2,
+              "correlation": 0.16549909864737328
+            },
+            {
+              "lag": -1,
+              "correlation": 0.5509927800533921
+            },
+            {
+              "lag": 0,
+              "correlation": 0.9525217229497116
+            },
+            {
+              "lag": 1,
+              "correlation": 0.5494577162252492
+            },
+            {
+              "lag": 2,
+              "correlation": 0.18378475101898378
+            },
+            {
+              "lag": 3,
+              "correlation": 0.02620602454386982
+            },
+            {
+              "lag": 4,
+              "correlation": -0.05234597487457154
+            },
+            {
+              "lag": 5,
+              "correlation": -0.10247736876465138
+            },
+            {
+              "lag": 6,
+              "correlation": -0.15770522681367583
+            },
+            {
+              "lag": 7,
+              "correlation": -0.21851377289618742
+            },
+            {
+              "lag": 8,
+              "correlation": -0.24945895390169184
+            },
+            {
+              "lag": 9,
+              "correlation": -0.21163812934076331
+            },
+            {
+              "lag": 10,
+              "correlation": -0.15600826841652427
+            }
+          ]
+        },
+        "fused_to_source": {
+          "best_lag": 0,
+          "best_correlation": 0.9274934947696637,
+          "scores": [
+            {
+              "lag": -10,
+              "correlation": -0.17337103921222088
+            },
+            {
+              "lag": -9,
+              "correlation": -0.21935157144009051
+            },
+            {
+              "lag": -8,
+              "correlation": -0.24623206866388192
+            },
+            {
+              "lag": -7,
+              "correlation": -0.2131936050479489
+            },
+            {
+              "lag": -6,
+              "correlation": -0.15952726396873532
+            },
+            {
+              "lag": -5,
+              "correlation": -0.10136822199587946
+            },
+            {
+              "lag": -4,
+              "correlation": -0.04856006155567275
+            },
+            {
+              "lag": -3,
+              "correlation": 0.016489683191109144
+            },
+            {
+              "lag": -2,
+              "correlation": 0.1678831457481619
+            },
+            {
+              "lag": -1,
+              "correlation": 0.5375070388423451
+            },
+            {
+              "lag": 0,
+              "correlation": 0.9274934947696637
+            },
+            {
+              "lag": 1,
+              "correlation": 0.5259668086778228
+            },
+            {
+              "lag": 2,
+              "correlation": 0.17493027837941272
+            },
+            {
+              "lag": 3,
+              "correlation": 0.027159591228329193
+            },
+            {
+              "lag": 4,
+              "correlation": -0.050184720838698925
+            },
+            {
+              "lag": 5,
+              "correlation": -0.09776475671845061
+            },
+            {
+              "lag": 6,
+              "correlation": -0.14867707893832954
+            },
+            {
+              "lag": 7,
+              "correlation": -0.20618849080744692
+            },
+            {
+              "lag": 8,
+              "correlation": -0.24011649518199124
+            },
+            {
+              "lag": 9,
+              "correlation": -0.20914004400940883
+            },
+            {
+              "lag": 10,
+              "correlation": -0.15591489597482552
+            }
+          ]
+        }
+      },
+      "threshold_estimation": {
+        "temporal_blur_dn_quantiles": {
+          "0.5": 0.25437450408935547,
+          "0.75": 0.6067731380462646,
+          "0.9": 1.6504826545715332,
+          "0.95": 4.311615943908691,
+          "0.99": 61.81276321411133,
+          "0.995": 114.40325164794922,
+          "0.999": 306.91302490234375
+        },
+        "candidate_blur_dn_quantiles": {
+          "0.5": 0.812617301940918,
+          "0.75": 1.6726016998291016,
+          "0.9": 3.348116636276245,
+          "0.95": 5.353237152099609,
+          "0.99": 19.791015625,
+          "0.995": 44.680850982666016,
+          "0.999": 134.65460205078125
+        },
+        "recommended_motion_threshold_dn": 3.0735635608434677,
+        "recommended_disagreement_threshold_dn": 11.132430464029312
+      }
+    }
+  },
+  "conclusions": {
+    "source_storage": "uint16 little-endian with 12-bit values left-aligned by 4 bits",
+    "candidate_storage": "uint16 little-endian with direct 12-bit values",
+    "expected_frames_per_scene": 200,
+    "clean_ground_truth_available": false
+  }
+}

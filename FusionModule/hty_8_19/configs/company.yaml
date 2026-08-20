@@ -1,0 +1,74 @@
+raw:
+  width: 1920
+  height: 1080
+  cfa: RGGB
+  source_shift: 4
+  source_black: 252
+  candidate_black: 300
+  white: 4095
+
+scenes:
+  645x:
+    source: "D:/zhuo mian/Sigmastar_7_30/shdarkroom/645x/raw_stream_1920x1080_16bit@RG_[Shutter=79999,SenserG=131072,IspG=5167,R=2120,G=1024,B=1956].raw"
+    denoised: "D:/zhuo mian/mis20s1_2D&3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised.raw"
+    fused: "D:/zhuo mian/mis20s1_2D&3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused.raw"
+    wb: [2.0703125, 1.0, 1.91015625]
+    display_exposure: 14.0
+    motion_threshold_dn: 6.5
+    disagreement_threshold_dn: 50.0
+    motion_crop: [1030, 230, 1790, 910]
+  128x:
+    source: "D:/zhuo mian/Sigmastar_7_30/shdarkroom/128x/raw_stream_1920x1080_16bit@RG_[Shutter=54992,SenserG=131072,IspG=1024,R=2159,G=1024,B=1849].raw"
+    denoised: "D:/zhuo mian/mis20s1_2D&3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised.raw"
+    fused: "D:/zhuo mian/mis20s1_2D&3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused.raw"
+    wb: [2.1083984375, 1.0, 1.8056640625]
+    display_exposure: 2.8
+    motion_threshold_dn: 17.5
+    disagreement_threshold_dn: 163.0
+    motion_crop: [1030, 230, 1790, 910]
+
+folds:
+  A:
+    train_scene: 128x
+    target_scene: 645x
+    train_frames: [8, 135]
+    val_frames: [144, 175]
+    test_frames: [8, 191]
+  B:
+    train_scene: 645x
+    target_scene: 128x
+    train_frames: [8, 135]
+    val_frames: [144, 175]
+    test_frames: [8, 191]
+
+safety:
+  local_kernel: 5
+  dilation_kernel: 9
+  soft_scale: 0.35
+  hard_motion_scale: 1.0
+  hard_joint_motion_scale: 0.55
+  hard_joint_disagreement_scale: 1.0
+
+model:
+  input_channels: 24
+  width: 24
+
+training:
+  seed: 20260818
+  patch_size: 128
+  batch_size: 10
+  epochs: 6
+  steps_per_epoch: 160
+  val_patches: 160
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  risk_weight: 5.0
+  conservative_weight: 0.5
+  l1_weight: 0.25
+  tv_weight: 0.01
+  num_workers: 0
+
+inference:
+  use_amp: true
+  fps: 20.0
+

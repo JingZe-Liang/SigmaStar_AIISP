@@ -1,0 +1,11 @@
+{
+  "fold": "A",
+  "train_scene": "128x",
+  "target_scene": "645x",
+  "epochs": 1,
+  "best_selection_score": 0.8875726361293346,
+  "elapsed_seconds": 13.266432800002804,
+  "checkpoint": "D:\\zhuo mian\\项目\\dnr_fusion_delivery_20260818\\outputs\\smoke\\fold_A\\best.pt",
+  "device": "cuda",
+  "cuda_name": "NVIDIA GeForce RTX 5060 Laptop GPU"
+}

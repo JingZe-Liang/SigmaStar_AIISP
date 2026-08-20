@@ -1,0 +1,14 @@
+{
+  "training_mode": "joint scenes with temporal holdout validation",
+  "scenes": [
+    "128x",
+    "645x"
+  ],
+  "epochs": 6,
+  "steps_per_epoch": 120,
+  "best_selection_score": 0.052717705664690584,
+  "elapsed_seconds": 177.38532979999945,
+  "checkpoint": "D:\\zhuo mian\\项目\\dnr_fusion_delivery_20260818\\outputs\\checkpoints\\joint_v2\\best.pt",
+  "device": "cuda",
+  "cuda_name": "NVIDIA GeForce RTX 5060 Laptop GPU"
+}

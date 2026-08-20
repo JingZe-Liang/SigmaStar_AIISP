@@ -1,0 +1,36 @@
+{
+  "methodology": {
+    "has_clean_ground_truth": false,
+    "psnr_ssim_reported": false,
+    "reason": "The company sequences contain source/2DNR/3DNR only; no clean reference is available."
+  },
+  "scene": "645x",
+  "frames": 200,
+  "static_temporal_difference_mae_dn": {
+    "2dnr": 0.5751673566489185,
+    "3dnr": 0.6936807184506631,
+    "learned_fusion": 0.5355619631104913
+  },
+  "hard_motion_region": {
+    "pixels": 7497571,
+    "learned_fusion_deviation_from_2dnr_dn": 0.0,
+    "3dnr_deviation_from_2dnr_dn": 30.425344955052775,
+    "exact_2dnr_fallback_fraction": 1.0,
+    "mean_gate": 0.0
+  },
+  "static_high_confidence_region": {
+    "pixels": 88783500,
+    "learned_fusion_deviation_from_3dnr_dn": 1.4889624507932218,
+    "learned_fusion_deviation_from_2dnr_dn": 4.804218126115776,
+    "mean_gate": 0.8183489905394865
+  },
+  "gate_quantiles": {
+    "0.0": 0.0,
+    "0.01": 0.0,
+    "0.1": 0.11764705926179886,
+    "0.5": 0.8784313797950745,
+    "0.9": 0.929411768913269,
+    "0.99": 0.9372549057006836,
+    "1.0": 0.9411764740943909
+  }
+}

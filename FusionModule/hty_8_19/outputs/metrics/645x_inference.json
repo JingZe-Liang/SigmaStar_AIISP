@@ -1,0 +1,1421 @@
+{
+  "version": 2,
+  "scene": "645x",
+  "checkpoint": "D:\\zhuo mian\\项目\\dnr_fusion_delivery_20260818\\outputs\\checkpoints\\joint_v3\\best.pt",
+  "checkpoint_fold": "joint_v2",
+  "frames": 200,
+  "output_raw": "D:\\zhuo mian\\项目\\dnr_fusion_delivery_20260818\\outputs\\raw\\645x_learned_fusion.raw",
+  "output_sha256": "b8885dac67608be9069ab76c55a1171ecf07d8828824ce36fc11d76b59ec1f7d",
+  "gate_raw": "D:\\zhuo mian\\项目\\dnr_fusion_delivery_20260818\\outputs\\gates\\645x_gate_u8.raw",
+  "gate_sha256": "777edf3289787f9da279d6d8f3471363fc72686930beeb7e37414b555e57aa1e",
+  "fusion_domain": "native candidate DN",
+  "gate_stabilization": {
+    "rise_alpha": 0.08,
+    "fall_alpha": 1.0
+  },
+  "elapsed_seconds": 29.83945020000101,
+  "frames_per_second": 6.702536362415727,
+  "device": "cuda",
+  "frame_statistics": [
+    {
+      "frame": 0,
+      "predicted_gate_mean": 0.8869772553443909,
+      "instantaneous_gate_mean": 0.8868280053138733,
+      "final_gate_mean": 0.0,
+      "hard_fallback_fraction": 0.0
+    },
+    {
+      "frame": 1,
+      "predicted_gate_mean": 0.15850679576396942,
+      "instantaneous_gate_mean": 0.1416338086128235,
+      "final_gate_mean": 0.1416338086128235,
+      "hard_fallback_fraction": 0.7590702176094055
+    },
+    {
+      "frame": 2,
+      "predicted_gate_mean": 0.5801489949226379,
+      "instantaneous_gate_mean": 0.5674298405647278,
+      "final_gate_mean": 0.1735495626926422,
+      "hard_fallback_fraction": 0.31062886118888855
+    },
+    {
+      "frame": 3,
+      "predicted_gate_mean": 0.6297779083251953,
+      "instantaneous_gate_mean": 0.6177965998649597,
+      "final_gate_mean": 0.2066565901041031,
+      "hard_fallback_fraction": 0.25653550028800964
+    },
+    {
+      "frame": 4,
+      "predicted_gate_mean": 0.660724937915802,
+      "instantaneous_gate_mean": 0.6492106914520264,
+      "final_gate_mean": 0.23896099627017975,
+      "hard_fallback_fraction": 0.2170698344707489
+    },
+    {
+      "frame": 5,
+      "predicted_gate_mean": 0.7018738985061646,
+      "instantaneous_gate_mean": 0.6898980736732483,
+      "final_gate_mean": 0.27272841334342957,
+      "hard_fallback_fraction": 0.1709529310464859
+    },
+    {
+      "frame": 6,
+      "predicted_gate_mean": 0.737725019454956,
+      "instantaneous_gate_mean": 0.7256811857223511,
+      "final_gate_mean": 0.30745646357536316,
+      "hard_fallback_fraction": 0.13182871043682098
+    },
+    {
+      "frame": 7,
+      "predicted_gate_mean": 0.7663096189498901,
+      "instantaneous_gate_mean": 0.7552453279495239,
+      "final_gate_mean": 0.34185850620269775,
+      "hard_fallback_fraction": 0.10912422835826874
+    },
+    {
+      "frame": 8,
+      "predicted_gate_mean": 0.7818917632102966,
+      "instantaneous_gate_mean": 0.7709488272666931,
+      "final_gate_mean": 0.37425071001052856,
+      "hard_fallback_fraction": 0.10141203552484512
+    },
+    {
+      "frame": 9,
+      "predicted_gate_mean": 0.7893261313438416,
+      "instantaneous_gate_mean": 0.7783019542694092,
+      "final_gate_mean": 0.4030935764312744,
+      "hard_fallback_fraction": 0.10032021254301071
+    },
+    {
+      "frame": 10,
+      "predicted_gate_mean": 0.795383870601654,
+      "instantaneous_gate_mean": 0.7842938303947449,
+      "final_gate_mean": 0.4297061860561371,
+      "hard_fallback_fraction": 0.0963040143251419
+    },
+    {
+      "frame": 11,
+      "predicted_gate_mean": 0.7960395216941833,
+      "instantaneous_gate_mean": 0.7857500910758972,
+      "final_gate_mean": 0.4536234140396118,
+      "hard_fallback_fraction": 0.10074266791343689
+    },
+    {
+      "frame": 12,
+      "predicted_gate_mean": 0.800475001335144,
+      "instantaneous_gate_mean": 0.790212869644165,
+      "final_gate_mean": 0.4763413965702057,
+      "hard_fallback_fraction": 0.10015624761581421
+    },
+    {
+      "frame": 13,
+      "predicted_gate_mean": 0.8034417033195496,
+      "instantaneous_gate_mean": 0.7931777238845825,
+      "final_gate_mean": 0.49749645590782166,
+      "hard_fallback_fraction": 0.09900270402431488
+    },
+    {
+      "frame": 14,
+      "predicted_gate_mean": 0.8051945567131042,
+      "instantaneous_gate_mean": 0.7951027154922485,
+      "final_gate_mean": 0.5173503756523132,
+      "hard_fallback_fraction": 0.09584105014801025
+    },
+    {
+      "frame": 15,
+      "predicted_gate_mean": 0.8104386329650879,
+      "instantaneous_gate_mean": 0.8012548685073853,
+      "final_gate_mean": 0.537422239780426,
+      "hard_fallback_fraction": 0.09203124791383743
+    },
+    {
+      "frame": 16,
+      "predicted_gate_mean": 0.8174008131027222,
+      "instantaneous_gate_mean": 0.8084198236465454,
+      "final_gate_mean": 0.5559973120689392,
+      "hard_fallback_fraction": 0.08621527999639511
+    },
+    {
+      "frame": 17,
+      "predicted_gate_mean": 0.8173564076423645,
+      "instantaneous_gate_mean": 0.8083780407905579,
+      "final_gate_mean": 0.5732871294021606,
+      "hard_fallback_fraction": 0.08585069328546524
+    },
+    {
+      "frame": 18,
+      "predicted_gate_mean": 0.8229517340660095,
+      "instantaneous_gate_mean": 0.8140460252761841,
+      "final_gate_mean": 0.5893681645393372,
+      "hard_fallback_fraction": 0.08066357672214508
+    },
+    {
+      "frame": 19,
+      "predicted_gate_mean": 0.8321492671966553,
+      "instantaneous_gate_mean": 0.8234158158302307,
+      "final_gate_mean": 0.6060857772827148,
+      "hard_fallback_fraction": 0.0721566379070282
+    },
+    {
+      "frame": 20,
+      "predicted_gate_mean": 0.8266284465789795,
+      "instantaneous_gate_mean": 0.8177009224891663,
+      "final_gate_mean": 0.6189919710159302,
+      "hard_fallback_fraction": 0.07853973656892776
+    },
+    {
+      "frame": 21,
+      "predicted_gate_mean": 0.8236043453216553,
+      "instantaneous_gate_mean": 0.8145707249641418,
+      "final_gate_mean": 0.6299619078636169,
+      "hard_fallback_fraction": 0.08233796060085297
+    },
+    {
+      "frame": 22,
+      "predicted_gate_mean": 0.8254735469818115,
+      "instantaneous_gate_mean": 0.816002368927002,
+      "final_gate_mean": 0.6409698128700256,
+      "hard_fallback_fraction": 0.08115547895431519
+    },
+    {
+      "frame": 23,
+      "predicted_gate_mean": 0.8275628089904785,
+      "instantaneous_gate_mean": 0.8182234764099121,
+      "final_gate_mean": 0.6511169075965881,
+      "hard_fallback_fraction": 0.0807870402932167
+    },
+    {
+      "frame": 24,
+      "predicted_gate_mean": 0.8265683054924011,
+      "instantaneous_gate_mean": 0.8169417977333069,
+      "final_gate_mean": 0.6592604517936707,
+      "hard_fallback_fraction": 0.07997877895832062
+    },
+    {
+      "frame": 25,
+      "predicted_gate_mean": 0.8264518976211548,
+      "instantaneous_gate_mean": 0.8161476850509644,
+      "final_gate_mean": 0.6660012006759644,
+      "hard_fallback_fraction": 0.08188657462596893
+    },
+    {
+      "frame": 26,
+      "predicted_gate_mean": 0.8285128474235535,
+      "instantaneous_gate_mean": 0.8186274170875549,
+      "final_gate_mean": 0.6732462644577026,
+      "hard_fallback_fraction": 0.07828124612569809
+    },
+    {
+      "frame": 27,
+      "predicted_gate_mean": 0.8290284872055054,
+      "instantaneous_gate_mean": 0.8193612694740295,
+      "final_gate_mean": 0.6803722977638245,
+      "hard_fallback_fraction": 0.07847607880830765
+    },
+    {
+      "frame": 28,
+      "predicted_gate_mean": 0.8313736319541931,
+      "instantaneous_gate_mean": 0.8213681578636169,
+      "final_gate_mean": 0.6878936886787415,
+      "hard_fallback_fraction": 0.07564429193735123
+    },
+    {
+      "frame": 29,
+      "predicted_gate_mean": 0.8356040120124817,
+      "instantaneous_gate_mean": 0.8259031176567078,
+      "final_gate_mean": 0.6965336799621582,
+      "hard_fallback_fraction": 0.07100501656532288
+    },
+    {
+      "frame": 30,
+      "predicted_gate_mean": 0.8382730484008789,
+      "instantaneous_gate_mean": 0.8285708427429199,
+      "final_gate_mean": 0.7043139934539795,
+      "hard_fallback_fraction": 0.07031828910112381
+    },
+    {
+      "frame": 31,
+      "predicted_gate_mean": 0.8403016328811646,
+      "instantaneous_gate_mean": 0.8300438523292542,
+      "final_gate_mean": 0.7123656868934631,
+      "hard_fallback_fraction": 0.06756558269262314
+    },
+    {
+      "frame": 32,
+      "predicted_gate_mean": 0.8424338102340698,
+      "instantaneous_gate_mean": 0.832317590713501,
+      "final_gate_mean": 0.719815194606781,
+      "hard_fallback_fraction": 0.06500771641731262
+    },
+    {
+      "frame": 33,
+      "predicted_gate_mean": 0.8470906019210815,
+      "instantaneous_gate_mean": 0.8370596766471863,
+      "final_gate_mean": 0.7269600033760071,
+      "hard_fallback_fraction": 0.06080632656812668
+    },
+    {
+      "frame": 34,
+      "predicted_gate_mean": 0.8492188453674316,
+      "instantaneous_gate_mean": 0.8389939665794373,
+      "final_gate_mean": 0.733818769454956,
+      "hard_fallback_fraction": 0.05941165238618851
+    },
+    {
+      "frame": 35,
+      "predicted_gate_mean": 0.8509261012077332,
+      "instantaneous_gate_mean": 0.8399198651313782,
+      "final_gate_mean": 0.7392672896385193,
+      "hard_fallback_fraction": 0.05634066462516785
+    },
+    {
+      "frame": 36,
+      "predicted_gate_mean": 0.8504389524459839,
+      "instantaneous_gate_mean": 0.8396487832069397,
+      "final_gate_mean": 0.7447555065155029,
+      "hard_fallback_fraction": 0.05763503164052963
+    },
+    {
+      "frame": 37,
+      "predicted_gate_mean": 0.8487091064453125,
+      "instantaneous_gate_mean": 0.837931752204895,
+      "final_gate_mean": 0.7489444613456726,
+      "hard_fallback_fraction": 0.05950038507580757
+    },
+    {
+      "frame": 38,
+      "predicted_gate_mean": 0.8430444002151489,
+      "instantaneous_gate_mean": 0.8326458930969238,
+      "final_gate_mean": 0.7513955235481262,
+      "hard_fallback_fraction": 0.06449074298143387
+    },
+    {
+      "frame": 39,
+      "predicted_gate_mean": 0.8421955108642578,
+      "instantaneous_gate_mean": 0.8319655656814575,
+      "final_gate_mean": 0.7533043026924133,
+      "hard_fallback_fraction": 0.06485532224178314
+    },
+    {
+      "frame": 40,
+      "predicted_gate_mean": 0.8399553298950195,
+      "instantaneous_gate_mean": 0.8297752141952515,
+      "final_gate_mean": 0.754330039024353,
+      "hard_fallback_fraction": 0.06536458432674408
+    },
+    {
+      "frame": 41,
+      "predicted_gate_mean": 0.8448526263237,
+      "instantaneous_gate_mean": 0.8345998525619507,
+      "final_gate_mean": 0.7568464875221252,
+      "hard_fallback_fraction": 0.0594637356698513
+    },
+    {
+      "frame": 42,
+      "predicted_gate_mean": 0.85036301612854,
+      "instantaneous_gate_mean": 0.8395382761955261,
+      "final_gate_mean": 0.7594847083091736,
+      "hard_fallback_fraction": 0.05658179149031639
+    },
+    {
+      "frame": 43,
+      "predicted_gate_mean": 0.8550121188163757,
+      "instantaneous_gate_mean": 0.8440046906471252,
+      "final_gate_mean": 0.7614474296569824,
+      "hard_fallback_fraction": 0.04937500134110451
+    },
+    {
+      "frame": 44,
+      "predicted_gate_mean": 0.8632166385650635,
+      "instantaneous_gate_mean": 0.8520565032958984,
+      "final_gate_mean": 0.7658920884132385,
+      "hard_fallback_fraction": 0.0420466810464859
+    },
+    {
+      "frame": 45,
+      "predicted_gate_mean": 0.8656624555587769,
+      "instantaneous_gate_mean": 0.8549001812934875,
+      "final_gate_mean": 0.7704183459281921,
+      "hard_fallback_fraction": 0.03864390403032303
+    },
+    {
+      "frame": 46,
+      "predicted_gate_mean": 0.8698737621307373,
+      "instantaneous_gate_mean": 0.8590145111083984,
+      "final_gate_mean": 0.7740803956985474,
+      "hard_fallback_fraction": 0.031969521194696426
+    },
+    {
+      "frame": 47,
+      "predicted_gate_mean": 0.873834490776062,
+      "instantaneous_gate_mean": 0.8625268936157227,
+      "final_gate_mean": 0.7790603637695312,
+      "hard_fallback_fraction": 0.031008873134851456
+    },
+    {
+      "frame": 48,
+      "predicted_gate_mean": 0.8746692538261414,
+      "instantaneous_gate_mean": 0.8629552721977234,
+      "final_gate_mean": 0.7830376029014587,
+      "hard_fallback_fraction": 0.03217592462897301
+    },
+    {
+      "frame": 49,
+      "predicted_gate_mean": 0.8734815716743469,
+      "instantaneous_gate_mean": 0.8626806139945984,
+      "final_gate_mean": 0.7865563631057739,
+      "hard_fallback_fraction": 0.03440393507480621
+    },
+    {
+      "frame": 50,
+      "predicted_gate_mean": 0.8713993430137634,
+      "instantaneous_gate_mean": 0.8600476384162903,
+      "final_gate_mean": 0.7892545461654663,
+      "hard_fallback_fraction": 0.03635995462536812
+    },
+    {
+      "frame": 51,
+      "predicted_gate_mean": 0.8642561435699463,
+      "instantaneous_gate_mean": 0.8533712029457092,
+      "final_gate_mean": 0.7894698977470398,
+      "hard_fallback_fraction": 0.04412808641791344
+    },
+    {
+      "frame": 52,
+      "predicted_gate_mean": 0.8574557304382324,
+      "instantaneous_gate_mean": 0.8469582796096802,
+      "final_gate_mean": 0.7885740995407104,
+      "hard_fallback_fraction": 0.051467977464199066
+    },
+    {
+      "frame": 53,
+      "predicted_gate_mean": 0.8554439544677734,
+      "instantaneous_gate_mean": 0.8449862599372864,
+      "final_gate_mean": 0.7891346216201782,
+      "hard_fallback_fraction": 0.05266396701335907
+    },
+    {
+      "frame": 54,
+      "predicted_gate_mean": 0.8524932265281677,
+      "instantaneous_gate_mean": 0.8419584035873413,
+      "final_gate_mean": 0.788437008857727,
+      "hard_fallback_fraction": 0.05429783836007118
+    },
+    {
+      "frame": 55,
+      "predicted_gate_mean": 0.8535596132278442,
+      "instantaneous_gate_mean": 0.843162477016449,
+      "final_gate_mean": 0.7892194986343384,
+      "hard_fallback_fraction": 0.05585069581866264
+    },
+    {
+      "frame": 56,
+      "predicted_gate_mean": 0.8517519235610962,
+      "instantaneous_gate_mean": 0.8413921594619751,
+      "final_gate_mean": 0.7891324162483215,
+      "hard_fallback_fraction": 0.058422066271305084
+    },
+    {
+      "frame": 57,
+      "predicted_gate_mean": 0.8508676290512085,
+      "instantaneous_gate_mean": 0.8403105139732361,
+      "final_gate_mean": 0.7891266345977783,
+      "hard_fallback_fraction": 0.05859953537583351
+    },
+    {
+      "frame": 58,
+      "predicted_gate_mean": 0.8501476645469666,
+      "instantaneous_gate_mean": 0.8392409086227417,
+      "final_gate_mean": 0.7885468006134033,
+      "hard_fallback_fraction": 0.059209104627370834
+    },
+    {
+      "frame": 59,
+      "predicted_gate_mean": 0.8498191237449646,
+      "instantaneous_gate_mean": 0.8392406105995178,
+      "final_gate_mean": 0.7876930832862854,
+      "hard_fallback_fraction": 0.059974923729896545
+    },
+    {
+      "frame": 60,
+      "predicted_gate_mean": 0.8513422608375549,
+      "instantaneous_gate_mean": 0.8402334451675415,
+      "final_gate_mean": 0.7879865169525146,
+      "hard_fallback_fraction": 0.056919366121292114
+    },
+    {
+      "frame": 61,
+      "predicted_gate_mean": 0.8538870811462402,
+      "instantaneous_gate_mean": 0.8425724506378174,
+      "final_gate_mean": 0.7890123724937439,
+      "hard_fallback_fraction": 0.05329282581806183
+    },
+    {
+      "frame": 62,
+      "predicted_gate_mean": 0.8547698259353638,
+      "instantaneous_gate_mean": 0.8436546921730042,
+      "final_gate_mean": 0.7893521785736084,
+      "hard_fallback_fraction": 0.05296103283762932
+    },
+    {
+      "frame": 63,
+      "predicted_gate_mean": 0.8560043573379517,
+      "instantaneous_gate_mean": 0.8453571200370789,
+      "final_gate_mean": 0.7908060550689697,
+      "hard_fallback_fraction": 0.053952544927597046
+    },
+    {
+      "frame": 64,
+      "predicted_gate_mean": 0.8555793762207031,
+      "instantaneous_gate_mean": 0.8447638154029846,
+      "final_gate_mean": 0.7916485667228699,
+      "hard_fallback_fraction": 0.05418981611728668
+    },
+    {
+      "frame": 65,
+      "predicted_gate_mean": 0.8537266254425049,
+      "instantaneous_gate_mean": 0.8430818319320679,
+      "final_gate_mean": 0.7908332347869873,
+      "hard_fallback_fraction": 0.0555555559694767
+    },
+    {
+      "frame": 66,
+      "predicted_gate_mean": 0.8532222509384155,
+      "instantaneous_gate_mean": 0.842182457447052,
+      "final_gate_mean": 0.7901299595832825,
+      "hard_fallback_fraction": 0.054587192833423615
+    },
+    {
+      "frame": 67,
+      "predicted_gate_mean": 0.8546406030654907,
+      "instantaneous_gate_mean": 0.8437783718109131,
+      "final_gate_mean": 0.7901179194450378,
+      "hard_fallback_fraction": 0.05431327223777771
+    },
+    {
+      "frame": 68,
+      "predicted_gate_mean": 0.8536385893821716,
+      "instantaneous_gate_mean": 0.8423891067504883,
+      "final_gate_mean": 0.7897294163703918,
+      "hard_fallback_fraction": 0.055362652987241745
+    },
+    {
+      "frame": 69,
+      "predicted_gate_mean": 0.8543606400489807,
+      "instantaneous_gate_mean": 0.8427886366844177,
+      "final_gate_mean": 0.7898386716842651,
+      "hard_fallback_fraction": 0.05451967567205429
+    },
+    {
+      "frame": 70,
+      "predicted_gate_mean": 0.8537847995758057,
+      "instantaneous_gate_mean": 0.8424187898635864,
+      "final_gate_mean": 0.7892463207244873,
+      "hard_fallback_fraction": 0.05460455268621445
+    },
+    {
+      "frame": 71,
+      "predicted_gate_mean": 0.8542524576187134,
+      "instantaneous_gate_mean": 0.8428804874420166,
+      "final_gate_mean": 0.7893911600112915,
+      "hard_fallback_fraction": 0.05299382656812668
+    },
+    {
+      "frame": 72,
+      "predicted_gate_mean": 0.8539858460426331,
+      "instantaneous_gate_mean": 0.8423076868057251,
+      "final_gate_mean": 0.7886582612991333,
+      "hard_fallback_fraction": 0.05443865805864334
+    },
+    {
+      "frame": 73,
+      "predicted_gate_mean": 0.851679801940918,
+      "instantaneous_gate_mean": 0.8407022953033447,
+      "final_gate_mean": 0.7867521047592163,
+      "hard_fallback_fraction": 0.055900849401950836
+    },
+    {
+      "frame": 74,
+      "predicted_gate_mean": 0.8512733578681946,
+      "instantaneous_gate_mean": 0.8401245474815369,
+      "final_gate_mean": 0.7859599590301514,
+      "hard_fallback_fraction": 0.05656057223677635
+    },
+    {
+      "frame": 75,
+      "predicted_gate_mean": 0.8532665371894836,
+      "instantaneous_gate_mean": 0.8419162034988403,
+      "final_gate_mean": 0.7857856154441833,
+      "hard_fallback_fraction": 0.0555555559694767
+    },
+    {
+      "frame": 76,
+      "predicted_gate_mean": 0.852604329586029,
+      "instantaneous_gate_mean": 0.8409582376480103,
+      "final_gate_mean": 0.7851865291595459,
+      "hard_fallback_fraction": 0.0556655079126358
+    },
+    {
+      "frame": 77,
+      "predicted_gate_mean": 0.8524938821792603,
+      "instantaneous_gate_mean": 0.8403365015983582,
+      "final_gate_mean": 0.7834392786026001,
+      "hard_fallback_fraction": 0.055970292538404465
+    },
+    {
+      "frame": 78,
+      "predicted_gate_mean": 0.8545858860015869,
+      "instantaneous_gate_mean": 0.8430544137954712,
+      "final_gate_mean": 0.7835597991943359,
+      "hard_fallback_fraction": 0.054018132388591766
+    },
+    {
+      "frame": 79,
+      "predicted_gate_mean": 0.8537976145744324,
+      "instantaneous_gate_mean": 0.8419724106788635,
+      "final_gate_mean": 0.782573938369751,
+      "hard_fallback_fraction": 0.05545910447835922
+    },
+    {
+      "frame": 80,
+      "predicted_gate_mean": 0.8542196154594421,
+      "instantaneous_gate_mean": 0.8425172567367554,
+      "final_gate_mean": 0.7830643057823181,
+      "hard_fallback_fraction": 0.05557677522301674
+    },
+    {
+      "frame": 81,
+      "predicted_gate_mean": 0.8516438603401184,
+      "instantaneous_gate_mean": 0.8402941823005676,
+      "final_gate_mean": 0.7817255854606628,
+      "hard_fallback_fraction": 0.05591435357928276
+    },
+    {
+      "frame": 82,
+      "predicted_gate_mean": 0.851956844329834,
+      "instantaneous_gate_mean": 0.8401656150817871,
+      "final_gate_mean": 0.780407726764679,
+      "hard_fallback_fraction": 0.055493827909231186
+    },
+    {
+      "frame": 83,
+      "predicted_gate_mean": 0.8538219928741455,
+      "instantaneous_gate_mean": 0.8422553539276123,
+      "final_gate_mean": 0.7800197601318359,
+      "hard_fallback_fraction": 0.05545331910252571
+    },
+    {
+      "frame": 84,
+      "predicted_gate_mean": 0.8543532490730286,
+      "instantaneous_gate_mean": 0.8428081274032593,
+      "final_gate_mean": 0.7794291377067566,
+      "hard_fallback_fraction": 0.05499614030122757
+    },
+    {
+      "frame": 85,
+      "predicted_gate_mean": 0.8524138331413269,
+      "instantaneous_gate_mean": 0.8408503532409668,
+      "final_gate_mean": 0.7800584435462952,
+      "hard_fallback_fraction": 0.05575231462717056
+    },
+    {
+      "frame": 86,
+      "predicted_gate_mean": 0.8540359735488892,
+      "instantaneous_gate_mean": 0.8431258201599121,
+      "final_gate_mean": 0.7812585234642029,
+      "hard_fallback_fraction": 0.0539814829826355
+    },
+    {
+      "frame": 87,
+      "predicted_gate_mean": 0.8543109893798828,
+      "instantaneous_gate_mean": 0.8435062766075134,
+      "final_gate_mean": 0.7825692296028137,
+      "hard_fallback_fraction": 0.05481095612049103
+    },
+    {
+      "frame": 88,
+      "predicted_gate_mean": 0.8557395339012146,
+      "instantaneous_gate_mean": 0.8444822430610657,
+      "final_gate_mean": 0.7835710644721985,
+      "hard_fallback_fraction": 0.05334683507680893
+    },
+    {
+      "frame": 89,
+      "predicted_gate_mean": 0.8528804779052734,
+      "instantaneous_gate_mean": 0.8410711288452148,
+      "final_gate_mean": 0.7831771969795227,
+      "hard_fallback_fraction": 0.05447723716497421
+    },
+    {
+      "frame": 90,
+      "predicted_gate_mean": 0.8514305949211121,
+      "instantaneous_gate_mean": 0.8399790525436401,
+      "final_gate_mean": 0.7822673320770264,
+      "hard_fallback_fraction": 0.055509258061647415
+    },
+    {
+      "frame": 91,
+      "predicted_gate_mean": 0.8522191643714905,
+      "instantaneous_gate_mean": 0.8407090306282043,
+      "final_gate_mean": 0.7818393111228943,
+      "hard_fallback_fraction": 0.055883485823869705
+    },
+    {
+      "frame": 92,
+      "predicted_gate_mean": 0.8501472473144531,
+      "instantaneous_gate_mean": 0.8389851450920105,
+      "final_gate_mean": 0.7804766893386841,
+      "hard_fallback_fraction": 0.05768904462456703
+    },
+    {
+      "frame": 93,
+      "predicted_gate_mean": 0.8486440181732178,
+      "instantaneous_gate_mean": 0.8370872139930725,
+      "final_gate_mean": 0.7790693640708923,
+      "hard_fallback_fraction": 0.05922260880470276
+    },
+    {
+      "frame": 94,
+      "predicted_gate_mean": 0.8504400253295898,
+      "instantaneous_gate_mean": 0.8395708203315735,
+      "final_gate_mean": 0.7798442244529724,
+      "hard_fallback_fraction": 0.057527005672454834
+    },
+    {
+      "frame": 95,
+      "predicted_gate_mean": 0.8505526781082153,
+      "instantaneous_gate_mean": 0.8392906188964844,
+      "final_gate_mean": 0.7800269722938538,
+      "hard_fallback_fraction": 0.05898341163992882
+    },
+    {
+      "frame": 96,
+      "predicted_gate_mean": 0.8505073189735413,
+      "instantaneous_gate_mean": 0.8396139740943909,
+      "final_gate_mean": 0.7796474695205688,
+      "hard_fallback_fraction": 0.05797068029642105
+    },
+    {
+      "frame": 97,
+      "predicted_gate_mean": 0.8511967062950134,
+      "instantaneous_gate_mean": 0.8406291007995605,
+      "final_gate_mean": 0.7806908488273621,
+      "hard_fallback_fraction": 0.057403549551963806
+    },
+    {
+      "frame": 98,
+      "predicted_gate_mean": 0.8525285720825195,
+      "instantaneous_gate_mean": 0.8421145677566528,
+      "final_gate_mean": 0.7825090289115906,
+      "hard_fallback_fraction": 0.05615933611989021
+    },
+    {
+      "frame": 99,
+      "predicted_gate_mean": 0.8535504937171936,
+      "instantaneous_gate_mean": 0.8433166146278381,
+      "final_gate_mean": 0.7848091721534729,
+      "hard_fallback_fraction": 0.05411843955516815
+    },
+    {
+      "frame": 100,
+      "predicted_gate_mean": 0.8538244962692261,
+      "instantaneous_gate_mean": 0.8431969285011292,
+      "final_gate_mean": 0.7865134477615356,
+      "hard_fallback_fraction": 0.053572531789541245
+    },
+    {
+      "frame": 101,
+      "predicted_gate_mean": 0.8604345321655273,
+      "instantaneous_gate_mean": 0.8492896556854248,
+      "final_gate_mean": 0.7892675995826721,
+      "hard_fallback_fraction": 0.047193288803100586
+    },
+    {
+      "frame": 102,
+      "predicted_gate_mean": 0.8637654781341553,
+      "instantaneous_gate_mean": 0.8530058264732361,
+      "final_gate_mean": 0.7919695377349854,
+      "hard_fallback_fraction": 0.04222993925213814
+    },
+    {
+      "frame": 103,
+      "predicted_gate_mean": 0.868162989616394,
+      "instantaneous_gate_mean": 0.8566309809684753,
+      "final_gate_mean": 0.794750452041626,
+      "hard_fallback_fraction": 0.04084876552224159
+    },
+    {
+      "frame": 104,
+      "predicted_gate_mean": 0.8713783025741577,
+      "instantaneous_gate_mean": 0.8602085709571838,
+      "final_gate_mean": 0.7977336645126343,
+      "hard_fallback_fraction": 0.035424381494522095
+    },
+    {
+      "frame": 105,
+      "predicted_gate_mean": 0.8727535605430603,
+      "instantaneous_gate_mean": 0.8617842197418213,
+      "final_gate_mean": 0.8001616597175598,
+      "hard_fallback_fraction": 0.033335261046886444
+    },
+    {
+      "frame": 106,
+      "predicted_gate_mean": 0.8754153251647949,
+      "instantaneous_gate_mean": 0.864247739315033,
+      "final_gate_mean": 0.8032397627830505,
+      "hard_fallback_fraction": 0.032837577164173126
+    },
+    {
+      "frame": 107,
+      "predicted_gate_mean": 0.8746910095214844,
+      "instantaneous_gate_mean": 0.8637210130691528,
+      "final_gate_mean": 0.8054205179214478,
+      "hard_fallback_fraction": 0.0348302461206913
+    },
+    {
+      "frame": 108,
+      "predicted_gate_mean": 0.8737705945968628,
+      "instantaneous_gate_mean": 0.8627557158470154,
+      "final_gate_mean": 0.8071881532669067,
+      "hard_fallback_fraction": 0.03514660522341728
+    },
+    {
+      "frame": 109,
+      "predicted_gate_mean": 0.8704246282577515,
+      "instantaneous_gate_mean": 0.8600298762321472,
+      "final_gate_mean": 0.8084985017776489,
+      "hard_fallback_fraction": 0.03900270164012909
+    },
+    {
+      "frame": 110,
+      "predicted_gate_mean": 0.8687300682067871,
+      "instantaneous_gate_mean": 0.8583874702453613,
+      "final_gate_mean": 0.8094169497489929,
+      "hard_fallback_fraction": 0.04170910641551018
+    },
+    {
+      "frame": 111,
+      "predicted_gate_mean": 0.8669100403785706,
+      "instantaneous_gate_mean": 0.8564596772193909,
+      "final_gate_mean": 0.8104785084724426,
+      "hard_fallback_fraction": 0.04322916641831398
+    },
+    {
+      "frame": 112,
+      "predicted_gate_mean": 0.8623186945915222,
+      "instantaneous_gate_mean": 0.8521915078163147,
+      "final_gate_mean": 0.809683620929718,
+      "hard_fallback_fraction": 0.04776427522301674
+    },
+    {
+      "frame": 113,
+      "predicted_gate_mean": 0.8579446077346802,
+      "instantaneous_gate_mean": 0.8475013375282288,
+      "final_gate_mean": 0.8077052235603333,
+      "hard_fallback_fraction": 0.05276813358068466
+    },
+    {
+      "frame": 114,
+      "predicted_gate_mean": 0.857933521270752,
+      "instantaneous_gate_mean": 0.8475284576416016,
+      "final_gate_mean": 0.8069919347763062,
+      "hard_fallback_fraction": 0.05298225209116936
+    },
+    {
+      "frame": 115,
+      "predicted_gate_mean": 0.8548225164413452,
+      "instantaneous_gate_mean": 0.8446429967880249,
+      "final_gate_mean": 0.8054594397544861,
+      "hard_fallback_fraction": 0.05493248626589775
+    },
+    {
+      "frame": 116,
+      "predicted_gate_mean": 0.852794885635376,
+      "instantaneous_gate_mean": 0.8426149487495422,
+      "final_gate_mean": 0.8038172721862793,
+      "hard_fallback_fraction": 0.057847220450639725
+    },
+    {
+      "frame": 117,
+      "predicted_gate_mean": 0.8503025770187378,
+      "instantaneous_gate_mean": 0.8402679562568665,
+      "final_gate_mean": 0.8019195199012756,
+      "hard_fallback_fraction": 0.05836998298764229
+    },
+    {
+      "frame": 118,
+      "predicted_gate_mean": 0.8492624163627625,
+      "instantaneous_gate_mean": 0.8391507863998413,
+      "final_gate_mean": 0.8000109791755676,
+      "hard_fallback_fraction": 0.05948302522301674
+    },
+    {
+      "frame": 119,
+      "predicted_gate_mean": 0.8495994806289673,
+      "instantaneous_gate_mean": 0.8393427133560181,
+      "final_gate_mean": 0.7988954186439514,
+      "hard_fallback_fraction": 0.06047067791223526
+    },
+    {
+      "frame": 120,
+      "predicted_gate_mean": 0.8472646474838257,
+      "instantaneous_gate_mean": 0.8370916247367859,
+      "final_gate_mean": 0.7969509363174438,
+      "hard_fallback_fraction": 0.0604398138821125
+    },
+    {
+      "frame": 121,
+      "predicted_gate_mean": 0.8484665155410767,
+      "instantaneous_gate_mean": 0.8381420969963074,
+      "final_gate_mean": 0.7958201766014099,
+      "hard_fallback_fraction": 0.059214890003204346
+    },
+    {
+      "frame": 122,
+      "predicted_gate_mean": 0.846630871295929,
+      "instantaneous_gate_mean": 0.836438000202179,
+      "final_gate_mean": 0.7937431931495667,
+      "hard_fallback_fraction": 0.061444830149412155
+    },
+    {
+      "frame": 123,
+      "predicted_gate_mean": 0.8442366719245911,
+      "instantaneous_gate_mean": 0.833743691444397,
+      "final_gate_mean": 0.7911270260810852,
+      "hard_fallback_fraction": 0.06313657760620117
+    },
+    {
+      "frame": 124,
+      "predicted_gate_mean": 0.8440786600112915,
+      "instantaneous_gate_mean": 0.8335866332054138,
+      "final_gate_mean": 0.7888458371162415,
+      "hard_fallback_fraction": 0.06503472477197647
+    },
+    {
+      "frame": 125,
+      "predicted_gate_mean": 0.8414381146430969,
+      "instantaneous_gate_mean": 0.8306443095207214,
+      "final_gate_mean": 0.7860115170478821,
+      "hard_fallback_fraction": 0.06745949387550354
+    },
+    {
+      "frame": 126,
+      "predicted_gate_mean": 0.8404134511947632,
+      "instantaneous_gate_mean": 0.8301582932472229,
+      "final_gate_mean": 0.7845065593719482,
+      "hard_fallback_fraction": 0.06793595850467682
+    },
+    {
+      "frame": 127,
+      "predicted_gate_mean": 0.841660737991333,
+      "instantaneous_gate_mean": 0.8311597108840942,
+      "final_gate_mean": 0.7831653952598572,
+      "hard_fallback_fraction": 0.06475501507520676
+    },
+    {
+      "frame": 128,
+      "predicted_gate_mean": 0.8417885303497314,
+      "instantaneous_gate_mean": 0.8313981294631958,
+      "final_gate_mean": 0.7813363671302795,
+      "hard_fallback_fraction": 0.06435570865869522
+    },
+    {
+      "frame": 129,
+      "predicted_gate_mean": 0.8424915075302124,
+      "instantaneous_gate_mean": 0.8322596549987793,
+      "final_gate_mean": 0.7803364992141724,
+      "hard_fallback_fraction": 0.06378086656332016
+    },
+    {
+      "frame": 130,
+      "predicted_gate_mean": 0.8491159081459045,
+      "instantaneous_gate_mean": 0.8383970856666565,
+      "final_gate_mean": 0.7810283899307251,
+      "hard_fallback_fraction": 0.056919366121292114
+    },
+    {
+      "frame": 131,
+      "predicted_gate_mean": 0.8525324463844299,
+      "instantaneous_gate_mean": 0.8420565724372864,
+      "final_gate_mean": 0.7834961414337158,
+      "hard_fallback_fraction": 0.05477044731378555
+    },
+    {
+      "frame": 132,
+      "predicted_gate_mean": 0.8558731079101562,
+      "instantaneous_gate_mean": 0.8450270891189575,
+      "final_gate_mean": 0.7859756946563721,
+      "hard_fallback_fraction": 0.05334297940135002
+    },
+    {
+      "frame": 133,
+      "predicted_gate_mean": 0.8551562428474426,
+      "instantaneous_gate_mean": 0.8450621366500854,
+      "final_gate_mean": 0.7883797287940979,
+      "hard_fallback_fraction": 0.053555168211460114
+    },
+    {
+      "frame": 134,
+      "predicted_gate_mean": 0.8510627746582031,
+      "instantaneous_gate_mean": 0.8415035009384155,
+      "final_gate_mean": 0.7893950343132019,
+      "hard_fallback_fraction": 0.05865354835987091
+    },
+    {
+      "frame": 135,
+      "predicted_gate_mean": 0.8494004607200623,
+      "instantaneous_gate_mean": 0.8397363424301147,
+      "final_gate_mean": 0.7894726991653442,
+      "hard_fallback_fraction": 0.059394288808107376
+    },
+    {
+      "frame": 136,
+      "predicted_gate_mean": 0.8493534922599792,
+      "instantaneous_gate_mean": 0.8394947052001953,
+      "final_gate_mean": 0.7894981503486633,
+      "hard_fallback_fraction": 0.059876542538404465
+    },
+    {
+      "frame": 137,
+      "predicted_gate_mean": 0.849396288394928,
+      "instantaneous_gate_mean": 0.8399692177772522,
+      "final_gate_mean": 0.7894123196601868,
+      "hard_fallback_fraction": 0.05915895104408264
+    },
+    {
+      "frame": 138,
+      "predicted_gate_mean": 0.8507975339889526,
+      "instantaneous_gate_mean": 0.8407632112503052,
+      "final_gate_mean": 0.7879874110221863,
+      "hard_fallback_fraction": 0.05730324238538742
+    },
+    {
+      "frame": 139,
+      "predicted_gate_mean": 0.854010283946991,
+      "instantaneous_gate_mean": 0.8443246483802795,
+      "final_gate_mean": 0.788030207157135,
+      "hard_fallback_fraction": 0.05222029238939285
+    },
+    {
+      "frame": 140,
+      "predicted_gate_mean": 0.8547088503837585,
+      "instantaneous_gate_mean": 0.8447055816650391,
+      "final_gate_mean": 0.786833643913269,
+      "hard_fallback_fraction": 0.05190586298704147
+    },
+    {
+      "frame": 141,
+      "predicted_gate_mean": 0.8548760414123535,
+      "instantaneous_gate_mean": 0.844868540763855,
+      "final_gate_mean": 0.7868847846984863,
+      "hard_fallback_fraction": 0.052075617015361786
+    },
+    {
+      "frame": 142,
+      "predicted_gate_mean": 0.854927659034729,
+      "instantaneous_gate_mean": 0.8447526693344116,
+      "final_gate_mean": 0.7869126200675964,
+      "hard_fallback_fraction": 0.0516493059694767
+    },
+    {
+      "frame": 143,
+      "predicted_gate_mean": 0.858099639415741,
+      "instantaneous_gate_mean": 0.84779292345047,
+      "final_gate_mean": 0.7872347235679626,
+      "hard_fallback_fraction": 0.04990354925394058
+    },
+    {
+      "frame": 144,
+      "predicted_gate_mean": 0.8581006526947021,
+      "instantaneous_gate_mean": 0.8483574390411377,
+      "final_gate_mean": 0.7874779105186462,
+      "hard_fallback_fraction": 0.046963732689619064
+    },
+    {
+      "frame": 145,
+      "predicted_gate_mean": 0.8637992739677429,
+      "instantaneous_gate_mean": 0.8538915514945984,
+      "final_gate_mean": 0.7904013991355896,
+      "hard_fallback_fraction": 0.043057482689619064
+    },
+    {
+      "frame": 146,
+      "predicted_gate_mean": 0.8692481517791748,
+      "instantaneous_gate_mean": 0.8584898710250854,
+      "final_gate_mean": 0.7936772704124451,
+      "hard_fallback_fraction": 0.03849343955516815
+    },
+    {
+      "frame": 147,
+      "predicted_gate_mean": 0.8736664056777954,
+      "instantaneous_gate_mean": 0.8633895516395569,
+      "final_gate_mean": 0.7972099184989929,
+      "hard_fallback_fraction": 0.03331597149372101
+    },
+    {
+      "frame": 148,
+      "predicted_gate_mean": 0.868497908115387,
+      "instantaneous_gate_mean": 0.8586391806602478,
+      "final_gate_mean": 0.7981323599815369,
+      "hard_fallback_fraction": 0.03815007582306862
+    },
+    {
+      "frame": 149,
+      "predicted_gate_mean": 0.8621346354484558,
+      "instantaneous_gate_mean": 0.8525130748748779,
+      "final_gate_mean": 0.7968916296958923,
+      "hard_fallback_fraction": 0.045960649847984314
+    },
+    {
+      "frame": 150,
+      "predicted_gate_mean": 0.8601797223091125,
+      "instantaneous_gate_mean": 0.8502352237701416,
+      "final_gate_mean": 0.7975597381591797,
+      "hard_fallback_fraction": 0.04915701970458031
+    },
+    {
+      "frame": 151,
+      "predicted_gate_mean": 0.8588645458221436,
+      "instantaneous_gate_mean": 0.8491374850273132,
+      "final_gate_mean": 0.798706591129303,
+      "hard_fallback_fraction": 0.05036458373069763
+    },
+    {
+      "frame": 152,
+      "predicted_gate_mean": 0.8569667935371399,
+      "instantaneous_gate_mean": 0.847327470779419,
+      "final_gate_mean": 0.7988171577453613,
+      "hard_fallback_fraction": 0.05165509134531021
+    },
+    {
+      "frame": 153,
+      "predicted_gate_mean": 0.8579580187797546,
+      "instantaneous_gate_mean": 0.8485110998153687,
+      "final_gate_mean": 0.8000818490982056,
+      "hard_fallback_fraction": 0.051136188209056854
+    },
+    {
+      "frame": 154,
+      "predicted_gate_mean": 0.8583145141601562,
+      "instantaneous_gate_mean": 0.8490045070648193,
+      "final_gate_mean": 0.8009207844734192,
+      "hard_fallback_fraction": 0.0520293191075325
+    },
+    {
+      "frame": 155,
+      "predicted_gate_mean": 0.8595796823501587,
+      "instantaneous_gate_mean": 0.8501988053321838,
+      "final_gate_mean": 0.8019279837608337,
+      "hard_fallback_fraction": 0.05091049522161484
+    },
+    {
+      "frame": 156,
+      "predicted_gate_mean": 0.8585891127586365,
+      "instantaneous_gate_mean": 0.8487266302108765,
+      "final_gate_mean": 0.8020731210708618,
+      "hard_fallback_fraction": 0.0502912811934948
+    },
+    {
+      "frame": 157,
+      "predicted_gate_mean": 0.8537833094596863,
+      "instantaneous_gate_mean": 0.8442417979240417,
+      "final_gate_mean": 0.8002512454986572,
+      "hard_fallback_fraction": 0.05564621835947037
+    },
+    {
+      "frame": 158,
+      "predicted_gate_mean": 0.8490540981292725,
+      "instantaneous_gate_mean": 0.8401113748550415,
+      "final_gate_mean": 0.7967383861541748,
+      "hard_fallback_fraction": 0.06102237477898598
+    },
+    {
+      "frame": 159,
+      "predicted_gate_mean": 0.8468953371047974,
+      "instantaneous_gate_mean": 0.8380305767059326,
+      "final_gate_mean": 0.7948715090751648,
+      "hard_fallback_fraction": 0.06349343806505203
+    },
+    {
+      "frame": 160,
+      "predicted_gate_mean": 0.8421308398246765,
+      "instantaneous_gate_mean": 0.833092212677002,
+      "final_gate_mean": 0.7914137244224548,
+      "hard_fallback_fraction": 0.06923611462116241
+    },
+    {
+      "frame": 161,
+      "predicted_gate_mean": 0.8397513031959534,
+      "instantaneous_gate_mean": 0.8303771018981934,
+      "final_gate_mean": 0.7878903746604919,
+      "hard_fallback_fraction": 0.06968171149492264
+    },
+    {
+      "frame": 162,
+      "predicted_gate_mean": 0.8362409472465515,
+      "instantaneous_gate_mean": 0.8267294764518738,
+      "final_gate_mean": 0.7839495539665222,
+      "hard_fallback_fraction": 0.07217785716056824
+    },
+    {
+      "frame": 163,
+      "predicted_gate_mean": 0.8317500948905945,
+      "instantaneous_gate_mean": 0.82281893491745,
+      "final_gate_mean": 0.7796770334243774,
+      "hard_fallback_fraction": 0.07727623730897903
+    },
+    {
+      "frame": 164,
+      "predicted_gate_mean": 0.8281906843185425,
+      "instantaneous_gate_mean": 0.8189803957939148,
+      "final_gate_mean": 0.7758712768554688,
+      "hard_fallback_fraction": 0.08125192672014236
+    },
+    {
+      "frame": 165,
+      "predicted_gate_mean": 0.8235284090042114,
+      "instantaneous_gate_mean": 0.8143971562385559,
+      "final_gate_mean": 0.7723671197891235,
+      "hard_fallback_fraction": 0.08532407134771347
+    },
+    {
+      "frame": 166,
+      "predicted_gate_mean": 0.821538507938385,
+      "instantaneous_gate_mean": 0.8118855357170105,
+      "final_gate_mean": 0.7686895728111267,
+      "hard_fallback_fraction": 0.08882137387990952
+    },
+    {
+      "frame": 167,
+      "predicted_gate_mean": 0.8203570246696472,
+      "instantaneous_gate_mean": 0.811271071434021,
+      "final_gate_mean": 0.7657966613769531,
+      "hard_fallback_fraction": 0.08923225104808807
+    },
+    {
+      "frame": 168,
+      "predicted_gate_mean": 0.8149418830871582,
+      "instantaneous_gate_mean": 0.8061621189117432,
+      "final_gate_mean": 0.7604702711105347,
+      "hard_fallback_fraction": 0.09196566045284271
+    },
+    {
+      "frame": 169,
+      "predicted_gate_mean": 0.819349467754364,
+      "instantaneous_gate_mean": 0.8105214238166809,
+      "final_gate_mean": 0.7584300637245178,
+      "hard_fallback_fraction": 0.08844135701656342
+    },
+    {
+      "frame": 170,
+      "predicted_gate_mean": 0.8219943642616272,
+      "instantaneous_gate_mean": 0.8129828572273254,
+      "final_gate_mean": 0.7575193047523499,
+      "hard_fallback_fraction": 0.08597029000520706
+    },
+    {
+      "frame": 171,
+      "predicted_gate_mean": 0.8230749368667603,
+      "instantaneous_gate_mean": 0.8139271140098572,
+      "final_gate_mean": 0.7576014399528503,
+      "hard_fallback_fraction": 0.08462577313184738
+    },
+    {
+      "frame": 172,
+      "predicted_gate_mean": 0.8237404823303223,
+      "instantaneous_gate_mean": 0.8144156336784363,
+      "final_gate_mean": 0.757531464099884,
+      "hard_fallback_fraction": 0.08396604657173157
+    },
+    {
+      "frame": 173,
+      "predicted_gate_mean": 0.8281234502792358,
+      "instantaneous_gate_mean": 0.8190862536430359,
+      "final_gate_mean": 0.7579464316368103,
+      "hard_fallback_fraction": 0.07936728745698929
+    },
+    {
+      "frame": 174,
+      "predicted_gate_mean": 0.8226240873336792,
+      "instantaneous_gate_mean": 0.813715398311615,
+      "final_gate_mean": 0.7547438144683838,
+      "hard_fallback_fraction": 0.08410879969596863
+    },
+    {
+      "frame": 175,
+      "predicted_gate_mean": 0.8206757307052612,
+      "instantaneous_gate_mean": 0.8117533326148987,
+      "final_gate_mean": 0.7525908946990967,
+      "hard_fallback_fraction": 0.08822530508041382
+    },
+    {
+      "frame": 176,
+      "predicted_gate_mean": 0.8200176358222961,
+      "instantaneous_gate_mean": 0.8113440275192261,
+      "final_gate_mean": 0.7514151930809021,
+      "hard_fallback_fraction": 0.08703125268220901
+    },
+    {
+      "frame": 177,
+      "predicted_gate_mean": 0.8183140158653259,
+      "instantaneous_gate_mean": 0.809586226940155,
+      "final_gate_mean": 0.7503116130828857,
+      "hard_fallback_fraction": 0.08982831984758377
+    },
+    {
+      "frame": 178,
+      "predicted_gate_mean": 0.8168126940727234,
+      "instantaneous_gate_mean": 0.8084830045700073,
+      "final_gate_mean": 0.7487296462059021,
+      "hard_fallback_fraction": 0.09195601940155029
+    },
+    {
+      "frame": 179,
+      "predicted_gate_mean": 0.8142806887626648,
+      "instantaneous_gate_mean": 0.8060731291770935,
+      "final_gate_mean": 0.7462959885597229,
+      "hard_fallback_fraction": 0.09132523089647293
+    },
+    {
+      "frame": 180,
+      "predicted_gate_mean": 0.8128368258476257,
+      "instantaneous_gate_mean": 0.8048771023750305,
+      "final_gate_mean": 0.7435951232910156,
+      "hard_fallback_fraction": 0.09457947313785553
+    },
+    {
+      "frame": 181,
+      "predicted_gate_mean": 0.8135291337966919,
+      "instantaneous_gate_mean": 0.8052353262901306,
+      "final_gate_mean": 0.7426739931106567,
+      "hard_fallback_fraction": 0.09524691104888916
+    },
+    {
+      "frame": 182,
+      "predicted_gate_mean": 0.8145711421966553,
+      "instantaneous_gate_mean": 0.8062415719032288,
+      "final_gate_mean": 0.7419163584709167,
+      "hard_fallback_fraction": 0.09295910596847534
+    },
+    {
+      "frame": 183,
+      "predicted_gate_mean": 0.8124150037765503,
+      "instantaneous_gate_mean": 0.8044584393501282,
+      "final_gate_mean": 0.7407726645469666,
+      "hard_fallback_fraction": 0.09362461417913437
+    },
+    {
+      "frame": 184,
+      "predicted_gate_mean": 0.8172518610954285,
+      "instantaneous_gate_mean": 0.8102672100067139,
+      "final_gate_mean": 0.7417100667953491,
+      "hard_fallback_fraction": 0.088431715965271
+    },
+    {
+      "frame": 185,
+      "predicted_gate_mean": 0.8168087005615234,
+      "instantaneous_gate_mean": 0.8093419671058655,
+      "final_gate_mean": 0.7426539063453674,
+      "hard_fallback_fraction": 0.08920910209417343
+    },
+    {
+      "frame": 186,
+      "predicted_gate_mean": 0.8164899349212646,
+      "instantaneous_gate_mean": 0.8092633485794067,
+      "final_gate_mean": 0.7439319491386414,
+      "hard_fallback_fraction": 0.08850501477718353
+    },
+    {
+      "frame": 187,
+      "predicted_gate_mean": 0.8176045417785645,
+      "instantaneous_gate_mean": 0.8100701570510864,
+      "final_gate_mean": 0.7450985312461853,
+      "hard_fallback_fraction": 0.08861497044563293
+    },
+    {
+      "frame": 188,
+      "predicted_gate_mean": 0.8123031258583069,
+      "instantaneous_gate_mean": 0.8047393560409546,
+      "final_gate_mean": 0.7436358332633972,
+      "hard_fallback_fraction": 0.09329475462436676
+    },
+    {
+      "frame": 189,
+      "predicted_gate_mean": 0.810403048992157,
+      "instantaneous_gate_mean": 0.8027727007865906,
+      "final_gate_mean": 0.7426636219024658,
+      "hard_fallback_fraction": 0.09596643596887589
+    },
+    {
+      "frame": 190,
+      "predicted_gate_mean": 0.810915470123291,
+      "instantaneous_gate_mean": 0.803027331829071,
+      "final_gate_mean": 0.7415472865104675,
+      "hard_fallback_fraction": 0.09666088223457336
+    },
+    {
+      "frame": 191,
+      "predicted_gate_mean": 0.8091821670532227,
+      "instantaneous_gate_mean": 0.8014574646949768,
+      "final_gate_mean": 0.7385919094085693,
+      "hard_fallback_fraction": 0.09768518805503845
+    },
+    {
+      "frame": 192,
+      "predicted_gate_mean": 0.8062893152236938,
+      "instantaneous_gate_mean": 0.7981485724449158,
+      "final_gate_mean": 0.7356629967689514,
+      "hard_fallback_fraction": 0.10092014074325562
+    },
+    {
+      "frame": 193,
+      "predicted_gate_mean": 0.8042604327201843,
+      "instantaneous_gate_mean": 0.7960931658744812,
+      "final_gate_mean": 0.7327476143836975,
+      "hard_fallback_fraction": 0.10445987433195114
+    },
+    {
+      "frame": 194,
+      "predicted_gate_mean": 0.7995956540107727,
+      "instantaneous_gate_mean": 0.7918254137039185,
+      "final_gate_mean": 0.7302365899085999,
+      "hard_fallback_fraction": 0.108721062541008
+    },
+    {
+      "frame": 195,
+      "predicted_gate_mean": 0.7955775260925293,
+      "instantaneous_gate_mean": 0.7875933051109314,
+      "final_gate_mean": 0.7278784513473511,
+      "hard_fallback_fraction": 0.11282021552324295
+    },
+    {
+      "frame": 196,
+      "predicted_gate_mean": 0.7921191453933716,
+      "instantaneous_gate_mean": 0.784137487411499,
+      "final_gate_mean": 0.7244348526000977,
+      "hard_fallback_fraction": 0.11662615835666656
+    },
+    {
+      "frame": 197,
+      "predicted_gate_mean": 0.7923055291175842,
+      "instantaneous_gate_mean": 0.7841314673423767,
+      "final_gate_mean": 0.7232422828674316,
+      "hard_fallback_fraction": 0.11585841327905655
+    },
+    {
+      "frame": 198,
+      "predicted_gate_mean": 0.7925889492034912,
+      "instantaneous_gate_mean": 0.7845893502235413,
+      "final_gate_mean": 0.7215045094490051,
+      "hard_fallback_fraction": 0.11478587985038757
+    },
+    {
+      "frame": 199,
+      "predicted_gate_mean": 0.7953301072120667,
+      "instantaneous_gate_mean": 0.7871853113174438,
+      "final_gate_mean": 0.7201629877090454,
+      "hard_fallback_fraction": 0.11118248105049133
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "scene": "645x",
+  "frames": 200,
+  "fps": 20.0,
+  "duration_seconds": 10.0,
+  "resolution": [
+    1920,
+    720
+  ],
+  "video": "C:\\Users\\hty\\.codex\\visualizations\\2026\\08\\18\\01a0146c-7669-7241-b60a-68a3462ceb6c\\645x_comparison.mp4",
+  "contact_sheet": "C:\\Users\\hty\\.codex\\visualizations\\2026\\08\\18\\01a0146c-7669-7241-b60a-68a3462ceb6c\\645x_comparison_frame_0050.png",
+  "display_isp": {
+    "black": 300,
+    "white": 4095,
+    "wb": [
+      2.0703125,
+      1.0,
+      1.91015625
+    ],
+    "exposure": 14.0
+  }
+}

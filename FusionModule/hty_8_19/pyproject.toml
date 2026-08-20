@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "safe-dnr-fusion"
+version = "0.1.0"
+description = "Conservative RAW-domain fusion of 2DNR and 3DNR candidates"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.26",
+  "opencv-python>=4.8",
+  "PyYAML>=6.0",
+  "torch>=2.2",
+  "tqdm>=4.66",
+]
+
+[project.scripts]
+dnr-audit = "dnr_fusion.audit:main"
+dnr-train = "dnr_fusion.train:main"
+dnr-infer = "dnr_fusion.infer:main"
+dnr-evaluate = "dnr_fusion.evaluate:main"
+dnr-video = "dnr_fusion.video:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
