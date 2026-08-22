@@ -1,3 +1,8 @@
+融合结果对比视频：通过网盘分享的文件：session2
+链接: https://pan.baidu.com/s/1Fk-n6EwuPkIMxoTYDELKcw?pwd=ddh6 提取码: ddh6 
+--来自百度网盘超级会员v3的分享
+
+
 # FGRF-Net v2.0
 
 FGRF-Net v2.0 is an isolated replacement for `FGRF_Net_1`. It predicts a
