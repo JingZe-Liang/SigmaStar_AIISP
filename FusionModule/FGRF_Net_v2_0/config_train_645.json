@@ -1,0 +1,54 @@
+{
+  "height": 1080,
+  "width": 1920,
+  "seed": 1234,
+  "crop_size_packed": 256,
+  "noisy": {
+    "path": "/HardDisk/jingzeliang/Data/SigmaStar_project/given_dataset/Sigmastar_7_30/shdarkroom/645x/raw_stream_1920x1080_16bit@RG_[Shutter=79999,SenserG=131072,IspG=5167,R=2120,G=1024,B=1956].raw",
+    "black_level": 252,
+    "white_level": 4095,
+    "right_shift": 4
+  },
+  "base": {
+    "path": "/HardDisk/jingzeliang/Data/SigmaStar_project/given_dataset/mis20s1_2D&3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/2dnr.raw",
+    "black_level": 300,
+    "white_level": 4095,
+    "right_shift": 0
+  },
+  "temporal": {
+    "path": "/HardDisk/jingzeliang/Data/SigmaStar_project/given_dataset/mis20s1_2D&3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/3dnr.raw",
+    "black_level": 300,
+    "white_level": 4095,
+    "right_shift": 0
+  },
+  "flow": {
+    "forward_dir": "/HardDisk/jingzeliang/projects/SigmaStar_project/raft_sequence_inference/outputs/denoised_raft_things_645x/flow_npy",
+    "backward_dir": "/HardDisk/jingzeliang/projects/SigmaStar_project/raft_sequence_inference/outputs/denoised_raft_things_645x_backward/flow_npy"
+  },
+  "supervision": {
+    "temporal_radius": 3,
+    "proxy_min_observations": 5,
+    "cache_flows": true,
+    "flow_halo_packed": 16,
+    "tau_fb_pixels": 1.5,
+    "tau_rgb": 0.05,
+    "static_motion_threshold_pixels": 0.75,
+    "static_confidence_threshold": 0.3,
+    "static_erosion_kernel": 3,
+    "dark_signal_threshold": 0.005,
+    "saturation_threshold": 0.995
+  },
+  "model": {"base_channels": 32},
+  "loss": {
+    "gate_weight": 1.0,
+    "texture_weight": 0.35,
+    "motion_weight": 0.25,
+    "oracle_kernel": 5,
+    "texture_kernels": [3, 7],
+    "texture_threshold": 0.003,
+    "candidate_min_norm": 0.001,
+    "candidate_range": 0.01
+  },
+  "optimization": {"learning_rate": 0.0002, "weight_decay": 0.0001},
+  "logging": {"print_every": 10}
+}
