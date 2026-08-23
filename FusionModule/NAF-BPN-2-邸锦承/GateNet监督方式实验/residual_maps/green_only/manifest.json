@@ -1,0 +1,40 @@
+{
+  "sequence": "645x",
+  "operation": "AI_fused - 2DNR",
+  "domain": "black-level-corrected linear RAW",
+  "frame_indices": [
+    21,
+    23,
+    26,
+    66,
+    90,
+    111,
+    133,
+    135,
+    152,
+    157
+  ],
+  "scale_percentile": 99.0,
+  "symmetric_scale": 0.013175230473279953,
+  "dead_zone": 0.001,
+  "only_positive": false,
+  "only_negative": true,
+  "color_mapping": {
+    "black": "AI fused is not lower than 2DNR or is inside the dead zone",
+    "green": "AI fused lower than 2DNR",
+    "red": "not used",
+    "saturation": "absolute difference larger than the symmetric scale is clipped"
+  },
+  "output_files": [
+    "frame_0021_ai_minus_2dnr.png",
+    "frame_0023_ai_minus_2dnr.png",
+    "frame_0026_ai_minus_2dnr.png",
+    "frame_0066_ai_minus_2dnr.png",
+    "frame_0090_ai_minus_2dnr.png",
+    "frame_0111_ai_minus_2dnr.png",
+    "frame_0133_ai_minus_2dnr.png",
+    "frame_0135_ai_minus_2dnr.png",
+    "frame_0152_ai_minus_2dnr.png",
+    "frame_0157_ai_minus_2dnr.png"
+  ]
+}
