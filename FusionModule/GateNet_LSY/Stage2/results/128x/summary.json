@@ -1,0 +1,22 @@
+{
+  "sequence_id": "128x",
+  "output": "D:\\University\\Fusion\\Phase Final\\FusionModule\\GateNet_LSY\\Stage2\\outputs\\four_view\\128x\\stage2_motion_2dnr_3dnr_fusion.mp4",
+  "layout": {
+    "top_left": "Stage2 predicted motion overlay",
+    "top_right": "2DNR",
+    "bottom_left": "3DNR",
+    "bottom_right": "Stage2 fusion"
+  },
+  "external_md_used": false,
+  "codec": "H.264/AVC",
+  "codec_tag": "avc1",
+  "pixel_format": "yuv420p",
+  "crf": 6,
+  "fps": 24.0,
+  "frame_count": 200,
+  "width": 1920,
+  "height": 1080,
+  "bytes": 37699221,
+  "sha256": "57f81cd7c0f516651cacbe8e1d6c129af95fb3833857ba7a524fff53e0f9ec49",
+  "windows_media_foundation_decoded_frames": 200
+}
