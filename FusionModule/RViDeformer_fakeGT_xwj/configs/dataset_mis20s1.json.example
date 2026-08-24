@@ -1,0 +1,35 @@
+{
+  "layout": {
+    "width": 1920,
+    "height": 1080,
+    "frame_count": 200,
+    "dtype": "<u2",
+    "white_level": 4095,
+    "noisy_black_level": 252,
+    "candidate_black_level": 300,
+    "target_black_level": 252,
+    "noisy_shift": 4,
+    "cfa_pattern": "RGGB",
+    "pseudo_gt_pattern": "out_{index:04d}.raw"
+  },
+  "sequences": {
+    "128x": {
+      "name": "128x",
+      "noisy_stream": "/path/to/noisy_128x.raw",
+      "denoised_stream": "/path/to/denoised_128x.raw",
+      "fused_stream": "/path/to/fused_128x.raw",
+      "pseudo_gt_dir": "/path/to/RViDeformer_pseudoGT/128x",
+      "white_balance": [2.1083984375, 1.0, 1.8056640625],
+      "isp_gain": 1.0
+    },
+    "645x": {
+      "name": "645x",
+      "noisy_stream": "/path/to/noisy_645x.raw",
+      "denoised_stream": "/path/to/denoised_645x.raw",
+      "fused_stream": "/path/to/fused_645x.raw",
+      "pseudo_gt_dir": "/path/to/RViDeformer_pseudoGT/645x",
+      "white_balance": [2.0703125, 1.0, 1.91015625],
+      "isp_gain": 5.0458984375
+    }
+  }
+}

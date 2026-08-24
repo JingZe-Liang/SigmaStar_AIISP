@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+
+# Local data binding. Copy the tracked example and edit local paths.
+configs/dataset_mis20s1.json
+
+# Generated or non-public artifacts.
+artifacts/
+checkpoints/
+outputs/
+logs/
+*.pt
+*.raw
+*.png
