@@ -1,0 +1,35 @@
+{
+  "aggregate": {
+    "fallback_fraction": 0.0,
+    "high_frequency_delta": 0.00814493982553155,
+    "mae": 0.00814493982553155,
+    "psnr": 92.39392464276986,
+    "rmse": 0.10515536765707027,
+    "ssim": 0.9999999579039383,
+    "temporal_baseline": 4.461099275242504,
+    "temporal_prediction": 4.4607709848985895
+  },
+  "per_condition": {
+    "128x": {
+      "fallback_fraction": 0.0,
+      "high_frequency_delta": 0.0162898796510631,
+      "mae": 0.0162898796510631,
+      "psnr": 85.7878492855397,
+      "rmse": 0.21031073531414055,
+      "ssim": 0.9999999158078766,
+      "temporal_baseline": 7.169730144951499,
+      "temporal_prediction": 7.169073564263669
+    },
+    "645x": {
+      "fallback_fraction": 0.0,
+      "high_frequency_delta": 0.0,
+      "mae": 0.0,
+      "psnr": 99.0,
+      "rmse": 0.0,
+      "ssim": 1.0,
+      "temporal_baseline": 1.7524684055335098,
+      "temporal_prediction": 1.7524684055335098
+    }
+  },
+  "protocol": "raw_fusion_v2_data_first_comparison"
+}

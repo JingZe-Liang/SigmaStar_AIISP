@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "raw-fusion-distill-v2"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = ["numpy>=2.0", "torch>=2.0", "opencv-python-headless>=4.8"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+raw-fusion-v2-dataset-validate = "raw_fusion.v2.cli:dataset_validate"
+raw-fusion-v2-split-validate = "raw_fusion.v2.cli:split_validate"
+raw-fusion-v2-mog2-cache-generate = "raw_fusion.v2.cli:mog2_cache_generate"
+raw-fusion-v2-train = "raw_fusion.v2.cli:train"
+raw-fusion-v2-infer = "raw_fusion.v2.cli:infer"
+raw-fusion-v2-compare = "raw_fusion.v2.cli:compare"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["src/tests"]
+addopts = "-ra"

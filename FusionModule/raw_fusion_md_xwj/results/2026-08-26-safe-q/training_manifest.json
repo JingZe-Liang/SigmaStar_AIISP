@@ -1,0 +1,13 @@
+{
+  "checkpoint": {
+    "path": "data_first_v2.pt",
+    "sha256": "69235394258e67098ef98b7f8460bfc19f9f2ac7fe1e38888e56bb4952675ce6"
+  },
+  "formal_v2_compatible": false,
+  "global_step": 1000,
+  "md_used_as_model_input": false,
+  "md_used_for_supervision": true,
+  "protocol": "raw_fusion_v2_data_first",
+  "resumed_from": null,
+  "schedule_digest": "bd5fd5e58c2778cd6f2356d100b9e949456951fcf13dfab2f537743c85bdaf73"
+}
