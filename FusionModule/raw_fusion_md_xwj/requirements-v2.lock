@@ -1,0 +1,5 @@
+--extra-index-url https://download.pytorch.org/whl/cu124
+numpy==2.2.6
+opencv-python-headless==5.0.0.93
+pytest==9.1.1
+torch==2.5.1+cu124

@@ -1,0 +1,13 @@
+{
+  "conditions": {
+    "128x": {
+      "frames": 36,
+      "trace": "inference_128x.jsonl"
+    },
+    "645x": {
+      "frames": 36,
+      "trace": "inference_645x.jsonl"
+    }
+  },
+  "protocol": "raw_fusion_v2_data_first"
+}

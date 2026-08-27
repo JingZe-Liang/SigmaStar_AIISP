@@ -1,0 +1,21 @@
+__pycache__/
+.pytest_cache/
+*.py[cod]
+*.egg-info/
+.venv/
+outputs/
+artifacts/
+logs/
+*.pt
+*.pth
+*.raw
+*.mp4
+*.avi
+*.tmp
+.*.tmp/
+
+# Curated, documented evidence is the only generated output tracked by Git.
+!results/
+!results/2026-08-26-safe-q/
+!results/2026-08-26-safe-q/data_first_v2.pt
+!results/2026-08-26-safe-q/fusion_2dnr_3dnr_fixed_isp_128x.mp4

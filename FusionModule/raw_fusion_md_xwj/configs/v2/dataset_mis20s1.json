@@ -1,0 +1,37 @@
+{
+  "schema_version": 2,
+  "protocol": "md_conditioned_frequency_fusion_v2",
+  "raw_contract": {
+    "sensor_width": 1920,
+    "sensor_height": 1080,
+    "dtype": "<u2",
+    "white_level": 4095,
+    "cfa_pattern": "RGGB",
+    "packed_order": ["R", "Gr", "B", "Gb"],
+    "signals": {
+      "noisy": {"right_shift": 4, "black_level": 252},
+      "denoised": {"right_shift": 0, "black_level": 300},
+      "fused": {"right_shift": 0, "black_level": 300},
+      "prediction": {"right_shift": 0, "black_level": 252}
+    }
+  },
+  "target_sequences": {
+    "128x": {
+      "noisy": {"path": "Data/Sigmastar_datasets/shdarkroom/128x/raw_stream_1920x1080_16bit@RG_[Shutter=54992,SenserG=131072,IspG=1024,R=2159,G=1024,B=1849].raw", "sha256": "19b1b21bccd8181b0d3380e5a2601147403adb0d01451d947b30d2d32dd69a58", "frame_count": 200},
+      "denoised": {"path": "Data/Sigmastar_datasets/min20s1_2D&3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised.raw", "sha256": "615447001740d94b5a19b3dff89d740c986b0d50098a522824d20752481ceb3e", "frame_count": 200},
+      "fused": {"path": "Data/Sigmastar_datasets/min20s1_2D&3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused.raw", "sha256": "87ced43557e13b66996b13f694114526869f56613b126a08a61ee66b2faca218", "frame_count": 200},
+      "preview": {"white_balance_rgb": [2.1083984375, 1.0, 1.8056640625], "isp_gain": 1.0}
+    },
+    "645x": {
+      "noisy": {"path": "Data/Sigmastar_datasets/shdarkroom/645x/raw_stream_1920x1080_16bit@RG_[Shutter=79999,SenserG=131072,IspG=5167,R=2120,G=1024,B=1956].raw", "sha256": "d6141bc2e4c62c014ba770e22ebfd19e9ffd702c222eaf31611ad4dd321fa8c0", "frame_count": 200},
+      "denoised": {"path": "Data/Sigmastar_datasets/min20s1_2D&3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised.raw", "sha256": "84dddca9f5a7d1dbbfae956c050c9537481a19b285df10de7b73ce1bdc0e34ff", "frame_count": 200},
+      "fused": {"path": "Data/Sigmastar_datasets/min20s1_2D&3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused.raw", "sha256": "cebe48373ec23ef2e52a92c9ebfbb8c6bc6fd2bfc0d3d47e1d75f3a89620c571", "frame_count": 200},
+      "preview": {"white_balance_rgb": [2.0703125, 1.0, 1.91015625], "isp_gain": 5.0458984375}
+    }
+  },
+  "support_sequences": {
+    "10x": {"noisy": {"path": "Data/Sigmastar_datasets/shdarkroom/10x/raw_stream_1920x1080_16bit@RG_[Shutter=40000,SenserG=9500,IspG=1024,R=2113,G=1024,B=1789].raw", "sha256": "258ead1a456c0573047f2a555f3cafa87a7724ca1ab4fed075a5a967c8d4a368", "frame_count": 200}, "used_frame_range": [0, 199]},
+    "64x": {"noisy": {"path": "Data/Sigmastar_datasets/shdarkroom/64x/raw_stream_1920x1080_16bit@RG_[Shutter=40000,SenserG=69631,IspG=1024,R=2137,G=1024,B=1825].raw", "sha256": "25a9f19bcf4de5c674fe162fa8e577be6c424b2d34d7d3e1c6af0d0edde926ef", "frame_count": 200}, "used_frame_range": [0, 199]},
+    "313x": {"noisy": {"path": "Data/Sigmastar_datasets/shdarkroom/313x/raw_stream_1920x1080_16bit@RG_[Shutter=79999,SenserG=131072,IspG=2504,R=2065,G=1024,B=2021].raw", "sha256": "694ee3ab6524cef4432ad6ab077bbbc530496115d75fab6400dd44dbebd7c669", "frame_count": 300}, "used_frame_range": [0, 199]}
+  }
+}

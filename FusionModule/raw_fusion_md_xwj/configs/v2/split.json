@@ -1,0 +1,20 @@
+{
+  "schema_version": 2,
+  "protocol": "md_conditioned_frequency_fusion_v2",
+  "train": {
+    "pre_roll_frames": [56, 57],
+    "target_frames": [58, 93],
+    "post_guard_frames": [94, 95],
+    "references": {"g": [128, 143], "e": [144, 159], "v": [160, 175]}
+  },
+  "validation": {
+    "pre_roll_frames": [96, 97],
+    "target_frames": [98, 125],
+    "post_guard_frames": [126, 127],
+    "references": {"g": [176, 183], "e": [184, 191], "v": [192, 199]}
+  },
+  "audit_rois": {
+    "grass": {"x_half_open": [760, 880], "y_half_open": [460, 539]},
+    "wall": {"x_half_open": [820, 920], "y_half_open": [50, 140]}
+  }
+}
