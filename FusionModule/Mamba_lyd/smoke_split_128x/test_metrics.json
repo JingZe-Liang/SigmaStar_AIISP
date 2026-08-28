@@ -1,0 +1,38 @@
+{
+  "checkpoint": "best.pt",
+  "frames": [
+    180,
+    181,
+    182,
+    183,
+    184,
+    185,
+    186,
+    187,
+    188,
+    189,
+    190,
+    191,
+    192,
+    193,
+    194,
+    195,
+    196,
+    197,
+    198,
+    199
+  ],
+  "metrics": {
+    "loss": 1.3627935004478786e-05,
+    "distill": 1.3278296137286816e-05,
+    "motion_leak": 2.6378597794973757e-06,
+    "tv": 0.0,
+    "mean_w3": 8.58531075209612e-06,
+    "max_w3": 0.0019375866977497935,
+    "mean_w3_r": 2.7949863579124212e-05,
+    "mean_w3_g1": 3.1683219958722475e-07,
+    "mean_w3_g2": 2.002488827201887e-06,
+    "mean_w3_b": 4.072057436133036e-06
+  },
+  "note": "No clean ground truth is available; these are held-out pseudo-label and motion-safety metrics, not reference image-quality scores."
+}
