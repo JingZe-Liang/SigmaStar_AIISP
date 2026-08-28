@@ -1,0 +1,12 @@
+{
+  "data_root": "/workspace/data/SigmaStar",
+  "sequence_names": ["128x", "645x"],
+  "cfa_pattern": "BGGR",
+  "source_black_level": 252,
+  "dnr_black_level": 300,
+  "white_level": 4095,
+  "device": "cuda",
+  "num_basis": 15,
+  "kernel_size": 7,
+  "model_width": 32
+}
