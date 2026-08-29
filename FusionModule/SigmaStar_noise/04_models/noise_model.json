@@ -1,0 +1,17 @@
+{
+  "domain": "decoded 12-bit RAW DN",
+  "black_model": "Y = black_level + static_row_fpn + static_col_fpn + static_pixel_fpn + frame_common + dynamic_row + dynamic_col + unstructured_temporal_noise",
+  "temporal_estimator": "sqrt(mean((frame[n+1]-frame[n])^2)/2)",
+  "flat_model": "normalized(flat_mean - black_mean) = low_frequency_shading + high_frequency_effective_PRNU",
+  "flat_low_frequency_filter": {
+    "type": "Gaussian",
+    "sigma_bayer_samples": 15.0
+  },
+  "signal_noise_model": "flat_variance = black_floor_variance + effective_signal_slope * signal",
+  "gain_handling": "lookup table by measured gain and Bayer phase; do not fit across the 8x-to-16x gain-stage discontinuity",
+  "not_identifiable": [
+    "read noise versus dark-current shot noise versus quantization",
+    "pure PRNU versus lens shading versus illumination nonuniformity",
+    "scene sensor noise versus motion/flicker/rolling-shutter variation"
+  ]
+}
