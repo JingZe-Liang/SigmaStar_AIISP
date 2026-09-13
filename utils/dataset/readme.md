@@ -30,3 +30,8 @@ h5的（wsj）
 通过网盘分享的文件：所有数据集
 链接: https://pan.baidu.com/s/1WTVJzhjsCz-banIAF80B2Q 提取码: 1y7g 
 --来自百度网盘超级会员v3的分享
+
+9.12目前公司所有的数据
+通过网盘分享的文件：company_dataset
+链接: https://pan.baidu.com/s/1Vuyg-1fmRYlsYXBKAx0wOQ?pwd=z8iv 提取码: z8iv 
+--来自百度网盘超级会员v4的分享
