@@ -1,0 +1,21 @@
+{
+  "code_version": "finetune_a1_v2",
+  "label_semantics": "clean_reference_for_raw_denoising",
+  "source_stream": "04/shdarkroom/10x",
+  "frames_used": 200,
+  "shape": [
+    4,
+    540,
+    960
+  ],
+  "valid_region_path": "/Data2/Bad_Example_Do_Not_Follow/Jaime/Projects/Stage2_DenoiseModel/artifacts/finetune_mis20s1/supervision/references/04_shdarkroom_10x_valid_region.npy",
+  "confidence_path": "/Data2/Bad_Example_Do_Not_Follow/Jaime/Projects/Stage2_DenoiseModel/artifacts/finetune_mis20s1/supervision/references/04_shdarkroom_10x_confidence.npy",
+  "clean_reference_path": "/Data2/Bad_Example_Do_Not_Follow/Jaime/Projects/Stage2_DenoiseModel/artifacts/finetune_mis20s1/supervision/references/04_shdarkroom_10x_clean_reference.npy",
+  "fpn_paths": {
+    "dsnu_dn": "/Data2/Bad_Example_Do_Not_Follow/Jaime/Projects/Stage2_DenoiseModel/artifacts/finetune_mis20s1/supervision/references/04_shdarkroom_fpn_dsnu_dn.npy",
+    "prnu_fraction": "/Data2/Bad_Example_Do_Not_Follow/Jaime/Projects/Stage2_DenoiseModel/artifacts/finetune_mis20s1/supervision/references/04_shdarkroom_fpn_prnu_fraction.npy",
+    "offset_dn": "/Data2/Bad_Example_Do_Not_Follow/Jaime/Projects/Stage2_DenoiseModel/artifacts/finetune_mis20s1/supervision/references/04_shdarkroom_fpn_offset_dn.npy"
+  },
+  "quality_report_path": "/Data2/Bad_Example_Do_Not_Follow/Jaime/Projects/Stage2_DenoiseModel/artifacts/finetune_mis20s1/supervision/references/a1_reference_report.json",
+  "quality_passed": true
+}

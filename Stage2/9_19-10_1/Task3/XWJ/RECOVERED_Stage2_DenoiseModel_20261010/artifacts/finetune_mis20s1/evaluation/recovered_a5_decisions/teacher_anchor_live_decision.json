@@ -1,0 +1,17 @@
+{
+  "protocol": "A5 stronger teacher-anchor live-weight decision",
+  "decision": "rejected",
+  "approved_for_production": false,
+  "checkpoint": "artifacts/finetune_mis20s1/training_a5_teacher_anchor_flow1_staticw2/checkpoint_step_000020.pth",
+  "static_target_mode": "a3_teacher",
+  "static_anchor_weight": 2.0,
+  "motion_to_input_ratio_baseline": 0.48879945278167725,
+  "motion_to_input_ratio_candidate": 0.4915890097618103,
+  "cross_gain_645x_psnr_baseline_db": 29.51644030829074,
+  "cross_gain_645x_psnr_candidate_db": 29.501140043428382,
+  "native_1000x_psnr_baseline_db": 52.36373272976205,
+  "native_1000x_psnr_candidate_db": 52.403572418993136,
+  "legal_fraction_candidate": 1.0,
+  "reason": "motion and native PSNR improve, but 645x static PSNR falls by 0.015 dB and high-frequency retention falls from 0.97390 to 0.95911",
+  "next_experiment": "anchor the same 645x dynamic window outside a dilated dynamic-confidence region instead of increasing the weight of a separate static batch"
+}

@@ -1,0 +1,118 @@
+{
+  "protocol": "recovered native 1000x motion-aware temporal reference",
+  "source_manifest": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/stream_manifests/04_shdarkroom_1000x.json",
+  "source_raw": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/shdarkroom/1000x/raw_stream_1920x1080_16bit@RG_[Shutter=79999,SenserG=131072,IspG=7656,R=1878,G=1024,B=2218].raw",
+  "source_motion_mask": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/motion_masks/04_shdarkroom_1000x.npy",
+  "frames_used": 200,
+  "shape": [
+    4,
+    540,
+    960
+  ],
+  "black_levels": {
+    "R": 254.75,
+    "Gr": 257.125,
+    "Gb": 256.875,
+    "B": 255.125
+  },
+  "static_confidence_threshold": 0.9,
+  "motion_aware_valid_fraction": 0.9320698302469136,
+  "confidence_mean": 0.9772723317146301,
+  "exposure_scale_min": {
+    "R": 0.9861546754837036,
+    "Gr": 0.9810037612915039,
+    "Gb": 0.9802665710449219,
+    "B": 0.9855843782424927
+  },
+  "exposure_scale_max": {
+    "R": 1.0152806043624878,
+    "Gr": 1.0136892795562744,
+    "Gb": 1.0168530941009521,
+    "B": 1.0133867263793945
+  },
+  "split_half_residual_sigma_dn": {
+    "R": 2.089513063430786,
+    "Gr": 2.3458306789398193,
+    "Gb": 2.34440016746521,
+    "B": 2.0223231315612793
+  },
+  "split_half_signal_pixels": {
+    "R": 197414,
+    "Gr": 300491,
+    "Gb": 300739,
+    "B": 208068
+  },
+  "recovered_candidate_comparison": {
+    "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/.recovery/evidence/unclassified_artifacts/temporal_mean_native_dn.npy",
+    "shape_match": true,
+    "exact_equal": true,
+    "max_abs_difference_dn": 0.0,
+    "mean_abs_difference_dn": 0.0,
+    "sha256": "9d8be5d2f7a6676041d332bac21c87c0cbb3b0212bcb000d6a42e81fcfb103dd"
+  },
+  "outputs": {
+    "temporal_mean_native_dn.npy": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/evaluation/1000x_self_reference_probe/temporal_mean_native_dn.npy",
+      "shape": [
+        4,
+        540,
+        960
+      ],
+      "dtype": "float32",
+      "sha256": "9d8be5d2f7a6676041d332bac21c87c0cbb3b0212bcb000d6a42e81fcfb103dd"
+    },
+    "even_mean_native_dn.npy": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/evaluation/1000x_self_reference_probe/even_mean_native_dn.npy",
+      "shape": [
+        4,
+        540,
+        960
+      ],
+      "dtype": "float32",
+      "sha256": "7bba91e37f9220fbcc8d9e9f878dfe6b9878f8891010210077e2c1ed84294320"
+    },
+    "odd_mean_native_dn.npy": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/evaluation/1000x_self_reference_probe/odd_mean_native_dn.npy",
+      "shape": [
+        4,
+        540,
+        960
+      ],
+      "dtype": "float32",
+      "sha256": "d3b763aa50bd1490ab5473668fcd961b16a80603ab8d542519accda82c440e9a"
+    },
+    "confidence.npy": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/evaluation/1000x_self_reference_probe/confidence.npy",
+      "shape": [
+        540,
+        960
+      ],
+      "dtype": "float32",
+      "sha256": "dd963f5ed4fcd6aab699ff52944e8f89e5d8d6a638b1175d1aeca628ccb8f50a"
+    },
+    "valid_region.npy": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/evaluation/1000x_self_reference_probe/valid_region.npy",
+      "shape": [
+        540,
+        960
+      ],
+      "dtype": "bool",
+      "sha256": "377208b21f37abdd392534191138becd239b5759451f70c6772b5cdae6f2acd7"
+    },
+    "exposure_scales.npy": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/evaluation/1000x_self_reference_probe/exposure_scales.npy",
+      "shape": [
+        200,
+        4
+      ],
+      "dtype": "float32",
+      "sha256": "1185ce8968606e51a457b9fbab120c47a830cb2edca9a7e3e1698975f5be29bc"
+    }
+  },
+  "split_half_robust_sigma_dn": {
+    "R": 1.9677058458328247,
+    "Gr": 2.162452220916748,
+    "Gb": 2.1546919345855713,
+    "B": 1.9093235731124878
+  }
+}

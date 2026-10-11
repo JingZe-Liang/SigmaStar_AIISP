@@ -1,0 +1,29 @@
+{
+  "finetuned": {
+    "rmse_dn": 136.0227813720703,
+    "psnr_db": 29.572845102228044,
+    "pixels": 392740672
+  },
+  "input": {
+    "rmse_dn": 248.11965942382812,
+    "psnr_db": 24.351854594563612,
+    "pixels": 392740672
+  },
+  "temporal_mad_dn": 10.9573335647583,
+  "input_temporal_mad_dn": 199.0477752685547,
+  "legal_fraction": 1.0,
+  "high_frequency_ratio_mean": 0.9712439598969842,
+  "high_frequency_ratio_per_channel": [
+    0.9537009134290005,
+    0.9632106945508343,
+    0.9744547864525128,
+    0.993609445155589
+  ],
+  "flat_residual_sigma_dn": 83.19158935546875,
+  "static_pixels": 392740672,
+  "old_teacher": {
+    "rmse_dn": 162.6575927734375,
+    "psnr_db": 28.019591307211353,
+    "pixels": 392740672
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "dataset": "dataset_mis20s1_a3_step005000.json",
+  "split": {
+    "train_sequence": "645x",
+    "train_frames": [8, 191],
+    "validation_sequence": "645x",
+    "validation_frames": [100, 100],
+    "test_sequence": "128x",
+    "test_frames": [192, 199]
+  },
+  "model": {
+    "channels": [24, 48, 72],
+    "residual_scale": 0.03,
+    "use_temporal": true
+  },
+  "loss": {
+    "gradient_weight": 0.05,
+    "gate_weight": 0.02,
+    "residual_weight": 0.01,
+    "range_weight": 0.01,
+    "charbonnier_epsilon": 0.000065053343742,
+    "gate_temperature": 0.02,
+    "gate_margin": 0.005,
+    "saturation_margin_dn": 4
+  },
+  "train": {
+    "patch_size_packed": 128,
+    "samples_per_epoch": 100,
+    "batch_size": 1,
+    "epochs": 16,
+    "learning_rate": 0.0002,
+    "weight_decay": 0.0001,
+    "num_workers": 0,
+    "seed": 20260923,
+    "amp": true,
+    "device": "cuda"
+  },
+  "inference": {
+    "tile_size_packed": 256,
+    "overlap_packed": 32
+  },
+  "reliable_detail": {
+    "artifact_manifest": "/Data2/Bad_Example_Do_Not_Follow/Jaime/Projects/Stage2_DenoiseModel/artifacts/finetune_mis20s1/downstream_a3_step005000/supervision/manifest.json",
+    "detail_weight": 2,
+    "detail_gradient_weight": 0.25,
+    "detail_epsilon_dn": 1,
+    "detail_mask_floor": 0.05,
+    "unreliable_reconstruction_weight": 1.0
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "protocol": "A5 motion smoke regression evaluation",
+  "checkpoint": "/Data2/Bad_Example_Do_Not_Follow/Jaime/Projects/Stage2_DenoiseModel/artifacts/finetune_mis20s1/training_a5_same_window_teacher_flow1_r1/checkpoint_step_000020.pth",
+  "checkpoint_weights": "model",
+  "645x_holdout_frame_range": [
+    160,
+    200
+  ],
+  "1000x_native_frame_range": [
+    0,
+    40
+  ],
+  "cross_gain_645x": {
+    "baseline": {
+      "finetuned": {
+        "rmse_dn": 136.90896606445312,
+        "psnr_db": 29.51644030829074,
+        "pixels": 77428296
+      },
+      "input": {
+        "rmse_dn": 248.51712036132812,
+        "psnr_db": 24.33795186840179,
+        "pixels": 77428296
+      },
+      "temporal_mad_dn": 11.758078575134277,
+      "input_temporal_mad_dn": 199.70335388183594,
+      "legal_fraction": 1.0,
+      "high_frequency_ratio_mean": 0.9738957024988305,
+      "high_frequency_ratio_per_channel": [
+        0.9562446264814206,
+        0.9641289975368205,
+        0.9770208627071665,
+        0.9981883232699144
+      ],
+      "flat_residual_sigma_dn": 80.92623901367188,
+      "static_pixels": 77428296
+    },
+    "candidate": {
+      "finetuned": {
+        "rmse_dn": 137.39089965820312,
+        "psnr_db": 29.48591877446168,
+        "pixels": 77428296
+      },
+      "input": {
+        "rmse_dn": 248.51712036132812,
+        "psnr_db": 24.33795186840179,
+        "pixels": 77428296
+      },
+      "temporal_mad_dn": 12.057546615600586,
+      "input_temporal_mad_dn": 199.70335388183594,
+      "legal_fraction": 1.0,
+      "high_frequency_ratio_mean": 0.9610079755346744,
+      "high_frequency_ratio_per_channel": [
+        0.9416994415746954,
+        0.9527205284450267,
+        0.9626179220020913,
+        0.9869940101168843
+      ],
+      "flat_residual_sigma_dn": 81.43377685546875,
+      "static_pixels": 77428296
+    },
+    "baseline_motion": {
+      "motion_mean_abs_normalized": 0.06746602803468704,
+      "input_motion_mean_abs_normalized": 0.13802394270896912,
+      "motion_to_input_ratio": 0.48879945278167725,
+      "static_mean_abs_normalized": 0.003248195629566908
+    },
+    "candidate_motion": {
+      "motion_mean_abs_normalized": 0.06816763430833817,
+      "input_motion_mean_abs_normalized": 0.13802394270896912,
+      "motion_to_input_ratio": 0.4938826858997345,
+      "static_mean_abs_normalized": 0.0033227200619876385
+    }
+  },
+  "native_1000x": {
+    "baseline": {
+      "finetuned": {
+        "rmse_dn": 9.864322662353516,
+        "psnr_db": 52.36373272976205,
+        "pixels": 76255284
+      },
+      "input": {
+        "rmse_dn": 24.465728759765625,
+        "psnr_db": 44.47391498987998,
+        "pixels": 76255284
+      },
+      "temporal_mad_dn": 1.7932628393173218,
+      "input_temporal_mad_dn": 22.862985610961914,
+      "legal_fraction": 1.0,
+      "high_frequency_ratio_mean": 0.8570387424958834,
+      "high_frequency_ratio_per_channel": [
+        0.8555343472385678,
+        0.8981413953456135,
+        0.8814172227347076,
+        0.7930620046646444
+      ],
+      "flat_residual_sigma_dn": 8.633920669555664,
+      "static_pixels": 76255284,
+      "static_fraction": 0.9193586516203703
+    },
+    "candidate": {
+      "finetuned": {
+        "rmse_dn": 9.840042114257812,
+        "psnr_db": 52.3851389786055,
+        "pixels": 76255284
+      },
+      "input": {
+        "rmse_dn": 24.465728759765625,
+        "psnr_db": 44.47391498987998,
+        "pixels": 76255284
+      },
+      "temporal_mad_dn": 1.8428200483322144,
+      "input_temporal_mad_dn": 22.862985610961914,
+      "legal_fraction": 1.0,
+      "high_frequency_ratio_mean": 0.8503514543294611,
+      "high_frequency_ratio_per_channel": [
+        0.8462486749475376,
+        0.8921948928019915,
+        0.8752241742903961,
+        0.7877380752779194
+      ],
+      "flat_residual_sigma_dn": 8.613330841064453,
+      "static_pixels": 76255284,
+      "static_fraction": 0.9193586516203703
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "dataset_root": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset",
+  "supervision_dir": "/Data2/Bad_Example_Do_Not_Follow/Jaime/Projects/Stage2_DenoiseModel/artifacts/finetune_mis20s1/supervision",
+  "noise_dir": "/Data2/Bad_Example_Do_Not_Follow/Jaime/Projects/Stage2_DenoiseModel/artifacts/finetune_mis20s1/noise_model",
+  "output_dir": "artifacts/finetune_mis20s1/training",
+  "checkpoint": "/Data2/Bad_Example_Do_Not_Follow/Jaime/Projects/RViDeformer_distill/RViDeformer/checkpoints/RViDeformer-L_CRVD.pth",
+  "seed": 20260921,
+  "steps": 5000,
+  "temporal_frames": 8,
+  "patch_size": 64,
+  "batch_size": 1,
+  "learning_rate": 0.0001,
+  "real_fraction": 0.5,
+  "holdout_gain": "1000x",
+  "gradient_weight": 0.1,
+  "highpass_weight": 0.1,
+  "device": "cuda",
+  "synthetic_temporal_variants": 8,
+  "resume_checkpoint": "artifacts/finetune_mis20s1/training/checkpoint_step_000200.pth"
+}

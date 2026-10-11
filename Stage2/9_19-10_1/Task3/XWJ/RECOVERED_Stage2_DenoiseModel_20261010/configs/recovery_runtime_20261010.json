@@ -1,0 +1,31 @@
+{
+  "protocol": "stage2_recovery_runtime_v1",
+  "recovery_date": "2026-10-10",
+  "project_root": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010",
+  "dataset_root": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset",
+  "teacher_checkpoint": "artifacts/pretrained/RViDeformer-L_CRVD.pth",
+  "a3_checkpoint": "artifacts/finetune_mis20s1/training/checkpoint_step_005000.pth",
+  "supervision_dir": "artifacts/finetune_mis20s1/supervision",
+  "noise_dir": "artifacts/finetune_mis20s1/noise_model",
+  "evaluation_dir": "artifacts/finetune_mis20s1/evaluation",
+  "preferred_inference_gpu": {
+    "name": "NVIDIA GeForce RTX 4090",
+    "physical_index_at_recovery": 1,
+    "uuid": "GPU-9ee78cda-5391-4e9e-15d2-eeca142f4d7b",
+    "selection_rule": "set CUDA_VISIBLE_DEVICES to the UUID, then use cuda:0",
+    "reason": "selected by the user for the remaining recovery inference on 2026-10-10"
+  },
+  "verified_inference_gpus": [
+    {
+      "name": "NVIDIA GeForce RTX 3090",
+      "physical_index_at_recovery": 0,
+      "uuid": "GPU-07a5046e-9b56-8557-3845-d6cca9ea0497"
+    },
+    {
+      "name": "NVIDIA GeForce RTX 4090",
+      "physical_index_at_recovery": 1,
+      "uuid": "GPU-9ee78cda-5391-4e9e-15d2-eeca142f4d7b"
+    }
+  ],
+  "historical_data2_paths_are_not_runtime_paths": true
+}

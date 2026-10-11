@@ -1,0 +1,15 @@
+{
+  "protocol": "A5 stronger teacher-anchor EMA decision",
+  "decision": "rejected",
+  "approved_for_production": false,
+  "checkpoint": "artifacts/finetune_mis20s1/training_a5_teacher_anchor_flow1_staticw2/checkpoint_step_000020.pth",
+  "static_target_mode": "a3_teacher",
+  "static_anchor_weight": 2.0,
+  "motion_to_input_ratio_baseline": 0.48879945278167725,
+  "motion_to_input_ratio_candidate": 0.48816201090812683,
+  "cross_gain_645x_psnr_baseline_db": 29.51644030829074,
+  "cross_gain_645x_psnr_candidate_db": 29.512813742909895,
+  "native_1000x_psnr_baseline_db": 52.36373272976205,
+  "native_1000x_psnr_candidate_db": 52.370021332383914,
+  "reason": "EMA slightly preserves native quality but reduces motion fidelity relative to A3"
+}

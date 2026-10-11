@@ -1,0 +1,74 @@
+{
+  "protocol": "A6 frozen A3 motion expert with exact low-gain dynamic targets",
+  "checkpoint": "/Data2/Bad_Example_Do_Not_Follow/Jaime/Projects/Stage2_DenoiseModel/artifacts/finetune_mis20s1/training_a6_motion_expert_v2_4090/checkpoint_step_000200.pth",
+  "train_frame_range": [
+    0,
+    160
+  ],
+  "holdout_frame_range": [
+    160,
+    200
+  ],
+  "exact_holdout_before": {
+    "candidate_dynamic_rmse_dn": 79.89110136032104,
+    "baseline_dynamic_rmse_dn": 79.89110136032104,
+    "candidate_dynamic_psnr_db": 34.832500441309904,
+    "baseline_dynamic_psnr_db": 34.832500441309904,
+    "static_shift_from_a3_rmse_dn": 0.0,
+    "gate_motion_mean": 0.09975048154592514,
+    "gate_static_mean": 0.09975047875195742,
+    "gate_iou_0p5": 0.0,
+    "motion_to_target_temporal_ratio": 0.2922582468017936,
+    "samples": 16.0
+  },
+  "exact_holdout_after_model": {
+    "candidate_dynamic_rmse_dn": 80.97858166694641,
+    "baseline_dynamic_rmse_dn": 79.89110136032104,
+    "candidate_dynamic_psnr_db": 34.7205601736336,
+    "baseline_dynamic_psnr_db": 34.832500441309904,
+    "static_shift_from_a3_rmse_dn": 3.3508128034882247,
+    "gate_motion_mean": 0.5302194990217686,
+    "gate_static_mean": 0.23893232457339764,
+    "gate_iou_0p5": 0.46656599012203515,
+    "motion_to_target_temporal_ratio": 0.2911485079675913,
+    "samples": 16.0
+  },
+  "exact_holdout_after_ema": {
+    "candidate_dynamic_rmse_dn": 79.67750477790833,
+    "baseline_dynamic_rmse_dn": 79.89110136032104,
+    "candidate_dynamic_psnr_db": 34.85353080632448,
+    "baseline_dynamic_psnr_db": 34.832500441309904,
+    "static_shift_from_a3_rmse_dn": 1.0988603909499943,
+    "gate_motion_mean": 0.6110345106571913,
+    "gate_static_mean": 0.2820700630545616,
+    "gate_iou_0p5": 0.5330569243524224,
+    "motion_to_target_temporal_ratio": 0.29230461921542883,
+    "samples": 16.0
+  },
+  "exact_train_after_model": {
+    "candidate_dynamic_rmse_dn": 52.634724259376526,
+    "baseline_dynamic_rmse_dn": 50.957056760787964,
+    "candidate_dynamic_psnr_db": 39.41943188634716,
+    "baseline_dynamic_psnr_db": 39.61890222390795,
+    "static_shift_from_a3_rmse_dn": 1.609774564858526,
+    "gate_motion_mean": 0.35615963116288185,
+    "gate_static_mean": 0.195640804246068,
+    "gate_iou_0p5": 0.24028660403564572,
+    "motion_to_target_temporal_ratio": 0.3438998609781265,
+    "samples": 16.0
+  },
+  "exact_train_after_ema": {
+    "candidate_dynamic_rmse_dn": 50.82470852136612,
+    "baseline_dynamic_rmse_dn": 50.957056760787964,
+    "candidate_dynamic_psnr_db": 39.63038319238922,
+    "baseline_dynamic_psnr_db": 39.61890222390795,
+    "static_shift_from_a3_rmse_dn": 0.5115698203444481,
+    "gate_motion_mean": 0.4126805616542697,
+    "gate_static_mean": 0.22621510177850723,
+    "gate_iou_0p5": 0.2963844140758738,
+    "motion_to_target_temporal_ratio": 0.3459155084565282,
+    "samples": 16.0
+  },
+  "backbone_frozen": true,
+  "real_video_promotion_status": "not evaluated"
+}

@@ -1,0 +1,68 @@
+{
+  "seed": 20260921,
+  "pairs": [
+    {
+      "gain_label": "100",
+      "noisy_path": "artifacts/finetune_mis20s1/noise_model/synthetic_pairs/synthetic_ag100_noisy.npy",
+      "clean_path": "artifacts/finetune_mis20s1/noise_model/synthetic_pairs/clean_reference.npy",
+      "seed": 20260921,
+      "saturation_fraction": 0.0010233410493827161
+    },
+    {
+      "gain_label": "200",
+      "noisy_path": "artifacts/finetune_mis20s1/noise_model/synthetic_pairs/synthetic_ag200_noisy.npy",
+      "clean_path": "artifacts/finetune_mis20s1/noise_model/synthetic_pairs/clean_reference.npy",
+      "seed": 20260922,
+      "saturation_fraction": 0.0010397376543209876
+    },
+    {
+      "gain_label": "400",
+      "noisy_path": "artifacts/finetune_mis20s1/noise_model/synthetic_pairs/synthetic_ag400_noisy.npy",
+      "clean_path": "artifacts/finetune_mis20s1/noise_model/synthetic_pairs/clean_reference.npy",
+      "seed": 20260923,
+      "saturation_fraction": 0.0010807291666666667
+    },
+    {
+      "gain_label": "800",
+      "noisy_path": "artifacts/finetune_mis20s1/noise_model/synthetic_pairs/synthetic_ag800_noisy.npy",
+      "clean_path": "artifacts/finetune_mis20s1/noise_model/synthetic_pairs/clean_reference.npy",
+      "seed": 20260924,
+      "saturation_fraction": 0.0011115933641975308
+    },
+    {
+      "gain_label": "1600",
+      "noisy_path": "artifacts/finetune_mis20s1/noise_model/synthetic_pairs/synthetic_ag1600_noisy.npy",
+      "clean_path": "artifacts/finetune_mis20s1/noise_model/synthetic_pairs/clean_reference.npy",
+      "seed": 20260925,
+      "saturation_fraction": 0.0012056327160493826
+    },
+    {
+      "gain_label": "3200",
+      "noisy_path": "artifacts/finetune_mis20s1/noise_model/synthetic_pairs/synthetic_ag3200_noisy.npy",
+      "clean_path": "artifacts/finetune_mis20s1/noise_model/synthetic_pairs/clean_reference.npy",
+      "seed": 20260926,
+      "saturation_fraction": 0.0013580246913580246
+    },
+    {
+      "gain_label": "6400",
+      "noisy_path": "artifacts/finetune_mis20s1/noise_model/synthetic_pairs/synthetic_ag6400_noisy.npy",
+      "clean_path": "artifacts/finetune_mis20s1/noise_model/synthetic_pairs/clean_reference.npy",
+      "seed": 20260927,
+      "saturation_fraction": 0.0015567129629629629
+    },
+    {
+      "gain_label": "12800",
+      "noisy_path": "artifacts/finetune_mis20s1/noise_model/synthetic_pairs/synthetic_ag12800_noisy.npy",
+      "clean_path": "artifacts/finetune_mis20s1/noise_model/synthetic_pairs/clean_reference.npy",
+      "seed": 20260928,
+      "saturation_fraction": 0.0019285300925925926
+    },
+    {
+      "gain_label": "25600",
+      "noisy_path": "artifacts/finetune_mis20s1/noise_model/synthetic_pairs/synthetic_ag25600_noisy.npy",
+      "clean_path": "artifacts/finetune_mis20s1/noise_model/synthetic_pairs/clean_reference.npy",
+      "seed": 20260929,
+      "saturation_fraction": 0.002358699845679012
+    }
+  ]
+}

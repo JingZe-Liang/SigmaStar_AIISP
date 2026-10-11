@@ -1,0 +1,83 @@
+{
+  "protocol": "recovered A3 disjoint holdout baseline consensus",
+  "checkpoint": "artifacts/finetune_mis20s1/training/checkpoint_step_005000.pth",
+  "checkpoint_weights": "ema",
+  "645x_holdout_frame_range": [
+    160,
+    200
+  ],
+  "1000x_native_frame_range": [
+    0,
+    40
+  ],
+  "consensus_source_count": 10,
+  "consensus_sources": [
+    "artifacts/finetune_mis20s1/evaluation/a5_motion_smoke_flow1_ema/evaluation.json",
+    "artifacts/finetune_mis20s1/evaluation/a5_motion_smoke_flow1_lr1e6_dw1_ema/evaluation.json",
+    "artifacts/finetune_mis20s1/evaluation/a5_motion_smoke_flow1_lr1e6_dw1_model/evaluation.json",
+    "artifacts/finetune_mis20s1/evaluation/a5_motion_smoke_flow1_model/evaluation.json",
+    "artifacts/finetune_mis20s1/evaluation/a5_same_window_teacher_flow1_r1_model/evaluation.json",
+    "artifacts/finetune_mis20s1/evaluation/a5_same_window_teacher_flow1_r1_model_rerun/evaluation.json",
+    "artifacts/finetune_mis20s1/evaluation/a5_static_control_step20_model/evaluation.json",
+    "artifacts/finetune_mis20s1/evaluation/a5_teacher_anchor_flow1_model/evaluation.json",
+    "artifacts/finetune_mis20s1/evaluation/a5_teacher_anchor_flow1_staticw2_ema/evaluation.json",
+    "artifacts/finetune_mis20s1/evaluation/a5_teacher_anchor_flow1_staticw2_model_weights/evaluation.json"
+  ],
+  "cross_gain_645x": {
+    "metrics": {
+      "finetuned": {
+        "pixels": 77428296,
+        "psnr_db": 29.51644030829074,
+        "rmse_dn": 136.90896606445312
+      },
+      "flat_residual_sigma_dn": 80.92623901367188,
+      "high_frequency_ratio_mean": 0.9738957024988305,
+      "high_frequency_ratio_per_channel": [
+        0.9562446264814206,
+        0.9641289975368205,
+        0.9770208627071665,
+        0.9981883232699144
+      ],
+      "input": {
+        "pixels": 77428296,
+        "psnr_db": 24.33795186840179,
+        "rmse_dn": 248.51712036132812
+      },
+      "input_temporal_mad_dn": 199.70335388183594,
+      "legal_fraction": 1.0,
+      "static_pixels": 77428296,
+      "temporal_mad_dn": 11.758078575134277
+    },
+    "motion": {
+      "input_motion_mean_abs_normalized": 0.13802394270896912,
+      "motion_mean_abs_normalized": 0.06746602803468704,
+      "motion_to_input_ratio": 0.48879945278167725,
+      "static_mean_abs_normalized": 0.003248195629566908
+    }
+  },
+  "native_1000x": {
+    "finetuned": {
+      "pixels": 76255284,
+      "psnr_db": 52.36373272976205,
+      "rmse_dn": 9.864322662353516
+    },
+    "flat_residual_sigma_dn": 8.633920669555664,
+    "high_frequency_ratio_mean": 0.8570387424958834,
+    "high_frequency_ratio_per_channel": [
+      0.8555343472385678,
+      0.8981413953456135,
+      0.8814172227347076,
+      0.7930620046646444
+    ],
+    "input": {
+      "pixels": 76255284,
+      "psnr_db": 44.47391498987998,
+      "rmse_dn": 24.465728759765625
+    },
+    "input_temporal_mad_dn": 22.862985610961914,
+    "legal_fraction": 1.0,
+    "static_fraction": 0.9193586516203703,
+    "static_pixels": 76255284,
+    "temporal_mad_dn": 1.7932628393173218
+  }
+}

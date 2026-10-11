@@ -1,0 +1,20 @@
+{
+  "supervision_dir": "/Data2/Bad_Example_Do_Not_Follow/Jaime/Projects/Stage2_DenoiseModel/artifacts/finetune_mis20s1/supervision",
+  "noise_dir": "/Data2/Bad_Example_Do_Not_Follow/Jaime/Projects/Stage2_DenoiseModel/artifacts/finetune_mis20s1/noise_model",
+  "a3_checkpoint": "/Data2/Bad_Example_Do_Not_Follow/Jaime/Projects/Stage2_DenoiseModel/artifacts/finetune_mis20s1/training/checkpoint_step_005000.pth",
+  "dynamic_train_manifest": "/Data2/Bad_Example_Do_Not_Follow/Jaime/Projects/Stage2_DenoiseModel/artifacts/finetune_mis20s1/evaluation/a5_dynamic_train_flow1/manifest.json",
+  "dynamic_holdout_manifest": "/Data2/Bad_Example_Do_Not_Follow/Jaime/Projects/Stage2_DenoiseModel/artifacts/finetune_mis20s1/evaluation/a5_dynamic_holdout_flow1/manifest.json",
+  "output_dir": "artifacts/finetune_mis20s1/training_a5_same_window_teacher_flow1_r1",
+  "steps": 20,
+  "learning_rate": 1e-05,
+  "dynamic_weight": 1.0,
+  "ema_decay": 0.99,
+  "static_anchor_weight": 1.0,
+  "seed": 20260925,
+  "device": "cuda:0",
+  "patch_size": 64,
+  "eval_crops_per_window": 4,
+  "trainable_scope": "all",
+  "static_target_mode": "same_window_a3_teacher",
+  "motion_boundary_radius": 1
+}

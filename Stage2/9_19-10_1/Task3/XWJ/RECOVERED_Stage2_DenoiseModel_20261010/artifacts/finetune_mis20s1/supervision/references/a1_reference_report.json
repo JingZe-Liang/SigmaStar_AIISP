@@ -1,0 +1,178 @@
+{
+  "code_version": "finetune_a1_v2",
+  "dataset_root": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset",
+  "main_stream": "04/shdarkroom/10x",
+  "frames_used": 200,
+  "shape": [
+    4,
+    540,
+    960
+  ],
+  "black_levels": {
+    "R": 266.125,
+    "Gr": 275.625,
+    "Gb": 275.375,
+    "B": 267.0
+  },
+  "static_confidence_threshold": 0.9,
+  "static_fraction": 0.8715875771604938,
+  "exposure_scale_min": {
+    "R": 0.9989158511161804,
+    "Gr": 0.9989529848098755,
+    "Gb": 0.9990163445472717,
+    "B": 0.9989794492721558
+  },
+  "exposure_scale_max": {
+    "R": 1.0013424158096313,
+    "Gr": 1.0015506744384766,
+    "Gb": 1.0015887022018433,
+    "B": 1.0016640424728394
+  },
+  "paths": {
+    "clean_reference": "artifacts/finetune_mis20s1/supervision/references/04_shdarkroom_10x_clean_reference.npy",
+    "confidence": "artifacts/finetune_mis20s1/supervision/references/04_shdarkroom_10x_confidence.npy",
+    "valid_region": "artifacts/finetune_mis20s1/supervision/references/04_shdarkroom_10x_valid_region.npy",
+    "fpn_dsnu_dn": "artifacts/finetune_mis20s1/supervision/references/04_shdarkroom_fpn_dsnu_dn.npy",
+    "fpn_prnu_fraction": "artifacts/finetune_mis20s1/supervision/references/04_shdarkroom_fpn_prnu_fraction.npy",
+    "fpn_offset_dn": "artifacts/finetune_mis20s1/supervision/references/04_shdarkroom_fpn_offset_dn.npy"
+  },
+  "fpn_calibration_gain": "800",
+  "secondary_references": {
+    "64x": {
+      "mean_path": "artifacts/finetune_mis20s1/supervision/references/04_shdarkroom_64x_temporal_mean.npy",
+      "confidence_path": "artifacts/finetune_mis20s1/supervision/references/04_shdarkroom_64x_confidence.npy",
+      "frames": 200,
+      "static_fraction": 0.884988425925926,
+      "exposure_scale_min": {
+        "R": 0.9941166639328003,
+        "Gr": 0.9964962601661682,
+        "Gb": 0.9961041212081909,
+        "B": 0.9941231608390808
+      },
+      "exposure_scale_max": {
+        "R": 1.001754879951477,
+        "Gr": 1.001507043838501,
+        "Gb": 1.0014941692352295,
+        "B": 1.0023729801177979
+      }
+    },
+    "128x": {
+      "mean_path": "artifacts/finetune_mis20s1/supervision/references/04_shdarkroom_128x_temporal_mean.npy",
+      "confidence_path": "artifacts/finetune_mis20s1/supervision/references/04_shdarkroom_128x_confidence.npy",
+      "frames": 200,
+      "static_fraction": 0.8455883487654321,
+      "exposure_scale_min": {
+        "R": 0.9906376600265503,
+        "Gr": 0.9951159954071045,
+        "Gb": 0.9954279661178589,
+        "B": 0.9953052997589111
+      },
+      "exposure_scale_max": {
+        "R": 1.0044746398925781,
+        "Gr": 1.0034147500991821,
+        "Gb": 1.0034338235855103,
+        "B": 1.00430428981781
+      }
+    },
+    "645x": {
+      "mean_path": "artifacts/finetune_mis20s1/supervision/references/04_shdarkroom_645x_temporal_mean.npy",
+      "confidence_path": "artifacts/finetune_mis20s1/supervision/references/04_shdarkroom_645x_confidence.npy",
+      "frames": 200,
+      "static_fraction": 0.8983584104938271,
+      "exposure_scale_min": {
+        "R": 0.9931766986846924,
+        "Gr": 0.9939032793045044,
+        "Gb": 0.9939528703689575,
+        "B": 0.9926621317863464
+      },
+      "exposure_scale_max": {
+        "R": 1.0126087665557861,
+        "Gr": 1.0171034336090088,
+        "Gb": 1.015284776687622,
+        "B": 1.0154460668563843
+      }
+    }
+  },
+  "checks": {
+    "split_half": {
+      "limit_dn": 1.0,
+      "per_channel_dn": {
+        "R": 0.5109133720397949,
+        "Gr": 0.7971700429916382,
+        "Gb": 0.7625921368598938,
+        "B": 0.5604179501533508
+      },
+      "validation_regions": {
+        "left_static": {
+          "R": 0.5007463097572327,
+          "Gr": 0.6530604958534241,
+          "Gb": 0.6623842716217041,
+          "B": 0.5414307117462158
+        },
+        "lower_static": {
+          "R": 0.5109133720397949,
+          "Gr": 0.7971700429916382,
+          "Gb": 0.7625921368598938,
+          "B": 0.5604179501533508
+        }
+      },
+      "passed": true
+    },
+    "cross_gain_64x": {
+      "limit_abs_signed_median_dn": 2.0,
+      "per_channel": {
+        "R": {
+          "signed_median_dn": 1.271484375,
+          "absolute_median_dn": 7.66412353515625,
+          "pixels": 377649
+        },
+        "Gr": {
+          "signed_median_dn": 1.86480712890625,
+          "absolute_median_dn": 11.870941162109375,
+          "pixels": 399063
+        },
+        "Gb": {
+          "signed_median_dn": 1.73553466796875,
+          "absolute_median_dn": 12.075668334960938,
+          "pixels": 398788
+        },
+        "B": {
+          "signed_median_dn": 1.1746673583984375,
+          "absolute_median_dn": 7.543548583984375,
+          "pixels": 383412
+        }
+      },
+      "passed": true
+    },
+    "high_frequency_645x": {
+      "sensor_region": [
+        800,
+        1000,
+        320,
+        580
+      ],
+      "valid_fraction": 0.41607692307692307,
+      "contrast_ratio_10x_to_645x": 5.694423718043877,
+      "reference_detail_at_645x_scale_dn": 18.088079722477936,
+      "645x_noise_corrected_detail_dn": 6.090869849979994,
+      "per_frame": [
+        {
+          "frame": 77,
+          "single_highpass_dn": 31.19442367553711,
+          "noise_floor_dn": 25.080063786558135,
+          "noise_corrected_detail_dn": 6.114359888978974
+        },
+        {
+          "frame": 177,
+          "single_highpass_dn": 31.02061653137207,
+          "noise_floor_dn": 24.953236720391057,
+          "noise_corrected_detail_dn": 6.067379810981013
+        }
+      ],
+      "energy_ratio": 2.9697038629937804,
+      "limit_ratio": 0.9,
+      "passed": true
+    }
+  },
+  "passed": true
+}

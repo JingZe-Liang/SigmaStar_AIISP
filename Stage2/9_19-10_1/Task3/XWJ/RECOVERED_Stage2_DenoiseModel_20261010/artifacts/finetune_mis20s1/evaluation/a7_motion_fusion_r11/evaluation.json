@@ -1,0 +1,561 @@
+{
+  "protocol": "A7 deterministic restricted motion-region fusion",
+  "frame_range": [
+    160,
+    200
+  ],
+  "baseline_prediction": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/evaluation/prediction_645x.npy",
+  "teacher_prediction": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/evaluation/old_teacher_645x.npy",
+  "mask_params": {
+    "temporal_gap": 4,
+    "min_flow_px": 1.0,
+    "max_flow_px": 30.0,
+    "max_forward_backward_error_px": 1.5,
+    "max_photometric_error": 0.08,
+    "seed_dilation_radius": 11,
+    "feather_sigma": 1.0
+  },
+  "mask_summary": {
+    "strict_confidence_fraction_mean": 0.008467158564814814,
+    "fusion_weight_fraction_mean": 0.02808439429012346,
+    "fusion_weight_mean": 0.01923231966793537,
+    "static_nonzero_weights": 0
+  },
+  "baseline_static_metrics": {
+    "finetuned": {
+      "rmse_dn": 136.90957641601562,
+      "psnr_db": 29.516401585958324,
+      "pixels": 77428296
+    },
+    "input": {
+      "rmse_dn": 248.51712036132812,
+      "psnr_db": 24.33795186840179,
+      "pixels": 77428296
+    },
+    "temporal_mad_dn": 11.759798049926758,
+    "input_temporal_mad_dn": 199.70335388183594,
+    "legal_fraction": 1.0,
+    "high_frequency_ratio_mean": 0.9738802642325839,
+    "high_frequency_ratio_per_channel": [
+      0.9562777959782706,
+      0.9640953890613618,
+      0.9769958513707502,
+      0.9981520205199529
+    ],
+    "flat_residual_sigma_dn": 80.92697143554688,
+    "static_pixels": 77428296
+  },
+  "baseline_motion": {
+    "motion_mean_abs_normalized": 0.06746478378772736,
+    "input_motion_mean_abs_normalized": 0.13802394270896912,
+    "motion_to_input_ratio": 0.48879045248031616,
+    "static_mean_abs_normalized": 0.003248614491894841
+  },
+  "sweep": [
+    {
+      "alpha": 0.4,
+      "residual_clip_dn": 96.0,
+      "static_metrics": {
+        "finetuned": {
+          "rmse_dn": 136.90957641601562,
+          "psnr_db": 29.516401585958324,
+          "pixels": 77428296
+        },
+        "input": {
+          "rmse_dn": 248.51712036132812,
+          "psnr_db": 24.33795186840179,
+          "pixels": 77428296
+        },
+        "temporal_mad_dn": 11.759798049926758,
+        "input_temporal_mad_dn": 199.70335388183594,
+        "legal_fraction": 1.0,
+        "high_frequency_ratio_mean": 0.9738802818895634,
+        "high_frequency_ratio_per_channel": [
+          0.9562777959782706,
+          0.9640953890613618,
+          0.9769958513707502,
+          0.9981520911478711
+        ],
+        "flat_residual_sigma_dn": 80.92697143554688,
+        "static_pixels": 77428296
+      },
+      "motion": {
+        "motion_mean_abs_normalized": 0.06808287650346756,
+        "input_motion_mean_abs_normalized": 0.13802394270896912,
+        "motion_to_input_ratio": 0.49326860904693604,
+        "static_mean_abs_normalized": 0.003248614491894841
+      },
+      "motion_ratio_gain": 0.004478156566619873,
+      "shift_from_a3": {
+        "motion_mean_abs_dn": 9.116125106811523,
+        "motion_p95_abs_dn": 38.3856315612793,
+        "static_mean_abs_dn": 1.1639333933999296e-05,
+        "static_max_abs_dn": 0.00022821873426437378
+      }
+    },
+    {
+      "alpha": 0.3,
+      "residual_clip_dn": 96.0,
+      "static_metrics": {
+        "finetuned": {
+          "rmse_dn": 136.90957641601562,
+          "psnr_db": 29.516401585958324,
+          "pixels": 77428296
+        },
+        "input": {
+          "rmse_dn": 248.51712036132812,
+          "psnr_db": 24.33795186840179,
+          "pixels": 77428296
+        },
+        "temporal_mad_dn": 11.759798049926758,
+        "input_temporal_mad_dn": 199.70335388183594,
+        "legal_fraction": 1.0,
+        "high_frequency_ratio_mean": 0.9738802642325839,
+        "high_frequency_ratio_per_channel": [
+          0.9562777959782706,
+          0.9640953890613618,
+          0.9769958513707502,
+          0.9981520205199529
+        ],
+        "flat_residual_sigma_dn": 80.92697143554688,
+        "static_pixels": 77428296
+      },
+      "motion": {
+        "motion_mean_abs_normalized": 0.06789465248584747,
+        "input_motion_mean_abs_normalized": 0.13802394270896912,
+        "motion_to_input_ratio": 0.4919048845767975,
+        "static_mean_abs_normalized": 0.003248614491894841
+      },
+      "motion_ratio_gain": 0.0031144320964813232,
+      "shift_from_a3": {
+        "motion_mean_abs_dn": 6.837106704711914,
+        "motion_p95_abs_dn": 28.789260864257812,
+        "static_mean_abs_dn": 1.1639333933999296e-05,
+        "static_max_abs_dn": 0.00022821873426437378
+      }
+    },
+    {
+      "alpha": 0.4,
+      "residual_clip_dn": 64.0,
+      "static_metrics": {
+        "finetuned": {
+          "rmse_dn": 136.90957641601562,
+          "psnr_db": 29.516401585958324,
+          "pixels": 77428296
+        },
+        "input": {
+          "rmse_dn": 248.51712036132812,
+          "psnr_db": 24.33795186840179,
+          "pixels": 77428296
+        },
+        "temporal_mad_dn": 11.759798049926758,
+        "input_temporal_mad_dn": 199.70335388183594,
+        "legal_fraction": 1.0,
+        "high_frequency_ratio_mean": 0.9738802642325839,
+        "high_frequency_ratio_per_channel": [
+          0.9562777959782706,
+          0.9640953890613618,
+          0.9769958513707502,
+          0.9981520205199529
+        ],
+        "flat_residual_sigma_dn": 80.92697143554688,
+        "static_pixels": 77428296
+      },
+      "motion": {
+        "motion_mean_abs_normalized": 0.0678858608007431,
+        "input_motion_mean_abs_normalized": 0.13802394270896912,
+        "motion_to_input_ratio": 0.491841197013855,
+        "static_mean_abs_normalized": 0.003248614491894841
+      },
+      "motion_ratio_gain": 0.0030507445335388184,
+      "shift_from_a3": {
+        "motion_mean_abs_dn": 6.800944805145264,
+        "motion_p95_abs_dn": 25.59724235534668,
+        "static_mean_abs_dn": 1.1639333933999296e-05,
+        "static_max_abs_dn": 0.00022821873426437378
+      }
+    },
+    {
+      "alpha": 0.3,
+      "residual_clip_dn": 64.0,
+      "static_metrics": {
+        "finetuned": {
+          "rmse_dn": 136.90957641601562,
+          "psnr_db": 29.516401585958324,
+          "pixels": 77428296
+        },
+        "input": {
+          "rmse_dn": 248.51712036132812,
+          "psnr_db": 24.33795186840179,
+          "pixels": 77428296
+        },
+        "temporal_mad_dn": 11.759798049926758,
+        "input_temporal_mad_dn": 199.70335388183594,
+        "legal_fraction": 1.0,
+        "high_frequency_ratio_mean": 0.9738802642325839,
+        "high_frequency_ratio_per_channel": [
+          0.9562777959782706,
+          0.9640953890613618,
+          0.9769958513707502,
+          0.9981520205199529
+        ],
+        "flat_residual_sigma_dn": 80.92697143554688,
+        "static_pixels": 77428296
+      },
+      "motion": {
+        "motion_mean_abs_normalized": 0.06775606423616409,
+        "input_motion_mean_abs_normalized": 0.13802394270896912,
+        "motion_to_input_ratio": 0.49090081453323364,
+        "static_mean_abs_normalized": 0.003248614491894841
+      },
+      "motion_ratio_gain": 0.0021103620529174805,
+      "shift_from_a3": {
+        "motion_mean_abs_dn": 5.100712776184082,
+        "motion_p95_abs_dn": 19.19793128967285,
+        "static_mean_abs_dn": 1.1639333933999296e-05,
+        "static_max_abs_dn": 0.00022821873426437378
+      }
+    },
+    {
+      "alpha": 0.2,
+      "residual_clip_dn": 96.0,
+      "static_metrics": {
+        "finetuned": {
+          "rmse_dn": 136.90957641601562,
+          "psnr_db": 29.516401585958324,
+          "pixels": 77428296
+        },
+        "input": {
+          "rmse_dn": 248.51712036132812,
+          "psnr_db": 24.33795186840179,
+          "pixels": 77428296
+        },
+        "temporal_mad_dn": 11.759798049926758,
+        "input_temporal_mad_dn": 199.70335388183594,
+        "legal_fraction": 1.0,
+        "high_frequency_ratio_mean": 0.9738802642325839,
+        "high_frequency_ratio_per_channel": [
+          0.9562777959782706,
+          0.9640953890613618,
+          0.9769958513707502,
+          0.9981520205199529
+        ],
+        "flat_residual_sigma_dn": 80.92697143554688,
+        "static_pixels": 77428296
+      },
+      "motion": {
+        "motion_mean_abs_normalized": 0.06772404909133911,
+        "input_motion_mean_abs_normalized": 0.13802394270896912,
+        "motion_to_input_ratio": 0.4906688630580902,
+        "static_mean_abs_normalized": 0.003248614491894841
+      },
+      "motion_ratio_gain": 0.0018784105777740479,
+      "shift_from_a3": {
+        "motion_mean_abs_dn": 4.558070659637451,
+        "motion_p95_abs_dn": 19.192853927612305,
+        "static_mean_abs_dn": 1.1639333933999296e-05,
+        "static_max_abs_dn": 0.00022821873426437378
+      }
+    },
+    {
+      "alpha": 0.4,
+      "residual_clip_dn": 32.0,
+      "static_metrics": {
+        "finetuned": {
+          "rmse_dn": 136.90957641601562,
+          "psnr_db": 29.516401585958324,
+          "pixels": 77428296
+        },
+        "input": {
+          "rmse_dn": 248.51712036132812,
+          "psnr_db": 24.33795186840179,
+          "pixels": 77428296
+        },
+        "temporal_mad_dn": 11.759798049926758,
+        "input_temporal_mad_dn": 199.70335388183594,
+        "legal_fraction": 1.0,
+        "high_frequency_ratio_mean": 0.9738802642325839,
+        "high_frequency_ratio_per_channel": [
+          0.9562777959782706,
+          0.9640953890613618,
+          0.9769958513707502,
+          0.9981520205199529
+        ],
+        "flat_residual_sigma_dn": 80.92697143554688,
+        "static_pixels": 77428296
+      },
+      "motion": {
+        "motion_mean_abs_normalized": 0.06766320765018463,
+        "input_motion_mean_abs_normalized": 0.13802394270896912,
+        "motion_to_input_ratio": 0.4902280569076538,
+        "static_mean_abs_normalized": 0.003248614491894841
+      },
+      "motion_ratio_gain": 0.0014376044273376465,
+      "shift_from_a3": {
+        "motion_mean_abs_dn": 3.9115774631500244,
+        "motion_p95_abs_dn": 12.799574851989746,
+        "static_mean_abs_dn": 1.1639333933999296e-05,
+        "static_max_abs_dn": 0.00022821873426437378
+      }
+    },
+    {
+      "alpha": 0.2,
+      "residual_clip_dn": 64.0,
+      "static_metrics": {
+        "finetuned": {
+          "rmse_dn": 136.90957641601562,
+          "psnr_db": 29.516401585958324,
+          "pixels": 77428296
+        },
+        "input": {
+          "rmse_dn": 248.51712036132812,
+          "psnr_db": 24.33795186840179,
+          "pixels": 77428296
+        },
+        "temporal_mad_dn": 11.759798049926758,
+        "input_temporal_mad_dn": 199.70335388183594,
+        "legal_fraction": 1.0,
+        "high_frequency_ratio_mean": 0.9738802642325839,
+        "high_frequency_ratio_per_channel": [
+          0.9562777959782706,
+          0.9640953890613618,
+          0.9769958513707502,
+          0.9981520205199529
+        ],
+        "flat_residual_sigma_dn": 80.92697143554688,
+        "static_pixels": 77428296
+      },
+      "motion": {
+        "motion_mean_abs_normalized": 0.06763925403356552,
+        "input_motion_mean_abs_normalized": 0.13802394270896912,
+        "motion_to_input_ratio": 0.49005448818206787,
+        "static_mean_abs_normalized": 0.003248614491894841
+      },
+      "motion_ratio_gain": 0.001264035701751709,
+      "shift_from_a3": {
+        "motion_mean_abs_dn": 3.4004805088043213,
+        "motion_p95_abs_dn": 12.79862117767334,
+        "static_mean_abs_dn": 1.1639333933999296e-05,
+        "static_max_abs_dn": 0.00022821873426437378
+      }
+    },
+    {
+      "alpha": 0.3,
+      "residual_clip_dn": 32.0,
+      "static_metrics": {
+        "finetuned": {
+          "rmse_dn": 136.90957641601562,
+          "psnr_db": 29.516401585958324,
+          "pixels": 77428296
+        },
+        "input": {
+          "rmse_dn": 248.51712036132812,
+          "psnr_db": 24.33795186840179,
+          "pixels": 77428296
+        },
+        "temporal_mad_dn": 11.759798049926758,
+        "input_temporal_mad_dn": 199.70335388183594,
+        "legal_fraction": 1.0,
+        "high_frequency_ratio_mean": 0.9738802642325839,
+        "high_frequency_ratio_per_channel": [
+          0.9562777959782706,
+          0.9640953890613618,
+          0.9769958513707502,
+          0.9981520205199529
+        ],
+        "flat_residual_sigma_dn": 80.92697143554688,
+        "static_pixels": 77428296
+      },
+      "motion": {
+        "motion_mean_abs_normalized": 0.0676012858748436,
+        "input_motion_mean_abs_normalized": 0.13802394270896912,
+        "motion_to_input_ratio": 0.48977941274642944,
+        "static_mean_abs_normalized": 0.003248614491894841
+      },
+      "motion_ratio_gain": 0.0009889602661132812,
+      "shift_from_a3": {
+        "motion_mean_abs_dn": 2.933687448501587,
+        "motion_p95_abs_dn": 9.599678993225098,
+        "static_mean_abs_dn": 1.1639333933999296e-05,
+        "static_max_abs_dn": 0.00022821873426437378
+      }
+    },
+    {
+      "alpha": 0.1,
+      "residual_clip_dn": 96.0,
+      "static_metrics": {
+        "finetuned": {
+          "rmse_dn": 136.90957641601562,
+          "psnr_db": 29.516401585958324,
+          "pixels": 77428296
+        },
+        "input": {
+          "rmse_dn": 248.51712036132812,
+          "psnr_db": 24.33795186840179,
+          "pixels": 77428296
+        },
+        "temporal_mad_dn": 11.759798049926758,
+        "input_temporal_mad_dn": 199.70335388183594,
+        "legal_fraction": 1.0,
+        "high_frequency_ratio_mean": 0.9738802642325839,
+        "high_frequency_ratio_per_channel": [
+          0.9562777959782706,
+          0.9640953890613618,
+          0.9769958513707502,
+          0.9981520205199529
+        ],
+        "flat_residual_sigma_dn": 80.92697143554688,
+        "static_pixels": 77428296
+      },
+      "motion": {
+        "motion_mean_abs_normalized": 0.06757723540067673,
+        "input_motion_mean_abs_normalized": 0.13802394270896912,
+        "motion_to_input_ratio": 0.4896051585674286,
+        "static_mean_abs_normalized": 0.003248614491894841
+      },
+      "motion_ratio_gain": 0.0008147060871124268,
+      "shift_from_a3": {
+        "motion_mean_abs_dn": 2.2790439128875732,
+        "motion_p95_abs_dn": 9.596407890319824,
+        "static_mean_abs_dn": 1.1639333933999296e-05,
+        "static_max_abs_dn": 0.00022821873426437378
+      }
+    },
+    {
+      "alpha": 0.2,
+      "residual_clip_dn": 32.0,
+      "static_metrics": {
+        "finetuned": {
+          "rmse_dn": 136.90957641601562,
+          "psnr_db": 29.516401585958324,
+          "pixels": 77428296
+        },
+        "input": {
+          "rmse_dn": 248.51712036132812,
+          "psnr_db": 24.33795186840179,
+          "pixels": 77428296
+        },
+        "temporal_mad_dn": 11.759798049926758,
+        "input_temporal_mad_dn": 199.70335388183594,
+        "legal_fraction": 1.0,
+        "high_frequency_ratio_mean": 0.9738802642325839,
+        "high_frequency_ratio_per_channel": [
+          0.9562777959782706,
+          0.9640953890613618,
+          0.9769958513707502,
+          0.9981520205199529
+        ],
+        "flat_residual_sigma_dn": 80.92697143554688,
+        "static_pixels": 77428296
+      },
+      "motion": {
+        "motion_mean_abs_normalized": 0.06754683703184128,
+        "input_motion_mean_abs_normalized": 0.13802394270896912,
+        "motion_to_input_ratio": 0.4893849194049835,
+        "static_mean_abs_normalized": 0.003248614491894841
+      },
+      "motion_ratio_gain": 0.0005944669246673584,
+      "shift_from_a3": {
+        "motion_mean_abs_dn": 1.9557932615280151,
+        "motion_p95_abs_dn": 6.399730205535889,
+        "static_mean_abs_dn": 1.1639333933999296e-05,
+        "static_max_abs_dn": 0.00022821873426437378
+      }
+    },
+    {
+      "alpha": 0.1,
+      "residual_clip_dn": 64.0,
+      "static_metrics": {
+        "finetuned": {
+          "rmse_dn": 136.90957641601562,
+          "psnr_db": 29.516401585958324,
+          "pixels": 77428296
+        },
+        "input": {
+          "rmse_dn": 248.51712036132812,
+          "psnr_db": 24.33795186840179,
+          "pixels": 77428296
+        },
+        "temporal_mad_dn": 11.759798049926758,
+        "input_temporal_mad_dn": 199.70335388183594,
+        "legal_fraction": 1.0,
+        "high_frequency_ratio_mean": 0.9738802642325839,
+        "high_frequency_ratio_per_channel": [
+          0.9562777959782706,
+          0.9640953890613618,
+          0.9769958513707502,
+          0.9981520205199529
+        ],
+        "flat_residual_sigma_dn": 80.92697143554688,
+        "static_pixels": 77428296
+      },
+      "motion": {
+        "motion_mean_abs_normalized": 0.06754029542207718,
+        "input_motion_mean_abs_normalized": 0.13802394270896912,
+        "motion_to_input_ratio": 0.4893375337123871,
+        "static_mean_abs_normalized": 0.003248614491894841
+      },
+      "motion_ratio_gain": 0.0005470812320709229,
+      "shift_from_a3": {
+        "motion_mean_abs_dn": 1.7002447843551636,
+        "motion_p95_abs_dn": 6.399311542510986,
+        "static_mean_abs_dn": 1.1639333933999296e-05,
+        "static_max_abs_dn": 0.00022821873426437378
+      }
+    },
+    {
+      "alpha": 0.1,
+      "residual_clip_dn": 32.0,
+      "static_metrics": {
+        "finetuned": {
+          "rmse_dn": 136.90957641601562,
+          "psnr_db": 29.516401585958324,
+          "pixels": 77428296
+        },
+        "input": {
+          "rmse_dn": 248.51712036132812,
+          "psnr_db": 24.33795186840179,
+          "pixels": 77428296
+        },
+        "temporal_mad_dn": 11.759798049926758,
+        "input_temporal_mad_dn": 199.70335388183594,
+        "legal_fraction": 1.0,
+        "high_frequency_ratio_mean": 0.9738802642325839,
+        "high_frequency_ratio_per_channel": [
+          0.9562777959782706,
+          0.9640953890613618,
+          0.9769958513707502,
+          0.9981520205199529
+        ],
+        "flat_residual_sigma_dn": 80.92697143554688,
+        "static_pixels": 77428296
+      },
+      "motion": {
+        "motion_mean_abs_normalized": 0.06750106811523438,
+        "input_motion_mean_abs_normalized": 0.13802394270896912,
+        "motion_to_input_ratio": 0.489053338766098,
+        "static_mean_abs_normalized": 0.003248614491894841
+      },
+      "motion_ratio_gain": 0.00026288628578186035,
+      "shift_from_a3": {
+        "motion_mean_abs_dn": 0.9779037833213806,
+        "motion_p95_abs_dn": 3.1998651027679443,
+        "static_mean_abs_dn": 1.1639333933999296e-05,
+        "static_max_abs_dn": 0.00022821873426437378
+      }
+    }
+  ],
+  "preview_setting": {
+    "alpha": 0.3,
+    "residual_clip_dn": 64.0,
+    "prediction": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/evaluation/a7_motion_fusion_r11/prediction_645x_holdout_preview.npy",
+    "panels": [
+      "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/evaluation/a7_motion_fusion_r11/frame_0168_panel.png",
+      "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/evaluation/a7_motion_fusion_r11/frame_0169_panel.png",
+      "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/evaluation/a7_motion_fusion_r11/frame_0170_panel.png",
+      "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/evaluation/a7_motion_fusion_r11/frame_0171_panel.png",
+      "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/evaluation/a7_motion_fusion_r11/frame_0172_panel.png",
+      "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/evaluation/a7_motion_fusion_r11/frame_0173_panel.png"
+    ]
+  }
+}

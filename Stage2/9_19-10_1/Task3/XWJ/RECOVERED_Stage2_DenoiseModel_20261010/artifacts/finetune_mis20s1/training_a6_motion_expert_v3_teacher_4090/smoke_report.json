@@ -1,0 +1,110 @@
+{
+  "protocol": "A6 frozen A3 motion expert with exact low-gain dynamic targets",
+  "checkpoint": "/Data2/Bad_Example_Do_Not_Follow/Jaime/Projects/Stage2_DenoiseModel/artifacts/finetune_mis20s1/training_a6_motion_expert_v3_teacher_4090/checkpoint_step_000200.pth",
+  "train_frame_range": [
+    0,
+    160
+  ],
+  "holdout_frame_range": [
+    160,
+    200
+  ],
+  "exact_holdout_before": {
+    "candidate_dynamic_rmse_dn": 79.67750477790833,
+    "baseline_dynamic_rmse_dn": 79.89110136032104,
+    "candidate_dynamic_psnr_db": 34.85353080632448,
+    "baseline_dynamic_psnr_db": 34.832500441309904,
+    "static_shift_from_a3_rmse_dn": 1.0988603909499943,
+    "gate_motion_mean": 0.6110345106571913,
+    "gate_static_mean": 0.2820700630545616,
+    "gate_iou_0p5": 0.5330569243524224,
+    "motion_to_target_temporal_ratio": 0.29230461921542883,
+    "samples": 16.0
+  },
+  "exact_holdout_after_model": {
+    "candidate_dynamic_rmse_dn": 85.66913962364197,
+    "baseline_dynamic_rmse_dn": 79.89110136032104,
+    "candidate_dynamic_psnr_db": 34.35933198689679,
+    "baseline_dynamic_psnr_db": 34.832500441309904,
+    "static_shift_from_a3_rmse_dn": 5.568269168958068,
+    "gate_motion_mean": 0.5148861864581704,
+    "gate_static_mean": 0.21664069779217243,
+    "gate_iou_0p5": 0.45132254163172547,
+    "motion_to_target_temporal_ratio": 0.29410178679972887,
+    "samples": 16.0
+  },
+  "exact_holdout_after_ema": {
+    "candidate_dynamic_rmse_dn": 84.59515380859375,
+    "baseline_dynamic_rmse_dn": 79.89110136032104,
+    "candidate_dynamic_psnr_db": 34.436489536050715,
+    "baseline_dynamic_psnr_db": 34.832500441309904,
+    "static_shift_from_a3_rmse_dn": 4.7773098815232515,
+    "gate_motion_mean": 0.5472345966845751,
+    "gate_static_mean": 0.23144235042855144,
+    "gate_iou_0p5": 0.4778697674628347,
+    "motion_to_target_temporal_ratio": 0.29300491232424974,
+    "samples": 16.0
+  },
+  "exact_train_after_model": {
+    "candidate_dynamic_rmse_dn": 52.288140535354614,
+    "baseline_dynamic_rmse_dn": 50.957056760787964,
+    "candidate_dynamic_psnr_db": 39.48231366588806,
+    "baseline_dynamic_psnr_db": 39.61890222390795,
+    "static_shift_from_a3_rmse_dn": 2.3154721464961767,
+    "gate_motion_mean": 0.3423435352742672,
+    "gate_static_mean": 0.1761185103096068,
+    "gate_iou_0p5": 0.2344886177452281,
+    "motion_to_target_temporal_ratio": 0.34843471832573414,
+    "samples": 16.0
+  },
+  "exact_train_after_ema": {
+    "candidate_dynamic_rmse_dn": 52.826620161533356,
+    "baseline_dynamic_rmse_dn": 50.957056760787964,
+    "candidate_dynamic_psnr_db": 39.418262805326705,
+    "baseline_dynamic_psnr_db": 39.61890222390795,
+    "static_shift_from_a3_rmse_dn": 1.9852034635841846,
+    "gate_motion_mean": 0.36414716579020023,
+    "gate_static_mean": 0.1862664525397122,
+    "gate_iou_0p5": 0.2520749397808686,
+    "motion_to_target_temporal_ratio": 0.34644590597599745,
+    "samples": 16.0
+  },
+  "old_teacher_holdout_before": {
+    "candidate_dynamic_rmse_dn": 166.8242576122284,
+    "baseline_dynamic_rmse_dn": 166.5412518978119,
+    "candidate_dynamic_psnr_db": 28.410304826195738,
+    "baseline_dynamic_psnr_db": 28.41889612023163,
+    "static_shift_from_a3_rmse_dn": 1.1438125958666205,
+    "gate_motion_mean": 0.5679976213723421,
+    "gate_static_mean": 0.30771872214972973,
+    "gate_iou_0p5": 0.43420283356681466,
+    "motion_to_target_temporal_ratio": 0.6802996192127466,
+    "samples": 16.0
+  },
+  "old_teacher_holdout_after_model": {
+    "candidate_dynamic_rmse_dn": 149.6703052520752,
+    "baseline_dynamic_rmse_dn": 166.5412518978119,
+    "candidate_dynamic_psnr_db": 29.2681677461685,
+    "baseline_dynamic_psnr_db": 28.41889612023163,
+    "static_shift_from_a3_rmse_dn": 10.136618448421359,
+    "gate_motion_mean": 0.5136028341948986,
+    "gate_static_mean": 0.26306302286684513,
+    "gate_iou_0p5": 0.39122635149396956,
+    "motion_to_target_temporal_ratio": 0.6975048910826445,
+    "samples": 16.0
+  },
+  "old_teacher_holdout_after_ema": {
+    "candidate_dynamic_rmse_dn": 153.54602694511414,
+    "baseline_dynamic_rmse_dn": 166.5412518978119,
+    "candidate_dynamic_psnr_db": 29.027174646703465,
+    "baseline_dynamic_psnr_db": 28.41889612023163,
+    "static_shift_from_a3_rmse_dn": 8.099316656589508,
+    "gate_motion_mean": 0.5344052817672491,
+    "gate_static_mean": 0.275071969255805,
+    "gate_iou_0p5": 0.4077291302382946,
+    "motion_to_target_temporal_ratio": 0.6859861575067043,
+    "samples": 16.0
+  },
+  "backbone_frozen": true,
+  "real_video_promotion_status": "not evaluated"
+}

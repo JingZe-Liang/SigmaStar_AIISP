@@ -1,0 +1,32 @@
+destination	source	recovery_class	notes
+tracked HEAD tree	MAGIC-2 recovered Git index and zlib objects	exact_git_blob	33/33 tracked paths matched by Git object ID
+.git/objects	MAGIC-2 recovered zlib Git objects	exact_git_object	HEAD is complete; one older tree remains missing
+artifacts/pretrained/RViDeformer-L_CRVD.pth	MAGIC-2/application/zip\\012-/I_0030564530.unknown	verified_internal_identity	1265 tensors; strict architecture load passed
+artifacts/finetune_mis20s1/training/checkpoint_step_005000.pth	MAGIC-2/application/zip\\012-/I_0030566276.unknown	verified_internal_identity	step 5000 canonical archive name
+artifacts/finetune_mis20s1/training/latest.pth	MAGIC-1/<3146235>/latest.pth	exact_named_file	model and EMA tensors equal canonical step-5000 file
+artifacts/finetune_mis20s1/training_a5_motion_smoke_flow1/*	MAGIC-2 I_0030552116/17/18/19	verified_internal_identity	config, log, checkpoint, report
+artifacts/finetune_mis20s1/training_a5_motion_smoke_flow1_lr1e6_dw1/*	MAGIC-2 I_0030552589/90/91/92	verified_internal_identity	config, log, checkpoint, report
+artifacts/finetune_mis20s1/training_a5_motion_mutattn_flow1/*	MAGIC-2 I_0030552284/85/86/87	verified_internal_identity	config, log, checkpoint, report
+artifacts/finetune_mis20s1/training_a5_teacher_anchor_flow1_staticw2/*	MAGIC-1/<3276820>	exact_named_directory	config, log, checkpoint, report
+artifacts/finetune_mis20s1/training_a5_same_window_teacher_flow1_r1/checkpoint_step_000020.pth	MAGIC-2/application/zip\\012-/I_0030536834.unknown	verified_internal_identity	output_dir embedded in checkpoint
+artifacts/finetune_mis20s1/training_a5_same_window_teacher_flow1_r1/train.jsonl	MAGIC-2/application/json\\012-/I_0030533326	verified_time_and_schema	20 same-window training records
+artifacts/finetune_mis20s1/evaluation/a5_*/prediction_*.npy	MAGIC-2/application/octet-stream/I_003055*.unknown	verified_time_shape_and_metrics	paired by run timestamps, array means, and evaluation paths
+artifacts/finetune_mis20s1/training_a6_motion_expert_4090/*	MAGIC-1/<3145754>	exact_named_directory	v1 step 100
+artifacts/finetune_mis20s1/training_a6_motion_expert_v2_4090/*	MAGIC-2 I_0030549777/78/79 and I_0030549808	verified_internal_identity	v2 step 200
+artifacts/finetune_mis20s1/training_a6_motion_expert_v3_teacher_4090/*	MAGIC-2 I_0030549781/83/84	verified_internal_identity	v3 step 200; train log not found
+artifacts/finetune_mis20s1/training_a6_motion_expert_v4_procedural_4090/*	MAGIC-2 I_0030549786/87/88/89	verified_internal_identity	v4 step 300
+artifacts/finetune_mis20s1/evaluation/a7_motion_fusion/*	MAGIC-1/<7340033>	exact_named_directory	final static-guarded base sweep and preview
+artifacts/finetune_mis20s1/evaluation/a7_motion_fusion_r11/fusion_weights_645x_holdout.npy	MAGIC-1/<7340043>/fusion_weights_645x_holdout.npy	context_and_statistics	r11 assignment from larger recovered mask support
+artifacts/finetune_mis20s1/evaluation/a7_motion_fusion_r7/fusion_weights_645x_holdout.npy	MAGIC-1/<7340044>/fusion_weights_645x_holdout.npy	context_and_statistics	r7 assignment from smaller recovered mask support
+artifacts/finetune_mis20s1/evaluation/a7_motion_fusion_pre_static_guard/evaluation.json	MAGIC-2 I_0030549546	verified_report_content	pre-static-guard report
+artifacts/finetune_mis20s1/evaluation/a7_motion_fusion_pre_static_guard/prediction_645x_holdout_preview.npy	MAGIC-2 I_0030549539	verified_npy_and_report_path	pre-static-guard prediction
+artifacts/finetune_mis20s1/supervision/references/a1_reference_*.json	MAGIC-2 I_0003146134/I_0003146131	exact_content_path_rebased	original absolute-path copies preserved in evidence
+artifacts/finetune_mis20s1/supervision/references/04_shdarkroom_*.npy	MAGIC-2 I_0003146129-41 and I_0030547591-7600	verified_statistics	matched report shapes, means, masks, and FPN ranges
+artifacts/finetune_mis20s1/supervision/stream_manifests/*.json	MAGIC-2 recovered finetune_a0_v1 JSON objects	exact_content_path_rebased	33 unique manifests
+artifacts/finetune_mis20s1/noise_model/noise_model.json	MAGIC-2/application/json\\012-/I_0030580227	exact_content	finetune_a2_v1
+artifacts/finetune_mis20s1/noise_model/authenticity_report.json	MAGIC-2/application/json\\012-/I_0030580230	exact_content	authenticity passed
+artifacts/finetune_mis20s1/noise_model/synthetic_pairs_manifest.json	MAGIC-2/application/json\\012-/I_0030580229	exact_content_path_rebased	9 pairs
+artifacts/finetune_mis20s1/noise_model/synthetic_pairs/*.npy	MAGIC-2 I_0030550290/98-304 and I_0030580225/26	verified_statistics	gain assignment matched saturation fractions exactly
+src/raw_fusion/finetune/noise.py	HEAD blob plus recovered A6 tests	behavioral_reconstruction	accept packed (4,H,W) patches
+src/raw_fusion/finetune/a3.py	HEAD blob plus recovered official checkpoint	compatibility_reconstruction	local checkpoint fallback and safe original-module loading
+.recovery/evidence/*	MAGIC-2 ambiguous or original-path objects	evidence_only	not asserted as canonical artifacts

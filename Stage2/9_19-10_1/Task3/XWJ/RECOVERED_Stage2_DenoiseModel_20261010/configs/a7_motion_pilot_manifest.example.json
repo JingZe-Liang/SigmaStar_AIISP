@@ -1,0 +1,32 @@
+{
+  "schema_version": "stage2_a7_motion_pilot_v1",
+  "sensor": "MIS20S1",
+  "width": 1920,
+  "height": 1080,
+  "dtype": "uint16_le",
+  "bit_alignment": "high12",
+  "cfa": "RGGB",
+  "black_level_dn": 256.0,
+  "white_level_dn": 4095,
+  "clips": [
+    {
+      "clip_id": "train_s01_lateral_walk",
+      "scene_id": "s01",
+      "split": "train",
+      "motion_type": "lateral_walk",
+      "path": "train/s01/lateral_walk.raw",
+      "fps": 12.5,
+      "exposure_us": 4000,
+      "sensor_gain": 1024,
+      "isp_gain": 1024,
+      "wb_r": 2048,
+      "wb_g": 1024,
+      "wb_b": 2048,
+      "nr_disabled": true,
+      "auto_exposure": false,
+      "auto_gain": false,
+      "auto_white_balance": false,
+      "tripod_fixed": true
+    }
+  ]
+}

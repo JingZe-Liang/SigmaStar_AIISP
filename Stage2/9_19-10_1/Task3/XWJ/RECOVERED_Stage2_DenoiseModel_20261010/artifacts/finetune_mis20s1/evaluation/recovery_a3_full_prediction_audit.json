@@ -1,0 +1,57 @@
+{
+  "protocol": "recovered prediction fingerprint audit",
+  "expected_a3_baseline": {
+    "645x_psnr_db": 29.51644030829074,
+    "645x_motion_to_input_ratio": 0.48879945278167725,
+    "native_psnr_db": 52.36373272976205,
+    "native_rmse_dn": 9.864322662353516
+  },
+  "candidates_645x": [
+    {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/evaluation/prediction_645x.npy",
+      "shape": [
+        40,
+        4,
+        540,
+        960
+      ],
+      "metrics": {
+        "finetuned": {
+          "rmse_dn": 136.90957641601562,
+          "psnr_db": 29.516401585958324,
+          "pixels": 77428296
+        },
+        "input": {
+          "rmse_dn": 248.51712036132812,
+          "psnr_db": 24.33795186840179,
+          "pixels": 77428296
+        },
+        "temporal_mad_dn": 11.759798049926758,
+        "input_temporal_mad_dn": 199.70335388183594,
+        "legal_fraction": 1.0,
+        "high_frequency_ratio_mean": 0.9738802642325839,
+        "high_frequency_ratio_per_channel": [
+          0.9562777959782706,
+          0.9640953890613618,
+          0.9769958513707502,
+          0.9981520205199529
+        ],
+        "flat_residual_sigma_dn": 80.92697143554688,
+        "static_pixels": 77428296
+      },
+      "motion": {
+        "motion_mean_abs_normalized": 0.06746478378772736,
+        "input_motion_mean_abs_normalized": 0.13802394270896912,
+        "motion_to_input_ratio": 0.48879045248031616,
+        "static_mean_abs_normalized": 0.003248614491894841
+      },
+      "baseline_distance": {
+        "psnr_db": 3.872233241608569e-05,
+        "motion_to_input_ratio": 9.000301361083984e-06
+      },
+      "exact_baseline_fingerprint": false,
+      "matches_baseline_tolerance": true
+    }
+  ],
+  "candidates_native_1000x": []
+}

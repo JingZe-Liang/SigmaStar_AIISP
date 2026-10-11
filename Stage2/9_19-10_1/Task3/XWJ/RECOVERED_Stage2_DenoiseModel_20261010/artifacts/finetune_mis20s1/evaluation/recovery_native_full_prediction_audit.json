@@ -1,0 +1,52 @@
+{
+  "protocol": "recovered prediction fingerprint audit",
+  "expected_a3_baseline": {
+    "645x_psnr_db": 29.51644030829074,
+    "645x_motion_to_input_ratio": 0.48879945278167725,
+    "native_psnr_db": 52.36373272976205,
+    "native_rmse_dn": 9.864322662353516
+  },
+  "candidates_645x": [],
+  "candidates_native_1000x": [
+    {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/evaluation/native_1000x/native_prediction_1000x.npy",
+      "shape": [
+        40,
+        4,
+        540,
+        960
+      ],
+      "metrics": {
+        "finetuned": {
+          "rmse_dn": 9.864322662353516,
+          "psnr_db": 52.36373272976205,
+          "pixels": 76255284
+        },
+        "input": {
+          "rmse_dn": 24.465728759765625,
+          "psnr_db": 44.47391498987998,
+          "pixels": 76255284
+        },
+        "temporal_mad_dn": 1.7932628393173218,
+        "input_temporal_mad_dn": 22.862985610961914,
+        "legal_fraction": 1.0,
+        "high_frequency_ratio_mean": 0.8570387424958834,
+        "high_frequency_ratio_per_channel": [
+          0.8555343472385678,
+          0.8981413953456135,
+          0.8814172227347076,
+          0.7930620046646444
+        ],
+        "flat_residual_sigma_dn": 8.633920669555664,
+        "static_pixels": 76255284,
+        "static_fraction": 0.9193586516203703
+      },
+      "baseline_distance": {
+        "psnr_db": 0.0,
+        "rmse_dn": 0.0
+      },
+      "exact_baseline_fingerprint": true,
+      "matches_baseline_tolerance": true
+    }
+  ]
+}

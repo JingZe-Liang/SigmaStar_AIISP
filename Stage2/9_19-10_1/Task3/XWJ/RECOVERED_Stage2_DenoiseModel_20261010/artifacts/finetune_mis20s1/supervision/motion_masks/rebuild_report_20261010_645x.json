@@ -1,0 +1,30 @@
+{
+  "protocol": "stage2_recovered_motion_mask_rebuild_v1",
+  "started_at": "2026-10-10T02:31:27.572252+00:00",
+  "repository": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010",
+  "supervision_dir": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision",
+  "chunk_frames": 25,
+  "selected": [
+    "04_shdarkroom_645x"
+  ],
+  "expected_masks": 1,
+  "status": "complete",
+  "masks": [
+    {
+      "manifest": "artifacts/finetune_mis20s1/supervision/stream_manifests/04_shdarkroom_645x.json",
+      "source": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/shdarkroom/645x/raw_stream_1920x1080_16bit@RG_[Shutter=79999,SenserG=131072,IspG=5167,R=2120,G=1024,B=1956].raw",
+      "mask": "artifacts/finetune_mis20s1/supervision/motion_masks/04_shdarkroom_645x.npy",
+      "status": "rebuilt_verified",
+      "max_black_level_error": 0.0,
+      "threshold_mean_error_dn": 0.0,
+      "bytes": 829440128,
+      "sha256": "0b96da771805703a5e89cd34c9ea5a842a23c0b755530903937b88d4c0594c97",
+      "static_fraction_mean": 0.9608785204475307,
+      "max_static_fraction_error": 0.0
+    }
+  ],
+  "completed_at": "2026-10-10T02:31:59.102811+00:00",
+  "rebuilt": 1,
+  "existing_verified": 0,
+  "total_bytes": 829440128
+}

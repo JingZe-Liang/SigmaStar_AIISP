@@ -1,0 +1,30 @@
+{
+  "protocol": "A5 motion-supervision smoke",
+  "checkpoint": "/Data2/Bad_Example_Do_Not_Follow/Jaime/Projects/Stage2_DenoiseModel/artifacts/finetune_mis20s1/training_a5_motion_smoke_flow1_lr1e6_dw1/checkpoint_step_000020.pth",
+  "dynamic_holdout_before": {
+    "loss": 0.02995390968862921,
+    "mask_fraction": 0.1387481689453125,
+    "samples": 16
+  },
+  "dynamic_holdout_after_model": {
+    "loss": 0.029914395767264068,
+    "mask_fraction": 0.1387481689453125,
+    "samples": 16
+  },
+  "dynamic_holdout_after_ema": {
+    "loss": 0.029949945281259716,
+    "mask_fraction": 0.1387481689453125,
+    "samples": 16
+  },
+  "training_frame_range": [
+    0,
+    160
+  ],
+  "holdout_frame_range": [
+    160,
+    200
+  ],
+  "dynamic_objective_improved": true,
+  "promotable": false,
+  "promotion_status": "requires motion-fidelity and native-regression evaluation"
+}

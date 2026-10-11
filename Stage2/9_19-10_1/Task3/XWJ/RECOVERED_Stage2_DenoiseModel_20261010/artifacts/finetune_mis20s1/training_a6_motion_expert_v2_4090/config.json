@@ -1,0 +1,38 @@
+{
+  "supervision_dir": "/Data2/Bad_Example_Do_Not_Follow/Jaime/Projects/Stage2_DenoiseModel/artifacts/finetune_mis20s1/supervision",
+  "noise_dir": "/Data2/Bad_Example_Do_Not_Follow/Jaime/Projects/Stage2_DenoiseModel/artifacts/finetune_mis20s1/noise_model",
+  "a3_checkpoint": "/Data2/Bad_Example_Do_Not_Follow/Jaime/Projects/Stage2_DenoiseModel/artifacts/finetune_mis20s1/training/checkpoint_step_005000.pth",
+  "output_dir": "artifacts/finetune_mis20s1/training_a6_motion_expert_v2_4090",
+  "steps": 200,
+  "learning_rate": 0.0002,
+  "temporal_frames": 8,
+  "patch_size": 64,
+  "train_frame_start": 0,
+  "train_frame_end": 160,
+  "holdout_frame_start": 160,
+  "holdout_frame_end": 200,
+  "temporal_strides": [
+    1,
+    2,
+    3
+  ],
+  "gain_labels": [
+    "3200",
+    "6400",
+    "12800",
+    "25600"
+  ],
+  "motion_crop_probability": 0.8,
+  "motion_boundary_radius": 2,
+  "same_window_anchor_weight": 2.0,
+  "static_anchor_weight": 2.0,
+  "gate_supervision_weight": 0.1,
+  "gate_static_weight": 0.1,
+  "static_every": 1,
+  "expert_channels": 32,
+  "max_residual": 0.25,
+  "ema_decay": 0.95,
+  "eval_samples": 16,
+  "seed": 20261009,
+  "device": "cuda:0"
+}

@@ -1,0 +1,146 @@
+{
+  "protocol": "A6 frozen A3 motion expert with exact low-gain dynamic targets",
+  "checkpoint": "/Data2/Bad_Example_Do_Not_Follow/Jaime/Projects/Stage2_DenoiseModel/artifacts/finetune_mis20s1/training_a6_motion_expert_v4_procedural_4090/checkpoint_step_000300.pth",
+  "train_frame_range": [
+    0,
+    160
+  ],
+  "holdout_frame_range": [
+    160,
+    200
+  ],
+  "exact_holdout_before": {
+    "candidate_dynamic_rmse_dn": 79.67750477790833,
+    "baseline_dynamic_rmse_dn": 79.89110136032104,
+    "candidate_dynamic_psnr_db": 34.85353080632448,
+    "baseline_dynamic_psnr_db": 34.832500441309904,
+    "static_shift_from_a3_rmse_dn": 1.0988603909499943,
+    "gate_motion_mean": 0.6110345106571913,
+    "gate_static_mean": 0.2820700630545616,
+    "gate_iou_0p5": 0.5330569243524224,
+    "motion_to_target_temporal_ratio": 0.29230461921542883,
+    "samples": 16.0
+  },
+  "exact_holdout_after_model": {
+    "candidate_dynamic_rmse_dn": 80.31872510910034,
+    "baseline_dynamic_rmse_dn": 79.89110136032104,
+    "candidate_dynamic_psnr_db": 34.78786387666901,
+    "baseline_dynamic_psnr_db": 34.832500441309904,
+    "static_shift_from_a3_rmse_dn": 1.8167569669894874,
+    "gate_motion_mean": 0.4071741374209523,
+    "gate_static_mean": 0.20555552747100592,
+    "gate_iou_0p5": 0.27232923201518133,
+    "motion_to_target_temporal_ratio": 0.29147739242762327,
+    "samples": 16.0
+  },
+  "exact_holdout_after_ema": {
+    "candidate_dynamic_rmse_dn": 79.92792797088623,
+    "baseline_dynamic_rmse_dn": 79.89110136032104,
+    "candidate_dynamic_psnr_db": 34.827601203068184,
+    "baseline_dynamic_psnr_db": 34.832500441309904,
+    "static_shift_from_a3_rmse_dn": 0.6951301731169224,
+    "gate_motion_mean": 0.4297960205003619,
+    "gate_static_mean": 0.21376974321901798,
+    "gate_iou_0p5": 0.2987427357584238,
+    "motion_to_target_temporal_ratio": 0.29201020020991564,
+    "samples": 16.0
+  },
+  "exact_train_after_model": {
+    "candidate_dynamic_rmse_dn": 51.91558748483658,
+    "baseline_dynamic_rmse_dn": 50.957056760787964,
+    "candidate_dynamic_psnr_db": 39.49708587461156,
+    "baseline_dynamic_psnr_db": 39.61890222390795,
+    "static_shift_from_a3_rmse_dn": 0.9476429941132665,
+    "gate_motion_mean": 0.29432553332298994,
+    "gate_static_mean": 0.17895506415516138,
+    "gate_iou_0p5": 0.1600998051580973,
+    "motion_to_target_temporal_ratio": 0.3441869467496872,
+    "samples": 16.0
+  },
+  "exact_train_after_ema": {
+    "candidate_dynamic_rmse_dn": 51.19355499744415,
+    "baseline_dynamic_rmse_dn": 50.957056760787964,
+    "candidate_dynamic_psnr_db": 39.59600106887407,
+    "baseline_dynamic_psnr_db": 39.61890222390795,
+    "static_shift_from_a3_rmse_dn": 0.33154813200235367,
+    "gate_motion_mean": 0.3075172808021307,
+    "gate_static_mean": 0.18447193875908852,
+    "gate_iou_0p5": 0.18183579517062753,
+    "motion_to_target_temporal_ratio": 0.34551688097417355,
+    "samples": 16.0
+  },
+  "old_teacher_holdout_before": {
+    "candidate_dynamic_rmse_dn": 166.8242576122284,
+    "baseline_dynamic_rmse_dn": 166.5412518978119,
+    "candidate_dynamic_psnr_db": 28.410304826195738,
+    "baseline_dynamic_psnr_db": 28.41889612023163,
+    "static_shift_from_a3_rmse_dn": 1.1438125958666205,
+    "gate_motion_mean": 0.5679976213723421,
+    "gate_static_mean": 0.30771872214972973,
+    "gate_iou_0p5": 0.43420283356681466,
+    "motion_to_target_temporal_ratio": 0.6802996192127466,
+    "samples": 16.0
+  },
+  "old_teacher_holdout_after_model": {
+    "candidate_dynamic_rmse_dn": 173.45532274246216,
+    "baseline_dynamic_rmse_dn": 166.5412518978119,
+    "candidate_dynamic_psnr_db": 28.064791921509034,
+    "baseline_dynamic_psnr_db": 28.41889612023163,
+    "static_shift_from_a3_rmse_dn": 7.031331222504377,
+    "gate_motion_mean": 0.4780854098498821,
+    "gate_static_mean": 0.26818988006561995,
+    "gate_iou_0p5": 0.32292019203305244,
+    "motion_to_target_temporal_ratio": 0.6671606302261353,
+    "samples": 16.0
+  },
+  "old_teacher_holdout_after_ema": {
+    "candidate_dynamic_rmse_dn": 170.29416155815125,
+    "baseline_dynamic_rmse_dn": 166.5412518978119,
+    "candidate_dynamic_psnr_db": 28.22325088996667,
+    "baseline_dynamic_psnr_db": 28.41889612023163,
+    "static_shift_from_a3_rmse_dn": 3.30373184196651,
+    "gate_motion_mean": 0.48925662972033024,
+    "gate_static_mean": 0.2744244858622551,
+    "gate_iou_0p5": 0.3397631226107478,
+    "motion_to_target_temporal_ratio": 0.6749855615198612,
+    "samples": 16.0
+  },
+  "procedural_holdout_before": {
+    "candidate_dynamic_rmse_dn": 35.570154786109924,
+    "baseline_dynamic_rmse_dn": 35.569650650024414,
+    "candidate_dynamic_psnr_db": 41.91479279014451,
+    "baseline_dynamic_psnr_db": 41.9151100316537,
+    "static_shift_from_a3_rmse_dn": 0.32471096282824874,
+    "gate_motion_mean": 0.262170422822237,
+    "gate_static_mean": 0.21244521159678698,
+    "gate_iou_0p5": 0.06279875893960707,
+    "motion_to_target_temporal_ratio": 0.7544487528502941,
+    "samples": 16.0
+  },
+  "procedural_holdout_after_model": {
+    "candidate_dynamic_rmse_dn": 35.717960715293884,
+    "baseline_dynamic_rmse_dn": 35.569650650024414,
+    "candidate_dynamic_psnr_db": 41.876386520199944,
+    "baseline_dynamic_psnr_db": 41.9151100316537,
+    "static_shift_from_a3_rmse_dn": 0.7448491491377354,
+    "gate_motion_mean": 0.21773586980998516,
+    "gate_static_mean": 0.17465663980692625,
+    "gate_iou_0p5": 0.013181887530663516,
+    "motion_to_target_temporal_ratio": 0.7526405677199364,
+    "samples": 16.0
+  },
+  "procedural_holdout_after_ema": {
+    "candidate_dynamic_rmse_dn": 35.59793210029602,
+    "baseline_dynamic_rmse_dn": 35.569650650024414,
+    "candidate_dynamic_psnr_db": 41.90736844854025,
+    "baseline_dynamic_psnr_db": 41.9151100316537,
+    "static_shift_from_a3_rmse_dn": 0.19314546789973974,
+    "gate_motion_mean": 0.22320931311696768,
+    "gate_static_mean": 0.1796205509454012,
+    "gate_iou_0p5": 0.01538871575758094,
+    "motion_to_target_temporal_ratio": 0.7543933913111687,
+    "samples": 16.0
+  },
+  "backbone_frozen": true,
+  "real_video_promotion_status": "not evaluated"
+}

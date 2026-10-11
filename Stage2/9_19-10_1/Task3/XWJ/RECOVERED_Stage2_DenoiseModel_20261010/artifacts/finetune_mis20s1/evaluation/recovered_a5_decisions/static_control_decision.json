@@ -1,0 +1,12 @@
+{
+  "protocol": "A5 matched static-continuation control",
+  "decision": "control_completed",
+  "baseline_native_1000x_psnr_db": 52.36373272976205,
+  "static_control_native_1000x_psnr_db": 51.016078529009775,
+  "dynamic_candidate_native_1000x_psnr_db": 51.05544330720883,
+  "baseline_motion_to_input_ratio": 0.48879945278167725,
+  "static_control_motion_to_input_ratio": 0.4858943521976471,
+  "dynamic_candidate_motion_to_input_ratio": 0.4942362606525421,
+  "dynamic_net_motion_effect_vs_control": 0.00834190845489502,
+  "interpretation": "most native-domain regression is caused by ordinary static continuation at learning rate 1e-5; the dynamic branch has a positive net motion effect but the combined checkpoint remains unsafe"
+}

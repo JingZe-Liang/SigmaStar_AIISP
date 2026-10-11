@@ -1,0 +1,52 @@
+{
+  "group": "04",
+  "scene": "mis20s1_calibrationdata",
+  "gain_label": "3200",
+  "role": "calibration_flat",
+  "variant": "color",
+  "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/mis20s1_calibrationdata/color/3200/raw_stream_normal_1920x1080_16_GR_0205174119530_[FN=10,US=2578,AG=32768,DG=1034,BV=-23174,R=2316,G=1024,B=1983].raw",
+  "reader_kind": "single_file",
+  "width": 1920,
+  "height": 1080,
+  "frames_total": 50,
+  "frames_used": 50,
+  "bit_shift": 4,
+  "cfa": "GRBG",
+  "sensor_black_dn": 256.7,
+  "filename_metadata": {
+    "width": 1920,
+    "height": 1080,
+    "cfa_name": "GR",
+    "shutter_us": 2578,
+    "wb_r": 2316,
+    "wb_g": 1024,
+    "wb_b": 1983,
+    "frames_stated": 10,
+    "analog_gain": 32768,
+    "digital_gain": 1034,
+    "bias": -23174
+  },
+  "black_levels": {
+    "R": 305.25,
+    "Gr": 360.375,
+    "Gb": 359.5,
+    "B": 317.375
+  },
+  "sigma_split_half": {
+    "per_channel": {
+      "R": 47.385599247293804,
+      "Gr": 63.739615334714166,
+      "Gb": 63.739615334714166,
+      "B": 50.32114465508623
+    },
+    "population": "signal"
+  },
+  "frame_mean_cv": 0.00014665131462237845,
+  "frame_mean_max_dev": 0.00036368420664478025,
+  "saturation_fraction": 0.0,
+  "motion": null,
+  "registration": null,
+  "exposure_fit": null,
+  "created_at": "2026-09-20T14:58:32.816279+00:00",
+  "code_version": "finetune_a0_v1"
+}

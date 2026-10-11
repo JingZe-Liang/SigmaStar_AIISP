@@ -1,0 +1,50 @@
+{
+  "protocol": "A6 frozen A3 motion expert with exact low-gain dynamic targets",
+  "checkpoint": "/Data2/Bad_Example_Do_Not_Follow/Jaime/Projects/Stage2_DenoiseModel/artifacts/finetune_mis20s1/training_a6_motion_expert_4090/checkpoint_step_000100.pth",
+  "train_frame_range": [
+    0,
+    160
+  ],
+  "holdout_frame_range": [
+    160,
+    200
+  ],
+  "exact_holdout_before": {
+    "candidate_dynamic_rmse_dn": 79.89110136032104,
+    "baseline_dynamic_rmse_dn": 79.89110136032104,
+    "candidate_dynamic_psnr_db": 34.832500441309904,
+    "baseline_dynamic_psnr_db": 34.832500441309904,
+    "static_shift_from_a3_rmse_dn": 0.0,
+    "gate_motion_mean": 0.09975048154592514,
+    "gate_static_mean": 0.09975047875195742,
+    "gate_iou_0p5": 0.0,
+    "motion_to_target_temporal_ratio": 0.2922582468017936,
+    "samples": 16.0
+  },
+  "exact_holdout_after_model": {
+    "candidate_dynamic_rmse_dn": 82.93921566009521,
+    "baseline_dynamic_rmse_dn": 79.89110136032104,
+    "candidate_dynamic_psnr_db": 34.561551468978365,
+    "baseline_dynamic_psnr_db": 34.832500441309904,
+    "static_shift_from_a3_rmse_dn": 5.055518953129649,
+    "gate_motion_mean": 0.2611693129874766,
+    "gate_static_mean": 0.12915177969262004,
+    "gate_iou_0p5": 0.12992728158133104,
+    "motion_to_target_temporal_ratio": 0.3238057317212224,
+    "samples": 16.0
+  },
+  "exact_holdout_after_ema": {
+    "candidate_dynamic_rmse_dn": 79.87194848060608,
+    "baseline_dynamic_rmse_dn": 79.89110136032104,
+    "candidate_dynamic_psnr_db": 34.834177066989206,
+    "baseline_dynamic_psnr_db": 34.832500441309904,
+    "static_shift_from_a3_rmse_dn": 0.11247751698829234,
+    "gate_motion_mean": 0.11362906452268362,
+    "gate_static_mean": 0.10412515886127949,
+    "gate_iou_0p5": 0.0,
+    "motion_to_target_temporal_ratio": 0.29222875367850065,
+    "samples": 16.0
+  },
+  "backbone_frozen": true,
+  "real_video_promotion_status": "not evaluated"
+}

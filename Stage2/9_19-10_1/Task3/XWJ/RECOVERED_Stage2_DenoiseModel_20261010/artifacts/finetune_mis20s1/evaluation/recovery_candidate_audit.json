@@ -1,0 +1,140 @@
+{
+  "protocol": "recovered prediction fingerprint audit",
+  "expected_a3_baseline": {
+    "645x_psnr_db": 29.51644030829074,
+    "645x_motion_to_input_ratio": 0.48879945278167725,
+    "native_psnr_db": 52.36373272976205,
+    "native_rmse_dn": 9.864322662353516
+  },
+  "candidates_645x": [
+    {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/.recovery/evidence/a5_teacher_anchor_flow1_unmatched_prediction_645x.npy",
+      "shape": [
+        40,
+        4,
+        540,
+        960
+      ],
+      "metrics": {
+        "finetuned": {
+          "rmse_dn": 136.98617553710938,
+          "psnr_db": 29.51154330301823,
+          "pixels": 77428296
+        },
+        "input": {
+          "rmse_dn": 248.51712036132812,
+          "psnr_db": 24.33795186840179,
+          "pixels": 77428296
+        },
+        "temporal_mad_dn": 11.686579704284668,
+        "input_temporal_mad_dn": 199.70335388183594,
+        "legal_fraction": 1.0,
+        "high_frequency_ratio_mean": 0.9720236253586007,
+        "high_frequency_ratio_per_channel": [
+          0.9542495894072971,
+          0.9618126747876427,
+          0.9749266399557557,
+          0.9971055972837067
+        ],
+        "flat_residual_sigma_dn": 80.99089813232422,
+        "static_pixels": 77428296
+      },
+      "motion": {
+        "motion_mean_abs_normalized": 0.06741797924041748,
+        "input_motion_mean_abs_normalized": 0.13802394270896912,
+        "motion_to_input_ratio": 0.4884513318538666,
+        "static_mean_abs_normalized": 0.00322850258089602
+      },
+      "baseline_distance": {
+        "psnr_db": 0.004897005272511024,
+        "motion_to_input_ratio": 0.00034812092781066895
+      },
+      "exact_baseline_fingerprint": false
+    },
+    {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/.recovery/evidence/a7_unmapped/prediction_645x_holdout_preview.npy",
+      "shape": [
+        40,
+        4,
+        540,
+        960
+      ],
+      "metrics": {
+        "finetuned": {
+          "rmse_dn": 136.90896606445312,
+          "psnr_db": 29.51644030829074,
+          "pixels": 77428296
+        },
+        "input": {
+          "rmse_dn": 248.51712036132812,
+          "psnr_db": 24.33795186840179,
+          "pixels": 77428296
+        },
+        "temporal_mad_dn": 11.758078575134277,
+        "input_temporal_mad_dn": 199.70335388183594,
+        "legal_fraction": 1.0,
+        "high_frequency_ratio_mean": 0.9738956924260449,
+        "high_frequency_ratio_per_channel": [
+          0.9562446264814206,
+          0.9641288866177595,
+          0.9770208627071665,
+          0.9981883938978326
+        ],
+        "flat_residual_sigma_dn": 80.92623901367188,
+        "static_pixels": 77428296
+      },
+      "motion": {
+        "motion_mean_abs_normalized": 0.06828588992357254,
+        "input_motion_mean_abs_normalized": 0.13802394270896912,
+        "motion_to_input_ratio": 0.49473944306373596,
+        "static_mean_abs_normalized": 0.003248195629566908
+      },
+      "baseline_distance": {
+        "psnr_db": 0.0,
+        "motion_to_input_ratio": 0.005939990282058716
+      },
+      "exact_baseline_fingerprint": false
+    }
+  ],
+  "candidates_native_1000x": [
+    {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/.recovery/evidence/a5_teacher_anchor_flow1_unmatched_prediction_native.npy",
+      "shape": [
+        40,
+        4,
+        540,
+        960
+      ],
+      "metrics": {
+        "finetuned": {
+          "rmse_dn": 9.857338905334473,
+          "psnr_db": 52.36988435598825,
+          "pixels": 76255284
+        },
+        "input": {
+          "rmse_dn": 24.465728759765625,
+          "psnr_db": 44.47391498987998,
+          "pixels": 76255284
+        },
+        "temporal_mad_dn": 1.8021738529205322,
+        "input_temporal_mad_dn": 22.862985610961914,
+        "legal_fraction": 1.0,
+        "high_frequency_ratio_mean": 0.8557814258160092,
+        "high_frequency_ratio_per_channel": [
+          0.8539590057907398,
+          0.8966500502632448,
+          0.880056780757335,
+          0.7924598664527176
+        ],
+        "flat_residual_sigma_dn": 8.636382102966309,
+        "static_pixels": 76255284,
+        "static_fraction": 0.9193586516203703
+      },
+      "baseline_distance": {
+        "psnr_db": 0.006151626226198914,
+        "rmse_dn": 0.006983757019042969
+      },
+      "exact_baseline_fingerprint": false
+    }
+  ]
+}

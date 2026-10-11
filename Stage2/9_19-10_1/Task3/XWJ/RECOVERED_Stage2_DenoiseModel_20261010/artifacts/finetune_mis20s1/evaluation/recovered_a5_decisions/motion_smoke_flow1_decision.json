@@ -1,0 +1,21 @@
+{
+  "protocol": "A5 motion smoke promotion decision",
+  "decision": "rejected",
+  "checkpoint": "artifacts/finetune_mis20s1/training_a5_motion_smoke_flow1/checkpoint_step_000020.pth",
+  "approved_for_production": false,
+  "ema": {
+    "motion_to_input_ratio_baseline": 0.48879945278167725,
+    "motion_to_input_ratio_candidate": 0.48831358551979065,
+    "native_1000x_psnr_baseline_db": 52.36373272976205,
+    "native_1000x_psnr_candidate_db": 52.22988455075754,
+    "reason": "native regression is smaller, but motion fidelity did not improve"
+  },
+  "model": {
+    "motion_to_input_ratio_baseline": 0.48879945278167725,
+    "motion_to_input_ratio_candidate": 0.4942362606525421,
+    "native_1000x_psnr_baseline_db": 52.36373272976205,
+    "native_1000x_psnr_candidate_db": 51.05544330720883,
+    "reason": "motion fidelity improved slightly, but native regression is unacceptable"
+  },
+  "next_experiment": "run a matched static-only continuation control before changing the dynamic loss; this isolates ordinary fine-tuning drift from dynamic-supervision drift"
+}
