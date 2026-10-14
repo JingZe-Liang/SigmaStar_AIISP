@@ -1,0 +1,132 @@
+{
+  "protocol": "A3 step-5000 cross-sensor extension and stress audit",
+  "date": "2026-10-12",
+  "checkpoint": "artifacts/finetune_mis20s1/training/checkpoint_step_005000.pth",
+  "checkpoint_sha256": "97c4332f685f98959b243e4b100434469f714aed6329e100d22b6d8552592e0b",
+  "reference": {
+    "quantitative": "motion-aware odd/even split-half only",
+    "stress_only": "no clean target, no PSNR, temporal mean is display/statistics only"
+  },
+  "inference": {
+    "temporal_frames": 8,
+    "spatial_tile": 64,
+    "spatial_stride": 56,
+    "output": "A3 EMA, clipped normalized native domain"
+  },
+  "sequences": {
+    "sc635hai_131x_low_cct": {
+      "sensor": "sc635hai",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/01_fist_company/sc635hai/131x_low_cct/raw_stream_normal_3200x1800_16_RG_0205213025917_131x.raw",
+      "width": 3200,
+      "height": 1800,
+      "frames_used": 150,
+      "bit_shift": 4,
+      "cfa": "RGGB",
+      "nominal_black_dn": 257.5,
+      "reference_mode": "motion_aware_split_half",
+      "clip_starts": [0, 66, 134],
+      "fixed_isp_wb": [1.128, 1.0, 1.0, 3.604],
+      "fixed_isp_exposure": 0.65,
+      "panel_crops": {
+        "center_detail": [600, 300, 2400, 1700],
+        "color_chart": [850, 80, 2300, 850],
+        "right_subject": [2100, 250, 3150, 1750]
+      }
+    },
+    "sc635hai_16x_motion_color": {
+      "sensor": "sc635hai",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/01_fist_company/sc635hai/16x_motion_color/3200x1800_RG_motion_color_16x.raw",
+      "width": 3200,
+      "height": 1800,
+      "frames_used": 200,
+      "bit_shift": 4,
+      "cfa": "RGGB",
+      "nominal_black_dn": 257.5,
+      "reference_mode": "stress_only",
+      "clip_starts": [0, 96, 192],
+      "fixed_isp_wb": [1.2, 1.0, 1.0, 2.8],
+      "fixed_isp_exposure": 0.65,
+      "panel_crops": {
+        "left_motion": [0, 200, 1400, 1800],
+        "center_detail": [800, 250, 2400, 1750],
+        "right_motion": [1800, 200, 3200, 1800]
+      }
+    },
+    "sc450ai_1435x_motion_black_object": {
+      "sensor": "sc450ai",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/01_fist_company/sc450ai/1435x_motion_black_object/raw_stream_2688x1520_16bit@RG[Shutter=83328,SenserG=61440,IspG=24493,R=1620,G=1024,B=2409][bl_R=4128_Gr=4128_Gb=4128_B=4128].raw",
+      "width": 2688,
+      "height": 1520,
+      "frames_used": 210,
+      "bit_shift": 0,
+      "cfa": "RGGB",
+      "nominal_black_dn": 258.0,
+      "reference_mode": "stress_only",
+      "clip_starts": [0, 101, 202],
+      "fixed_isp_wb": [1.582, 1.0, 1.0, 2.352],
+      "fixed_isp_exposure": 12.0,
+      "panel_crops": {
+        "black_subject": [700, 100, 2050, 1520],
+        "flat_wall": [0, 0, 1300, 1050],
+        "floor_detail": [250, 750, 2200, 1520]
+      }
+    },
+    "sc450ai_804x_lightchanging": {
+      "sensor": "sc450ai",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/01_fist_company/sc450ai/804x_lightchanging/lightchanging_804x.raw",
+      "width": 2688,
+      "height": 1520,
+      "frames_used": 150,
+      "bit_shift": 0,
+      "cfa": "RGGB",
+      "nominal_black_dn": 258.0,
+      "reference_mode": "stress_only",
+      "clip_starts": [0, 71, 142],
+      "fixed_isp_wb": [1.445, 1.0, 1.0, 2.437],
+      "fixed_isp_exposure": 8.5,
+      "panel_crops": {
+        "flat_transition": [0, 150, 1500, 1350],
+        "center_subject": [700, 200, 2100, 1500],
+        "right_shelf": [1600, 100, 2688, 1450]
+      }
+    },
+    "sc465sl_difficultpattern_4717": {
+      "sensor": "SC465SL",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/05_2DNR3DNR/465_difficultpattern/shutter_83315/sensorG__ispG_4717_WB_1930_1024_2381/raw_stream_2560x1440_16bit@RG_[Shutter=83315,SenserG=109572,IspG=4717,R=1930,G=1024,B=2381].raw",
+      "width": 2560,
+      "height": 1440,
+      "frames_used": 200,
+      "bit_shift": 4,
+      "cfa": "RGGB",
+      "nominal_black_dn": 256.0,
+      "reference_mode": "stress_only",
+      "clip_starts": [0, 96, 192],
+      "fixed_isp_wb": [1.885, 1.0, 1.0, 2.325],
+      "fixed_isp_exposure": 2.2,
+      "panel_crops": {
+        "foreground_detail": [0, 650, 2050, 1440],
+        "center_shelves": [650, 250, 1900, 1300],
+        "right_line": [1750, 200, 2560, 1400]
+      }
+    },
+    "sc465sl_difficultpattern_8880": {
+      "sensor": "SC465SL",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/05_2DNR3DNR/465_difficultpattern/shutter_83315/sensorG__ispG_8880_WB_1962_1024_2172/raw_stream_2560x1440_16bit@RG_[Shutter=83315,SenserG=109572,IspG=8880,R=1962,G=1024,B=2172].raw",
+      "width": 2560,
+      "height": 1440,
+      "frames_used": 200,
+      "bit_shift": 4,
+      "cfa": "RGGB",
+      "nominal_black_dn": 256.0,
+      "reference_mode": "stress_only",
+      "clip_starts": [0, 96, 192],
+      "fixed_isp_wb": [1.916, 1.0, 1.0, 2.121],
+      "fixed_isp_exposure": 4.75,
+      "panel_crops": {
+        "foreground_detail": [0, 650, 2050, 1440],
+        "center_shelves": [650, 250, 1900, 1300],
+        "right_line": [1750, 200, 2560, 1400]
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "protocol": "A8 conservative sc635hai adaptation with MIS20S1 replay",
+  "date": "2026-10-13",
+  "dataset_root": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset",
+  "source": {
+    "name": "sc635hai_131x_low_cct",
+    "sensor": "sc635hai",
+    "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/01_fist_company/sc635hai/131x_low_cct/raw_stream_normal_3200x1800_16_RG_0205213025917_131x.raw",
+    "width": 3200,
+    "height": 1800,
+    "frames_used": 150,
+    "bit_shift": 4,
+    "cfa": "RGGB",
+    "nominal_black_dn": 257.5,
+    "reference_mode": "motion_aware_split_half",
+    "clip_starts": [0, 66, 134],
+    "fixed_isp_wb": [1.128, 1.0, 1.0, 3.604],
+    "fixed_isp_exposure": 0.65,
+    "panel_crops": {
+      "center_detail": [600, 300, 2400, 1700],
+      "color_chart": [850, 80, 2300, 850],
+      "right_subject": [2100, 250, 3150, 1750]
+    }
+  },
+  "reference_dir": "artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_131x_low_cct/reference",
+  "source_sha256": "80445b9133f49dfa7f5117d93bcf9fd5a9dfae1de0e0faae69c9f4144dac440a",
+  "a3_checkpoint": "artifacts/finetune_mis20s1/training/checkpoint_step_005000.pth",
+  "a3_checkpoint_sha256": "97c4332f685f98959b243e4b100434469f714aed6329e100d22b6d8552592e0b",
+  "replay_supervision_dir": "artifacts/finetune_mis20s1/supervision",
+  "replay_noise_dir": "artifacts/finetune_mis20s1/noise_model",
+  "output_dir": "artifacts/a8_sensor_adaptation/sc635hai/training_20261013",
+  "seed": 20261013,
+  "steps": 500,
+  "batch_size": 1,
+  "learning_rate": 1e-5,
+  "sensor_fraction": 0.5,
+  "patch_size": 64,
+  "gradient_weight": 0.1,
+  "highpass_weight": 0.1,
+  "min_valid_fraction": 0.25,
+  "ema_decay": 0.999,
+  "gradient_clip_norm": 1.0,
+  "checkpoint_interval": 100,
+  "precision": "bfloat16",
+  "trainable_scope": "output_head",
+  "device": "cuda:0",
+  "holdout": {
+    "sequence": "sc635hai_16x_motion_color",
+    "role": "unseen dynamic fixed-ISP and no-reference test",
+    "used_for_training": false
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "protocol": "A3 step-5000 cross-sensor native-domain zero-shot audit",
+  "date": "2026-10-12",
+  "checkpoint": "artifacts/finetune_mis20s1/training/checkpoint_step_005000.pth",
+  "checkpoint_sha256": "97c4332f685f98959b243e4b100434469f714aed6329e100d22b6d8552592e0b",
+  "reference": {
+    "method": "two-pass motion-aware temporal mean",
+    "confidence_threshold": 0.9,
+    "motion_threshold": "median + 3.0 * 1.4826 * MAD",
+    "quantitative_split": "even input vs odd reference and odd input vs even reference"
+  },
+  "inference": {
+    "temporal_frames": 8,
+    "temporal_stride_within_clip": 2,
+    "spatial_tile": 64,
+    "spatial_stride": 56,
+    "output": "A3 EMA, clipped normalized native domain"
+  },
+  "sequences": {
+    "sc465sl_darkroom18_256x": {
+      "sensor": "SC465SL",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/02_SC465SL_darkroom18/256x/raw_stream_sc465sl_2560x1440_AG109568_darkroom18_256x.raw",
+      "width": 2560,
+      "height": 1440,
+      "frames_used": 300,
+      "bit_shift": 0,
+      "cfa": "RGGB",
+      "nominal_black_dn": 252.0,
+      "reference_mode": "motion_aware_split_half",
+      "clip_starts": [0, 72, 144, 216, 284],
+      "fixed_isp_wb": [1.8, 1.0, 1.0, 1.6],
+      "fixed_isp_exposure": 2.5,
+      "panel_crops": {
+        "motion_center": [900, 250, 1900, 1400],
+        "dark_left": [120, 250, 1000, 1350],
+        "static_right": [1800, 250, 2500, 1350]
+      }
+    },
+    "sc465sl_darkroom18_2000x": {
+      "sensor": "SC465SL",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/02_SC465SL_darkroom18/2000x/raw_stream_sc465sl_2560x1440_AG109568_darkroom18_2000x.raw",
+      "width": 2560,
+      "height": 1440,
+      "frames_used": 300,
+      "bit_shift": 0,
+      "cfa": "RGGB",
+      "nominal_black_dn": 252.0,
+      "reference_mode": "motion_aware_split_half",
+      "clip_starts": [0, 72, 144, 216, 284],
+      "fixed_isp_wb": [1.8, 1.0, 1.0, 1.6],
+      "fixed_isp_exposure": 6.0,
+      "panel_crops": {
+        "motion_center": [900, 250, 1900, 1400],
+        "dark_left": [120, 250, 1000, 1350],
+        "static_right": [1800, 250, 2500, 1350]
+      }
+    }
+  }
+}
