@@ -1,7 +1,7 @@
 # ExposureDiffusion NAFNet五帧RAW去噪
 
-负责人：DJC（邸锦承）  
-状态：experimental，已完成训练与抽帧测试。
+负责人：邸锦承  
+状态：已完成训练与抽帧测试。
 
 ## 1. 功能定位
 
