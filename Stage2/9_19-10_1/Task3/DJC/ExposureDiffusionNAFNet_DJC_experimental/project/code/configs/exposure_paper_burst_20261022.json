@@ -1,0 +1,53 @@
+{
+  "architecture": "exposure_output_residual_v3",
+  "base_checkpoint": "runs/company_mixed_gpu_001/best.pt",
+  "base_sha256": "564d94f3031b9eb6682b13b317860beb4c55a2bed7ed09b34c668a0bc018e7ac",
+  "freeze_backbone": true,
+  "input_offsets": [
+    -2,
+    -1,
+    0,
+    1,
+    2
+  ],
+  "target_offset": 0,
+  "width": 16,
+  "precision": "float32",
+  "exposure_steps": 3,
+  "patch_packed": 192,
+  "read_variance_required": true,
+  "learning_rate": 0.0001,
+  "weight_decay": 0.0,
+  "batch_size": 2,
+  "accumulate": 4,
+  "optimizer_steps": 250,
+  "validate_every": 50,
+  "gradient_clip": 1.0,
+  "seed": 20261022,
+  "automatic_training": false,
+  "teacher_window_offsets": [
+    -4,
+    -3,
+    -2,
+    -1,
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "target_protocol": "frozen_center_pseudo_independent_recorruption",
+  "training_ready": false,
+  "maximum_seconds": null,
+  "maximum_updates": null,
+  "blockers": [
+    "Noise synthesis evidence not reconciled",
+    "Center pseudo-target quality not accepted",
+    "Explicit pilot budget not set"
+  ],
+  "note": "Architecture and CPU check config. Optimization fields are proposals, not launch authorization. Old t+6 N2N trainer is not used.",
+  "injection": "raw_output_residual_only",
+  "loss_steps": [
+    3
+  ]
+}

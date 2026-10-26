@@ -1,0 +1,4945 @@
+{
+  "format_version": 1,
+  "seed": 20261018,
+  "streams": [
+    {
+      "id": "sc450ai_4d524642c250",
+      "sensor": "SC450AI",
+      "source_relative": "01_fist_company/sc450ai/1435x_motion_black_object/raw_stream_2688x1520_16bit@RG[Shutter=83328,SenserG=61440,IspG=24493,R=1620,G=1024,B=2409][bl_R=4128_Gr=4128_Gb=4128_B=4128].raw",
+      "path": "data/raw/sc450ai_4d524642c250.raw",
+      "role": "development",
+      "bytes": 1716019200,
+      "sha256": "7896fd9346aa8f82b67d7d2a3a02b4929d9ff58e6da952b4ff7aaf3a7e0acba0",
+      "frame_count": 210,
+      "cfa": "RGGB",
+      "raw_spec": {
+        "width": 2688,
+        "height": 1520,
+        "bit_shift": 0,
+        "cfa": "RGGB",
+        "valid_bits": 12,
+        "dtype": "<u2",
+        "strict_alignment": true
+      },
+      "black_dn12": [
+        258.0,
+        258.0,
+        258.0,
+        258.0
+      ],
+      "white_dn12": 4095.0,
+      "parameter_basis": "manufacturer readMe / supplied collection table; SC450AI measured low12 supersedes conflicting filename",
+      "shot_gain_dn12_per_e": [
+        15.094137692145669,
+        14.261826548244043,
+        14.326609358658644,
+        15.616837074027774
+      ],
+      "read_variance_dn12_sq": [
+        141.64545070494842,
+        145.80775263726446,
+        146.83376642231133,
+        136.60351579449843
+      ],
+      "splits": {
+        "train": [
+          0,
+          146
+        ],
+        "validation": [
+          157,
+          209
+        ]
+      },
+      "metadata": {
+        "exposure_us": 83328,
+        "sensor_gain_code": 61440,
+        "isp_gain_code": 24493,
+        "gain_label_from_path": "1435x",
+        "exposure_basis": "filename Shutter/US where provided; null means unknown",
+        "q10_gain_product": 1435.13671875,
+        "gain_basis": "collection Q10 code product; not calibrated ISO or ExposureDiffusion exposure ratio"
+      },
+      "container_audit": {
+        "passed": true,
+        "scanned_frames": 210,
+        "min_dn12": 128.0,
+        "max_dn12": 944.0,
+        "cfa_verified": true
+      },
+      "pooling_variance_factor": [
+        0.04,
+        0.04,
+        0.04,
+        0.04
+      ],
+      "parameter_override_source": {
+        "status": "data_driven_approximate_working_parameters_not_factory_calibration",
+        "evidence": "calibration/noise_validation.json + calibration/pedestal_summary.json + calibration/report.md",
+        "source_frames": [
+          1,
+          7,
+          13,
+          19,
+          25,
+          33,
+          39,
+          45,
+          51,
+          57,
+          63,
+          69,
+          75,
+          81,
+          89,
+          95,
+          101,
+          107,
+          113,
+          119,
+          125,
+          131,
+          137,
+          145
+        ],
+        "training_only": true,
+        "noise_method": "robust spatial tile temporal pair-difference variance against mean; full train prefix coverage",
+        "noise_validation": [
+          {
+            "a": 15.056935674293259,
+            "intercept_raw": -3742.7428229453153,
+            "n": 988,
+            "span": 44.5625,
+            "holdout_n": 1132,
+            "spatial_median_relative_error": 0.024551897647813556,
+            "spatial_p90_relative_error": 0.060621480081847354,
+            "temporal_half_median_relative_error": [
+              0.0322957286076313,
+              0.029874675545409506
+            ]
+          },
+          {
+            "a": 14.204850136154365,
+            "intercept_raw": -3518.508848743849,
+            "n": 908,
+            "span": 64.1171875,
+            "holdout_n": 1071,
+            "spatial_median_relative_error": 0.02512549229496156,
+            "spatial_p90_relative_error": 0.06214895183391566,
+            "temporal_half_median_relative_error": [
+              0.03144736053796695,
+              0.030659961909217083
+            ]
+          },
+          {
+            "a": 14.319471954543978,
+            "intercept_raw": -3547.5895214842803,
+            "n": 923,
+            "span": 49.421875,
+            "holdout_n": 1053,
+            "spatial_median_relative_error": 0.025969264022082793,
+            "spatial_p90_relative_error": 0.06397837461862306,
+            "temporal_half_median_relative_error": [
+              0.03125831046982634,
+              0.03034134673564188
+            ]
+          },
+          {
+            "a": 15.583604709290574,
+            "intercept_raw": -3884.1460490202535,
+            "n": 1139,
+            "span": 44.203125,
+            "holdout_n": 1203,
+            "spatial_median_relative_error": 0.02556697843934541,
+            "spatial_p90_relative_error": 0.0637946462068237,
+            "temporal_half_median_relative_error": [
+              0.03293075700346198,
+              0.029928775987307452
+            ]
+          }
+        ],
+        "black_basis": "supplied manufacturer metadata retained",
+        "black_sensitivity_dn12": 0,
+        "low_gain_transfer_assumption": false,
+        "independent_low_gain_black_identified": null
+      },
+      "noise_basis": "training-prefix full-field robust temporal pair-difference approximation; see parameter_override_source",
+      "noise_fit_version": 2
+    },
+    {
+      "id": "sc450ai_57878d7435b2",
+      "sensor": "SC450AI",
+      "source_relative": "01_fist_company/sc450ai/804x_lightchanging/lightchanging_804x.raw",
+      "path": "data/raw/sc450ai_57878d7435b2.raw",
+      "role": "development",
+      "bytes": 1225728000,
+      "sha256": "8e74a2b96de1943a0180eba82650613d98c0398d0e984c3d0ac4c6b1e12359fe",
+      "frame_count": 150,
+      "cfa": "RGGB",
+      "raw_spec": {
+        "width": 2688,
+        "height": 1520,
+        "bit_shift": 0,
+        "cfa": "RGGB",
+        "valid_bits": 12,
+        "dtype": "<u2",
+        "strict_alignment": true
+      },
+      "black_dn12": [
+        258.0,
+        258.0,
+        258.0,
+        258.0
+      ],
+      "white_dn12": 4095.0,
+      "parameter_basis": "manufacturer readMe / supplied collection table; SC450AI measured low12 supersedes conflicting filename",
+      "shot_gain_dn12_per_e": [
+        13.337633863162011,
+        10.858356598018357,
+        10.900205448035369,
+        14.518087532574294
+      ],
+      "read_variance_dn12_sq": [
+        179.21333438021938,
+        236.50626081989904,
+        236.04599097268752,
+        157.89482965370243
+      ],
+      "splits": {
+        "train": [
+          0,
+          104
+        ],
+        "validation": [
+          115,
+          149
+        ]
+      },
+      "metadata": {
+        "exposure_us": 99993,
+        "sensor_gain_code": 61440,
+        "isp_gain_code": 13728,
+        "gain_label_from_path": "804x",
+        "exposure_basis": "filename Shutter/US where provided; null means unknown",
+        "sidecar_source": "01_fist_company/sc450ai/readMe.txt",
+        "q10_gain_product": 804.375,
+        "gain_basis": "collection Q10 code product; not calibrated ISO or ExposureDiffusion exposure ratio"
+      },
+      "container_audit": {
+        "passed": true,
+        "scanned_frames": 150,
+        "min_dn12": 108.0,
+        "max_dn12": 4092.0,
+        "cfa_verified": true
+      },
+      "noise_basis": "approximate training-only odd-frame tile difference fit; not full sensor likelihood or FPN calibration",
+      "noise_fit_points": [
+        473,
+        508,
+        511,
+        511
+      ],
+      "noise_fit_source_frames": [
+        1,
+        3,
+        5,
+        7,
+        9,
+        11,
+        13,
+        15,
+        17,
+        19,
+        21,
+        23,
+        25,
+        27,
+        29,
+        31,
+        33,
+        35,
+        37,
+        39
+      ],
+      "pooling_variance_factor": [
+        0.04,
+        0.04,
+        0.04,
+        0.04
+      ],
+      "noise_fit_version": 2
+    },
+    {
+      "id": "sc635hai_fff725f9cdc8",
+      "sensor": "SC635HAI",
+      "source_relative": "01_fist_company/sc635hai/131x_low_cct/raw_stream_normal_3200x1800_16_RG_0205213025917_131x.raw",
+      "path": "data/raw/sc635hai_fff725f9cdc8.raw",
+      "role": "development",
+      "bytes": 1728000000,
+      "sha256": "80445b9133f49dfa7f5117d93bcf9fd5a9dfae1de0e0faae69c9f4144dac440a",
+      "frame_count": 150,
+      "cfa": "RGGB",
+      "raw_spec": {
+        "width": 3200,
+        "height": 1800,
+        "bit_shift": 4,
+        "cfa": "RGGB",
+        "valid_bits": 12,
+        "dtype": "<u2",
+        "strict_alignment": true
+      },
+      "black_dn12": [
+        257.5,
+        257.5,
+        257.5,
+        257.5
+      ],
+      "white_dn12": 4095.0,
+      "parameter_basis": "manufacturer readMe / supplied collection table; SC450AI measured low12 supersedes conflicting filename",
+      "shot_gain_dn12_per_e": [
+        28.04448341722343,
+        23.453371895929255,
+        23.64579880295409,
+        34.9281540258592
+      ],
+      "read_variance_dn12_sq": [
+        614.0015648600651,
+        720.175489351728,
+        767.1529288370872,
+        653.3659823776978
+      ],
+      "splits": {
+        "train": [
+          0,
+          104
+        ],
+        "validation": [
+          115,
+          149
+        ]
+      },
+      "metadata": {
+        "exposure_us": 69992,
+        "sensor_gain_code": 86016,
+        "isp_gain_code": 1601,
+        "gain_label_from_path": "131x",
+        "exposure_basis": "filename Shutter/US where provided; null means unknown",
+        "sidecar_source": "01_fist_company/sc635hai/readMe.txt",
+        "q10_gain_product": 131.33203125,
+        "gain_basis": "collection Q10 code product; not calibrated ISO or ExposureDiffusion exposure ratio"
+      },
+      "container_audit": {
+        "passed": true,
+        "scanned_frames": 150,
+        "min_dn12": 0.0,
+        "max_dn12": 4092.0,
+        "cfa_verified": true
+      },
+      "noise_basis": "approximate training-only odd-frame tile difference fit; not full sensor likelihood or FPN calibration",
+      "noise_fit_points": [
+        465,
+        457,
+        459,
+        515
+      ],
+      "noise_fit_source_frames": [
+        1,
+        3,
+        5,
+        7,
+        9,
+        11,
+        13,
+        15,
+        17,
+        19,
+        21,
+        23,
+        25,
+        27,
+        29,
+        31,
+        33,
+        35,
+        37,
+        39
+      ],
+      "pooling_variance_factor": [
+        0.046691183000802994,
+        0.043785460293293,
+        0.04301052913069725,
+        0.04
+      ],
+      "noise_fit_version": 2
+    },
+    {
+      "id": "sc635hai_dfb8ce9a6a74",
+      "sensor": "SC635HAI",
+      "source_relative": "01_fist_company/sc635hai/16x_motion_color/3200x1800_RG_motion_color_16x.raw",
+      "path": "data/raw/sc635hai_dfb8ce9a6a74.raw",
+      "role": "development",
+      "bytes": 2304000000,
+      "sha256": "da64b7a39af359bdd5aa3f16b6456458f620492e57230ac5fee4a57012b2896c",
+      "frame_count": 200,
+      "cfa": "RGGB",
+      "raw_spec": {
+        "width": 3200,
+        "height": 1800,
+        "bit_shift": 4,
+        "cfa": "RGGB",
+        "valid_bits": 12,
+        "dtype": "<u2",
+        "strict_alignment": true
+      },
+      "black_dn12": [
+        257.5,
+        257.5,
+        257.5,
+        257.5
+      ],
+      "white_dn12": 4095.0,
+      "parameter_basis": "manufacturer readMe / supplied collection table; SC450AI measured low12 supersedes conflicting filename",
+      "shot_gain_dn12_per_e": [
+        6.486669979134698,
+        5.342192686017581,
+        5.38619990450221,
+        6.388142228987231
+      ],
+      "read_variance_dn12_sq": [
+        41.92374376650944,
+        73.79473790929609,
+        63.08744328418006,
+        45.9204586133494
+      ],
+      "splits": {
+        "train": [
+          0,
+          139
+        ],
+        "validation": [
+          150,
+          199
+        ]
+      },
+      "metadata": {
+        "exposure_us": null,
+        "sensor_gain_code": null,
+        "isp_gain_code": null,
+        "gain_label_from_path": "16x",
+        "exposure_basis": "filename Shutter/US where provided; null means unknown"
+      },
+      "container_audit": {
+        "passed": true,
+        "scanned_frames": 200,
+        "min_dn12": 160.0,
+        "max_dn12": 4092.0,
+        "cfa_verified": true
+      },
+      "noise_basis": "approximate training-only odd-frame tile difference fit; not full sensor likelihood or FPN calibration",
+      "noise_fit_points": [
+        323,
+        311,
+        296,
+        328
+      ],
+      "noise_fit_source_frames": [
+        1,
+        3,
+        5,
+        7,
+        9,
+        11,
+        13,
+        15,
+        17,
+        19,
+        21,
+        23,
+        25,
+        27,
+        29,
+        31,
+        33,
+        35,
+        37,
+        39
+      ],
+      "pooling_variance_factor": [
+        0.04139143228530884,
+        0.04064115509390831,
+        0.04,
+        0.04158261977136135
+      ],
+      "noise_fit_version": 2
+    },
+    {
+      "id": "sc465sl_ed78d55ab54a",
+      "sensor": "SC465SL",
+      "source_relative": "02_SC465SL_darkroom18/2000x/raw_stream_sc465sl_2560x1440_AG109568_darkroom18_2000x.raw",
+      "path": "data/raw/sc465sl_ed78d55ab54a.raw",
+      "role": "development",
+      "bytes": 2211840000,
+      "sha256": "8df12bc10c7b2191791d1d7f4a9715167a6b6c1a6a1805554ef27b2b05aef7b0",
+      "frame_count": 300,
+      "cfa": "RGGB",
+      "raw_spec": {
+        "width": 2560,
+        "height": 1440,
+        "bit_shift": 0,
+        "cfa": "RGGB",
+        "valid_bits": 12,
+        "dtype": "<u2",
+        "strict_alignment": true
+      },
+      "black_dn12": [
+        252.0,
+        252.0,
+        252.0,
+        252.0
+      ],
+      "white_dn12": 4095.0,
+      "parameter_basis": "manufacturer low_12_bits metadata; CFA unprovided",
+      "shot_gain_dn12_per_e": [
+        25.751603597828517,
+        20.562697315197706,
+        20.770962151904016,
+        25.93051906908145
+      ],
+      "read_variance_dn12_sq": [
+        162.30086607183603,
+        212.93440063160597,
+        209.07124042978012,
+        162.4068217197464
+      ],
+      "splits": {
+        "train": [
+          0,
+          209
+        ],
+        "validation": [
+          220,
+          299
+        ]
+      },
+      "metadata": {
+        "exposure_us": null,
+        "sensor_gain_code": 109568,
+        "isp_gain_code": null,
+        "gain_label_from_path": "2000x",
+        "exposure_basis": "filename Shutter/US where provided; null means unknown"
+      },
+      "container_audit": {
+        "passed": true,
+        "scanned_frames": 300,
+        "min_dn12": 0.0,
+        "max_dn12": 4095.0,
+        "cfa_verified": false
+      },
+      "pooling_variance_factor": [
+        0.04,
+        0.04,
+        0.04,
+        0.04
+      ],
+      "parameter_override_source": {
+        "status": "data_driven_approximate_working_parameters_not_factory_calibration",
+        "evidence": "calibration/noise_validation.json + calibration/pedestal_summary.json + calibration/report.md",
+        "source_frames": [
+          1,
+          9,
+          19,
+          27,
+          37,
+          45,
+          55,
+          63,
+          73,
+          81,
+          91,
+          99,
+          109,
+          117,
+          127,
+          135,
+          145,
+          153,
+          163,
+          171,
+          181,
+          189,
+          199,
+          207
+        ],
+        "training_only": true,
+        "noise_method": "robust spatial tile temporal pair-difference variance against mean; full train prefix coverage",
+        "noise_validation": [
+          {
+            "a": 25.748339409668397,
+            "intercept_raw": -6326.489788978362,
+            "n": 1133,
+            "span": 1055.044921875,
+            "holdout_n": 1346,
+            "spatial_median_relative_error": 0.03638354156022293,
+            "spatial_p90_relative_error": 0.08911472846291427,
+            "temporal_half_median_relative_error": [
+              0.041613911227872155,
+              0.04102772477518388
+            ]
+          },
+          {
+            "a": 21.262643304429236,
+            "intercept_raw": -5155.098804237852,
+            "n": 1100,
+            "span": 331.2734375,
+            "holdout_n": 1305,
+            "spatial_median_relative_error": 0.03724570051107575,
+            "spatial_p90_relative_error": 0.08678212083929097,
+            "temporal_half_median_relative_error": [
+              0.03880695406273276,
+              0.040494316997636365
+            ]
+          },
+          {
+            "a": 20.862237455304072,
+            "intercept_raw": -5050.031174502155,
+            "n": 1126,
+            "span": 669.845703125,
+            "holdout_n": 1329,
+            "spatial_median_relative_error": 0.03897245914755362,
+            "spatial_p90_relative_error": 0.08642208965149659,
+            "temporal_half_median_relative_error": [
+              0.044229737139403195,
+              0.04207592001115352
+            ]
+          },
+          {
+            "a": 25.962080288087634,
+            "intercept_raw": -6380.900693386478,
+            "n": 1204,
+            "span": 1243.515625,
+            "holdout_n": 1381,
+            "spatial_median_relative_error": 0.035617407004363125,
+            "spatial_p90_relative_error": 0.08369207153020684,
+            "temporal_half_median_relative_error": [
+              0.040913450263553384,
+              0.03961830601680724
+            ]
+          }
+        ],
+        "black_basis": "supplied manufacturer metadata retained",
+        "black_sensitivity_dn12": 0,
+        "low_gain_transfer_assumption": false,
+        "independent_low_gain_black_identified": null,
+        "cfa_basis": "user confirmed top-left RGGB candidate, 2026-10-18; green-site and blue/yellow patch consistency"
+      },
+      "noise_basis": "training-prefix full-field robust temporal pair-difference approximation; see parameter_override_source",
+      "noise_fit_version": 2,
+      "cfa_inference_basis": "user-confirmed RGGB candidate plus training-only color-patch and green-phase evidence"
+    },
+    {
+      "id": "sc465sl_c9ee0974bbbf",
+      "sensor": "SC465SL",
+      "source_relative": "02_SC465SL_darkroom18/256x/raw_stream_sc465sl_2560x1440_AG109568_darkroom18_256x.raw",
+      "path": "data/raw/sc465sl_c9ee0974bbbf.raw",
+      "role": "development",
+      "bytes": 2211840000,
+      "sha256": "cec46afe5696c9e2bfc569670a0cc93814d4ad851677275fd4f77c274e6c35cd",
+      "frame_count": 300,
+      "cfa": "RGGB",
+      "raw_spec": {
+        "width": 2560,
+        "height": 1440,
+        "bit_shift": 0,
+        "cfa": "RGGB",
+        "valid_bits": 12,
+        "dtype": "<u2",
+        "strict_alignment": true
+      },
+      "black_dn12": [
+        252.0,
+        252.0,
+        252.0,
+        252.0
+      ],
+      "white_dn12": 4095.0,
+      "parameter_basis": "manufacturer low_12_bits metadata; CFA unprovided",
+      "shot_gain_dn12_per_e": [
+        24.202162870575584,
+        19.59395867745804,
+        19.51253655745804,
+        23.897060410504988
+      ],
+      "read_variance_dn12_sq": [
+        172.36226880763752,
+        233.657029759338,
+        233.47776367996994,
+        172.86904743224568
+      ],
+      "splits": {
+        "train": [
+          0,
+          209
+        ],
+        "validation": [
+          220,
+          299
+        ]
+      },
+      "metadata": {
+        "exposure_us": null,
+        "sensor_gain_code": 109568,
+        "isp_gain_code": null,
+        "gain_label_from_path": "256x",
+        "exposure_basis": "filename Shutter/US where provided; null means unknown"
+      },
+      "container_audit": {
+        "passed": true,
+        "scanned_frames": 300,
+        "min_dn12": 0.0,
+        "max_dn12": 4095.0,
+        "cfa_verified": false
+      },
+      "pooling_variance_factor": [
+        0.04,
+        0.04,
+        0.04,
+        0.04
+      ],
+      "parameter_override_source": {
+        "status": "data_driven_approximate_working_parameters_not_factory_calibration",
+        "evidence": "calibration/noise_validation.json + calibration/pedestal_summary.json + calibration/report.md",
+        "source_frames": [
+          1,
+          9,
+          19,
+          27,
+          37,
+          45,
+          55,
+          63,
+          73,
+          81,
+          91,
+          99,
+          109,
+          117,
+          127,
+          135,
+          145,
+          153,
+          163,
+          171,
+          181,
+          189,
+          199,
+          207
+        ],
+        "training_only": true,
+        "noise_method": "robust spatial tile temporal pair-difference variance against mean; full train prefix coverage",
+        "noise_validation": [
+          {
+            "a": 24.112922379086196,
+            "intercept_raw": -5903.913128621177,
+            "n": 746,
+            "span": 289.517578125,
+            "holdout_n": 1146,
+            "spatial_median_relative_error": 0.032831212630124076,
+            "spatial_p90_relative_error": 0.08124528443931356,
+            "temporal_half_median_relative_error": [
+              0.03730007845433042,
+              0.037861041664858354
+            ]
+          },
+          {
+            "a": 19.946624457243683,
+            "intercept_raw": -4800.523324244445,
+            "n": 736,
+            "span": 1353.166015625,
+            "holdout_n": 1130,
+            "spatial_median_relative_error": 0.02732647761699453,
+            "spatial_p90_relative_error": 0.07315109200987245,
+            "temporal_half_median_relative_error": [
+              0.03404860875677694,
+              0.03178354268438554
+            ]
+          },
+          {
+            "a": 19.90559494539281,
+            "intercept_raw": -4792.745658193468,
+            "n": 777,
+            "span": 540.603515625,
+            "holdout_n": 1114,
+            "spatial_median_relative_error": 0.025273857836554767,
+            "spatial_p90_relative_error": 0.07043074777531573,
+            "temporal_half_median_relative_error": [
+              0.03261006054635822,
+              0.032814726012026056
+            ]
+          },
+          {
+            "a": 24.819648283723613,
+            "intercept_raw": -6090.979126383247,
+            "n": 843,
+            "span": 162.34765625,
+            "holdout_n": 1182,
+            "spatial_median_relative_error": 0.032572356741623607,
+            "spatial_p90_relative_error": 0.08630810929651225,
+            "temporal_half_median_relative_error": [
+              0.03777455862139342,
+              0.03812670706167351
+            ]
+          }
+        ],
+        "black_basis": "supplied manufacturer metadata retained",
+        "black_sensitivity_dn12": 0,
+        "low_gain_transfer_assumption": false,
+        "independent_low_gain_black_identified": null,
+        "cfa_basis": "user confirmed top-left RGGB candidate, 2026-10-18; green-site and blue/yellow patch consistency"
+      },
+      "noise_basis": "training-prefix full-field robust temporal pair-difference approximation; see parameter_override_source",
+      "noise_fit_version": 2,
+      "cfa_inference_basis": "user-confirmed RGGB candidate plus training-only color-patch and green-phase evidence"
+    },
+    {
+      "id": "mis20s1_cdb54b730648",
+      "sensor": "MIS20S1",
+      "source_relative": "04_Sigmastar_7_30/mis20s1_calibrationdata/black/100/raw_stream_normal_1920x1080_16_GR_0205175115888_[FN=10,US=83317,AG=1024,DG=1024,BV=-168611,R=2631,G=1024,B=1986].raw",
+      "path": "data/raw/mis20s1_cdb54b730648.raw",
+      "role": "calibration",
+      "bytes": 207360000,
+      "sha256": "ad17a3dfa4711a45a5d3fdaaad2081091f6bea7b8ba0328a60d5448416e3a043",
+      "frame_count": 50,
+      "cfa": "GRBG",
+      "raw_spec": {
+        "width": 1920,
+        "height": 1080,
+        "bit_shift": 4,
+        "cfa": "GRBG",
+        "valid_bits": 12,
+        "dtype": "<u2",
+        "strict_alignment": true
+      },
+      "black_dn12": [
+        256.5,
+        256.5,
+        256.5,
+        256.5
+      ],
+      "white_dn12": 4095.0,
+      "parameter_basis": "independent MIS20S1 dark calibration reference",
+      "shot_gain_dn12_per_e": null,
+      "read_variance_dn12_sq": null,
+      "splits": {},
+      "metadata": {
+        "exposure_us": 83317,
+        "sensor_gain_code": 1024,
+        "isp_gain_code": 1024,
+        "gain_label_from_path": "1920x",
+        "exposure_basis": "filename Shutter/US where provided; null means unknown",
+        "q10_gain_product": 1.0,
+        "gain_basis": "collection Q10 code product; not calibrated ISO or ExposureDiffusion exposure ratio"
+      },
+      "container_audit": {
+        "passed": true,
+        "scanned_frames": 50,
+        "min_dn12": 249.0,
+        "max_dn12": 267.0,
+        "cfa_verified": true
+      }
+    },
+    {
+      "id": "mis20s1_717645460ea4",
+      "sensor": "MIS20S1",
+      "source_relative": "04_Sigmastar_7_30/mis20s1_calibrationdata/black/12800/raw_stream_normal_1920x1080_16_GR_0205175518026_[FN=10,US=83317,AG=131072,DG=1024,BV=-283299,R=2631,G=1024,B=1986].raw",
+      "path": "data/raw/mis20s1_717645460ea4.raw",
+      "role": "calibration",
+      "bytes": 207360000,
+      "sha256": "cd18139b3bc9e87fede69389ec7e59e6971f8d441bacfbf1285ecb4bc270c430",
+      "frame_count": 50,
+      "cfa": "GRBG",
+      "raw_spec": {
+        "width": 1920,
+        "height": 1080,
+        "bit_shift": 4,
+        "cfa": "GRBG",
+        "valid_bits": 12,
+        "dtype": "<u2",
+        "strict_alignment": true
+      },
+      "black_dn12": [
+        256.5,
+        256.5,
+        256.5,
+        256.5
+      ],
+      "white_dn12": 4095.0,
+      "parameter_basis": "independent MIS20S1 dark calibration reference",
+      "shot_gain_dn12_per_e": null,
+      "read_variance_dn12_sq": null,
+      "splits": {},
+      "metadata": {
+        "exposure_us": 83317,
+        "sensor_gain_code": 131072,
+        "isp_gain_code": 1024,
+        "gain_label_from_path": "1920x",
+        "exposure_basis": "filename Shutter/US where provided; null means unknown",
+        "q10_gain_product": 128.0,
+        "gain_basis": "collection Q10 code product; not calibrated ISO or ExposureDiffusion exposure ratio"
+      },
+      "container_audit": {
+        "passed": true,
+        "scanned_frames": 50,
+        "min_dn12": 58.0,
+        "max_dn12": 494.0,
+        "cfa_verified": true
+      }
+    },
+    {
+      "id": "mis20s1_4049f843a9a6",
+      "sensor": "MIS20S1",
+      "source_relative": "04_Sigmastar_7_30/mis20s1_calibrationdata/black/1600/raw_stream_normal_1920x1080_16_GR_0205175401348_[FN=10,US=83317,AG=16384,DG=1024,BV=-234147,R=2631,G=1024,B=1986].raw",
+      "path": "data/raw/mis20s1_4049f843a9a6.raw",
+      "role": "calibration",
+      "bytes": 207360000,
+      "sha256": "27bee51b24dd1e2ae32eb7eba686ae608cd9691cef693d4da1d81a005f242caf",
+      "frame_count": 50,
+      "cfa": "GRBG",
+      "raw_spec": {
+        "width": 1920,
+        "height": 1080,
+        "bit_shift": 4,
+        "cfa": "GRBG",
+        "valid_bits": 12,
+        "dtype": "<u2",
+        "strict_alignment": true
+      },
+      "black_dn12": [
+        256.5,
+        256.5,
+        256.5,
+        256.5
+      ],
+      "white_dn12": 4095.0,
+      "parameter_basis": "independent MIS20S1 dark calibration reference",
+      "shot_gain_dn12_per_e": null,
+      "read_variance_dn12_sq": null,
+      "splits": {},
+      "metadata": {
+        "exposure_us": 83317,
+        "sensor_gain_code": 16384,
+        "isp_gain_code": 1024,
+        "gain_label_from_path": "1920x",
+        "exposure_basis": "filename Shutter/US where provided; null means unknown",
+        "q10_gain_product": 16.0,
+        "gain_basis": "collection Q10 code product; not calibrated ISO or ExposureDiffusion exposure ratio"
+      },
+      "container_audit": {
+        "passed": true,
+        "scanned_frames": 50,
+        "min_dn12": 225.0,
+        "max_dn12": 287.0,
+        "cfa_verified": true
+      }
+    },
+    {
+      "id": "mis20s1_fe487c14bc93",
+      "sensor": "MIS20S1",
+      "source_relative": "04_Sigmastar_7_30/mis20s1_calibrationdata/black/200/raw_stream_normal_1920x1080_16_GR_0205175245601_[FN=10,US=83317,AG=2048,DG=1024,BV=-184995,R=2631,G=1024,B=1986].raw",
+      "path": "data/raw/mis20s1_fe487c14bc93.raw",
+      "role": "calibration",
+      "bytes": 207360000,
+      "sha256": "9565a6bae9707782cb1f8d3aaec21dcdd67802cd348ad9feb0124b7c60d30856",
+      "frame_count": 50,
+      "cfa": "GRBG",
+      "raw_spec": {
+        "width": 1920,
+        "height": 1080,
+        "bit_shift": 4,
+        "cfa": "GRBG",
+        "valid_bits": 12,
+        "dtype": "<u2",
+        "strict_alignment": true
+      },
+      "black_dn12": [
+        256.5,
+        256.5,
+        256.5,
+        256.5
+      ],
+      "white_dn12": 4095.0,
+      "parameter_basis": "independent MIS20S1 dark calibration reference",
+      "shot_gain_dn12_per_e": null,
+      "read_variance_dn12_sq": null,
+      "splits": {},
+      "metadata": {
+        "exposure_us": 83317,
+        "sensor_gain_code": 2048,
+        "isp_gain_code": 1024,
+        "gain_label_from_path": "1920x",
+        "exposure_basis": "filename Shutter/US where provided; null means unknown",
+        "q10_gain_product": 2.0,
+        "gain_basis": "collection Q10 code product; not calibrated ISO or ExposureDiffusion exposure ratio"
+      },
+      "container_audit": {
+        "passed": true,
+        "scanned_frames": 50,
+        "min_dn12": 242.0,
+        "max_dn12": 272.0,
+        "cfa_verified": true
+      }
+    },
+    {
+      "id": "mis20s1_1cf08135b7ba",
+      "sensor": "MIS20S1",
+      "source_relative": "04_Sigmastar_7_30/mis20s1_calibrationdata/black/25600/raw_stream_normal_1920x1080_16_GR_0205175549943_[FN=10,US=83317,AG=262144,DG=1024,BV=-299683,R=2631,G=1024,B=1986].raw",
+      "path": "data/raw/mis20s1_1cf08135b7ba.raw",
+      "role": "calibration",
+      "bytes": 207360000,
+      "sha256": "e4b7198253d6f2af81682c49d8303e2488754d23fe5a9e128ff625a49a0621e4",
+      "frame_count": 50,
+      "cfa": "GRBG",
+      "raw_spec": {
+        "width": 1920,
+        "height": 1080,
+        "bit_shift": 4,
+        "cfa": "GRBG",
+        "valid_bits": 12,
+        "dtype": "<u2",
+        "strict_alignment": true
+      },
+      "black_dn12": [
+        256.5,
+        256.5,
+        256.5,
+        256.5
+      ],
+      "white_dn12": 4095.0,
+      "parameter_basis": "independent MIS20S1 dark calibration reference",
+      "shot_gain_dn12_per_e": null,
+      "read_variance_dn12_sq": null,
+      "splits": {},
+      "metadata": {
+        "exposure_us": 83317,
+        "sensor_gain_code": 262144,
+        "isp_gain_code": 1024,
+        "gain_label_from_path": "1920x",
+        "exposure_basis": "filename Shutter/US where provided; null means unknown",
+        "q10_gain_product": 256.0,
+        "gain_basis": "collection Q10 code product; not calibrated ISO or ExposureDiffusion exposure ratio"
+      },
+      "container_audit": {
+        "passed": true,
+        "scanned_frames": 50,
+        "min_dn12": 0.0,
+        "max_dn12": 710.0,
+        "cfa_verified": true
+      }
+    },
+    {
+      "id": "mis20s1_84562429a622",
+      "sensor": "MIS20S1",
+      "source_relative": "04_Sigmastar_7_30/mis20s1_calibrationdata/black/3200/raw_stream_normal_1920x1080_16_GR_0205175419790_[FN=10,US=83317,AG=32768,DG=1024,BV=-250531,R=2631,G=1024,B=1986].raw",
+      "path": "data/raw/mis20s1_84562429a622.raw",
+      "role": "calibration",
+      "bytes": 207360000,
+      "sha256": "4611bd4af191e1b857533004bb9f79b435d8811486f67117f1a62338f93ef702",
+      "frame_count": 50,
+      "cfa": "GRBG",
+      "raw_spec": {
+        "width": 1920,
+        "height": 1080,
+        "bit_shift": 4,
+        "cfa": "GRBG",
+        "valid_bits": 12,
+        "dtype": "<u2",
+        "strict_alignment": true
+      },
+      "black_dn12": [
+        256.5,
+        256.5,
+        256.5,
+        256.5
+      ],
+      "white_dn12": 4095.0,
+      "parameter_basis": "independent MIS20S1 dark calibration reference",
+      "shot_gain_dn12_per_e": null,
+      "read_variance_dn12_sq": null,
+      "splits": {},
+      "metadata": {
+        "exposure_us": 83317,
+        "sensor_gain_code": 32768,
+        "isp_gain_code": 1024,
+        "gain_label_from_path": "1920x",
+        "exposure_basis": "filename Shutter/US where provided; null means unknown",
+        "q10_gain_product": 32.0,
+        "gain_basis": "collection Q10 code product; not calibrated ISO or ExposureDiffusion exposure ratio"
+      },
+      "container_audit": {
+        "passed": true,
+        "scanned_frames": 50,
+        "min_dn12": 198.0,
+        "max_dn12": 320.0,
+        "cfa_verified": true
+      }
+    },
+    {
+      "id": "mis20s1_90e8a85e8799",
+      "sensor": "MIS20S1",
+      "source_relative": "04_Sigmastar_7_30/mis20s1_calibrationdata/black/400/raw_stream_normal_1920x1080_16_GR_0205175308935_[FN=10,US=83317,AG=4096,DG=1024,BV=-201379,R=2631,G=1024,B=1986].raw",
+      "path": "data/raw/mis20s1_90e8a85e8799.raw",
+      "role": "calibration",
+      "bytes": 207360000,
+      "sha256": "f4ebcaef3d186175c40ff3d613bb974029fd4c568ea754857f034576bc1af54d",
+      "frame_count": 50,
+      "cfa": "GRBG",
+      "raw_spec": {
+        "width": 1920,
+        "height": 1080,
+        "bit_shift": 4,
+        "cfa": "GRBG",
+        "valid_bits": 12,
+        "dtype": "<u2",
+        "strict_alignment": true
+      },
+      "black_dn12": [
+        256.5,
+        256.5,
+        256.5,
+        256.5
+      ],
+      "white_dn12": 4095.0,
+      "parameter_basis": "independent MIS20S1 dark calibration reference",
+      "shot_gain_dn12_per_e": null,
+      "read_variance_dn12_sq": null,
+      "splits": {},
+      "metadata": {
+        "exposure_us": 83317,
+        "sensor_gain_code": 4096,
+        "isp_gain_code": 1024,
+        "gain_label_from_path": "1920x",
+        "exposure_basis": "filename Shutter/US where provided; null means unknown",
+        "q10_gain_product": 4.0,
+        "gain_basis": "collection Q10 code product; not calibrated ISO or ExposureDiffusion exposure ratio"
+      },
+      "container_audit": {
+        "passed": true,
+        "scanned_frames": 50,
+        "min_dn12": 212.0,
+        "max_dn12": 296.0,
+        "cfa_verified": true
+      }
+    },
+    {
+      "id": "mis20s1_20089b5e4e8f",
+      "sensor": "MIS20S1",
+      "source_relative": "04_Sigmastar_7_30/mis20s1_calibrationdata/black/6400/raw_stream_normal_1920x1080_16_GR_0205175442048_[FN=10,US=83317,AG=65536,DG=1024,BV=-266915,R=2631,G=1024,B=1986].raw",
+      "path": "data/raw/mis20s1_20089b5e4e8f.raw",
+      "role": "calibration",
+      "bytes": 207360000,
+      "sha256": "33747a477bf26eb170ba70b96b78647390432ac0ea6885f2d7815f50ba587d17",
+      "frame_count": 50,
+      "cfa": "GRBG",
+      "raw_spec": {
+        "width": 1920,
+        "height": 1080,
+        "bit_shift": 4,
+        "cfa": "GRBG",
+        "valid_bits": 12,
+        "dtype": "<u2",
+        "strict_alignment": true
+      },
+      "black_dn12": [
+        256.5,
+        256.5,
+        256.5,
+        256.5
+      ],
+      "white_dn12": 4095.0,
+      "parameter_basis": "independent MIS20S1 dark calibration reference",
+      "shot_gain_dn12_per_e": null,
+      "read_variance_dn12_sq": null,
+      "splits": {},
+      "metadata": {
+        "exposure_us": 83317,
+        "sensor_gain_code": 65536,
+        "isp_gain_code": 1024,
+        "gain_label_from_path": "1920x",
+        "exposure_basis": "filename Shutter/US where provided; null means unknown",
+        "q10_gain_product": 64.0,
+        "gain_basis": "collection Q10 code product; not calibrated ISO or ExposureDiffusion exposure ratio"
+      },
+      "container_audit": {
+        "passed": true,
+        "scanned_frames": 50,
+        "min_dn12": 148.0,
+        "max_dn12": 384.0,
+        "cfa_verified": true
+      }
+    },
+    {
+      "id": "mis20s1_633d7d500044",
+      "sensor": "MIS20S1",
+      "source_relative": "04_Sigmastar_7_30/mis20s1_calibrationdata/black/800/raw_stream_normal_1920x1080_16_GR_0205175339636_[FN=10,US=83317,AG=8192,DG=1024,BV=-217763,R=2631,G=1024,B=1986].raw",
+      "path": "data/raw/mis20s1_633d7d500044.raw",
+      "role": "calibration",
+      "bytes": 207360000,
+      "sha256": "8821363ec7a162d7d577ad7a9dacc523a0d5700c495e9bc9f39d169e4f7ceae9",
+      "frame_count": 50,
+      "cfa": "GRBG",
+      "raw_spec": {
+        "width": 1920,
+        "height": 1080,
+        "bit_shift": 4,
+        "cfa": "GRBG",
+        "valid_bits": 12,
+        "dtype": "<u2",
+        "strict_alignment": true
+      },
+      "black_dn12": [
+        256.5,
+        256.5,
+        256.5,
+        256.5
+      ],
+      "white_dn12": 4095.0,
+      "parameter_basis": "independent MIS20S1 dark calibration reference",
+      "shot_gain_dn12_per_e": null,
+      "read_variance_dn12_sq": null,
+      "splits": {},
+      "metadata": {
+        "exposure_us": 83317,
+        "sensor_gain_code": 8192,
+        "isp_gain_code": 1024,
+        "gain_label_from_path": "1920x",
+        "exposure_basis": "filename Shutter/US where provided; null means unknown",
+        "q10_gain_product": 8.0,
+        "gain_basis": "collection Q10 code product; not calibrated ISO or ExposureDiffusion exposure ratio"
+      },
+      "container_audit": {
+        "passed": true,
+        "scanned_frames": 50,
+        "min_dn12": 203.0,
+        "max_dn12": 323.0,
+        "cfa_verified": true
+      }
+    },
+    {
+      "id": "mis20s1_efd274fb8616",
+      "sensor": "MIS20S1",
+      "source_relative": "04_Sigmastar_7_30/mis20s1_calibrationdata/color/100/raw_stream_normal_1920x1080_16_GR_0205173227758_[FN=10,US=83317,AG=1024,DG=1024,BV=-24417,R=2299,G=1024,B=1952].raw",
+      "path": "data/raw/mis20s1_efd274fb8616.raw",
+      "role": "calibration",
+      "bytes": 207360000,
+      "sha256": "0e9b2d85ae23031bccfd67f33bb5b2fc53c6248aae8f3cae7e5f36193c8e05dc",
+      "frame_count": 50,
+      "cfa": "GRBG",
+      "raw_spec": {
+        "width": 1920,
+        "height": 1080,
+        "bit_shift": 4,
+        "cfa": "GRBG",
+        "valid_bits": 12,
+        "dtype": "<u2",
+        "strict_alignment": true
+      },
+      "black_dn12": [
+        256.5,
+        256.5,
+        256.5,
+        256.5
+      ],
+      "white_dn12": 4095.0,
+      "parameter_basis": "independent MIS20S1 dark calibration reference",
+      "shot_gain_dn12_per_e": null,
+      "read_variance_dn12_sq": null,
+      "splits": {},
+      "metadata": {
+        "exposure_us": 83317,
+        "sensor_gain_code": 1024,
+        "isp_gain_code": 1024,
+        "gain_label_from_path": "1920x",
+        "exposure_basis": "filename Shutter/US where provided; null means unknown",
+        "q10_gain_product": 1.0,
+        "gain_basis": "collection Q10 code product; not calibrated ISO or ExposureDiffusion exposure ratio"
+      },
+      "container_audit": {
+        "passed": true,
+        "scanned_frames": 50,
+        "min_dn12": 279.0,
+        "max_dn12": 3295.0,
+        "cfa_verified": true
+      }
+    },
+    {
+      "id": "mis20s1_893db42a7b55",
+      "sensor": "MIS20S1",
+      "source_relative": "04_Sigmastar_7_30/mis20s1_calibrationdata/color/12800/raw_stream_normal_1920x1080_16_GR_0205174434739_[FN=10,US=623,AG=131072,DG=1071,BV=-23609,R=2420,G=1024,B=1908].raw",
+      "path": "data/raw/mis20s1_893db42a7b55.raw",
+      "role": "calibration",
+      "bytes": 207360000,
+      "sha256": "79e1e423f02b2eb0448cb128b48ff140b9b6b05bbea9b771cb3d8d677077e018",
+      "frame_count": 50,
+      "cfa": "GRBG",
+      "raw_spec": {
+        "width": 1920,
+        "height": 1080,
+        "bit_shift": 4,
+        "cfa": "GRBG",
+        "valid_bits": 12,
+        "dtype": "<u2",
+        "strict_alignment": true
+      },
+      "black_dn12": [
+        256.5,
+        256.5,
+        256.5,
+        256.5
+      ],
+      "white_dn12": 4095.0,
+      "parameter_basis": "independent MIS20S1 dark calibration reference",
+      "shot_gain_dn12_per_e": null,
+      "read_variance_dn12_sq": null,
+      "splits": {},
+      "metadata": {
+        "exposure_us": 623,
+        "sensor_gain_code": 131072,
+        "isp_gain_code": 1071,
+        "gain_label_from_path": "1920x",
+        "exposure_basis": "filename Shutter/US where provided; null means unknown",
+        "q10_gain_product": 133.875,
+        "gain_basis": "collection Q10 code product; not calibrated ISO or ExposureDiffusion exposure ratio"
+      },
+      "container_audit": {
+        "passed": true,
+        "scanned_frames": 50,
+        "min_dn12": 56.0,
+        "max_dn12": 4095.0,
+        "cfa_verified": true
+      }
+    },
+    {
+      "id": "mis20s1_57c5d27bb546",
+      "sensor": "MIS20S1",
+      "source_relative": "04_Sigmastar_7_30/mis20s1_calibrationdata/color/1600/raw_stream_normal_1920x1080_16_GR_0205174019158_[FN=10,US=5186,AG=16384,DG=1028,BV=-22874,R=2316,G=1024,B=1983].raw",
+      "path": "data/raw/mis20s1_57c5d27bb546.raw",
+      "role": "calibration",
+      "bytes": 207360000,
+      "sha256": "f949f932de2a6fa108c8cf61ef1ca99d419b4233c5022725a5dca2265de894dc",
+      "frame_count": 50,
+      "cfa": "GRBG",
+      "raw_spec": {
+        "width": 1920,
+        "height": 1080,
+        "bit_shift": 4,
+        "cfa": "GRBG",
+        "valid_bits": 12,
+        "dtype": "<u2",
+        "strict_alignment": true
+      },
+      "black_dn12": [
+        256.5,
+        256.5,
+        256.5,
+        256.5
+      ],
+      "white_dn12": 4095.0,
+      "parameter_basis": "independent MIS20S1 dark calibration reference",
+      "shot_gain_dn12_per_e": null,
+      "read_variance_dn12_sq": null,
+      "splits": {},
+      "metadata": {
+        "exposure_us": 5186,
+        "sensor_gain_code": 16384,
+        "isp_gain_code": 1028,
+        "gain_label_from_path": "1920x",
+        "exposure_basis": "filename Shutter/US where provided; null means unknown",
+        "q10_gain_product": 16.0625,
+        "gain_basis": "collection Q10 code product; not calibrated ISO or ExposureDiffusion exposure ratio"
+      },
+      "container_audit": {
+        "passed": true,
+        "scanned_frames": 50,
+        "min_dn12": 253.0,
+        "max_dn12": 3667.0,
+        "cfa_verified": true
+      }
+    },
+    {
+      "id": "mis20s1_0b57abf78280",
+      "sensor": "MIS20S1",
+      "source_relative": "04_Sigmastar_7_30/mis20s1_calibrationdata/color/200/raw_stream_normal_1920x1080_16_GR_0205173424232_[FN=10,US=41659,AG=2048,DG=1024,BV=-25117,R=2310,G=1024,B=1980].raw",
+      "path": "data/raw/mis20s1_0b57abf78280.raw",
+      "role": "calibration",
+      "bytes": 207360000,
+      "sha256": "babc6fbec7a8c1f12aafbd9f942c0f090f82ee0a9f14ccb9059d7e1a6254811b",
+      "frame_count": 50,
+      "cfa": "GRBG",
+      "raw_spec": {
+        "width": 1920,
+        "height": 1080,
+        "bit_shift": 4,
+        "cfa": "GRBG",
+        "valid_bits": 12,
+        "dtype": "<u2",
+        "strict_alignment": true
+      },
+      "black_dn12": [
+        256.5,
+        256.5,
+        256.5,
+        256.5
+      ],
+      "white_dn12": 4095.0,
+      "parameter_basis": "independent MIS20S1 dark calibration reference",
+      "shot_gain_dn12_per_e": null,
+      "read_variance_dn12_sq": null,
+      "splits": {},
+      "metadata": {
+        "exposure_us": 41659,
+        "sensor_gain_code": 2048,
+        "isp_gain_code": 1024,
+        "gain_label_from_path": "1920x",
+        "exposure_basis": "filename Shutter/US where provided; null means unknown",
+        "q10_gain_product": 2.0,
+        "gain_basis": "collection Q10 code product; not calibrated ISO or ExposureDiffusion exposure ratio"
+      },
+      "container_audit": {
+        "passed": true,
+        "scanned_frames": 50,
+        "min_dn12": 272.0,
+        "max_dn12": 3218.0,
+        "cfa_verified": true
+      }
+    },
+    {
+      "id": "mis20s1_6039c491ec58",
+      "sensor": "MIS20S1",
+      "source_relative": "04_Sigmastar_7_30/mis20s1_calibrationdata/color/25600/raw_stream_normal_1920x1080_16_GR_0205174518964_[FN=10,US=326,AG=262144,DG=1024,BV=-24141,R=2484,G=1024,B=1933].raw",
+      "path": "data/raw/mis20s1_6039c491ec58.raw",
+      "role": "calibration",
+      "bytes": 207360000,
+      "sha256": "1929d0068e81f70656d41a471517e4a867824333c23c5f944efe3838cdfbd862",
+      "frame_count": 50,
+      "cfa": "GRBG",
+      "raw_spec": {
+        "width": 1920,
+        "height": 1080,
+        "bit_shift": 4,
+        "cfa": "GRBG",
+        "valid_bits": 12,
+        "dtype": "<u2",
+        "strict_alignment": true
+      },
+      "black_dn12": [
+        256.5,
+        256.5,
+        256.5,
+        256.5
+      ],
+      "white_dn12": 4095.0,
+      "parameter_basis": "independent MIS20S1 dark calibration reference",
+      "shot_gain_dn12_per_e": null,
+      "read_variance_dn12_sq": null,
+      "splits": {},
+      "metadata": {
+        "exposure_us": 326,
+        "sensor_gain_code": 262144,
+        "isp_gain_code": 1024,
+        "gain_label_from_path": "1920x",
+        "exposure_basis": "filename Shutter/US where provided; null means unknown",
+        "q10_gain_product": 256.0,
+        "gain_basis": "collection Q10 code product; not calibrated ISO or ExposureDiffusion exposure ratio"
+      },
+      "container_audit": {
+        "passed": true,
+        "scanned_frames": 50,
+        "min_dn12": 0.0,
+        "max_dn12": 4095.0,
+        "cfa_verified": true
+      }
+    },
+    {
+      "id": "mis20s1_51f50f7eb2cc",
+      "sensor": "MIS20S1",
+      "source_relative": "04_Sigmastar_7_30/mis20s1_calibrationdata/color/3200/raw_stream_normal_1920x1080_16_GR_0205174119530_[FN=10,US=2578,AG=32768,DG=1034,BV=-23174,R=2316,G=1024,B=1983].raw",
+      "path": "data/raw/mis20s1_51f50f7eb2cc.raw",
+      "role": "calibration",
+      "bytes": 207360000,
+      "sha256": "36752c3d3229802bd3dddeb16b3a6ca0800a81c28950289ba456e1f68bbb0980",
+      "frame_count": 50,
+      "cfa": "GRBG",
+      "raw_spec": {
+        "width": 1920,
+        "height": 1080,
+        "bit_shift": 4,
+        "cfa": "GRBG",
+        "valid_bits": 12,
+        "dtype": "<u2",
+        "strict_alignment": true
+      },
+      "black_dn12": [
+        256.5,
+        256.5,
+        256.5,
+        256.5
+      ],
+      "white_dn12": 4095.0,
+      "parameter_basis": "independent MIS20S1 dark calibration reference",
+      "shot_gain_dn12_per_e": null,
+      "read_variance_dn12_sq": null,
+      "splits": {},
+      "metadata": {
+        "exposure_us": 2578,
+        "sensor_gain_code": 32768,
+        "isp_gain_code": 1034,
+        "gain_label_from_path": "1920x",
+        "exposure_basis": "filename Shutter/US where provided; null means unknown",
+        "q10_gain_product": 32.3125,
+        "gain_basis": "collection Q10 code product; not calibrated ISO or ExposureDiffusion exposure ratio"
+      },
+      "container_audit": {
+        "passed": true,
+        "scanned_frames": 50,
+        "min_dn12": 226.0,
+        "max_dn12": 3712.0,
+        "cfa_verified": true
+      }
+    },
+    {
+      "id": "mis20s1_bae59bb1722f",
+      "sensor": "MIS20S1",
+      "source_relative": "04_Sigmastar_7_30/mis20s1_calibrationdata/color/400/raw_stream_normal_1920x1080_16_GR_0205173607994_[FN=10,US=20830,AG=4096,DG=1024,BV=-25282,R=2304,G=1024,B=1982].raw",
+      "path": "data/raw/mis20s1_bae59bb1722f.raw",
+      "role": "calibration",
+      "bytes": 207360000,
+      "sha256": "11a689c1e901cbf7b29e5c077dbcdc64b12d40f3557dbc6974c992adf90fbec1",
+      "frame_count": 50,
+      "cfa": "GRBG",
+      "raw_spec": {
+        "width": 1920,
+        "height": 1080,
+        "bit_shift": 4,
+        "cfa": "GRBG",
+        "valid_bits": 12,
+        "dtype": "<u2",
+        "strict_alignment": true
+      },
+      "black_dn12": [
+        256.5,
+        256.5,
+        256.5,
+        256.5
+      ],
+      "white_dn12": 4095.0,
+      "parameter_basis": "independent MIS20S1 dark calibration reference",
+      "shot_gain_dn12_per_e": null,
+      "read_variance_dn12_sq": null,
+      "splits": {},
+      "metadata": {
+        "exposure_us": 20830,
+        "sensor_gain_code": 4096,
+        "isp_gain_code": 1024,
+        "gain_label_from_path": "1920x",
+        "exposure_basis": "filename Shutter/US where provided; null means unknown",
+        "q10_gain_product": 4.0,
+        "gain_basis": "collection Q10 code product; not calibrated ISO or ExposureDiffusion exposure ratio"
+      },
+      "container_audit": {
+        "passed": true,
+        "scanned_frames": 50,
+        "min_dn12": 260.0,
+        "max_dn12": 3252.0,
+        "cfa_verified": true
+      }
+    },
+    {
+      "id": "mis20s1_942d806c3eba",
+      "sensor": "MIS20S1",
+      "source_relative": "04_Sigmastar_7_30/mis20s1_calibrationdata/color/6400/raw_stream_normal_1920x1080_16_GR_0205174305901_[FN=10,US=1275,AG=65536,DG=1046,BV=-23138,R=2353,G=1024,B=1869].raw",
+      "path": "data/raw/mis20s1_942d806c3eba.raw",
+      "role": "calibration",
+      "bytes": 207360000,
+      "sha256": "cd8b121076996a688e75e164b600742e04d98506e91f7b1f4cd509e80b3848dd",
+      "frame_count": 50,
+      "cfa": "GRBG",
+      "raw_spec": {
+        "width": 1920,
+        "height": 1080,
+        "bit_shift": 4,
+        "cfa": "GRBG",
+        "valid_bits": 12,
+        "dtype": "<u2",
+        "strict_alignment": true
+      },
+      "black_dn12": [
+        256.5,
+        256.5,
+        256.5,
+        256.5
+      ],
+      "white_dn12": 4095.0,
+      "parameter_basis": "independent MIS20S1 dark calibration reference",
+      "shot_gain_dn12_per_e": null,
+      "read_variance_dn12_sq": null,
+      "splits": {},
+      "metadata": {
+        "exposure_us": 1275,
+        "sensor_gain_code": 65536,
+        "isp_gain_code": 1046,
+        "gain_label_from_path": "1920x",
+        "exposure_basis": "filename Shutter/US where provided; null means unknown",
+        "q10_gain_product": 65.375,
+        "gain_basis": "collection Q10 code product; not calibrated ISO or ExposureDiffusion exposure ratio"
+      },
+      "container_audit": {
+        "passed": true,
+        "scanned_frames": 50,
+        "min_dn12": 176.0,
+        "max_dn12": 3934.0,
+        "cfa_verified": true
+      }
+    },
+    {
+      "id": "mis20s1_04161a93d12c",
+      "sensor": "MIS20S1",
+      "source_relative": "04_Sigmastar_7_30/mis20s1_calibrationdata/color/800/raw_stream_normal_1920x1080_16_GR_0205173829970_[FN=10,US=10400,AG=8192,DG=1025,BV=-25381,R=2316,G=1024,B=1983].raw",
+      "path": "data/raw/mis20s1_04161a93d12c.raw",
+      "role": "calibration",
+      "bytes": 207360000,
+      "sha256": "a393114232ceb54f5796b86252b92e6720e2c441e2adc3b28a5691bb38718edf",
+      "frame_count": 50,
+      "cfa": "GRBG",
+      "raw_spec": {
+        "width": 1920,
+        "height": 1080,
+        "bit_shift": 4,
+        "cfa": "GRBG",
+        "valid_bits": 12,
+        "dtype": "<u2",
+        "strict_alignment": true
+      },
+      "black_dn12": [
+        256.5,
+        256.5,
+        256.5,
+        256.5
+      ],
+      "white_dn12": 4095.0,
+      "parameter_basis": "independent MIS20S1 dark calibration reference",
+      "shot_gain_dn12_per_e": null,
+      "read_variance_dn12_sq": null,
+      "splits": {},
+      "metadata": {
+        "exposure_us": 10400,
+        "sensor_gain_code": 8192,
+        "isp_gain_code": 1025,
+        "gain_label_from_path": "1920x",
+        "exposure_basis": "filename Shutter/US where provided; null means unknown",
+        "q10_gain_product": 8.0078125,
+        "gain_basis": "collection Q10 code product; not calibrated ISO or ExposureDiffusion exposure ratio"
+      },
+      "container_audit": {
+        "passed": true,
+        "scanned_frames": 50,
+        "min_dn12": 242.0,
+        "max_dn12": 3285.0,
+        "cfa_verified": true
+      }
+    },
+    {
+      "id": "mis20s1_85850945032a",
+      "sensor": "MIS20S1",
+      "source_relative": "04_Sigmastar_7_30/mis20s1_outdoor/1000x/raw_stream_1920x1080_16bit@RG_[Shutter=79999,SenserG=131072,IspG=8192,R=1829,G=1024,B=2349].raw",
+      "path": "data/raw/mis20s1_85850945032a.raw",
+      "role": "development",
+      "bytes": 829440000,
+      "sha256": "10f3d48a7aa74e3ccb65faa3063135fa517d6674431ad555a929fe248ed0d6c8",
+      "frame_count": 200,
+      "cfa": "RGGB",
+      "raw_spec": {
+        "width": 1920,
+        "height": 1080,
+        "bit_shift": 4,
+        "cfa": "RGGB",
+        "valid_bits": 12,
+        "dtype": "<u2",
+        "strict_alignment": true
+      },
+      "black_dn12": [
+        256.5,
+        256.5,
+        256.5,
+        256.5
+      ],
+      "white_dn12": 4095.0,
+      "parameter_basis": "independent MIS20S1 dark calibration reference",
+      "shot_gain_dn12_per_e": [
+        23.18958147688299,
+        21.513897657448013,
+        21.923167353191683,
+        23.21129558935228
+      ],
+      "read_variance_dn12_sq": [
+        91.1962670962708,
+        74.0006376599224,
+        66.79412808070073,
+        97.46795457476222
+      ],
+      "splits": {
+        "train": [
+          0,
+          139
+        ],
+        "validation": [
+          150,
+          199
+        ]
+      },
+      "metadata": {
+        "exposure_us": 79999,
+        "sensor_gain_code": 131072,
+        "isp_gain_code": 8192,
+        "gain_label_from_path": "1000x",
+        "exposure_basis": "filename Shutter/US where provided; null means unknown",
+        "q10_gain_product": 1024.0,
+        "gain_basis": "collection Q10 code product; not calibrated ISO or ExposureDiffusion exposure ratio"
+      },
+      "container_audit": {
+        "passed": true,
+        "scanned_frames": 200,
+        "min_dn12": 2.0,
+        "max_dn12": 4095.0,
+        "cfa_verified": true
+      },
+      "noise_basis": "approximate training-only odd-frame tile difference fit; not full sensor likelihood or FPN calibration",
+      "noise_fit_points": [
+        499,
+        482,
+        482,
+        506
+      ],
+      "noise_fit_source_frames": [
+        1,
+        3,
+        5,
+        7,
+        9,
+        11,
+        13,
+        15,
+        17,
+        19,
+        21,
+        23,
+        25,
+        27,
+        29,
+        31,
+        33,
+        35,
+        37,
+        39
+      ],
+      "pooling_variance_factor": [
+        0.04,
+        0.04,
+        0.04,
+        0.04
+      ],
+      "noise_fit_version": 2
+    },
+    {
+      "id": "mis20s1_ad3fd025abc5",
+      "sensor": "MIS20S1",
+      "source_relative": "04_Sigmastar_7_30/mis20s1_outdoor/128x/raw_stream_1920x1080_16bit@RG_[Shutter=79999,SenserG=131072,IspG=1123,R=1896,G=1024,B=2221].raw",
+      "path": "data/raw/mis20s1_ad3fd025abc5.raw",
+      "role": "development",
+      "bytes": 829440000,
+      "sha256": "b45b28fba176b2d95486f2a9dbc3528752e57e38cb00b8f469f7ade0dafa48de",
+      "frame_count": 200,
+      "cfa": "RGGB",
+      "raw_spec": {
+        "width": 1920,
+        "height": 1080,
+        "bit_shift": 4,
+        "cfa": "RGGB",
+        "valid_bits": 12,
+        "dtype": "<u2",
+        "strict_alignment": true
+      },
+      "black_dn12": [
+        256.5,
+        256.5,
+        256.5,
+        256.5
+      ],
+      "white_dn12": 4095.0,
+      "parameter_basis": "independent MIS20S1 dark calibration reference",
+      "shot_gain_dn12_per_e": [
+        23.689322134387993,
+        21.365601527609133,
+        21.23442996491163,
+        23.825097629890237
+      ],
+      "read_variance_dn12_sq": [
+        16.600748708742845,
+        10.387997158235004,
+        18.085367305790225,
+        18.207756901587665
+      ],
+      "splits": {
+        "train": [
+          0,
+          139
+        ],
+        "validation": [
+          150,
+          199
+        ]
+      },
+      "metadata": {
+        "exposure_us": 79999,
+        "sensor_gain_code": 131072,
+        "isp_gain_code": 1123,
+        "gain_label_from_path": "128x",
+        "exposure_basis": "filename Shutter/US where provided; null means unknown",
+        "q10_gain_product": 140.375,
+        "gain_basis": "collection Q10 code product; not calibrated ISO or ExposureDiffusion exposure ratio"
+      },
+      "container_audit": {
+        "passed": true,
+        "scanned_frames": 200,
+        "min_dn12": 0.0,
+        "max_dn12": 4095.0,
+        "cfa_verified": true
+      },
+      "noise_basis": "approximate training-only odd-frame tile difference fit; not full sensor likelihood or FPN calibration",
+      "noise_fit_points": [
+        444,
+        409,
+        437,
+        430
+      ],
+      "noise_fit_source_frames": [
+        1,
+        3,
+        5,
+        7,
+        9,
+        11,
+        13,
+        15,
+        17,
+        19,
+        21,
+        23,
+        25,
+        27,
+        29,
+        31,
+        33,
+        35,
+        37,
+        39
+      ],
+      "pooling_variance_factor": [
+        0.04,
+        0.04,
+        0.04,
+        0.04
+      ],
+      "noise_fit_version": 2
+    },
+    {
+      "id": "mis20s1_8324b7c529f0",
+      "sensor": "MIS20S1",
+      "source_relative": "04_Sigmastar_7_30/mis20s1_outdoor/1500x/raw_stream_1920x1080_16bit@RG_[Shutter=79999,SenserG=131072,IspG=10455,R=1679,G=1024,B=2473].raw",
+      "path": "data/raw/mis20s1_8324b7c529f0.raw",
+      "role": "development",
+      "bytes": 808704000,
+      "sha256": "57e1ad84263eb7c126a472199aed4389be4817916c5fc55c7d361861485a843f",
+      "frame_count": 195,
+      "cfa": "RGGB",
+      "raw_spec": {
+        "width": 1920,
+        "height": 1080,
+        "bit_shift": 4,
+        "cfa": "RGGB",
+        "valid_bits": 12,
+        "dtype": "<u2",
+        "strict_alignment": true
+      },
+      "black_dn12": [
+        256.5,
+        256.5,
+        256.5,
+        256.5
+      ],
+      "white_dn12": 4095.0,
+      "parameter_basis": "independent MIS20S1 dark calibration reference",
+      "shot_gain_dn12_per_e": [
+        23.147834462865305,
+        20.624000217061322,
+        21.667978162084655,
+        23.38097326262193
+      ],
+      "read_variance_dn12_sq": [
+        100.95380110975633,
+        100.11930011172761,
+        89.981425403304,
+        104.344307201112
+      ],
+      "splits": {
+        "train": [
+          0,
+          135
+        ],
+        "validation": [
+          146,
+          194
+        ]
+      },
+      "metadata": {
+        "exposure_us": 79999,
+        "sensor_gain_code": 131072,
+        "isp_gain_code": 10455,
+        "gain_label_from_path": "1500x",
+        "exposure_basis": "filename Shutter/US where provided; null means unknown",
+        "q10_gain_product": 1306.875,
+        "gain_basis": "collection Q10 code product; not calibrated ISO or ExposureDiffusion exposure ratio"
+      },
+      "container_audit": {
+        "passed": true,
+        "scanned_frames": 195,
+        "min_dn12": 10.0,
+        "max_dn12": 4095.0,
+        "cfa_verified": true
+      },
+      "noise_basis": "approximate training-only odd-frame tile difference fit; not full sensor likelihood or FPN calibration",
+      "noise_fit_points": [
+        490,
+        470,
+        489,
+        494
+      ],
+      "noise_fit_source_frames": [
+        1,
+        3,
+        5,
+        7,
+        9,
+        11,
+        13,
+        15,
+        17,
+        19,
+        21,
+        23,
+        25,
+        27,
+        29,
+        31,
+        33,
+        35,
+        37,
+        39
+      ],
+      "pooling_variance_factor": [
+        0.04,
+        0.04,
+        0.04,
+        0.04
+      ],
+      "noise_fit_version": 2
+    },
+    {
+      "id": "mis20s1_fd19cc4e1691",
+      "sensor": "MIS20S1",
+      "source_relative": "04_Sigmastar_7_30/mis20s1_outdoor/512x/raw_stream_1920x1080_16bit@RG_[Shutter=79999,SenserG=131072,IspG=3957,R=1837,G=1024,B=2283].raw",
+      "path": "data/raw/mis20s1_fd19cc4e1691.raw",
+      "role": "development",
+      "bytes": 821145600,
+      "sha256": "bf77c762bf245cebaca3dab7fa82f94a63aea4b7d3ea18b4c8418099c121da15",
+      "frame_count": 198,
+      "cfa": "RGGB",
+      "raw_spec": {
+        "width": 1920,
+        "height": 1080,
+        "bit_shift": 4,
+        "cfa": "RGGB",
+        "valid_bits": 12,
+        "dtype": "<u2",
+        "strict_alignment": true
+      },
+      "black_dn12": [
+        256.5,
+        256.5,
+        256.5,
+        256.5
+      ],
+      "white_dn12": 4095.0,
+      "parameter_basis": "independent MIS20S1 dark calibration reference",
+      "shot_gain_dn12_per_e": [
+        22.66845523725716,
+        20.916506223612963,
+        20.627175010409527,
+        22.903713055166783
+      ],
+      "read_variance_dn12_sq": [
+        84.17289486403259,
+        58.27917884677258,
+        67.13332555946442,
+        95.4736624173618
+      ],
+      "splits": {
+        "train": [
+          0,
+          137
+        ],
+        "validation": [
+          148,
+          197
+        ]
+      },
+      "metadata": {
+        "exposure_us": 79999,
+        "sensor_gain_code": 131072,
+        "isp_gain_code": 3957,
+        "gain_label_from_path": "512x",
+        "exposure_basis": "filename Shutter/US where provided; null means unknown",
+        "q10_gain_product": 494.625,
+        "gain_basis": "collection Q10 code product; not calibrated ISO or ExposureDiffusion exposure ratio"
+      },
+      "container_audit": {
+        "passed": true,
+        "scanned_frames": 198,
+        "min_dn12": 20.0,
+        "max_dn12": 4095.0,
+        "cfa_verified": true
+      },
+      "noise_basis": "approximate training-only odd-frame tile difference fit; not full sensor likelihood or FPN calibration",
+      "noise_fit_points": [
+        442,
+        413,
+        414,
+        417
+      ],
+      "noise_fit_source_frames": [
+        1,
+        3,
+        5,
+        7,
+        9,
+        11,
+        13,
+        15,
+        17,
+        19,
+        21,
+        23,
+        25,
+        27,
+        29,
+        31,
+        33,
+        35,
+        37,
+        39
+      ],
+      "pooling_variance_factor": [
+        0.04,
+        0.04,
+        0.04,
+        0.04
+      ],
+      "noise_fit_version": 2
+    },
+    {
+      "id": "mis20s1_ac9e58a75df1",
+      "sensor": "MIS20S1",
+      "source_relative": "04_Sigmastar_7_30/shdarkroom/1000x/raw_stream_1920x1080_16bit@RG_[Shutter=79999,SenserG=131072,IspG=7656,R=1878,G=1024,B=2218].raw",
+      "path": "data/raw/mis20s1_ac9e58a75df1.raw",
+      "role": "test",
+      "bytes": 829440000,
+      "sha256": "3575ab7d3de8d5fce9e15720b5157d89765fd7453a7b144ec2fba3d276bc21bd",
+      "frame_count": 200,
+      "cfa": "RGGB",
+      "raw_spec": {
+        "width": 1920,
+        "height": 1080,
+        "bit_shift": 4,
+        "cfa": "RGGB",
+        "valid_bits": 12,
+        "dtype": "<u2",
+        "strict_alignment": true
+      },
+      "black_dn12": [
+        256.5,
+        256.5,
+        256.5,
+        256.5
+      ],
+      "white_dn12": 4095.0,
+      "parameter_basis": "independent MIS20S1 dark calibration reference",
+      "shot_gain_dn12_per_e": null,
+      "read_variance_dn12_sq": null,
+      "splits": {},
+      "metadata": {
+        "exposure_us": 79999,
+        "sensor_gain_code": 131072,
+        "isp_gain_code": 7656,
+        "gain_label_from_path": "1000x",
+        "exposure_basis": "filename Shutter/US where provided; null means unknown",
+        "q10_gain_product": 957.0,
+        "gain_basis": "collection Q10 code product; not calibrated ISO or ExposureDiffusion exposure ratio"
+      },
+      "container_audit": {
+        "passed": true,
+        "scanned_frames": 200,
+        "min_dn12": 8.0,
+        "max_dn12": 4095.0,
+        "cfa_verified": true
+      }
+    },
+    {
+      "id": "mis20s1_95abebb62dd9",
+      "sensor": "MIS20S1",
+      "source_relative": "04_Sigmastar_7_30/shdarkroom/10x/raw_stream_1920x1080_16bit@RG_[Shutter=40000,SenserG=9500,IspG=1024,R=2113,G=1024,B=1789].raw",
+      "path": "data/raw/mis20s1_95abebb62dd9.raw",
+      "role": "test",
+      "bytes": 829440000,
+      "sha256": "258ead1a456c0573047f2a555f3cafa87a7724ca1ab4fed075a5a967c8d4a368",
+      "frame_count": 200,
+      "cfa": "RGGB",
+      "raw_spec": {
+        "width": 1920,
+        "height": 1080,
+        "bit_shift": 4,
+        "cfa": "RGGB",
+        "valid_bits": 12,
+        "dtype": "<u2",
+        "strict_alignment": true
+      },
+      "black_dn12": [
+        256.5,
+        256.5,
+        256.5,
+        256.5
+      ],
+      "white_dn12": 4095.0,
+      "parameter_basis": "independent MIS20S1 dark calibration reference",
+      "shot_gain_dn12_per_e": null,
+      "read_variance_dn12_sq": null,
+      "splits": {},
+      "metadata": {
+        "exposure_us": 40000,
+        "sensor_gain_code": 9500,
+        "isp_gain_code": 1024,
+        "gain_label_from_path": "10x",
+        "exposure_basis": "filename Shutter/US where provided; null means unknown",
+        "q10_gain_product": 9.27734375,
+        "gain_basis": "collection Q10 code product; not calibrated ISO or ExposureDiffusion exposure ratio"
+      },
+      "container_audit": {
+        "passed": true,
+        "scanned_frames": 200,
+        "min_dn12": 235.0,
+        "max_dn12": 4095.0,
+        "cfa_verified": true
+      }
+    },
+    {
+      "id": "mis20s1_114900bf5559",
+      "sensor": "MIS20S1",
+      "source_relative": "04_Sigmastar_7_30/shdarkroom/128x/raw_stream_1920x1080_16bit@RG_[Shutter=54992,SenserG=131072,IspG=1024,R=2159,G=1024,B=1849].raw",
+      "path": "data/raw/mis20s1_114900bf5559.raw",
+      "role": "test",
+      "bytes": 829440000,
+      "sha256": "19b1b21bccd8181b0d3380e5a2601147403adb0d01451d947b30d2d32dd69a58",
+      "frame_count": 200,
+      "cfa": "RGGB",
+      "raw_spec": {
+        "width": 1920,
+        "height": 1080,
+        "bit_shift": 4,
+        "cfa": "RGGB",
+        "valid_bits": 12,
+        "dtype": "<u2",
+        "strict_alignment": true
+      },
+      "black_dn12": [
+        256.5,
+        256.5,
+        256.5,
+        256.5
+      ],
+      "white_dn12": 4095.0,
+      "parameter_basis": "independent MIS20S1 dark calibration reference",
+      "shot_gain_dn12_per_e": null,
+      "read_variance_dn12_sq": null,
+      "splits": {},
+      "metadata": {
+        "exposure_us": 54992,
+        "sensor_gain_code": 131072,
+        "isp_gain_code": 1024,
+        "gain_label_from_path": "128x",
+        "exposure_basis": "filename Shutter/US where provided; null means unknown",
+        "q10_gain_product": 128.0,
+        "gain_basis": "collection Q10 code product; not calibrated ISO or ExposureDiffusion exposure ratio"
+      },
+      "container_audit": {
+        "passed": true,
+        "scanned_frames": 200,
+        "min_dn12": 0.0,
+        "max_dn12": 4095.0,
+        "cfa_verified": true
+      }
+    },
+    {
+      "id": "mis20s1_31e326492724",
+      "sensor": "MIS20S1",
+      "source_relative": "04_Sigmastar_7_30/shdarkroom/313x/raw_stream_1920x1080_16bit@RG_[Shutter=79999,SenserG=131072,IspG=2504,R=2065,G=1024,B=2021].raw",
+      "path": "data/raw/mis20s1_31e326492724.raw",
+      "role": "test",
+      "bytes": 1244160000,
+      "sha256": "694ee3ab6524cef4432ad6ab077bbbc530496115d75fab6400dd44dbebd7c669",
+      "frame_count": 300,
+      "cfa": "RGGB",
+      "raw_spec": {
+        "width": 1920,
+        "height": 1080,
+        "bit_shift": 4,
+        "cfa": "RGGB",
+        "valid_bits": 12,
+        "dtype": "<u2",
+        "strict_alignment": true
+      },
+      "black_dn12": [
+        256.5,
+        256.5,
+        256.5,
+        256.5
+      ],
+      "white_dn12": 4095.0,
+      "parameter_basis": "independent MIS20S1 dark calibration reference",
+      "shot_gain_dn12_per_e": null,
+      "read_variance_dn12_sq": null,
+      "splits": {},
+      "metadata": {
+        "exposure_us": 79999,
+        "sensor_gain_code": 131072,
+        "isp_gain_code": 2504,
+        "gain_label_from_path": "313x",
+        "exposure_basis": "filename Shutter/US where provided; null means unknown",
+        "q10_gain_product": 313.0,
+        "gain_basis": "collection Q10 code product; not calibrated ISO or ExposureDiffusion exposure ratio"
+      },
+      "container_audit": {
+        "passed": true,
+        "scanned_frames": 300,
+        "min_dn12": 0.0,
+        "max_dn12": 4095.0,
+        "cfa_verified": true
+      }
+    },
+    {
+      "id": "mis20s1_15eff2ed26b8",
+      "sensor": "MIS20S1",
+      "source_relative": "04_Sigmastar_7_30/shdarkroom/632x/raw_stream_1920x1080_16bit@RG_[Shutter=79999,SenserG=131072,IspG=5055,R=2094,G=1024,B=1968].raw",
+      "path": "data/raw/mis20s1_15eff2ed26b8.raw",
+      "role": "test",
+      "bytes": 829440000,
+      "sha256": "41b8a9971a6644830025453f2c0beb3f2999ee88453173510a30b09833b7b83b",
+      "frame_count": 200,
+      "cfa": "RGGB",
+      "raw_spec": {
+        "width": 1920,
+        "height": 1080,
+        "bit_shift": 4,
+        "cfa": "RGGB",
+        "valid_bits": 12,
+        "dtype": "<u2",
+        "strict_alignment": true
+      },
+      "black_dn12": [
+        256.5,
+        256.5,
+        256.5,
+        256.5
+      ],
+      "white_dn12": 4095.0,
+      "parameter_basis": "independent MIS20S1 dark calibration reference",
+      "shot_gain_dn12_per_e": null,
+      "read_variance_dn12_sq": null,
+      "splits": {},
+      "metadata": {
+        "exposure_us": 79999,
+        "sensor_gain_code": 131072,
+        "isp_gain_code": 5055,
+        "gain_label_from_path": "632x",
+        "exposure_basis": "filename Shutter/US where provided; null means unknown",
+        "q10_gain_product": 631.875,
+        "gain_basis": "collection Q10 code product; not calibrated ISO or ExposureDiffusion exposure ratio"
+      },
+      "container_audit": {
+        "passed": true,
+        "scanned_frames": 200,
+        "min_dn12": 14.0,
+        "max_dn12": 4095.0,
+        "cfa_verified": true
+      }
+    },
+    {
+      "id": "mis20s1_fedbbca6480b",
+      "sensor": "MIS20S1",
+      "source_relative": "04_Sigmastar_7_30/shdarkroom/645x/raw_stream_1920x1080_16bit@RG_[Shutter=79999,SenserG=131072,IspG=5167,R=2120,G=1024,B=1956].raw",
+      "path": "data/raw/mis20s1_fedbbca6480b.raw",
+      "role": "test",
+      "bytes": 829440000,
+      "sha256": "d6141bc2e4c62c014ba770e22ebfd19e9ffd702c222eaf31611ad4dd321fa8c0",
+      "frame_count": 200,
+      "cfa": "RGGB",
+      "raw_spec": {
+        "width": 1920,
+        "height": 1080,
+        "bit_shift": 4,
+        "cfa": "RGGB",
+        "valid_bits": 12,
+        "dtype": "<u2",
+        "strict_alignment": true
+      },
+      "black_dn12": [
+        256.5,
+        256.5,
+        256.5,
+        256.5
+      ],
+      "white_dn12": 4095.0,
+      "parameter_basis": "independent MIS20S1 dark calibration reference",
+      "shot_gain_dn12_per_e": null,
+      "read_variance_dn12_sq": null,
+      "splits": {},
+      "metadata": {
+        "exposure_us": 79999,
+        "sensor_gain_code": 131072,
+        "isp_gain_code": 5167,
+        "gain_label_from_path": "645x",
+        "exposure_basis": "filename Shutter/US where provided; null means unknown",
+        "q10_gain_product": 645.875,
+        "gain_basis": "collection Q10 code product; not calibrated ISO or ExposureDiffusion exposure ratio"
+      },
+      "container_audit": {
+        "passed": true,
+        "scanned_frames": 200,
+        "min_dn12": 0.0,
+        "max_dn12": 4095.0,
+        "cfa_verified": true
+      }
+    },
+    {
+      "id": "mis20s1_fd1a9fabfcdd",
+      "sensor": "MIS20S1",
+      "source_relative": "04_Sigmastar_7_30/shdarkroom/64x/raw_stream_1920x1080_16bit@RG_[Shutter=40000,SenserG=69631,IspG=1024,R=2137,G=1024,B=1825].raw",
+      "path": "data/raw/mis20s1_fd1a9fabfcdd.raw",
+      "role": "test",
+      "bytes": 829440000,
+      "sha256": "25a9f19bcf4de5c674fe162fa8e577be6c424b2d34d7d3e1c6af0d0edde926ef",
+      "frame_count": 200,
+      "cfa": "RGGB",
+      "raw_spec": {
+        "width": 1920,
+        "height": 1080,
+        "bit_shift": 4,
+        "cfa": "RGGB",
+        "valid_bits": 12,
+        "dtype": "<u2",
+        "strict_alignment": true
+      },
+      "black_dn12": [
+        256.5,
+        256.5,
+        256.5,
+        256.5
+      ],
+      "white_dn12": 4095.0,
+      "parameter_basis": "independent MIS20S1 dark calibration reference",
+      "shot_gain_dn12_per_e": null,
+      "read_variance_dn12_sq": null,
+      "splits": {},
+      "metadata": {
+        "exposure_us": 40000,
+        "sensor_gain_code": 69631,
+        "isp_gain_code": 1024,
+        "gain_label_from_path": "64x",
+        "exposure_basis": "filename Shutter/US where provided; null means unknown",
+        "q10_gain_product": 67.9990234375,
+        "gain_basis": "collection Q10 code product; not calibrated ISO or ExposureDiffusion exposure ratio"
+      },
+      "container_audit": {
+        "passed": true,
+        "scanned_frames": 200,
+        "min_dn12": 106.0,
+        "max_dn12": 4095.0,
+        "cfa_verified": true
+      }
+    },
+    {
+      "id": "465_unspecified_9f43f5c3e9a8",
+      "sensor": "465_unspecified",
+      "source_relative": "05_2DNR3DNR/465_difficultpattern/shutter_83315/sensorG__ispG_4717_WB_1930_1024_2381/raw_stream_2560x1440_16bit@RG_[Shutter=83315,SenserG=109572,IspG=4717,R=1930,G=1024,B=2381].raw",
+      "path": "data/raw/465_unspecified_9f43f5c3e9a8.raw",
+      "role": "development",
+      "bytes": 1474560000,
+      "sha256": "b9a4b244e049af9b167ec4e67dc83c951b271d3f9ae077ed74944e9cb98a09d6",
+      "frame_count": 200,
+      "cfa": "RGGB",
+      "raw_spec": {
+        "width": 2560,
+        "height": 1440,
+        "bit_shift": 4,
+        "cfa": "RGGB",
+        "valid_bits": 12,
+        "dtype": "<u2",
+        "strict_alignment": true
+      },
+      "black_dn12": [
+        255.88212802127327,
+        255.88212802127327,
+        255.88212802127327,
+        255.88212802127327
+      ],
+      "white_dn12": 4095.0,
+      "parameter_basis": "filename RG; high12 from full storage scan; black level unprovided",
+      "shot_gain_dn12_per_e": [
+        25.091004589582134,
+        20.706949649247758,
+        20.700756494530648,
+        26.258805021898212
+      ],
+      "read_variance_dn12_sq": [
+        248.98866641247332,
+        288.636857138451,
+        287.39291152877377,
+        239.85602122828732
+      ],
+      "splits": {
+        "train": [
+          0,
+          139
+        ],
+        "validation": [
+          150,
+          199
+        ]
+      },
+      "metadata": {
+        "exposure_us": null,
+        "sensor_gain_code": 109572,
+        "isp_gain_code": 4717,
+        "gain_label_from_path": null,
+        "exposure_basis": "filename Shutter numeric value retained as shutter_code; unit awaiting confirmation",
+        "shutter_code": 83315,
+        "q10_gain_product": 492.90764236450195,
+        "gain_basis": "collection Q10 code product; not calibrated ISO or ExposureDiffusion exposure ratio"
+      },
+      "container_audit": {
+        "passed": true,
+        "scanned_frames": 200,
+        "min_dn12": 0.0,
+        "max_dn12": 4095.0,
+        "cfa_verified": true
+      },
+      "pooling_variance_factor": [
+        0.04,
+        0.04,
+        0.04,
+        0.04
+      ],
+      "parameter_override_source": {
+        "status": "data_driven_approximate_working_parameters_not_factory_calibration",
+        "evidence": "calibration/noise_validation.json + calibration/pedestal_summary.json + calibration/report.md",
+        "source_frames": [
+          1,
+          7,
+          13,
+          19,
+          25,
+          31,
+          37,
+          43,
+          49,
+          55,
+          61,
+          67,
+          71,
+          77,
+          83,
+          89,
+          95,
+          101,
+          107,
+          113,
+          119,
+          125,
+          131,
+          137
+        ],
+        "training_only": true,
+        "noise_method": "robust spatial tile temporal pair-difference variance against mean; full train prefix coverage",
+        "noise_validation": [
+          {
+            "a": 25.12520933861962,
+            "intercept_raw": -6180.550269035771,
+            "n": 1054,
+            "span": 729.7734375,
+            "holdout_n": 1297,
+            "spatial_median_relative_error": 0.03374154660717402,
+            "spatial_p90_relative_error": 0.08612046692677634,
+            "temporal_half_median_relative_error": [
+              0.04103306459710658,
+              0.04015548846674393
+            ]
+          },
+          {
+            "a": 20.883197827744002,
+            "intercept_raw": -5056.089115007494,
+            "n": 877,
+            "span": 1051.357421875,
+            "holdout_n": 1308,
+            "spatial_median_relative_error": 0.03563889684414688,
+            "spatial_p90_relative_error": 0.08898326958176561,
+            "temporal_half_median_relative_error": [
+              0.040064569217007934,
+              0.04128533121484406
+            ]
+          },
+          {
+            "a": 20.73613093530329,
+            "intercept_raw": -5020.9081633691785,
+            "n": 880,
+            "span": 773.654296875,
+            "holdout_n": 1299,
+            "spatial_median_relative_error": 0.036422359759004035,
+            "spatial_p90_relative_error": 0.09059611379528783,
+            "temporal_half_median_relative_error": [
+              0.04079467985748605,
+              0.04139490896479144
+            ]
+          },
+          {
+            "a": 26.427887144624982,
+            "intercept_raw": -6525.4082436607905,
+            "n": 1145,
+            "span": 430.546875,
+            "holdout_n": 1355,
+            "spatial_median_relative_error": 0.03677589386792876,
+            "spatial_p90_relative_error": 0.08661082296997777,
+            "temporal_half_median_relative_error": [
+              0.04294187335119096,
+              0.040417750338621966
+            ]
+          }
+        ],
+        "black_basis": "shared empirical pedestal inside 465_unspecified domain; nine high-gain clips, cross-fit dark-tail PG approximation",
+        "black_sensitivity_dn12": 8,
+        "low_gain_transfer_assumption": false,
+        "independent_low_gain_black_identified": null
+      },
+      "noise_basis": "training-prefix full-field robust temporal pair-difference approximation; see parameter_override_source",
+      "noise_fit_version": 2
+    },
+    {
+      "id": "465_unspecified_5de70414a527",
+      "sensor": "465_unspecified",
+      "source_relative": "05_2DNR3DNR/465_difficultpattern/shutter_83315/sensorG__ispG_8880_WB_1962_1024_2172/raw_stream_2560x1440_16bit@RG_[Shutter=83315,SenserG=109572,IspG=8880,R=1962,G=1024,B=2172].raw",
+      "path": "data/raw/465_unspecified_5de70414a527.raw",
+      "role": "development",
+      "bytes": 1474560000,
+      "sha256": "5551672d7d9c5c12b437b7211515b03fe9249531add833242ed520a945c04f41",
+      "frame_count": 200,
+      "cfa": "RGGB",
+      "raw_spec": {
+        "width": 2560,
+        "height": 1440,
+        "bit_shift": 4,
+        "cfa": "RGGB",
+        "valid_bits": 12,
+        "dtype": "<u2",
+        "strict_alignment": true
+      },
+      "black_dn12": [
+        255.88212802127327,
+        255.88212802127327,
+        255.88212802127327,
+        255.88212802127327
+      ],
+      "white_dn12": 4095.0,
+      "parameter_basis": "filename RG; high12 from full storage scan; black level unprovided",
+      "shot_gain_dn12_per_e": [
+        24.71725448322452,
+        20.458729444387817,
+        20.51403038718313,
+        25.72290462977075
+      ],
+      "read_variance_dn12_sq": [
+        254.2325518765865,
+        285.0683120831918,
+        284.65380057153925,
+        251.28635803147154
+      ],
+      "splits": {
+        "train": [
+          0,
+          139
+        ],
+        "validation": [
+          150,
+          199
+        ]
+      },
+      "metadata": {
+        "exposure_us": null,
+        "sensor_gain_code": 109572,
+        "isp_gain_code": 8880,
+        "gain_label_from_path": null,
+        "exposure_basis": "filename Shutter numeric value retained as shutter_code; unit awaiting confirmation",
+        "shutter_code": 83315,
+        "q10_gain_product": 927.9244995117188,
+        "gain_basis": "collection Q10 code product; not calibrated ISO or ExposureDiffusion exposure ratio"
+      },
+      "container_audit": {
+        "passed": true,
+        "scanned_frames": 200,
+        "min_dn12": 0.0,
+        "max_dn12": 4095.0,
+        "cfa_verified": true
+      },
+      "pooling_variance_factor": [
+        0.04,
+        0.04,
+        0.04,
+        0.04
+      ],
+      "parameter_override_source": {
+        "status": "data_driven_approximate_working_parameters_not_factory_calibration",
+        "evidence": "calibration/noise_validation.json + calibration/pedestal_summary.json + calibration/report.md",
+        "source_frames": [
+          1,
+          7,
+          13,
+          19,
+          25,
+          31,
+          37,
+          43,
+          49,
+          55,
+          61,
+          67,
+          71,
+          77,
+          83,
+          89,
+          95,
+          101,
+          107,
+          113,
+          119,
+          125,
+          131,
+          137
+        ],
+        "training_only": true,
+        "noise_method": "robust spatial tile temporal pair-difference variance against mean; full train prefix coverage",
+        "noise_validation": [
+          {
+            "a": 24.64119386325121,
+            "intercept_raw": -6049.649261636099,
+            "n": 1191,
+            "span": 207.873046875,
+            "holdout_n": 1400,
+            "spatial_median_relative_error": 0.030512407910728425,
+            "spatial_p90_relative_error": 0.07872801096125887,
+            "temporal_half_median_relative_error": [
+              0.03924623215071264,
+              0.0354393067385891
+            ]
+          },
+          {
+            "a": 20.460577389733864,
+            "intercept_raw": -4950.278571191131,
+            "n": 1146,
+            "span": 367.857421875,
+            "holdout_n": 1371,
+            "spatial_median_relative_error": 0.03056737063471199,
+            "spatial_p90_relative_error": 0.07334631530677604,
+            "temporal_half_median_relative_error": [
+              0.03679951084070349,
+              0.03473560516391856
+            ]
+          },
+          {
+            "a": 20.534027049388374,
+            "intercept_raw": -4969.633607261725,
+            "n": 1112,
+            "span": 448.900390625,
+            "holdout_n": 1353,
+            "spatial_median_relative_error": 0.02927941240338132,
+            "spatial_p90_relative_error": 0.07385327902876114,
+            "temporal_half_median_relative_error": [
+              0.03581381730425248,
+              0.033750986678433265
+            ]
+          },
+          {
+            "a": 25.59207014923466,
+            "intercept_raw": -6297.014453055238,
+            "n": 1305,
+            "span": 202.14453125,
+            "holdout_n": 1447,
+            "spatial_median_relative_error": 0.03252492895194951,
+            "spatial_p90_relative_error": 0.07916572893879367,
+            "temporal_half_median_relative_error": [
+              0.03840454747515179,
+              0.037062311112641425
+            ]
+          }
+        ],
+        "black_basis": "shared empirical pedestal inside 465_unspecified domain; nine high-gain clips, cross-fit dark-tail PG approximation",
+        "black_sensitivity_dn12": 8,
+        "low_gain_transfer_assumption": false,
+        "independent_low_gain_black_identified": null
+      },
+      "noise_basis": "training-prefix full-field robust temporal pair-difference approximation; see parameter_override_source",
+      "noise_fit_version": 2
+    },
+    {
+      "id": "465_unspecified_c5da694aca61",
+      "sensor": "465_unspecified",
+      "source_relative": "05_2DNR3DNR/465_sh_normal/shutter_39999/sensorG__ispG_1024_WB_1535_1024_3003/raw_stream_2560x1440_16bit@RG_[Shutter=39999,SenserG=1079,IspG=1024,R=1535,G=1024,B=3003].raw",
+      "path": "data/raw/465_unspecified_c5da694aca61.raw",
+      "role": "development",
+      "bytes": 737280000,
+      "sha256": "913fc19c54f5957e377e96a9f8c0f7a7dfbc8ca3ef7069c033be400738ce9ec5",
+      "frame_count": 100,
+      "cfa": "RGGB",
+      "raw_spec": {
+        "width": 2560,
+        "height": 1440,
+        "bit_shift": 4,
+        "cfa": "RGGB",
+        "valid_bits": 12,
+        "dtype": "<u2",
+        "strict_alignment": true
+      },
+      "black_dn12": [
+        255.88212802127327,
+        255.88212802127327,
+        255.88212802127327,
+        255.88212802127327
+      ],
+      "white_dn12": 4095.0,
+      "parameter_basis": "filename RG; high12 from full storage scan; black level unprovided",
+      "shot_gain_dn12_per_e": [
+        0.27994511544077416,
+        0.29478284011622263,
+        0.29585434549031936,
+        0.27762059338682077
+      ],
+      "read_variance_dn12_sq": [
+        5.287695010294257,
+        4.512714462420718,
+        4.597254376226402,
+        4.873324134161479
+      ],
+      "splits": {
+        "train": [
+          0,
+          69
+        ],
+        "validation": [
+          80,
+          99
+        ]
+      },
+      "metadata": {
+        "exposure_us": null,
+        "sensor_gain_code": 1079,
+        "isp_gain_code": 1024,
+        "gain_label_from_path": null,
+        "exposure_basis": "filename Shutter numeric value retained as shutter_code; unit awaiting confirmation",
+        "shutter_code": 39999,
+        "q10_gain_product": 1.0537109375,
+        "gain_basis": "collection Q10 code product; not calibrated ISO or ExposureDiffusion exposure ratio"
+      },
+      "container_audit": {
+        "passed": true,
+        "scanned_frames": 100,
+        "min_dn12": 248.0,
+        "max_dn12": 4095.0,
+        "cfa_verified": true
+      },
+      "pooling_variance_factor": [
+        0.04,
+        0.04,
+        0.04,
+        0.04
+      ],
+      "parameter_override_source": {
+        "status": "data_driven_approximate_working_parameters_not_factory_calibration",
+        "evidence": "calibration/noise_validation.json + calibration/pedestal_summary.json + calibration/report.md",
+        "source_frames": [
+          1,
+          3,
+          7,
+          9,
+          13,
+          15,
+          19,
+          21,
+          23,
+          27,
+          29,
+          33,
+          35,
+          39,
+          41,
+          45,
+          47,
+          49,
+          53,
+          55,
+          59,
+          61,
+          65,
+          67
+        ],
+        "training_only": true,
+        "noise_method": "robust spatial tile temporal pair-difference variance against mean; full train prefix coverage",
+        "noise_validation": [
+          {
+            "a": 0.2787364258515562,
+            "intercept_raw": -65.93000657541032,
+            "n": 1205,
+            "span": 1600.9921875,
+            "holdout_n": 1739,
+            "spatial_median_relative_error": 0.02332998458095552,
+            "spatial_p90_relative_error": 0.06712890885747048,
+            "temporal_half_median_relative_error": [
+              0.03051331309679061,
+              0.0293656203949969
+            ]
+          },
+          {
+            "a": 0.29569033155923524,
+            "intercept_raw": -71.24898911999891,
+            "n": 667,
+            "span": 1705.876953125,
+            "holdout_n": 1657,
+            "spatial_median_relative_error": 0.04613375532141461,
+            "spatial_p90_relative_error": 0.2874980329237173,
+            "temporal_half_median_relative_error": [
+              0.05185981434048821,
+              0.0514263924670693
+            ]
+          },
+          {
+            "a": 0.2963686440664982,
+            "intercept_raw": -71.32653329218512,
+            "n": 676,
+            "span": 1617.880859375,
+            "holdout_n": 1626,
+            "spatial_median_relative_error": 0.045076735964258444,
+            "spatial_p90_relative_error": 0.26844254958977654,
+            "temporal_half_median_relative_error": [
+              0.052463540329309846,
+              0.04959292041319377
+            ]
+          },
+          {
+            "a": 0.2787510375045049,
+            "intercept_raw": -66.53369621428784,
+            "n": 1534,
+            "span": 775.09375,
+            "holdout_n": 1786,
+            "spatial_median_relative_error": 0.02124277812145913,
+            "spatial_p90_relative_error": 0.05359333836078641,
+            "temporal_half_median_relative_error": [
+              0.02946506784156603,
+              0.02628286654418616
+            ]
+          }
+        ],
+        "black_basis": "shared empirical pedestal inside 465_unspecified domain; nine high-gain clips, cross-fit dark-tail PG approximation",
+        "black_sensitivity_dn12": 8,
+        "low_gain_transfer_assumption": true,
+        "independent_low_gain_black_identified": false
+      },
+      "noise_basis": "training-prefix full-field robust temporal pair-difference approximation; see parameter_override_source",
+      "noise_fit_version": 2
+    },
+    {
+      "id": "465_unspecified_8703ea2ca481",
+      "sensor": "465_unspecified",
+      "source_relative": "05_2DNR3DNR/465_sh_normal/shutter_39999/sensorG__ispG_1223_WB_1960_1024_2402/raw_stream_2560x1440_16bit@RG_[Shutter=39999,SenserG=109572,IspG=1223,R=1960,G=1024,B=2402].raw",
+      "path": "data/raw/465_unspecified_8703ea2ca481.raw",
+      "role": "development",
+      "bytes": 1474560000,
+      "sha256": "3319af3bc28e5dcc8cd001b4ef85702a218f6a2275130a313ed396b4619ae17c",
+      "frame_count": 200,
+      "cfa": "RGGB",
+      "raw_spec": {
+        "width": 2560,
+        "height": 1440,
+        "bit_shift": 4,
+        "cfa": "RGGB",
+        "valid_bits": 12,
+        "dtype": "<u2",
+        "strict_alignment": true
+      },
+      "black_dn12": [
+        255.88212802127327,
+        255.88212802127327,
+        255.88212802127327,
+        255.88212802127327
+      ],
+      "white_dn12": 4095.0,
+      "parameter_basis": "filename RG; high12 from full storage scan; black level unprovided",
+      "shot_gain_dn12_per_e": [
+        25.085373251475577,
+        19.950018666199707,
+        20.102530627921077,
+        25.93446726330949
+      ],
+      "read_variance_dn12_sq": [
+        246.02360248295827,
+        291.05146799302565,
+        281.31062945062604,
+        238.93862278269626
+      ],
+      "splits": {
+        "train": [
+          0,
+          139
+        ],
+        "validation": [
+          150,
+          199
+        ]
+      },
+      "metadata": {
+        "exposure_us": null,
+        "sensor_gain_code": 109572,
+        "isp_gain_code": 1223,
+        "gain_label_from_path": null,
+        "exposure_basis": "filename Shutter numeric value retained as shutter_code; unit awaiting confirmation",
+        "shutter_code": 39999,
+        "q10_gain_product": 127.79861068725586,
+        "gain_basis": "collection Q10 code product; not calibrated ISO or ExposureDiffusion exposure ratio"
+      },
+      "container_audit": {
+        "passed": true,
+        "scanned_frames": 200,
+        "min_dn12": 0.0,
+        "max_dn12": 4095.0,
+        "cfa_verified": true
+      },
+      "pooling_variance_factor": [
+        0.04,
+        0.04,
+        0.04,
+        0.04
+      ],
+      "parameter_override_source": {
+        "status": "data_driven_approximate_working_parameters_not_factory_calibration",
+        "evidence": "calibration/noise_validation.json + calibration/pedestal_summary.json + calibration/report.md",
+        "source_frames": [
+          1,
+          7,
+          13,
+          19,
+          25,
+          31,
+          37,
+          43,
+          49,
+          55,
+          61,
+          67,
+          71,
+          77,
+          83,
+          89,
+          95,
+          101,
+          107,
+          113,
+          119,
+          125,
+          131,
+          137
+        ],
+        "training_only": true,
+        "noise_method": "robust spatial tile temporal pair-difference variance against mean; full train prefix coverage",
+        "noise_validation": [
+          {
+            "a": 25.19110703494154,
+            "intercept_raw": -6202.573299379363,
+            "n": 739,
+            "span": 931.138671875,
+            "holdout_n": 1125,
+            "spatial_median_relative_error": 0.03246965956636861,
+            "spatial_p90_relative_error": 0.08639207528527001,
+            "temporal_half_median_relative_error": [
+              0.039551562633494415,
+              0.03646989128141953
+            ]
+          },
+          {
+            "a": 20.078505855172025,
+            "intercept_raw": -4855.227658556167,
+            "n": 609,
+            "span": 1379.580078125,
+            "holdout_n": 1009,
+            "spatial_median_relative_error": 0.03037996118321582,
+            "spatial_p90_relative_error": 0.08548300921987559,
+            "temporal_half_median_relative_error": [
+              0.03822135024692894,
+              0.03547722761099023
+            ]
+          },
+          {
+            "a": 20.126915981524636,
+            "intercept_raw": -4870.708792934514,
+            "n": 592,
+            "span": 1383.939453125,
+            "holdout_n": 1010,
+            "spatial_median_relative_error": 0.031285221711851885,
+            "spatial_p90_relative_error": 0.08568899868922854,
+            "temporal_half_median_relative_error": [
+              0.03660295198064295,
+              0.03465876527236817
+            ]
+          },
+          {
+            "a": 26.013771958835846,
+            "intercept_raw": -6417.6074955367185,
+            "n": 867,
+            "span": 991.939453125,
+            "holdout_n": 1162,
+            "spatial_median_relative_error": 0.03040709834188305,
+            "spatial_p90_relative_error": 0.08065080896871636,
+            "temporal_half_median_relative_error": [
+              0.037668922800390844,
+              0.03662711807523987
+            ]
+          }
+        ],
+        "black_basis": "shared empirical pedestal inside 465_unspecified domain; nine high-gain clips, cross-fit dark-tail PG approximation",
+        "black_sensitivity_dn12": 8,
+        "low_gain_transfer_assumption": false,
+        "independent_low_gain_black_identified": null
+      },
+      "noise_basis": "training-prefix full-field robust temporal pair-difference approximation; see parameter_override_source",
+      "noise_fit_version": 2
+    },
+    {
+      "id": "465_unspecified_ed774d3cce9d",
+      "sensor": "465_unspecified",
+      "source_relative": "05_2DNR3DNR/465_sh_normal/shutter_83315/sensorG__ispG_19598_WB_2003_1024_1964/raw_stream_2560x1440_16bit@RG_[Shutter=83315,SenserG=109572,IspG=19598,R=2003,G=1024,B=1964].raw",
+      "path": "data/raw/465_unspecified_ed774d3cce9d.raw",
+      "role": "development",
+      "bytes": 1474560000,
+      "sha256": "9dac63a49883a5975cb2c0a9cd658701a2620ae1eb81487ab8e24cd9d4de2687",
+      "frame_count": 200,
+      "cfa": "RGGB",
+      "raw_spec": {
+        "width": 2560,
+        "height": 1440,
+        "bit_shift": 4,
+        "cfa": "RGGB",
+        "valid_bits": 12,
+        "dtype": "<u2",
+        "strict_alignment": true
+      },
+      "black_dn12": [
+        255.88212802127327,
+        255.88212802127327,
+        255.88212802127327,
+        255.88212802127327
+      ],
+      "white_dn12": 4095.0,
+      "parameter_basis": "filename RG; high12 from full storage scan; black level unprovided",
+      "shot_gain_dn12_per_e": [
+        24.134989554331746,
+        22.143894869152675,
+        22.24894240450086,
+        25.44767684151663
+      ],
+      "read_variance_dn12_sq": [
+        255.08839632183026,
+        266.48507467792297,
+        264.33391710642445,
+        254.0465423656151
+      ],
+      "splits": {
+        "train": [
+          0,
+          139
+        ],
+        "validation": [
+          150,
+          199
+        ]
+      },
+      "metadata": {
+        "exposure_us": null,
+        "sensor_gain_code": 109572,
+        "isp_gain_code": 19598,
+        "gain_label_from_path": null,
+        "exposure_basis": "filename Shutter numeric value retained as shutter_code; unit awaiting confirmation",
+        "shutter_code": 83315,
+        "q10_gain_product": 2047.9126510620117,
+        "gain_basis": "collection Q10 code product; not calibrated ISO or ExposureDiffusion exposure ratio"
+      },
+      "container_audit": {
+        "passed": true,
+        "scanned_frames": 200,
+        "min_dn12": 83.0,
+        "max_dn12": 2787.0,
+        "cfa_verified": true
+      },
+      "pooling_variance_factor": [
+        0.04,
+        0.04,
+        0.04,
+        0.04
+      ],
+      "parameter_override_source": {
+        "status": "data_driven_approximate_working_parameters_not_factory_calibration",
+        "evidence": "calibration/noise_validation.json + calibration/pedestal_summary.json + calibration/report.md",
+        "source_frames": [
+          1,
+          7,
+          13,
+          19,
+          25,
+          31,
+          37,
+          43,
+          49,
+          55,
+          61,
+          67,
+          71,
+          77,
+          83,
+          89,
+          95,
+          101,
+          107,
+          113,
+          119,
+          125,
+          131,
+          137
+        ],
+        "training_only": true,
+        "noise_method": "robust spatial tile temporal pair-difference variance against mean; full train prefix coverage",
+        "noise_validation": [
+          {
+            "a": 24.493925388192476,
+            "intercept_raw": -6014.009481514179,
+            "n": 1292,
+            "span": 44.5,
+            "holdout_n": 1376,
+            "spatial_median_relative_error": 0.03188589699750724,
+            "spatial_p90_relative_error": 0.07496584448157366,
+            "temporal_half_median_relative_error": [
+              0.036801531774107714,
+              0.035082979072912274
+            ]
+          },
+          {
+            "a": 22.186946569272244,
+            "intercept_raw": -5410.482363660977,
+            "n": 1199,
+            "span": 69.08203125,
+            "holdout_n": 1302,
+            "spatial_median_relative_error": 0.032622663785850964,
+            "spatial_p90_relative_error": 0.07291167083720759,
+            "temporal_half_median_relative_error": [
+              0.03623958483784405,
+              0.03621714410729193
+            ]
+          },
+          {
+            "a": 22.154057596537807,
+            "intercept_raw": -5404.202477220582,
+            "n": 1172,
+            "span": 70.3203125,
+            "holdout_n": 1287,
+            "spatial_median_relative_error": 0.031169781140551866,
+            "spatial_p90_relative_error": 0.07482333566116178,
+            "temporal_half_median_relative_error": [
+              0.036089396216521616,
+              0.036977127205873955
+            ]
+          },
+          {
+            "a": 25.26225949778067,
+            "intercept_raw": -6209.492647550044,
+            "n": 1351,
+            "span": 38.400390625,
+            "holdout_n": 1437,
+            "spatial_median_relative_error": 0.03214867727873327,
+            "spatial_p90_relative_error": 0.0751966394952937,
+            "temporal_half_median_relative_error": [
+              0.038678200854016596,
+              0.037747165590726564
+            ]
+          }
+        ],
+        "black_basis": "shared empirical pedestal inside 465_unspecified domain; nine high-gain clips, cross-fit dark-tail PG approximation",
+        "black_sensitivity_dn12": 8,
+        "low_gain_transfer_assumption": false,
+        "independent_low_gain_black_identified": null
+      },
+      "noise_basis": "training-prefix full-field robust temporal pair-difference approximation; see parameter_override_source",
+      "noise_fit_version": 2
+    },
+    {
+      "id": "465_unspecified_4a58b243f585",
+      "sensor": "465_unspecified",
+      "source_relative": "05_2DNR3DNR/465_sh_normal/shutter_83315/sensorG__ispG_2391_WB_1945_1024_2433/raw_stream_2560x1440_16bit@RG_[Shutter=83315,SenserG=109572,IspG=2391,R=1945,G=1024,B=2433].raw",
+      "path": "data/raw/465_unspecified_4a58b243f585.raw",
+      "role": "development",
+      "bytes": 1474560000,
+      "sha256": "0ad44689b9ce8a20a6505aa3a5184572f939f5b1740c08bd92207bf265af1324",
+      "frame_count": 200,
+      "cfa": "RGGB",
+      "raw_spec": {
+        "width": 2560,
+        "height": 1440,
+        "bit_shift": 4,
+        "cfa": "RGGB",
+        "valid_bits": 12,
+        "dtype": "<u2",
+        "strict_alignment": true
+      },
+      "black_dn12": [
+        255.88212802127327,
+        255.88212802127327,
+        255.88212802127327,
+        255.88212802127327
+      ],
+      "white_dn12": 4095.0,
+      "parameter_basis": "filename RG; high12 from full storage scan; black level unprovided",
+      "shot_gain_dn12_per_e": [
+        25.298611497992937,
+        20.393390705875696,
+        20.422999197971286,
+        26.38119156746278
+      ],
+      "read_variance_dn12_sq": [
+        234.11706709696955,
+        268.66239526869776,
+        273.6307647727035,
+        227.3220596033998
+      ],
+      "splits": {
+        "train": [
+          0,
+          139
+        ],
+        "validation": [
+          150,
+          199
+        ]
+      },
+      "metadata": {
+        "exposure_us": null,
+        "sensor_gain_code": 109572,
+        "isp_gain_code": 2391,
+        "gain_label_from_path": null,
+        "exposure_basis": "filename Shutter numeric value retained as shutter_code; unit awaiting confirmation",
+        "shutter_code": 83315,
+        "q10_gain_product": 249.8499412536621,
+        "gain_basis": "collection Q10 code product; not calibrated ISO or ExposureDiffusion exposure ratio"
+      },
+      "container_audit": {
+        "passed": true,
+        "scanned_frames": 200,
+        "min_dn12": 0.0,
+        "max_dn12": 4095.0,
+        "cfa_verified": true
+      },
+      "pooling_variance_factor": [
+        0.04,
+        0.04,
+        0.04,
+        0.04
+      ],
+      "parameter_override_source": {
+        "status": "data_driven_approximate_working_parameters_not_factory_calibration",
+        "evidence": "calibration/noise_validation.json + calibration/pedestal_summary.json + calibration/report.md",
+        "source_frames": [
+          1,
+          7,
+          13,
+          19,
+          25,
+          31,
+          37,
+          43,
+          49,
+          55,
+          61,
+          67,
+          71,
+          77,
+          83,
+          89,
+          95,
+          101,
+          107,
+          113,
+          119,
+          125,
+          131,
+          137
+        ],
+        "training_only": true,
+        "noise_method": "robust spatial tile temporal pair-difference variance against mean; full train prefix coverage",
+        "noise_validation": [
+          {
+            "a": 25.744177657579815,
+            "intercept_raw": -6363.659823083845,
+            "n": 719,
+            "span": 602.833984375,
+            "holdout_n": 1060,
+            "spatial_median_relative_error": 0.030737032551396447,
+            "spatial_p90_relative_error": 0.08207517529145035,
+            "temporal_half_median_relative_error": [
+              0.03602237494898845,
+              0.03495941658522561
+            ]
+          },
+          {
+            "a": 20.50856002222018,
+            "intercept_raw": -4984.110223519437,
+            "n": 681,
+            "span": 1380.453125,
+            "holdout_n": 962,
+            "spatial_median_relative_error": 0.028526539490503156,
+            "spatial_p90_relative_error": 0.08210707218734453,
+            "temporal_half_median_relative_error": [
+              0.03673302243115631,
+              0.036248272496627355
+            ]
+          },
+          {
+            "a": 20.671130060259472,
+            "intercept_raw": -5026.639326180884,
+            "n": 620,
+            "span": 1132.529296875,
+            "holdout_n": 984,
+            "spatial_median_relative_error": 0.03059461136836928,
+            "spatial_p90_relative_error": 0.08127657254586565,
+            "temporal_half_median_relative_error": [
+              0.03637679839194502,
+              0.036167994886424366
+            ]
+          },
+          {
+            "a": 26.562294412895152,
+            "intercept_raw": -6573.771656725077,
+            "n": 830,
+            "span": 538.833984375,
+            "holdout_n": 1131,
+            "spatial_median_relative_error": 0.030852306142741058,
+            "spatial_p90_relative_error": 0.07711213256084354,
+            "temporal_half_median_relative_error": [
+              0.03719194127239633,
+              0.035757247167267685
+            ]
+          }
+        ],
+        "black_basis": "shared empirical pedestal inside 465_unspecified domain; nine high-gain clips, cross-fit dark-tail PG approximation",
+        "black_sensitivity_dn12": 8,
+        "low_gain_transfer_assumption": false,
+        "independent_low_gain_black_identified": null
+      },
+      "noise_basis": "training-prefix full-field robust temporal pair-difference approximation; see parameter_override_source",
+      "noise_fit_version": 2
+    },
+    {
+      "id": "465_unspecified_fa31d98451b7",
+      "sensor": "465_unspecified",
+      "source_relative": "05_2DNR3DNR/465_sh_normal/shutter_83315/sensorG__ispG_3560_WB_1976_1024_2365/raw_stream_2560x1440_16bit@RG_[Shutter=83315,SenserG=109572,IspG=3560,R=1976,G=1024,B=2365].raw",
+      "path": "data/raw/465_unspecified_fa31d98451b7.raw",
+      "role": "development",
+      "bytes": 1474560000,
+      "sha256": "df0e4948da12be46851bff47b486afcc5ea7d981a9ceeb8b2218435df1850a59",
+      "frame_count": 200,
+      "cfa": "RGGB",
+      "raw_spec": {
+        "width": 2560,
+        "height": 1440,
+        "bit_shift": 4,
+        "cfa": "RGGB",
+        "valid_bits": 12,
+        "dtype": "<u2",
+        "strict_alignment": true
+      },
+      "black_dn12": [
+        255.88212802127327,
+        255.88212802127327,
+        255.88212802127327,
+        255.88212802127327
+      ],
+      "white_dn12": 4095.0,
+      "parameter_basis": "filename RG; high12 from full storage scan; black level unprovided",
+      "shot_gain_dn12_per_e": [
+        25.435667225106258,
+        20.235228598363307,
+        20.381275261186197,
+        26.211416012687664
+      ],
+      "read_variance_dn12_sq": [
+        232.06797992265547,
+        284.0362522115038,
+        276.727509115085,
+        230.23667963673415
+      ],
+      "splits": {
+        "train": [
+          0,
+          139
+        ],
+        "validation": [
+          150,
+          199
+        ]
+      },
+      "metadata": {
+        "exposure_us": null,
+        "sensor_gain_code": 109572,
+        "isp_gain_code": 3560,
+        "gain_label_from_path": null,
+        "exposure_basis": "filename Shutter numeric value retained as shutter_code; unit awaiting confirmation",
+        "shutter_code": 83315,
+        "q10_gain_product": 372.0057678222656,
+        "gain_basis": "collection Q10 code product; not calibrated ISO or ExposureDiffusion exposure ratio"
+      },
+      "container_audit": {
+        "passed": true,
+        "scanned_frames": 200,
+        "min_dn12": 0.0,
+        "max_dn12": 4095.0,
+        "cfa_verified": true
+      },
+      "pooling_variance_factor": [
+        0.04,
+        0.04,
+        0.04,
+        0.04
+      ],
+      "parameter_override_source": {
+        "status": "data_driven_approximate_working_parameters_not_factory_calibration",
+        "evidence": "calibration/noise_validation.json + calibration/pedestal_summary.json + calibration/report.md",
+        "source_frames": [
+          1,
+          7,
+          13,
+          19,
+          25,
+          31,
+          37,
+          43,
+          49,
+          55,
+          61,
+          67,
+          71,
+          77,
+          83,
+          89,
+          95,
+          101,
+          107,
+          113,
+          119,
+          125,
+          131,
+          137
+        ],
+        "training_only": true,
+        "noise_method": "robust spatial tile temporal pair-difference variance against mean; full train prefix coverage",
+        "noise_validation": [
+          {
+            "a": 25.83662374303161,
+            "intercept_raw": -6388.079214388823,
+            "n": 712,
+            "span": 489.548828125,
+            "holdout_n": 1056,
+            "spatial_median_relative_error": 0.03169927127418512,
+            "spatial_p90_relative_error": 0.08331949265012437,
+            "temporal_half_median_relative_error": [
+              0.035859702072901095,
+              0.03772052851128736
+            ]
+          },
+          {
+            "a": 20.58611798305077,
+            "intercept_raw": -4995.420087515967,
+            "n": 727,
+            "span": 991.5078125,
+            "holdout_n": 1015,
+            "spatial_median_relative_error": 0.029896861086222668,
+            "spatial_p90_relative_error": 0.07856578193892828,
+            "temporal_half_median_relative_error": [
+              0.03651811984025328,
+              0.03450207830863971
+            ]
+          },
+          {
+            "a": 20.74812573137283,
+            "intercept_raw": -5043.257008079743,
+            "n": 624,
+            "span": 977.078125,
+            "holdout_n": 1011,
+            "spatial_median_relative_error": 0.03019788264436561,
+            "spatial_p90_relative_error": 0.07899551268874096,
+            "temporal_half_median_relative_error": [
+              0.035156964315276776,
+              0.035233627250864555
+            ]
+          },
+          {
+            "a": 26.508718543389598,
+            "intercept_raw": -6561.244346868403,
+            "n": 828,
+            "span": 459.578125,
+            "holdout_n": 1110,
+            "spatial_median_relative_error": 0.03030117173463069,
+            "spatial_p90_relative_error": 0.07583769284282202,
+            "temporal_half_median_relative_error": [
+              0.03533528181117547,
+              0.03534205869375076
+            ]
+          }
+        ],
+        "black_basis": "shared empirical pedestal inside 465_unspecified domain; nine high-gain clips, cross-fit dark-tail PG approximation",
+        "black_sensitivity_dn12": 8,
+        "low_gain_transfer_assumption": false,
+        "independent_low_gain_black_identified": null
+      },
+      "noise_basis": "training-prefix full-field robust temporal pair-difference approximation; see parameter_override_source",
+      "noise_fit_version": 2
+    },
+    {
+      "id": "465_unspecified_2c41c5997a4b",
+      "sensor": "465_unspecified",
+      "source_relative": "05_2DNR3DNR/465_sh_normal/shutter_83315/sensorG__ispG_5023_WB_1949_1024_2208/raw_stream_2560x1440_16bit@RG_[Shutter=83315,SenserG=109572,IspG=5023,R=1949,G=1024,B=2208].raw",
+      "path": "data/raw/465_unspecified_2c41c5997a4b.raw",
+      "role": "development",
+      "bytes": 1474560000,
+      "sha256": "47f6bdaa6701365e990eb0a4f3c1c665afebeef53b8e0d7d592e89e28da0495b",
+      "frame_count": 200,
+      "cfa": "RGGB",
+      "raw_spec": {
+        "width": 2560,
+        "height": 1440,
+        "bit_shift": 4,
+        "cfa": "RGGB",
+        "valid_bits": 12,
+        "dtype": "<u2",
+        "strict_alignment": true
+      },
+      "black_dn12": [
+        255.88212802127327,
+        255.88212802127327,
+        255.88212802127327,
+        255.88212802127327
+      ],
+      "white_dn12": 4095.0,
+      "parameter_basis": "filename RG; high12 from full storage scan; black level unprovided",
+      "shot_gain_dn12_per_e": [
+        24.918136747581016,
+        20.305506464068298,
+        20.513430770244835,
+        25.943364894677
+      ],
+      "read_variance_dn12_sq": [
+        244.29675564400895,
+        285.59758873516057,
+        281.2892152616905,
+        236.6992471028443
+      ],
+      "splits": {
+        "train": [
+          0,
+          139
+        ],
+        "validation": [
+          150,
+          199
+        ]
+      },
+      "metadata": {
+        "exposure_us": null,
+        "sensor_gain_code": 109572,
+        "isp_gain_code": 5023,
+        "gain_label_from_path": null,
+        "exposure_basis": "filename Shutter numeric value retained as shutter_code; unit awaiting confirmation",
+        "shutter_code": 83315,
+        "q10_gain_product": 524.8834190368652,
+        "gain_basis": "collection Q10 code product; not calibrated ISO or ExposureDiffusion exposure ratio"
+      },
+      "container_audit": {
+        "passed": true,
+        "scanned_frames": 200,
+        "min_dn12": 0.0,
+        "max_dn12": 4095.0,
+        "cfa_verified": true
+      },
+      "pooling_variance_factor": [
+        0.04,
+        0.04,
+        0.04,
+        0.04
+      ],
+      "parameter_override_source": {
+        "status": "data_driven_approximate_working_parameters_not_factory_calibration",
+        "evidence": "calibration/noise_validation.json + calibration/pedestal_summary.json + calibration/report.md",
+        "source_frames": [
+          1,
+          7,
+          13,
+          19,
+          25,
+          31,
+          37,
+          43,
+          49,
+          55,
+          61,
+          67,
+          71,
+          77,
+          83,
+          89,
+          95,
+          101,
+          107,
+          113,
+          119,
+          125,
+          131,
+          137
+        ],
+        "training_only": true,
+        "noise_method": "robust spatial tile temporal pair-difference variance against mean; full train prefix coverage",
+        "noise_validation": [
+          {
+            "a": 24.96110174734339,
+            "intercept_raw": -6144.241288762046,
+            "n": 794,
+            "span": 230.333984375,
+            "holdout_n": 1095,
+            "spatial_median_relative_error": 0.0295905264122647,
+            "spatial_p90_relative_error": 0.08017761555510784,
+            "temporal_half_median_relative_error": [
+              0.03667436982241197,
+              0.036549769274581256
+            ]
+          },
+          {
+            "a": 20.68167271146962,
+            "intercept_raw": -5014.327947678284,
+            "n": 725,
+            "span": 791.912109375,
+            "holdout_n": 1088,
+            "spatial_median_relative_error": 0.03000015873918942,
+            "spatial_p90_relative_error": 0.07594068414544768,
+            "temporal_half_median_relative_error": [
+              0.03495733315959074,
+              0.03532408364498291
+            ]
+          },
+          {
+            "a": 20.497081918323563,
+            "intercept_raw": -4962.0813435430755,
+            "n": 810,
+            "span": 401.427734375,
+            "holdout_n": 1064,
+            "spatial_median_relative_error": 0.03014858327767852,
+            "spatial_p90_relative_error": 0.08067038323640147,
+            "temporal_half_median_relative_error": [
+              0.03629858464857415,
+              0.03519275302707098
+            ]
+          },
+          {
+            "a": 26.141724561323677,
+            "intercept_raw": -6455.102966235846,
+            "n": 935,
+            "span": 385.12109375,
+            "holdout_n": 1133,
+            "spatial_median_relative_error": 0.027593745019518338,
+            "spatial_p90_relative_error": 0.07345537705597263,
+            "temporal_half_median_relative_error": [
+              0.03617401694199074,
+              0.03416947558757402
+            ]
+          }
+        ],
+        "black_basis": "shared empirical pedestal inside 465_unspecified domain; nine high-gain clips, cross-fit dark-tail PG approximation",
+        "black_sensitivity_dn12": 8,
+        "low_gain_transfer_assumption": false,
+        "independent_low_gain_black_identified": null
+      },
+      "noise_basis": "training-prefix full-field robust temporal pair-difference approximation; see parameter_override_source",
+      "noise_fit_version": 2
+    },
+    {
+      "id": "465_unspecified_1472a669d3ad",
+      "sensor": "465_unspecified",
+      "source_relative": "05_2DNR3DNR/465_sh_normal/shutter_83315/sensorG__ispG_6373_WB_1949_1024_2208/raw_stream_2560x1440_16bit@RG_[Shutter=83315,SenserG=109572,IspG=6373,R=1949,G=1024,B=2208].raw",
+      "path": "data/raw/465_unspecified_1472a669d3ad.raw",
+      "role": "development",
+      "bytes": 1474560000,
+      "sha256": "c370006ec431bc6f9e54fda2e58e926ae2d35dbb4e8e7b392e72fc64f109b493",
+      "frame_count": 200,
+      "cfa": "RGGB",
+      "raw_spec": {
+        "width": 2560,
+        "height": 1440,
+        "bit_shift": 4,
+        "cfa": "RGGB",
+        "valid_bits": 12,
+        "dtype": "<u2",
+        "strict_alignment": true
+      },
+      "black_dn12": [
+        255.88212802127327,
+        255.88212802127327,
+        255.88212802127327,
+        255.88212802127327
+      ],
+      "white_dn12": 4095.0,
+      "parameter_basis": "filename RG; high12 from full storage scan; black level unprovided",
+      "shot_gain_dn12_per_e": [
+        24.681569945621497,
+        20.220090418691267,
+        20.211173547531303,
+        25.700408763962052
+      ],
+      "read_variance_dn12_sq": [
+        249.19948837356242,
+        286.77290430561607,
+        288.4643666809434,
+        244.80462302343403
+      ],
+      "splits": {
+        "train": [
+          0,
+          139
+        ],
+        "validation": [
+          150,
+          199
+        ]
+      },
+      "metadata": {
+        "exposure_us": null,
+        "sensor_gain_code": 109572,
+        "isp_gain_code": 6373,
+        "gain_label_from_path": null,
+        "exposure_basis": "filename Shutter numeric value retained as shutter_code; unit awaiting confirmation",
+        "shutter_code": 83315,
+        "q10_gain_product": 665.9530220031738,
+        "gain_basis": "collection Q10 code product; not calibrated ISO or ExposureDiffusion exposure ratio"
+      },
+      "container_audit": {
+        "passed": true,
+        "scanned_frames": 200,
+        "min_dn12": 0.0,
+        "max_dn12": 4095.0,
+        "cfa_verified": true
+      },
+      "pooling_variance_factor": [
+        0.04,
+        0.04,
+        0.04,
+        0.04
+      ],
+      "parameter_override_source": {
+        "status": "data_driven_approximate_working_parameters_not_factory_calibration",
+        "evidence": "calibration/noise_validation.json + calibration/pedestal_summary.json + calibration/report.md",
+        "source_frames": [
+          1,
+          7,
+          13,
+          19,
+          25,
+          31,
+          37,
+          43,
+          49,
+          55,
+          61,
+          67,
+          71,
+          77,
+          83,
+          89,
+          95,
+          101,
+          107,
+          113,
+          119,
+          125,
+          131,
+          137
+        ],
+        "training_only": true,
+        "noise_method": "robust spatial tile temporal pair-difference variance against mean; full train prefix coverage",
+        "noise_validation": [
+          {
+            "a": 25.022317217887277,
+            "intercept_raw": -6159.281236490381,
+            "n": 781,
+            "span": 307.498046875,
+            "holdout_n": 1045,
+            "spatial_median_relative_error": 0.03049036828127769,
+            "spatial_p90_relative_error": 0.07997202435224787,
+            "temporal_half_median_relative_error": [
+              0.03785622194281192,
+              0.03559509915576583
+            ]
+          },
+          {
+            "a": 20.385362584564767,
+            "intercept_raw": -4932.261729508333,
+            "n": 864,
+            "span": 489.53125,
+            "holdout_n": 1057,
+            "spatial_median_relative_error": 0.029273825825909518,
+            "spatial_p90_relative_error": 0.07280565073386394,
+            "temporal_half_median_relative_error": [
+              0.03504247712724257,
+              0.034491754596756886
+            ]
+          },
+          {
+            "a": 20.49633220307313,
+            "intercept_raw": -4964.050294593601,
+            "n": 855,
+            "span": 629.759765625,
+            "holdout_n": 1047,
+            "spatial_median_relative_error": 0.029462578927993723,
+            "spatial_p90_relative_error": 0.07136007565563239,
+            "temporal_half_median_relative_error": [
+              0.03392908908543807,
+              0.03303767311316921
+            ]
+          },
+          {
+            "a": 25.760455797596382,
+            "intercept_raw": -6346.662556582023,
+            "n": 923,
+            "span": 252.279296875,
+            "holdout_n": 1137,
+            "spatial_median_relative_error": 0.028510861297614383,
+            "spatial_p90_relative_error": 0.07381598968660318,
+            "temporal_half_median_relative_error": [
+              0.035840931724229544,
+              0.032828531116396734
+            ]
+          }
+        ],
+        "black_basis": "shared empirical pedestal inside 465_unspecified domain; nine high-gain clips, cross-fit dark-tail PG approximation",
+        "black_sensitivity_dn12": 8,
+        "low_gain_transfer_assumption": false,
+        "independent_low_gain_black_identified": null
+      },
+      "noise_basis": "training-prefix full-field robust temporal pair-difference approximation; see parameter_override_source",
+      "noise_fit_version": 2
+    },
+    {
+      "id": "465_unspecified_74d38dfbb4b9",
+      "sensor": "465_unspecified",
+      "source_relative": "05_2DNR3DNR/465_sh_normal/shutter_83315/sensorG__ispG_9798_WB_1970_1024_2143/raw_stream_2560x1440_16bit@RG_[Shutter=83315,SenserG=109572,IspG=9798,R=1970,G=1024,B=2143].raw",
+      "path": "data/raw/465_unspecified_74d38dfbb4b9.raw",
+      "role": "development",
+      "bytes": 1474560000,
+      "sha256": "b5ca0e461daa27292d9884ff524cdec20930bd0a82d7e26c6af768462c1d7c79",
+      "frame_count": 200,
+      "cfa": "RGGB",
+      "raw_spec": {
+        "width": 2560,
+        "height": 1440,
+        "bit_shift": 4,
+        "cfa": "RGGB",
+        "valid_bits": 12,
+        "dtype": "<u2",
+        "strict_alignment": true
+      },
+      "black_dn12": [
+        255.88212802127327,
+        255.88212802127327,
+        255.88212802127327,
+        255.88212802127327
+      ],
+      "white_dn12": 4095.0,
+      "parameter_basis": "filename RG; high12 from full storage scan; black level unprovided",
+      "shot_gain_dn12_per_e": [
+        24.72322641831896,
+        20.70407918778645,
+        20.854934749324066,
+        25.889331873891155
+      ],
+      "read_variance_dn12_sq": [
+        252.03468256641918,
+        282.8801560011416,
+        280.1585519246428,
+        246.83755080764786
+      ],
+      "splits": {
+        "train": [
+          0,
+          139
+        ],
+        "validation": [
+          150,
+          199
+        ]
+      },
+      "metadata": {
+        "exposure_us": null,
+        "sensor_gain_code": 109572,
+        "isp_gain_code": 9798,
+        "gain_label_from_path": null,
+        "exposure_basis": "filename Shutter numeric value retained as shutter_code; unit awaiting confirmation",
+        "shutter_code": 83315,
+        "q10_gain_product": 1023.8518295288086,
+        "gain_basis": "collection Q10 code product; not calibrated ISO or ExposureDiffusion exposure ratio"
+      },
+      "container_audit": {
+        "passed": true,
+        "scanned_frames": 200,
+        "min_dn12": 51.0,
+        "max_dn12": 4095.0,
+        "cfa_verified": true
+      },
+      "pooling_variance_factor": [
+        0.04,
+        0.04,
+        0.04,
+        0.04
+      ],
+      "parameter_override_source": {
+        "status": "data_driven_approximate_working_parameters_not_factory_calibration",
+        "evidence": "calibration/noise_validation.json + calibration/pedestal_summary.json + calibration/report.md",
+        "source_frames": [
+          1,
+          7,
+          13,
+          19,
+          25,
+          31,
+          37,
+          43,
+          49,
+          55,
+          61,
+          67,
+          71,
+          77,
+          83,
+          89,
+          95,
+          101,
+          107,
+          113,
+          119,
+          125,
+          131,
+          137
+        ],
+        "training_only": true,
+        "noise_method": "robust spatial tile temporal pair-difference variance against mean; full train prefix coverage",
+        "noise_validation": [
+          {
+            "a": 24.600831002939383,
+            "intercept_raw": -6042.543566273485,
+            "n": 994,
+            "span": 157.037109375,
+            "holdout_n": 1180,
+            "spatial_median_relative_error": 0.03063704983245086,
+            "spatial_p90_relative_error": 0.07843556619595936,
+            "temporal_half_median_relative_error": [
+              0.03806640414160676,
+              0.03584427693230378
+            ]
+          },
+          {
+            "a": 20.499271330943035,
+            "intercept_raw": -4960.235557901656,
+            "n": 999,
+            "span": 330.849609375,
+            "holdout_n": 1170,
+            "spatial_median_relative_error": 0.033189235336102255,
+            "spatial_p90_relative_error": 0.0783492551942714,
+            "temporal_half_median_relative_error": [
+              0.038557025888998786,
+              0.03668050501220399
+            ]
+          },
+          {
+            "a": 20.9367589697817,
+            "intercept_raw": -5078.8245042642675,
+            "n": 991,
+            "span": 319.3671875,
+            "holdout_n": 1178,
+            "spatial_median_relative_error": 0.0328586892643694,
+            "spatial_p90_relative_error": 0.07655228496046726,
+            "temporal_half_median_relative_error": [
+              0.03639549324864581,
+              0.037454627078505894
+            ]
+          },
+          {
+            "a": 25.367645122361452,
+            "intercept_raw": -6240.415829398113,
+            "n": 1099,
+            "span": 152.90234375,
+            "holdout_n": 1286,
+            "spatial_median_relative_error": 0.02952565277358956,
+            "spatial_p90_relative_error": 0.07141101030792249,
+            "temporal_half_median_relative_error": [
+              0.03556728844530572,
+              0.03395502402383129
+            ]
+          }
+        ],
+        "black_basis": "shared empirical pedestal inside 465_unspecified domain; nine high-gain clips, cross-fit dark-tail PG approximation",
+        "black_sensitivity_dn12": 8,
+        "low_gain_transfer_assumption": false,
+        "independent_low_gain_black_identified": null
+      },
+      "noise_basis": "training-prefix full-field robust temporal pair-difference approximation; see parameter_override_source",
+      "noise_fit_version": 2
+    }
+  ],
+  "units": "effective DN12, canonical R,G1,G2,B after packing",
+  "holdout": "MIS20S1 shdarkroom all gains, including same-source 03 denoised/fused outputs",
+  "excluded": "03 derived streams and frame duplicates; no company 23DNR training targets",
+  "scope": "cross-sequence holdout; other-sensor laboratory views allowed; previously visually inspected test scene",
+  "source_collection": "company dataset, 01/02/04/05",
+  "state": "inventoried_not_trained",
+  "preparation": [
+    {
+      "id": "sc450ai_4d524642c250",
+      "sensor": "SC450AI",
+      "errors": [],
+      "previews": [
+        {
+          "static_fraction": 0.3348233997821808,
+          "motion_fraction": 0.1563410460948944,
+          "global_illumination_rejected": false,
+          "global_shift_dn12": 0.0,
+          "median_normalized_temporal_variance": 1.099014163017273,
+          "guidance_frames": [
+            69,
+            71,
+            73,
+            75,
+            77,
+            79,
+            81
+          ],
+          "source": 72,
+          "target": 78,
+          "role": "train"
+        },
+        {
+          "static_fraction": 0.3400278091430664,
+          "motion_fraction": 0.12652921676635742,
+          "global_illumination_rejected": false,
+          "global_shift_dn12": 0.0,
+          "median_normalized_temporal_variance": 1.0860068798065186,
+          "guidance_frames": [
+            177,
+            179,
+            181,
+            183,
+            185,
+            187,
+            189
+          ],
+          "source": 180,
+          "target": 186,
+          "role": "validation"
+        }
+      ]
+    },
+    {
+      "id": "sc450ai_57878d7435b2",
+      "sensor": "SC450AI",
+      "errors": [],
+      "previews": [
+        {
+          "static_fraction": 0.3256187438964844,
+          "motion_fraction": 0.06546737998723984,
+          "global_illumination_rejected": false,
+          "global_shift_dn12": 1.2800006866455078,
+          "median_normalized_temporal_variance": 1.1295558214187622,
+          "guidance_frames": [
+            45,
+            47,
+            49,
+            51,
+            53,
+            55,
+            57
+          ],
+          "source": 48,
+          "target": 54,
+          "role": "train"
+        },
+        {
+          "static_fraction": 0.3078526258468628,
+          "motion_fraction": 0.07065613567829132,
+          "global_illumination_rejected": false,
+          "global_shift_dn12": 2.7199935913085938,
+          "median_normalized_temporal_variance": 1.1598644256591797,
+          "guidance_frames": [
+            129,
+            131,
+            133,
+            135,
+            137,
+            139,
+            141
+          ],
+          "source": 132,
+          "target": 138,
+          "role": "validation"
+        }
+      ]
+    },
+    {
+      "id": "sc635hai_fff725f9cdc8",
+      "sensor": "SC635HAI",
+      "errors": [],
+      "previews": [
+        {
+          "static_fraction": 0.22570139169692993,
+          "motion_fraction": 0.00015624999650754035,
+          "global_illumination_rejected": false,
+          "global_shift_dn12": 0.0,
+          "median_normalized_temporal_variance": 1.1318538188934326,
+          "guidance_frames": [
+            45,
+            47,
+            49,
+            51,
+            53,
+            55,
+            57
+          ],
+          "source": 48,
+          "target": 54,
+          "role": "train"
+        },
+        {
+          "static_fraction": 0.2281416654586792,
+          "motion_fraction": 0.00016805555787868798,
+          "global_illumination_rejected": false,
+          "global_shift_dn12": 0.0,
+          "median_normalized_temporal_variance": 1.1299389600753784,
+          "guidance_frames": [
+            129,
+            131,
+            133,
+            135,
+            137,
+            139,
+            141
+          ],
+          "source": 132,
+          "target": 138,
+          "role": "validation"
+        }
+      ]
+    },
+    {
+      "id": "sc635hai_dfb8ce9a6a74",
+      "sensor": "SC635HAI",
+      "errors": [],
+      "previews": [
+        {
+          "static_fraction": 0.07408888638019562,
+          "motion_fraction": 0.21116319298744202,
+          "global_illumination_rejected": false,
+          "global_shift_dn12": 0.0,
+          "median_normalized_temporal_variance": 1.4611881971359253,
+          "guidance_frames": [
+            65,
+            67,
+            69,
+            71,
+            73,
+            75,
+            77
+          ],
+          "source": 68,
+          "target": 74,
+          "role": "train"
+        },
+        {
+          "static_fraction": 0.06626805663108826,
+          "motion_fraction": 0.22842708230018616,
+          "global_illumination_rejected": false,
+          "global_shift_dn12": 0.0,
+          "median_normalized_temporal_variance": 1.4799178838729858,
+          "guidance_frames": [
+            169,
+            171,
+            173,
+            175,
+            177,
+            179,
+            181
+          ],
+          "source": 172,
+          "target": 178,
+          "role": "validation"
+        }
+      ]
+    },
+    {
+      "id": "sc465sl_ed78d55ab54a",
+      "sensor": "SC465SL",
+      "errors": [],
+      "previews": [
+        {
+          "static_fraction": 0.219482421875,
+          "motion_fraction": 0.028299696743488312,
+          "global_illumination_rejected": false,
+          "global_shift_dn12": 0.0,
+          "median_normalized_temporal_variance": 1.1316617727279663,
+          "guidance_frames": [
+            101,
+            103,
+            105,
+            107,
+            109,
+            111,
+            113
+          ],
+          "source": 104,
+          "target": 110,
+          "role": "train"
+        },
+        {
+          "static_fraction": 0.2246614545583725,
+          "motion_fraction": 0.018588325008749962,
+          "global_illumination_rejected": false,
+          "global_shift_dn12": 0.0,
+          "median_normalized_temporal_variance": 1.1276493072509766,
+          "guidance_frames": [
+            253,
+            255,
+            257,
+            259,
+            261,
+            263,
+            265
+          ],
+          "source": 256,
+          "target": 262,
+          "role": "validation"
+        }
+      ]
+    },
+    {
+      "id": "sc465sl_c9ee0974bbbf",
+      "sensor": "SC465SL",
+      "errors": [],
+      "previews": [
+        {
+          "static_fraction": 0.17001844942569733,
+          "motion_fraction": 0.032902561128139496,
+          "global_illumination_rejected": false,
+          "global_shift_dn12": 0.0,
+          "median_normalized_temporal_variance": 1.1676081418991089,
+          "guidance_frames": [
+            101,
+            103,
+            105,
+            107,
+            109,
+            111,
+            113
+          ],
+          "source": 104,
+          "target": 110,
+          "role": "train"
+        },
+        {
+          "static_fraction": 0.17288194596767426,
+          "motion_fraction": 0.04567274451255798,
+          "global_illumination_rejected": false,
+          "global_shift_dn12": 0.0,
+          "median_normalized_temporal_variance": 1.172719955444336,
+          "guidance_frames": [
+            253,
+            255,
+            257,
+            259,
+            261,
+            263,
+            265
+          ],
+          "source": 256,
+          "target": 262,
+          "role": "validation"
+        }
+      ]
+    },
+    {
+      "id": "mis20s1_85850945032a",
+      "sensor": "MIS20S1",
+      "errors": [],
+      "previews": [
+        {
+          "static_fraction": 0.18540894985198975,
+          "motion_fraction": 0.030781250447034836,
+          "global_illumination_rejected": false,
+          "global_shift_dn12": 0.0,
+          "median_normalized_temporal_variance": 1.1831028461456299,
+          "guidance_frames": [
+            65,
+            67,
+            69,
+            71,
+            73,
+            75,
+            77
+          ],
+          "source": 68,
+          "target": 74,
+          "role": "train"
+        },
+        {
+          "static_fraction": 0.17739969491958618,
+          "motion_fraction": 0.04184027761220932,
+          "global_illumination_rejected": false,
+          "global_shift_dn12": 0.0,
+          "median_normalized_temporal_variance": 1.1929067373275757,
+          "guidance_frames": [
+            169,
+            171,
+            173,
+            175,
+            177,
+            179,
+            181
+          ],
+          "source": 172,
+          "target": 178,
+          "role": "validation"
+        }
+      ]
+    },
+    {
+      "id": "mis20s1_ad3fd025abc5",
+      "sensor": "MIS20S1",
+      "errors": [],
+      "previews": [
+        {
+          "static_fraction": 0.2364872694015503,
+          "motion_fraction": 0.07821759581565857,
+          "global_illumination_rejected": false,
+          "global_shift_dn12": 0.0,
+          "median_normalized_temporal_variance": 1.1499814987182617,
+          "guidance_frames": [
+            65,
+            67,
+            69,
+            71,
+            73,
+            75,
+            77
+          ],
+          "source": 68,
+          "target": 74,
+          "role": "train"
+        },
+        {
+          "static_fraction": 0.2852083444595337,
+          "motion_fraction": 0.04990740865468979,
+          "global_illumination_rejected": false,
+          "global_shift_dn12": 0.0,
+          "median_normalized_temporal_variance": 1.0985767841339111,
+          "guidance_frames": [
+            169,
+            171,
+            173,
+            175,
+            177,
+            179,
+            181
+          ],
+          "source": 172,
+          "target": 178,
+          "role": "validation"
+        }
+      ]
+    },
+    {
+      "id": "mis20s1_8324b7c529f0",
+      "sensor": "MIS20S1",
+      "errors": [],
+      "previews": [
+        {
+          "static_fraction": 0.1605825573205948,
+          "motion_fraction": 0.02903742343187332,
+          "global_illumination_rejected": false,
+          "global_shift_dn12": 0.0,
+          "median_normalized_temporal_variance": 1.1998258829116821,
+          "guidance_frames": [
+            61,
+            63,
+            65,
+            67,
+            69,
+            71,
+            73
+          ],
+          "source": 64,
+          "target": 70,
+          "role": "train"
+        },
+        {
+          "static_fraction": 0.1617361158132553,
+          "motion_fraction": 0.030970294028520584,
+          "global_illumination_rejected": false,
+          "global_shift_dn12": 0.0,
+          "median_normalized_temporal_variance": 1.2035789489746094,
+          "guidance_frames": [
+            165,
+            167,
+            169,
+            171,
+            173,
+            175,
+            177
+          ],
+          "source": 168,
+          "target": 174,
+          "role": "validation"
+        }
+      ]
+    },
+    {
+      "id": "mis20s1_fd19cc4e1691",
+      "sensor": "MIS20S1",
+      "errors": [],
+      "previews": [
+        {
+          "static_fraction": 0.24276234209537506,
+          "motion_fraction": 0.05058449134230614,
+          "global_illumination_rejected": false,
+          "global_shift_dn12": 0.0,
+          "median_normalized_temporal_variance": 1.1350196599960327,
+          "guidance_frames": [
+            65,
+            67,
+            69,
+            71,
+            73,
+            75,
+            77
+          ],
+          "source": 68,
+          "target": 74,
+          "role": "train"
+        },
+        {
+          "static_fraction": 0.2438657432794571,
+          "motion_fraction": 0.0437808632850647,
+          "global_illumination_rejected": false,
+          "global_shift_dn12": 0.0,
+          "median_normalized_temporal_variance": 1.133333683013916,
+          "guidance_frames": [
+            169,
+            171,
+            173,
+            175,
+            177,
+            179,
+            181
+          ],
+          "source": 172,
+          "target": 178,
+          "role": "validation"
+        }
+      ]
+    },
+    {
+      "id": "465_unspecified_9f43f5c3e9a8",
+      "sensor": "465_unspecified",
+      "errors": [],
+      "previews": [
+        {
+          "static_fraction": 0.2235763818025589,
+          "motion_fraction": 0.0007204861030913889,
+          "global_illumination_rejected": false,
+          "global_shift_dn12": 0.0,
+          "median_normalized_temporal_variance": 1.1199350357055664,
+          "guidance_frames": [
+            65,
+            67,
+            69,
+            71,
+            73,
+            75,
+            77
+          ],
+          "source": 68,
+          "target": 74,
+          "role": "train"
+        },
+        {
+          "static_fraction": 0.21029731631278992,
+          "motion_fraction": 0.013023003935813904,
+          "global_illumination_rejected": false,
+          "global_shift_dn12": 0.0,
+          "median_normalized_temporal_variance": 1.1318576335906982,
+          "guidance_frames": [
+            169,
+            171,
+            173,
+            175,
+            177,
+            179,
+            181
+          ],
+          "source": 172,
+          "target": 178,
+          "role": "validation"
+        }
+      ]
+    },
+    {
+      "id": "465_unspecified_5de70414a527",
+      "sensor": "465_unspecified",
+      "errors": [],
+      "previews": [
+        {
+          "static_fraction": 0.22610677778720856,
+          "motion_fraction": 0.00018880207790061831,
+          "global_illumination_rejected": false,
+          "global_shift_dn12": 0.0,
+          "median_normalized_temporal_variance": 1.1149649620056152,
+          "guidance_frames": [
+            65,
+            67,
+            69,
+            71,
+            73,
+            75,
+            77
+          ],
+          "source": 68,
+          "target": 74,
+          "role": "train"
+        },
+        {
+          "static_fraction": 0.23194986581802368,
+          "motion_fraction": 0.009699435904622078,
+          "global_illumination_rejected": false,
+          "global_shift_dn12": 0.0,
+          "median_normalized_temporal_variance": 1.1170659065246582,
+          "guidance_frames": [
+            169,
+            171,
+            173,
+            175,
+            177,
+            179,
+            181
+          ],
+          "source": 172,
+          "target": 178,
+          "role": "validation"
+        }
+      ]
+    },
+    {
+      "id": "465_unspecified_c5da694aca61",
+      "sensor": "465_unspecified",
+      "errors": [],
+      "previews": [
+        {
+          "static_fraction": 0.35943683981895447,
+          "motion_fraction": 0.016572264954447746,
+          "global_illumination_rejected": false,
+          "global_shift_dn12": 0.0,
+          "median_normalized_temporal_variance": 1.0459425449371338,
+          "guidance_frames": [
+            29,
+            31,
+            33,
+            35,
+            37,
+            39,
+            41
+          ],
+          "source": 32,
+          "target": 38,
+          "role": "train"
+        },
+        {
+          "static_fraction": 0.36581164598464966,
+          "motion_fraction": 0.016094835475087166,
+          "global_illumination_rejected": false,
+          "global_shift_dn12": 0.0,
+          "median_normalized_temporal_variance": 1.0430521965026855,
+          "guidance_frames": [
+            85,
+            87,
+            89,
+            91,
+            93,
+            95,
+            97
+          ],
+          "source": 88,
+          "target": 94,
+          "role": "validation"
+        }
+      ]
+    },
+    {
+      "id": "465_unspecified_8703ea2ca481",
+      "sensor": "465_unspecified",
+      "errors": [],
+      "previews": [
+        {
+          "static_fraction": 0.15041449666023254,
+          "motion_fraction": 0.03543402627110481,
+          "global_illumination_rejected": false,
+          "global_shift_dn12": 0.0,
+          "median_normalized_temporal_variance": 1.1876468658447266,
+          "guidance_frames": [
+            65,
+            67,
+            69,
+            71,
+            73,
+            75,
+            77
+          ],
+          "source": 68,
+          "target": 74,
+          "role": "train"
+        },
+        {
+          "static_fraction": 0.15031467378139496,
+          "motion_fraction": 0.04508029669523239,
+          "global_illumination_rejected": false,
+          "global_shift_dn12": 0.0,
+          "median_normalized_temporal_variance": 1.19062340259552,
+          "guidance_frames": [
+            169,
+            171,
+            173,
+            175,
+            177,
+            179,
+            181
+          ],
+          "source": 172,
+          "target": 178,
+          "role": "validation"
+        }
+      ]
+    },
+    {
+      "id": "465_unspecified_ed774d3cce9d",
+      "sensor": "465_unspecified",
+      "errors": [],
+      "previews": [
+        {
+          "static_fraction": 0.22494900226593018,
+          "motion_fraction": 9.22309045563452e-05,
+          "global_illumination_rejected": false,
+          "global_shift_dn12": 0.0,
+          "median_normalized_temporal_variance": 1.1147140264511108,
+          "guidance_frames": [
+            65,
+            67,
+            69,
+            71,
+            73,
+            75,
+            77
+          ],
+          "source": 68,
+          "target": 74,
+          "role": "train"
+        },
+        {
+          "static_fraction": 0.2271798998117447,
+          "motion_fraction": 0.0057096355594694614,
+          "global_illumination_rejected": false,
+          "global_shift_dn12": 0.0,
+          "median_normalized_temporal_variance": 1.1187975406646729,
+          "guidance_frames": [
+            169,
+            171,
+            173,
+            175,
+            177,
+            179,
+            181
+          ],
+          "source": 172,
+          "target": 178,
+          "role": "validation"
+        }
+      ]
+    },
+    {
+      "id": "465_unspecified_4a58b243f585",
+      "sensor": "465_unspecified",
+      "errors": [],
+      "previews": [
+        {
+          "static_fraction": 0.17004340887069702,
+          "motion_fraction": 0.03754774481058121,
+          "global_illumination_rejected": false,
+          "global_shift_dn12": 0.0,
+          "median_normalized_temporal_variance": 1.1709721088409424,
+          "guidance_frames": [
+            65,
+            67,
+            69,
+            71,
+            73,
+            75,
+            77
+          ],
+          "source": 68,
+          "target": 74,
+          "role": "train"
+        },
+        {
+          "static_fraction": 0.1450260430574417,
+          "motion_fraction": 0.16298611462116241,
+          "global_illumination_rejected": false,
+          "global_shift_dn12": 0.0,
+          "median_normalized_temporal_variance": 1.2522609233856201,
+          "guidance_frames": [
+            169,
+            171,
+            173,
+            175,
+            177,
+            179,
+            181
+          ],
+          "source": 172,
+          "target": 178,
+          "role": "validation"
+        }
+      ]
+    },
+    {
+      "id": "465_unspecified_fa31d98451b7",
+      "sensor": "465_unspecified",
+      "errors": [],
+      "previews": [
+        {
+          "static_fraction": 0.1757063865661621,
+          "motion_fraction": 0.036536458879709244,
+          "global_illumination_rejected": false,
+          "global_shift_dn12": 0.0,
+          "median_normalized_temporal_variance": 1.169342279434204,
+          "guidance_frames": [
+            65,
+            67,
+            69,
+            71,
+            73,
+            75,
+            77
+          ],
+          "source": 68,
+          "target": 74,
+          "role": "train"
+        },
+        {
+          "static_fraction": 0.14559896290302277,
+          "motion_fraction": 0.15435872972011566,
+          "global_illumination_rejected": false,
+          "global_shift_dn12": 0.0,
+          "median_normalized_temporal_variance": 1.2496346235275269,
+          "guidance_frames": [
+            169,
+            171,
+            173,
+            175,
+            177,
+            179,
+            181
+          ],
+          "source": 172,
+          "target": 178,
+          "role": "validation"
+        }
+      ]
+    },
+    {
+      "id": "465_unspecified_2c41c5997a4b",
+      "sensor": "465_unspecified",
+      "errors": [],
+      "previews": [
+        {
+          "static_fraction": 0.18819010257720947,
+          "motion_fraction": 0.039694011211395264,
+          "global_illumination_rejected": false,
+          "global_shift_dn12": 0.0,
+          "median_normalized_temporal_variance": 1.1587870121002197,
+          "guidance_frames": [
+            65,
+            67,
+            69,
+            71,
+            73,
+            75,
+            77
+          ],
+          "source": 68,
+          "target": 74,
+          "role": "train"
+        },
+        {
+          "static_fraction": 0.16108940541744232,
+          "motion_fraction": 0.12899956107139587,
+          "global_illumination_rejected": false,
+          "global_shift_dn12": 0.0,
+          "median_normalized_temporal_variance": 1.2230192422866821,
+          "guidance_frames": [
+            169,
+            171,
+            173,
+            175,
+            177,
+            179,
+            181
+          ],
+          "source": 172,
+          "target": 178,
+          "role": "validation"
+        }
+      ]
+    },
+    {
+      "id": "465_unspecified_1472a669d3ad",
+      "sensor": "465_unspecified",
+      "errors": [],
+      "previews": [
+        {
+          "static_fraction": 0.19241319596767426,
+          "motion_fraction": 0.040698785334825516,
+          "global_illumination_rejected": false,
+          "global_shift_dn12": 0.0,
+          "median_normalized_temporal_variance": 1.1561343669891357,
+          "guidance_frames": [
+            65,
+            67,
+            69,
+            71,
+            73,
+            75,
+            77
+          ],
+          "source": 68,
+          "target": 74,
+          "role": "train"
+        },
+        {
+          "static_fraction": 0.17652560770511627,
+          "motion_fraction": 0.07009223103523254,
+          "global_illumination_rejected": false,
+          "global_shift_dn12": 0.0,
+          "median_normalized_temporal_variance": 1.1823019981384277,
+          "guidance_frames": [
+            169,
+            171,
+            173,
+            175,
+            177,
+            179,
+            181
+          ],
+          "source": 172,
+          "target": 178,
+          "role": "validation"
+        }
+      ]
+    },
+    {
+      "id": "465_unspecified_74d38dfbb4b9",
+      "sensor": "465_unspecified",
+      "errors": [],
+      "previews": [
+        {
+          "static_fraction": 0.2278667539358139,
+          "motion_fraction": 0.0015223524533212185,
+          "global_illumination_rejected": false,
+          "global_shift_dn12": 0.0,
+          "median_normalized_temporal_variance": 1.1176607608795166,
+          "guidance_frames": [
+            65,
+            67,
+            69,
+            71,
+            73,
+            75,
+            77
+          ],
+          "source": 68,
+          "target": 74,
+          "role": "train"
+        },
+        {
+          "static_fraction": 0.20684896409511566,
+          "motion_fraction": 0.04213975742459297,
+          "global_illumination_rejected": false,
+          "global_shift_dn12": 0.0,
+          "median_normalized_temporal_variance": 1.1513562202453613,
+          "guidance_frames": [
+            169,
+            171,
+            173,
+            175,
+            177,
+            179,
+            181
+          ],
+          "source": 172,
+          "target": 178,
+          "role": "validation"
+        }
+      ]
+    }
+  ]
+}

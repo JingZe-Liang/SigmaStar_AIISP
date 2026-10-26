@@ -1,0 +1,23 @@
+{
+  "architecture": "exposure_output_residual_v3",
+  "base_checkpoint": "runs/company_mixed_gpu_001/best.pt",
+  "base_sha256": "564d94f3031b9eb6682b13b317860beb4c55a2bed7ed09b34c668a0bc018e7ac",
+  "width": 16,
+  "supervision": "real_n2n_conservative_static_center_rvi_motion_v1",
+  "precision": "float32",
+  "patch_packed": 192,
+  "learning_rate": 0.0001,
+  "batch_size": 2,
+  "accumulate": 4,
+  "maximum_seconds": 900,
+  "maximum_updates": 10,
+  "review_every": 10,
+  "seed": 20261022,
+  "automatic_training": false,
+  "noise_synthesis": false,
+  "frozen_backbone": true,
+  "injection": "raw_output_residual_only",
+  "loss_steps": [
+    3
+  ]
+}

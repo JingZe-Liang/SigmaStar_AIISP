@@ -1,0 +1,94 @@
+{
+  "stream": "sc635hai_fff725f9cdc8",
+  "sensor": "SC635HAI",
+  "source_relative": "01_fist_company/sc635hai/131x_low_cct/raw_stream_normal_3200x1800_16_RG_0205213025917_131x.raw",
+  "source_sha256": "80445b9133f49dfa7f5117d93bcf9fd5a9dfae1de0e0faae69c9f4144dac440a",
+  "role": "development_validation",
+  "frame": 132,
+  "directory": "sc635hai_fff725f9cdc8/frame_0132",
+  "contract": {
+    "checkpoint_sha256": "4f009d43096d6407a41d4e580cbfa1518058ab8f3fac7b72686391a3a2375de6",
+    "step": 5000,
+    "base_sha256": "564d94f3031b9eb6682b13b317860beb4c55a2bed7ed09b34c668a0bc018e7ac",
+    "teacher_sha256": "0870c25a4eede7fd77a8da2131c5d5d357c5e9a94e9bbc7d24651aa07d7f2e37",
+    "source_sha256": "44624d3c14b73e175a87009fbeb63d764340849e160a55f9d6dc5c7478739086",
+    "selection_sha256": "ebe8cb3e09be55daaa975fe0377f080468d419d656c139d4e15be1fdc0ad6f55",
+    "seed": 20261022,
+    "precision": "float32",
+    "tf32": false,
+    "student_tile_batch": 4,
+    "teacher_tile_batch": 2,
+    "batch_benchmark_sha256": "ec5d6d198d0207a00272711ff3a70925bc8afb47811770a0224ecf590dc4875a",
+    "bounded_oom_fallback": {
+      "student": 1,
+      "teacher": 1
+    },
+    "alpha": 1
+  },
+  "conditions": {
+    "shot_gain_dn12_per_e": [
+      28.04448341722343,
+      23.453371895929255,
+      23.64579880295409,
+      34.9281540258592
+    ],
+    "read_variance_dn12_sq": [
+      614.0015648600651,
+      720.175489351728,
+      767.1529288370872,
+      653.3659823776978
+    ],
+    "basis": "unchanged training manifest"
+  },
+  "wb": [
+    1.1484875965233152,
+    3.5394779515439336
+  ],
+  "scale": 0.9652784466743469,
+  "display_reference_frame": 120,
+  "input_frames": {
+    "company": [
+      132
+    ],
+    "v3": [
+      130,
+      131,
+      132,
+      133,
+      134
+    ],
+    "rvi": [
+      129,
+      130,
+      131,
+      132,
+      133,
+      134,
+      135,
+      136
+    ]
+  },
+  "crop_xyxy": [
+    1440,
+    740,
+    1760,
+    1060
+  ],
+  "student_tile_batch": 4,
+  "teacher_tile_batch": 2,
+  "paired_backbone_shared": true,
+  "paired_first_tile_exact_self_check": true,
+  "branch_change_rms_dn12": 5.680019855499268,
+  "rvi_preclip_fraction": 0.0002918901114628233,
+  "seconds": 218.51600000000326,
+  "optimizer_updates": 0,
+  "clean_gt": false,
+  "output_sha256": {
+    "noisy.png": "9546858dddad65bd9a074d9f3f8802f75f68aae556228a12226208d28371b9b4",
+    "rvideformer.png": "1a38281dde1ccc50e5c371e4b9c44ce6e30336d622a0202656ed443e5a708f12",
+    "frozen_base.png": "4aa34f6cfe0bf3b5cd0309072a0c0b616aa5bc3a578ba7c02e74566d88fa195c",
+    "trained_v3.png": "61f3454dc894be8bdc67788a90167217f4db73478617e2aead21b48e5cef1c22",
+    "comparison.png": "d5dc0491aec73648c24619bb7028c17a417fb05111764f2b2e29f6f8084b59fe",
+    "details.png": "2ed47152c384c03fad47c08894056cc71826f7d4e0bd8c32cf61d8c77384a836"
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "stream": "mis20s1_95abebb62dd9",
+  "sensor": "MIS20S1",
+  "source_relative": "04_Sigmastar_7_30/shdarkroom/10x/raw_stream_1920x1080_16bit@RG_[Shutter=40000,SenserG=9500,IspG=1024,R=2113,G=1024,B=1789].raw",
+  "source_sha256": "258ead1a456c0573047f2a555f3cafa87a7724ca1ab4fed075a5a967c8d4a368",
+  "role": "heldout_test",
+  "frame": 8,
+  "directory": "mis20s1_95abebb62dd9/frame_0008",
+  "contract": {
+    "checkpoint_sha256": "4f009d43096d6407a41d4e580cbfa1518058ab8f3fac7b72686391a3a2375de6",
+    "step": 5000,
+    "base_sha256": "564d94f3031b9eb6682b13b317860beb4c55a2bed7ed09b34c668a0bc018e7ac",
+    "teacher_sha256": "0870c25a4eede7fd77a8da2131c5d5d357c5e9a94e9bbc7d24651aa07d7f2e37",
+    "source_sha256": "44624d3c14b73e175a87009fbeb63d764340849e160a55f9d6dc5c7478739086",
+    "selection_sha256": "ebe8cb3e09be55daaa975fe0377f080468d419d656c139d4e15be1fdc0ad6f55",
+    "seed": 20261022,
+    "precision": "float32",
+    "tf32": false,
+    "student_tile_batch": 4,
+    "teacher_tile_batch": 2,
+    "batch_benchmark_sha256": "ec5d6d198d0207a00272711ff3a70925bc8afb47811770a0224ecf590dc4875a",
+    "bounded_oom_fallback": {
+      "student": 1,
+      "teacher": 1
+    },
+    "alpha": 1
+  },
+  "conditions": {
+    "shot_gain_dn12_per_e": [
+      1.54923311402485,
+      1.378029635516509,
+      1.3802826357274152,
+      1.5255465948661118
+    ],
+    "read_variance_dn12_sq": [
+      27.993014412421985,
+      27.4038864637771,
+      27.48597990448559,
+      27.904731396743955
+    ],
+    "basis": "independent analog-gain transfer, no extra ISP-digital scaling; development-supported working assumption, no test-image fit"
+  },
+  "wb": [
+    1.9828029550369328,
+    1.83737133968294
+  ],
+  "scale": 0.9726905226707458,
+  "display_reference_frame": 8,
+  "input_frames": {
+    "company": [
+      8
+    ],
+    "v3": [
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "rvi": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "crop_xyxy": [
+    800,
+    380,
+    1120,
+    700
+  ],
+  "student_tile_batch": 4,
+  "teacher_tile_batch": 2,
+  "paired_backbone_shared": true,
+  "paired_first_tile_exact_self_check": true,
+  "branch_change_rms_dn12": 8.39715576171875,
+  "rvi_preclip_fraction": 0.0008591595818014706,
+  "seconds": 80.25,
+  "optimizer_updates": 0,
+  "clean_gt": false,
+  "output_sha256": {
+    "noisy.png": "58c6372f26f4ca2d924ab6e6387295bde0803b51ddeb883686c5c8599f105073",
+    "rvideformer.png": "415795e5fd8749064d2fa604ef0eea873f4b67269494cfe966012e53876a1e5b",
+    "frozen_base.png": "7fd9ecf8b55d3a66436a18d2450348c21fa9651418c6889b0add241b2b750cba",
+    "trained_v3.png": "0ddbb6fc5658c813364623ef95453fa108959f4ffbbcaf7e57f8734821e258c8",
+    "comparison.png": "5cce8389a82cec334d99d6d19b3299f8e4b62767216a3b0172b9faebdaf9a948",
+    "details.png": "ce08bd9d7a51d0d3cf002e6b780c5c2fd5929ef3fb186b2ff652509dc36127f9"
+  }
+}

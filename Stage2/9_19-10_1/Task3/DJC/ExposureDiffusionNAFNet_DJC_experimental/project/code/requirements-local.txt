@@ -1,0 +1,6 @@
+numpy
+Pillow
+opencv-python-headless
+PyYAML
+pytest
+# Install a mutually compatible CUDA torch/torchvision pair separately.

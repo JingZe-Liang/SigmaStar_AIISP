@@ -1,0 +1,2 @@
+# Preserve checkpoint-bound source hashes across Windows and Unix checkouts.
+* -text

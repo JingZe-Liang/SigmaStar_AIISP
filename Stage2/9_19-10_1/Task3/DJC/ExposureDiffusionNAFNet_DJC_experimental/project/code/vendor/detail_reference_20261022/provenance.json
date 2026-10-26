@@ -1,0 +1,66 @@
+{
+  "date": "2026-10-22",
+  "repositories": [
+    {
+      "name": "TAP",
+      "paper": "Temporal As a Plugin: Unsupervised Video Denoising with Pre-Trained Image Denoisers",
+      "venue": "ECCV 2024",
+      "url": "https://github.com/zfu006/TAP",
+      "commit": null,
+      "provenance": "Previously verified project snapshot; pinned by source SHA256, commit not claimed",
+      "selected_classes": [
+        "PCDAlignment",
+        "ModulatedDeformableConv2d"
+      ]
+    },
+    {
+      "name": "DarkIR",
+      "paper": "DarkIR: Robust Low-Light Image Restoration",
+      "venue": "CVPR 2025",
+      "url": "https://github.com/cidautai/DarkIR",
+      "commit": "0910291157ad04f210481a002cf6bb480f6a7f18",
+      "selected_classes": [
+        "DBlock",
+        "Branch",
+        "SimpleGate",
+        "LayerNorm2d",
+        "LayerNormFunction"
+      ]
+    },
+    {
+      "name": "FrENet",
+      "paper": "Efficient RAW Image Deblurring with Adaptive Frequency Modulation",
+      "venue": "NeurIPS 2025",
+      "url": "https://github.com/WenlongJiao/FrENet",
+      "commit": "5b21a8bf582855a15883098ad1fa76dab8360f52",
+      "selected_classes": [
+        "FrEBlock",
+        "AFPM",
+        "SCA",
+        "FeedForward",
+        "LayerNorm2d",
+        "LayerNormFunction",
+        "SimpleGate"
+      ]
+    }
+  ],
+  "loading": "AST class selection; original files unchanged. FrENet AFPM position grid recomputed dynamically by local adapter.",
+  "pretrained_branch_weights": false,
+  "downloaded_weights": false,
+  "combination_quality_validated": false,
+  "source_sha256": {
+    "DarkIR/LICENSE": "f8bd980938e3c42148eb939f34819d75ba83b206b610e58544575433b2ceeb52",
+    "DarkIR/README.md": "6aa26ba7ff16a0e7b28004059a2bb024451de9de0e7a196a12ecc0f245a2f750",
+    "DarkIR/archs/DarkIR.py": "3fae6dd6b2ae9501f98ac069884e709b5bda5726800fd335d508b7b9bf97bd53",
+    "DarkIR/archs/__init__.py": "ef6a3b1573262c7febb4c92d4eca0fbf86b87d1be0f2967ca44b6279d7d2c018",
+    "DarkIR/archs/arch_model.py": "3d80012a31cbb1f5a0c07b5efe92f82d2e71668b905ba875f30445ec6b1f4f12",
+    "DarkIR/archs/arch_util.py": "db96fc60cdbc166aacdf15c9c445524a3918e661614ff5275816ca0a089eb1da",
+    "DarkIR/archs/retinexformer.py": "bd3e2da708ac74a0565013acbcdd48b424757ddac76a6b5d9f2acc8316e13be3",
+    "DarkIR/losses/vgg_arch.py": "e05d290f70cf46cb5077c164d1bdbb0c7247a3a32dc10a7fb31517f661a9ba90",
+    "FrENet/README.md": "cdaa2631c8187f15f70f7a770b4c2d0e85386a4e64b189184e65d871449d17b3",
+    "FrENet/models/frenet.py": "dfc9bb1093a74bd196eb5a11822456bc974a12ec204fb56ccc4eb4bd9b425c9c",
+    "FrENet/utils/model_util.py": "3e7a1c66e753d51f7e412201d526016339c7fbff6946e350b78cb398a8f3eda9",
+    "TAP/module_dcn.py": "411ac5074d25d8f41aebf95e9abe1f2eaa202a5436a3e25ec841499a59ad18af",
+    "TAP/module_pcd_alignment.py": "53196efb4ff9f4cc2c5b21afe416c09ec16844c5a169ad8cd2d695aa3d91a7fe"
+  }
+}

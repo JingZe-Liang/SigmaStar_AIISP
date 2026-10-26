@@ -1,0 +1,390 @@
+{
+  "scenes": [
+    {
+      "stream": {
+        "id": "mis20s1_ac9e58a75df1",
+        "sensor": "MIS20S1",
+        "source_relative": "04_Sigmastar_7_30/shdarkroom/1000x/raw_stream_1920x1080_16bit@RG_[Shutter=79999,SenserG=131072,IspG=7656,R=1878,G=1024,B=2218].raw",
+        "path": "E:\\Dataset\\SigmaStar\\Sigmastar_7_30\\shdarkroom\\1000x\\raw_stream_1920x1080_16bit@RG_[Shutter=79999,SenserG=131072,IspG=7656,R=1878,G=1024,B=2218].raw",
+        "role": "test",
+        "bytes": 829440000,
+        "sha256": "3575ab7d3de8d5fce9e15720b5157d89765fd7453a7b144ec2fba3d276bc21bd",
+        "frame_count": 200,
+        "cfa": "RGGB",
+        "raw_spec": {
+          "width": 1920,
+          "height": 1080,
+          "bit_shift": 4,
+          "cfa": "RGGB",
+          "valid_bits": 12,
+          "dtype": "<u2",
+          "strict_alignment": true
+        },
+        "black_dn12": [
+          256.5,
+          256.5,
+          256.5,
+          256.5
+        ],
+        "white_dn12": 4095.0,
+        "parameter_basis": "independent MIS20S1 dark calibration reference",
+        "shot_gain_dn12_per_e": null,
+        "read_variance_dn12_sq": null,
+        "splits": {},
+        "metadata": {
+          "exposure_us": 79999,
+          "sensor_gain_code": 131072,
+          "isp_gain_code": 7656,
+          "gain_label_from_path": "1000x",
+          "exposure_basis": "filename Shutter/US where provided; null means unknown",
+          "q10_gain_product": 957.0,
+          "gain_basis": "collection Q10 code product; not calibrated ISO or ExposureDiffusion exposure ratio"
+        },
+        "container_audit": {
+          "passed": true,
+          "scanned_frames": 200,
+          "min_dn12": 8.0,
+          "max_dn12": 4095.0,
+          "cfa_verified": true
+        }
+      },
+      "role": "heldout_test",
+      "frames": [
+        99
+      ],
+      "conditions": {
+        "shot_gain_dn12_per_e": [
+          26.066963799603027,
+          23.72891960623133,
+          23.700161054649055,
+          26.022042077080226
+        ],
+        "read_variance_dn12_sq": [
+          124.47471618652344,
+          121.93549346923828,
+          122.05632781982422,
+          123.80635833740234
+        ],
+        "basis": "independent analog-gain transfer, no extra ISP-digital scaling; development-supported working assumption, no test-image fit"
+      }
+    },
+    {
+      "stream": {
+        "id": "mis20s1_95abebb62dd9",
+        "sensor": "MIS20S1",
+        "source_relative": "04_Sigmastar_7_30/shdarkroom/10x/raw_stream_1920x1080_16bit@RG_[Shutter=40000,SenserG=9500,IspG=1024,R=2113,G=1024,B=1789].raw",
+        "path": "E:\\Dataset\\SigmaStar\\Sigmastar_7_30\\shdarkroom\\10x\\raw_stream_1920x1080_16bit@RG_[Shutter=40000,SenserG=9500,IspG=1024,R=2113,G=1024,B=1789].raw",
+        "role": "test",
+        "bytes": 829440000,
+        "sha256": "258ead1a456c0573047f2a555f3cafa87a7724ca1ab4fed075a5a967c8d4a368",
+        "frame_count": 200,
+        "cfa": "RGGB",
+        "raw_spec": {
+          "width": 1920,
+          "height": 1080,
+          "bit_shift": 4,
+          "cfa": "RGGB",
+          "valid_bits": 12,
+          "dtype": "<u2",
+          "strict_alignment": true
+        },
+        "black_dn12": [
+          256.5,
+          256.5,
+          256.5,
+          256.5
+        ],
+        "white_dn12": 4095.0,
+        "parameter_basis": "independent MIS20S1 dark calibration reference",
+        "shot_gain_dn12_per_e": null,
+        "read_variance_dn12_sq": null,
+        "splits": {},
+        "metadata": {
+          "exposure_us": 40000,
+          "sensor_gain_code": 9500,
+          "isp_gain_code": 1024,
+          "gain_label_from_path": "10x",
+          "exposure_basis": "filename Shutter/US where provided; null means unknown",
+          "q10_gain_product": 9.27734375,
+          "gain_basis": "collection Q10 code product; not calibrated ISO or ExposureDiffusion exposure ratio"
+        },
+        "container_audit": {
+          "passed": true,
+          "scanned_frames": 200,
+          "min_dn12": 235.0,
+          "max_dn12": 4095.0,
+          "cfa_verified": true
+        }
+      },
+      "role": "heldout_test",
+      "frames": [
+        8
+      ],
+      "conditions": {
+        "shot_gain_dn12_per_e": [
+          1.54923311402485,
+          1.378029635516509,
+          1.3802826357274152,
+          1.5255465948661118
+        ],
+        "read_variance_dn12_sq": [
+          27.993014412421985,
+          27.4038864637771,
+          27.48597990448559,
+          27.904731396743955
+        ],
+        "basis": "independent analog-gain transfer, no extra ISP-digital scaling; development-supported working assumption, no test-image fit"
+      }
+    },
+    {
+      "stream": {
+        "id": "sc450ai_57878d7435b2",
+        "sensor": "SC450AI",
+        "source_relative": "01_fist_company/sc450ai/804x_lightchanging/lightchanging_804x.raw",
+        "path": "data/raw/sc450ai_57878d7435b2.raw",
+        "role": "development",
+        "bytes": 1225728000,
+        "sha256": "8e74a2b96de1943a0180eba82650613d98c0398d0e984c3d0ac4c6b1e12359fe",
+        "frame_count": 150,
+        "cfa": "RGGB",
+        "raw_spec": {
+          "width": 2688,
+          "height": 1520,
+          "bit_shift": 0,
+          "cfa": "RGGB",
+          "valid_bits": 12,
+          "dtype": "<u2",
+          "strict_alignment": true
+        },
+        "black_dn12": [
+          258.0,
+          258.0,
+          258.0,
+          258.0
+        ],
+        "white_dn12": 4095.0,
+        "parameter_basis": "manufacturer readMe / supplied collection table; SC450AI measured low12 supersedes conflicting filename",
+        "shot_gain_dn12_per_e": [
+          13.337633863162011,
+          10.858356598018357,
+          10.900205448035369,
+          14.518087532574294
+        ],
+        "read_variance_dn12_sq": [
+          179.21333438021938,
+          236.50626081989904,
+          236.04599097268752,
+          157.89482965370243
+        ],
+        "splits": {
+          "train": [
+            0,
+            104
+          ],
+          "validation": [
+            115,
+            149
+          ]
+        },
+        "metadata": {
+          "exposure_us": 99993,
+          "sensor_gain_code": 61440,
+          "isp_gain_code": 13728,
+          "gain_label_from_path": "804x",
+          "exposure_basis": "filename Shutter/US where provided; null means unknown",
+          "sidecar_source": "01_fist_company/sc450ai/readMe.txt",
+          "q10_gain_product": 804.375,
+          "gain_basis": "collection Q10 code product; not calibrated ISO or ExposureDiffusion exposure ratio"
+        },
+        "container_audit": {
+          "passed": true,
+          "scanned_frames": 150,
+          "min_dn12": 108.0,
+          "max_dn12": 4092.0,
+          "cfa_verified": true
+        },
+        "noise_basis": "approximate training-only odd-frame tile difference fit; not full sensor likelihood or FPN calibration",
+        "noise_fit_points": [
+          473,
+          508,
+          511,
+          511
+        ],
+        "noise_fit_source_frames": [
+          1,
+          3,
+          5,
+          7,
+          9,
+          11,
+          13,
+          15,
+          17,
+          19,
+          21,
+          23,
+          25,
+          27,
+          29,
+          31,
+          33,
+          35,
+          37,
+          39
+        ],
+        "pooling_variance_factor": [
+          0.04,
+          0.04,
+          0.04,
+          0.04
+        ],
+        "noise_fit_version": 2
+      },
+      "role": "development_validation",
+      "frames": [
+        132
+      ],
+      "conditions": {
+        "shot_gain_dn12_per_e": [
+          13.337633863162011,
+          10.858356598018357,
+          10.900205448035369,
+          14.518087532574294
+        ],
+        "read_variance_dn12_sq": [
+          179.21333438021938,
+          236.50626081989904,
+          236.04599097268752,
+          157.89482965370243
+        ],
+        "basis": "unchanged training manifest"
+      }
+    },
+    {
+      "stream": {
+        "id": "sc635hai_fff725f9cdc8",
+        "sensor": "SC635HAI",
+        "source_relative": "01_fist_company/sc635hai/131x_low_cct/raw_stream_normal_3200x1800_16_RG_0205213025917_131x.raw",
+        "path": "data/raw/sc635hai_fff725f9cdc8.raw",
+        "role": "development",
+        "bytes": 1728000000,
+        "sha256": "80445b9133f49dfa7f5117d93bcf9fd5a9dfae1de0e0faae69c9f4144dac440a",
+        "frame_count": 150,
+        "cfa": "RGGB",
+        "raw_spec": {
+          "width": 3200,
+          "height": 1800,
+          "bit_shift": 4,
+          "cfa": "RGGB",
+          "valid_bits": 12,
+          "dtype": "<u2",
+          "strict_alignment": true
+        },
+        "black_dn12": [
+          257.5,
+          257.5,
+          257.5,
+          257.5
+        ],
+        "white_dn12": 4095.0,
+        "parameter_basis": "manufacturer readMe / supplied collection table; SC450AI measured low12 supersedes conflicting filename",
+        "shot_gain_dn12_per_e": [
+          28.04448341722343,
+          23.453371895929255,
+          23.64579880295409,
+          34.9281540258592
+        ],
+        "read_variance_dn12_sq": [
+          614.0015648600651,
+          720.175489351728,
+          767.1529288370872,
+          653.3659823776978
+        ],
+        "splits": {
+          "train": [
+            0,
+            104
+          ],
+          "validation": [
+            115,
+            149
+          ]
+        },
+        "metadata": {
+          "exposure_us": 69992,
+          "sensor_gain_code": 86016,
+          "isp_gain_code": 1601,
+          "gain_label_from_path": "131x",
+          "exposure_basis": "filename Shutter/US where provided; null means unknown",
+          "sidecar_source": "01_fist_company/sc635hai/readMe.txt",
+          "q10_gain_product": 131.33203125,
+          "gain_basis": "collection Q10 code product; not calibrated ISO or ExposureDiffusion exposure ratio"
+        },
+        "container_audit": {
+          "passed": true,
+          "scanned_frames": 150,
+          "min_dn12": 0.0,
+          "max_dn12": 4092.0,
+          "cfa_verified": true
+        },
+        "noise_basis": "approximate training-only odd-frame tile difference fit; not full sensor likelihood or FPN calibration",
+        "noise_fit_points": [
+          465,
+          457,
+          459,
+          515
+        ],
+        "noise_fit_source_frames": [
+          1,
+          3,
+          5,
+          7,
+          9,
+          11,
+          13,
+          15,
+          17,
+          19,
+          21,
+          23,
+          25,
+          27,
+          29,
+          31,
+          33,
+          35,
+          37,
+          39
+        ],
+        "pooling_variance_factor": [
+          0.046691183000802994,
+          0.043785460293293,
+          0.04301052913069725,
+          0.04
+        ],
+        "noise_fit_version": 2
+      },
+      "role": "development_validation",
+      "frames": [
+        132
+      ],
+      "conditions": {
+        "shot_gain_dn12_per_e": [
+          28.04448341722343,
+          23.453371895929255,
+          23.64579880295409,
+          34.9281540258592
+        ],
+        "read_variance_dn12_sq": [
+          614.0015648600651,
+          720.175489351728,
+          767.1529288370872,
+          653.3659823776978
+        ],
+        "basis": "unchanged training manifest"
+      }
+    }
+  ],
+  "cases": 4,
+  "note": "Representative replay metadata only; full evaluation outputs are not included."
+}
