@@ -1,0 +1,382 @@
+{
+  "protocol": "A9 unified multi-sensor sc635hai evaluation",
+  "candidate_checkpoint": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a9_multi_sensor_generalization/training_smoke_4090_retry2_20261016/checkpoint_step_000100.pth",
+  "candidate_checkpoint_sha256": "e30da4169a782679dde2c72013bdba360d24ac80ca0ba2526f9422959ef9e28e",
+  "weights": "ema",
+  "training_sequence": "sc635hai_131x_low_cct",
+  "held_out_sequence": "sc635hai_16x_motion_color",
+  "static_train_domain": {
+    "baseline_a3": {
+      "protocol": "A3 baseline on the same tail clips",
+      "even_input_vs_odd_reference": {
+        "input_parity": "even",
+        "target": "odd_reference",
+        "clips": [
+          [
+            134,
+            136,
+            138,
+            140,
+            142,
+            144,
+            146,
+            148
+          ]
+        ],
+        "evaluated_frames": 8,
+        "input": {
+          "rmse_dn": 47.34048355255578,
+          "psnr_db": 38.74042432884475
+        },
+        "a3": {
+          "rmse_dn": 9.875965215781395,
+          "psnr_db": 52.353487089320566
+        },
+        "a3_psnr_gain_db": 13.613062760475813,
+        "static_values": 35269248,
+        "usable_spatial_fraction": 0.7653916666666667,
+        "detected_motion_fraction": 0.06797942708333334,
+        "motion_threshold_dn_min": 75.89783673706054,
+        "motion_threshold_dn_max": 76.20124364013671,
+        "input_temporal_mad_dn": 47.46664478779247,
+        "a3_temporal_mad_dn": 2.162771658746998,
+        "a3_output_bias_dn": -0.9031706100685392,
+        "legal_raw_fraction": 1.0,
+        "normalized_clip_fraction": 0.007407986111111111,
+        "input_high_frequency_ratio": 2.1073934031915034,
+        "a3_high_frequency_ratio": 0.9198600826564441,
+        "a3_flat_residual_sigma_dn": 7.469503488110852,
+        "detail_values": 7548676,
+        "flat_values": 7733712
+      },
+      "odd_input_vs_even_reference": {
+        "input_parity": "odd",
+        "target": "even_reference",
+        "clips": [
+          [
+            135,
+            137,
+            139,
+            141,
+            143,
+            145,
+            147,
+            149
+          ]
+        ],
+        "evaluated_frames": 8,
+        "input": {
+          "rmse_dn": 47.327365562190366,
+          "psnr_db": 38.742831511819375
+        },
+        "a3": {
+          "rmse_dn": 9.873970775817723,
+          "psnr_db": 52.35524137201601
+        },
+        "a3_psnr_gain_db": 13.612409860196635,
+        "static_values": 35269928,
+        "usable_spatial_fraction": 0.7654064236111111,
+        "detected_motion_fraction": 0.06803602430555555,
+        "motion_threshold_dn_min": 75.83678437194824,
+        "motion_threshold_dn_max": 76.17318400268555,
+        "input_temporal_mad_dn": 47.4423429355697,
+        "a3_temporal_mad_dn": 2.162430030330651,
+        "a3_output_bias_dn": -0.9626018599994188,
+        "legal_raw_fraction": 1.0,
+        "normalized_clip_fraction": 0.0074279730902777775,
+        "input_high_frequency_ratio": 2.108030565016791,
+        "a3_high_frequency_ratio": 0.9199914696813235,
+        "a3_flat_residual_sigma_dn": 7.46796802260204,
+        "detail_values": 7550824,
+        "flat_values": 7733876
+      }
+    },
+    "candidate": {
+      "protocol": "A9 static-source tail diagnostic",
+      "even_input_vs_odd_reference": {
+        "input_parity": "even",
+        "target": "odd_reference",
+        "clips": [
+          [
+            134,
+            136,
+            138,
+            140,
+            142,
+            144,
+            146,
+            148
+          ]
+        ],
+        "evaluated_frames": 8,
+        "input": {
+          "rmse_dn": 47.34048355255578,
+          "psnr_db": 38.74042432884475
+        },
+        "static_values": 35269248,
+        "usable_spatial_fraction": 0.7653916666666667,
+        "detected_motion_fraction": 0.06797942708333334,
+        "motion_threshold_dn_min": 75.89783673706054,
+        "motion_threshold_dn_max": 76.20124364013671,
+        "input_temporal_mad_dn": 47.46664478779247,
+        "legal_raw_fraction": 1.0,
+        "normalized_clip_fraction": 0.0069331814236111115,
+        "input_high_frequency_ratio": 2.1073934031915034,
+        "detail_values": 7548676,
+        "flat_values": 7733712,
+        "candidate": {
+          "rmse_dn": 9.864646059933685,
+          "psnr_db": 52.36344797127007
+        },
+        "candidate_psnr_gain_db": 13.623023642425316,
+        "candidate_temporal_mad_dn": 2.16148829233718,
+        "candidate_output_bias_dn": -0.8395276064289391,
+        "candidate_high_frequency_ratio": 0.9197353305917891,
+        "candidate_flat_residual_sigma_dn": 7.465159903739638
+      },
+      "odd_input_vs_even_reference": {
+        "input_parity": "odd",
+        "target": "even_reference",
+        "clips": [
+          [
+            135,
+            137,
+            139,
+            141,
+            143,
+            145,
+            147,
+            149
+          ]
+        ],
+        "evaluated_frames": 8,
+        "input": {
+          "rmse_dn": 47.327365562190366,
+          "psnr_db": 38.742831511819375
+        },
+        "static_values": 35269928,
+        "usable_spatial_fraction": 0.7654064236111111,
+        "detected_motion_fraction": 0.06803602430555555,
+        "motion_threshold_dn_min": 75.83678437194824,
+        "motion_threshold_dn_max": 76.17318400268555,
+        "input_temporal_mad_dn": 47.4423429355697,
+        "legal_raw_fraction": 1.0,
+        "normalized_clip_fraction": 0.006959092881944445,
+        "input_high_frequency_ratio": 2.108030565016791,
+        "detail_values": 7550824,
+        "flat_values": 7733876,
+        "candidate": {
+          "rmse_dn": 9.862359977573808,
+          "psnr_db": 52.36546111600501
+        },
+        "candidate_psnr_gain_db": 13.622629604185633,
+        "candidate_temporal_mad_dn": 2.161136200063044,
+        "candidate_output_bias_dn": -0.8989397930538375,
+        "candidate_high_frequency_ratio": 0.9198686136812185,
+        "candidate_flat_residual_sigma_dn": 7.463652243421704
+      },
+      "summary": {
+        "mean_candidate_psnr_db": 52.364454543637535,
+        "mean_candidate_psnr_gain_db": 13.622826623305475,
+        "mean_candidate_high_frequency_ratio": 0.9198019721365038,
+        "maximum_candidate_output_bias_abs_dn": 0.8989397930538375,
+        "minimum_legal_raw_fraction": 1.0,
+        "maximum_normalized_clip_fraction": 0.006959092881944445
+      }
+    }
+  },
+  "dynamic_holdout": {
+    "baseline_a3": {
+      "protocol": "diagnostic-only no-reference stress evaluation",
+      "clean_target_available": false,
+      "clips": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        [
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103
+        ],
+        [
+          192,
+          193,
+          194,
+          195,
+          196,
+          197,
+          198,
+          199
+        ]
+      ],
+      "evaluated_frames": 24,
+      "mean_output_bias_dn": -2.369127557363775,
+      "mean_abs_output_change_dn": 29.71001603524685,
+      "input_temporal_mad_dn": 51.63571957258598,
+      "a3_temporal_mad_dn": 14.674536679034762,
+      "temporal_mad_ratio": 0.28419351566131074,
+      "motion_temporal_ratio": 0.5996022168842369,
+      "static_temporal_ratio": 0.10132929645712353,
+      "spatial_high_frequency_ratio": 0.7636050739952669,
+      "legal_raw_fraction": 1.0,
+      "normalized_clip_fraction": 0.02199410445601852,
+      "diagnostic_populations": {
+        "temporal_values": 120960000,
+        "motion_values": 12225976,
+        "static_values": 61624420,
+        "detail_values": 34562340
+      },
+      "interpretation": "Ratios are diagnostics only; none is a clean-target quality score or pass gate."
+    },
+    "candidate": {
+      "protocol": "diagnostic-only no-reference stress evaluation",
+      "clean_target_available": false,
+      "clips": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        [
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103
+        ],
+        [
+          192,
+          193,
+          194,
+          195,
+          196,
+          197,
+          198,
+          199
+        ]
+      ],
+      "evaluated_frames": 24,
+      "mean_output_bias_dn": -2.3494040398191522,
+      "mean_abs_output_change_dn": 29.71591364572004,
+      "input_temporal_mad_dn": 51.63571957258598,
+      "temporal_mad_ratio": 0.2841679309666491,
+      "motion_temporal_ratio": 0.5994922794579937,
+      "static_temporal_ratio": 0.10136218740480984,
+      "spatial_high_frequency_ratio": 0.763589423606889,
+      "legal_raw_fraction": 1.0,
+      "normalized_clip_fraction": 0.021108253761574075,
+      "diagnostic_populations": {
+        "temporal_values": 120960000,
+        "motion_values": 12225976,
+        "static_values": 61624420,
+        "detail_values": 34562340
+      },
+      "interpretation": "Ratios are diagnostics only; none is a clean-target quality score or pass gate.",
+      "candidate_temporal_mad_dn": 14.673215594915865
+    }
+  },
+  "mis20s1_replay_guard": {
+    "frames": [
+      0,
+      7
+    ],
+    "baseline_a3": {
+      "finetuned": {
+        "rmse_dn": 466.9091796875,
+        "psnr_db": 18.86042987233656,
+        "pixels": 15712380
+      },
+      "input": {
+        "rmse_dn": 472.4244384765625,
+        "psnr_db": 18.75843101113498,
+        "pixels": 15712380
+      },
+      "temporal_mad_dn": 3.0512959957122803,
+      "input_temporal_mad_dn": 65.22924041748047,
+      "legal_fraction": 1.0,
+      "high_frequency_ratio_mean": 0.3407725363687213,
+      "high_frequency_ratio_per_channel": [
+        0.3395083475660711,
+        0.317444695478928,
+        0.2976233229926972,
+        0.4085137794371887
+      ],
+      "flat_residual_sigma_dn": 225.7530975341797,
+      "static_pixels": 15712380
+    },
+    "candidate": {
+      "finetuned": {
+        "rmse_dn": 466.9277648925781,
+        "psnr_db": 18.860084139516353,
+        "pixels": 15712380
+      },
+      "input": {
+        "rmse_dn": 472.4244384765625,
+        "psnr_db": 18.75843101113498,
+        "pixels": 15712380
+      },
+      "temporal_mad_dn": 3.202153205871582,
+      "input_temporal_mad_dn": 65.22924041748047,
+      "legal_fraction": 1.0,
+      "high_frequency_ratio_mean": 0.34178818224083307,
+      "high_frequency_ratio_per_channel": [
+        0.340651283031514,
+        0.31860618442534444,
+        0.29862442136048883,
+        0.4092708401459851
+      ],
+      "flat_residual_sigma_dn": 225.760986328125,
+      "static_pixels": 15712380
+    },
+    "delta": {
+      "psnr_db": -0.000345732820207445,
+      "high_frequency_ratio": 0.0010156458721117811,
+      "temporal_mad_dn": 0.15085721015930176
+    }
+  },
+  "automatic_gate": {
+    "passed": true,
+    "checks": {
+      "static_psnr_not_worse_than_a3_minus_0p10_db": true,
+      "static_hf_distance_to_one_not_worse_by_0p02": true,
+      "dynamic_legal_raw_fraction": true,
+      "dynamic_clip_fraction_guard": true,
+      "dynamic_high_frequency_guard": true,
+      "dynamic_motion_guard": true,
+      "dynamic_static_flicker_guard": true,
+      "mis20s1_psnr_guard": true,
+      "mis20s1_high_frequency_guard": true
+    },
+    "note": "The dynamic sequence has no clean target; visual review remains mandatory."
+  },
+  "fixed_isp_video": {
+    "frames": 24,
+    "fps": 6,
+    "encoder": "libx265",
+    "video": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a9_multi_sensor_generalization/evaluation_step100_20261016/sc635hai/fixed_isp_video/sc635hai_16x_input_a3_a9_fixed_isp.mp4",
+    "video_sha256": "7a76f2b9ba9655bdd0ba916713012cdbfd90c427fbdee0359e893ed6bf65efce",
+    "preview": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a9_multi_sensor_generalization/evaluation_step100_20261016/sc635hai/fixed_isp_video/sc635hai_16x_input_a3_a9_fixed_isp_frame0000.png",
+    "preview_sha256": "6bd8475ca7f7805012ed48106685d81d73a0ee746cc56ef7a31fa1c5548a649d",
+    "layout": "Input | A3 baseline | A9 unified step-100; overview above center-detail crop"
+  }
+}

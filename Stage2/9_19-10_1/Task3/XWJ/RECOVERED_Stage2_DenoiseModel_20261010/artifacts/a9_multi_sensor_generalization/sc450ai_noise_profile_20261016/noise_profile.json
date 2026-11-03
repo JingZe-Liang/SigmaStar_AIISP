@@ -1,0 +1,5058 @@
+{
+  "schema": "a9-sensor-temporal-noise-v1",
+  "sensor": "sc450ai",
+  "source_name": "sc450ai_804x_lightchanging",
+  "source_path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/01_fist_company/sc450ai/804x_lightchanging/lightchanging_804x.raw",
+  "source_sha256": "8e74a2b96de1943a0180eba82650613d98c0398d0e984c3d0ac4c6b1e12359fe",
+  "black_levels": {
+    "R": 256.0,
+    "Gr": 257.5,
+    "Gb": 257.5,
+    "B": 255.25
+  },
+  "variance_model": {
+    "R": {
+      "shot_variance_per_signal_dn": 14.279189880392368,
+      "read_variance_dn2": 132.12182944840072,
+      "fit_rmse_dn2": 158.80404492901337,
+      "observations": 125
+    },
+    "Gr": {
+      "shot_variance_per_signal_dn": 11.35016264490873,
+      "read_variance_dn2": 227.00853787561394,
+      "fit_rmse_dn2": 153.39334133655626,
+      "observations": 150
+    },
+    "Gb": {
+      "shot_variance_per_signal_dn": 11.724994838550137,
+      "read_variance_dn2": 224.73797607395764,
+      "fit_rmse_dn2": 202.7967909889233,
+      "observations": 150
+    },
+    "B": {
+      "shot_variance_per_signal_dn": 14.278346377160245,
+      "read_variance_dn2": 108.9034805997361,
+      "fit_rmse_dn2": 129.35308562660308,
+      "observations": 120
+    }
+  },
+  "channel_correlation": {
+    "policy": "identity",
+    "matrix": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "reason": "packed CFA channels are spatially offset; pairwise temporal variance is modeled without unsupported cross-channel coupling"
+  },
+  "fit": {
+    "train_frame_range": [
+      0,
+      120
+    ],
+    "validation_frame_range": [
+      120,
+      150
+    ],
+    "train_observations": [
+      {
+        "channel": "R",
+        "signal_dn": 8.0,
+        "sigma_dn": 14.3318,
+        "pixels": 11472,
+        "pair_first_frame": 0
+      },
+      {
+        "channel": "R",
+        "signal_dn": 20.0,
+        "sigma_dn": 21.7448,
+        "pixels": 5519,
+        "pair_first_frame": 0
+      },
+      {
+        "channel": "R",
+        "signal_dn": 40.0,
+        "sigma_dn": 27.922299999999993,
+        "pixels": 1786,
+        "pair_first_frame": 0
+      },
+      {
+        "channel": "R",
+        "signal_dn": 80.0,
+        "sigma_dn": 32.617200000000004,
+        "pixels": 823,
+        "pair_first_frame": 0
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 6.5,
+        "sigma_dn": 14.826,
+        "pixels": 9991,
+        "pair_first_frame": 0
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.23899999999999,
+        "pixels": 5861,
+        "pair_first_frame": 0
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 38.5,
+        "sigma_dn": 27.675200000000007,
+        "pixels": 2604,
+        "pair_first_frame": 0
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 84.5,
+        "sigma_dn": 35.829499999999996,
+        "pixels": 930,
+        "pair_first_frame": 0
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 154.5,
+        "sigma_dn": 39.536000000000016,
+        "pixels": 345,
+        "pair_first_frame": 0
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 6.5,
+        "sigma_dn": 14.826000000000011,
+        "pixels": 9790,
+        "pair_first_frame": 0
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.23900000000001,
+        "pixels": 5767,
+        "pair_first_frame": 0
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 38.5,
+        "sigma_dn": 29.157799999999977,
+        "pixels": 2752,
+        "pair_first_frame": 0
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 86.5,
+        "sigma_dn": 33.111399999999996,
+        "pixels": 935,
+        "pair_first_frame": 0
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 148.5,
+        "sigma_dn": 41.01859999999999,
+        "pixels": 277,
+        "pair_first_frame": 0
+      },
+      {
+        "channel": "B",
+        "signal_dn": 6.75,
+        "sigma_dn": 13.837599999999998,
+        "pixels": 14132,
+        "pair_first_frame": 0
+      },
+      {
+        "channel": "B",
+        "signal_dn": 20.75,
+        "sigma_dn": 20.262199999999996,
+        "pixels": 3835,
+        "pair_first_frame": 0
+      },
+      {
+        "channel": "B",
+        "signal_dn": 42.75,
+        "sigma_dn": 26.68680000000001,
+        "pixels": 922,
+        "pair_first_frame": 0
+      },
+      {
+        "channel": "B",
+        "signal_dn": 74.75,
+        "sigma_dn": 28.663600000000017,
+        "pixels": 251,
+        "pair_first_frame": 0
+      },
+      {
+        "channel": "R",
+        "signal_dn": 8.0,
+        "sigma_dn": 14.331799999999996,
+        "pixels": 11604,
+        "pair_first_frame": 4
+      },
+      {
+        "channel": "R",
+        "signal_dn": 20.0,
+        "sigma_dn": 21.744799999999994,
+        "pixels": 5593,
+        "pair_first_frame": 4
+      },
+      {
+        "channel": "R",
+        "signal_dn": 40.0,
+        "sigma_dn": 27.181000000000008,
+        "pixels": 1763,
+        "pair_first_frame": 4
+      },
+      {
+        "channel": "R",
+        "signal_dn": 82.0,
+        "sigma_dn": 35.582400000000014,
+        "pixels": 793,
+        "pair_first_frame": 4
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 8.5,
+        "sigma_dn": 15.320199999999998,
+        "pixels": 10126,
+        "pair_first_frame": 4
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.238999999999983,
+        "pixels": 5757,
+        "pair_first_frame": 4
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 38.5,
+        "sigma_dn": 27.675199999999986,
+        "pixels": 2738,
+        "pair_first_frame": 4
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 84.5,
+        "sigma_dn": 34.0998,
+        "pixels": 987,
+        "pair_first_frame": 4
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 154.5,
+        "sigma_dn": 37.80630000000001,
+        "pixels": 290,
+        "pair_first_frame": 4
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 6.5,
+        "sigma_dn": 15.320199999999998,
+        "pixels": 9722,
+        "pair_first_frame": 4
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.73319999999999,
+        "pixels": 5692,
+        "pair_first_frame": 4
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 38.5,
+        "sigma_dn": 26.43969999999999,
+        "pixels": 2640,
+        "pair_first_frame": 4
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 84.5,
+        "sigma_dn": 34.59399999999998,
+        "pixels": 911,
+        "pair_first_frame": 4
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 152.5,
+        "sigma_dn": 41.018599999999985,
+        "pixels": 301,
+        "pair_first_frame": 4
+      },
+      {
+        "channel": "B",
+        "signal_dn": 6.75,
+        "sigma_dn": 13.837600000000004,
+        "pixels": 14041,
+        "pair_first_frame": 4
+      },
+      {
+        "channel": "B",
+        "signal_dn": 20.75,
+        "sigma_dn": 19.768000000000008,
+        "pixels": 3687,
+        "pair_first_frame": 4
+      },
+      {
+        "channel": "B",
+        "signal_dn": 42.75,
+        "sigma_dn": 25.698400000000003,
+        "pixels": 909,
+        "pair_first_frame": 4
+      },
+      {
+        "channel": "B",
+        "signal_dn": 74.75,
+        "sigma_dn": 31.134599999999995,
+        "pixels": 224,
+        "pair_first_frame": 4
+      },
+      {
+        "channel": "R",
+        "signal_dn": 8.0,
+        "sigma_dn": 14.331799999999996,
+        "pixels": 11052,
+        "pair_first_frame": 8
+      },
+      {
+        "channel": "R",
+        "signal_dn": 20.0,
+        "sigma_dn": 20.756399999999992,
+        "pixels": 5635,
+        "pair_first_frame": 8
+      },
+      {
+        "channel": "R",
+        "signal_dn": 40.0,
+        "sigma_dn": 27.675199999999997,
+        "pixels": 1877,
+        "pair_first_frame": 8
+      },
+      {
+        "channel": "R",
+        "signal_dn": 82.0,
+        "sigma_dn": 35.33530000000001,
+        "pixels": 788,
+        "pair_first_frame": 8
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 6.5,
+        "sigma_dn": 14.826,
+        "pixels": 9738,
+        "pair_first_frame": 8
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 22.5,
+        "sigma_dn": 21.744799999999994,
+        "pixels": 5832,
+        "pair_first_frame": 8
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 38.5,
+        "sigma_dn": 27.675199999999986,
+        "pixels": 3246,
+        "pair_first_frame": 8
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 84.5,
+        "sigma_dn": 35.82949999999999,
+        "pixels": 918,
+        "pair_first_frame": 8
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 152.5,
+        "sigma_dn": 42.006999999999984,
+        "pixels": 304,
+        "pair_first_frame": 8
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 6.5,
+        "sigma_dn": 14.826000000000002,
+        "pixels": 9647,
+        "pair_first_frame": 8
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 22.5,
+        "sigma_dn": 21.744799999999994,
+        "pixels": 5805,
+        "pair_first_frame": 8
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 38.5,
+        "sigma_dn": 28.66359999999998,
+        "pixels": 3187,
+        "pair_first_frame": 8
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 84.5,
+        "sigma_dn": 38.053399999999996,
+        "pixels": 957,
+        "pair_first_frame": 8
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 152.5,
+        "sigma_dn": 38.05339999999999,
+        "pixels": 324,
+        "pair_first_frame": 8
+      },
+      {
+        "channel": "B",
+        "signal_dn": 6.75,
+        "sigma_dn": 13.837600000000004,
+        "pixels": 13871,
+        "pair_first_frame": 8
+      },
+      {
+        "channel": "B",
+        "signal_dn": 20.75,
+        "sigma_dn": 20.7564,
+        "pixels": 4043,
+        "pair_first_frame": 8
+      },
+      {
+        "channel": "B",
+        "signal_dn": 42.75,
+        "sigma_dn": 28.169399999999985,
+        "pixels": 937,
+        "pair_first_frame": 8
+      },
+      {
+        "channel": "B",
+        "signal_dn": 74.75,
+        "sigma_dn": 28.66359999999999,
+        "pixels": 246,
+        "pair_first_frame": 8
+      },
+      {
+        "channel": "R",
+        "signal_dn": 8.0,
+        "sigma_dn": 14.331799999999994,
+        "pixels": 10606,
+        "pair_first_frame": 12
+      },
+      {
+        "channel": "R",
+        "signal_dn": 22.0,
+        "sigma_dn": 21.744799999999987,
+        "pixels": 6063,
+        "pair_first_frame": 12
+      },
+      {
+        "channel": "R",
+        "signal_dn": 38.0,
+        "sigma_dn": 27.180999999999994,
+        "pixels": 2186,
+        "pair_first_frame": 12
+      },
+      {
+        "channel": "R",
+        "signal_dn": 82.0,
+        "sigma_dn": 38.05339999999998,
+        "pixels": 906,
+        "pair_first_frame": 12
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 6.5,
+        "sigma_dn": 15.320199999999993,
+        "pixels": 8917,
+        "pair_first_frame": 12
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.733200000000014,
+        "pixels": 5569,
+        "pair_first_frame": 12
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 40.5,
+        "sigma_dn": 27.18100000000001,
+        "pixels": 4138,
+        "pair_first_frame": 12
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 90.5,
+        "sigma_dn": 35.58240000000001,
+        "pixels": 1028,
+        "pair_first_frame": 12
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 156.5,
+        "sigma_dn": 40.030199999999994,
+        "pixels": 369,
+        "pair_first_frame": 12
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 6.5,
+        "sigma_dn": 14.826000000000006,
+        "pixels": 8935,
+        "pair_first_frame": 12
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.239000000000015,
+        "pixels": 5263,
+        "pair_first_frame": 12
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 40.5,
+        "sigma_dn": 28.169399999999996,
+        "pixels": 4273,
+        "pair_first_frame": 12
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 88.5,
+        "sigma_dn": 34.59399999999998,
+        "pixels": 1003,
+        "pair_first_frame": 12
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 152.5,
+        "sigma_dn": 41.26569999999999,
+        "pixels": 374,
+        "pair_first_frame": 12
+      },
+      {
+        "channel": "B",
+        "signal_dn": 6.75,
+        "sigma_dn": 14.331799999999996,
+        "pixels": 12633,
+        "pair_first_frame": 12
+      },
+      {
+        "channel": "B",
+        "signal_dn": 20.75,
+        "sigma_dn": 20.756400000000003,
+        "pixels": 4624,
+        "pair_first_frame": 12
+      },
+      {
+        "channel": "B",
+        "signal_dn": 40.75,
+        "sigma_dn": 28.41649999999999,
+        "pixels": 1124,
+        "pair_first_frame": 12
+      },
+      {
+        "channel": "B",
+        "signal_dn": 74.75,
+        "sigma_dn": 30.88750000000001,
+        "pixels": 272,
+        "pair_first_frame": 12
+      },
+      {
+        "channel": "R",
+        "signal_dn": 8.0,
+        "sigma_dn": 14.331799999999996,
+        "pixels": 10575,
+        "pair_first_frame": 16
+      },
+      {
+        "channel": "R",
+        "signal_dn": 22.0,
+        "sigma_dn": 21.744800000000016,
+        "pixels": 6070,
+        "pair_first_frame": 16
+      },
+      {
+        "channel": "R",
+        "signal_dn": 38.0,
+        "sigma_dn": 26.68680000000001,
+        "pixels": 2213,
+        "pair_first_frame": 16
+      },
+      {
+        "channel": "R",
+        "signal_dn": 82.0,
+        "sigma_dn": 36.57079999999998,
+        "pixels": 835,
+        "pair_first_frame": 16
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 6.5,
+        "sigma_dn": 14.826000000000011,
+        "pixels": 9237,
+        "pair_first_frame": 16
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 22.5,
+        "sigma_dn": 21.744799999999994,
+        "pixels": 5460,
+        "pair_first_frame": 16
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 38.5,
+        "sigma_dn": 27.428099999999993,
+        "pixels": 4030,
+        "pair_first_frame": 16
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 86.5,
+        "sigma_dn": 37.06499999999998,
+        "pixels": 1118,
+        "pair_first_frame": 16
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 152.5,
+        "sigma_dn": 45.96060000000003,
+        "pixels": 333,
+        "pair_first_frame": 16
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 6.5,
+        "sigma_dn": 15.320200000000005,
+        "pixels": 9048,
+        "pair_first_frame": 16
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 22.5,
+        "sigma_dn": 21.991899999999994,
+        "pixels": 5596,
+        "pair_first_frame": 16
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 40.5,
+        "sigma_dn": 27.675199999999997,
+        "pixels": 3966,
+        "pair_first_frame": 16
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 88.5,
+        "sigma_dn": 39.536,
+        "pixels": 1092,
+        "pair_first_frame": 16
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 150.5,
+        "sigma_dn": 37.312099999999994,
+        "pixels": 310,
+        "pair_first_frame": 16
+      },
+      {
+        "channel": "B",
+        "signal_dn": 8.75,
+        "sigma_dn": 13.837599999999997,
+        "pixels": 12955,
+        "pair_first_frame": 16
+      },
+      {
+        "channel": "B",
+        "signal_dn": 20.75,
+        "sigma_dn": 20.756399999999985,
+        "pixels": 4631,
+        "pair_first_frame": 16
+      },
+      {
+        "channel": "B",
+        "signal_dn": 40.75,
+        "sigma_dn": 28.66359999999999,
+        "pixels": 980,
+        "pair_first_frame": 16
+      },
+      {
+        "channel": "B",
+        "signal_dn": 74.75,
+        "sigma_dn": 36.0766,
+        "pixels": 232,
+        "pair_first_frame": 16
+      },
+      {
+        "channel": "R",
+        "signal_dn": 8.0,
+        "sigma_dn": 14.331800000000005,
+        "pixels": 11009,
+        "pair_first_frame": 20
+      },
+      {
+        "channel": "R",
+        "signal_dn": 22.0,
+        "sigma_dn": 21.7448,
+        "pixels": 6030,
+        "pair_first_frame": 20
+      },
+      {
+        "channel": "R",
+        "signal_dn": 40.0,
+        "sigma_dn": 27.180999999999994,
+        "pixels": 1882,
+        "pair_first_frame": 20
+      },
+      {
+        "channel": "R",
+        "signal_dn": 82.0,
+        "sigma_dn": 34.0998,
+        "pixels": 768,
+        "pair_first_frame": 20
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 6.5,
+        "sigma_dn": 15.32019999999999,
+        "pixels": 9497,
+        "pair_first_frame": 20
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.239,
+        "pixels": 5695,
+        "pair_first_frame": 20
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 38.5,
+        "sigma_dn": 27.180999999999987,
+        "pixels": 3152,
+        "pair_first_frame": 20
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 86.5,
+        "sigma_dn": 37.55919999999999,
+        "pixels": 939,
+        "pair_first_frame": 20
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 154.5,
+        "sigma_dn": 40.52439999999998,
+        "pixels": 299,
+        "pair_first_frame": 20
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 6.5,
+        "sigma_dn": 15.320199999999994,
+        "pixels": 9473,
+        "pair_first_frame": 20
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.238999999999994,
+        "pixels": 5720,
+        "pair_first_frame": 20
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 38.5,
+        "sigma_dn": 27.428100000000004,
+        "pixels": 3064,
+        "pair_first_frame": 20
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 86.5,
+        "sigma_dn": 37.55919999999997,
+        "pixels": 929,
+        "pair_first_frame": 20
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 156.5,
+        "sigma_dn": 43.48960000000002,
+        "pixels": 287,
+        "pair_first_frame": 20
+      },
+      {
+        "channel": "B",
+        "signal_dn": 6.75,
+        "sigma_dn": 13.837599999999997,
+        "pixels": 13763,
+        "pair_first_frame": 20
+      },
+      {
+        "channel": "B",
+        "signal_dn": 20.75,
+        "sigma_dn": 20.26220000000001,
+        "pixels": 4088,
+        "pair_first_frame": 20
+      },
+      {
+        "channel": "B",
+        "signal_dn": 42.75,
+        "sigma_dn": 28.169399999999992,
+        "pixels": 905,
+        "pair_first_frame": 20
+      },
+      {
+        "channel": "B",
+        "signal_dn": 76.75,
+        "sigma_dn": 31.13460000000001,
+        "pixels": 203,
+        "pair_first_frame": 20
+      },
+      {
+        "channel": "R",
+        "signal_dn": 8.0,
+        "sigma_dn": 14.331799999999996,
+        "pixels": 11355,
+        "pair_first_frame": 24
+      },
+      {
+        "channel": "R",
+        "signal_dn": 22.0,
+        "sigma_dn": 21.49769999999999,
+        "pixels": 5830,
+        "pair_first_frame": 24
+      },
+      {
+        "channel": "R",
+        "signal_dn": 40.0,
+        "sigma_dn": 27.675199999999986,
+        "pixels": 1840,
+        "pair_first_frame": 24
+      },
+      {
+        "channel": "R",
+        "signal_dn": 80.0,
+        "sigma_dn": 34.594,
+        "pixels": 777,
+        "pair_first_frame": 24
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 6.5,
+        "sigma_dn": 14.826000000000008,
+        "pixels": 9570,
+        "pair_first_frame": 24
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.239000000000004,
+        "pixels": 5857,
+        "pair_first_frame": 24
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 38.5,
+        "sigma_dn": 27.181000000000008,
+        "pixels": 3141,
+        "pair_first_frame": 24
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 82.5,
+        "sigma_dn": 35.5824,
+        "pixels": 845,
+        "pair_first_frame": 24
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 152.5,
+        "sigma_dn": 40.5244,
+        "pixels": 287,
+        "pair_first_frame": 24
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 6.5,
+        "sigma_dn": 14.826000000000011,
+        "pixels": 9493,
+        "pair_first_frame": 24
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 22.5,
+        "sigma_dn": 21.744800000000005,
+        "pixels": 5977,
+        "pair_first_frame": 24
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 38.5,
+        "sigma_dn": 27.675200000000004,
+        "pixels": 3141,
+        "pair_first_frame": 24
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 84.5,
+        "sigma_dn": 38.0534,
+        "pixels": 881,
+        "pair_first_frame": 24
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 156.5,
+        "sigma_dn": 38.05339999999999,
+        "pixels": 307,
+        "pair_first_frame": 24
+      },
+      {
+        "channel": "B",
+        "signal_dn": 6.75,
+        "sigma_dn": 13.837599999999993,
+        "pixels": 13812,
+        "pair_first_frame": 24
+      },
+      {
+        "channel": "B",
+        "signal_dn": 20.75,
+        "sigma_dn": 20.756399999999992,
+        "pixels": 4056,
+        "pair_first_frame": 24
+      },
+      {
+        "channel": "B",
+        "signal_dn": 42.75,
+        "sigma_dn": 25.698400000000007,
+        "pixels": 893,
+        "pair_first_frame": 24
+      },
+      {
+        "channel": "B",
+        "signal_dn": 72.75,
+        "sigma_dn": 29.157799999999995,
+        "pixels": 206,
+        "pair_first_frame": 24
+      },
+      {
+        "channel": "R",
+        "signal_dn": 8.0,
+        "sigma_dn": 14.331800000000003,
+        "pixels": 10457,
+        "pair_first_frame": 28
+      },
+      {
+        "channel": "R",
+        "signal_dn": 22.0,
+        "sigma_dn": 20.756400000000014,
+        "pixels": 6021,
+        "pair_first_frame": 28
+      },
+      {
+        "channel": "R",
+        "signal_dn": 38.0,
+        "sigma_dn": 27.180999999999994,
+        "pixels": 2346,
+        "pair_first_frame": 28
+      },
+      {
+        "channel": "R",
+        "signal_dn": 84.0,
+        "sigma_dn": 36.570799999999984,
+        "pixels": 890,
+        "pair_first_frame": 28
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 6.5,
+        "sigma_dn": 15.320200000000003,
+        "pixels": 8843,
+        "pair_first_frame": 28
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.733199999999975,
+        "pixels": 4993,
+        "pair_first_frame": 28
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 40.5,
+        "sigma_dn": 28.169399999999992,
+        "pixels": 4596,
+        "pair_first_frame": 28
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 88.5,
+        "sigma_dn": 36.07659999999999,
+        "pixels": 1062,
+        "pair_first_frame": 28
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 154.5,
+        "sigma_dn": 39.7831,
+        "pixels": 392,
+        "pair_first_frame": 28
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 6.5,
+        "sigma_dn": 15.3202,
+        "pixels": 8612,
+        "pair_first_frame": 28
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.73320000000001,
+        "pixels": 5217,
+        "pair_first_frame": 28
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 40.5,
+        "sigma_dn": 28.663600000000006,
+        "pixels": 4468,
+        "pair_first_frame": 28
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 86.5,
+        "sigma_dn": 36.07659999999997,
+        "pixels": 1011,
+        "pair_first_frame": 28
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 154.5,
+        "sigma_dn": 43.48959999999998,
+        "pixels": 401,
+        "pair_first_frame": 28
+      },
+      {
+        "channel": "B",
+        "signal_dn": 8.75,
+        "sigma_dn": 13.837599999999998,
+        "pixels": 12790,
+        "pair_first_frame": 28
+      },
+      {
+        "channel": "B",
+        "signal_dn": 20.75,
+        "sigma_dn": 20.262200000000004,
+        "pixels": 5077,
+        "pair_first_frame": 28
+      },
+      {
+        "channel": "B",
+        "signal_dn": 40.75,
+        "sigma_dn": 28.16939999999997,
+        "pixels": 1075,
+        "pair_first_frame": 28
+      },
+      {
+        "channel": "B",
+        "signal_dn": 76.75,
+        "sigma_dn": 30.1462,
+        "pixels": 281,
+        "pair_first_frame": 28
+      },
+      {
+        "channel": "R",
+        "signal_dn": 8.0,
+        "sigma_dn": 14.331799999999996,
+        "pixels": 9977,
+        "pair_first_frame": 32
+      },
+      {
+        "channel": "R",
+        "signal_dn": 22.0,
+        "sigma_dn": 21.7448,
+        "pixels": 5848,
+        "pair_first_frame": 32
+      },
+      {
+        "channel": "R",
+        "signal_dn": 38.0,
+        "sigma_dn": 27.180999999999997,
+        "pixels": 2966,
+        "pair_first_frame": 32
+      },
+      {
+        "channel": "R",
+        "signal_dn": 84.0,
+        "sigma_dn": 37.06499999999998,
+        "pixels": 965,
+        "pair_first_frame": 32
+      },
+      {
+        "channel": "R",
+        "signal_dn": 150.0,
+        "sigma_dn": 39.535999999999966,
+        "pixels": 163,
+        "pair_first_frame": 32
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 8.5,
+        "sigma_dn": 15.320200000000016,
+        "pixels": 8493,
+        "pair_first_frame": 32
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.239000000000004,
+        "pixels": 4719,
+        "pair_first_frame": 32
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 42.5,
+        "sigma_dn": 29.157800000000005,
+        "pixels": 5440,
+        "pair_first_frame": 32
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 84.5,
+        "sigma_dn": 35.08820000000002,
+        "pixels": 1180,
+        "pair_first_frame": 32
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 154.5,
+        "sigma_dn": 44.478,
+        "pixels": 531,
+        "pair_first_frame": 32
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 6.5,
+        "sigma_dn": 15.320200000000009,
+        "pixels": 8298,
+        "pair_first_frame": 32
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.239000000000004,
+        "pixels": 4680,
+        "pair_first_frame": 32
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 42.5,
+        "sigma_dn": 28.910700000000002,
+        "pixels": 5406,
+        "pair_first_frame": 32
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 82.5,
+        "sigma_dn": 35.08820000000002,
+        "pixels": 1213,
+        "pair_first_frame": 32
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 154.5,
+        "sigma_dn": 36.07659999999999,
+        "pixels": 500,
+        "pair_first_frame": 32
+      },
+      {
+        "channel": "B",
+        "signal_dn": 6.75,
+        "sigma_dn": 13.837600000000002,
+        "pixels": 11883,
+        "pair_first_frame": 32
+      },
+      {
+        "channel": "B",
+        "signal_dn": 20.75,
+        "sigma_dn": 21.25059999999999,
+        "pixels": 5689,
+        "pair_first_frame": 32
+      },
+      {
+        "channel": "B",
+        "signal_dn": 38.75,
+        "sigma_dn": 28.169400000000014,
+        "pixels": 1469,
+        "pair_first_frame": 32
+      },
+      {
+        "channel": "B",
+        "signal_dn": 76.75,
+        "sigma_dn": 36.07659999999999,
+        "pixels": 348,
+        "pair_first_frame": 32
+      },
+      {
+        "channel": "R",
+        "signal_dn": 6.0,
+        "sigma_dn": 14.331799999999996,
+        "pixels": 10397,
+        "pair_first_frame": 36
+      },
+      {
+        "channel": "R",
+        "signal_dn": 22.0,
+        "sigma_dn": 22.239000000000004,
+        "pixels": 5976,
+        "pair_first_frame": 36
+      },
+      {
+        "channel": "R",
+        "signal_dn": 38.0,
+        "sigma_dn": 27.675200000000007,
+        "pixels": 2459,
+        "pair_first_frame": 36
+      },
+      {
+        "channel": "R",
+        "signal_dn": 84.0,
+        "sigma_dn": 31.8759,
+        "pixels": 834,
+        "pair_first_frame": 36
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 6.5,
+        "sigma_dn": 15.320199999999984,
+        "pixels": 8971,
+        "pair_first_frame": 36
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.239000000000015,
+        "pixels": 5299,
+        "pair_first_frame": 36
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 40.5,
+        "sigma_dn": 28.6636,
+        "pixels": 4361,
+        "pair_first_frame": 36
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 88.5,
+        "sigma_dn": 35.5824,
+        "pixels": 1069,
+        "pair_first_frame": 36
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 154.5,
+        "sigma_dn": 43.489599999999996,
+        "pixels": 341,
+        "pair_first_frame": 36
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 6.5,
+        "sigma_dn": 15.320200000000003,
+        "pixels": 8987,
+        "pair_first_frame": 36
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.73319999999998,
+        "pixels": 5006,
+        "pair_first_frame": 36
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 40.5,
+        "sigma_dn": 28.169400000000003,
+        "pixels": 4372,
+        "pair_first_frame": 36
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 90.5,
+        "sigma_dn": 34.099799999999995,
+        "pixels": 1023,
+        "pair_first_frame": 36
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 156.5,
+        "sigma_dn": 40.030199999999994,
+        "pixels": 353,
+        "pair_first_frame": 36
+      },
+      {
+        "channel": "B",
+        "signal_dn": 6.75,
+        "sigma_dn": 13.837599999999993,
+        "pixels": 13068,
+        "pair_first_frame": 36
+      },
+      {
+        "channel": "B",
+        "signal_dn": 20.75,
+        "sigma_dn": 21.250599999999995,
+        "pixels": 5060,
+        "pair_first_frame": 36
+      },
+      {
+        "channel": "B",
+        "signal_dn": 40.75,
+        "sigma_dn": 27.180999999999997,
+        "pixels": 1074,
+        "pair_first_frame": 36
+      },
+      {
+        "channel": "B",
+        "signal_dn": 76.75,
+        "sigma_dn": 30.1462,
+        "pixels": 275,
+        "pair_first_frame": 36
+      },
+      {
+        "channel": "R",
+        "signal_dn": 8.0,
+        "sigma_dn": 14.331800000000003,
+        "pixels": 11164,
+        "pair_first_frame": 40
+      },
+      {
+        "channel": "R",
+        "signal_dn": 22.0,
+        "sigma_dn": 21.744800000000005,
+        "pixels": 5915,
+        "pair_first_frame": 40
+      },
+      {
+        "channel": "R",
+        "signal_dn": 40.0,
+        "sigma_dn": 27.181000000000008,
+        "pixels": 1804,
+        "pair_first_frame": 40
+      },
+      {
+        "channel": "R",
+        "signal_dn": 82.0,
+        "sigma_dn": 35.33530000000001,
+        "pixels": 786,
+        "pair_first_frame": 40
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 6.5,
+        "sigma_dn": 15.320199999999994,
+        "pixels": 9439,
+        "pair_first_frame": 40
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.733199999999993,
+        "pixels": 5827,
+        "pair_first_frame": 40
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 38.5,
+        "sigma_dn": 27.180999999999997,
+        "pixels": 3386,
+        "pair_first_frame": 40
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 84.5,
+        "sigma_dn": 34.59399999999999,
+        "pixels": 948,
+        "pair_first_frame": 40
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 152.5,
+        "sigma_dn": 42.254099999999994,
+        "pixels": 292,
+        "pair_first_frame": 40
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 6.5,
+        "sigma_dn": 15.320199999999994,
+        "pixels": 9511,
+        "pair_first_frame": 40
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.239,
+        "pixels": 5649,
+        "pair_first_frame": 40
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 38.5,
+        "sigma_dn": 27.675199999999997,
+        "pixels": 3372,
+        "pair_first_frame": 40
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 84.5,
+        "sigma_dn": 33.1114,
+        "pixels": 983,
+        "pair_first_frame": 40
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 150.5,
+        "sigma_dn": 43.48959999999998,
+        "pixels": 273,
+        "pair_first_frame": 40
+      },
+      {
+        "channel": "B",
+        "signal_dn": 6.75,
+        "sigma_dn": 13.837599999999998,
+        "pixels": 13797,
+        "pair_first_frame": 40
+      },
+      {
+        "channel": "B",
+        "signal_dn": 20.75,
+        "sigma_dn": 20.75640000000001,
+        "pixels": 4054,
+        "pair_first_frame": 40
+      },
+      {
+        "channel": "B",
+        "signal_dn": 40.75,
+        "sigma_dn": 27.675199999999982,
+        "pixels": 863,
+        "pair_first_frame": 40
+      },
+      {
+        "channel": "B",
+        "signal_dn": 72.75,
+        "sigma_dn": 34.09979999999999,
+        "pixels": 225,
+        "pair_first_frame": 40
+      },
+      {
+        "channel": "R",
+        "signal_dn": 8.0,
+        "sigma_dn": 14.33180000000001,
+        "pixels": 10823,
+        "pair_first_frame": 44
+      },
+      {
+        "channel": "R",
+        "signal_dn": 22.0,
+        "sigma_dn": 21.250600000000006,
+        "pixels": 5918,
+        "pair_first_frame": 44
+      },
+      {
+        "channel": "R",
+        "signal_dn": 38.0,
+        "sigma_dn": 26.686799999999977,
+        "pixels": 1983,
+        "pair_first_frame": 44
+      },
+      {
+        "channel": "R",
+        "signal_dn": 82.0,
+        "sigma_dn": 31.62880000000001,
+        "pixels": 819,
+        "pair_first_frame": 44
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 6.5,
+        "sigma_dn": 14.826000000000008,
+        "pixels": 9263,
+        "pair_first_frame": 44
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.733199999999997,
+        "pixels": 5594,
+        "pair_first_frame": 44
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 38.5,
+        "sigma_dn": 28.66359999999998,
+        "pixels": 3798,
+        "pair_first_frame": 44
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 88.5,
+        "sigma_dn": 35.08819999999998,
+        "pixels": 937,
+        "pair_first_frame": 44
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 152.5,
+        "sigma_dn": 41.018599999999985,
+        "pixels": 316,
+        "pair_first_frame": 44
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 6.5,
+        "sigma_dn": 15.320200000000003,
+        "pixels": 9121,
+        "pair_first_frame": 44
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.73319999999999,
+        "pixels": 5576,
+        "pair_first_frame": 44
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 38.5,
+        "sigma_dn": 27.675199999999993,
+        "pixels": 3741,
+        "pair_first_frame": 44
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 86.5,
+        "sigma_dn": 38.05339999999999,
+        "pixels": 975,
+        "pair_first_frame": 44
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 150.5,
+        "sigma_dn": 41.018599999999985,
+        "pixels": 285,
+        "pair_first_frame": 44
+      },
+      {
+        "channel": "B",
+        "signal_dn": 6.75,
+        "sigma_dn": 13.837600000000007,
+        "pixels": 13267,
+        "pair_first_frame": 44
+      },
+      {
+        "channel": "B",
+        "signal_dn": 20.75,
+        "sigma_dn": 20.756399999999992,
+        "pixels": 4428,
+        "pair_first_frame": 44
+      },
+      {
+        "channel": "B",
+        "signal_dn": 40.75,
+        "sigma_dn": 27.180999999999994,
+        "pixels": 919,
+        "pair_first_frame": 44
+      },
+      {
+        "channel": "B",
+        "signal_dn": 72.75,
+        "sigma_dn": 27.675199999999997,
+        "pixels": 182,
+        "pair_first_frame": 44
+      },
+      {
+        "channel": "R",
+        "signal_dn": 8.0,
+        "sigma_dn": 14.33179999999999,
+        "pixels": 10266,
+        "pair_first_frame": 48
+      },
+      {
+        "channel": "R",
+        "signal_dn": 22.0,
+        "sigma_dn": 21.744799999999987,
+        "pixels": 5948,
+        "pair_first_frame": 48
+      },
+      {
+        "channel": "R",
+        "signal_dn": 38.0,
+        "sigma_dn": 27.675199999999986,
+        "pixels": 2467,
+        "pair_first_frame": 48
+      },
+      {
+        "channel": "R",
+        "signal_dn": 82.0,
+        "sigma_dn": 34.59399999999999,
+        "pixels": 921,
+        "pair_first_frame": 48
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 6.5,
+        "sigma_dn": 14.826000000000006,
+        "pixels": 8671,
+        "pair_first_frame": 48
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.733199999999982,
+        "pixels": 5133,
+        "pair_first_frame": 48
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 40.5,
+        "sigma_dn": 29.1578,
+        "pixels": 4687,
+        "pair_first_frame": 48
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 86.5,
+        "sigma_dn": 33.60559999999999,
+        "pixels": 1065,
+        "pair_first_frame": 48
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 152.5,
+        "sigma_dn": 42.9954,
+        "pixels": 363,
+        "pair_first_frame": 48
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 6.5,
+        "sigma_dn": 15.3202,
+        "pixels": 8744,
+        "pair_first_frame": 48
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.238999999999987,
+        "pixels": 5053,
+        "pair_first_frame": 48
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 40.5,
+        "sigma_dn": 28.66359999999999,
+        "pixels": 4570,
+        "pair_first_frame": 48
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 86.5,
+        "sigma_dn": 37.55919999999998,
+        "pixels": 1031,
+        "pair_first_frame": 48
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 154.5,
+        "sigma_dn": 42.007000000000005,
+        "pixels": 330,
+        "pair_first_frame": 48
+      },
+      {
+        "channel": "B",
+        "signal_dn": 6.75,
+        "sigma_dn": 13.837600000000004,
+        "pixels": 12720,
+        "pair_first_frame": 48
+      },
+      {
+        "channel": "B",
+        "signal_dn": 20.75,
+        "sigma_dn": 21.250599999999988,
+        "pixels": 5166,
+        "pair_first_frame": 48
+      },
+      {
+        "channel": "B",
+        "signal_dn": 40.75,
+        "sigma_dn": 25.204199999999993,
+        "pixels": 1113,
+        "pair_first_frame": 48
+      },
+      {
+        "channel": "B",
+        "signal_dn": 76.75,
+        "sigma_dn": 27.428099999999986,
+        "pixels": 272,
+        "pair_first_frame": 48
+      },
+      {
+        "channel": "R",
+        "signal_dn": 8.0,
+        "sigma_dn": 14.331800000000003,
+        "pixels": 10091,
+        "pair_first_frame": 52
+      },
+      {
+        "channel": "R",
+        "signal_dn": 22.0,
+        "sigma_dn": 21.74479999999999,
+        "pixels": 5897,
+        "pair_first_frame": 52
+      },
+      {
+        "channel": "R",
+        "signal_dn": 38.0,
+        "sigma_dn": 27.180999999999994,
+        "pixels": 2520,
+        "pair_first_frame": 52
+      },
+      {
+        "channel": "R",
+        "signal_dn": 84.0,
+        "sigma_dn": 36.57080000000001,
+        "pixels": 931,
+        "pair_first_frame": 52
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 7.5,
+        "sigma_dn": 15.320200000000003,
+        "pixels": 8994,
+        "pair_first_frame": 52
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 22.5,
+        "sigma_dn": 21.250600000000006,
+        "pixels": 4950,
+        "pair_first_frame": 52
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 40.5,
+        "sigma_dn": 28.169399999999992,
+        "pixels": 4822,
+        "pair_first_frame": 52
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 88.5,
+        "sigma_dn": 35.335300000000004,
+        "pixels": 1138,
+        "pair_first_frame": 52
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 152.5,
+        "sigma_dn": 40.524400000000014,
+        "pixels": 413,
+        "pair_first_frame": 52
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 6.5,
+        "sigma_dn": 15.320199999999987,
+        "pixels": 8873,
+        "pair_first_frame": 52
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.23900000000001,
+        "pixels": 4976,
+        "pair_first_frame": 52
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 40.5,
+        "sigma_dn": 28.169399999999992,
+        "pixels": 4756,
+        "pair_first_frame": 52
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 86.5,
+        "sigma_dn": 34.59399999999997,
+        "pixels": 1163,
+        "pair_first_frame": 52
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 160.5,
+        "sigma_dn": 41.26570000000001,
+        "pixels": 376,
+        "pair_first_frame": 52
+      },
+      {
+        "channel": "B",
+        "signal_dn": 6.75,
+        "sigma_dn": 13.837599999999997,
+        "pixels": 12558,
+        "pair_first_frame": 52
+      },
+      {
+        "channel": "B",
+        "signal_dn": 20.75,
+        "sigma_dn": 20.756399999999996,
+        "pixels": 5242,
+        "pair_first_frame": 52
+      },
+      {
+        "channel": "B",
+        "signal_dn": 40.75,
+        "sigma_dn": 28.66359999999999,
+        "pixels": 1206,
+        "pair_first_frame": 52
+      },
+      {
+        "channel": "B",
+        "signal_dn": 76.75,
+        "sigma_dn": 33.60559999999999,
+        "pixels": 320,
+        "pair_first_frame": 52
+      },
+      {
+        "channel": "R",
+        "signal_dn": 8.0,
+        "sigma_dn": 14.33179999999999,
+        "pixels": 10872,
+        "pair_first_frame": 56
+      },
+      {
+        "channel": "R",
+        "signal_dn": 22.0,
+        "sigma_dn": 21.744800000000005,
+        "pixels": 5934,
+        "pair_first_frame": 56
+      },
+      {
+        "channel": "R",
+        "signal_dn": 40.0,
+        "sigma_dn": 26.686799999999987,
+        "pixels": 1958,
+        "pair_first_frame": 56
+      },
+      {
+        "channel": "R",
+        "signal_dn": 80.0,
+        "sigma_dn": 34.84109999999999,
+        "pixels": 802,
+        "pair_first_frame": 56
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 6.5,
+        "sigma_dn": 15.320199999999984,
+        "pixels": 9407,
+        "pair_first_frame": 56
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.238999999999997,
+        "pixels": 5473,
+        "pair_first_frame": 56
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 38.5,
+        "sigma_dn": 28.66359999999999,
+        "pixels": 3698,
+        "pair_first_frame": 56
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 84.5,
+        "sigma_dn": 37.065,
+        "pixels": 975,
+        "pair_first_frame": 56
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 148.5,
+        "sigma_dn": 40.03019999999999,
+        "pixels": 319,
+        "pair_first_frame": 56
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 6.5,
+        "sigma_dn": 15.320200000000009,
+        "pixels": 9299,
+        "pair_first_frame": 56
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.238999999999994,
+        "pixels": 5495,
+        "pair_first_frame": 56
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 38.5,
+        "sigma_dn": 27.675199999999997,
+        "pixels": 3676,
+        "pair_first_frame": 56
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 86.5,
+        "sigma_dn": 37.312099999999994,
+        "pixels": 1018,
+        "pair_first_frame": 56
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 154.5,
+        "sigma_dn": 42.99540000000001,
+        "pixels": 331,
+        "pair_first_frame": 56
+      },
+      {
+        "channel": "B",
+        "signal_dn": 6.75,
+        "sigma_dn": 13.837599999999998,
+        "pixels": 13165,
+        "pair_first_frame": 56
+      },
+      {
+        "channel": "B",
+        "signal_dn": 20.75,
+        "sigma_dn": 20.756399999999992,
+        "pixels": 4509,
+        "pair_first_frame": 56
+      },
+      {
+        "channel": "B",
+        "signal_dn": 42.75,
+        "sigma_dn": 28.169400000000003,
+        "pixels": 997,
+        "pair_first_frame": 56
+      },
+      {
+        "channel": "B",
+        "signal_dn": 76.75,
+        "sigma_dn": 29.157799999999995,
+        "pixels": 235,
+        "pair_first_frame": 56
+      },
+      {
+        "channel": "R",
+        "signal_dn": 8.0,
+        "sigma_dn": 14.331800000000003,
+        "pixels": 10917,
+        "pair_first_frame": 60
+      },
+      {
+        "channel": "R",
+        "signal_dn": 22.0,
+        "sigma_dn": 21.744800000000005,
+        "pixels": 5899,
+        "pair_first_frame": 60
+      },
+      {
+        "channel": "R",
+        "signal_dn": 38.0,
+        "sigma_dn": 27.675200000000007,
+        "pixels": 1898,
+        "pair_first_frame": 60
+      },
+      {
+        "channel": "R",
+        "signal_dn": 82.0,
+        "sigma_dn": 36.07660000000003,
+        "pixels": 801,
+        "pair_first_frame": 60
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 6.5,
+        "sigma_dn": 15.320199999999987,
+        "pixels": 9474,
+        "pair_first_frame": 60
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.733199999999993,
+        "pixels": 5774,
+        "pair_first_frame": 60
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 38.5,
+        "sigma_dn": 27.180999999999994,
+        "pixels": 3507,
+        "pair_first_frame": 60
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 86.5,
+        "sigma_dn": 34.84109999999999,
+        "pixels": 946,
+        "pair_first_frame": 60
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 158.5,
+        "sigma_dn": 41.512799999999984,
+        "pixels": 323,
+        "pair_first_frame": 60
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 6.5,
+        "sigma_dn": 14.826,
+        "pixels": 9287,
+        "pair_first_frame": 60
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 22.5,
+        "sigma_dn": 21.744800000000012,
+        "pixels": 5758,
+        "pair_first_frame": 60
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 38.5,
+        "sigma_dn": 28.16940000000002,
+        "pixels": 3391,
+        "pair_first_frame": 60
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 86.5,
+        "sigma_dn": 34.84109999999999,
+        "pixels": 998,
+        "pair_first_frame": 60
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 152.5,
+        "sigma_dn": 39.04180000000001,
+        "pixels": 313,
+        "pair_first_frame": 60
+      },
+      {
+        "channel": "B",
+        "signal_dn": 6.75,
+        "sigma_dn": 13.837600000000009,
+        "pixels": 13406,
+        "pair_first_frame": 60
+      },
+      {
+        "channel": "B",
+        "signal_dn": 20.75,
+        "sigma_dn": 20.262199999999993,
+        "pixels": 4323,
+        "pair_first_frame": 60
+      },
+      {
+        "channel": "B",
+        "signal_dn": 42.75,
+        "sigma_dn": 28.66360000000001,
+        "pixels": 993,
+        "pair_first_frame": 60
+      },
+      {
+        "channel": "B",
+        "signal_dn": 74.75,
+        "sigma_dn": 33.111399999999996,
+        "pixels": 251,
+        "pair_first_frame": 60
+      },
+      {
+        "channel": "R",
+        "signal_dn": 8.0,
+        "sigma_dn": 14.331799999999985,
+        "pixels": 10406,
+        "pair_first_frame": 64
+      },
+      {
+        "channel": "R",
+        "signal_dn": 22.0,
+        "sigma_dn": 22.23899999999999,
+        "pixels": 5768,
+        "pair_first_frame": 64
+      },
+      {
+        "channel": "R",
+        "signal_dn": 38.0,
+        "sigma_dn": 28.169399999999985,
+        "pixels": 2514,
+        "pair_first_frame": 64
+      },
+      {
+        "channel": "R",
+        "signal_dn": 82.0,
+        "sigma_dn": 36.0766,
+        "pixels": 927,
+        "pair_first_frame": 64
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 6.5,
+        "sigma_dn": 15.814399999999992,
+        "pixels": 8844,
+        "pair_first_frame": 64
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.733199999999975,
+        "pixels": 4833,
+        "pair_first_frame": 64
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 40.5,
+        "sigma_dn": 28.16940000000002,
+        "pixels": 4677,
+        "pair_first_frame": 64
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 88.5,
+        "sigma_dn": 34.593999999999994,
+        "pixels": 1089,
+        "pair_first_frame": 64
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 153.5,
+        "sigma_dn": 38.3005,
+        "pixels": 410,
+        "pair_first_frame": 64
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 6.5,
+        "sigma_dn": 15.320199999999994,
+        "pixels": 8938,
+        "pair_first_frame": 64
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 22.5,
+        "sigma_dn": 21.744800000000005,
+        "pixels": 5193,
+        "pair_first_frame": 64
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 40.5,
+        "sigma_dn": 27.675200000000004,
+        "pixels": 4677,
+        "pair_first_frame": 64
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 88.5,
+        "sigma_dn": 34.594,
+        "pixels": 1064,
+        "pair_first_frame": 64
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 154.5,
+        "sigma_dn": 38.54759999999998,
+        "pixels": 403,
+        "pair_first_frame": 64
+      },
+      {
+        "channel": "B",
+        "signal_dn": 6.75,
+        "sigma_dn": 13.837600000000004,
+        "pixels": 12682,
+        "pair_first_frame": 64
+      },
+      {
+        "channel": "B",
+        "signal_dn": 20.75,
+        "sigma_dn": 20.7564,
+        "pixels": 5143,
+        "pair_first_frame": 64
+      },
+      {
+        "channel": "B",
+        "signal_dn": 40.75,
+        "sigma_dn": 26.686799999999977,
+        "pixels": 1181,
+        "pair_first_frame": 64
+      },
+      {
+        "channel": "B",
+        "signal_dn": 76.75,
+        "sigma_dn": 31.875899999999994,
+        "pixels": 280,
+        "pair_first_frame": 64
+      },
+      {
+        "channel": "R",
+        "signal_dn": 8.0,
+        "sigma_dn": 14.331800000000005,
+        "pixels": 9682,
+        "pair_first_frame": 68
+      },
+      {
+        "channel": "R",
+        "signal_dn": 22.0,
+        "sigma_dn": 21.744800000000005,
+        "pixels": 5871,
+        "pair_first_frame": 68
+      },
+      {
+        "channel": "R",
+        "signal_dn": 38.0,
+        "sigma_dn": 27.675199999999986,
+        "pixels": 3106,
+        "pair_first_frame": 68
+      },
+      {
+        "channel": "R",
+        "signal_dn": 84.0,
+        "sigma_dn": 36.570799999999984,
+        "pixels": 1026,
+        "pair_first_frame": 68
+      },
+      {
+        "channel": "R",
+        "signal_dn": 146.0,
+        "sigma_dn": 37.55919999999998,
+        "pixels": 170,
+        "pair_first_frame": 68
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 6.5,
+        "sigma_dn": 15.320200000000003,
+        "pixels": 8181,
+        "pair_first_frame": 68
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 22.5,
+        "sigma_dn": 21.7448,
+        "pixels": 4737,
+        "pair_first_frame": 68
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 42.5,
+        "sigma_dn": 29.65199999999999,
+        "pixels": 5376,
+        "pair_first_frame": 68
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 82.5,
+        "sigma_dn": 36.076600000000006,
+        "pixels": 1193,
+        "pair_first_frame": 68
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 156.5,
+        "sigma_dn": 41.51279999999999,
+        "pixels": 495,
+        "pair_first_frame": 68
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 6.5,
+        "sigma_dn": 15.320200000000005,
+        "pixels": 8309,
+        "pair_first_frame": 68
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.733200000000014,
+        "pixels": 4647,
+        "pair_first_frame": 68
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 42.5,
+        "sigma_dn": 29.1578,
+        "pixels": 5406,
+        "pair_first_frame": 68
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 84.5,
+        "sigma_dn": 36.57079999999998,
+        "pixels": 1205,
+        "pair_first_frame": 68
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 156.5,
+        "sigma_dn": 42.9954,
+        "pixels": 520,
+        "pair_first_frame": 68
+      },
+      {
+        "channel": "B",
+        "signal_dn": 6.75,
+        "sigma_dn": 13.837599999999998,
+        "pixels": 12082,
+        "pair_first_frame": 68
+      },
+      {
+        "channel": "B",
+        "signal_dn": 20.75,
+        "sigma_dn": 20.756400000000006,
+        "pixels": 5636,
+        "pair_first_frame": 68
+      },
+      {
+        "channel": "B",
+        "signal_dn": 38.75,
+        "sigma_dn": 27.675199999999986,
+        "pixels": 1455,
+        "pair_first_frame": 68
+      },
+      {
+        "channel": "B",
+        "signal_dn": 78.75,
+        "sigma_dn": 33.6056,
+        "pixels": 350,
+        "pair_first_frame": 68
+      },
+      {
+        "channel": "R",
+        "signal_dn": 6.0,
+        "sigma_dn": 14.825999999999997,
+        "pixels": 10119,
+        "pair_first_frame": 72
+      },
+      {
+        "channel": "R",
+        "signal_dn": 22.0,
+        "sigma_dn": 21.744799999999987,
+        "pixels": 5918,
+        "pair_first_frame": 72
+      },
+      {
+        "channel": "R",
+        "signal_dn": 38.0,
+        "sigma_dn": 28.169400000000007,
+        "pixels": 2532,
+        "pair_first_frame": 72
+      },
+      {
+        "channel": "R",
+        "signal_dn": 84.0,
+        "sigma_dn": 31.62880000000001,
+        "pixels": 915,
+        "pair_first_frame": 72
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 8.5,
+        "sigma_dn": 15.320199999999982,
+        "pixels": 8657,
+        "pair_first_frame": 72
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.239,
+        "pixels": 5057,
+        "pair_first_frame": 72
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 40.5,
+        "sigma_dn": 28.16939999999997,
+        "pixels": 4895,
+        "pair_first_frame": 72
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 88.5,
+        "sigma_dn": 36.0766,
+        "pixels": 1069,
+        "pair_first_frame": 72
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 154.5,
+        "sigma_dn": 43.73670000000002,
+        "pixels": 424,
+        "pair_first_frame": 72
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 6.5,
+        "sigma_dn": 15.320200000000003,
+        "pixels": 8636,
+        "pair_first_frame": 72
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.733199999999986,
+        "pixels": 4933,
+        "pair_first_frame": 72
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 40.5,
+        "sigma_dn": 28.169399999999992,
+        "pixels": 4740,
+        "pair_first_frame": 72
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 84.5,
+        "sigma_dn": 34.84109999999998,
+        "pixels": 1130,
+        "pair_first_frame": 72
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 156.5,
+        "sigma_dn": 36.57080000000001,
+        "pixels": 401,
+        "pair_first_frame": 72
+      },
+      {
+        "channel": "B",
+        "signal_dn": 6.75,
+        "sigma_dn": 13.837600000000002,
+        "pixels": 12396,
+        "pair_first_frame": 72
+      },
+      {
+        "channel": "B",
+        "signal_dn": 20.75,
+        "sigma_dn": 21.250600000000002,
+        "pixels": 5301,
+        "pair_first_frame": 72
+      },
+      {
+        "channel": "B",
+        "signal_dn": 40.75,
+        "sigma_dn": 26.686800000000012,
+        "pixels": 1084,
+        "pair_first_frame": 72
+      },
+      {
+        "channel": "B",
+        "signal_dn": 76.75,
+        "sigma_dn": 30.887499999999996,
+        "pixels": 312,
+        "pair_first_frame": 72
+      },
+      {
+        "channel": "R",
+        "signal_dn": 6.0,
+        "sigma_dn": 13.837600000000007,
+        "pixels": 10766,
+        "pair_first_frame": 76
+      },
+      {
+        "channel": "R",
+        "signal_dn": 22.0,
+        "sigma_dn": 21.744799999999994,
+        "pixels": 6042,
+        "pair_first_frame": 76
+      },
+      {
+        "channel": "R",
+        "signal_dn": 38.0,
+        "sigma_dn": 27.180999999999997,
+        "pixels": 2024,
+        "pair_first_frame": 76
+      },
+      {
+        "channel": "R",
+        "signal_dn": 80.0,
+        "sigma_dn": 33.111399999999996,
+        "pixels": 861,
+        "pair_first_frame": 76
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 6.5,
+        "sigma_dn": 15.320199999999993,
+        "pixels": 9142,
+        "pair_first_frame": 76
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.73319999999999,
+        "pixels": 5455,
+        "pair_first_frame": 76
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 38.5,
+        "sigma_dn": 27.675199999999986,
+        "pixels": 3803,
+        "pair_first_frame": 76
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 86.5,
+        "sigma_dn": 34.594,
+        "pixels": 985,
+        "pair_first_frame": 76
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 152.5,
+        "sigma_dn": 43.98379999999999,
+        "pixels": 296,
+        "pair_first_frame": 76
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 6.5,
+        "sigma_dn": 15.320199999999994,
+        "pixels": 9227,
+        "pair_first_frame": 76
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.239000000000004,
+        "pixels": 5492,
+        "pair_first_frame": 76
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 38.5,
+        "sigma_dn": 28.663600000000006,
+        "pixels": 3799,
+        "pair_first_frame": 76
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 86.5,
+        "sigma_dn": 36.07659999999999,
+        "pixels": 1035,
+        "pair_first_frame": 76
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 152.5,
+        "sigma_dn": 38.5476,
+        "pixels": 347,
+        "pair_first_frame": 76
+      },
+      {
+        "channel": "B",
+        "signal_dn": 6.75,
+        "sigma_dn": 13.837600000000002,
+        "pixels": 12999,
+        "pair_first_frame": 76
+      },
+      {
+        "channel": "B",
+        "signal_dn": 20.75,
+        "sigma_dn": 21.250599999999988,
+        "pixels": 4572,
+        "pair_first_frame": 76
+      },
+      {
+        "channel": "B",
+        "signal_dn": 40.75,
+        "sigma_dn": 27.675199999999997,
+        "pixels": 997,
+        "pair_first_frame": 76
+      },
+      {
+        "channel": "B",
+        "signal_dn": 72.75,
+        "sigma_dn": 35.088199999999965,
+        "pixels": 227,
+        "pair_first_frame": 76
+      },
+      {
+        "channel": "R",
+        "signal_dn": 6.0,
+        "sigma_dn": 14.331800000000005,
+        "pixels": 10726,
+        "pair_first_frame": 80
+      },
+      {
+        "channel": "R",
+        "signal_dn": 22.0,
+        "sigma_dn": 21.25060000000001,
+        "pixels": 5892,
+        "pair_first_frame": 80
+      },
+      {
+        "channel": "R",
+        "signal_dn": 40.0,
+        "sigma_dn": 27.180999999999987,
+        "pixels": 1900,
+        "pair_first_frame": 80
+      },
+      {
+        "channel": "R",
+        "signal_dn": 82.0,
+        "sigma_dn": 35.82949999999999,
+        "pixels": 796,
+        "pair_first_frame": 80
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 6.5,
+        "sigma_dn": 14.826,
+        "pixels": 9253,
+        "pair_first_frame": 80
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 22.5,
+        "sigma_dn": 21.744799999999998,
+        "pixels": 5871,
+        "pair_first_frame": 80
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 38.5,
+        "sigma_dn": 28.169399999999996,
+        "pixels": 3556,
+        "pair_first_frame": 80
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 86.5,
+        "sigma_dn": 36.57080000000001,
+        "pixels": 1009,
+        "pair_first_frame": 80
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 154.5,
+        "sigma_dn": 42.007000000000005,
+        "pixels": 317,
+        "pair_first_frame": 80
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 6.5,
+        "sigma_dn": 15.320199999999993,
+        "pixels": 9227,
+        "pair_first_frame": 80
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.73319999999999,
+        "pixels": 5582,
+        "pair_first_frame": 80
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 38.5,
+        "sigma_dn": 28.416499999999996,
+        "pixels": 3506,
+        "pair_first_frame": 80
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 84.5,
+        "sigma_dn": 36.076599999999985,
+        "pixels": 992,
+        "pair_first_frame": 80
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 156.5,
+        "sigma_dn": 39.0418,
+        "pixels": 311,
+        "pair_first_frame": 80
+      },
+      {
+        "channel": "B",
+        "signal_dn": 6.75,
+        "sigma_dn": 13.837600000000002,
+        "pixels": 13272,
+        "pair_first_frame": 80
+      },
+      {
+        "channel": "B",
+        "signal_dn": 20.75,
+        "sigma_dn": 20.262200000000004,
+        "pixels": 4566,
+        "pair_first_frame": 80
+      },
+      {
+        "channel": "B",
+        "signal_dn": 42.75,
+        "sigma_dn": 26.1926,
+        "pixels": 935,
+        "pair_first_frame": 80
+      },
+      {
+        "channel": "B",
+        "signal_dn": 74.75,
+        "sigma_dn": 28.169399999999996,
+        "pixels": 259,
+        "pair_first_frame": 80
+      },
+      {
+        "channel": "R",
+        "signal_dn": 8.0,
+        "sigma_dn": 14.331799999999989,
+        "pixels": 10420,
+        "pair_first_frame": 84
+      },
+      {
+        "channel": "R",
+        "signal_dn": 22.0,
+        "sigma_dn": 22.23899999999999,
+        "pixels": 5841,
+        "pair_first_frame": 84
+      },
+      {
+        "channel": "R",
+        "signal_dn": 38.0,
+        "sigma_dn": 27.675199999999997,
+        "pixels": 2302,
+        "pair_first_frame": 84
+      },
+      {
+        "channel": "R",
+        "signal_dn": 82.0,
+        "sigma_dn": 38.053399999999996,
+        "pixels": 899,
+        "pair_first_frame": 84
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 6.5,
+        "sigma_dn": 14.826000000000013,
+        "pixels": 8809,
+        "pair_first_frame": 84
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 22.5,
+        "sigma_dn": 21.991899999999994,
+        "pixels": 5216,
+        "pair_first_frame": 84
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 40.5,
+        "sigma_dn": 28.169399999999985,
+        "pixels": 4331,
+        "pair_first_frame": 84
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 86.5,
+        "sigma_dn": 36.32370000000001,
+        "pixels": 1022,
+        "pair_first_frame": 84
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 152.5,
+        "sigma_dn": 42.501199999999976,
+        "pixels": 375,
+        "pair_first_frame": 84
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 6.5,
+        "sigma_dn": 15.320199999999994,
+        "pixels": 8875,
+        "pair_first_frame": 84
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.238999999999994,
+        "pixels": 5276,
+        "pair_first_frame": 84
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 40.5,
+        "sigma_dn": 28.169399999999996,
+        "pixels": 4440,
+        "pair_first_frame": 84
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 90.5,
+        "sigma_dn": 35.829499999999996,
+        "pixels": 1050,
+        "pair_first_frame": 84
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 156.5,
+        "sigma_dn": 45.96059999999999,
+        "pixels": 407,
+        "pair_first_frame": 84
+      },
+      {
+        "channel": "B",
+        "signal_dn": 8.75,
+        "sigma_dn": 13.837600000000004,
+        "pixels": 12976,
+        "pair_first_frame": 84
+      },
+      {
+        "channel": "B",
+        "signal_dn": 20.75,
+        "sigma_dn": 20.756400000000014,
+        "pixels": 5001,
+        "pair_first_frame": 84
+      },
+      {
+        "channel": "B",
+        "signal_dn": 40.75,
+        "sigma_dn": 26.19260000000001,
+        "pixels": 1103,
+        "pair_first_frame": 84
+      },
+      {
+        "channel": "B",
+        "signal_dn": 74.75,
+        "sigma_dn": 32.370099999999994,
+        "pixels": 282,
+        "pair_first_frame": 84
+      },
+      {
+        "channel": "R",
+        "signal_dn": 8.0,
+        "sigma_dn": 14.331800000000003,
+        "pixels": 9834,
+        "pair_first_frame": 88
+      },
+      {
+        "channel": "R",
+        "signal_dn": 22.0,
+        "sigma_dn": 21.250600000000002,
+        "pixels": 5964,
+        "pair_first_frame": 88
+      },
+      {
+        "channel": "R",
+        "signal_dn": 38.0,
+        "sigma_dn": 27.675200000000004,
+        "pixels": 2859,
+        "pair_first_frame": 88
+      },
+      {
+        "channel": "R",
+        "signal_dn": 86.0,
+        "sigma_dn": 35.0882,
+        "pixels": 973,
+        "pair_first_frame": 88
+      },
+      {
+        "channel": "R",
+        "signal_dn": 145.0,
+        "sigma_dn": 39.536,
+        "pixels": 146,
+        "pair_first_frame": 88
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 6.5,
+        "sigma_dn": 15.320200000000003,
+        "pixels": 8416,
+        "pair_first_frame": 88
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 22.5,
+        "sigma_dn": 21.744800000000005,
+        "pixels": 5039,
+        "pair_first_frame": 88
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 42.5,
+        "sigma_dn": 28.169400000000003,
+        "pixels": 5189,
+        "pair_first_frame": 88
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 82.5,
+        "sigma_dn": 33.60559999999998,
+        "pixels": 1071,
+        "pair_first_frame": 88
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 156.5,
+        "sigma_dn": 40.524399999999964,
+        "pixels": 500,
+        "pair_first_frame": 88
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 6.5,
+        "sigma_dn": 15.320199999999998,
+        "pixels": 8437,
+        "pair_first_frame": 88
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.238999999999983,
+        "pixels": 4719,
+        "pair_first_frame": 88
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 42.5,
+        "sigma_dn": 28.6636,
+        "pixels": 5231,
+        "pair_first_frame": 88
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 84.5,
+        "sigma_dn": 35.5824,
+        "pixels": 1186,
+        "pair_first_frame": 88
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 154.5,
+        "sigma_dn": 44.47799999999997,
+        "pixels": 525,
+        "pair_first_frame": 88
+      },
+      {
+        "channel": "B",
+        "signal_dn": 6.75,
+        "sigma_dn": 14.33179999999999,
+        "pixels": 12034,
+        "pair_first_frame": 88
+      },
+      {
+        "channel": "B",
+        "signal_dn": 20.75,
+        "sigma_dn": 20.756400000000003,
+        "pixels": 5558,
+        "pair_first_frame": 88
+      },
+      {
+        "channel": "B",
+        "signal_dn": 40.75,
+        "sigma_dn": 26.192599999999988,
+        "pixels": 1321,
+        "pair_first_frame": 88
+      },
+      {
+        "channel": "B",
+        "signal_dn": 76.75,
+        "sigma_dn": 32.122999999999976,
+        "pixels": 365,
+        "pair_first_frame": 88
+      },
+      {
+        "channel": "R",
+        "signal_dn": 8.0,
+        "sigma_dn": 14.331800000000008,
+        "pixels": 9701,
+        "pair_first_frame": 92
+      },
+      {
+        "channel": "R",
+        "signal_dn": 22.0,
+        "sigma_dn": 21.744799999999987,
+        "pixels": 5925,
+        "pair_first_frame": 92
+      },
+      {
+        "channel": "R",
+        "signal_dn": 38.0,
+        "sigma_dn": 27.181000000000022,
+        "pixels": 3053,
+        "pair_first_frame": 92
+      },
+      {
+        "channel": "R",
+        "signal_dn": 86.0,
+        "sigma_dn": 34.0998,
+        "pixels": 1003,
+        "pair_first_frame": 92
+      },
+      {
+        "channel": "R",
+        "signal_dn": 146.0,
+        "sigma_dn": 38.7947,
+        "pixels": 172,
+        "pair_first_frame": 92
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 8.5,
+        "sigma_dn": 15.320199999999987,
+        "pixels": 8088,
+        "pair_first_frame": 92
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.238999999999972,
+        "pixels": 4706,
+        "pair_first_frame": 92
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 42.5,
+        "sigma_dn": 28.663600000000006,
+        "pixels": 5503,
+        "pair_first_frame": 92
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 82.5,
+        "sigma_dn": 35.088199999999986,
+        "pixels": 1220,
+        "pair_first_frame": 92
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 156.5,
+        "sigma_dn": 41.01859999999999,
+        "pixels": 558,
+        "pair_first_frame": 92
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 6.5,
+        "sigma_dn": 15.3202,
+        "pixels": 8085,
+        "pair_first_frame": 92
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.23899999999999,
+        "pixels": 4751,
+        "pair_first_frame": 92
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 42.5,
+        "sigma_dn": 29.157799999999995,
+        "pixels": 5561,
+        "pair_first_frame": 92
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 80.5,
+        "sigma_dn": 36.07659999999999,
+        "pixels": 1286,
+        "pair_first_frame": 92
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 156.5,
+        "sigma_dn": 46.94900000000001,
+        "pixels": 514,
+        "pair_first_frame": 92
+      },
+      {
+        "channel": "B",
+        "signal_dn": 6.75,
+        "sigma_dn": 14.33179999999999,
+        "pixels": 11788,
+        "pair_first_frame": 92
+      },
+      {
+        "channel": "B",
+        "signal_dn": 20.75,
+        "sigma_dn": 20.756400000000003,
+        "pixels": 5634,
+        "pair_first_frame": 92
+      },
+      {
+        "channel": "B",
+        "signal_dn": 40.75,
+        "sigma_dn": 27.675199999999997,
+        "pixels": 1475,
+        "pair_first_frame": 92
+      },
+      {
+        "channel": "B",
+        "signal_dn": 76.75,
+        "sigma_dn": 31.628800000000016,
+        "pixels": 400,
+        "pair_first_frame": 92
+      },
+      {
+        "channel": "R",
+        "signal_dn": 8.0,
+        "sigma_dn": 14.331800000000003,
+        "pixels": 10363,
+        "pair_first_frame": 96
+      },
+      {
+        "channel": "R",
+        "signal_dn": 22.0,
+        "sigma_dn": 22.23899999999997,
+        "pixels": 5918,
+        "pair_first_frame": 96
+      },
+      {
+        "channel": "R",
+        "signal_dn": 38.0,
+        "sigma_dn": 28.169399999999992,
+        "pixels": 2330,
+        "pair_first_frame": 96
+      },
+      {
+        "channel": "R",
+        "signal_dn": 84.0,
+        "sigma_dn": 36.076600000000006,
+        "pixels": 920,
+        "pair_first_frame": 96
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 6.5,
+        "sigma_dn": 14.826000000000002,
+        "pixels": 8919,
+        "pair_first_frame": 96
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.239,
+        "pixels": 5020,
+        "pair_first_frame": 96
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 40.5,
+        "sigma_dn": 28.663599999999988,
+        "pixels": 4535,
+        "pair_first_frame": 96
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 86.5,
+        "sigma_dn": 35.58239999999999,
+        "pixels": 1062,
+        "pair_first_frame": 96
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 154.5,
+        "sigma_dn": 40.03019999999999,
+        "pixels": 406,
+        "pair_first_frame": 96
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 6.5,
+        "sigma_dn": 15.320199999999987,
+        "pixels": 8825,
+        "pair_first_frame": 96
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 22.5,
+        "sigma_dn": 21.74480000000004,
+        "pixels": 5268,
+        "pair_first_frame": 96
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 40.5,
+        "sigma_dn": 28.169400000000007,
+        "pixels": 4588,
+        "pair_first_frame": 96
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 88.5,
+        "sigma_dn": 36.07659999999999,
+        "pixels": 1086,
+        "pair_first_frame": 96
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 154.5,
+        "sigma_dn": 37.3121,
+        "pixels": 372,
+        "pair_first_frame": 96
+      },
+      {
+        "channel": "B",
+        "signal_dn": 6.75,
+        "sigma_dn": 13.837600000000004,
+        "pixels": 12825,
+        "pair_first_frame": 96
+      },
+      {
+        "channel": "B",
+        "signal_dn": 20.75,
+        "sigma_dn": 20.756399999999996,
+        "pixels": 4954,
+        "pair_first_frame": 96
+      },
+      {
+        "channel": "B",
+        "signal_dn": 40.75,
+        "sigma_dn": 27.922300000000003,
+        "pixels": 1112,
+        "pair_first_frame": 96
+      },
+      {
+        "channel": "B",
+        "signal_dn": 74.75,
+        "sigma_dn": 30.1462,
+        "pixels": 278,
+        "pair_first_frame": 96
+      },
+      {
+        "channel": "R",
+        "signal_dn": 8.0,
+        "sigma_dn": 14.3318,
+        "pixels": 11189,
+        "pair_first_frame": 100
+      },
+      {
+        "channel": "R",
+        "signal_dn": 20.0,
+        "sigma_dn": 21.25059999999999,
+        "pixels": 5816,
+        "pair_first_frame": 100
+      },
+      {
+        "channel": "R",
+        "signal_dn": 40.0,
+        "sigma_dn": 26.9339,
+        "pixels": 1848,
+        "pair_first_frame": 100
+      },
+      {
+        "channel": "R",
+        "signal_dn": 82.0,
+        "sigma_dn": 33.35849999999998,
+        "pixels": 798,
+        "pair_first_frame": 100
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 6.5,
+        "sigma_dn": 15.320199999999993,
+        "pixels": 9507,
+        "pair_first_frame": 100
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.239000000000008,
+        "pixels": 5683,
+        "pair_first_frame": 100
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 38.5,
+        "sigma_dn": 27.428099999999993,
+        "pixels": 3084,
+        "pair_first_frame": 100
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 86.5,
+        "sigma_dn": 34.09979999999998,
+        "pixels": 923,
+        "pair_first_frame": 100
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 152.5,
+        "sigma_dn": 40.52439999999997,
+        "pixels": 310,
+        "pair_first_frame": 100
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 6.5,
+        "sigma_dn": 15.320199999999998,
+        "pixels": 9475,
+        "pair_first_frame": 100
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.73319999999999,
+        "pixels": 5759,
+        "pair_first_frame": 100
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 38.5,
+        "sigma_dn": 28.169400000000007,
+        "pixels": 3028,
+        "pair_first_frame": 100
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 82.5,
+        "sigma_dn": 35.08820000000001,
+        "pixels": 936,
+        "pair_first_frame": 100
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 154.5,
+        "sigma_dn": 39.2889,
+        "pixels": 310,
+        "pair_first_frame": 100
+      },
+      {
+        "channel": "B",
+        "signal_dn": 6.75,
+        "sigma_dn": 13.837600000000014,
+        "pixels": 13959,
+        "pair_first_frame": 100
+      },
+      {
+        "channel": "B",
+        "signal_dn": 20.75,
+        "sigma_dn": 20.262199999999986,
+        "pixels": 3982,
+        "pair_first_frame": 100
+      },
+      {
+        "channel": "B",
+        "signal_dn": 42.75,
+        "sigma_dn": 27.180999999999997,
+        "pixels": 990,
+        "pair_first_frame": 100
+      },
+      {
+        "channel": "B",
+        "signal_dn": 74.75,
+        "sigma_dn": 35.58240000000001,
+        "pixels": 221,
+        "pair_first_frame": 100
+      },
+      {
+        "channel": "R",
+        "signal_dn": 8.0,
+        "sigma_dn": 14.331800000000003,
+        "pixels": 11236,
+        "pair_first_frame": 104
+      },
+      {
+        "channel": "R",
+        "signal_dn": 22.0,
+        "sigma_dn": 21.250600000000002,
+        "pixels": 5663,
+        "pair_first_frame": 104
+      },
+      {
+        "channel": "R",
+        "signal_dn": 40.0,
+        "sigma_dn": 27.675200000000007,
+        "pixels": 1910,
+        "pair_first_frame": 104
+      },
+      {
+        "channel": "R",
+        "signal_dn": 82.0,
+        "sigma_dn": 35.3353,
+        "pixels": 784,
+        "pair_first_frame": 104
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 6.5,
+        "sigma_dn": 15.320199999999993,
+        "pixels": 9650,
+        "pair_first_frame": 104
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.73320000000001,
+        "pixels": 5830,
+        "pair_first_frame": 104
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 38.5,
+        "sigma_dn": 28.169399999999992,
+        "pixels": 2996,
+        "pair_first_frame": 104
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 84.5,
+        "sigma_dn": 35.58239999999997,
+        "pixels": 974,
+        "pair_first_frame": 104
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 151.5,
+        "sigma_dn": 41.512800000000006,
+        "pixels": 270,
+        "pair_first_frame": 104
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 6.5,
+        "sigma_dn": 15.3202,
+        "pixels": 9508,
+        "pair_first_frame": 104
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.73319999999999,
+        "pixels": 5765,
+        "pair_first_frame": 104
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 38.5,
+        "sigma_dn": 28.169400000000003,
+        "pixels": 2917,
+        "pair_first_frame": 104
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 84.5,
+        "sigma_dn": 37.5592,
+        "pixels": 943,
+        "pair_first_frame": 104
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 150.5,
+        "sigma_dn": 39.04180000000002,
+        "pixels": 285,
+        "pair_first_frame": 104
+      },
+      {
+        "channel": "B",
+        "signal_dn": 6.75,
+        "sigma_dn": 13.837599999999993,
+        "pixels": 13998,
+        "pair_first_frame": 104
+      },
+      {
+        "channel": "B",
+        "signal_dn": 20.75,
+        "sigma_dn": 20.262199999999996,
+        "pixels": 3990,
+        "pair_first_frame": 104
+      },
+      {
+        "channel": "B",
+        "signal_dn": 42.75,
+        "sigma_dn": 26.686799999999987,
+        "pixels": 925,
+        "pair_first_frame": 104
+      },
+      {
+        "channel": "B",
+        "signal_dn": 76.75,
+        "sigma_dn": 31.38169999999998,
+        "pixels": 208,
+        "pair_first_frame": 104
+      },
+      {
+        "channel": "R",
+        "signal_dn": 8.0,
+        "sigma_dn": 14.331800000000005,
+        "pixels": 10872,
+        "pair_first_frame": 108
+      },
+      {
+        "channel": "R",
+        "signal_dn": 20.0,
+        "sigma_dn": 21.250600000000006,
+        "pixels": 5678,
+        "pair_first_frame": 108
+      },
+      {
+        "channel": "R",
+        "signal_dn": 40.0,
+        "sigma_dn": 28.169399999999996,
+        "pixels": 1896,
+        "pair_first_frame": 108
+      },
+      {
+        "channel": "R",
+        "signal_dn": 80.0,
+        "sigma_dn": 34.09979999999999,
+        "pixels": 747,
+        "pair_first_frame": 108
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 6.5,
+        "sigma_dn": 14.826000000000006,
+        "pixels": 9641,
+        "pair_first_frame": 108
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.733199999999986,
+        "pixels": 5719,
+        "pair_first_frame": 108
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 38.5,
+        "sigma_dn": 28.169400000000014,
+        "pixels": 3059,
+        "pair_first_frame": 108
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 84.5,
+        "sigma_dn": 36.07659999999999,
+        "pixels": 958,
+        "pair_first_frame": 108
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 148.5,
+        "sigma_dn": 43.4896,
+        "pixels": 298,
+        "pair_first_frame": 108
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 6.5,
+        "sigma_dn": 15.320199999999993,
+        "pixels": 9480,
+        "pair_first_frame": 108
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.733200000000004,
+        "pixels": 5836,
+        "pair_first_frame": 108
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 38.5,
+        "sigma_dn": 28.66359999999998,
+        "pixels": 2933,
+        "pair_first_frame": 108
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 82.5,
+        "sigma_dn": 35.5824,
+        "pixels": 971,
+        "pair_first_frame": 108
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 148.5,
+        "sigma_dn": 42.50120000000001,
+        "pixels": 278,
+        "pair_first_frame": 108
+      },
+      {
+        "channel": "B",
+        "signal_dn": 6.75,
+        "sigma_dn": 14.331799999999994,
+        "pixels": 13744,
+        "pair_first_frame": 108
+      },
+      {
+        "channel": "B",
+        "signal_dn": 20.75,
+        "sigma_dn": 20.262200000000004,
+        "pixels": 4133,
+        "pair_first_frame": 108
+      },
+      {
+        "channel": "B",
+        "signal_dn": 40.75,
+        "sigma_dn": 28.169399999999996,
+        "pixels": 921,
+        "pair_first_frame": 108
+      },
+      {
+        "channel": "B",
+        "signal_dn": 76.75,
+        "sigma_dn": 31.62879999999997,
+        "pixels": 227,
+        "pair_first_frame": 108
+      },
+      {
+        "channel": "R",
+        "signal_dn": 6.0,
+        "sigma_dn": 14.33180000000001,
+        "pixels": 10479,
+        "pair_first_frame": 112
+      },
+      {
+        "channel": "R",
+        "signal_dn": 22.0,
+        "sigma_dn": 21.744799999999994,
+        "pixels": 6026,
+        "pair_first_frame": 112
+      },
+      {
+        "channel": "R",
+        "signal_dn": 38.0,
+        "sigma_dn": 26.19259999999999,
+        "pixels": 2082,
+        "pair_first_frame": 112
+      },
+      {
+        "channel": "R",
+        "signal_dn": 82.0,
+        "sigma_dn": 35.582399999999986,
+        "pixels": 819,
+        "pair_first_frame": 112
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 6.5,
+        "sigma_dn": 14.826000000000024,
+        "pixels": 9206,
+        "pair_first_frame": 112
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.733200000000014,
+        "pixels": 5485,
+        "pair_first_frame": 112
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 40.5,
+        "sigma_dn": 26.686799999999977,
+        "pixels": 3967,
+        "pair_first_frame": 112
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 88.5,
+        "sigma_dn": 35.82949999999999,
+        "pixels": 1016,
+        "pair_first_frame": 112
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 154.5,
+        "sigma_dn": 41.018599999999985,
+        "pixels": 305,
+        "pair_first_frame": 112
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 6.5,
+        "sigma_dn": 15.320200000000005,
+        "pixels": 9150,
+        "pair_first_frame": 112
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.239000000000004,
+        "pixels": 5423,
+        "pair_first_frame": 112
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 40.5,
+        "sigma_dn": 27.675199999999986,
+        "pixels": 3995,
+        "pair_first_frame": 112
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 88.5,
+        "sigma_dn": 36.076600000000006,
+        "pixels": 1096,
+        "pair_first_frame": 112
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 150.5,
+        "sigma_dn": 42.995399999999975,
+        "pixels": 358,
+        "pair_first_frame": 112
+      },
+      {
+        "channel": "B",
+        "signal_dn": 6.75,
+        "sigma_dn": 13.837600000000004,
+        "pixels": 13181,
+        "pair_first_frame": 112
+      },
+      {
+        "channel": "B",
+        "signal_dn": 20.75,
+        "sigma_dn": 20.756399999999992,
+        "pixels": 4508,
+        "pair_first_frame": 112
+      },
+      {
+        "channel": "B",
+        "signal_dn": 40.75,
+        "sigma_dn": 25.69839999999999,
+        "pixels": 985,
+        "pair_first_frame": 112
+      },
+      {
+        "channel": "B",
+        "signal_dn": 72.75,
+        "sigma_dn": 31.628800000000002,
+        "pixels": 240,
+        "pair_first_frame": 112
+      },
+      {
+        "channel": "R",
+        "signal_dn": 8.0,
+        "sigma_dn": 14.331800000000008,
+        "pixels": 9929,
+        "pair_first_frame": 116
+      },
+      {
+        "channel": "R",
+        "signal_dn": 22.0,
+        "sigma_dn": 21.744799999999998,
+        "pixels": 5877,
+        "pair_first_frame": 116
+      },
+      {
+        "channel": "R",
+        "signal_dn": 38.0,
+        "sigma_dn": 28.169400000000014,
+        "pixels": 2813,
+        "pair_first_frame": 116
+      },
+      {
+        "channel": "R",
+        "signal_dn": 86.0,
+        "sigma_dn": 35.08820000000001,
+        "pixels": 1009,
+        "pair_first_frame": 116
+      },
+      {
+        "channel": "R",
+        "signal_dn": 142.0,
+        "sigma_dn": 40.77150000000001,
+        "pixels": 158,
+        "pair_first_frame": 116
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 8.5,
+        "sigma_dn": 15.320199999999998,
+        "pixels": 8347,
+        "pair_first_frame": 116
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.239000000000004,
+        "pixels": 4913,
+        "pair_first_frame": 116
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 42.5,
+        "sigma_dn": 27.675199999999997,
+        "pixels": 5364,
+        "pair_first_frame": 116
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 82.5,
+        "sigma_dn": 37.065000000000005,
+        "pixels": 1287,
+        "pair_first_frame": 116
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 158.5,
+        "sigma_dn": 40.03019999999999,
+        "pixels": 567,
+        "pair_first_frame": 116
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 6.5,
+        "sigma_dn": 15.814399999999981,
+        "pixels": 8213,
+        "pair_first_frame": 116
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.23900000000001,
+        "pixels": 4729,
+        "pair_first_frame": 116
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 42.5,
+        "sigma_dn": 28.6636,
+        "pixels": 5333,
+        "pair_first_frame": 116
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 82.5,
+        "sigma_dn": 37.065000000000005,
+        "pixels": 1168,
+        "pair_first_frame": 116
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 154.5,
+        "sigma_dn": 43.48960000000002,
+        "pixels": 557,
+        "pair_first_frame": 116
+      },
+      {
+        "channel": "B",
+        "signal_dn": 8.75,
+        "sigma_dn": 13.837599999999997,
+        "pixels": 11933,
+        "pair_first_frame": 116
+      },
+      {
+        "channel": "B",
+        "signal_dn": 20.75,
+        "sigma_dn": 20.75640000000001,
+        "pixels": 5622,
+        "pair_first_frame": 116
+      },
+      {
+        "channel": "B",
+        "signal_dn": 38.75,
+        "sigma_dn": 26.686799999999977,
+        "pixels": 1473,
+        "pair_first_frame": 116
+      },
+      {
+        "channel": "B",
+        "signal_dn": 78.75,
+        "sigma_dn": 30.640399999999996,
+        "pixels": 329,
+        "pair_first_frame": 116
+      }
+    ],
+    "validation_observations": [
+      {
+        "channel": "R",
+        "signal_dn": 8.0,
+        "sigma_dn": 13.837600000000009,
+        "pixels": 10060,
+        "pair_first_frame": 120
+      },
+      {
+        "channel": "R",
+        "signal_dn": 22.0,
+        "sigma_dn": 21.250599999999995,
+        "pixels": 5879,
+        "pair_first_frame": 120
+      },
+      {
+        "channel": "R",
+        "signal_dn": 38.0,
+        "sigma_dn": 27.180999999999987,
+        "pixels": 2921,
+        "pair_first_frame": 120
+      },
+      {
+        "channel": "R",
+        "signal_dn": 84.0,
+        "sigma_dn": 33.60560000000001,
+        "pixels": 968,
+        "pair_first_frame": 120
+      },
+      {
+        "channel": "R",
+        "signal_dn": 142.0,
+        "sigma_dn": 40.030199999999994,
+        "pixels": 149,
+        "pair_first_frame": 120
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 6.5,
+        "sigma_dn": 15.320199999999994,
+        "pixels": 8624,
+        "pair_first_frame": 120
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.239000000000004,
+        "pixels": 4806,
+        "pair_first_frame": 120
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 42.5,
+        "sigma_dn": 27.675199999999993,
+        "pixels": 5160,
+        "pair_first_frame": 120
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 84.5,
+        "sigma_dn": 33.60559999999999,
+        "pixels": 1046,
+        "pair_first_frame": 120
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 154.5,
+        "sigma_dn": 42.50120000000002,
+        "pixels": 485,
+        "pair_first_frame": 120
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 6.5,
+        "sigma_dn": 15.320200000000005,
+        "pixels": 8467,
+        "pair_first_frame": 120
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.238999999999994,
+        "pixels": 4783,
+        "pair_first_frame": 120
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 42.5,
+        "sigma_dn": 29.1578,
+        "pixels": 5146,
+        "pair_first_frame": 120
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 82.5,
+        "sigma_dn": 36.076599999999985,
+        "pixels": 1134,
+        "pair_first_frame": 120
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 150.5,
+        "sigma_dn": 41.01860000000001,
+        "pixels": 445,
+        "pair_first_frame": 120
+      },
+      {
+        "channel": "B",
+        "signal_dn": 6.75,
+        "sigma_dn": 13.837600000000002,
+        "pixels": 12435,
+        "pair_first_frame": 120
+      },
+      {
+        "channel": "B",
+        "signal_dn": 20.75,
+        "sigma_dn": 21.25059999999997,
+        "pixels": 5509,
+        "pair_first_frame": 120
+      },
+      {
+        "channel": "B",
+        "signal_dn": 40.75,
+        "sigma_dn": 26.933899999999998,
+        "pixels": 1314,
+        "pair_first_frame": 120
+      },
+      {
+        "channel": "B",
+        "signal_dn": 78.75,
+        "sigma_dn": 34.0998,
+        "pixels": 327,
+        "pair_first_frame": 120
+      },
+      {
+        "channel": "R",
+        "signal_dn": 8.0,
+        "sigma_dn": 14.33180000000001,
+        "pixels": 10815,
+        "pair_first_frame": 124
+      },
+      {
+        "channel": "R",
+        "signal_dn": 22.0,
+        "sigma_dn": 21.250600000000002,
+        "pixels": 5915,
+        "pair_first_frame": 124
+      },
+      {
+        "channel": "R",
+        "signal_dn": 40.0,
+        "sigma_dn": 27.675200000000007,
+        "pixels": 1954,
+        "pair_first_frame": 124
+      },
+      {
+        "channel": "R",
+        "signal_dn": 80.0,
+        "sigma_dn": 32.123,
+        "pixels": 776,
+        "pair_first_frame": 124
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 6.5,
+        "sigma_dn": 15.320199999999987,
+        "pixels": 9310,
+        "pair_first_frame": 124
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 22.5,
+        "sigma_dn": 21.7448,
+        "pixels": 5575,
+        "pair_first_frame": 124
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 38.5,
+        "sigma_dn": 27.675200000000007,
+        "pixels": 3695,
+        "pair_first_frame": 124
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 86.5,
+        "sigma_dn": 35.0882,
+        "pixels": 979,
+        "pair_first_frame": 124
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 152.5,
+        "sigma_dn": 38.794700000000006,
+        "pixels": 270,
+        "pair_first_frame": 124
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 6.5,
+        "sigma_dn": 15.320199999999993,
+        "pixels": 9354,
+        "pair_first_frame": 124
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.23899999999999,
+        "pixels": 5514,
+        "pair_first_frame": 124
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 38.5,
+        "sigma_dn": 27.18100000000001,
+        "pixels": 3726,
+        "pair_first_frame": 124
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 86.5,
+        "sigma_dn": 34.099799999999995,
+        "pixels": 963,
+        "pair_first_frame": 124
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 150.5,
+        "sigma_dn": 38.5476,
+        "pixels": 314,
+        "pair_first_frame": 124
+      },
+      {
+        "channel": "B",
+        "signal_dn": 6.75,
+        "sigma_dn": 13.837600000000004,
+        "pixels": 13331,
+        "pair_first_frame": 124
+      },
+      {
+        "channel": "B",
+        "signal_dn": 20.75,
+        "sigma_dn": 20.262200000000007,
+        "pixels": 4365,
+        "pair_first_frame": 124
+      },
+      {
+        "channel": "B",
+        "signal_dn": 40.75,
+        "sigma_dn": 27.18100000000001,
+        "pixels": 950,
+        "pair_first_frame": 124
+      },
+      {
+        "channel": "B",
+        "signal_dn": 74.75,
+        "sigma_dn": 32.617200000000004,
+        "pixels": 226,
+        "pair_first_frame": 124
+      },
+      {
+        "channel": "R",
+        "signal_dn": 8.0,
+        "sigma_dn": 14.3318,
+        "pixels": 11185,
+        "pair_first_frame": 128
+      },
+      {
+        "channel": "R",
+        "signal_dn": 20.0,
+        "sigma_dn": 21.250600000000002,
+        "pixels": 5807,
+        "pair_first_frame": 128
+      },
+      {
+        "channel": "R",
+        "signal_dn": 40.0,
+        "sigma_dn": 28.663600000000006,
+        "pixels": 1808,
+        "pair_first_frame": 128
+      },
+      {
+        "channel": "R",
+        "signal_dn": 82.0,
+        "sigma_dn": 35.33530000000001,
+        "pixels": 706,
+        "pair_first_frame": 128
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 6.5,
+        "sigma_dn": 14.826,
+        "pixels": 9894,
+        "pair_first_frame": 128
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.238999999999994,
+        "pixels": 5723,
+        "pair_first_frame": 128
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 38.5,
+        "sigma_dn": 27.180999999999997,
+        "pixels": 3102,
+        "pair_first_frame": 128
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 84.5,
+        "sigma_dn": 35.3353,
+        "pixels": 936,
+        "pair_first_frame": 128
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 150.5,
+        "sigma_dn": 41.018599999999985,
+        "pixels": 281,
+        "pair_first_frame": 128
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 6.5,
+        "sigma_dn": 15.32019999999999,
+        "pixels": 9569,
+        "pair_first_frame": 128
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.23899999999999,
+        "pixels": 5631,
+        "pair_first_frame": 128
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 38.5,
+        "sigma_dn": 26.686799999999998,
+        "pixels": 2971,
+        "pair_first_frame": 128
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 84.5,
+        "sigma_dn": 36.570799999999984,
+        "pixels": 962,
+        "pair_first_frame": 128
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 152.5,
+        "sigma_dn": 37.55919999999999,
+        "pixels": 277,
+        "pair_first_frame": 128
+      },
+      {
+        "channel": "B",
+        "signal_dn": 6.75,
+        "sigma_dn": 13.837599999999993,
+        "pixels": 13905,
+        "pair_first_frame": 128
+      },
+      {
+        "channel": "B",
+        "signal_dn": 20.75,
+        "sigma_dn": 20.262199999999993,
+        "pixels": 3866,
+        "pair_first_frame": 128
+      },
+      {
+        "channel": "B",
+        "signal_dn": 40.75,
+        "sigma_dn": 27.675200000000004,
+        "pixels": 953,
+        "pair_first_frame": 128
+      },
+      {
+        "channel": "B",
+        "signal_dn": 74.75,
+        "sigma_dn": 30.88750000000002,
+        "pixels": 254,
+        "pair_first_frame": 128
+      },
+      {
+        "channel": "R",
+        "signal_dn": 8.0,
+        "sigma_dn": 14.331800000000008,
+        "pixels": 11311,
+        "pair_first_frame": 132
+      },
+      {
+        "channel": "R",
+        "signal_dn": 20.0,
+        "sigma_dn": 21.250600000000006,
+        "pixels": 5842,
+        "pair_first_frame": 132
+      },
+      {
+        "channel": "R",
+        "signal_dn": 40.0,
+        "sigma_dn": 28.169399999999968,
+        "pixels": 1743,
+        "pair_first_frame": 132
+      },
+      {
+        "channel": "R",
+        "signal_dn": 82.0,
+        "sigma_dn": 35.08820000000001,
+        "pixels": 736,
+        "pair_first_frame": 132
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 6.5,
+        "sigma_dn": 14.825999999999997,
+        "pixels": 9528,
+        "pair_first_frame": 132
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.239000000000004,
+        "pixels": 5709,
+        "pair_first_frame": 132
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 38.5,
+        "sigma_dn": 28.169399999999996,
+        "pixels": 3156,
+        "pair_first_frame": 132
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 82.5,
+        "sigma_dn": 37.06499999999998,
+        "pixels": 922,
+        "pair_first_frame": 132
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 154.5,
+        "sigma_dn": 44.47799999999997,
+        "pixels": 273,
+        "pair_first_frame": 132
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 6.5,
+        "sigma_dn": 14.826,
+        "pixels": 9413,
+        "pair_first_frame": 132
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.239000000000022,
+        "pixels": 5732,
+        "pair_first_frame": 132
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 38.5,
+        "sigma_dn": 27.67520000000003,
+        "pixels": 3017,
+        "pair_first_frame": 132
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 84.5,
+        "sigma_dn": 34.84110000000002,
+        "pixels": 922,
+        "pair_first_frame": 132
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 156.5,
+        "sigma_dn": 39.041799999999995,
+        "pixels": 283,
+        "pair_first_frame": 132
+      },
+      {
+        "channel": "B",
+        "signal_dn": 6.75,
+        "sigma_dn": 13.837599999999993,
+        "pixels": 13813,
+        "pair_first_frame": 132
+      },
+      {
+        "channel": "B",
+        "signal_dn": 20.75,
+        "sigma_dn": 19.768000000000008,
+        "pixels": 4058,
+        "pair_first_frame": 132
+      },
+      {
+        "channel": "B",
+        "signal_dn": 42.75,
+        "sigma_dn": 27.180999999999983,
+        "pixels": 995,
+        "pair_first_frame": 132
+      },
+      {
+        "channel": "B",
+        "signal_dn": 74.75,
+        "sigma_dn": 33.111399999999996,
+        "pixels": 211,
+        "pair_first_frame": 132
+      },
+      {
+        "channel": "R",
+        "signal_dn": 8.0,
+        "sigma_dn": 14.331799999999996,
+        "pixels": 10848,
+        "pair_first_frame": 136
+      },
+      {
+        "channel": "R",
+        "signal_dn": 22.0,
+        "sigma_dn": 21.250599999999988,
+        "pixels": 6126,
+        "pair_first_frame": 136
+      },
+      {
+        "channel": "R",
+        "signal_dn": 38.0,
+        "sigma_dn": 28.169399999999996,
+        "pixels": 2067,
+        "pair_first_frame": 136
+      },
+      {
+        "channel": "R",
+        "signal_dn": 82.0,
+        "sigma_dn": 32.123000000000005,
+        "pixels": 837,
+        "pair_first_frame": 136
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 6.5,
+        "sigma_dn": 14.825999999999997,
+        "pixels": 9323,
+        "pair_first_frame": 136
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.73319999999999,
+        "pixels": 5549,
+        "pair_first_frame": 136
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 38.5,
+        "sigma_dn": 27.675200000000018,
+        "pixels": 3672,
+        "pair_first_frame": 136
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 84.5,
+        "sigma_dn": 35.33530000000001,
+        "pixels": 972,
+        "pair_first_frame": 136
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 154.5,
+        "sigma_dn": 36.323699999999995,
+        "pixels": 282,
+        "pair_first_frame": 136
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 6.5,
+        "sigma_dn": 15.320199999999998,
+        "pixels": 9128,
+        "pair_first_frame": 136
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.733200000000004,
+        "pixels": 5650,
+        "pair_first_frame": 136
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 38.5,
+        "sigma_dn": 27.675200000000007,
+        "pixels": 3711,
+        "pair_first_frame": 136
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 90.5,
+        "sigma_dn": 34.594,
+        "pixels": 983,
+        "pair_first_frame": 136
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 150.5,
+        "sigma_dn": 35.335300000000004,
+        "pixels": 312,
+        "pair_first_frame": 136
+      },
+      {
+        "channel": "B",
+        "signal_dn": 6.75,
+        "sigma_dn": 13.837599999999986,
+        "pixels": 13117,
+        "pair_first_frame": 136
+      },
+      {
+        "channel": "B",
+        "signal_dn": 20.75,
+        "sigma_dn": 20.262200000000004,
+        "pixels": 4449,
+        "pair_first_frame": 136
+      },
+      {
+        "channel": "B",
+        "signal_dn": 40.75,
+        "sigma_dn": 27.675200000000007,
+        "pixels": 995,
+        "pair_first_frame": 136
+      },
+      {
+        "channel": "B",
+        "signal_dn": 76.75,
+        "sigma_dn": 29.651999999999994,
+        "pixels": 213,
+        "pair_first_frame": 136
+      },
+      {
+        "channel": "R",
+        "signal_dn": 8.0,
+        "sigma_dn": 14.825999999999985,
+        "pixels": 10172,
+        "pair_first_frame": 140
+      },
+      {
+        "channel": "R",
+        "signal_dn": 22.0,
+        "sigma_dn": 21.250600000000002,
+        "pixels": 5967,
+        "pair_first_frame": 140
+      },
+      {
+        "channel": "R",
+        "signal_dn": 38.0,
+        "sigma_dn": 26.6868,
+        "pixels": 2415,
+        "pair_first_frame": 140
+      },
+      {
+        "channel": "R",
+        "signal_dn": 86.0,
+        "sigma_dn": 32.6172,
+        "pixels": 850,
+        "pair_first_frame": 140
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 6.5,
+        "sigma_dn": 15.320199999999984,
+        "pixels": 8582,
+        "pair_first_frame": 140
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 22.5,
+        "sigma_dn": 21.7448,
+        "pixels": 5045,
+        "pair_first_frame": 140
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 40.5,
+        "sigma_dn": 28.663600000000017,
+        "pixels": 4845,
+        "pair_first_frame": 140
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 86.5,
+        "sigma_dn": 36.57080000000001,
+        "pixels": 1069,
+        "pair_first_frame": 140
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 156.5,
+        "sigma_dn": 43.98380000000002,
+        "pixels": 379,
+        "pair_first_frame": 140
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 8.5,
+        "sigma_dn": 15.3202,
+        "pixels": 8729,
+        "pair_first_frame": 140
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.238999999999994,
+        "pixels": 5050,
+        "pair_first_frame": 140
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 40.5,
+        "sigma_dn": 29.1578,
+        "pixels": 4916,
+        "pair_first_frame": 140
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 86.5,
+        "sigma_dn": 37.312099999999994,
+        "pixels": 1088,
+        "pair_first_frame": 140
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 154.5,
+        "sigma_dn": 39.04180000000001,
+        "pixels": 419,
+        "pair_first_frame": 140
+      },
+      {
+        "channel": "B",
+        "signal_dn": 6.75,
+        "sigma_dn": 13.837600000000004,
+        "pixels": 12449,
+        "pair_first_frame": 140
+      },
+      {
+        "channel": "B",
+        "signal_dn": 20.75,
+        "sigma_dn": 20.262199999999996,
+        "pixels": 5246,
+        "pair_first_frame": 140
+      },
+      {
+        "channel": "B",
+        "signal_dn": 40.75,
+        "sigma_dn": 27.180999999999976,
+        "pixels": 1118,
+        "pair_first_frame": 140
+      },
+      {
+        "channel": "B",
+        "signal_dn": 74.75,
+        "sigma_dn": 33.6056,
+        "pixels": 286,
+        "pair_first_frame": 140
+      },
+      {
+        "channel": "R",
+        "signal_dn": 8.0,
+        "sigma_dn": 14.331800000000003,
+        "pixels": 10066,
+        "pair_first_frame": 144
+      },
+      {
+        "channel": "R",
+        "signal_dn": 22.0,
+        "sigma_dn": 21.250600000000013,
+        "pixels": 5907,
+        "pair_first_frame": 144
+      },
+      {
+        "channel": "R",
+        "signal_dn": 38.0,
+        "sigma_dn": 27.180999999999997,
+        "pixels": 2944,
+        "pair_first_frame": 144
+      },
+      {
+        "channel": "R",
+        "signal_dn": 84.0,
+        "sigma_dn": 33.35850000000001,
+        "pixels": 902,
+        "pair_first_frame": 144
+      },
+      {
+        "channel": "R",
+        "signal_dn": 142.0,
+        "sigma_dn": 38.30049999999999,
+        "pixels": 132,
+        "pair_first_frame": 144
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 6.5,
+        "sigma_dn": 15.320199999999998,
+        "pixels": 8128,
+        "pair_first_frame": 144
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.238999999999994,
+        "pixels": 4807,
+        "pair_first_frame": 144
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 42.5,
+        "sigma_dn": 28.169400000000003,
+        "pixels": 5313,
+        "pair_first_frame": 144
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 84.5,
+        "sigma_dn": 36.0766,
+        "pixels": 1206,
+        "pair_first_frame": 144
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 152.5,
+        "sigma_dn": 40.52440000000001,
+        "pixels": 480,
+        "pair_first_frame": 144
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 6.5,
+        "sigma_dn": 15.3202,
+        "pixels": 8432,
+        "pair_first_frame": 144
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.733199999999975,
+        "pixels": 4811,
+        "pair_first_frame": 144
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 42.5,
+        "sigma_dn": 29.157799999999995,
+        "pixels": 5511,
+        "pair_first_frame": 144
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 84.5,
+        "sigma_dn": 36.57079999999997,
+        "pixels": 1192,
+        "pair_first_frame": 144
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 156.5,
+        "sigma_dn": 39.7831,
+        "pixels": 484,
+        "pair_first_frame": 144
+      },
+      {
+        "channel": "B",
+        "signal_dn": 6.75,
+        "sigma_dn": 14.331799999999996,
+        "pixels": 12104,
+        "pair_first_frame": 144
+      },
+      {
+        "channel": "B",
+        "signal_dn": 20.75,
+        "sigma_dn": 21.744799999999987,
+        "pixels": 5653,
+        "pair_first_frame": 144
+      },
+      {
+        "channel": "B",
+        "signal_dn": 38.75,
+        "sigma_dn": 25.698400000000007,
+        "pixels": 1408,
+        "pair_first_frame": 144
+      },
+      {
+        "channel": "B",
+        "signal_dn": 76.75,
+        "sigma_dn": 35.82949999999999,
+        "pixels": 338,
+        "pair_first_frame": 144
+      },
+      {
+        "channel": "R",
+        "signal_dn": 8.0,
+        "sigma_dn": 14.331800000000008,
+        "pixels": 10260,
+        "pair_first_frame": 148
+      },
+      {
+        "channel": "R",
+        "signal_dn": 22.0,
+        "sigma_dn": 21.250600000000002,
+        "pixels": 5862,
+        "pair_first_frame": 148
+      },
+      {
+        "channel": "R",
+        "signal_dn": 38.0,
+        "sigma_dn": 27.675199999999986,
+        "pixels": 2577,
+        "pair_first_frame": 148
+      },
+      {
+        "channel": "R",
+        "signal_dn": 84.0,
+        "sigma_dn": 34.59399999999999,
+        "pixels": 900,
+        "pair_first_frame": 148
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 8.5,
+        "sigma_dn": 15.320199999999975,
+        "pixels": 8718,
+        "pair_first_frame": 148
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 22.5,
+        "sigma_dn": 21.744800000000005,
+        "pixels": 5108,
+        "pair_first_frame": 148
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 40.5,
+        "sigma_dn": 28.41649999999999,
+        "pixels": 4798,
+        "pair_first_frame": 148
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 88.5,
+        "sigma_dn": 35.08820000000001,
+        "pixels": 1109,
+        "pair_first_frame": 148
+      },
+      {
+        "channel": "Gr",
+        "signal_dn": 156.5,
+        "sigma_dn": 42.006999999999955,
+        "pixels": 411,
+        "pair_first_frame": 148
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 8.5,
+        "sigma_dn": 15.320200000000003,
+        "pixels": 8657,
+        "pair_first_frame": 148
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 22.5,
+        "sigma_dn": 22.73319999999999,
+        "pixels": 5075,
+        "pair_first_frame": 148
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 40.5,
+        "sigma_dn": 29.157800000000005,
+        "pixels": 4855,
+        "pair_first_frame": 148
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 86.5,
+        "sigma_dn": 35.088199999999986,
+        "pixels": 1134,
+        "pair_first_frame": 148
+      },
+      {
+        "channel": "Gb",
+        "signal_dn": 156.5,
+        "sigma_dn": 38.547599999999996,
+        "pixels": 397,
+        "pair_first_frame": 148
+      },
+      {
+        "channel": "B",
+        "signal_dn": 6.75,
+        "sigma_dn": 13.837599999999998,
+        "pixels": 12176,
+        "pair_first_frame": 148
+      },
+      {
+        "channel": "B",
+        "signal_dn": 20.75,
+        "sigma_dn": 21.250599999999988,
+        "pixels": 5179,
+        "pair_first_frame": 148
+      },
+      {
+        "channel": "B",
+        "signal_dn": 40.75,
+        "sigma_dn": 26.686799999999998,
+        "pixels": 1138,
+        "pair_first_frame": 148
+      },
+      {
+        "channel": "B",
+        "signal_dn": 74.75,
+        "sigma_dn": 29.1578,
+        "pixels": 330,
+        "pair_first_frame": 148
+      }
+    ],
+    "method": "adjacent-pair difference divided by sqrt(2), 3x3 high-pass variance correction, flat-pixel selection, non-negative Huber IRLS"
+  },
+  "authenticity": {
+    "passed": true,
+    "checks": {
+      "R_points": true,
+      "R_median_error": true,
+      "R_p90_error": true,
+      "Gr_points": true,
+      "Gr_median_error": true,
+      "Gr_p90_error": true,
+      "Gb_points": true,
+      "Gb_median_error": true,
+      "Gb_p90_error": true,
+      "B_points": true,
+      "B_median_error": true,
+      "B_p90_error": true
+    },
+    "channels": {
+      "R": {
+        "points": 34,
+        "median_relative_sigma_error": 0.06003705949728215,
+        "p90_relative_sigma_error": 0.12860003492913535,
+        "passed": true
+      },
+      "Gr": {
+        "points": 40,
+        "median_relative_sigma_error": 0.053238577505987913,
+        "p90_relative_sigma_error": 0.1697789420554438,
+        "passed": true
+      },
+      "Gb": {
+        "points": 40,
+        "median_relative_sigma_error": 0.06910851335763978,
+        "p90_relative_sigma_error": 0.17564520581089105,
+        "passed": true
+      },
+      "B": {
+        "points": 32,
+        "median_relative_sigma_error": 0.035416305284472975,
+        "p90_relative_sigma_error": 0.0721517538872984,
+        "passed": true
+      }
+    },
+    "aggregate_median_relative_sigma_error": 0.049820934509566935,
+    "aggregate_p90_relative_sigma_error": 0.16169998186999057
+  },
+  "quantization": {
+    "domain": "12bit_dn",
+    "round_before_clip": true,
+    "clip_range_dn": [
+      0.0,
+      4095.0
+    ]
+  },
+  "config": {
+    "dataset_root": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset",
+    "source": {
+      "name": "sc450ai_804x_lightchanging",
+      "sensor": "sc450ai",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/01_fist_company/sc450ai/804x_lightchanging/lightchanging_804x.raw",
+      "width": 2688,
+      "height": 1520,
+      "frames_used": 150,
+      "bit_shift": 0,
+      "cfa": "RGGB",
+      "nominal_black_dn": 258.0,
+      "reference_mode": "stress_only",
+      "clip_starts": [
+        0,
+        71,
+        142
+      ],
+      "fixed_isp_wb": [
+        1.445,
+        1.0,
+        1.0,
+        2.437
+      ],
+      "fixed_isp_exposure": 8.5,
+      "panel_crops": {
+        "flat_transition": [
+          0,
+          150,
+          1500,
+          1350
+        ],
+        "center_subject": [
+          700,
+          200,
+          2100,
+          1500
+        ],
+        "right_shelf": [
+          1600,
+          100,
+          2688,
+          1450
+        ]
+      }
+    },
+    "source_sha256": "8e74a2b96de1943a0180eba82650613d98c0398d0e984c3d0ac4c6b1e12359fe",
+    "black_levels": [
+      256.0,
+      257.5,
+      257.5,
+      255.25
+    ],
+    "output_dir": "artifacts/a9_multi_sensor_generalization/sc450ai_noise_profile_20261016",
+    "train_frame_range": [
+      0,
+      120
+    ],
+    "validation_frame_range": [
+      120,
+      150
+    ],
+    "pair_stride": 4,
+    "spatial_sample_stride": 4,
+    "flat_percentile": 35.0,
+    "temporal_outlier_percentile": 99.5,
+    "signal_bin_edges_dn": [
+      0.0,
+      16.0,
+      32.0,
+      64.0,
+      128.0,
+      256.0,
+      512.0,
+      1024.0,
+      2048.0,
+      3072.0,
+      3600.0
+    ],
+    "min_bin_pixels": 128,
+    "min_validation_points_per_channel": 4,
+    "max_median_relative_sigma_error": 0.25,
+    "max_p90_relative_sigma_error": 0.5
+  }
+}

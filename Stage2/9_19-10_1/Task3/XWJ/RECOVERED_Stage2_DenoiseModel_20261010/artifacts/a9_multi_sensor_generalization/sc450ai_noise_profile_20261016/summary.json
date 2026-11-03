@@ -1,0 +1,52 @@
+{
+  "status": "passed",
+  "profile": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a9_multi_sensor_generalization/sc450ai_noise_profile_20261016/noise_profile.json",
+  "profile_sha256": "7ff6292a188bcf1cc03aea9431691ea154cf84aaef7dcac8f9b65afbd880de70",
+  "train_observations": 545,
+  "validation_observations": 146,
+  "authenticity": {
+    "passed": true,
+    "checks": {
+      "R_points": true,
+      "R_median_error": true,
+      "R_p90_error": true,
+      "Gr_points": true,
+      "Gr_median_error": true,
+      "Gr_p90_error": true,
+      "Gb_points": true,
+      "Gb_median_error": true,
+      "Gb_p90_error": true,
+      "B_points": true,
+      "B_median_error": true,
+      "B_p90_error": true
+    },
+    "channels": {
+      "R": {
+        "points": 34,
+        "median_relative_sigma_error": 0.06003705949728215,
+        "p90_relative_sigma_error": 0.12860003492913535,
+        "passed": true
+      },
+      "Gr": {
+        "points": 40,
+        "median_relative_sigma_error": 0.053238577505987913,
+        "p90_relative_sigma_error": 0.1697789420554438,
+        "passed": true
+      },
+      "Gb": {
+        "points": 40,
+        "median_relative_sigma_error": 0.06910851335763978,
+        "p90_relative_sigma_error": 0.17564520581089105,
+        "passed": true
+      },
+      "B": {
+        "points": 32,
+        "median_relative_sigma_error": 0.035416305284472975,
+        "p90_relative_sigma_error": 0.0721517538872984,
+        "passed": true
+      }
+    },
+    "aggregate_median_relative_sigma_error": 0.049820934509566935,
+    "aggregate_p90_relative_sigma_error": 0.16169998186999057
+  }
+}

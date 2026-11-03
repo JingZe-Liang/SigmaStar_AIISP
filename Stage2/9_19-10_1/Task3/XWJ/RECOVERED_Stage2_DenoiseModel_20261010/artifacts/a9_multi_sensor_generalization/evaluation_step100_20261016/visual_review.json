@@ -1,0 +1,49 @@
+{
+  "review_date": "2026-10-16",
+  "review_protocol": "Fixed-ISP side-by-side inspection of input, A3 baseline, and A9 unified step-100 output",
+  "sensors": {
+    "mis20s1": {
+      "reviewed_video_times_seconds": [
+        0.0,
+        1.0
+      ],
+      "new_ghosting_or_edge_breaks": false,
+      "static_region_pollution": false,
+      "a9_visibly_different_from_a3": false,
+      "finding": "A9 is visually indistinguishable from A3 at the reviewed frames; no new artifact is visible."
+    },
+    "sc465sl": {
+      "reviewed_video_times_seconds": [
+        0.0,
+        5.8
+      ],
+      "new_ghosting_or_edge_breaks": false,
+      "static_region_pollution": false,
+      "a9_visibly_different_from_a3": false,
+      "finding": "A9 preserves the A3 appearance without visible flicker, edge damage, or highlight contamination."
+    },
+    "sc635hai": {
+      "reviewed_video_times_seconds": [
+        0.0,
+        2.0
+      ],
+      "new_ghosting_or_edge_breaks": false,
+      "static_region_pollution": false,
+      "a9_visibly_different_from_a3": false,
+      "finding": "A9 remains visually aligned with A3 on the moving person and detailed static objects; no new artifact is visible."
+    },
+    "sc450ai": {
+      "reviewed_video_times_seconds": [
+        0.0,
+        3.5
+      ],
+      "new_ghosting_or_edge_breaks": false,
+      "static_region_pollution": false,
+      "a9_visibly_different_from_a3": false,
+      "missing_detail_recovered": false,
+      "finding": "The black clothing and moving subject contours remain hollow and over-smoothed. A9 does not recover the high-frequency detail missing from A3."
+    }
+  },
+  "overall_visual_pass": false,
+  "failure_reason": "The required sc450ai held-out detail recovery is absent even though no new artifact is introduced."
+}

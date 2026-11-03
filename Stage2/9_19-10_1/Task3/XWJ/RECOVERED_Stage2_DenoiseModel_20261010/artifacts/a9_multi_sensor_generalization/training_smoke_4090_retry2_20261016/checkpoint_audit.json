@@ -1,0 +1,102 @@
+{
+  "status": "passed",
+  "a3_checkpoint": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/training/checkpoint_step_005000.pth",
+  "a3_checkpoint_sha256": "97c4332f685f98959b243e4b100434469f714aed6329e100d22b6d8552592e0b",
+  "candidate_checkpoint": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a9_multi_sensor_generalization/training_smoke_4090_retry2_20261016/checkpoint_step_000100.pth",
+  "candidate_checkpoint_sha256": "e30da4169a782679dde2c72013bdba360d24ac80ca0ba2526f9422959ef9e28e",
+  "schema": "a9-unified-multi-sensor-generalization-v1",
+  "step": 100,
+  "allowed_trainable_tensors": [
+    "conv_after_body.bias",
+    "conv_after_body.weight",
+    "conv_first.bias",
+    "conv_first.weight",
+    "conv_last.bias",
+    "conv_last.weight",
+    "norm.bias",
+    "norm.weight"
+  ],
+  "live_weights": {
+    "changed_tensors": [
+      "conv_first.weight",
+      "conv_first.bias",
+      "norm.weight",
+      "norm.bias",
+      "conv_after_body.weight",
+      "conv_after_body.bias",
+      "conv_last.weight",
+      "conv_last.bias"
+    ],
+    "changed_tensor_count": 8,
+    "unauthorized_tensors": [],
+    "unauthorized_tensor_count": 0,
+    "maximum_absolute_change": 0.0002845972776412964,
+    "per_tensor_maximum_absolute_change": {
+      "conv_first.weight": 0.00017307326197624207,
+      "conv_first.bias": 0.00018763169646263123,
+      "norm.weight": 0.00020766258239746094,
+      "norm.bias": 0.0001755896955728531,
+      "conv_after_body.weight": 0.0002845972776412964,
+      "conv_after_body.bias": 0.00016769510693848133,
+      "conv_last.weight": 0.00023788980615790933,
+      "conv_last.bias": 8.752784924581647e-05
+    }
+  },
+  "ema_weights": {
+    "changed_tensors": [
+      "conv_first.weight",
+      "conv_first.bias",
+      "norm.weight",
+      "norm.bias",
+      "conv_after_body.weight",
+      "conv_after_body.bias",
+      "conv_last.weight",
+      "conv_last.bias"
+    ],
+    "changed_tensor_count": 8,
+    "unauthorized_tensors": [],
+    "unauthorized_tensor_count": 0,
+    "maximum_absolute_change": 1.592002809047699e-05,
+    "per_tensor_maximum_absolute_change": {
+      "conv_first.weight": 9.875744581222534e-06,
+      "conv_first.bias": 1.0104849934577942e-05,
+      "norm.weight": 1.0371208190917969e-05,
+      "norm.bias": 8.308328688144684e-06,
+      "conv_after_body.weight": 1.592002809047699e-05,
+      "conv_after_body.bias": 8.637551218271255e-06,
+      "conv_last.weight": 1.3252892131276894e-05,
+      "conv_last.bias": 4.0208688005805016e-06
+    }
+  },
+  "training_log": {
+    "steps": 100,
+    "finite": true,
+    "maximum_gradient_norm": 0.6105107069015503,
+    "per_source": {
+      "mis20s1_replay": {
+        "samples": 39,
+        "mean_loss": 0.026754337989796814,
+        "median_loss": 0.01256032194942236,
+        "maximum_loss": 0.10962935537099838
+      },
+      "sc465sl_static_split_half": {
+        "samples": 19,
+        "mean_loss": 0.001943770514212941,
+        "median_loss": 0.001642450806684792,
+        "maximum_loss": 0.005032898858189583
+      },
+      "sc635hai_static_split_half": {
+        "samples": 24,
+        "mean_loss": 0.002513236332257899,
+        "median_loss": 0.002310305484570563,
+        "maximum_loss": 0.003998953849077225
+      },
+      "sc450ai_verified_noise": {
+        "samples": 18,
+        "mean_loss": 0.0023880759448123476,
+        "median_loss": 0.0018678042106330395,
+        "maximum_loss": 0.005267662461847067
+      }
+    }
+  }
+}

@@ -1,0 +1,274 @@
+{
+  "schema": "a9-unified-generalization-final-v1",
+  "date": "2026-10-16",
+  "decision": {
+    "passed": false,
+    "action": "reject_as_unified_generalization_checkpoint",
+    "reason": "sc450ai failed held-out high-frequency recovery and fixed-ISP review confirmed that missing black-subject detail was not recovered.",
+    "replace_a3_checkpoint": false,
+    "continue_same_protocol_beyond_step_100": false,
+    "candidate_deployment_eligible": false
+  },
+  "checkpoints": {
+    "a3_baseline": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/training/checkpoint_step_005000.pth",
+      "sha256": "97c4332f685f98959b243e4b100434469f714aed6329e100d22b6d8552592e0b",
+      "status": "unchanged baseline"
+    },
+    "a9_step_100": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a9_multi_sensor_generalization/training_smoke_4090_retry2_20261016/checkpoint_step_000100.pth",
+      "sha256": "e30da4169a782679dde2c72013bdba360d24ac80ca0ba2526f9422959ef9e28e",
+      "weights_evaluated": "ema",
+      "status": "diagnostic artifact only"
+    }
+  },
+  "training": {
+    "steps": 100,
+    "source_counts": {
+      "mis20s1_replay": 39,
+      "sc465sl_static_split_half": 19,
+      "sc635hai_static_split_half": 24,
+      "sc450ai_verified_noise": 18
+    },
+    "trainable": {
+      "scope": "input_output_heads",
+      "prefixes": [
+        "conv_first.",
+        "norm.",
+        "conv_after_body.",
+        "conv_last."
+      ],
+      "parameter_tensors": 8,
+      "parameters": 15508,
+      "names": [
+        "conv_first.weight",
+        "conv_first.bias",
+        "norm.weight",
+        "norm.bias",
+        "conv_after_body.weight",
+        "conv_after_body.bias",
+        "conv_last.weight",
+        "conv_last.bias"
+      ]
+    },
+    "checkpoint_audit_status": "passed",
+    "unauthorized_live_tensor_changes": 0,
+    "unauthorized_ema_tensor_changes": 0,
+    "maximum_gradient_norm": 0.6105107069015503
+  },
+  "input_validation": {
+    "preflight_status": "passed",
+    "sc450ai_noise_profile_status": "passed",
+    "sc450ai_validation_observations": 146,
+    "sc450ai_median_relative_sigma_error": 0.049820934509566935,
+    "sc450ai_p90_relative_sigma_error": 0.16169998186999057
+  },
+  "sensor_results": {
+    "sc465sl": {
+      "automatic_gate_passed": true,
+      "static_holdout": {
+        "baseline_a3": {
+          "mean_psnr_db": 56.60490438682446,
+          "mean_high_frequency_ratio": 0.9112685417521018,
+          "mean_temporal_mad_dn": 1.306237897707835,
+          "maximum_output_bias_abs_dn": 3.703261595592694,
+          "minimum_legal_raw_fraction": 1.0,
+          "maximum_normalized_clip_fraction": 0.0008331163194444445
+        },
+        "candidate_a9": {
+          "mean_psnr_db": 56.68682527094923,
+          "mean_high_frequency_ratio": 0.9111806932220827,
+          "mean_temporal_mad_dn": 1.3051745921871127,
+          "maximum_output_bias_abs_dn": 3.612492549246478,
+          "minimum_legal_raw_fraction": 1.0,
+          "maximum_normalized_clip_fraction": 0.0006944783528645834
+        },
+        "delta_a9_minus_a3": {
+          "mean_psnr_db": 0.08192088412477005,
+          "mean_high_frequency_ratio": -8.784853001908566e-05,
+          "mean_temporal_mad_dn": -0.001063305520722313,
+          "maximum_output_bias_abs_dn": -0.09076904634621608,
+          "minimum_legal_raw_fraction": 0.0,
+          "maximum_normalized_clip_fraction": -0.00013863796657986112
+        }
+      }
+    },
+    "sc635hai": {
+      "automatic_gate_passed": true,
+      "static_source_tail": {
+        "baseline_a3": {
+          "mean_psnr_db": 52.35436423066829,
+          "mean_high_frequency_ratio": 0.9199257761688838,
+          "mean_temporal_mad_dn": 2.1626008445388245,
+          "maximum_output_bias_abs_dn": 0.9626018599994188,
+          "minimum_legal_raw_fraction": 1.0,
+          "maximum_normalized_clip_fraction": 0.0074279730902777775
+        },
+        "candidate_a9": {
+          "mean_psnr_db": 52.364454543637535,
+          "mean_high_frequency_ratio": 0.9198019721365038,
+          "mean_temporal_mad_dn": 2.161312246200112,
+          "maximum_output_bias_abs_dn": 0.8989397930538375,
+          "minimum_legal_raw_fraction": 1.0,
+          "maximum_normalized_clip_fraction": 0.006959092881944445
+        },
+        "delta_a9_minus_a3": {
+          "mean_psnr_db": 0.010090312969246895,
+          "mean_high_frequency_ratio": -0.0001238040323799927,
+          "mean_temporal_mad_dn": -0.0012885983387125322,
+          "maximum_output_bias_abs_dn": -0.0636620669455813,
+          "minimum_legal_raw_fraction": 0.0,
+          "maximum_normalized_clip_fraction": -0.00046888020833333287
+        }
+      },
+      "dynamic_holdout": {
+        "baseline_a3": {
+          "temporal_mad_dn": 14.674536679034762,
+          "motion_temporal_ratio": 0.5996022168842369,
+          "static_temporal_ratio": 0.10132929645712353,
+          "spatial_high_frequency_ratio": 0.7636050739952669,
+          "mean_output_bias_dn": -2.369127557363775,
+          "legal_raw_fraction": 1.0,
+          "normalized_clip_fraction": 0.02199410445601852
+        },
+        "candidate_a9": {
+          "temporal_mad_dn": 14.673215594915865,
+          "motion_temporal_ratio": 0.5994922794579937,
+          "static_temporal_ratio": 0.10136218740480984,
+          "spatial_high_frequency_ratio": 0.763589423606889,
+          "mean_output_bias_dn": -2.3494040398191522,
+          "legal_raw_fraction": 1.0,
+          "normalized_clip_fraction": 0.021108253761574075
+        },
+        "delta_a9_minus_a3": {
+          "temporal_mad_dn": -0.0013210841188975309,
+          "motion_temporal_ratio": -0.00010993742624321179,
+          "static_temporal_ratio": 3.2890947686312066e-05,
+          "spatial_high_frequency_ratio": -1.56503883779191e-05,
+          "mean_output_bias_dn": 0.01972351754462265,
+          "legal_raw_fraction": 0.0,
+          "normalized_clip_fraction": -0.0008858506944444434
+        }
+      }
+    },
+    "sc450ai": {
+      "automatic_gate_passed": false,
+      "failed_checks": [
+        "holdout_high_frequency_recovery"
+      ],
+      "dynamic_holdout": {
+        "baseline_a3": {
+          "temporal_mad_dn": 1.3466082925887706,
+          "motion_temporal_ratio": 0.056887085770443505,
+          "static_temporal_ratio": 0.08790800929873575,
+          "spatial_high_frequency_ratio": 0.12662123831402974,
+          "mean_output_bias_dn": -4.828743760163274,
+          "legal_raw_fraction": 1.0,
+          "normalized_clip_fraction": 0.03279834514672097
+        },
+        "candidate_a9": {
+          "temporal_mad_dn": 1.3480322686559418,
+          "motion_temporal_ratio": 0.05684759521783868,
+          "static_temporal_ratio": 0.08821284918145382,
+          "spatial_high_frequency_ratio": 0.1265890732759977,
+          "mean_output_bias_dn": -4.7465044103998535,
+          "legal_raw_fraction": 1.0,
+          "normalized_clip_fraction": 0.030063735592235796
+        },
+        "delta_a9_minus_a3": {
+          "temporal_mad_dn": 0.001423976067171262,
+          "motion_temporal_ratio": -3.9490552604826146e-05,
+          "static_temporal_ratio": 0.0003048398827180665,
+          "spatial_high_frequency_ratio": -3.21650380320504e-05,
+          "mean_output_bias_dn": 0.0822393497634204,
+          "legal_raw_fraction": 0.0,
+          "normalized_clip_fraction": -0.002734609554485172
+        }
+      }
+    },
+    "mis20s1_replay": {
+      "psnr_delta_db": -0.000345732820207445,
+      "high_frequency_ratio_delta": 0.0010156458721117811,
+      "temporal_mad_delta_dn": 0.15085721015930176
+    }
+  },
+  "visual_review": {
+    "review_date": "2026-10-16",
+    "review_protocol": "Fixed-ISP side-by-side inspection of input, A3 baseline, and A9 unified step-100 output",
+    "sensors": {
+      "mis20s1": {
+        "reviewed_video_times_seconds": [
+          0.0,
+          1.0
+        ],
+        "new_ghosting_or_edge_breaks": false,
+        "static_region_pollution": false,
+        "a9_visibly_different_from_a3": false,
+        "finding": "A9 is visually indistinguishable from A3 at the reviewed frames; no new artifact is visible."
+      },
+      "sc465sl": {
+        "reviewed_video_times_seconds": [
+          0.0,
+          5.8
+        ],
+        "new_ghosting_or_edge_breaks": false,
+        "static_region_pollution": false,
+        "a9_visibly_different_from_a3": false,
+        "finding": "A9 preserves the A3 appearance without visible flicker, edge damage, or highlight contamination."
+      },
+      "sc635hai": {
+        "reviewed_video_times_seconds": [
+          0.0,
+          2.0
+        ],
+        "new_ghosting_or_edge_breaks": false,
+        "static_region_pollution": false,
+        "a9_visibly_different_from_a3": false,
+        "finding": "A9 remains visually aligned with A3 on the moving person and detailed static objects; no new artifact is visible."
+      },
+      "sc450ai": {
+        "reviewed_video_times_seconds": [
+          0.0,
+          3.5
+        ],
+        "new_ghosting_or_edge_breaks": false,
+        "static_region_pollution": false,
+        "a9_visibly_different_from_a3": false,
+        "missing_detail_recovered": false,
+        "finding": "The black clothing and moving subject contours remain hollow and over-smoothed. A9 does not recover the high-frequency detail missing from A3."
+      }
+    },
+    "overall_visual_pass": false,
+    "failure_reason": "The required sc450ai held-out detail recovery is absent even though no new artifact is introduced."
+  },
+  "fixed_isp_videos": {
+    "mis20s1": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a9_multi_sensor_generalization/evaluation_step100_20261016/mis20s1/fixed_isp_video/mis20s1_1000x_input_a3_a9_fixed_isp.mp4",
+      "sha256": "79b2cea27b42cc28aea91a5a1847f3d68b04fdd8e65e8c173600053c3481a2a2",
+      "frames": 8,
+      "fps": 6
+    },
+    "sc465sl": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a9_multi_sensor_generalization/evaluation_step100_20261016/sc465sl/fixed_isp_video/sc465sl_2000x_input_a3_a9_fixed_isp.mp4",
+      "sha256": "7d47d7f3a6c5e2766a682b7547a45ea5c9bc78eb19c634adec9fd0591597ff9c",
+      "frames": 40,
+      "fps": 6
+    },
+    "sc635hai": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a9_multi_sensor_generalization/evaluation_step100_20261016/sc635hai/fixed_isp_video/sc635hai_16x_input_a3_a9_fixed_isp.mp4",
+      "sha256": "7a76f2b9ba9655bdd0ba916713012cdbfd90c427fbdee0359e893ed6bf65efce",
+      "frames": 24,
+      "fps": 6
+    },
+    "sc450ai": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a9_multi_sensor_generalization/evaluation_step100_20261016/sc450ai/fixed_isp_video/sc450ai_1435x_input_a3_a9_fixed_isp.mp4",
+      "sha256": "f50ac38e59913a50edd5325286839ca7d4ec3a3e746e3f3cd9f00bbf1202b1d9",
+      "frames": 24,
+      "fps": 6
+    }
+  },
+  "remaining_work": [
+    "The final objective of robust cross-sensor generalization is not achieved because sc450ai remains unsupported.",
+    "A new supervision/degradation design is required before any longer A9 training run; extending the same 100-step protocol is not approved by this result."
+  ]
+}

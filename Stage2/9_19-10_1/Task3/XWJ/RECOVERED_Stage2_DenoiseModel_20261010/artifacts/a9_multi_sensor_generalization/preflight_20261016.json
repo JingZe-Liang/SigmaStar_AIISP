@@ -1,0 +1,144 @@
+{
+  "status": "passed",
+  "steps": 100,
+  "batch_size": 1,
+  "scheduled_source_counts": {
+    "mis20s1_replay": 39,
+    "sc465sl_static_split_half": 19,
+    "sc635hai_static_split_half": 24,
+    "sc450ai_verified_noise": 18
+  },
+  "sources": {
+    "mis20s1_replay": {
+      "source_id": 0,
+      "input_shape": [
+        8,
+        4,
+        64,
+        64
+      ],
+      "target_shape": [
+        8,
+        4,
+        64,
+        64
+      ],
+      "mask_shape": [
+        8,
+        64,
+        64
+      ],
+      "input_range": [
+        0.0,
+        1.0
+      ],
+      "target_range": [
+        0.006416520103812218,
+        0.8493853211402893
+      ],
+      "mask_fraction": 0.9443359375
+    },
+    "sc465sl_static_split_half": {
+      "source_id": 1,
+      "input_shape": [
+        8,
+        4,
+        64,
+        64
+      ],
+      "target_shape": [
+        8,
+        4,
+        64,
+        64
+      ],
+      "mask_shape": [
+        8,
+        64,
+        64
+      ],
+      "input_range": [
+        0.0,
+        0.5770133137702942
+      ],
+      "target_range": [
+        0.0,
+        0.4531897008419037
+      ],
+      "mask_fraction": 0.622802734375
+    },
+    "sc635hai_static_split_half": {
+      "source_id": 2,
+      "input_shape": [
+        8,
+        4,
+        64,
+        64
+      ],
+      "target_shape": [
+        8,
+        4,
+        64,
+        64
+      ],
+      "mask_shape": [
+        8,
+        64,
+        64
+      ],
+      "input_range": [
+        0.0,
+        0.144199401140213
+      ],
+      "target_range": [
+        0.0,
+        0.096055768430233
+      ],
+      "mask_fraction": 0.976806640625
+    },
+    "sc450ai_verified_noise": {
+      "source_id": 3,
+      "input_shape": [
+        8,
+        4,
+        64,
+        64
+      ],
+      "target_shape": [
+        8,
+        4,
+        64,
+        64
+      ],
+      "mask_shape": [
+        8,
+        64,
+        64
+      ],
+      "input_range": [
+        0.0,
+        0.1411074846982956
+      ],
+      "target_range": [
+        0.0,
+        0.1058831438422203
+      ],
+      "mask_fraction": 0.99853515625
+    }
+  },
+  "verified": {
+    "a3_checkpoint_sha256": "97c4332f685f98959b243e4b100434469f714aed6329e100d22b6d8552592e0b",
+    "static_source_sha256": {
+      "sc465sl_static_split_half": "cec46afe5696c9e2bfc569670a0cc93814d4ad851677275fd4f77c274e6c35cd",
+      "sc635hai_static_split_half": "80445b9133f49dfa7f5117d93bcf9fd5a9dfae1de0e0faae69c9f4144dac440a"
+    },
+    "noise_profile_sha256": {
+      "sc450ai_verified_noise": "7ff6292a188bcf1cc03aea9431691ea154cf84aaef7dcac8f9b65afbd880de70"
+    },
+    "clean_reference_sha256": {
+      "mis20s1_10x_clean": "9c3c2f8cfe52eb9fa2c99cebc38b728d23c42ff929e32d702ff936c61fac4d55",
+      "sc465sl_256x_static_mean": "188c0d430862c55cfa3e0687826b08805f8d925b56aeaf24782505b6a4bd66c8",
+      "sc635hai_131x_static_mean": "70c3c9f376eafcbe7db0c944a81d7a5650e17cfa66c9389e5cc70dc43a2f9763"
+    }
+  }
+}

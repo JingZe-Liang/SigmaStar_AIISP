@@ -1,0 +1,177 @@
+{
+  "dataset_root": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset",
+  "a3_checkpoint": "artifacts/finetune_mis20s1/training/checkpoint_step_005000.pth",
+  "a3_checkpoint_sha256": "97c4332f685f98959b243e4b100434469f714aed6329e100d22b6d8552592e0b",
+  "replay_supervision_dir": "artifacts/finetune_mis20s1/supervision",
+  "replay_noise_dir": "artifacts/finetune_mis20s1/noise_model",
+  "replay_weight": 0.4,
+  "static_sources": [
+    {
+      "name": "sc465sl_static_split_half",
+      "source": {
+        "name": "sc465sl_darkroom18_256x",
+        "sensor": "SC465SL",
+        "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/02_SC465SL_darkroom18/256x/raw_stream_sc465sl_2560x1440_AG109568_darkroom18_256x.raw",
+        "width": 2560,
+        "height": 1440,
+        "frames_used": 300,
+        "bit_shift": 0,
+        "cfa": "RGGB",
+        "nominal_black_dn": 252.0,
+        "reference_mode": "motion_aware_split_half",
+        "clip_starts": [
+          0,
+          72,
+          144,
+          216,
+          284
+        ],
+        "fixed_isp_wb": [
+          1.8,
+          1.0,
+          1.0,
+          1.6
+        ],
+        "fixed_isp_exposure": 2.5,
+        "panel_crops": {
+          "motion_center": [
+            900,
+            250,
+            1900,
+            1400
+          ],
+          "dark_left": [
+            120,
+            250,
+            1000,
+            1350
+          ],
+          "static_right": [
+            1800,
+            250,
+            2500,
+            1350
+          ]
+        }
+      },
+      "reference_dir": "artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_256x/reference",
+      "source_sha256": "cec46afe5696c9e2bfc569670a0cc93814d4ad851677275fd4f77c274e6c35cd",
+      "weight": 0.2
+    },
+    {
+      "name": "sc635hai_static_split_half",
+      "source": {
+        "name": "sc635hai_131x_low_cct",
+        "sensor": "sc635hai",
+        "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/01_fist_company/sc635hai/131x_low_cct/raw_stream_normal_3200x1800_16_RG_0205213025917_131x.raw",
+        "width": 3200,
+        "height": 1800,
+        "frames_used": 150,
+        "bit_shift": 4,
+        "cfa": "RGGB",
+        "nominal_black_dn": 257.5,
+        "reference_mode": "motion_aware_split_half",
+        "clip_starts": [
+          0,
+          66,
+          134
+        ],
+        "fixed_isp_wb": [
+          1.128,
+          1.0,
+          1.0,
+          3.604
+        ],
+        "fixed_isp_exposure": 0.65,
+        "panel_crops": {
+          "center_detail": [
+            600,
+            300,
+            2400,
+            1700
+          ],
+          "color_chart": [
+            850,
+            80,
+            2300,
+            850
+          ],
+          "right_subject": [
+            2100,
+            250,
+            3150,
+            1750
+          ]
+        }
+      },
+      "reference_dir": "artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_131x_low_cct/reference",
+      "source_sha256": "80445b9133f49dfa7f5117d93bcf9fd5a9dfae1de0e0faae69c9f4144dac440a",
+      "weight": 0.2
+    }
+  ],
+  "synthetic_sources": [
+    {
+      "name": "sc450ai_verified_noise",
+      "sensor": "sc450ai",
+      "profile_path": "artifacts/a9_multi_sensor_generalization/sc450ai_noise_profile_20261016/noise_profile.json",
+      "profile_sha256": "7ff6292a188bcf1cc03aea9431691ea154cf84aaef7dcac8f9b65afbd880de70",
+      "weight": 0.2
+    }
+  ],
+  "clean_references": [
+    {
+      "name": "mis20s1_10x_clean",
+      "reference_path": "artifacts/finetune_mis20s1/supervision/references/04_shdarkroom_10x_clean_reference.npy",
+      "reference_sha256": "9c3c2f8cfe52eb9fa2c99cebc38b728d23c42ff929e32d702ff936c61fac4d55",
+      "valid_region_path": "artifacts/finetune_mis20s1/supervision/references/04_shdarkroom_10x_valid_region.npy",
+      "valid_region_sha256": "fe2e808c4deefd8afc38fda8e5918c0c6439b39191923b2a9a26b6d542291992",
+      "black_levels": [
+        266.125,
+        275.625,
+        275.375,
+        267.0
+      ]
+    },
+    {
+      "name": "sc465sl_256x_static_mean",
+      "reference_path": "artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_256x/reference/full_mean_dn.npy",
+      "reference_sha256": "188c0d430862c55cfa3e0687826b08805f8d925b56aeaf24782505b6a4bd66c8",
+      "valid_region_path": "artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_256x/reference/valid_region.npy",
+      "valid_region_sha256": "00c89acbae889179004842e888c8caf232aa3c0078ce9551fc279fadf36e3063",
+      "black_levels": [
+        254.8125,
+        258.0,
+        258.0,
+        254.25
+      ]
+    },
+    {
+      "name": "sc635hai_131x_static_mean",
+      "reference_path": "artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_131x_low_cct/reference/full_mean_dn.npy",
+      "reference_sha256": "70c3c9f376eafcbe7db0c944a81d7a5650e17cfa66c9389e5cc70dc43a2f9763",
+      "valid_region_path": "artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_131x_low_cct/reference/valid_region.npy",
+      "valid_region_sha256": "fa1877d6c6168bc8745c00484a82684ca9d3c3e1762ea9958478e406ed14f3b4",
+      "black_levels": [
+        261.75,
+        263.0,
+        263.5,
+        254.75
+      ]
+    }
+  ],
+  "output_dir": "artifacts/a9_multi_sensor_generalization/training_smoke_4090_20261016",
+  "seed": 20261016,
+  "steps": 100,
+  "batch_size": 1,
+  "learning_rate": 5e-06,
+  "patch_size": 64,
+  "gradient_weight": 0.1,
+  "highpass_weight": 0.1,
+  "min_valid_fraction": 0.25,
+  "ema_decay": 0.999,
+  "gradient_clip_norm": 1.0,
+  "checkpoint_interval": 25,
+  "precision": "bfloat16",
+  "trainable_scope": "input_output_heads",
+  "device": "cuda:0"
+}
