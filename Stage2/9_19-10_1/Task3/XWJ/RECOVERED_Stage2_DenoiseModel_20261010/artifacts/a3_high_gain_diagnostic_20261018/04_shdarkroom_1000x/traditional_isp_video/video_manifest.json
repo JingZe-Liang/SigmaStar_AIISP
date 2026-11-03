@@ -1,0 +1,113 @@
+{
+  "sequence": {
+    "name": "04_shdarkroom_1000x",
+    "group": "04",
+    "category": "raw_scene",
+    "sensor": "MIS20S1",
+    "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/shdarkroom/1000x/raw_stream_1920x1080_16bit@RG_[Shutter=79999,SenserG=131072,IspG=7656,R=1878,G=1024,B=2218].raw",
+    "width": 1920,
+    "height": 1080,
+    "frames": 200,
+    "bit_shift": 4,
+    "cfa": "RGGB",
+    "role": "noisy",
+    "wb_rgb": [
+      1.833984375,
+      1.0,
+      2.166015625
+    ],
+    "black_levels": [
+      254.75,
+      257.125,
+      256.875,
+      255.125
+    ],
+    "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/stream_manifests/04_shdarkroom_1000x.json"
+  },
+  "source_start": 0,
+  "frames": 8,
+  "layout": "2x2: Input, A3 uniform 64/56, A3 weighted 64/48, A3 frame-repeated weighted 64/48",
+  "videos": {
+    "overview": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_high_gain_diagnostic_20261018/04_shdarkroom_1000x/traditional_isp_video/04_shdarkroom_1000x_high_gain_4way_overview.mp4",
+      "sha256": "b9350af7efeabcae0f7a682851c9124340ca1208fd7d39faa11459afb1365a6d",
+      "ffmpeg_command": [
+        "ffmpeg",
+        "-y",
+        "-f",
+        "rawvideo",
+        "-pix_fmt",
+        "rgb24",
+        "-s",
+        "1920x1080",
+        "-r",
+        "6",
+        "-i",
+        "-",
+        "-c:v",
+        "libx265",
+        "-x265-params",
+        "crf=16",
+        "-pix_fmt",
+        "yuv444p",
+        "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_high_gain_diagnostic_20261018/04_shdarkroom_1000x/traditional_isp_video/04_shdarkroom_1000x_high_gain_4way_overview.mp4"
+      ],
+      "encoder": "libx265"
+    },
+    "detail": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_high_gain_diagnostic_20261018/04_shdarkroom_1000x/traditional_isp_video/04_shdarkroom_1000x_high_gain_4way_detail.mp4",
+      "sha256": "94758b985cde053f18b49741586d288c4e226a400e28f266b9721252ded220f7",
+      "ffmpeg_command": [
+        "ffmpeg",
+        "-y",
+        "-f",
+        "rawvideo",
+        "-pix_fmt",
+        "rgb24",
+        "-s",
+        "1920x1080",
+        "-r",
+        "6",
+        "-i",
+        "-",
+        "-c:v",
+        "libx265",
+        "-x265-params",
+        "crf=16",
+        "-pix_fmt",
+        "yuv444p",
+        "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_high_gain_diagnostic_20261018/04_shdarkroom_1000x/traditional_isp_video/04_shdarkroom_1000x_high_gain_4way_detail.mp4"
+      ],
+      "encoder": "libx265"
+    }
+  },
+  "previews": {
+    "overview": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_high_gain_diagnostic_20261018/04_shdarkroom_1000x/traditional_isp_video/04_shdarkroom_1000x_high_gain_4way_overview_frame0000.png",
+      "sha256": "8df55b8d60323b9629e5b98a3375fe87a0a835af2167b63954e2070147ddd7b6"
+    },
+    "detail": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_high_gain_diagnostic_20261018/04_shdarkroom_1000x/traditional_isp_video/04_shdarkroom_1000x_high_gain_4way_detail_frame0000.png",
+      "sha256": "38dec779a95cdf2043f83596b96a6b1f488cab4a1fbadcd2716774ac4d56910a"
+    }
+  },
+  "isp": {
+    "implementation": "ISP_traditional OpenCV edge-aware Bayer demosaic plus fixed exposure and sRGB gamma",
+    "highlight_recovery": true,
+    "tone_map": "reinhard",
+    "input_and_all_a3_variants_share_identical_parameters": true,
+    "sensor_color_accuracy_claimed": false,
+    "fixed_exposure_ev": 4.7393475987657245,
+    "black_levels_R_Gr_Gb_B": [
+      254.75,
+      257.125,
+      256.875,
+      255.125
+    ],
+    "wb_rgb": [
+      1.833984375,
+      1.0,
+      2.166015625
+    ]
+  }
+}

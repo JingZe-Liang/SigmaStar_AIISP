@@ -1,0 +1,539 @@
+{
+  "protocol": "A8 sc450ai earlier-checkpoint no-reference screen",
+  "baseline_train_tail": {
+    "protocol": "diagnostic-only no-reference stress evaluation",
+    "clean_target_available": false,
+    "clips": [
+      [
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149
+      ]
+    ],
+    "evaluated_frames": 8,
+    "mean_output_bias_dn": -4.442423020639366,
+    "mean_abs_output_change_dn": 16.280252900998807,
+    "input_temporal_mad_dn": 22.75685316632821,
+    "a3_temporal_mad_dn": 1.462182453282196,
+    "temporal_mad_ratio": 0.06425240091831719,
+    "motion_temporal_ratio": 0.06422149947638692,
+    "static_temporal_ratio": 0.08564743349017313,
+    "spatial_high_frequency_ratio": 0.6845605290326726,
+    "legal_raw_fraction": 1.0,
+    "normalized_clip_fraction": 0.015772188038455513,
+    "diagnostic_populations": {
+      "temporal_values": 28600320,
+      "motion_values": 2917192,
+      "static_values": 14456632,
+      "detail_values": 8171664
+    },
+    "interpretation": "Ratios are diagnostics only; none is a clean-target quality score or pass gate."
+  },
+  "baseline_holdout": {
+    "protocol": "diagnostic-only no-reference stress evaluation",
+    "clean_target_available": false,
+    "clips": [
+      [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      [
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108
+      ],
+      [
+        202,
+        203,
+        204,
+        205,
+        206,
+        207,
+        208,
+        209
+      ]
+    ],
+    "evaluated_frames": 24,
+    "mean_output_bias_dn": -4.828743760163274,
+    "mean_abs_output_change_dn": 15.367343794533932,
+    "input_temporal_mad_dn": 21.295393239189863,
+    "a3_temporal_mad_dn": 1.3466082925887706,
+    "temporal_mad_ratio": 0.06323472299683155,
+    "motion_temporal_ratio": 0.056887085770443505,
+    "static_temporal_ratio": 0.08790800929873575,
+    "spatial_high_frequency_ratio": 0.12662123831402974,
+    "legal_raw_fraction": 1.0,
+    "normalized_clip_fraction": 0.03279834514672097,
+    "diagnostic_populations": {
+      "temporal_values": 85800960,
+      "motion_values": 8754792,
+      "static_values": 43477444,
+      "detail_values": 24516316
+    },
+    "interpretation": "Ratios are diagnostics only; none is a clean-target quality score or pass gate."
+  },
+  "checkpoints": {
+    "100": {
+      "checkpoint": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a8_sensor_adaptation/sc450ai/training_20261013/checkpoint_step_000100.pth",
+      "checkpoint_sha256": "6c5a629c6377287f71320f7e249c854747674b7cf986d3e97c63968220d7ce2a",
+      "train_tail": {
+        "protocol": "diagnostic-only no-reference stress evaluation",
+        "clean_target_available": false,
+        "clips": [
+          [
+            142,
+            143,
+            144,
+            145,
+            146,
+            147,
+            148,
+            149
+          ]
+        ],
+        "evaluated_frames": 8,
+        "mean_output_bias_dn": -4.471450783540599,
+        "mean_abs_output_change_dn": 16.28783189390359,
+        "input_temporal_mad_dn": 22.75685316632821,
+        "temporal_mad_ratio": 0.06417227065829102,
+        "motion_temporal_ratio": 0.06413455136423751,
+        "static_temporal_ratio": 0.0855446435706768,
+        "spatial_high_frequency_ratio": 0.6842346376850682,
+        "legal_raw_fraction": 1.0,
+        "normalized_clip_fraction": 0.015588684846882831,
+        "diagnostic_populations": {
+          "temporal_values": 28600320,
+          "motion_values": 2917192,
+          "static_values": 14456632,
+          "detail_values": 8171664
+        },
+        "interpretation": "Ratios are diagnostics only; none is a clean-target quality score or pass gate.",
+        "candidate_temporal_mad_dn": 1.4603589407206008
+      },
+      "train_tail_delta": {
+        "mean_output_bias_dn": -0.029027762901233878,
+        "mean_abs_output_change_dn": 0.007578992904782922,
+        "temporal_mad_ratio": -8.013026002616497e-05,
+        "motion_temporal_ratio": -8.694811214940423e-05,
+        "static_temporal_ratio": -0.0001027899194963322,
+        "spatial_high_frequency_ratio": -0.0003258913476044123,
+        "normalized_clip_fraction": -0.00018350319157268112
+      },
+      "holdout": {
+        "protocol": "diagnostic-only no-reference stress evaluation",
+        "clean_target_available": false,
+        "clips": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          [
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108
+          ],
+          [
+            202,
+            203,
+            204,
+            205,
+            206,
+            207,
+            208,
+            209
+          ]
+        ],
+        "evaluated_frames": 24,
+        "mean_output_bias_dn": -4.8553098470865805,
+        "mean_abs_output_change_dn": 15.374714268896177,
+        "input_temporal_mad_dn": 21.295393239189863,
+        "temporal_mad_ratio": 0.06316967102405896,
+        "motion_temporal_ratio": 0.056843984008315356,
+        "static_temporal_ratio": 0.08778983071107145,
+        "spatial_high_frequency_ratio": 0.12654805534295852,
+        "legal_raw_fraction": 1.0,
+        "normalized_clip_fraction": 0.032779662372076024,
+        "diagnostic_populations": {
+          "temporal_values": 85800960,
+          "motion_values": 8754792,
+          "static_values": 43477444,
+          "detail_values": 24516316
+        },
+        "interpretation": "Ratios are diagnostics only; none is a clean-target quality score or pass gate.",
+        "candidate_temporal_mad_dn": 1.3452229852475932
+      },
+      "holdout_delta": {
+        "mean_output_bias_dn": -0.026566086923306642,
+        "mean_abs_output_change_dn": 0.007370474362245361,
+        "temporal_mad_ratio": -6.505197277259511e-05,
+        "motion_temporal_ratio": -4.3101762128149035e-05,
+        "static_temporal_ratio": -0.00011817858766430267,
+        "spatial_high_frequency_ratio": -7.31829710712284e-05,
+        "normalized_clip_fraction": -1.8682774644944444e-05
+      },
+      "screen_pass": false
+    },
+    "200": {
+      "checkpoint": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a8_sensor_adaptation/sc450ai/training_20261013/checkpoint_step_000200.pth",
+      "checkpoint_sha256": "df697926e2e6d7a792a018dbfd7106f45c4b769180c1f3e6250abd978281b44a",
+      "train_tail": {
+        "protocol": "diagnostic-only no-reference stress evaluation",
+        "clean_target_available": false,
+        "clips": [
+          [
+            142,
+            143,
+            144,
+            145,
+            146,
+            147,
+            148,
+            149
+          ]
+        ],
+        "evaluated_frames": 8,
+        "mean_output_bias_dn": -4.554877372919804,
+        "mean_abs_output_change_dn": 16.304283426889686,
+        "input_temporal_mad_dn": 22.75685316632821,
+        "temporal_mad_ratio": 0.0640239631108139,
+        "motion_temporal_ratio": 0.06402157731075776,
+        "static_temporal_ratio": 0.08523821030400623,
+        "spatial_high_frequency_ratio": 0.6836121949523978,
+        "legal_raw_fraction": 1.0,
+        "normalized_clip_fraction": 0.016542179423167293,
+        "diagnostic_populations": {
+          "temporal_values": 28600320,
+          "motion_values": 2917192,
+          "static_values": 14456632,
+          "detail_values": 8171664
+        },
+        "interpretation": "Ratios are diagnostics only; none is a clean-target quality score or pass gate.",
+        "candidate_temporal_mad_dn": 1.456983927639206
+      },
+      "train_tail_delta": {
+        "mean_output_bias_dn": -0.11245435228043821,
+        "mean_abs_output_change_dn": 0.024030525890879062,
+        "temporal_mad_ratio": -0.00022843780750328446,
+        "motion_temporal_ratio": -0.00019992216562915444,
+        "static_temporal_ratio": -0.00040922318616690156,
+        "spatial_high_frequency_ratio": -0.0009483340802748375,
+        "normalized_clip_fraction": 0.0007699913847117809
+      },
+      "holdout": {
+        "protocol": "diagnostic-only no-reference stress evaluation",
+        "clean_target_available": false,
+        "clips": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          [
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108
+          ],
+          [
+            202,
+            203,
+            204,
+            205,
+            206,
+            207,
+            208,
+            209
+          ]
+        ],
+        "evaluated_frames": 24,
+        "mean_output_bias_dn": -4.9354477009627855,
+        "mean_abs_output_change_dn": 15.390752937438693,
+        "input_temporal_mad_dn": 21.295393239189863,
+        "temporal_mad_ratio": 0.06303343309391195,
+        "motion_temporal_ratio": 0.056816584364793296,
+        "static_temporal_ratio": 0.08741583805621805,
+        "spatial_high_frequency_ratio": 0.12642860426303806,
+        "legal_raw_fraction": 1.0,
+        "normalized_clip_fraction": 0.034266278897112576,
+        "diagnostic_populations": {
+          "temporal_values": 85800960,
+          "motion_values": 8754792,
+          "static_values": 43477444,
+          "detail_values": 24516316
+        },
+        "interpretation": "Ratios are diagnostics only; none is a clean-target quality score or pass gate.",
+        "candidate_temporal_mad_dn": 1.3423217449510192
+      },
+      "holdout_delta": {
+        "mean_output_bias_dn": -0.10670394079951162,
+        "mean_abs_output_change_dn": 0.023409142904760927,
+        "temporal_mad_ratio": -0.00020128990291960747,
+        "motion_temporal_ratio": -7.050140565020846e-05,
+        "static_temporal_ratio": -0.0004921712425177,
+        "spatial_high_frequency_ratio": -0.00019263405099168018,
+        "normalized_clip_fraction": 0.0014679337503916076
+      },
+      "screen_pass": false
+    },
+    "300": {
+      "checkpoint": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a8_sensor_adaptation/sc450ai/training_20261013/checkpoint_step_000300.pth",
+      "checkpoint_sha256": "f49ed7653b57e0ec6722a59c913fb2d6b130c448068d32c24b49f0792b6060ca",
+      "train_tail": {
+        "protocol": "diagnostic-only no-reference stress evaluation",
+        "clean_target_available": false,
+        "clips": [
+          [
+            142,
+            143,
+            144,
+            145,
+            146,
+            147,
+            148,
+            149
+          ]
+        ],
+        "evaluated_frames": 8,
+        "mean_output_bias_dn": -4.678182301748273,
+        "mean_abs_output_change_dn": 16.32455498019845,
+        "input_temporal_mad_dn": 22.75685316632821,
+        "temporal_mad_ratio": 0.06384874745894939,
+        "motion_temporal_ratio": 0.06392272145542943,
+        "static_temporal_ratio": 0.0847981287423111,
+        "spatial_high_frequency_ratio": 0.6829602966412265,
+        "legal_raw_fraction": 1.0,
+        "normalized_clip_fraction": 0.01873968980067356,
+        "diagnostic_populations": {
+          "temporal_values": 28600320,
+          "motion_values": 2917192,
+          "static_values": 14456632,
+          "detail_values": 8171664
+        },
+        "interpretation": "Ratios are diagnostics only; none is a clean-target quality score or pass gate.",
+        "candidate_temporal_mad_dn": 1.4529965707772827
+      },
+      "train_tail_delta": {
+        "mean_output_bias_dn": -0.23575928110890754,
+        "mean_abs_output_change_dn": 0.04430207919964246,
+        "temporal_mad_ratio": -0.0004036534593677976,
+        "motion_temporal_ratio": -0.0002987780209574853,
+        "static_temporal_ratio": -0.0008493047478620314,
+        "spatial_high_frequency_ratio": -0.0016002323914461325,
+        "normalized_clip_fraction": 0.0029675017622180465
+      },
+      "holdout": {
+        "protocol": "diagnostic-only no-reference stress evaluation",
+        "clean_target_available": false,
+        "clips": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          [
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108
+          ],
+          [
+            202,
+            203,
+            204,
+            205,
+            206,
+            207,
+            208,
+            209
+          ]
+        ],
+        "evaluated_frames": 24,
+        "mean_output_bias_dn": -5.05384840663482,
+        "mean_abs_output_change_dn": 15.410513227270199,
+        "input_temporal_mad_dn": 21.295393239189863,
+        "temporal_mad_ratio": 0.06285566958752649,
+        "motion_temporal_ratio": 0.05681039810902379,
+        "static_temporal_ratio": 0.08686316716677239,
+        "spatial_high_frequency_ratio": 0.126328508514885,
+        "legal_raw_fraction": 1.0,
+        "normalized_clip_fraction": 0.037159539065763365,
+        "diagnostic_populations": {
+          "temporal_values": 85800960,
+          "motion_values": 8754792,
+          "static_values": 43477444,
+          "detail_values": 24516316
+        },
+        "interpretation": "Ratios are diagnostics only; none is a clean-target quality score or pass gate.",
+        "candidate_temporal_mad_dn": 1.3385362011789634
+      },
+      "holdout_delta": {
+        "mean_output_bias_dn": -0.2251046464715465,
+        "mean_abs_output_change_dn": 0.043169432736267055,
+        "temporal_mad_ratio": -0.00037905340930506626,
+        "motion_temporal_ratio": -7.66876614197165e-05,
+        "static_temporal_ratio": -0.001044842131963361,
+        "spatial_high_frequency_ratio": -0.00029272979914474195,
+        "normalized_clip_fraction": 0.004361193919042397
+      },
+      "screen_pass": false
+    },
+    "400": {
+      "checkpoint": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a8_sensor_adaptation/sc450ai/training_20261013/checkpoint_step_000400.pth",
+      "checkpoint_sha256": "1aeed37d2c736ff6789d6562a8ce0702d26fd9a2a0878c17a4f42d3ee1073db5",
+      "train_tail": {
+        "protocol": "diagnostic-only no-reference stress evaluation",
+        "clean_target_available": false,
+        "clips": [
+          [
+            142,
+            143,
+            144,
+            145,
+            146,
+            147,
+            148,
+            149
+          ]
+        ],
+        "evaluated_frames": 8,
+        "mean_output_bias_dn": -4.863907031399807,
+        "mean_abs_output_change_dn": 16.350266481556446,
+        "input_temporal_mad_dn": 22.75685316632821,
+        "temporal_mad_ratio": 0.0636501134480134,
+        "motion_temporal_ratio": 0.06385216683882063,
+        "static_temporal_ratio": 0.08416368561026277,
+        "spatial_high_frequency_ratio": 0.6822441798093594,
+        "legal_raw_fraction": 1.0,
+        "normalized_clip_fraction": 0.023487888422227442,
+        "diagnostic_populations": {
+          "temporal_values": 28600320,
+          "motion_values": 2917192,
+          "static_values": 14456632,
+          "detail_values": 8171664
+        },
+        "interpretation": "Ratios are diagnostics only; none is a clean-target quality score or pass gate.",
+        "candidate_temporal_mad_dn": 1.4484762857565734
+      },
+      "train_tail_delta": {
+        "mean_output_bias_dn": -0.42148401076044184,
+        "mean_abs_output_change_dn": 0.07001358055763873,
+        "temporal_mad_ratio": -0.0006022874703037889,
+        "motion_temporal_ratio": -0.0003693326375662914,
+        "static_temporal_ratio": -0.0014837478799103604,
+        "spatial_high_frequency_ratio": -0.002316349223313252,
+        "normalized_clip_fraction": 0.00771570038377193
+      },
+      "holdout": {
+        "protocol": "diagnostic-only no-reference stress evaluation",
+        "clean_target_available": false,
+        "clips": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          [
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108
+          ],
+          [
+            202,
+            203,
+            204,
+            205,
+            206,
+            207,
+            208,
+            209
+          ]
+        ],
+        "evaluated_frames": 24,
+        "mean_output_bias_dn": -5.236398413818432,
+        "mean_abs_output_change_dn": 15.436061877189026,
+        "input_temporal_mad_dn": 21.295393239189863,
+        "temporal_mad_ratio": 0.06263359106370564,
+        "motion_temporal_ratio": 0.05684851787817376,
+        "static_temporal_ratio": 0.08604483090757066,
+        "spatial_high_frequency_ratio": 0.12622721946456403,
+        "legal_raw_fraction": 1.0,
+        "normalized_clip_fraction": 0.04274790165517962,
+        "diagnostic_populations": {
+          "temporal_values": 85800960,
+          "motion_values": 8754792,
+          "static_values": 43477444,
+          "detail_values": 24516316
+        },
+        "interpretation": "Ratios are diagnostics only; none is a clean-target quality score or pass gate.",
+        "candidate_temporal_mad_dn": 1.33380695168422
+      },
+      "holdout_delta": {
+        "mean_output_bias_dn": -0.4076546536551584,
+        "mean_abs_output_change_dn": 0.06871808265509394,
+        "temporal_mad_ratio": -0.0006011319331259146,
+        "motion_temporal_ratio": -3.856789226974744e-05,
+        "static_temporal_ratio": -0.0018631783911650934,
+        "spatial_high_frequency_ratio": -0.00039401884946571597,
+        "normalized_clip_fraction": 0.009949556508458648
+      },
+      "screen_pass": false
+    }
+  },
+  "passing_steps": [],
+  "note": "A passing checkpoint still requires the full MIS20S1 guard and fixed-ISP video review."
+}

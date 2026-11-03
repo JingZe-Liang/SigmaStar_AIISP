@@ -1,0 +1,11 @@
+{
+  "protocol_sha256": "e84d3cac26acb90637b95a0d5ebb2e7bd07320180dd04a5c18ebc891d1e88bfd",
+  "source_path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/02_SC465SL_darkroom18/2000x/raw_stream_sc465sl_2560x1440_AG109568_darkroom18_2000x.raw",
+  "source_size_bytes": 2211840000,
+  "source_sha256": "8df12bc10c7b2191791d1d7f4a9715167a6b6c1a6a1805554ef27b2b05aef7b0",
+  "width": 2560,
+  "height": 1440,
+  "frames_used": 300,
+  "bit_shift": 0,
+  "cfa": "RGGB"
+}

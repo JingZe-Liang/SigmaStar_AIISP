@@ -1,0 +1,113 @@
+{
+  "sequence": {
+    "name": "04_mis20s1_outdoor_1500x",
+    "group": "04",
+    "category": "raw_scene",
+    "sensor": "MIS20S1",
+    "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/mis20s1_outdoor/1500x/raw_stream_1920x1080_16bit@RG_[Shutter=79999,SenserG=131072,IspG=10455,R=1679,G=1024,B=2473].raw",
+    "width": 1920,
+    "height": 1080,
+    "frames": 195,
+    "bit_shift": 4,
+    "cfa": "RGGB",
+    "role": "noisy",
+    "wb_rgb": [
+      1.6396484375,
+      1.0,
+      2.4150390625
+    ],
+    "black_levels": [
+      253.0,
+      254.625,
+      254.5,
+      252.625
+    ],
+    "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/stream_manifests/04_mis20s1_outdoor_1500x.json"
+  },
+  "source_start": 0,
+  "frames": 8,
+  "layout": "2x2: Input, A3 uniform 64/56, A3 weighted 64/48, A3 frame-repeated weighted 64/48",
+  "videos": {
+    "overview": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_high_gain_diagnostic_20261018/04_mis20s1_outdoor_1500x/traditional_isp_video/04_mis20s1_outdoor_1500x_high_gain_4way_overview.mp4",
+      "sha256": "95b1cf666dcac70f641981bda90723f6ab1faf5c1b4ed4a838bbb0142179fb07",
+      "ffmpeg_command": [
+        "ffmpeg",
+        "-y",
+        "-f",
+        "rawvideo",
+        "-pix_fmt",
+        "rgb24",
+        "-s",
+        "1920x1080",
+        "-r",
+        "6",
+        "-i",
+        "-",
+        "-c:v",
+        "libx265",
+        "-x265-params",
+        "crf=16",
+        "-pix_fmt",
+        "yuv444p",
+        "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_high_gain_diagnostic_20261018/04_mis20s1_outdoor_1500x/traditional_isp_video/04_mis20s1_outdoor_1500x_high_gain_4way_overview.mp4"
+      ],
+      "encoder": "libx265"
+    },
+    "detail": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_high_gain_diagnostic_20261018/04_mis20s1_outdoor_1500x/traditional_isp_video/04_mis20s1_outdoor_1500x_high_gain_4way_detail.mp4",
+      "sha256": "24732f1d33c1fc177ef72b6aee5e74c2962673af661aaea8cf78fc0541d47c32",
+      "ffmpeg_command": [
+        "ffmpeg",
+        "-y",
+        "-f",
+        "rawvideo",
+        "-pix_fmt",
+        "rgb24",
+        "-s",
+        "1920x1080",
+        "-r",
+        "6",
+        "-i",
+        "-",
+        "-c:v",
+        "libx265",
+        "-x265-params",
+        "crf=16",
+        "-pix_fmt",
+        "yuv444p",
+        "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_high_gain_diagnostic_20261018/04_mis20s1_outdoor_1500x/traditional_isp_video/04_mis20s1_outdoor_1500x_high_gain_4way_detail.mp4"
+      ],
+      "encoder": "libx265"
+    }
+  },
+  "previews": {
+    "overview": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_high_gain_diagnostic_20261018/04_mis20s1_outdoor_1500x/traditional_isp_video/04_mis20s1_outdoor_1500x_high_gain_4way_overview_frame0000.png",
+      "sha256": "f7552b26d5563390ec8d6f4bdef89022bc6b092a7f0860dc25f6f9540eb32045"
+    },
+    "detail": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_high_gain_diagnostic_20261018/04_mis20s1_outdoor_1500x/traditional_isp_video/04_mis20s1_outdoor_1500x_high_gain_4way_detail_frame0000.png",
+      "sha256": "13342a632646cbea5b87ceff090947ad9648f1223320c9a6c4cb3e56b51c4dfb"
+    }
+  },
+  "isp": {
+    "implementation": "ISP_traditional OpenCV edge-aware Bayer demosaic plus fixed exposure and sRGB gamma",
+    "highlight_recovery": true,
+    "tone_map": "reinhard",
+    "input_and_all_a3_variants_share_identical_parameters": true,
+    "sensor_color_accuracy_claimed": false,
+    "fixed_exposure_ev": 3.164515948550519,
+    "black_levels_R_Gr_Gb_B": [
+      253.0,
+      254.625,
+      254.5,
+      252.625
+    ],
+    "wb_rgb": [
+      1.6396484375,
+      1.0,
+      2.4150390625
+    ]
+  }
+}

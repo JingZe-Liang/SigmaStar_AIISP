@@ -1,0 +1,131 @@
+{
+  "fixed_isp": {
+    "black_levels": {
+      "R": 254.8125,
+      "Gr": 258.0,
+      "Gb": 258.0,
+      "B": 254.25
+    },
+    "white_level_dn": 4095.0,
+    "wb_packed_R_Gr_Gb_B": [
+      1.8,
+      1.0,
+      1.0,
+      1.6
+    ],
+    "exposure": 2.5,
+    "transfer": "linear Bayer demosaic then IEC-like sRGB transfer"
+  },
+  "panels": {
+    "even_input_overview": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_256x/panels/even_input_overview.png",
+      "shape": [
+        1775,
+        1680,
+        3
+      ],
+      "sha256": "ab0e15affb4ad0da4b3da957d352fad83276110b905369d3eb66ac05d36e5db5",
+      "crop_sensor_xyxy": null
+    },
+    "even_input_motion_center": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_256x/panels/even_input_motion_center.png",
+      "shape": [
+        3420,
+        1680,
+        3
+      ],
+      "sha256": "ed88d8c90c043d12898862f067db3ec56906347235a106b42541be8fed64b25b",
+      "crop_sensor_xyxy": [
+        900,
+        250,
+        1900,
+        1400
+      ]
+    },
+    "even_input_dark_left": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_256x/panels/even_input_dark_left.png",
+      "shape": [
+        3700,
+        1680,
+        3
+      ],
+      "sha256": "d4306683f92cbc19cb14aa1cf9195852a7f365d7afdf522c4678c9d53be71aa3",
+      "crop_sensor_xyxy": [
+        120,
+        250,
+        1000,
+        1350
+      ]
+    },
+    "even_input_static_right": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_256x/panels/even_input_static_right.png",
+      "shape": [
+        4600,
+        1680,
+        3
+      ],
+      "sha256": "6d5211f9261a6565875d799cb50fd823ddd19cf9562ea7c0808698368538ce8a",
+      "crop_sensor_xyxy": [
+        1800,
+        250,
+        2500,
+        1350
+      ]
+    },
+    "odd_input_overview": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_256x/panels/odd_input_overview.png",
+      "shape": [
+        1775,
+        1680,
+        3
+      ],
+      "sha256": "47500a4690d37c4db8e3297c4db57c23fe8cd98064766d2cfee4e63d42c17760",
+      "crop_sensor_xyxy": null
+    },
+    "odd_input_motion_center": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_256x/panels/odd_input_motion_center.png",
+      "shape": [
+        3420,
+        1680,
+        3
+      ],
+      "sha256": "ecdf851489a6c060e074ef19c4bc961ec523a96eb364738f462656abe401e99a",
+      "crop_sensor_xyxy": [
+        900,
+        250,
+        1900,
+        1400
+      ]
+    },
+    "odd_input_dark_left": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_256x/panels/odd_input_dark_left.png",
+      "shape": [
+        3700,
+        1680,
+        3
+      ],
+      "sha256": "df19441646e0acc17188eead55b6ed1a43192b217a063ebebb1ccf4f77e73c8a",
+      "crop_sensor_xyxy": [
+        120,
+        250,
+        1000,
+        1350
+      ]
+    },
+    "odd_input_static_right": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_256x/panels/odd_input_static_right.png",
+      "shape": [
+        4600,
+        1680,
+        3
+      ],
+      "sha256": "4d60eb66c7c5d0bbb6ee7d8be7aa888924e189ea5e4c0d2b4430a4808e1fb20a",
+      "crop_sensor_xyxy": [
+        1800,
+        250,
+        2500,
+        1350
+      ]
+    }
+  }
+}

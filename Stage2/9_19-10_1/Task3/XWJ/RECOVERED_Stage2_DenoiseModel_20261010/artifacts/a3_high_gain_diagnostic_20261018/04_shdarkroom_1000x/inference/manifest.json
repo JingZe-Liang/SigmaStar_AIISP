@@ -1,0 +1,62 @@
+{
+  "provenance": {
+    "sequence": {
+      "name": "04_shdarkroom_1000x",
+      "group": "04",
+      "category": "raw_scene",
+      "sensor": "MIS20S1",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/shdarkroom/1000x/raw_stream_1920x1080_16bit@RG_[Shutter=79999,SenserG=131072,IspG=7656,R=1878,G=1024,B=2218].raw",
+      "width": 1920,
+      "height": 1080,
+      "frames": 200,
+      "bit_shift": 4,
+      "cfa": "RGGB",
+      "role": "noisy",
+      "wb_rgb": [
+        1.833984375,
+        1.0,
+        2.166015625
+      ],
+      "black_levels": [
+        254.75,
+        257.125,
+        256.875,
+        255.125
+      ],
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/stream_manifests/04_shdarkroom_1000x.json"
+    },
+    "source_start": 0,
+    "frames": 8,
+    "checkpoint": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/training/checkpoint_step_005000.pth",
+    "checkpoint_sha256": "97c4332f685f98959b243e4b100434469f714aed6329e100d22b6d8552592e0b",
+    "config_sha256": "c38925a7368ed620a45870e23ce2379e4f253054b558cc9f4eda94be4c8354c1",
+    "weighted_tile": {
+      "preferred_device": "cuda:1",
+      "tile": 64,
+      "stride": 48,
+      "tile_batch": 8,
+      "blend_mode": "hann",
+      "blend_floor": 0.05,
+      "temporal_output_index": 4,
+      "stop_on_cuda_oom": true
+    },
+    "baseline": {
+      "tile": 64,
+      "stride": 56,
+      "blend_mode": "uniform"
+    },
+    "dataset_mutated": false,
+    "training_performed": false
+  },
+  "resume_key": "ce9066e914ab38816016627f87579f57d1663e1ca5a4c614fdc1b3daea01ee8b",
+  "artifacts": {
+    "weighted": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_high_gain_diagnostic_20261018/04_shdarkroom_1000x/inference/a3_weighted.npy",
+      "sha256": "205123427bf713d9abaae3223ad84138ee6cb4da169fed09cfc956c86b5660bd"
+    },
+    "frame_repeated": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_high_gain_diagnostic_20261018/04_shdarkroom_1000x/inference/a3_frame_repeated.npy",
+      "sha256": "a8c41eff09941ea99cda2239151251f23ed8cbe240f6d345f67645e0dc7329a1"
+    }
+  }
+}

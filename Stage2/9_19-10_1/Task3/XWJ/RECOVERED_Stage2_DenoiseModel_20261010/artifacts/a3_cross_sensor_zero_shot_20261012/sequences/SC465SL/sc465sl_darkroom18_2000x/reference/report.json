@@ -1,0 +1,147 @@
+{
+  "frames_used": 300,
+  "packed_shape": [
+    4,
+    720,
+    1280
+  ],
+  "black_levels": {
+    "R": 251.1875,
+    "Gr": 252.4375,
+    "Gb": 252.4375,
+    "B": 250.9375
+  },
+  "saturation_fraction": 1.3292100694444444e-06,
+  "frame_drift": {
+    "frame_mean_cv": 0.0011360887210005888,
+    "frame_mean_max_dev": 0.003079726464194451
+  },
+  "motion_fraction_mean": 0.02413413990162037,
+  "motion_fraction_max": 0.028893229166666666,
+  "motion_threshold_dn_min": 38.694731787109376,
+  "motion_threshold_dn_max": 40.878240631103516,
+  "valid_fraction": 0.9526215277777778,
+  "confidence_threshold": 0.9,
+  "split_half_reference_difference": {
+    "R": {
+      "rmse_dn": 2.623466730117798,
+      "median_abs_dn": 1.653350830078125
+    },
+    "Gr": {
+      "rmse_dn": 2.9135494232177734,
+      "median_abs_dn": 1.806671142578125
+    },
+    "Gb": {
+      "rmse_dn": 2.9152698516845703,
+      "median_abs_dn": 1.804962158203125
+    },
+    "B": {
+      "rmse_dn": 2.53973650932312,
+      "median_abs_dn": 1.6189117431640625
+    }
+  },
+  "protocol": "cross-sensor motion-aware native reference",
+  "provenance": {
+    "protocol_sha256": "e84d3cac26acb90637b95a0d5ebb2e7bd07320180dd04a5c18ebc891d1e88bfd",
+    "source_path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/02_SC465SL_darkroom18/2000x/raw_stream_sc465sl_2560x1440_AG109568_darkroom18_2000x.raw",
+    "source_size_bytes": 2211840000,
+    "source_sha256": "8df12bc10c7b2191791d1d7f4a9715167a6b6c1a6a1805554ef27b2b05aef7b0",
+    "width": 2560,
+    "height": 1440,
+    "frames_used": 300,
+    "bit_shift": 0,
+    "cfa": "RGGB"
+  },
+  "outputs": {
+    "mean": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_2000x/reference/full_mean_dn.npy",
+      "shape": [
+        4,
+        720,
+        1280
+      ],
+      "dtype": "float32",
+      "sha256": "ceeba5b14236f4057d22261aa51f2c3b200bbcd9d22d6d3608856e9935210375"
+    },
+    "even_mean": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_2000x/reference/even_mean_dn.npy",
+      "shape": [
+        4,
+        720,
+        1280
+      ],
+      "dtype": "float32",
+      "sha256": "e07df3ba6949ce5a74a50bd161bc5687739a73d3d4756011ffc16b57c08566a9"
+    },
+    "odd_mean": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_2000x/reference/odd_mean_dn.npy",
+      "shape": [
+        4,
+        720,
+        1280
+      ],
+      "dtype": "float32",
+      "sha256": "f1b0f7ca76fd1f1a35f1abc93525f4b7d6b5917eeb23147f74b9d1fb64521d70"
+    },
+    "confidence": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_2000x/reference/confidence.npy",
+      "shape": [
+        720,
+        1280
+      ],
+      "dtype": "float32",
+      "sha256": "6c8309eadf6db3a94c51234d2e35161ac91d7056f998b0062698c12887d05759"
+    },
+    "even_confidence": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_2000x/reference/even_confidence.npy",
+      "shape": [
+        720,
+        1280
+      ],
+      "dtype": "float32",
+      "sha256": "bfb94b6eab22124026e1d60f58c3494ac840a7a08b8fc85a952b187db0969458"
+    },
+    "odd_confidence": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_2000x/reference/odd_confidence.npy",
+      "shape": [
+        720,
+        1280
+      ],
+      "dtype": "float32",
+      "sha256": "e093e1006555262e3a9ccb656ee2cf936b64e8fb9a8546b968a08dde170fc008"
+    },
+    "valid_region": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_2000x/reference/valid_region.npy",
+      "shape": [
+        720,
+        1280
+      ],
+      "dtype": "bool",
+      "sha256": "cfc7805f1b96eb38921f785ff0ee5d94d915134e6bec2012eacc0e5bcb0e6c86"
+    },
+    "frame_means": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_2000x/reference/frame_means.npy",
+      "shape": [
+        300
+      ],
+      "dtype": "float64",
+      "sha256": "ba122ee431d6abe952a01ae881529fd99c69a889095eb18e3889ec96937619b3"
+    },
+    "motion_fraction": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_2000x/reference/motion_fraction_per_frame.npy",
+      "shape": [
+        300
+      ],
+      "dtype": "float64",
+      "sha256": "2e44b8154f517d9ca3279630f41114d8a341954f7122d31e4f4688e217111eb7"
+    },
+    "motion_threshold": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_2000x/reference/motion_threshold_per_frame.npy",
+      "shape": [
+        300
+      ],
+      "dtype": "float64",
+      "sha256": "ee7723cba5d66d1315ef0f1dee5a59e48adcfdd9495cab0274453251ec0dbabd"
+    }
+  }
+}

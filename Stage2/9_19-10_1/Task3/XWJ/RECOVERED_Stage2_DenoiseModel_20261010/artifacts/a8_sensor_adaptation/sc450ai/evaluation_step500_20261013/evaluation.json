@@ -1,0 +1,276 @@
+{
+  "protocol": "A8 sc450ai blind-spot adaptation evaluation",
+  "candidate_checkpoint": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a8_sensor_adaptation/sc450ai/training_20261013/checkpoint_step_000500.pth",
+  "candidate_checkpoint_sha256": "44230ba8d64ef262f87ca9c2342c921761c6ded4df20405ed7e8d9bb63f8607e",
+  "weights": "ema",
+  "training_sequence": "sc450ai_804x_lightchanging frames 0-119",
+  "train_domain_validation": "sc450ai_804x_lightchanging frames 142-149",
+  "held_out_sequence": "sc450ai_1435x_motion_black_object",
+  "clean_target_available": false,
+  "train_domain_tail": {
+    "baseline_a3": {
+      "protocol": "diagnostic-only no-reference stress evaluation",
+      "clean_target_available": false,
+      "clips": [
+        [
+          142,
+          143,
+          144,
+          145,
+          146,
+          147,
+          148,
+          149
+        ]
+      ],
+      "evaluated_frames": 8,
+      "mean_output_bias_dn": -4.442423020639366,
+      "mean_abs_output_change_dn": 16.280252900998807,
+      "input_temporal_mad_dn": 22.75685316632821,
+      "a3_temporal_mad_dn": 1.462182453282196,
+      "temporal_mad_ratio": 0.06425240091831719,
+      "motion_temporal_ratio": 0.06422149947638692,
+      "static_temporal_ratio": 0.08564743349017313,
+      "spatial_high_frequency_ratio": 0.6845605290326726,
+      "legal_raw_fraction": 1.0,
+      "normalized_clip_fraction": 0.015772188038455513,
+      "diagnostic_populations": {
+        "temporal_values": 28600320,
+        "motion_values": 2917192,
+        "static_values": 14456632,
+        "detail_values": 8171664
+      },
+      "interpretation": "Ratios are diagnostics only; none is a clean-target quality score or pass gate."
+    },
+    "candidate": {
+      "protocol": "diagnostic-only no-reference stress evaluation",
+      "clean_target_available": false,
+      "clips": [
+        [
+          142,
+          143,
+          144,
+          145,
+          146,
+          147,
+          148,
+          149
+        ]
+      ],
+      "evaluated_frames": 8,
+      "mean_output_bias_dn": -4.968484838781201,
+      "mean_abs_output_change_dn": 16.37172598191502,
+      "input_temporal_mad_dn": 22.75685316632821,
+      "temporal_mad_ratio": 0.06358140541177527,
+      "motion_temporal_ratio": 0.06384623130753903,
+      "static_temporal_ratio": 0.08381341246579645,
+      "spatial_high_frequency_ratio": 0.6812202483364134,
+      "legal_raw_fraction": 1.0,
+      "normalized_clip_fraction": 0.026943763216635337,
+      "diagnostic_populations": {
+        "temporal_values": 28600320,
+        "motion_values": 2917192,
+        "static_values": 14456632,
+        "detail_values": 8171664
+      },
+      "interpretation": "Ratios are diagnostics only; none is a clean-target quality score or pass gate.",
+      "candidate_temporal_mad_dn": 1.4469127070645555
+    }
+  },
+  "dynamic_holdout": {
+    "baseline_a3": {
+      "protocol": "diagnostic-only no-reference stress evaluation",
+      "clean_target_available": false,
+      "clips": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107,
+          108
+        ],
+        [
+          202,
+          203,
+          204,
+          205,
+          206,
+          207,
+          208,
+          209
+        ]
+      ],
+      "evaluated_frames": 24,
+      "mean_output_bias_dn": -4.828743760163274,
+      "mean_abs_output_change_dn": 15.367343794533932,
+      "input_temporal_mad_dn": 21.295393239189863,
+      "a3_temporal_mad_dn": 1.3466082925887706,
+      "temporal_mad_ratio": 0.06323472299683155,
+      "motion_temporal_ratio": 0.056887085770443505,
+      "static_temporal_ratio": 0.08790800929873575,
+      "spatial_high_frequency_ratio": 0.12662123831402974,
+      "legal_raw_fraction": 1.0,
+      "normalized_clip_fraction": 0.03279834514672097,
+      "diagnostic_populations": {
+        "temporal_values": 85800960,
+        "motion_values": 8754792,
+        "static_values": 43477444,
+        "detail_values": 24516316
+      },
+      "interpretation": "Ratios are diagnostics only; none is a clean-target quality score or pass gate."
+    },
+    "candidate": {
+      "protocol": "diagnostic-only no-reference stress evaluation",
+      "clean_target_available": false,
+      "clips": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107,
+          108
+        ],
+        [
+          202,
+          203,
+          204,
+          205,
+          206,
+          207,
+          208,
+          209
+        ]
+      ],
+      "evaluated_frames": 24,
+      "mean_output_bias_dn": -5.341408955181638,
+      "mean_abs_output_change_dn": 15.456447242935162,
+      "input_temporal_mad_dn": 21.295393239189863,
+      "temporal_mad_ratio": 0.06259527420662256,
+      "motion_temporal_ratio": 0.05696196541427814,
+      "static_temporal_ratio": 0.08563790118091588,
+      "spatial_high_frequency_ratio": 0.12607945972981477,
+      "legal_raw_fraction": 1.0,
+      "normalized_clip_fraction": 0.04643624034043442,
+      "diagnostic_populations": {
+        "temporal_values": 85800960,
+        "motion_values": 8754792,
+        "static_values": 43477444,
+        "detail_values": 24516316
+      },
+      "interpretation": "Ratios are diagnostics only; none is a clean-target quality score or pass gate.",
+      "candidate_temporal_mad_dn": 1.3329909791449457
+    }
+  },
+  "mis20s1_replay_guard": {
+    "frames": [
+      0,
+      7
+    ],
+    "baseline_a3": {
+      "finetuned": {
+        "rmse_dn": 621.9735717773438,
+        "psnr_db": 16.369639491620738,
+        "pixels": 15712380
+      },
+      "input": {
+        "rmse_dn": 472.4244384765625,
+        "psnr_db": 18.75843101113498,
+        "pixels": 15712380
+      },
+      "temporal_mad_dn": 1.706943154335022,
+      "input_temporal_mad_dn": 65.22924041748047,
+      "legal_fraction": 1.0,
+      "high_frequency_ratio_mean": 0.1356379462854439,
+      "high_frequency_ratio_per_channel": [
+        0.13838217110808407,
+        0.13676234249077404,
+        0.13342858203555716,
+        0.13397868950736036
+      ],
+      "flat_residual_sigma_dn": 260.0292053222656,
+      "static_pixels": 15712380
+    },
+    "candidate": {
+      "finetuned": {
+        "rmse_dn": 467.0167541503906,
+        "psnr_db": 18.858428900133475,
+        "pixels": 15712380
+      },
+      "input": {
+        "rmse_dn": 472.4244384765625,
+        "psnr_db": 18.75843101113498,
+        "pixels": 15712380
+      },
+      "temporal_mad_dn": 3.294032096862793,
+      "input_temporal_mad_dn": 65.22924041748047,
+      "legal_fraction": 1.0,
+      "high_frequency_ratio_mean": 0.3403412399520318,
+      "high_frequency_ratio_per_channel": [
+        0.33916406383277,
+        0.3176499789309244,
+        0.2973615171091561,
+        0.4071893999352766
+      ],
+      "flat_residual_sigma_dn": 225.69969177246094,
+      "static_pixels": 15712380
+    },
+    "delta": {
+      "psnr_db": 2.488789408512737,
+      "high_frequency_ratio": 0.2047032936665879,
+      "temporal_mad_dn": 1.587088942527771
+    }
+  },
+  "automatic_gate": {
+    "passed": false,
+    "checks": {
+      "train_tail_legal_raw_fraction": true,
+      "train_tail_clip_fraction_guard": false,
+      "train_tail_high_frequency_guard": true,
+      "train_tail_static_flicker_guard": true,
+      "holdout_legal_raw_fraction": true,
+      "holdout_clip_fraction_guard": false,
+      "holdout_high_frequency_recovery": false,
+      "holdout_motion_guard": true,
+      "holdout_static_flicker_guard": true,
+      "mis20s1_psnr_guard": true,
+      "mis20s1_high_frequency_guard": true
+    },
+    "note": "Neither sc450ai sequence has a clean target. High-frequency recovery is necessary but not sufficient; fixed-ISP video review is mandatory."
+  },
+  "fixed_isp_video": {
+    "frames": 24,
+    "fps": 6,
+    "encoder": "libx265",
+    "video": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a8_sensor_adaptation/sc450ai/evaluation_step500_20261013/fixed_isp_video/sc450ai_1435x_input_a3_a8_fixed_isp.mp4",
+    "video_sha256": "772dc29318c93112e74d7ad8e914c90323cb9e461c9078d1f567f5db04ddf5bc",
+    "preview": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a8_sensor_adaptation/sc450ai/evaluation_step500_20261013/fixed_isp_video/sc450ai_1435x_input_a3_a8_fixed_isp_frame0000.png",
+    "preview_sha256": "7ae1a81a000cfe38d41ac886c58621ffb47ad8f779c8d96140c4b5e7f3929133",
+    "layout": "Input | A3 baseline | A8 candidate; overview above fitted black-subject crop"
+  }
+}

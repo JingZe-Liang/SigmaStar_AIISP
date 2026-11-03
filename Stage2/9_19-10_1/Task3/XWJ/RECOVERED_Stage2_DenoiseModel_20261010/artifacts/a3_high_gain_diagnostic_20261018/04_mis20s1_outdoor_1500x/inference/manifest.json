@@ -1,0 +1,62 @@
+{
+  "provenance": {
+    "sequence": {
+      "name": "04_mis20s1_outdoor_1500x",
+      "group": "04",
+      "category": "raw_scene",
+      "sensor": "MIS20S1",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/mis20s1_outdoor/1500x/raw_stream_1920x1080_16bit@RG_[Shutter=79999,SenserG=131072,IspG=10455,R=1679,G=1024,B=2473].raw",
+      "width": 1920,
+      "height": 1080,
+      "frames": 195,
+      "bit_shift": 4,
+      "cfa": "RGGB",
+      "role": "noisy",
+      "wb_rgb": [
+        1.6396484375,
+        1.0,
+        2.4150390625
+      ],
+      "black_levels": [
+        253.0,
+        254.625,
+        254.5,
+        252.625
+      ],
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/stream_manifests/04_mis20s1_outdoor_1500x.json"
+    },
+    "source_start": 0,
+    "frames": 8,
+    "checkpoint": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/training/checkpoint_step_005000.pth",
+    "checkpoint_sha256": "97c4332f685f98959b243e4b100434469f714aed6329e100d22b6d8552592e0b",
+    "config_sha256": "c38925a7368ed620a45870e23ce2379e4f253054b558cc9f4eda94be4c8354c1",
+    "weighted_tile": {
+      "preferred_device": "cuda:1",
+      "tile": 64,
+      "stride": 48,
+      "tile_batch": 8,
+      "blend_mode": "hann",
+      "blend_floor": 0.05,
+      "temporal_output_index": 4,
+      "stop_on_cuda_oom": true
+    },
+    "baseline": {
+      "tile": 64,
+      "stride": 56,
+      "blend_mode": "uniform"
+    },
+    "dataset_mutated": false,
+    "training_performed": false
+  },
+  "resume_key": "923d85f754b45a08495d98eb1e9a1a931d360e3d6f3416427d660ac40ef90062",
+  "artifacts": {
+    "weighted": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_high_gain_diagnostic_20261018/04_mis20s1_outdoor_1500x/inference/a3_weighted.npy",
+      "sha256": "16c3a089424d4eb58fbcde417958b6b8888eaee0eb91867570c85f080296aacc"
+    },
+    "frame_repeated": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_high_gain_diagnostic_20261018/04_mis20s1_outdoor_1500x/inference/a3_frame_repeated.npy",
+      "sha256": "f9a2ee92a9bffd7a69eb5751c884fde409a803fb1c8eb7441134cd5e9610edef"
+    }
+  }
+}

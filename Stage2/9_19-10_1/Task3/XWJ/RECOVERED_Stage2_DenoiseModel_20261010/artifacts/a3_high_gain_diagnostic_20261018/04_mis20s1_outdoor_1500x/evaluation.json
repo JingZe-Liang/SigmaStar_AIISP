@@ -1,0 +1,158 @@
+{
+  "shape": [
+    8,
+    4,
+    540,
+    960
+  ],
+  "tile_grids": {
+    "baseline_64_56": {
+      "tile": 64,
+      "stride": 56
+    },
+    "weighted_64_48": {
+      "tile": 64,
+      "stride": 48
+    }
+  },
+  "variants": {
+    "input": {
+      "gradient_mean": 0.0035536186769604683,
+      "gradient_ratio_to_input": 1.0,
+      "temporal_mean_gradient": 0.0021784526761621237,
+      "temporal_mean_gradient_ratio_to_input": 1.0,
+      "temporal_mad": 0.0048569319769740105,
+      "temporal_mad_ratio_to_input": 1.0,
+      "lowpass_gradient_mean": 0.0007525188848376274,
+      "lowpass_gradient_ratio_to_input": 1.0,
+      "highpass_rms": 0.011849486269056797,
+      "highpass_rms_ratio_to_input": 1.0,
+      "legal_raw_fraction": 1.0,
+      "tile_discontinuity": {
+        "baseline_64_56": {
+          "boundary_mean": 0.0033713835291564465,
+          "ordinary_mean": 0.0035756435245275497,
+          "boundary_to_ordinary_ratio": 0.9428746199194753,
+          "amplification_vs_input": 1.0
+        },
+        "weighted_64_48": {
+          "boundary_mean": 0.0033335222396999598,
+          "ordinary_mean": 0.0035730721428990364,
+          "boundary_to_ordinary_ratio": 0.9329568803487085,
+          "amplification_vs_input": 1.0
+        }
+      },
+      "mae_vs_a3_uniform": 0.00359680806286633
+    },
+    "a3_uniform": {
+      "gradient_mean": 0.00136176950763911,
+      "gradient_ratio_to_input": 0.38320642461387505,
+      "temporal_mean_gradient": 0.0013312986120581627,
+      "temporal_mean_gradient_ratio_to_input": 0.6111211992925044,
+      "temporal_mad": 0.00037975958548486233,
+      "temporal_mad_ratio_to_input": 0.07818919171304968,
+      "lowpass_gradient_mean": 0.0005967983743175864,
+      "lowpass_gradient_ratio_to_input": 0.7930676376930512,
+      "highpass_rms": 0.009393115527927876,
+      "highpass_rms_ratio_to_input": 0.7927023429240663,
+      "legal_raw_fraction": 1.0,
+      "tile_discontinuity": {
+        "baseline_64_56": {
+          "boundary_mean": 0.001315069617703557,
+          "ordinary_mean": 0.0013744995230808854,
+          "boundary_to_ordinary_ratio": 0.9567625129151601,
+          "amplification_vs_input": 1.014729310453675
+        },
+        "weighted_64_48": {
+          "boundary_mean": 0.0012091330718249083,
+          "ordinary_mean": 0.0013752011582255363,
+          "boundary_to_ordinary_ratio": 0.8792408765748054,
+          "amplification_vs_input": 0.942423915932936
+        }
+      },
+      "mae_vs_a3_uniform": 0.0
+    },
+    "a3_weighted": {
+      "gradient_mean": 0.001353991450741887,
+      "gradient_ratio_to_input": 0.38101765378495883,
+      "temporal_mean_gradient": 0.0013236223021522164,
+      "temporal_mean_gradient_ratio_to_input": 0.6075974551276919,
+      "temporal_mad": 0.0003783715364988893,
+      "temporal_mad_ratio_to_input": 0.07790340451393848,
+      "lowpass_gradient_mean": 0.0005957388202659786,
+      "lowpass_gradient_ratio_to_input": 0.7916596277773447,
+      "highpass_rms": 0.009391702711582184,
+      "highpass_rms_ratio_to_input": 0.7925831127470263,
+      "legal_raw_fraction": 1.0,
+      "tile_discontinuity": {
+        "baseline_64_56": {
+          "boundary_mean": 0.0011955462396144867,
+          "ordinary_mean": 0.0013729046331718564,
+          "boundary_to_ordinary_ratio": 0.8708152123082183,
+          "amplification_vs_input": 0.9235747722031047
+        },
+        "weighted_64_48": {
+          "boundary_mean": 0.0011812698794528842,
+          "ordinary_mean": 0.0013686351012438536,
+          "boundary_to_ordinary_ratio": 0.8631006748104834,
+          "amplification_vs_input": 0.9251238647684176
+        }
+      },
+      "mae_vs_a3_uniform": 8.411701128352433e-05
+    },
+    "a3_frame_repeated": {
+      "gradient_mean": 0.0026932235341519117,
+      "gradient_ratio_to_input": 0.7578819729908438,
+      "temporal_mean_gradient": 0.0018460918217897415,
+      "temporal_mean_gradient_ratio_to_input": 0.8474326029620635,
+      "temporal_mad": 0.0026775456499308348,
+      "temporal_mad_ratio_to_input": 0.5512833333109624,
+      "lowpass_gradient_mean": 0.0007160004461184144,
+      "lowpass_gradient_ratio_to_input": 0.9514717312016792,
+      "highpass_rms": 0.010828686878085136,
+      "highpass_rms_ratio_to_input": 0.9138528567573998,
+      "legal_raw_fraction": 1.0,
+      "tile_discontinuity": {
+        "baseline_64_56": {
+          "boundary_mean": 0.002516330685466528,
+          "ordinary_mean": 0.0027148008812218904,
+          "boundary_to_ordinary_ratio": 0.9268932770988221,
+          "amplification_vs_input": 0.9830504051301985
+        },
+        "weighted_64_48": {
+          "boundary_mean": 0.0024918934796005487,
+          "ordinary_mean": 0.0027113105170428753,
+          "boundary_to_ordinary_ratio": 0.9190734384486375,
+          "amplification_vs_input": 0.9851188814911984
+        }
+      },
+      "mae_vs_a3_uniform": 0.001883550314232707
+    }
+  },
+  "sequence": {
+    "name": "04_mis20s1_outdoor_1500x",
+    "group": "04",
+    "category": "raw_scene",
+    "sensor": "MIS20S1",
+    "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/mis20s1_outdoor/1500x/raw_stream_1920x1080_16bit@RG_[Shutter=79999,SenserG=131072,IspG=10455,R=1679,G=1024,B=2473].raw",
+    "width": 1920,
+    "height": 1080,
+    "frames": 195,
+    "bit_shift": 4,
+    "cfa": "RGGB",
+    "role": "noisy",
+    "wb_rgb": [
+      1.6396484375,
+      1.0,
+      2.4150390625
+    ],
+    "black_levels": [
+      253.0,
+      254.625,
+      254.5,
+      252.625
+    ],
+    "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/stream_manifests/04_mis20s1_outdoor_1500x.json"
+  },
+  "source_start": 0
+}

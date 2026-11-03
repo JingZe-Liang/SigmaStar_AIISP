@@ -1,0 +1,179 @@
+{
+  "protocol": "mutually exclusive native split-half zero-shot evaluation",
+  "even_input_vs_odd_reference": {
+    "input_parity": "even",
+    "target": "odd_reference",
+    "clips": [
+      [
+        0,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14
+      ],
+      [
+        72,
+        74,
+        76,
+        78,
+        80,
+        82,
+        84,
+        86
+      ],
+      [
+        144,
+        146,
+        148,
+        150,
+        152,
+        154,
+        156,
+        158
+      ],
+      [
+        216,
+        218,
+        220,
+        222,
+        224,
+        226,
+        228,
+        230
+      ],
+      [
+        284,
+        286,
+        288,
+        290,
+        292,
+        294,
+        296,
+        298
+      ]
+    ],
+    "evaluated_frames": 40,
+    "input": {
+      "rmse_dn": 33.13091833459308,
+      "psnr_db": 41.840408642370534
+    },
+    "a3": {
+      "rmse_dn": 7.23868269857668,
+      "psnr_db": 55.051887319508765
+    },
+    "a3_psnr_gain_db": 13.211478677138231,
+    "static_values": 123380968,
+    "usable_spatial_fraction": 0.8367307400173611,
+    "detected_motion_fraction": 0.046405734592013886,
+    "motion_threshold_dn_min": 55.92761260375976,
+    "motion_threshold_dn_max": 59.40496685180664,
+    "input_temporal_mad_dn": 31.889357421715783,
+    "a3_temporal_mad_dn": 1.5672221634897578,
+    "a3_output_bias_dn": -2.184376799535016,
+    "legal_raw_fraction": 1.0,
+    "normalized_clip_fraction": 0.006032877604166667,
+    "input_high_frequency_ratio": 1.6722230628009018,
+    "a3_high_frequency_ratio": 0.9574814529927189,
+    "a3_flat_residual_sigma_dn": 5.829932402811797,
+    "detail_values": 18278380,
+    "flat_values": 18114636
+  },
+  "odd_input_vs_even_reference": {
+    "input_parity": "odd",
+    "target": "even_reference",
+    "clips": [
+      [
+        1,
+        3,
+        5,
+        7,
+        9,
+        11,
+        13,
+        15
+      ],
+      [
+        73,
+        75,
+        77,
+        79,
+        81,
+        83,
+        85,
+        87
+      ],
+      [
+        145,
+        147,
+        149,
+        151,
+        153,
+        155,
+        157,
+        159
+      ],
+      [
+        217,
+        219,
+        221,
+        223,
+        225,
+        227,
+        229,
+        231
+      ],
+      [
+        285,
+        287,
+        289,
+        291,
+        293,
+        295,
+        297,
+        299
+      ]
+    ],
+    "evaluated_frames": 40,
+    "input": {
+      "rmse_dn": 33.13105495286344,
+      "psnr_db": 41.84037282541067
+    },
+    "a3": {
+      "rmse_dn": 7.2832759545604,
+      "psnr_db": 54.99854281870381
+    },
+    "a3_psnr_gain_db": 13.158169993293143,
+    "static_values": 123368080,
+    "usable_spatial_fraction": 0.8366433376736111,
+    "detected_motion_fraction": 0.04660519748263889,
+    "motion_threshold_dn_min": 55.93844205322266,
+    "motion_threshold_dn_max": 59.511570416259765,
+    "input_temporal_mad_dn": 31.885962706773697,
+    "a3_temporal_mad_dn": 1.5780965658060944,
+    "a3_output_bias_dn": -2.2138123676620163,
+    "legal_raw_fraction": 1.0,
+    "normalized_clip_fraction": 0.005916436089409722,
+    "input_high_frequency_ratio": 1.674592665941337,
+    "a3_high_frequency_ratio": 0.9582266104949732,
+    "a3_flat_residual_sigma_dn": 5.8541658441470155,
+    "detail_values": 18314280,
+    "flat_values": 18149736
+  },
+  "summary": {
+    "minimum_a3_psnr_gain_db": 13.158169993293143,
+    "mean_a3_psnr_gain_db": 13.184824335215687,
+    "maximum_a3_output_bias_abs_dn": 2.2138123676620163,
+    "minimum_legal_raw_fraction": 1.0,
+    "maximum_normalized_clip_fraction": 0.006032877604166667,
+    "a3_temporal_mad_ratio_mean": 0.049318753880144034,
+    "a3_high_frequency_ratio_range": [
+      0.9574814529927189,
+      0.9582266104949732
+    ]
+  },
+  "panel_manifest": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_256x/panels/panel_manifest.json",
+  "panel_count": 8
+}

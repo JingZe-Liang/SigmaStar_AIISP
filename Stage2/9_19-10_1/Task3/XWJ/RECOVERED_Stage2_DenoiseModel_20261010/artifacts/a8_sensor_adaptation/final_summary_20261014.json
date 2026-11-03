@@ -1,0 +1,34 @@
+{
+  "protocol": "A8 multi-sensor domain adaptation final summary",
+  "date": "2026-10-14",
+  "a3": {
+    "checkpoint": "artifacts/finetune_mis20s1/training/checkpoint_step_005000.pth",
+    "sha256": "97c4332f685f98959b243e4b100434469f714aed6329e100d22b6d8552592e0b",
+    "immutable": true,
+    "replaced": false
+  },
+  "sc635hai": {
+    "verdict": "conditional_pass_optional_sensor_specific_checkpoint",
+    "checkpoint": "artifacts/a8_sensor_adaptation/sc635hai/training_20261013/checkpoint_step_000500.pth",
+    "checkpoint_sha256": "8e4980a43767b5b83ecc064e8cdce2f685ea452e94af48a1f4ca252004765b3f",
+    "evaluation": "artifacts/a8_sensor_adaptation/sc635hai/evaluation_step500_20261013/evaluation.json",
+    "video": "artifacts/a8_sensor_adaptation/sc635hai/evaluation_step500_20261013/fixed_isp_video/sc635hai_16x_input_a3_a8_fixed_isp.mp4",
+    "video_sha256": "f2b08af63a4570d5840683c06a7766d56c2f8ca421f797f3de62ba9076155cd2",
+    "replaces_a3": false
+  },
+  "sc450ai": {
+    "verdict": "rejected_all_checkpoints",
+    "accepted_checkpoint": null,
+    "screen": "artifacts/a8_sensor_adaptation/sc450ai/checkpoint_screen_20261013.json",
+    "screen_sha256": "5da0dbc6dabc400acea84a5380a5d5419cf89b426630f3d7d431401023dc1205",
+    "passing_steps": [],
+    "representative_evaluation": "artifacts/a8_sensor_adaptation/sc450ai/evaluation_step500_20261013/evaluation.json",
+    "representative_video": "artifacts/a8_sensor_adaptation/sc450ai/evaluation_step500_20261013/fixed_isp_video/sc450ai_1435x_input_a3_a8_fixed_isp.mp4",
+    "representative_video_sha256": "772dc29318c93112e74d7ad8e914c90323cb9e461c9078d1f567f5db04ddf5bc",
+    "replaces_a3": false
+  },
+  "dataset_modified": false,
+  "old_teacher_used_as_clean_truth": false,
+  "dynamic_temporal_mean_used_as_clean_truth": false,
+  "remaining_compute_tasks": []
+}

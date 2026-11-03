@@ -1,0 +1,131 @@
+{
+  "fixed_isp": {
+    "black_levels": {
+      "R": 251.1875,
+      "Gr": 252.4375,
+      "Gb": 252.4375,
+      "B": 250.9375
+    },
+    "white_level_dn": 4095.0,
+    "wb_packed_R_Gr_Gb_B": [
+      1.8,
+      1.0,
+      1.0,
+      1.6
+    ],
+    "exposure": 6.0,
+    "transfer": "linear Bayer demosaic then IEC-like sRGB transfer"
+  },
+  "panels": {
+    "even_input_overview": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_2000x/panels/even_input_overview.png",
+      "shape": [
+        1775,
+        1680,
+        3
+      ],
+      "sha256": "ce234856b9318f0d08d68966a242d1ca03d06eac7cace8614ecdafb8fc8ca498",
+      "crop_sensor_xyxy": null
+    },
+    "even_input_motion_center": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_2000x/panels/even_input_motion_center.png",
+      "shape": [
+        3420,
+        1680,
+        3
+      ],
+      "sha256": "6a1a631649b5a795b2b560672cbedd28342adeaa3e8adab02b5e5a9a1b17edd9",
+      "crop_sensor_xyxy": [
+        900,
+        250,
+        1900,
+        1400
+      ]
+    },
+    "even_input_dark_left": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_2000x/panels/even_input_dark_left.png",
+      "shape": [
+        3700,
+        1680,
+        3
+      ],
+      "sha256": "dc049f48966074fe900d6ea3c0f6f5c7f6bc9fa0b250e8c168a7758a35758e0a",
+      "crop_sensor_xyxy": [
+        120,
+        250,
+        1000,
+        1350
+      ]
+    },
+    "even_input_static_right": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_2000x/panels/even_input_static_right.png",
+      "shape": [
+        4600,
+        1680,
+        3
+      ],
+      "sha256": "41e6ba34e3d2010878497515612d1f17d2105d87745f94ad32a07f6e2408f837",
+      "crop_sensor_xyxy": [
+        1800,
+        250,
+        2500,
+        1350
+      ]
+    },
+    "odd_input_overview": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_2000x/panels/odd_input_overview.png",
+      "shape": [
+        1775,
+        1680,
+        3
+      ],
+      "sha256": "ad1cb474ab0fe5e1e7ba1605e47e6cc069432f84a13ccb9e5dc1aa092a270d3d",
+      "crop_sensor_xyxy": null
+    },
+    "odd_input_motion_center": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_2000x/panels/odd_input_motion_center.png",
+      "shape": [
+        3420,
+        1680,
+        3
+      ],
+      "sha256": "7044593f73a997d7f3bdcf3e7e949fa9d498205e62f5a479e2a2e1efc07d08a6",
+      "crop_sensor_xyxy": [
+        900,
+        250,
+        1900,
+        1400
+      ]
+    },
+    "odd_input_dark_left": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_2000x/panels/odd_input_dark_left.png",
+      "shape": [
+        3700,
+        1680,
+        3
+      ],
+      "sha256": "fc386e780730a794ae502197582dd1d17d5ffb794d77f5338833a2972c83bb92",
+      "crop_sensor_xyxy": [
+        120,
+        250,
+        1000,
+        1350
+      ]
+    },
+    "odd_input_static_right": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_2000x/panels/odd_input_static_right.png",
+      "shape": [
+        4600,
+        1680,
+        3
+      ],
+      "sha256": "3389d1833c4f35318d9d98017894ba3eb88d04c2bdbacafdc1294ac530602e4f",
+      "crop_sensor_xyxy": [
+        1800,
+        250,
+        2500,
+        1350
+      ]
+    }
+  }
+}
