@@ -1,0 +1,16 @@
+{
+  "frames": 8,
+  "fps": 6,
+  "fixed_isp_wb": [
+    2.0634765625,
+    1.0,
+    1.0,
+    1.7470703125
+  ],
+  "fixed_isp_exposure": 4.0,
+  "video": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a9_multi_sensor_generalization/evaluation_step100_20261016/mis20s1/fixed_isp_video/mis20s1_1000x_input_a3_a9_fixed_isp.mp4",
+  "video_sha256": "79b2cea27b42cc28aea91a5a1847f3d68b04fdd8e65e8c173600053c3481a2a2",
+  "preview": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a9_multi_sensor_generalization/evaluation_step100_20261016/mis20s1/fixed_isp_video/mis20s1_1000x_input_a3_a9_fixed_isp_frame0000.png",
+  "preview_sha256": "dc2818f13ad6811e1e06483134348ef1246ec8add24bacde5bb9c560d2c4a580",
+  "layout": "Input | A3 baseline | A9 unified step-100; overview and center crop"
+}

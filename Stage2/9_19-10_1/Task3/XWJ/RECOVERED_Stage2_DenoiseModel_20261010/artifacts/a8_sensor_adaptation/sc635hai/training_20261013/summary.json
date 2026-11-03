@@ -1,0 +1,29 @@
+{
+  "status": "completed",
+  "sensor": "sc635hai",
+  "steps": 500,
+  "source_counts": {
+    "sensor": 238,
+    "mis20s1_replay": 262
+  },
+  "trainable": {
+    "scope": "output_head",
+    "prefixes": [
+      "norm.",
+      "conv_after_body.",
+      "conv_last."
+    ],
+    "parameter_tensors": 6,
+    "parameters": 12400,
+    "names": [
+      "norm.weight",
+      "norm.bias",
+      "conv_after_body.weight",
+      "conv_after_body.bias",
+      "conv_last.weight",
+      "conv_last.bias"
+    ]
+  },
+  "checkpoint": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a8_sensor_adaptation/sc635hai/training_20261013/checkpoint_step_000500.pth",
+  "log": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a8_sensor_adaptation/sc635hai/training_20261013/train.jsonl"
+}
