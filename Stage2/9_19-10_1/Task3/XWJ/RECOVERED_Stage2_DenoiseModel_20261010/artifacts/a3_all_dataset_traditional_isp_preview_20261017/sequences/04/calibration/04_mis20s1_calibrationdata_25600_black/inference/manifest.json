@@ -1,0 +1,64 @@
+{
+  "provenance": {
+    "sequence": {
+      "name": "04_mis20s1_calibrationdata_25600_black",
+      "group": "04",
+      "category": "calibration",
+      "sensor": "MIS20S1",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/mis20s1_calibrationdata/black/25600/raw_stream_normal_1920x1080_16_GR_0205175549943_[FN=10,US=83317,AG=262144,DG=1024,BV=-299683,R=2631,G=1024,B=1986].raw",
+      "width": 1920,
+      "height": 1080,
+      "frames": 50,
+      "bit_shift": 4,
+      "cfa": "GRBG",
+      "role": "calibration_black",
+      "wb_rgb": [
+        2.5693359375,
+        1.0,
+        1.939453125
+      ],
+      "black_levels": [
+        257.5,
+        256.75,
+        256.5,
+        257.5
+      ],
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/stream_manifests/04_mis20s1_calibrationdata_25600_black.json"
+    },
+    "source_sha256": "e4b7198253d6f2af81682c49d8303e2488754d23fe5a9e128ff625a49a0621e4",
+    "checkpoint_sha256": "97c4332f685f98959b243e4b100434469f714aed6329e100d22b6d8552592e0b",
+    "config_sha256": "dee8a5575ac8a166c9eb8ed682a7fffa5a08adaf458c467d364bf4e6fbdd518a",
+    "weights": "ema",
+    "clip_starts": [
+      0,
+      21,
+      42
+    ],
+    "temporal_frames": 8,
+    "black_levels_R_Gr_Gb_B": [
+      257.5,
+      256.75,
+      256.5,
+      257.5
+    ],
+    "normalization": "clip((DN-black)/(4095-black),0,1)",
+    "canonical_channel_order": [
+      "R",
+      "Gr",
+      "Gb",
+      "B"
+    ],
+    "tile": 64,
+    "stride": 56,
+    "tile_batch": 12
+  },
+  "prediction": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/calibration/04_mis20s1_calibrationdata_25600_black/inference/prediction.npy",
+  "prediction_shape": [
+    24,
+    4,
+    540,
+    960
+  ],
+  "prediction_dtype": "float16 normalized native domain",
+  "prediction_sha256": "26fe353de0332ffdfec361973b913762843d1fab49b4d14baabcaa0c1b1dfc29"
+}

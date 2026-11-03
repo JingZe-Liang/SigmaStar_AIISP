@@ -1,0 +1,64 @@
+{
+  "provenance": {
+    "sequence": {
+      "name": "04_mis20s1_calibrationdata_1600_color",
+      "group": "04",
+      "category": "calibration",
+      "sensor": "MIS20S1",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/mis20s1_calibrationdata/color/1600/raw_stream_normal_1920x1080_16_GR_0205174019158_[FN=10,US=5186,AG=16384,DG=1028,BV=-22874,R=2316,G=1024,B=1983].raw",
+      "width": 1920,
+      "height": 1080,
+      "frames": 50,
+      "bit_shift": 4,
+      "cfa": "GRBG",
+      "role": "calibration_flat",
+      "wb_rgb": [
+        2.26171875,
+        1.0,
+        1.9365234375
+      ],
+      "black_levels": [
+        306.125,
+        362.375,
+        361.75,
+        318.25
+      ],
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/stream_manifests/04_mis20s1_calibrationdata_1600_color.json"
+    },
+    "source_sha256": "f949f932de2a6fa108c8cf61ef1ca99d419b4233c5022725a5dca2265de894dc",
+    "checkpoint_sha256": "97c4332f685f98959b243e4b100434469f714aed6329e100d22b6d8552592e0b",
+    "config_sha256": "dee8a5575ac8a166c9eb8ed682a7fffa5a08adaf458c467d364bf4e6fbdd518a",
+    "weights": "ema",
+    "clip_starts": [
+      0,
+      21,
+      42
+    ],
+    "temporal_frames": 8,
+    "black_levels_R_Gr_Gb_B": [
+      306.125,
+      362.375,
+      361.75,
+      318.25
+    ],
+    "normalization": "clip((DN-black)/(4095-black),0,1)",
+    "canonical_channel_order": [
+      "R",
+      "Gr",
+      "Gb",
+      "B"
+    ],
+    "tile": 64,
+    "stride": 56,
+    "tile_batch": 12
+  },
+  "prediction": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/calibration/04_mis20s1_calibrationdata_1600_color/inference/prediction.npy",
+  "prediction_shape": [
+    24,
+    4,
+    540,
+    960
+  ],
+  "prediction_dtype": "float16 normalized native domain",
+  "prediction_sha256": "cddfe395ea739a76767776d62b6492ef7f571a0e8ad793d5f4ca87238742854d"
+}
