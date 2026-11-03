@@ -10,6 +10,9 @@
 \usepackage{flafter}
 \usepackage{hyperref,url}
 \urlstyle{tt}
+\newcommand{\repofile}[1]{\href{https://github.com/JingZe-Liang/SigmaStar_AIISP/blob/main/Stage2/9_19-10_1/Task3/XWJ/RECOVERED_Stage2_DenoiseModel_20261010/#1}{\nolinkurl{#1}}}
+\newcommand{\repodir}[1]{\href{https://github.com/JingZe-Liang/SigmaStar_AIISP/tree/main/Stage2/9_19-10_1/Task3/XWJ/RECOVERED_Stage2_DenoiseModel_20261010/#1}{\nolinkurl{#1}}}
+\newcommand{\djcfile}[1]{\href{https://github.com/JingZe-Liang/SigmaStar_AIISP/blob/main/Stage2/9_19-10_1/Task3/DJC/ExposureDiffusionNAFNet_DJC_experimental/#1}{\nolinkurl{#1}}}
 \makeatletter
 \g@addto@macro\UrlBreaks{\do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j\do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t\do\u\do\v\do\w\do\x\do\y\do\z\do\0\do\1\do\2\do\3\do\4\do\5\do\6\do\7\do\8\do\9}
 \setlength{\@fptop}{0pt}
@@ -709,16 +712,16 @@ sc450ai、复杂纹理动态 & 方法3；零样本压力测试 & 可见结构平
 \section{采纳方法的超参数与模型配置}
 \label{app:configuration}
 
-附录记的是方法3和方法8那个 sc635hai 专用可选头的最终配置。训练设置以最终 checkpoint 里保存的配置和优化器状态为准，模型和损失按对应实现核对，展示视频的编码按实际产物记录。下面的路径都相对项目根目录。
+附录记的是方法3和方法8那个 sc635hai 专用可选头的最终配置。训练设置以最终 checkpoint 里保存的配置和优化器状态为准，模型和损失按对应实现核对，展示视频的编码按实际产物记录。下面的文件与目录均链接到 GitHub 仓库，显示路径相对该项目在仓库中的根目录；未收录的材料单独注明。
 
 \subsection{权重与运行环境}
 
 \begin{description}\raggedright
-\item[项目目录] \path{/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010}
-\item[Python] \path{/home/jingzeliang/miniconda3/envs/aaa_312/bin/python}
-\item[方法3最终权重] \path{artifacts/finetune_mis20s1/training/checkpoint_step_005000.pth}，读取 \texttt{ema} 字段。
+\item[GitHub项目目录] \url{https://github.com/JingZe-Liang/SigmaStar_AIISP/tree/main/Stage2/9_19-10_1/Task3/XWJ/RECOVERED_Stage2_DenoiseModel_20261010}
+\item[Python环境] Python 3.12，环境名 \texttt{aaa\_312}；运行时使用该环境中的 \texttt{python}。
+\item[方法3最终权重] \texttt{checkpoint\_step\_005000.pth}，大小约156.33 MiB，超过本次普通 Git 上传的单文件限制，未收录到仓库；训练配置与日志见 \repodir{artifacts/finetune_mis20s1/training/}。使用该权重时读取 \texttt{ema} 字段。
 \item[方法3 SHA-256] {\small\path{97c4332f685f98959b243e4b100434469f714aed6329e100d22b6d8552592e0b}}
-\item[方法8专用权重] \path{artifacts/a8_sensor_adaptation/sc635hai/training_20261013/checkpoint_step_000500.pth}，读取 \texttt{ema} 字段。
+\item[方法8专用权重] \repofile{artifacts/a8_sensor_adaptation/sc635hai/training_20261013/checkpoint_step_000500.pth}，读取 \texttt{ema} 字段。
 \item[方法8 SHA-256] {\small\path{8e4980a43767b5b83ecc064e8cdce2f685ea452e94af48a1f4ca252004765b3f}}
 \end{description}
 
@@ -731,7 +734,7 @@ sc450ai、复杂纹理动态 & 方法3；零样本压力测试 & 可见结构平
 \toprule 项目 & 实际设置（续） \\ \midrule
 \endhead
 \bottomrule\endfoot
-初始化 & 官方 \texttt{RViDeformer-L\_CRVD.pth}，strict加载；恢复后的本地预训练文件位于 \path{artifacts/pretrained/} \\
+初始化 & 官方 \texttt{RViDeformer-L\_CRVD.pth}，strict加载；仓库中的预训练文件目录为 \repodir{artifacts/pretrained/} \\
 可训练范围 & 全模型，共7,505,716个参数、1208个参数张量 \\
 总优化步数 & 5000；从step 200恢复至step 5000 \\
 训练batch size & 1；每次优化包含1个8帧样本 \\
@@ -754,7 +757,7 @@ DataLoader & 默认512项，shuffle=False，num\_workers=0，drop\_last=True；�
 最终权重选择 & step-5000 EMA；未将后续运动、统一微调或门控候选合并进去 \\
 \end{longtable}
 
-实际用的配置文件是 \path{artifacts/finetune_mis20s1/training/a3_config.json}，训练和采样实现在 \path{src/raw_fusion/finetune/a3.py}。
+实际用的配置文件是 \repofile{artifacts/finetune_mis20s1/training/a3_config.json}，训练和采样实现在 \repofile{src/raw_fusion/finetune/a3.py}。
 
 \subsection{参考、归一化与损失设置}
 
@@ -782,7 +785,7 @@ Charbonnier & $\sqrt{(\hat y-y)^2+10^{-6}}$；标准 $\epsilon^2$ 记法下 $\ep
 动态损失/教师蒸馏 & 最终方法3未使用 \\
 \end{longtable}
 
-参考的统计和空间资源分别见 \path{artifacts/finetune_mis20s1/supervision/references/a1_reference_report.json} 和同目录的 \path{a1_reference_manifest.json}。配准、曝光系数和运动掩码是逐流记在 \path{artifacts/finetune_mis20s1/supervision/stream_manifests/} 里的，没有用一组曝光系数打发所有流。
+参考的统计和空间资源分别见 \repofile{artifacts/finetune_mis20s1/supervision/references/a1_reference_report.json} 和同目录的 \repofile{artifacts/finetune_mis20s1/supervision/references/a1_reference_manifest.json}。配准、曝光系数和运动掩码是逐流记在 \repodir{artifacts/finetune_mis20s1/supervision/stream_manifests/} 里的，没有用一组曝光系数打发所有流。
 
 \subsection{网络构造参数}
 
@@ -817,7 +820,7 @@ Charbonnier & $\sqrt{(\hat y-y)^2+10^{-6}}$；标准 $\epsilon^2$ 记法下 $\ep
 状态字典 & 每套model/EMA共1265张量，其中1208个为参数张量；张量个数不等于参数量 \\
 \end{longtable}
 
-模型配置的入口是 \path{src/raw_fusion/finetune/a3.py} 里的 \texttt{build\_rvideformer}，结构实现在 \path{src/raw_fusion/finetune/rvideformer_arch.py}。
+模型配置的入口是 \repofile{src/raw_fusion/finetune/a3.py} 里的 \texttt{build\_rvideformer}，结构实现在 \repofile{src/raw_fusion/finetune/rvideformer_arch.py}。
 
 \subsection{噪声合成参数}
 
@@ -874,7 +877,7 @@ C=\begin{bmatrix}
 0.00093781 & 0.00049242 & 0.02030878 & 1
 \end{bmatrix}.
 \end{equation}
-固定图样偏置从主参考 manifest 的 \texttt{fpn\_paths.offset\_dn} 空间数组里读。每档8个噪声变体各用独立随机数，先 round 到1\dn{}格点、再 clip 到 $[0,4095]$，存成 uint16。完整的噪声模型在 \path{artifacts/finetune_mis20s1/noise_model/noise_model.json}，生成器是 \path{src/raw_fusion/finetune/noise.py} 里的 \texttt{generate\_noisy\_frame}。
+固定图样偏置从主参考 manifest 的 \texttt{fpn\_paths.offset\_dn} 空间数组里读。每档8个噪声变体各用独立随机数，先 round 到1\dn{}格点、再 clip 到 $[0,4095]$，存成 uint16。完整的噪声模型在 \repofile{artifacts/finetune_mis20s1/noise_model/noise_model.json}，生成器是 \repofile{src/raw_fusion/finetune/noise.py} 里的 \texttt{generate\_noisy\_frame}。
 
 \subsection{推理、评测与固定 ISP 参数}
 
@@ -906,7 +909,7 @@ C=\begin{bmatrix}
 
 表\ref{tab:inference_config}里的 ISP 和视频项对应45流全数据集预览。图\ref{fig:mis1000}、图\ref{fig:sc635_head}、图\ref{fig:sc450}是把各自评测时缓存的同帧 RAW 用这套传统 ISP 重新渲染的，固定曝光分别是4.7393、2.0011、6.2803 EV，各列共用同一组参数。奇偶参考面板沿用原审计的普通 Bayer 去马赛克和 sRGB 变换；重渲染只改展示，不动 RAW 域指标。
 
-分块实现在 \path{src/raw_fusion/finetune/a4.py}；跨传感器清单是 \path{configs/a3_cross_sensor_zero_shot_20261012.json} 和 \path{configs/a3_cross_sensor_extension_20261012.json}；全数据集设置见 \path{configs/a3_all_dataset_traditional_isp_preview_20261017.json}。这份配置里 \texttt{preferred\_encoder} 写的是 libx264，但45个实际视频和对应的 \texttt{video\_manifest.json} 都是 libx265，表\ref{tab:inference_config}按实际产物记。
+分块实现在 \repofile{src/raw_fusion/finetune/a4.py}；跨传感器清单是 \repofile{configs/a3_cross_sensor_zero_shot_20261012.json} 和 \repofile{configs/a3_cross_sensor_extension_20261012.json}；全数据集设置见 \repofile{configs/a3_all_dataset_traditional_isp_preview_20261017.json}。这份配置里 \texttt{preferred\_encoder} 写的是 libx264，但45个实际视频和对应的 \texttt{video\_manifest.json} 都是 libx265，表\ref{tab:inference_config}按实际产物记。
 
 \subsection{方法8的sc635hai专用头完整配置}
 
@@ -937,13 +940,13 @@ patch与有效区域 & $64\times64$ packed；静态置信度 $\ge0.9$，输入�
 用途 & sc635hai专用可选头，不替代默认方法3 \\
 \end{longtable}
 
-配置文件在 \path{configs/a8_sc635hai_adaptation_20261013.json}，训练摘要和保存的配置在 \path{artifacts/a8_sensor_adaptation/sc635hai/training_20261013/}，实现在 \path{src/raw_fusion/finetune/a8_adaptation.py}。
+配置文件在 \repofile{configs/a8_sc635hai_adaptation_20261013.json}，训练摘要和保存的配置在 \repodir{artifacts/a8_sensor_adaptation/sc635hai/training_20261013/}，实现在 \repofile{src/raw_fusion/finetune/a8_adaptation.py}。
 
 \subsection{结果来源与复现入口}
 
-主方法的静态评估在 \path{artifacts/finetune_mis20s1/evaluation/}，跨传感器静态结果在 \path{artifacts/a3_cross_sensor_zero_shot_20261012/} 和 \path{artifacts/a3_cross_sensor_extension_20261012/}，45流完整预览在 \path{artifacts/a3_all_dataset_traditional_isp_preview_20261017/}。专用输出头的解释和检查结果见 \path{docs/A8_SC635HAI_ADAPTATION_RESULT_2026-10-13.md}。文件名都保留原始实验标识，方便对回已有产物。
+主方法的静态评估在 \repodir{artifacts/finetune_mis20s1/evaluation/}，跨传感器静态结果在 \repodir{artifacts/a3_cross_sensor_zero_shot_20261012/} 和 \repodir{artifacts/a3_cross_sensor_extension_20261012/}，45流完整预览在 \repodir{artifacts/a3_all_dataset_traditional_isp_preview_20261017/}。专用输出头的解释和检查结果见 \repofile{docs/A8_SC635HAI_ADAPTATION_RESULT_2026-10-13.md}。文件名都保留原始实验标识，方便对回已有产物。
 
-在项目根目录执行下面这些纯评测命令，就能按对应协议复现主要结果。命令里的 \texttt{python} 指本附录记录的那个 Python 环境。
+克隆仓库并进入上述项目目录，准备原始数据及未收录的方法3最终权重后，可执行下面这些纯评测命令，按对应协议复现主要结果。命令里的 \texttt{python} 指本附录记录的那个 Python 环境。
 
 {\small
 \begin{verbatim}
@@ -969,8 +972,7 @@ python scripts/evaluate_a3_cross_sensor.py \
 \section{补充探索的记录与图表来源}
 \label{app:djc_sources}
 
-第\ref{sec:djc}节是从“任务三-djc”目录下的 \path{deliverable_20261025/} 整理出来的，下面的路径都相对这个目录。核对范围包括研究报告和台账、服务器上的历史实验、本地训练和补充验证、模型实现，以及图像来源。正文按研究问题归纳，部署自检、草案里的预算和真正的优化器更新是分开算的。
-
+第\ref{sec:djc}节的补充探索对应 GitHub 仓库的 \href{https://github.com/JingZe-Liang/SigmaStar_AIISP/tree/main/Stage2/9_19-10_1/Task3/DJC}{\nolinkurl{Stage2/9_19-10_1/Task3/DJC/}}。该目录中的 \href{https://github.com/JingZe-Liang/SigmaStar_AIISP/blob/main/Stage2/9_19-10_1/Task3/DJC/Report.MD}{\nolinkurl{Report.MD}} 是研究报告入口，方法实现位于其下的 \nolinkurl{ExposureDiffusionNAFNet_DJC_experimental/}。下表只为仓库中实际存在的材料提供链接；原交付包中的完整历史归档、训练运行目录及部分验证记录未收录到当前仓库，不能从这些链接直接取得。
 {\linespread{1}\footnotesize\renewcommand{\arraystretch}{1.05}
 \begin{longtable}{P{0.20\textwidth}P{0.74\textwidth}}
 \caption{ExposureDiffusion路线的主要证据入口。}\label{tab:djc_sources}\\
@@ -984,18 +986,18 @@ python scripts/evaluate_a3_cross_sensor.py \
 \endhead
 \bottomrule
 \endfoot
-早期噪声研究 & \path{project/code/noise_model/} 下的 \path{TWO_SHOTS_CVPR2026.md}、\path{ONE_FRAME_DARK_VALIDATION.md}、\path{PNNP_DECOMPOSITION_COMPARISON.md}、\path{QUANTIZED_LIKELIHOOD.md} 与 \path{STATIC_CONDITIONAL_RESIDUAL.md} \\
-多传感器自标定 & \path{archive/server/calibration/report.md} \\
-单帧1000步适配 & \path{archive/server/reports/gpu_start/completion_audit.json}，及 \path{archive/server/runs/company_mixed_gpu_001/} \\
-历史模块试验与解冻 & \path{archive/server/experiments/}、\path{archive/server/runs/}、\path{archive/server/evaluation/}；汇总表 \path{results/tables/historical_validation_all_metrics.csv} \\
-最终五帧结构与实际训练 & \path{project/code/company_exposure/burst_detail/model.py}；\path{project/code/scripts/exposure_output_residual_local.py}；\path{project/work_v3/runs/residual_v3_001/} \\
-固定与补充验证 & 上述运行目录中的 \path{fixed_validation.json}、\path{baseline_validation.json} 与 \path{validation_2300.json}；\path{results/tables/supplement_validation.csv}、\path{supplement_sensitivity.csv} \\
-165例图像与权重身份 & \path{results/report_comparisons/} 中各流的 \path{best_full.png}、\path{best_detail.png} 及 \path{best_provenance.json}；\path{results/all165/inference_contract.json} \\
+早期噪声研究 & \djcfile{project/code/noise_model/TWO_SHOTS_CVPR2026.md}、\djcfile{project/code/noise_model/ONE_FRAME_DARK_VALIDATION.md}、\djcfile{project/code/noise_model/PNNP_DECOMPOSITION_COMPARISON.md}、\djcfile{project/code/noise_model/QUANTIZED_LIKELIHOOD.md} 与 \djcfile{project/code/noise_model/STATIC_CONDITIONAL_RESIDUAL.md} \\
+多传感器自标定 & 原始标定归档未收录；研究说明见上述 DJC 研究报告入口。 \\
+单帧1000步适配 & 原始完成审计与训练运行记录未收录；随附曲线数据见 \repofile{docs/assets/stage2_report_20261023/djc/exposure_validation.csv}。 \\
+历史模块试验与解冻 & 完整历史实验、运行记录、评估归档及352项汇总台账未收录；仓库中的报告与随附最小数据不替代完整归档。 \\
+最终五帧结构与实际训练 & 实现见 \djcfile{project/code/company_exposure/burst_detail/model.py} 和 \djcfile{project/code/scripts/exposure_output_residual_local.py}；训练曲线数据见 \repofile{docs/assets/stage2_report_20261023/djc/v3_validation.csv}；原始运行目录未收录。 \\
+固定与补充验证 & 随附分域数据见 \repofile{docs/assets/stage2_report_20261023/djc/v3_domain_comparison.csv}；完整固定验证 JSON、补充裁块及敏感性台账未收录。 \\
+165例图像与权重身份 & 报告选用场景图及来源见 \repofile{docs/assets/stage2_report_20261023/djc/figure_sources.json} 和\repodir{docs/assets/stage2_report_20261023/djc/}；完整165例比较图、推理协议及模型权重未收录。 \\
 \end{longtable}
 }
 
-早期噪声建模的数值是按上述研究记录转述的。\path{runs/noise/} 下对应的原始拟合 JSON 和 NPZ 没有随这次整理一起保存，所以这部分只核对了报告和实现，没有把它们当作新完成的独立验收。后续历史训练的352项汇总指标已经和原运行 JSON 逐项比对过；五帧候选的固定验证、补充裁块和图像权重身份也都分别核过。
+早期噪声建模的数值是按上述研究记录转述的。对应的原始噪声拟合 JSON 和 NPZ 未收录到仓库，所以这部分只核对了报告和实现，没有把它们当作新完成的独立验收。后续历史训练的352项汇总指标此前已经和原运行 JSON 逐项比对过；五帧候选的固定验证、补充裁块和图像权重身份此前也都分别核过，但当前仓库未收录这些完整原始记录。读者可从上述链接核查已上传的最小数据与实现。
 
-报告里的五张场景图保持原始 PNG 内容，排版时只裁掉了原来的小字号表头和标签。复制来源、文件哈希和最佳权重身份都存在 \path{docs/assets/stage2_report_20261023/djc/figure_sources.json} 里。曲线和分域图是用同目录的 \path{plot_djc_results.py} 基于随附的最小 CSV 重绘的，来源记在 \path{plot_sources.json}。这组图里的官方 RViDeformer 和第\ref{sec:adopted}节微调出来的方法3，始终当成两份不同的权重处理。
+报告里的五张场景图保持原始 PNG 内容，排版时只裁掉了原来的小字号表头和标签。复制来源、文件哈希和最佳权重身份都存在 \repofile{docs/assets/stage2_report_20261023/djc/figure_sources.json} 里。曲线和分域图是用同目录的 \repofile{docs/assets/stage2_report_20261023/djc/plot_djc_results.py} 基于随附的最小 CSV 重绘的，来源记在 \repofile{docs/assets/stage2_report_20261023/djc/plot_sources.json}。这组图里的官方 RViDeformer 和第\ref{sec:adopted}节微调出来的方法3，始终当成两份不同的权重处理。
 
 \end{document}
