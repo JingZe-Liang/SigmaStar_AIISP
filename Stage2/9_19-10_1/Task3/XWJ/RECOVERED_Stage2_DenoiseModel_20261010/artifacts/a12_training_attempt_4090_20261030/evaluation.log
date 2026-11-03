@@ -1,0 +1,20 @@
+/home/jingzeliang/miniconda3/envs/aaa_312/lib/python3.12/site-packages/torch/functional.py:534: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at ../aten/src/ATen/native/TensorShape.cpp:3595.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+/home/jingzeliang/miniconda3/envs/aaa_312/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py:632: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+/home/jingzeliang/miniconda3/envs/aaa_312/lib/python3.12/site-packages/torch/utils/checkpoint.py:87: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn(
+{"phase": "controlled_probes_complete", "cases": 12, "rmse_lower": 7}
+native evaluation started: a3_ema
+{"phase": "native_model_complete", "model": "a3_ema", "metrics": {"finetuned": {"rmse_dn": 8.519514083862305, "psnr_db": 53.63678161794519, "pixels": 15359240}, "input": {"rmse_dn": 23.75747299194336, "psnr_db": 44.729073237513006, "pixels": 15359240}, "temporal_mad_dn": 1.4169946908950806, "input_temporal_mad_dn": 22.503097534179688, "legal_fraction": 1.0, "high_frequency_ratio_mean": 0.8674618284350072, "high_frequency_ratio_per_channel": [0.8671171478527072, 0.9075161767577248, 0.8927551680957686, 0.802458821033828], "flat_residual_sigma_dn": 6.322052955627441, "static_pixels": 15359240, "static_fraction": 0.925880111882716}}
+native evaluation started: a12_step200_ema
+{"phase": "native_model_complete", "model": "a12_step200_ema", "metrics": {"finetuned": {"rmse_dn": 8.668965339660645, "psnr_db": 53.485732790836515, "pixels": 15359240}, "input": {"rmse_dn": 23.75747299194336, "psnr_db": 44.729073237513006, "pixels": 15359240}, "temporal_mad_dn": 1.4177168607711792, "input_temporal_mad_dn": 22.503097534179688, "legal_fraction": 1.0, "high_frequency_ratio_mean": 0.8683864163572599, "high_frequency_ratio_per_channel": [0.8678875265758227, 0.9080778592846195, 0.8942021819646413, 0.8033780976039565], "flat_residual_sigma_dn": 6.338771820068359, "static_pixels": 15359240, "static_fraction": 0.925880111882716}}
+{
+  "status": "evaluation_completed",
+  "device": "cuda:0",
+  "oom_policy": "stop_without_retry",
+  "phase": "complete",
+  "probe_comparison": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_training_attempt_4090_20261030/probe_comparison.json",
+  "native_comparison": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_native1000x_first8_4090_20261030/comparison.json",
+  "elapsed_seconds": 58.19745400897227
+}

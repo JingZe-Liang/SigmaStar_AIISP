@@ -1,0 +1,46 @@
+{
+  "schema": "a14_static_roi_v1",
+  "label": "a3_ema",
+  "weights": "ema",
+  "checkpoint": {
+    "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/training/checkpoint_step_005000.pth",
+    "sha256": "97c4332f685f98959b243e4b100434469f714aed6329e100d22b6d8552592e0b",
+    "size_bytes": 163925266
+  },
+  "prepared_manifest": {
+    "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a14_static_20261030/prepared_evaluation/manifest.json",
+    "sha256": "706e3d43ef7899f5f2a2d99a845415f3084bc5a5a053ac00b3ddffe82e301c8e",
+    "size_bytes": 663436
+  },
+  "device": "cuda:0",
+  "gpu_uuid": "GPU-07a5046e-9b56-8557-3845-d6cca9ea0497",
+  "gpu_name": "NVIDIA GeForce RTX 3090",
+  "cuda_visible_devices": "GPU-07a5046e-9b56-8557-3845-d6cca9ea0497",
+  "torch_version": "2.5.1+cu124",
+  "cuda_version": "12.4",
+  "precision": "float32",
+  "tf32": false,
+  "output_clip": [
+    0.0,
+    1.0
+  ],
+  "code": [
+    {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/src/raw_fusion/finetune/a14_static_eval.py",
+      "sha256": "94ab1f52a2a6ee250a9e35a311a6571341a963f5d377ac4d52a218644c0783ef",
+      "size_bytes": 30138
+    },
+    {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/src/raw_fusion/finetune/a12_paired_eval.py",
+      "sha256": "3f2dae813ecf78fd27466eadb68ab3fcc95c4e1bd75925eac84a4f0bf73ee0b0",
+      "size_bytes": 11828
+    }
+  ],
+  "scope": "Native static ROI diagnostics; training-domain reevaluation is not unseen-scene or unseen-sensor generalization. Opposite parity prevents direct target averaging of evaluated input frames, but masks, reference selection and brightness estimation may still depend on the full sequence.",
+  "source_roles": {
+    "mis20s1_1000x": "gain_holdout",
+    "sc465sl_2000x": "gain_holdout",
+    "sc465sl_darkroom18_256x": "train_distribution",
+    "sc635hai_131x_low_cct": "train_distribution"
+  }
+}

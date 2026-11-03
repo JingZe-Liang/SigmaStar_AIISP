@@ -1,0 +1,16 @@
+{
+  "status": "stopped_oom",
+  "training_authorized": true,
+  "oom_policy": "stop_without_retry",
+  "config_path": "configs/a12_sampling_pilot_20261029.json",
+  "device": "cuda:1",
+  "gpu_name": "NVIDIA GeForce RTX 3090",
+  "initial_free_bytes": 9301458944,
+  "total_bytes": 25327697920,
+  "output_dir": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_sampling_pilot_ready_20261029",
+  "error_type": "OutOfMemoryError",
+  "error": "CUDA out of memory. Tried to allocate 432.00 MiB. GPU 1 has a total capacity of 23.59 GiB of which 82.56 MiB is free. Process 1021187 has 9.77 GiB memory in use. Process 1044201 has 4.85 GiB memory in use. Including non-PyTorch memory, this process has 8.83 GiB memory in use. Of the allocated memory 8.25 GiB is allocated by PyTorch, and 289.47 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)",
+  "elapsed_seconds": 4.43647461081855,
+  "peak_allocated_bytes": 8872425472,
+  "peak_reserved_bytes": 9160359936
+}

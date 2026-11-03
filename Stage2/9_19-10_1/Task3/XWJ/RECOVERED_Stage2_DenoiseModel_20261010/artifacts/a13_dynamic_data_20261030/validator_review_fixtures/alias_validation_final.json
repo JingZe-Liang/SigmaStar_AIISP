@@ -1,0 +1,1396 @@
+{
+  "schema_version": "stage2_a7_motion_validation_v1",
+  "created_at": "2026-10-30T06:39:25.555231+00:00",
+  "manifest_path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/alias_manifest.json",
+  "manifest_sha256": "080f97336d02f933c41f277cc66f0e9353c3417617a5f83a0055dc6b379d761f",
+  "dataset_root": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures",
+  "overall_pass": false,
+  "training_ready": false,
+  "admission_status": "automatic_checks_failed",
+  "scope": "Automatic screening only; metadata are declarations, not verified hardware evidence.",
+  "manual_review_required": [
+    "Physical-scene isolation and actual motion-type coverage.",
+    "Per-frame target detail, exposure blur, and temporal/spatial NR artifacts.",
+    "Capture logs confirming low gain, fixed controls, and complete processing bypass.",
+    "Static-chart and lens-cap controls confirming RAW format, black level, and residual noise."
+  ],
+  "source_files": [
+    {
+      "clip_id": "clip0",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "size_bytes": 3932160,
+      "sha256": "80300e2e348bde315f851cf4771db06b6103db22bb3cfb16abd3d438e0881f0f"
+    },
+    {
+      "clip_id": "clip1",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "size_bytes": 3932160,
+      "sha256": "80300e2e348bde315f851cf4771db06b6103db22bb3cfb16abd3d438e0881f0f"
+    },
+    {
+      "clip_id": "clip2",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "size_bytes": 3932160,
+      "sha256": "80300e2e348bde315f851cf4771db06b6103db22bb3cfb16abd3d438e0881f0f"
+    },
+    {
+      "clip_id": "clip3",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "size_bytes": 3932160,
+      "sha256": "80300e2e348bde315f851cf4771db06b6103db22bb3cfb16abd3d438e0881f0f"
+    },
+    {
+      "clip_id": "clip4",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "size_bytes": 3932160,
+      "sha256": "80300e2e348bde315f851cf4771db06b6103db22bb3cfb16abd3d438e0881f0f"
+    },
+    {
+      "clip_id": "clip5",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "size_bytes": 3932160,
+      "sha256": "80300e2e348bde315f851cf4771db06b6103db22bb3cfb16abd3d438e0881f0f"
+    },
+    {
+      "clip_id": "clip6",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "size_bytes": 3932160,
+      "sha256": "80300e2e348bde315f851cf4771db06b6103db22bb3cfb16abd3d438e0881f0f"
+    },
+    {
+      "clip_id": "clip7",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "size_bytes": 3932160,
+      "sha256": "80300e2e348bde315f851cf4771db06b6103db22bb3cfb16abd3d438e0881f0f"
+    },
+    {
+      "clip_id": "clip8",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "size_bytes": 3932160,
+      "sha256": "80300e2e348bde315f851cf4771db06b6103db22bb3cfb16abd3d438e0881f0f"
+    },
+    {
+      "clip_id": "clip9",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "size_bytes": 3932160,
+      "sha256": "80300e2e348bde315f851cf4771db06b6103db22bb3cfb16abd3d438e0881f0f"
+    },
+    {
+      "clip_id": "clip10",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "size_bytes": 3932160,
+      "sha256": "80300e2e348bde315f851cf4771db06b6103db22bb3cfb16abd3d438e0881f0f"
+    },
+    {
+      "clip_id": "clip11",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "size_bytes": 3932160,
+      "sha256": "80300e2e348bde315f851cf4771db06b6103db22bb3cfb16abd3d438e0881f0f"
+    },
+    {
+      "clip_id": "clip12",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "size_bytes": 3932160,
+      "sha256": "80300e2e348bde315f851cf4771db06b6103db22bb3cfb16abd3d438e0881f0f"
+    },
+    {
+      "clip_id": "clip13",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "size_bytes": 3932160,
+      "sha256": "80300e2e348bde315f851cf4771db06b6103db22bb3cfb16abd3d438e0881f0f"
+    },
+    {
+      "clip_id": "clip14",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "size_bytes": 3932160,
+      "sha256": "80300e2e348bde315f851cf4771db06b6103db22bb3cfb16abd3d438e0881f0f"
+    },
+    {
+      "clip_id": "clip15",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "size_bytes": 3932160,
+      "sha256": "80300e2e348bde315f851cf4771db06b6103db22bb3cfb16abd3d438e0881f0f"
+    },
+    {
+      "clip_id": "clip16",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "size_bytes": 3932160,
+      "sha256": "80300e2e348bde315f851cf4771db06b6103db22bb3cfb16abd3d438e0881f0f"
+    },
+    {
+      "clip_id": "clip17",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "size_bytes": 3932160,
+      "sha256": "80300e2e348bde315f851cf4771db06b6103db22bb3cfb16abd3d438e0881f0f"
+    },
+    {
+      "clip_id": "clip18",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "size_bytes": 3932160,
+      "sha256": "80300e2e348bde315f851cf4771db06b6103db22bb3cfb16abd3d438e0881f0f"
+    },
+    {
+      "clip_id": "clip19",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "size_bytes": 3932160,
+      "sha256": "80300e2e348bde315f851cf4771db06b6103db22bb3cfb16abd3d438e0881f0f"
+    },
+    {
+      "clip_id": "clip20",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "size_bytes": 3932160,
+      "sha256": "80300e2e348bde315f851cf4771db06b6103db22bb3cfb16abd3d438e0881f0f"
+    },
+    {
+      "clip_id": "clip21",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "size_bytes": 3932160,
+      "sha256": "80300e2e348bde315f851cf4771db06b6103db22bb3cfb16abd3d438e0881f0f"
+    },
+    {
+      "clip_id": "clip22",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "size_bytes": 3932160,
+      "sha256": "80300e2e348bde315f851cf4771db06b6103db22bb3cfb16abd3d438e0881f0f"
+    },
+    {
+      "clip_id": "clip23",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "size_bytes": 3932160,
+      "sha256": "80300e2e348bde315f851cf4771db06b6103db22bb3cfb16abd3d438e0881f0f"
+    },
+    {
+      "clip_id": "clip24",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "size_bytes": 3932160,
+      "sha256": "80300e2e348bde315f851cf4771db06b6103db22bb3cfb16abd3d438e0881f0f"
+    },
+    {
+      "clip_id": "clip25",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "size_bytes": 3932160,
+      "sha256": "80300e2e348bde315f851cf4771db06b6103db22bb3cfb16abd3d438e0881f0f"
+    },
+    {
+      "clip_id": "clip26",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "size_bytes": 3932160,
+      "sha256": "80300e2e348bde315f851cf4771db06b6103db22bb3cfb16abd3d438e0881f0f"
+    },
+    {
+      "clip_id": "clip27",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "size_bytes": 3932160,
+      "sha256": "80300e2e348bde315f851cf4771db06b6103db22bb3cfb16abd3d438e0881f0f"
+    },
+    {
+      "clip_id": "clip28",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "size_bytes": 3932160,
+      "sha256": "80300e2e348bde315f851cf4771db06b6103db22bb3cfb16abd3d438e0881f0f"
+    },
+    {
+      "clip_id": "clip29",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "size_bytes": 3932160,
+      "sha256": "80300e2e348bde315f851cf4771db06b6103db22bb3cfb16abd3d438e0881f0f"
+    }
+  ],
+  "capture_format": {
+    "sensor": "MIS20S1",
+    "width": 128,
+    "height": 96,
+    "dtype": "uint16_le",
+    "bit_alignment": "high12",
+    "cfa": "RGGB",
+    "black_level_dn": 256.0,
+    "white_level_dn": 4095
+  },
+  "thresholds": {
+    "min_frames_per_clip": 160,
+    "min_train_scenes": 4,
+    "min_validation_scenes": 2,
+    "max_target_noise_dn": 8.0,
+    "preferred_target_noise_dn": 5.0,
+    "max_background_cv": 0.015,
+    "max_background_deviation": 0.04,
+    "max_saturation_fraction": 0.01,
+    "min_active_pair_fraction": 0.25,
+    "min_motion_fraction": 0.01,
+    "max_motion_fraction": 0.6,
+    "sample_pairs": 24,
+    "noise_block_size": 16,
+    "motion_block_size": 4
+  },
+  "inventory": {
+    "passed": false,
+    "train_scenes": [
+      "s0",
+      "s1",
+      "s2",
+      "s3"
+    ],
+    "validation_scenes": [
+      "s4",
+      "s5"
+    ],
+    "required_motion_types": [
+      "depth_walk",
+      "fast_slow_gesture",
+      "fine_texture_motion",
+      "lateral_walk",
+      "occlusion_reentry"
+    ],
+    "gain_settings": [
+      [
+        1024,
+        1024
+      ]
+    ],
+    "fps_values": [
+      12.5
+    ],
+    "scene_motion_types": {
+      "s0": [
+        "depth_walk",
+        "fast_slow_gesture",
+        "fine_texture_motion",
+        "lateral_walk",
+        "occlusion_reentry"
+      ],
+      "s1": [
+        "depth_walk",
+        "fast_slow_gesture",
+        "fine_texture_motion",
+        "lateral_walk",
+        "occlusion_reentry"
+      ],
+      "s2": [
+        "depth_walk",
+        "fast_slow_gesture",
+        "fine_texture_motion",
+        "lateral_walk",
+        "occlusion_reentry"
+      ],
+      "s3": [
+        "depth_walk",
+        "fast_slow_gesture",
+        "fine_texture_motion",
+        "lateral_walk",
+        "occlusion_reentry"
+      ],
+      "s4": [
+        "depth_walk",
+        "fast_slow_gesture",
+        "fine_texture_motion",
+        "lateral_walk",
+        "occlusion_reentry"
+      ],
+      "s5": [
+        "depth_walk",
+        "fast_slow_gesture",
+        "fine_texture_motion",
+        "lateral_walk",
+        "occlusion_reentry"
+      ]
+    },
+    "failures": [
+      "duplicate RAW physical_file: ['clip0', 'clip1', 'clip2', 'clip3', 'clip4', 'clip5', 'clip6', 'clip7', 'clip8', 'clip9', 'clip10', 'clip11', 'clip12', 'clip13', 'clip14', 'clip15', 'clip16', 'clip17', 'clip18', 'clip19', 'clip20', 'clip21', 'clip22', 'clip23', 'clip24', 'clip25', 'clip26', 'clip27', 'clip28', 'clip29']",
+      "duplicate RAW identical_content: ['clip0', 'clip1', 'clip2', 'clip3', 'clip4', 'clip5', 'clip6', 'clip7', 'clip8', 'clip9', 'clip10', 'clip11', 'clip12', 'clip13', 'clip14', 'clip15', 'clip16', 'clip17', 'clip18', 'clip19', 'clip20', 'clip21', 'clip22', 'clip23', 'clip24', 'clip25', 'clip26', 'clip27', 'clip28', 'clip29']"
+    ],
+    "duplicate_files": [
+      {
+        "kind": "physical_file",
+        "clip_ids": [
+          "clip0",
+          "clip1",
+          "clip2",
+          "clip3",
+          "clip4",
+          "clip5",
+          "clip6",
+          "clip7",
+          "clip8",
+          "clip9",
+          "clip10",
+          "clip11",
+          "clip12",
+          "clip13",
+          "clip14",
+          "clip15",
+          "clip16",
+          "clip17",
+          "clip18",
+          "clip19",
+          "clip20",
+          "clip21",
+          "clip22",
+          "clip23",
+          "clip24",
+          "clip25",
+          "clip26",
+          "clip27",
+          "clip28",
+          "clip29"
+        ]
+      },
+      {
+        "kind": "identical_content",
+        "clip_ids": [
+          "clip0",
+          "clip1",
+          "clip2",
+          "clip3",
+          "clip4",
+          "clip5",
+          "clip6",
+          "clip7",
+          "clip8",
+          "clip9",
+          "clip10",
+          "clip11",
+          "clip12",
+          "clip13",
+          "clip14",
+          "clip15",
+          "clip16",
+          "clip17",
+          "clip18",
+          "clip19",
+          "clip20",
+          "clip21",
+          "clip22",
+          "clip23",
+          "clip24",
+          "clip25",
+          "clip26",
+          "clip27",
+          "clip28",
+          "clip29"
+        ]
+      }
+    ]
+  },
+  "clips": [
+    {
+      "clip_id": "clip0",
+      "scene_id": "s0",
+      "split": "train",
+      "motion_type": "depth_walk",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "passed": true,
+      "checks": {
+        "minimum_frames": true,
+        "high12_alignment": true,
+        "target_noise": true,
+        "background_cv": true,
+        "background_max_deviation": true,
+        "saturation": true,
+        "active_motion": true,
+        "motion_area_lower_bound": true,
+        "motion_area_upper_bound": true
+      },
+      "failures": [],
+      "warnings": [],
+      "metrics": {
+        "frames": 160,
+        "sampled_adjacent_pairs": 24,
+        "high12_alignment_fraction": 1.0,
+        "target_noise_dn": 1.4905108052618687,
+        "background_level_dn": 519.859375,
+        "background_cv": 4.179704727174842e-05,
+        "background_max_deviation": 0.00012022482041417451,
+        "saturation_fraction": 0.0,
+        "active_pair_fraction": 1.0,
+        "mean_motion_fraction": 0.052083333333333336,
+        "detail_energy_dn": 2.5
+      }
+    },
+    {
+      "clip_id": "clip1",
+      "scene_id": "s0",
+      "split": "train",
+      "motion_type": "fast_slow_gesture",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "passed": true,
+      "checks": {
+        "minimum_frames": true,
+        "high12_alignment": true,
+        "target_noise": true,
+        "background_cv": true,
+        "background_max_deviation": true,
+        "saturation": true,
+        "active_motion": true,
+        "motion_area_lower_bound": true,
+        "motion_area_upper_bound": true
+      },
+      "failures": [],
+      "warnings": [],
+      "metrics": {
+        "frames": 160,
+        "sampled_adjacent_pairs": 24,
+        "high12_alignment_fraction": 1.0,
+        "target_noise_dn": 1.4905108052618687,
+        "background_level_dn": 519.859375,
+        "background_cv": 4.179704727174842e-05,
+        "background_max_deviation": 0.00012022482041417451,
+        "saturation_fraction": 0.0,
+        "active_pair_fraction": 1.0,
+        "mean_motion_fraction": 0.052083333333333336,
+        "detail_energy_dn": 2.5
+      }
+    },
+    {
+      "clip_id": "clip2",
+      "scene_id": "s0",
+      "split": "train",
+      "motion_type": "fine_texture_motion",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "passed": true,
+      "checks": {
+        "minimum_frames": true,
+        "high12_alignment": true,
+        "target_noise": true,
+        "background_cv": true,
+        "background_max_deviation": true,
+        "saturation": true,
+        "active_motion": true,
+        "motion_area_lower_bound": true,
+        "motion_area_upper_bound": true
+      },
+      "failures": [],
+      "warnings": [],
+      "metrics": {
+        "frames": 160,
+        "sampled_adjacent_pairs": 24,
+        "high12_alignment_fraction": 1.0,
+        "target_noise_dn": 1.4905108052618687,
+        "background_level_dn": 519.859375,
+        "background_cv": 4.179704727174842e-05,
+        "background_max_deviation": 0.00012022482041417451,
+        "saturation_fraction": 0.0,
+        "active_pair_fraction": 1.0,
+        "mean_motion_fraction": 0.052083333333333336,
+        "detail_energy_dn": 2.5
+      }
+    },
+    {
+      "clip_id": "clip3",
+      "scene_id": "s0",
+      "split": "train",
+      "motion_type": "lateral_walk",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "passed": true,
+      "checks": {
+        "minimum_frames": true,
+        "high12_alignment": true,
+        "target_noise": true,
+        "background_cv": true,
+        "background_max_deviation": true,
+        "saturation": true,
+        "active_motion": true,
+        "motion_area_lower_bound": true,
+        "motion_area_upper_bound": true
+      },
+      "failures": [],
+      "warnings": [],
+      "metrics": {
+        "frames": 160,
+        "sampled_adjacent_pairs": 24,
+        "high12_alignment_fraction": 1.0,
+        "target_noise_dn": 1.4905108052618687,
+        "background_level_dn": 519.859375,
+        "background_cv": 4.179704727174842e-05,
+        "background_max_deviation": 0.00012022482041417451,
+        "saturation_fraction": 0.0,
+        "active_pair_fraction": 1.0,
+        "mean_motion_fraction": 0.052083333333333336,
+        "detail_energy_dn": 2.5
+      }
+    },
+    {
+      "clip_id": "clip4",
+      "scene_id": "s0",
+      "split": "train",
+      "motion_type": "occlusion_reentry",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "passed": true,
+      "checks": {
+        "minimum_frames": true,
+        "high12_alignment": true,
+        "target_noise": true,
+        "background_cv": true,
+        "background_max_deviation": true,
+        "saturation": true,
+        "active_motion": true,
+        "motion_area_lower_bound": true,
+        "motion_area_upper_bound": true
+      },
+      "failures": [],
+      "warnings": [],
+      "metrics": {
+        "frames": 160,
+        "sampled_adjacent_pairs": 24,
+        "high12_alignment_fraction": 1.0,
+        "target_noise_dn": 1.4905108052618687,
+        "background_level_dn": 519.859375,
+        "background_cv": 4.179704727174842e-05,
+        "background_max_deviation": 0.00012022482041417451,
+        "saturation_fraction": 0.0,
+        "active_pair_fraction": 1.0,
+        "mean_motion_fraction": 0.052083333333333336,
+        "detail_energy_dn": 2.5
+      }
+    },
+    {
+      "clip_id": "clip5",
+      "scene_id": "s1",
+      "split": "train",
+      "motion_type": "depth_walk",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "passed": true,
+      "checks": {
+        "minimum_frames": true,
+        "high12_alignment": true,
+        "target_noise": true,
+        "background_cv": true,
+        "background_max_deviation": true,
+        "saturation": true,
+        "active_motion": true,
+        "motion_area_lower_bound": true,
+        "motion_area_upper_bound": true
+      },
+      "failures": [],
+      "warnings": [],
+      "metrics": {
+        "frames": 160,
+        "sampled_adjacent_pairs": 24,
+        "high12_alignment_fraction": 1.0,
+        "target_noise_dn": 1.4905108052618687,
+        "background_level_dn": 519.859375,
+        "background_cv": 4.179704727174842e-05,
+        "background_max_deviation": 0.00012022482041417451,
+        "saturation_fraction": 0.0,
+        "active_pair_fraction": 1.0,
+        "mean_motion_fraction": 0.052083333333333336,
+        "detail_energy_dn": 2.5
+      }
+    },
+    {
+      "clip_id": "clip6",
+      "scene_id": "s1",
+      "split": "train",
+      "motion_type": "fast_slow_gesture",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "passed": true,
+      "checks": {
+        "minimum_frames": true,
+        "high12_alignment": true,
+        "target_noise": true,
+        "background_cv": true,
+        "background_max_deviation": true,
+        "saturation": true,
+        "active_motion": true,
+        "motion_area_lower_bound": true,
+        "motion_area_upper_bound": true
+      },
+      "failures": [],
+      "warnings": [],
+      "metrics": {
+        "frames": 160,
+        "sampled_adjacent_pairs": 24,
+        "high12_alignment_fraction": 1.0,
+        "target_noise_dn": 1.4905108052618687,
+        "background_level_dn": 519.859375,
+        "background_cv": 4.179704727174842e-05,
+        "background_max_deviation": 0.00012022482041417451,
+        "saturation_fraction": 0.0,
+        "active_pair_fraction": 1.0,
+        "mean_motion_fraction": 0.052083333333333336,
+        "detail_energy_dn": 2.5
+      }
+    },
+    {
+      "clip_id": "clip7",
+      "scene_id": "s1",
+      "split": "train",
+      "motion_type": "fine_texture_motion",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "passed": true,
+      "checks": {
+        "minimum_frames": true,
+        "high12_alignment": true,
+        "target_noise": true,
+        "background_cv": true,
+        "background_max_deviation": true,
+        "saturation": true,
+        "active_motion": true,
+        "motion_area_lower_bound": true,
+        "motion_area_upper_bound": true
+      },
+      "failures": [],
+      "warnings": [],
+      "metrics": {
+        "frames": 160,
+        "sampled_adjacent_pairs": 24,
+        "high12_alignment_fraction": 1.0,
+        "target_noise_dn": 1.4905108052618687,
+        "background_level_dn": 519.859375,
+        "background_cv": 4.179704727174842e-05,
+        "background_max_deviation": 0.00012022482041417451,
+        "saturation_fraction": 0.0,
+        "active_pair_fraction": 1.0,
+        "mean_motion_fraction": 0.052083333333333336,
+        "detail_energy_dn": 2.5
+      }
+    },
+    {
+      "clip_id": "clip8",
+      "scene_id": "s1",
+      "split": "train",
+      "motion_type": "lateral_walk",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "passed": true,
+      "checks": {
+        "minimum_frames": true,
+        "high12_alignment": true,
+        "target_noise": true,
+        "background_cv": true,
+        "background_max_deviation": true,
+        "saturation": true,
+        "active_motion": true,
+        "motion_area_lower_bound": true,
+        "motion_area_upper_bound": true
+      },
+      "failures": [],
+      "warnings": [],
+      "metrics": {
+        "frames": 160,
+        "sampled_adjacent_pairs": 24,
+        "high12_alignment_fraction": 1.0,
+        "target_noise_dn": 1.4905108052618687,
+        "background_level_dn": 519.859375,
+        "background_cv": 4.179704727174842e-05,
+        "background_max_deviation": 0.00012022482041417451,
+        "saturation_fraction": 0.0,
+        "active_pair_fraction": 1.0,
+        "mean_motion_fraction": 0.052083333333333336,
+        "detail_energy_dn": 2.5
+      }
+    },
+    {
+      "clip_id": "clip9",
+      "scene_id": "s1",
+      "split": "train",
+      "motion_type": "occlusion_reentry",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "passed": true,
+      "checks": {
+        "minimum_frames": true,
+        "high12_alignment": true,
+        "target_noise": true,
+        "background_cv": true,
+        "background_max_deviation": true,
+        "saturation": true,
+        "active_motion": true,
+        "motion_area_lower_bound": true,
+        "motion_area_upper_bound": true
+      },
+      "failures": [],
+      "warnings": [],
+      "metrics": {
+        "frames": 160,
+        "sampled_adjacent_pairs": 24,
+        "high12_alignment_fraction": 1.0,
+        "target_noise_dn": 1.4905108052618687,
+        "background_level_dn": 519.859375,
+        "background_cv": 4.179704727174842e-05,
+        "background_max_deviation": 0.00012022482041417451,
+        "saturation_fraction": 0.0,
+        "active_pair_fraction": 1.0,
+        "mean_motion_fraction": 0.052083333333333336,
+        "detail_energy_dn": 2.5
+      }
+    },
+    {
+      "clip_id": "clip10",
+      "scene_id": "s2",
+      "split": "train",
+      "motion_type": "depth_walk",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "passed": true,
+      "checks": {
+        "minimum_frames": true,
+        "high12_alignment": true,
+        "target_noise": true,
+        "background_cv": true,
+        "background_max_deviation": true,
+        "saturation": true,
+        "active_motion": true,
+        "motion_area_lower_bound": true,
+        "motion_area_upper_bound": true
+      },
+      "failures": [],
+      "warnings": [],
+      "metrics": {
+        "frames": 160,
+        "sampled_adjacent_pairs": 24,
+        "high12_alignment_fraction": 1.0,
+        "target_noise_dn": 1.4905108052618687,
+        "background_level_dn": 519.859375,
+        "background_cv": 4.179704727174842e-05,
+        "background_max_deviation": 0.00012022482041417451,
+        "saturation_fraction": 0.0,
+        "active_pair_fraction": 1.0,
+        "mean_motion_fraction": 0.052083333333333336,
+        "detail_energy_dn": 2.5
+      }
+    },
+    {
+      "clip_id": "clip11",
+      "scene_id": "s2",
+      "split": "train",
+      "motion_type": "fast_slow_gesture",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "passed": true,
+      "checks": {
+        "minimum_frames": true,
+        "high12_alignment": true,
+        "target_noise": true,
+        "background_cv": true,
+        "background_max_deviation": true,
+        "saturation": true,
+        "active_motion": true,
+        "motion_area_lower_bound": true,
+        "motion_area_upper_bound": true
+      },
+      "failures": [],
+      "warnings": [],
+      "metrics": {
+        "frames": 160,
+        "sampled_adjacent_pairs": 24,
+        "high12_alignment_fraction": 1.0,
+        "target_noise_dn": 1.4905108052618687,
+        "background_level_dn": 519.859375,
+        "background_cv": 4.179704727174842e-05,
+        "background_max_deviation": 0.00012022482041417451,
+        "saturation_fraction": 0.0,
+        "active_pair_fraction": 1.0,
+        "mean_motion_fraction": 0.052083333333333336,
+        "detail_energy_dn": 2.5
+      }
+    },
+    {
+      "clip_id": "clip12",
+      "scene_id": "s2",
+      "split": "train",
+      "motion_type": "fine_texture_motion",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "passed": true,
+      "checks": {
+        "minimum_frames": true,
+        "high12_alignment": true,
+        "target_noise": true,
+        "background_cv": true,
+        "background_max_deviation": true,
+        "saturation": true,
+        "active_motion": true,
+        "motion_area_lower_bound": true,
+        "motion_area_upper_bound": true
+      },
+      "failures": [],
+      "warnings": [],
+      "metrics": {
+        "frames": 160,
+        "sampled_adjacent_pairs": 24,
+        "high12_alignment_fraction": 1.0,
+        "target_noise_dn": 1.4905108052618687,
+        "background_level_dn": 519.859375,
+        "background_cv": 4.179704727174842e-05,
+        "background_max_deviation": 0.00012022482041417451,
+        "saturation_fraction": 0.0,
+        "active_pair_fraction": 1.0,
+        "mean_motion_fraction": 0.052083333333333336,
+        "detail_energy_dn": 2.5
+      }
+    },
+    {
+      "clip_id": "clip13",
+      "scene_id": "s2",
+      "split": "train",
+      "motion_type": "lateral_walk",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "passed": true,
+      "checks": {
+        "minimum_frames": true,
+        "high12_alignment": true,
+        "target_noise": true,
+        "background_cv": true,
+        "background_max_deviation": true,
+        "saturation": true,
+        "active_motion": true,
+        "motion_area_lower_bound": true,
+        "motion_area_upper_bound": true
+      },
+      "failures": [],
+      "warnings": [],
+      "metrics": {
+        "frames": 160,
+        "sampled_adjacent_pairs": 24,
+        "high12_alignment_fraction": 1.0,
+        "target_noise_dn": 1.4905108052618687,
+        "background_level_dn": 519.859375,
+        "background_cv": 4.179704727174842e-05,
+        "background_max_deviation": 0.00012022482041417451,
+        "saturation_fraction": 0.0,
+        "active_pair_fraction": 1.0,
+        "mean_motion_fraction": 0.052083333333333336,
+        "detail_energy_dn": 2.5
+      }
+    },
+    {
+      "clip_id": "clip14",
+      "scene_id": "s2",
+      "split": "train",
+      "motion_type": "occlusion_reentry",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "passed": true,
+      "checks": {
+        "minimum_frames": true,
+        "high12_alignment": true,
+        "target_noise": true,
+        "background_cv": true,
+        "background_max_deviation": true,
+        "saturation": true,
+        "active_motion": true,
+        "motion_area_lower_bound": true,
+        "motion_area_upper_bound": true
+      },
+      "failures": [],
+      "warnings": [],
+      "metrics": {
+        "frames": 160,
+        "sampled_adjacent_pairs": 24,
+        "high12_alignment_fraction": 1.0,
+        "target_noise_dn": 1.4905108052618687,
+        "background_level_dn": 519.859375,
+        "background_cv": 4.179704727174842e-05,
+        "background_max_deviation": 0.00012022482041417451,
+        "saturation_fraction": 0.0,
+        "active_pair_fraction": 1.0,
+        "mean_motion_fraction": 0.052083333333333336,
+        "detail_energy_dn": 2.5
+      }
+    },
+    {
+      "clip_id": "clip15",
+      "scene_id": "s3",
+      "split": "train",
+      "motion_type": "depth_walk",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "passed": true,
+      "checks": {
+        "minimum_frames": true,
+        "high12_alignment": true,
+        "target_noise": true,
+        "background_cv": true,
+        "background_max_deviation": true,
+        "saturation": true,
+        "active_motion": true,
+        "motion_area_lower_bound": true,
+        "motion_area_upper_bound": true
+      },
+      "failures": [],
+      "warnings": [],
+      "metrics": {
+        "frames": 160,
+        "sampled_adjacent_pairs": 24,
+        "high12_alignment_fraction": 1.0,
+        "target_noise_dn": 1.4905108052618687,
+        "background_level_dn": 519.859375,
+        "background_cv": 4.179704727174842e-05,
+        "background_max_deviation": 0.00012022482041417451,
+        "saturation_fraction": 0.0,
+        "active_pair_fraction": 1.0,
+        "mean_motion_fraction": 0.052083333333333336,
+        "detail_energy_dn": 2.5
+      }
+    },
+    {
+      "clip_id": "clip16",
+      "scene_id": "s3",
+      "split": "train",
+      "motion_type": "fast_slow_gesture",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "passed": true,
+      "checks": {
+        "minimum_frames": true,
+        "high12_alignment": true,
+        "target_noise": true,
+        "background_cv": true,
+        "background_max_deviation": true,
+        "saturation": true,
+        "active_motion": true,
+        "motion_area_lower_bound": true,
+        "motion_area_upper_bound": true
+      },
+      "failures": [],
+      "warnings": [],
+      "metrics": {
+        "frames": 160,
+        "sampled_adjacent_pairs": 24,
+        "high12_alignment_fraction": 1.0,
+        "target_noise_dn": 1.4905108052618687,
+        "background_level_dn": 519.859375,
+        "background_cv": 4.179704727174842e-05,
+        "background_max_deviation": 0.00012022482041417451,
+        "saturation_fraction": 0.0,
+        "active_pair_fraction": 1.0,
+        "mean_motion_fraction": 0.052083333333333336,
+        "detail_energy_dn": 2.5
+      }
+    },
+    {
+      "clip_id": "clip17",
+      "scene_id": "s3",
+      "split": "train",
+      "motion_type": "fine_texture_motion",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "passed": true,
+      "checks": {
+        "minimum_frames": true,
+        "high12_alignment": true,
+        "target_noise": true,
+        "background_cv": true,
+        "background_max_deviation": true,
+        "saturation": true,
+        "active_motion": true,
+        "motion_area_lower_bound": true,
+        "motion_area_upper_bound": true
+      },
+      "failures": [],
+      "warnings": [],
+      "metrics": {
+        "frames": 160,
+        "sampled_adjacent_pairs": 24,
+        "high12_alignment_fraction": 1.0,
+        "target_noise_dn": 1.4905108052618687,
+        "background_level_dn": 519.859375,
+        "background_cv": 4.179704727174842e-05,
+        "background_max_deviation": 0.00012022482041417451,
+        "saturation_fraction": 0.0,
+        "active_pair_fraction": 1.0,
+        "mean_motion_fraction": 0.052083333333333336,
+        "detail_energy_dn": 2.5
+      }
+    },
+    {
+      "clip_id": "clip18",
+      "scene_id": "s3",
+      "split": "train",
+      "motion_type": "lateral_walk",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "passed": true,
+      "checks": {
+        "minimum_frames": true,
+        "high12_alignment": true,
+        "target_noise": true,
+        "background_cv": true,
+        "background_max_deviation": true,
+        "saturation": true,
+        "active_motion": true,
+        "motion_area_lower_bound": true,
+        "motion_area_upper_bound": true
+      },
+      "failures": [],
+      "warnings": [],
+      "metrics": {
+        "frames": 160,
+        "sampled_adjacent_pairs": 24,
+        "high12_alignment_fraction": 1.0,
+        "target_noise_dn": 1.4905108052618687,
+        "background_level_dn": 519.859375,
+        "background_cv": 4.179704727174842e-05,
+        "background_max_deviation": 0.00012022482041417451,
+        "saturation_fraction": 0.0,
+        "active_pair_fraction": 1.0,
+        "mean_motion_fraction": 0.052083333333333336,
+        "detail_energy_dn": 2.5
+      }
+    },
+    {
+      "clip_id": "clip19",
+      "scene_id": "s3",
+      "split": "train",
+      "motion_type": "occlusion_reentry",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "passed": true,
+      "checks": {
+        "minimum_frames": true,
+        "high12_alignment": true,
+        "target_noise": true,
+        "background_cv": true,
+        "background_max_deviation": true,
+        "saturation": true,
+        "active_motion": true,
+        "motion_area_lower_bound": true,
+        "motion_area_upper_bound": true
+      },
+      "failures": [],
+      "warnings": [],
+      "metrics": {
+        "frames": 160,
+        "sampled_adjacent_pairs": 24,
+        "high12_alignment_fraction": 1.0,
+        "target_noise_dn": 1.4905108052618687,
+        "background_level_dn": 519.859375,
+        "background_cv": 4.179704727174842e-05,
+        "background_max_deviation": 0.00012022482041417451,
+        "saturation_fraction": 0.0,
+        "active_pair_fraction": 1.0,
+        "mean_motion_fraction": 0.052083333333333336,
+        "detail_energy_dn": 2.5
+      }
+    },
+    {
+      "clip_id": "clip20",
+      "scene_id": "s4",
+      "split": "validation",
+      "motion_type": "depth_walk",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "passed": true,
+      "checks": {
+        "minimum_frames": true,
+        "high12_alignment": true,
+        "target_noise": true,
+        "background_cv": true,
+        "background_max_deviation": true,
+        "saturation": true,
+        "active_motion": true,
+        "motion_area_lower_bound": true,
+        "motion_area_upper_bound": true
+      },
+      "failures": [],
+      "warnings": [],
+      "metrics": {
+        "frames": 160,
+        "sampled_adjacent_pairs": 24,
+        "high12_alignment_fraction": 1.0,
+        "target_noise_dn": 1.4905108052618687,
+        "background_level_dn": 519.859375,
+        "background_cv": 4.179704727174842e-05,
+        "background_max_deviation": 0.00012022482041417451,
+        "saturation_fraction": 0.0,
+        "active_pair_fraction": 1.0,
+        "mean_motion_fraction": 0.052083333333333336,
+        "detail_energy_dn": 2.5
+      }
+    },
+    {
+      "clip_id": "clip21",
+      "scene_id": "s4",
+      "split": "validation",
+      "motion_type": "fast_slow_gesture",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "passed": true,
+      "checks": {
+        "minimum_frames": true,
+        "high12_alignment": true,
+        "target_noise": true,
+        "background_cv": true,
+        "background_max_deviation": true,
+        "saturation": true,
+        "active_motion": true,
+        "motion_area_lower_bound": true,
+        "motion_area_upper_bound": true
+      },
+      "failures": [],
+      "warnings": [],
+      "metrics": {
+        "frames": 160,
+        "sampled_adjacent_pairs": 24,
+        "high12_alignment_fraction": 1.0,
+        "target_noise_dn": 1.4905108052618687,
+        "background_level_dn": 519.859375,
+        "background_cv": 4.179704727174842e-05,
+        "background_max_deviation": 0.00012022482041417451,
+        "saturation_fraction": 0.0,
+        "active_pair_fraction": 1.0,
+        "mean_motion_fraction": 0.052083333333333336,
+        "detail_energy_dn": 2.5
+      }
+    },
+    {
+      "clip_id": "clip22",
+      "scene_id": "s4",
+      "split": "validation",
+      "motion_type": "fine_texture_motion",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "passed": true,
+      "checks": {
+        "minimum_frames": true,
+        "high12_alignment": true,
+        "target_noise": true,
+        "background_cv": true,
+        "background_max_deviation": true,
+        "saturation": true,
+        "active_motion": true,
+        "motion_area_lower_bound": true,
+        "motion_area_upper_bound": true
+      },
+      "failures": [],
+      "warnings": [],
+      "metrics": {
+        "frames": 160,
+        "sampled_adjacent_pairs": 24,
+        "high12_alignment_fraction": 1.0,
+        "target_noise_dn": 1.4905108052618687,
+        "background_level_dn": 519.859375,
+        "background_cv": 4.179704727174842e-05,
+        "background_max_deviation": 0.00012022482041417451,
+        "saturation_fraction": 0.0,
+        "active_pair_fraction": 1.0,
+        "mean_motion_fraction": 0.052083333333333336,
+        "detail_energy_dn": 2.5
+      }
+    },
+    {
+      "clip_id": "clip23",
+      "scene_id": "s4",
+      "split": "validation",
+      "motion_type": "lateral_walk",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "passed": true,
+      "checks": {
+        "minimum_frames": true,
+        "high12_alignment": true,
+        "target_noise": true,
+        "background_cv": true,
+        "background_max_deviation": true,
+        "saturation": true,
+        "active_motion": true,
+        "motion_area_lower_bound": true,
+        "motion_area_upper_bound": true
+      },
+      "failures": [],
+      "warnings": [],
+      "metrics": {
+        "frames": 160,
+        "sampled_adjacent_pairs": 24,
+        "high12_alignment_fraction": 1.0,
+        "target_noise_dn": 1.4905108052618687,
+        "background_level_dn": 519.859375,
+        "background_cv": 4.179704727174842e-05,
+        "background_max_deviation": 0.00012022482041417451,
+        "saturation_fraction": 0.0,
+        "active_pair_fraction": 1.0,
+        "mean_motion_fraction": 0.052083333333333336,
+        "detail_energy_dn": 2.5
+      }
+    },
+    {
+      "clip_id": "clip24",
+      "scene_id": "s4",
+      "split": "validation",
+      "motion_type": "occlusion_reentry",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "passed": true,
+      "checks": {
+        "minimum_frames": true,
+        "high12_alignment": true,
+        "target_noise": true,
+        "background_cv": true,
+        "background_max_deviation": true,
+        "saturation": true,
+        "active_motion": true,
+        "motion_area_lower_bound": true,
+        "motion_area_upper_bound": true
+      },
+      "failures": [],
+      "warnings": [],
+      "metrics": {
+        "frames": 160,
+        "sampled_adjacent_pairs": 24,
+        "high12_alignment_fraction": 1.0,
+        "target_noise_dn": 1.4905108052618687,
+        "background_level_dn": 519.859375,
+        "background_cv": 4.179704727174842e-05,
+        "background_max_deviation": 0.00012022482041417451,
+        "saturation_fraction": 0.0,
+        "active_pair_fraction": 1.0,
+        "mean_motion_fraction": 0.052083333333333336,
+        "detail_energy_dn": 2.5
+      }
+    },
+    {
+      "clip_id": "clip25",
+      "scene_id": "s5",
+      "split": "validation",
+      "motion_type": "depth_walk",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "passed": true,
+      "checks": {
+        "minimum_frames": true,
+        "high12_alignment": true,
+        "target_noise": true,
+        "background_cv": true,
+        "background_max_deviation": true,
+        "saturation": true,
+        "active_motion": true,
+        "motion_area_lower_bound": true,
+        "motion_area_upper_bound": true
+      },
+      "failures": [],
+      "warnings": [],
+      "metrics": {
+        "frames": 160,
+        "sampled_adjacent_pairs": 24,
+        "high12_alignment_fraction": 1.0,
+        "target_noise_dn": 1.4905108052618687,
+        "background_level_dn": 519.859375,
+        "background_cv": 4.179704727174842e-05,
+        "background_max_deviation": 0.00012022482041417451,
+        "saturation_fraction": 0.0,
+        "active_pair_fraction": 1.0,
+        "mean_motion_fraction": 0.052083333333333336,
+        "detail_energy_dn": 2.5
+      }
+    },
+    {
+      "clip_id": "clip26",
+      "scene_id": "s5",
+      "split": "validation",
+      "motion_type": "fast_slow_gesture",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "passed": true,
+      "checks": {
+        "minimum_frames": true,
+        "high12_alignment": true,
+        "target_noise": true,
+        "background_cv": true,
+        "background_max_deviation": true,
+        "saturation": true,
+        "active_motion": true,
+        "motion_area_lower_bound": true,
+        "motion_area_upper_bound": true
+      },
+      "failures": [],
+      "warnings": [],
+      "metrics": {
+        "frames": 160,
+        "sampled_adjacent_pairs": 24,
+        "high12_alignment_fraction": 1.0,
+        "target_noise_dn": 1.4905108052618687,
+        "background_level_dn": 519.859375,
+        "background_cv": 4.179704727174842e-05,
+        "background_max_deviation": 0.00012022482041417451,
+        "saturation_fraction": 0.0,
+        "active_pair_fraction": 1.0,
+        "mean_motion_fraction": 0.052083333333333336,
+        "detail_energy_dn": 2.5
+      }
+    },
+    {
+      "clip_id": "clip27",
+      "scene_id": "s5",
+      "split": "validation",
+      "motion_type": "fine_texture_motion",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "passed": true,
+      "checks": {
+        "minimum_frames": true,
+        "high12_alignment": true,
+        "target_noise": true,
+        "background_cv": true,
+        "background_max_deviation": true,
+        "saturation": true,
+        "active_motion": true,
+        "motion_area_lower_bound": true,
+        "motion_area_upper_bound": true
+      },
+      "failures": [],
+      "warnings": [],
+      "metrics": {
+        "frames": 160,
+        "sampled_adjacent_pairs": 24,
+        "high12_alignment_fraction": 1.0,
+        "target_noise_dn": 1.4905108052618687,
+        "background_level_dn": 519.859375,
+        "background_cv": 4.179704727174842e-05,
+        "background_max_deviation": 0.00012022482041417451,
+        "saturation_fraction": 0.0,
+        "active_pair_fraction": 1.0,
+        "mean_motion_fraction": 0.052083333333333336,
+        "detail_energy_dn": 2.5
+      }
+    },
+    {
+      "clip_id": "clip28",
+      "scene_id": "s5",
+      "split": "validation",
+      "motion_type": "lateral_walk",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "passed": true,
+      "checks": {
+        "minimum_frames": true,
+        "high12_alignment": true,
+        "target_noise": true,
+        "background_cv": true,
+        "background_max_deviation": true,
+        "saturation": true,
+        "active_motion": true,
+        "motion_area_lower_bound": true,
+        "motion_area_upper_bound": true
+      },
+      "failures": [],
+      "warnings": [],
+      "metrics": {
+        "frames": 160,
+        "sampled_adjacent_pairs": 24,
+        "high12_alignment_fraction": 1.0,
+        "target_noise_dn": 1.4905108052618687,
+        "background_level_dn": 519.859375,
+        "background_cv": 4.179704727174842e-05,
+        "background_max_deviation": 0.00012022482041417451,
+        "saturation_fraction": 0.0,
+        "active_pair_fraction": 1.0,
+        "mean_motion_fraction": 0.052083333333333336,
+        "detail_energy_dn": 2.5
+      }
+    },
+    {
+      "clip_id": "clip29",
+      "scene_id": "s5",
+      "split": "validation",
+      "motion_type": "occlusion_reentry",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/shared.raw",
+      "passed": true,
+      "checks": {
+        "minimum_frames": true,
+        "high12_alignment": true,
+        "target_noise": true,
+        "background_cv": true,
+        "background_max_deviation": true,
+        "saturation": true,
+        "active_motion": true,
+        "motion_area_lower_bound": true,
+        "motion_area_upper_bound": true
+      },
+      "failures": [],
+      "warnings": [],
+      "metrics": {
+        "frames": 160,
+        "sampled_adjacent_pairs": 24,
+        "high12_alignment_fraction": 1.0,
+        "target_noise_dn": 1.4905108052618687,
+        "background_level_dn": 519.859375,
+        "background_cv": 4.179704727174842e-05,
+        "background_max_deviation": 0.00012022482041417451,
+        "saturation_fraction": 0.0,
+        "active_pair_fraction": 1.0,
+        "mean_motion_fraction": 0.052083333333333336,
+        "detail_energy_dn": 2.5
+      }
+    }
+  ]
+}

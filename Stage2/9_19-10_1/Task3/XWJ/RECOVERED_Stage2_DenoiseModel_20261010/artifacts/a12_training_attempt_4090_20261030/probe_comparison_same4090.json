@@ -1,0 +1,293 @@
+{
+  "baseline": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_dynamic_probe_20261029/a3_same4090_20261030/evaluation.json",
+  "candidate": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_dynamic_probe_20261029/a12_step200_4090_20261030/evaluation.json",
+  "device": "RTX 4090 cuda:0 for both",
+  "metric_protocol": {
+    "version": "a12_region_errors_v2",
+    "raw_input": "stored noisy RAW before black-level clipping",
+    "model_input": "the same input after channel-wise black subtraction, [0,1] clipping and DN reconstruction",
+    "storage_code_endpoints": "exact storage codes 0 and 4095; distinct from black-level normalization endpoints",
+    "normalized_domain_limits": "channel-wise (DN-black)/(4095-black); endpoint tolerance 1e-7; raw below-black samples are not claimed to be hardware clipping",
+    "acceptance": "report separate reconstruction, structural and temporal target-relative errors; no single-metric pass claim"
+  },
+  "scope": "MIS20S1 A3 training-reference-derived constructed targets; development diagnostic, not independent real dynamic or cross-sensor validation",
+  "max_abs_metric_delta_a3_same4090_vs_historical_dn": 0.0051033378993849965,
+  "cases": [
+    {
+      "name": "detail__static__gain_800",
+      "mode": "static",
+      "region": "all",
+      "a3": {
+        "rmse_dn": 25.032567933784506,
+        "highpass_rmse_dn": 14.388877351990553,
+        "gradient_rmse_dn": 21.16974580537478,
+        "temporal_difference_error_rmse_dn": 4.277676498471954
+      },
+      "a12": {
+        "rmse_dn": 24.700111065468523,
+        "highpass_rmse_dn": 13.966636216973109,
+        "gradient_rmse_dn": 20.59178371568072,
+        "temporal_difference_error_rmse_dn": 4.296020050317042
+      },
+      "delta_a12_minus_a3": {
+        "rmse_dn": -0.3324568683159832,
+        "highpass_rmse_dn": -0.422241135017444,
+        "gradient_rmse_dn": -0.5779620896940614,
+        "temporal_difference_error_rmse_dn": 0.018343551845087624
+      }
+    },
+    {
+      "name": "detail__static__gain_12800",
+      "mode": "static",
+      "region": "all",
+      "a3": {
+        "rmse_dn": 38.99212772860089,
+        "highpass_rmse_dn": 30.377222382991736,
+        "gradient_rmse_dn": 44.71932627117334,
+        "temporal_difference_error_rmse_dn": 11.202082563014596
+      },
+      "a12": {
+        "rmse_dn": 38.765904800910334,
+        "highpass_rmse_dn": 30.160243804792934,
+        "gradient_rmse_dn": 44.424448773641814,
+        "temporal_difference_error_rmse_dn": 11.229348123470118
+      },
+      "delta_a12_minus_a3": {
+        "rmse_dn": -0.22622292769055719,
+        "highpass_rmse_dn": -0.21697857819880184,
+        "gradient_rmse_dn": -0.29487749753152315,
+        "temporal_difference_error_rmse_dn": 0.027265560455521864
+      }
+    },
+    {
+      "name": "detail__global_translation__gain_800",
+      "mode": "global_translation",
+      "region": "motion_swept",
+      "a3": {
+        "rmse_dn": 69.49387719269977,
+        "highpass_rmse_dn": 60.220682456108754,
+        "gradient_rmse_dn": 90.024378169768,
+        "temporal_difference_error_rmse_dn": 102.48914652897247
+      },
+      "a12": {
+        "rmse_dn": 69.34865002971537,
+        "highpass_rmse_dn": 60.04804425179882,
+        "gradient_rmse_dn": 89.79506425520428,
+        "temporal_difference_error_rmse_dn": 102.31313624392008
+      },
+      "delta_a12_minus_a3": {
+        "rmse_dn": -0.14522716298439775,
+        "highpass_rmse_dn": -0.17263820430993349,
+        "gradient_rmse_dn": -0.2293139145637184,
+        "temporal_difference_error_rmse_dn": -0.17601028505238503
+      }
+    },
+    {
+      "name": "detail__global_translation__gain_12800",
+      "mode": "global_translation",
+      "region": "motion_swept",
+      "a3": {
+        "rmse_dn": 89.95387422355765,
+        "highpass_rmse_dn": 73.0302908186053,
+        "gradient_rmse_dn": 109.08232099618175,
+        "temporal_difference_error_rmse_dn": 130.42108568886178
+      },
+      "a12": {
+        "rmse_dn": 90.16691870517383,
+        "highpass_rmse_dn": 73.07537072513172,
+        "gradient_rmse_dn": 109.18329238863281,
+        "temporal_difference_error_rmse_dn": 130.7191919853988
+      },
+      "delta_a12_minus_a3": {
+        "rmse_dn": 0.21304448161617984,
+        "highpass_rmse_dn": 0.04507990652642491,
+        "gradient_rmse_dn": 0.1009713924510578,
+        "temporal_difference_error_rmse_dn": 0.29810629653701426
+      }
+    },
+    {
+      "name": "detail__moving_patch__gain_800",
+      "mode": "moving_patch",
+      "region": "motion_swept",
+      "a3": {
+        "rmse_dn": 72.64228558265742,
+        "highpass_rmse_dn": 54.69220792766904,
+        "gradient_rmse_dn": 81.79491683168455,
+        "temporal_difference_error_rmse_dn": 101.15580418987132
+      },
+      "a12": {
+        "rmse_dn": 72.91262527688139,
+        "highpass_rmse_dn": 54.617925496388196,
+        "gradient_rmse_dn": 81.70577513211325,
+        "temporal_difference_error_rmse_dn": 101.36482563724964
+      },
+      "delta_a12_minus_a3": {
+        "rmse_dn": 0.27033969422396353,
+        "highpass_rmse_dn": -0.07428243128084233,
+        "gradient_rmse_dn": -0.08914169957130014,
+        "temporal_difference_error_rmse_dn": 0.20902144737831918
+      }
+    },
+    {
+      "name": "detail__moving_patch__gain_12800",
+      "mode": "moving_patch",
+      "region": "motion_swept",
+      "a3": {
+        "rmse_dn": 97.04368513967522,
+        "highpass_rmse_dn": 74.84951544020677,
+        "gradient_rmse_dn": 109.48359362706555,
+        "temporal_difference_error_rmse_dn": 133.7238232710197
+      },
+      "a12": {
+        "rmse_dn": 97.66656638153222,
+        "highpass_rmse_dn": 74.94151972847062,
+        "gradient_rmse_dn": 109.65768214362842,
+        "temporal_difference_error_rmse_dn": 134.3779532777005
+      },
+      "delta_a12_minus_a3": {
+        "rmse_dn": 0.6228812418570016,
+        "highpass_rmse_dn": 0.09200428826385121,
+        "gradient_rmse_dn": 0.17408851656287538,
+        "temporal_difference_error_rmse_dn": 0.6541300066807878
+      }
+    },
+    {
+      "name": "dark__static__gain_800",
+      "mode": "static",
+      "region": "all",
+      "a3": {
+        "rmse_dn": 11.280269661099828,
+        "highpass_rmse_dn": 8.951861412381222,
+        "gradient_rmse_dn": 11.17368164818607,
+        "temporal_difference_error_rmse_dn": 1.7430816203680872
+      },
+      "a12": {
+        "rmse_dn": 11.028732778959982,
+        "highpass_rmse_dn": 8.484645602888282,
+        "gradient_rmse_dn": 10.684416090653475,
+        "temporal_difference_error_rmse_dn": 1.760745975300249
+      },
+      "delta_a12_minus_a3": {
+        "rmse_dn": -0.2515368821398454,
+        "highpass_rmse_dn": -0.4672158094929397,
+        "gradient_rmse_dn": -0.4892655575325957,
+        "temporal_difference_error_rmse_dn": 0.017664354932161785
+      }
+    },
+    {
+      "name": "dark__static__gain_12800",
+      "mode": "static",
+      "region": "all",
+      "a3": {
+        "rmse_dn": 15.063869607001541,
+        "highpass_rmse_dn": 13.102912264277032,
+        "gradient_rmse_dn": 16.07827980435651,
+        "temporal_difference_error_rmse_dn": 4.503894109038159
+      },
+      "a12": {
+        "rmse_dn": 14.822937486415999,
+        "highpass_rmse_dn": 12.678504476561086,
+        "gradient_rmse_dn": 15.63094402504549,
+        "temporal_difference_error_rmse_dn": 4.5002811657936554
+      },
+      "delta_a12_minus_a3": {
+        "rmse_dn": -0.24093212058554236,
+        "highpass_rmse_dn": -0.4244077877159462,
+        "gradient_rmse_dn": -0.4473357793110182,
+        "temporal_difference_error_rmse_dn": -0.0036129432445033416
+      }
+    },
+    {
+      "name": "dark__global_translation__gain_800",
+      "mode": "global_translation",
+      "region": "motion_swept",
+      "a3": {
+        "rmse_dn": 15.525859092335848,
+        "highpass_rmse_dn": 13.439334767937062,
+        "gradient_rmse_dn": 17.518772757281862,
+        "temporal_difference_error_rmse_dn": 17.330577837287493
+      },
+      "a12": {
+        "rmse_dn": 15.320326209619195,
+        "highpass_rmse_dn": 13.102602760871083,
+        "gradient_rmse_dn": 17.178887214695855,
+        "temporal_difference_error_rmse_dn": 17.286939341969713
+      },
+      "delta_a12_minus_a3": {
+        "rmse_dn": -0.20553288271665338,
+        "highpass_rmse_dn": -0.3367320070659794,
+        "gradient_rmse_dn": -0.339885542586007,
+        "temporal_difference_error_rmse_dn": -0.0436384953177793
+      }
+    },
+    {
+      "name": "dark__global_translation__gain_12800",
+      "mode": "global_translation",
+      "region": "motion_swept",
+      "a3": {
+        "rmse_dn": 19.983674408470325,
+        "highpass_rmse_dn": 17.558520596085685,
+        "gradient_rmse_dn": 22.40650393031703,
+        "temporal_difference_error_rmse_dn": 21.0339907506298
+      },
+      "a12": {
+        "rmse_dn": 19.844006190186153,
+        "highpass_rmse_dn": 17.26787017607127,
+        "gradient_rmse_dn": 22.12299376335446,
+        "temporal_difference_error_rmse_dn": 21.07639181332504
+      },
+      "delta_a12_minus_a3": {
+        "rmse_dn": -0.13966821828417153,
+        "highpass_rmse_dn": -0.29065042001441554,
+        "gradient_rmse_dn": -0.2835101669625679,
+        "temporal_difference_error_rmse_dn": 0.04240106269523736
+      }
+    },
+    {
+      "name": "dark__moving_patch__gain_800",
+      "mode": "moving_patch",
+      "region": "motion_swept",
+      "a3": {
+        "rmse_dn": 60.21482906813455,
+        "highpass_rmse_dn": 48.69084609739135,
+        "gradient_rmse_dn": 71.93020458481188,
+        "temporal_difference_error_rmse_dn": 87.66951490171007
+      },
+      "a12": {
+        "rmse_dn": 60.41111974001135,
+        "highpass_rmse_dn": 48.65637238163537,
+        "gradient_rmse_dn": 71.88195341050609,
+        "temporal_difference_error_rmse_dn": 87.79557750693935
+      },
+      "delta_a12_minus_a3": {
+        "rmse_dn": 0.1962906718768025,
+        "highpass_rmse_dn": -0.03447371575597913,
+        "gradient_rmse_dn": -0.048251174305789846,
+        "temporal_difference_error_rmse_dn": 0.12606260522927926
+      }
+    },
+    {
+      "name": "dark__moving_patch__gain_12800",
+      "mode": "moving_patch",
+      "region": "motion_swept",
+      "a3": {
+        "rmse_dn": 84.35924952169471,
+        "highpass_rmse_dn": 66.47158409478685,
+        "gradient_rmse_dn": 96.71069422119983,
+        "temporal_difference_error_rmse_dn": 120.96806079567047
+      },
+      "a12": {
+        "rmse_dn": 85.02651785345105,
+        "highpass_rmse_dn": 66.61408009075174,
+        "gradient_rmse_dn": 96.95779912784162,
+        "temporal_difference_error_rmse_dn": 121.61710683546143
+      },
+      "delta_a12_minus_a3": {
+        "rmse_dn": 0.6672683317563468,
+        "highpass_rmse_dn": 0.14249599596489304,
+        "gradient_rmse_dn": 0.24710490664179474,
+        "temporal_difference_error_rmse_dn": 0.6490460397909601
+      }
+    }
+  ]
+}

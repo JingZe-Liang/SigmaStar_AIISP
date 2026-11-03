@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/scripts/evaluate_a14_static.py", line 41, in <module>
+    main()
+  File "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/scripts/evaluate_a14_static.py", line 35, in main
+    result = evaluate_static_checkpoint(args.prepared_dir, args.checkpoint, args.weights, args.label,
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/src/raw_fusion/finetune/a14_static_eval.py", line 398, in evaluate_static_checkpoint
+    raise ValueError(f"GPU UUID {gpu_uuid} differs from requested {expected_gpu_uuid}")
+ValueError: GPU UUID 07a5046e-9b56-8557-3845-d6cca9ea0497 differs from requested GPU-07a5046e-9b56-8557-3845-d6cca9ea0497

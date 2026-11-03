@@ -1,0 +1,217 @@
+{
+  "schema": "a12_native_primary_analysis_v1",
+  "weights": "ema",
+  "sources_sha256": {
+    "artifacts/a12_paired_eval_a3_20261030/native/evaluation.json": "b21b9e70f400ab0147b420732efe96bb02ee00e3ffbc0180866b2b0148e11fd3",
+    "artifacts/a12_paired_eval_fixed1024_ema_20261030/native/evaluation.json": "a5610b4a0d15ce53607858c99a1313698f2253164725ac6f7a40562bb01c1cee",
+    "artifacts/a12_paired_eval_refresh1024_ema_20261030/native/evaluation.json": "93131ca0bfcef6ca3f96b4cd2d2929b6fe8d7746fbefaadcd5c21347597b1ece"
+  },
+  "protocol_checks": {
+    "a3_ema": {
+      "windows": true,
+      "protocol": true,
+      "window_inputs": true,
+      "scoring_population": true
+    },
+    "fixed1024_ema": {
+      "windows": true,
+      "protocol": true,
+      "window_inputs": true,
+      "scoring_population": true
+    },
+    "refresh1024_ema": {
+      "windows": true,
+      "protocol": true,
+      "window_inputs": true,
+      "scoring_population": true
+    }
+  },
+  "windows": [
+    {
+      "frame_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "values": {
+        "a3_ema": {
+          "rmse_dn": 8.51951789855957,
+          "psnr_db": 53.63677772875249,
+          "flat_residual_sigma_dn": 6.322043418884277,
+          "temporal_mad_dn": 1.4170228242874146,
+          "high_frequency_ratio_mean": 0.8674568697824713
+        },
+        "fixed1024_ema": {
+          "rmse_dn": 8.825839042663574,
+          "psnr_db": 53.329958063331915,
+          "flat_residual_sigma_dn": 6.416331768035889,
+          "temporal_mad_dn": 1.4102458953857422,
+          "high_frequency_ratio_mean": 0.8683407941114148
+        },
+        "refresh1024_ema": {
+          "rmse_dn": 8.788602828979492,
+          "psnr_db": 53.36668135286228,
+          "flat_residual_sigma_dn": 6.41391658782959,
+          "temporal_mad_dn": 1.4186217784881592,
+          "high_frequency_ratio_mean": 0.8670011487006151
+        }
+      },
+      "delta_vs_a3": {
+        "fixed1024_ema": {
+          "rmse_dn": 0.3063211441040039,
+          "psnr_db": -0.30681966542057637,
+          "flat_residual_sigma_dn": 0.09428834915161133,
+          "temporal_mad_dn": -0.006776928901672363,
+          "high_frequency_ratio_mean": 0.000883924328943575
+        },
+        "refresh1024_ema": {
+          "rmse_dn": 0.2690849304199219,
+          "psnr_db": -0.27009637589021196,
+          "flat_residual_sigma_dn": 0.0918731689453125,
+          "temporal_mad_dn": 0.001598954200744629,
+          "high_frequency_ratio_mean": -0.0004557210818562085
+        }
+      },
+      "refresh_minus_fixed": {
+        "rmse_dn": -0.03723621368408203,
+        "psnr_db": 0.03672328953036441,
+        "flat_residual_sigma_dn": -0.002415180206298828,
+        "temporal_mad_dn": 0.008375883102416992,
+        "high_frequency_ratio_mean": -0.0013396454107997835
+      }
+    },
+    {
+      "frame_indices": [
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103
+      ],
+      "values": {
+        "a3_ema": {
+          "rmse_dn": 8.392468452453613,
+          "psnr_db": 53.767283773992,
+          "flat_residual_sigma_dn": 6.539531707763672,
+          "temporal_mad_dn": 1.3690539598464966,
+          "high_frequency_ratio_mean": 0.8617817520189566
+        },
+        "fixed1024_ema": {
+          "rmse_dn": 8.667064666748047,
+          "psnr_db": 53.48763738320477,
+          "flat_residual_sigma_dn": 6.628684043884277,
+          "temporal_mad_dn": 1.3635966777801514,
+          "high_frequency_ratio_mean": 0.8627844108040863
+        },
+        "refresh1024_ema": {
+          "rmse_dn": 8.63276481628418,
+          "psnr_db": 53.522079931485735,
+          "flat_residual_sigma_dn": 6.625828266143799,
+          "temporal_mad_dn": 1.3716609477996826,
+          "high_frequency_ratio_mean": 0.8614925086291106
+        }
+      },
+      "delta_vs_a3": {
+        "fixed1024_ema": {
+          "rmse_dn": 0.2745962142944336,
+          "psnr_db": -0.27964639078722797,
+          "flat_residual_sigma_dn": 0.08915233612060547,
+          "temporal_mad_dn": -0.005457282066345215,
+          "high_frequency_ratio_mean": 0.0010026587851297286
+        },
+        "refresh1024_ema": {
+          "rmse_dn": 0.2402963638305664,
+          "psnr_db": -0.24520384250626392,
+          "flat_residual_sigma_dn": 0.08629655838012695,
+          "temporal_mad_dn": 0.002606987953186035,
+          "high_frequency_ratio_mean": -0.0002892433898459279
+        }
+      },
+      "refresh_minus_fixed": {
+        "rmse_dn": -0.03429985046386719,
+        "psnr_db": 0.03444254828096405,
+        "flat_residual_sigma_dn": -0.0028557777404785156,
+        "temporal_mad_dn": 0.00806427001953125,
+        "high_frequency_ratio_mean": -0.0012919021749756565
+      }
+    },
+    {
+      "frame_indices": [
+        192,
+        193,
+        194,
+        195,
+        196,
+        197,
+        198,
+        199
+      ],
+      "values": {
+        "a3_ema": {
+          "rmse_dn": 8.890584945678711,
+          "psnr_db": 53.26647140573436,
+          "flat_residual_sigma_dn": 6.85291862487793,
+          "temporal_mad_dn": 1.4545495510101318,
+          "high_frequency_ratio_mean": 0.864449745673531
+        },
+        "fixed1024_ema": {
+          "rmse_dn": 9.173343658447266,
+          "psnr_db": 52.99452484858999,
+          "flat_residual_sigma_dn": 6.948655128479004,
+          "temporal_mad_dn": 1.4482351541519165,
+          "high_frequency_ratio_mean": 0.8653320199068921
+        },
+        "refresh1024_ema": {
+          "rmse_dn": 9.13702392578125,
+          "psnr_db": 53.02898287920136,
+          "flat_residual_sigma_dn": 6.941742897033691,
+          "temporal_mad_dn": 1.456034541130066,
+          "high_frequency_ratio_mean": 0.8640096311159176
+        }
+      },
+      "delta_vs_a3": {
+        "fixed1024_ema": {
+          "rmse_dn": 0.2827587127685547,
+          "psnr_db": -0.2719465571443678,
+          "flat_residual_sigma_dn": 0.09573650360107422,
+          "temporal_mad_dn": -0.006314396858215332,
+          "high_frequency_ratio_mean": 0.0008822742333611799
+        },
+        "refresh1024_ema": {
+          "rmse_dn": 0.24643898010253906,
+          "psnr_db": -0.23748852653299934,
+          "flat_residual_sigma_dn": 0.08882427215576172,
+          "temporal_mad_dn": 0.001484990119934082,
+          "high_frequency_ratio_mean": -0.00044011455761339136
+        }
+      },
+      "refresh_minus_fixed": {
+        "rmse_dn": -0.036319732666015625,
+        "psnr_db": 0.03445803061136843,
+        "flat_residual_sigma_dn": -0.0069122314453125,
+        "temporal_mad_dn": 0.007799386978149414,
+        "high_frequency_ratio_mean": -0.0013223887909745713
+      }
+    }
+  ],
+  "conclusions": [
+    "Refresh EMA improves RMSE by 0.03430–0.03724 DN and PSNR by 0.03444–0.03672 dB relative to fixed EMA in all three windows, with a slight reduction in flat residual sigma.",
+    "Refresh EMA still regresses against A3 in all three windows: RMSE +0.24030–0.26908 DN, PSNR -0.27010 to -0.23749 dB, and flat residual sigma +0.08630–0.09187 DN.",
+    "Refresh EMA temporal MAD is slightly higher than both A3 and fixed EMA in all windows; its high-frequency amplitude ratio is slightly lower than both in all windows. These two metrics alone cannot prove blur, detail fidelity, or temporal quality.",
+    "Both probe and native primary results favor retaining A3: modest refresh-versus-fixed improvement does not produce a candidate better than A3.",
+    "A shared continuation-stage regression does not isolate static supervision as its sole cause. This experiment does not separate the effects of Adam reset, the common source/gain schedule, optimization trajectory, supervision, or their interactions."
+  ],
+  "limitations": [
+    "Three disjoint windows share one scene and a reference that includes scored frames.",
+    "Single seed, exploratory comparison, no real-motion or cross-sensor acceptance.",
+    "Metrics are reviewed from complete JSON reports; full output hash/FP32 checks remain the final summarizer responsibility."
+  ]
+}

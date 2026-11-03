@@ -1,0 +1,592 @@
+{
+  "schema_version": "a12_sampling_audit_v1",
+  "status": "passed",
+  "training_started": false,
+  "checkpoint_loaded": false,
+  "config": {
+    "dataset_root": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset",
+    "supervision_dir": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision",
+    "noise_dir": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/noise_model",
+    "output_dir": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_sampling_audit_20261029",
+    "checkpoint": "not_loaded_cpu_sampling_audit",
+    "seed": 20260921,
+    "steps": 1024,
+    "temporal_frames": 8,
+    "patch_size": 64,
+    "batch_size": 1,
+    "learning_rate": 0.0001,
+    "real_fraction": 0.5,
+    "holdout_gain": "1000x",
+    "gradient_weight": 0.1,
+    "highpass_weight": 0.1,
+    "device": "cpu",
+    "synthetic_temporal_variants": 8,
+    "resume_checkpoint": null
+  },
+  "samples_per_epoch": 512,
+  "validation_policy": "Existing A3 evaluation and validation sampling are unchanged; only the new training sampler is audited.",
+  "limitations": [
+    "This is a sampling/data-loading audit, not evidence of denoising quality improvement.",
+    "The clean target, noise model, and static-only supervision remain those of A3.",
+    "Absolute sample IDs reproduce inputs; full training determinism also requires restoring model, optimizer, EMA, and training RNG states."
+  ],
+  "checks": {
+    "exact_epoch_ratio": true,
+    "interleaved_sources": true,
+    "epoch_changes_crop": true,
+    "epoch_changes_real_window": true,
+    "epoch_changes_synthetic_noise_seed": true,
+    "no_full_frame_synthetic_cache": true,
+    "resume_starts_at_next_sample": true,
+    "fresh_dataset_reproduces_samples": true,
+    "sample_tensors_valid": true,
+    "independent_synthetic_frames": true
+  },
+  "epoch_summaries": [
+    {
+      "epoch": 0,
+      "source_counts": {
+        "real": 256,
+        "synthetic": 256
+      },
+      "gain_counts": {
+        "real:128x": 64,
+        "synthetic:100": 29,
+        "real:313x": 64,
+        "synthetic:200": 29,
+        "real:632x": 64,
+        "synthetic:400": 29,
+        "real:645x": 64,
+        "synthetic:800": 29,
+        "synthetic:1600": 28,
+        "synthetic:3200": 28,
+        "synthetic:6400": 28,
+        "synthetic:12800": 28,
+        "synthetic:25600": 28
+      },
+      "unique_crop_window_configurations": 512,
+      "source_switches": 511
+    },
+    {
+      "epoch": 1,
+      "source_counts": {
+        "real": 256,
+        "synthetic": 256
+      },
+      "gain_counts": {
+        "real:128x": 64,
+        "synthetic:1600": 29,
+        "real:313x": 64,
+        "synthetic:3200": 29,
+        "real:632x": 64,
+        "synthetic:6400": 29,
+        "real:645x": 64,
+        "synthetic:12800": 29,
+        "synthetic:25600": 28,
+        "synthetic:100": 28,
+        "synthetic:200": 28,
+        "synthetic:400": 28,
+        "synthetic:800": 28
+      },
+      "unique_crop_window_configurations": 512,
+      "source_switches": 511
+    }
+  ],
+  "sample_snapshots": [
+    {
+      "plan": {
+        "sample_index": 0,
+        "epoch": 0,
+        "epoch_index": 0,
+        "source": "real",
+        "record_index": 0,
+        "gain": "128x",
+        "crop_y": 169,
+        "crop_x": 762,
+        "frame_start": 24,
+        "geometry_seed": 8511560884966095215,
+        "noise_seed": null
+      },
+      "tensor_sha256": [
+        "a4f1b00346e907709aefccab2344f3bbb4058e161fa81abeffd34e7f949c234f",
+        "bd770cf8285065cf86e8d0ad2701982af9c9e069377ed1042292244da97fee5b",
+        "05485eec84561c4f8da7615a8f079c4af34a04eed281103fe45a88f29ffa66c7"
+      ],
+      "input_shape": [
+        8,
+        4,
+        64,
+        64
+      ],
+      "valid_fraction": 0.0009765625,
+      "finite": true,
+      "range_0_1": true,
+      "target_identical_across_frames": true
+    },
+    {
+      "plan": {
+        "sample_index": 1,
+        "epoch": 0,
+        "epoch_index": 1,
+        "source": "synthetic",
+        "record_index": 0,
+        "gain": "100",
+        "crop_y": 328,
+        "crop_x": 396,
+        "frame_start": null,
+        "geometry_seed": 16385439711603777373,
+        "noise_seed": 18243553870631040184
+      },
+      "tensor_sha256": [
+        "339f4d84194435122655a0c5bae71d23cc66b9c1e28d4e26e62961c9e8399946",
+        "f81a15d77ac29e3bba866923aa225a6371240ec85f3a033357f8f1393aeba00a",
+        "c62d3b3b288da78c698819226ea789e9b72b1e04ddff66fa0e23e654b6ce88e1"
+      ],
+      "input_shape": [
+        8,
+        4,
+        64,
+        64
+      ],
+      "valid_fraction": 0.921630859375,
+      "finite": true,
+      "range_0_1": true,
+      "target_identical_across_frames": true,
+      "unique_input_frames": 8
+    },
+    {
+      "plan": {
+        "sample_index": 2,
+        "epoch": 0,
+        "epoch_index": 2,
+        "source": "real",
+        "record_index": 1,
+        "gain": "313x",
+        "crop_y": 11,
+        "crop_x": 789,
+        "frame_start": 100,
+        "geometry_seed": 4089136053351706365,
+        "noise_seed": null
+      },
+      "tensor_sha256": [
+        "d3cfa41af38c641871a3229ddf610788687136624e12e90fb26ca3952d61f06f",
+        "dd6a120609689d88f199337fd48a0a94aa2cb6f5c7a91c97f6caeeb2d3112ee3",
+        "cc1939b7d16ebfe028261d92256dd51dd8e779c25604e06a45b2789c6caf48ea"
+      ],
+      "input_shape": [
+        8,
+        4,
+        64,
+        64
+      ],
+      "valid_fraction": 0.999267578125,
+      "finite": true,
+      "range_0_1": true,
+      "target_identical_across_frames": true
+    },
+    {
+      "plan": {
+        "sample_index": 3,
+        "epoch": 0,
+        "epoch_index": 3,
+        "source": "synthetic",
+        "record_index": 1,
+        "gain": "200",
+        "crop_y": 116,
+        "crop_x": 488,
+        "frame_start": null,
+        "geometry_seed": 5886066313980858187,
+        "noise_seed": 4147658440981764779
+      },
+      "tensor_sha256": [
+        "038d9fa1c501fc5cb1e55260469861fba8d2ae071e5741e400275f95f38b14c7",
+        "3631fdd05d338d08e87b434db228be35b0b871121b7ceef2a9a7fa2fc5b93d6a",
+        "63db83714305722a0111617b180227f18e492056c2a31596c18b5a6ad8e773b7"
+      ],
+      "input_shape": [
+        8,
+        4,
+        64,
+        64
+      ],
+      "valid_fraction": 0.7734375,
+      "finite": true,
+      "range_0_1": true,
+      "target_identical_across_frames": true,
+      "unique_input_frames": 8
+    },
+    {
+      "plan": {
+        "sample_index": 4,
+        "epoch": 0,
+        "epoch_index": 4,
+        "source": "real",
+        "record_index": 2,
+        "gain": "632x",
+        "crop_y": 312,
+        "crop_x": 628,
+        "frame_start": 183,
+        "geometry_seed": 15475897053290465044,
+        "noise_seed": null
+      },
+      "tensor_sha256": [
+        "15dc52e57871b0f76355efb561353bc1f376d9db9e6b3cc40e4dd48cd0c715a8",
+        "9374cbdf35ffca468097c4afdce1117dbd7980901d64969ceb36d8016d60616f",
+        "e8ab17d5ba7992040223a0eafa36de1d067364850949c87a961e964e383f86ca"
+      ],
+      "input_shape": [
+        8,
+        4,
+        64,
+        64
+      ],
+      "valid_fraction": 0.9453125,
+      "finite": true,
+      "range_0_1": true,
+      "target_identical_across_frames": true
+    },
+    {
+      "plan": {
+        "sample_index": 5,
+        "epoch": 0,
+        "epoch_index": 5,
+        "source": "synthetic",
+        "record_index": 2,
+        "gain": "400",
+        "crop_y": 255,
+        "crop_x": 811,
+        "frame_start": null,
+        "geometry_seed": 12766820258499019448,
+        "noise_seed": 9591247060388251673
+      },
+      "tensor_sha256": [
+        "660ebe1bc7ec57378d196a7e54caf13ed8c1874d4e74bd00f5c7a68eab61bc2a",
+        "e80996563611bf40dbf6187278467c2fa67fc07a698f5d4ec1b675dd4477687b",
+        "e45f9ee55a86349d3bf3ac7cedb29fce8a83296e75fdfd893f944facf1cf8ebb"
+      ],
+      "input_shape": [
+        8,
+        4,
+        64,
+        64
+      ],
+      "valid_fraction": 0.9931640625,
+      "finite": true,
+      "range_0_1": true,
+      "target_identical_across_frames": true,
+      "unique_input_frames": 8
+    },
+    {
+      "plan": {
+        "sample_index": 6,
+        "epoch": 0,
+        "epoch_index": 6,
+        "source": "real",
+        "record_index": 3,
+        "gain": "645x",
+        "crop_y": 70,
+        "crop_x": 675,
+        "frame_start": 182,
+        "geometry_seed": 1022204673006161599,
+        "noise_seed": null
+      },
+      "tensor_sha256": [
+        "ac9160ea2bdabcacaa230ae55fb95364414d9f57fbbce8f30755e97755deff3d",
+        "12a1e464528d140059e8eb4ae05c1c9e37999ec606ffe8073506dd018d61e4c9",
+        "7edb81bf4a8056a77dd375b3b6d14637b985226979cdd60bff4f4d41d6610cb4"
+      ],
+      "input_shape": [
+        8,
+        4,
+        64,
+        64
+      ],
+      "valid_fraction": 0.99853515625,
+      "finite": true,
+      "range_0_1": true,
+      "target_identical_across_frames": true
+    },
+    {
+      "plan": {
+        "sample_index": 7,
+        "epoch": 0,
+        "epoch_index": 7,
+        "source": "synthetic",
+        "record_index": 3,
+        "gain": "800",
+        "crop_y": 179,
+        "crop_x": 777,
+        "frame_start": null,
+        "geometry_seed": 11360224115160164328,
+        "noise_seed": 14950189731944397344
+      },
+      "tensor_sha256": [
+        "dde25fcb78cb0bd1e2921fd5862568c1aeeed08921c9f071b3489e238004b1ce",
+        "bdb27dec5589fb6553b0d68fd9d9791b8a638edaef93e281879153bceadbc4e4",
+        "941ef28a292311ab27419dd82d5d9c28102384d5bdac7713f3c7e739f7a28592"
+      ],
+      "input_shape": [
+        8,
+        4,
+        64,
+        64
+      ],
+      "valid_fraction": 1.0,
+      "finite": true,
+      "range_0_1": true,
+      "target_identical_across_frames": true,
+      "unique_input_frames": 8
+    },
+    {
+      "plan": {
+        "sample_index": 512,
+        "epoch": 1,
+        "epoch_index": 0,
+        "source": "real",
+        "record_index": 0,
+        "gain": "128x",
+        "crop_y": 250,
+        "crop_x": 78,
+        "frame_start": 20,
+        "geometry_seed": 3493955700939524454,
+        "noise_seed": null
+      },
+      "tensor_sha256": [
+        "b70983826d5ff1afd697a01e26021c36cf1313ad542583d75b285253b6ac069f",
+        "56d483d0468defe53525fe1c8e78f33bdd1f33c9ace698d83179aa1156e34566",
+        "b9ad43de328677594b882bd0436c605b061c58de6555b92d849b2a03bdf5964f"
+      ],
+      "input_shape": [
+        8,
+        4,
+        64,
+        64
+      ],
+      "valid_fraction": 0.95068359375,
+      "finite": true,
+      "range_0_1": true,
+      "target_identical_across_frames": true
+    },
+    {
+      "plan": {
+        "sample_index": 513,
+        "epoch": 1,
+        "epoch_index": 1,
+        "source": "synthetic",
+        "record_index": 4,
+        "gain": "1600",
+        "crop_y": 40,
+        "crop_x": 591,
+        "frame_start": null,
+        "geometry_seed": 15392590686571942290,
+        "noise_seed": 7410967871850202990
+      },
+      "tensor_sha256": [
+        "7af6911c3a766371a119629181ac033524186fc63d7f3be1fc66e87964d73ea9",
+        "4d6af1dadda7dcc382854445225f335e99a9ce2568cef1fd60ca9f4f3442d56b",
+        "42f441d252dced4cc056bc40edbdc099407c32eaabfc93debe5cb92133fe2190"
+      ],
+      "input_shape": [
+        8,
+        4,
+        64,
+        64
+      ],
+      "valid_fraction": 0.998779296875,
+      "finite": true,
+      "range_0_1": true,
+      "target_identical_across_frames": true,
+      "unique_input_frames": 8
+    },
+    {
+      "plan": {
+        "sample_index": 514,
+        "epoch": 1,
+        "epoch_index": 2,
+        "source": "real",
+        "record_index": 1,
+        "gain": "313x",
+        "crop_y": 309,
+        "crop_x": 786,
+        "frame_start": 127,
+        "geometry_seed": 4092183958738762732,
+        "noise_seed": null
+      },
+      "tensor_sha256": [
+        "f6ecbbf04c8169d8b66b326cba9a230b69dbdbdcc7e01ce0171c6b938ec1b196",
+        "c9621b1ffb954b1daa725a850dc2944ca764691f3cf94e6cfaf9a62d8d0922f5",
+        "bac7d3ee6612799e13023d8ac3dd64e6434577661791fd455aa719979b16459b"
+      ],
+      "input_shape": [
+        8,
+        4,
+        64,
+        64
+      ],
+      "valid_fraction": 0.986083984375,
+      "finite": true,
+      "range_0_1": true,
+      "target_identical_across_frames": true
+    },
+    {
+      "plan": {
+        "sample_index": 515,
+        "epoch": 1,
+        "epoch_index": 3,
+        "source": "synthetic",
+        "record_index": 5,
+        "gain": "3200",
+        "crop_y": 369,
+        "crop_x": 127,
+        "frame_start": null,
+        "geometry_seed": 3148155860249403177,
+        "noise_seed": 2050518144062028786
+      },
+      "tensor_sha256": [
+        "db034c2b4999e287b8875cc368120a30b398a5436b31052643516486a55203c6",
+        "a00ae3b10f22d9afb0c0c06563447cc4f0ef8cce15a49676771c26893e7455be",
+        "f762b5f7bed4652e2bbe4e83dd9a9bd99de4baa4aa552821b67c2f1690e04eef"
+      ],
+      "input_shape": [
+        8,
+        4,
+        64,
+        64
+      ],
+      "valid_fraction": 0.83447265625,
+      "finite": true,
+      "range_0_1": true,
+      "target_identical_across_frames": true,
+      "unique_input_frames": 8
+    },
+    {
+      "plan": {
+        "sample_index": 516,
+        "epoch": 1,
+        "epoch_index": 4,
+        "source": "real",
+        "record_index": 2,
+        "gain": "632x",
+        "crop_y": 242,
+        "crop_x": 220,
+        "frame_start": 116,
+        "geometry_seed": 10853780960954813297,
+        "noise_seed": null
+      },
+      "tensor_sha256": [
+        "9a18f0583d49a724acd51deaf393ccc3f3b80416a4058da501eb8be650d9293c",
+        "8effe0732958b38c9fe7bd48c8eff1293ceed799113c28428b3303c32e0cda92",
+        "4691c656c9f7f8c573b7c93f6796eb58d92ab2d7842d1cacda51e999aab3a995"
+      ],
+      "input_shape": [
+        8,
+        4,
+        64,
+        64
+      ],
+      "valid_fraction": 0.94140625,
+      "finite": true,
+      "range_0_1": true,
+      "target_identical_across_frames": true
+    },
+    {
+      "plan": {
+        "sample_index": 517,
+        "epoch": 1,
+        "epoch_index": 5,
+        "source": "synthetic",
+        "record_index": 6,
+        "gain": "6400",
+        "crop_y": 368,
+        "crop_x": 620,
+        "frame_start": null,
+        "geometry_seed": 9535641686698487501,
+        "noise_seed": 4068250461839185083
+      },
+      "tensor_sha256": [
+        "38a7e1e61708d50e92b216bc27e676b0fb43ae791621258811f356b1c911743e",
+        "1b14d1ca803c5d49daa8157cd1dcc9bdbc02962d717cf36c1077032ad5c739f2",
+        "941ef28a292311ab27419dd82d5d9c28102384d5bdac7713f3c7e739f7a28592"
+      ],
+      "input_shape": [
+        8,
+        4,
+        64,
+        64
+      ],
+      "valid_fraction": 1.0,
+      "finite": true,
+      "range_0_1": true,
+      "target_identical_across_frames": true,
+      "unique_input_frames": 8
+    },
+    {
+      "plan": {
+        "sample_index": 518,
+        "epoch": 1,
+        "epoch_index": 6,
+        "source": "real",
+        "record_index": 3,
+        "gain": "645x",
+        "crop_y": 58,
+        "crop_x": 790,
+        "frame_start": 182,
+        "geometry_seed": 12785325996468033550,
+        "noise_seed": null
+      },
+      "tensor_sha256": [
+        "8bd8f60381f5f0b9aeec44ed0004df88c9bee77d51c1b57208ca7662e2cb82a1",
+        "ac9c62f7b5c21bc9dbb8f25ee7a7d29d5e58bf0f3707d7f9734d6a58478cda78",
+        "31192e13119b8d95da54352870a333be708633cc1613629f4f740964401b51d1"
+      ],
+      "input_shape": [
+        8,
+        4,
+        64,
+        64
+      ],
+      "valid_fraction": 0.996337890625,
+      "finite": true,
+      "range_0_1": true,
+      "target_identical_across_frames": true
+    },
+    {
+      "plan": {
+        "sample_index": 519,
+        "epoch": 1,
+        "epoch_index": 7,
+        "source": "synthetic",
+        "record_index": 7,
+        "gain": "12800",
+        "crop_y": 432,
+        "crop_x": 233,
+        "frame_start": null,
+        "geometry_seed": 10029028252182180893,
+        "noise_seed": 11741236021433067234
+      },
+      "tensor_sha256": [
+        "8e5087a459453e3f4c76e64b7b4365f86598402761bda919732bd59d2fdf0021",
+        "7a6af6ad65e22a73d38299739b7e8a04ee430849cfbc008bf4f6c9e591afb470",
+        "786ca72c19cf839b3cd0deece0e5a48b8c965b471bd1f31284a4d3404bef1afd"
+      ],
+      "input_shape": [
+        8,
+        4,
+        64,
+        64
+      ],
+      "valid_fraction": 0.689453125,
+      "finite": true,
+      "range_0_1": true,
+      "target_identical_across_frames": true,
+      "unique_input_frames": 8
+    }
+  ],
+  "samples_read": 16,
+  "sample_plans": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_sampling_audit_20261029/sample_plans.json",
+  "baseline_source_sha256": {
+    "src/raw_fusion/finetune/a3.py": "2f5c175a431e06fd886576f8bb4cd0e15da4dba4117f9e2d5a81ecad77470362",
+    "src/raw_fusion/finetune/a4.py": "f6c96b72bf013f2a0248c745d5c9d768f65eb06288db515bf9a37404ab68fa2b"
+  },
+  "elapsed_seconds": 6.634212326956913
+}

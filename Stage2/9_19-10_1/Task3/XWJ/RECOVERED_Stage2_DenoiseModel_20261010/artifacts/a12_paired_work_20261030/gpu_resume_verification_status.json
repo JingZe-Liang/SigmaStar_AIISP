@@ -1,0 +1,121 @@
+{
+  "status": "stopped_error",
+  "pid": 1224598,
+  "device": "cuda:0",
+  "gpu_name": "NVIDIA GeForce RTX 3090",
+  "visible_devices": "GPU-07a5046e-9b56-8557-3845-d6cca9ea0497",
+  "initial_free_bytes": 15529279488,
+  "total_bytes": 25327697920,
+  "oom_policy": "stop_without_retry",
+  "numeric_criteria": {
+    "rtol": 1e-05,
+    "atol": 1e-08,
+    "loss_absolute_tolerance": 1e-07,
+    "rng_exact_required": true
+  },
+  "runs": [
+    {
+      "label": "continuous",
+      "result": {
+        "schema": "a12_paired_refresh_v1",
+        "status": "training_completed",
+        "phase": "shared",
+        "purpose": "resume_verification",
+        "start_step": 0,
+        "step": 2,
+        "completed_updates": 2,
+        "checkpoint": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_resume_continuous_20261030/checkpoint_step_000002.pth",
+        "fork_parent_checkpoint_sha256": null,
+        "runtime": {
+          "torch": "2.5.1+cu124",
+          "cuda": "12.4",
+          "device": "cuda:0",
+          "device_name": "NVIDIA GeForce RTX 3090",
+          "cuda_device_count": 1,
+          "cudnn_benchmark": false,
+          "cudnn_deterministic": false,
+          "cudnn_allow_tf32": true,
+          "matmul_allow_tf32": false,
+          "deterministic_algorithms": false
+        }
+      },
+      "peak_allocated_bytes": 14591823360,
+      "peak_reserved_bytes": 15281946624
+    },
+    {
+      "label": "split",
+      "result": {
+        "schema": "a12_paired_refresh_v1",
+        "status": "training_completed",
+        "phase": "shared",
+        "purpose": "resume_verification",
+        "start_step": 0,
+        "step": 1,
+        "completed_updates": 1,
+        "checkpoint": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_resume_split_20261030/checkpoint_step_000001.pth",
+        "fork_parent_checkpoint_sha256": null,
+        "runtime": {
+          "torch": "2.5.1+cu124",
+          "cuda": "12.4",
+          "device": "cuda:0",
+          "device_name": "NVIDIA GeForce RTX 3090",
+          "cuda_device_count": 1,
+          "cudnn_benchmark": false,
+          "cudnn_deterministic": false,
+          "cudnn_allow_tf32": true,
+          "matmul_allow_tf32": false,
+          "deterministic_algorithms": false
+        }
+      },
+      "peak_allocated_bytes": 14532539904,
+      "peak_reserved_bytes": 15284043776
+    },
+    {
+      "label": "resumed",
+      "result": {
+        "schema": "a12_paired_refresh_v1",
+        "status": "training_completed",
+        "phase": "shared",
+        "purpose": "resume_verification",
+        "start_step": 1,
+        "step": 2,
+        "completed_updates": 1,
+        "checkpoint": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_resume_resumed_20261030/checkpoint_step_000002.pth",
+        "fork_parent_checkpoint_sha256": null,
+        "runtime": {
+          "torch": "2.5.1+cu124",
+          "cuda": "12.4",
+          "device": "cuda:0",
+          "device_name": "NVIDIA GeForce RTX 3090",
+          "cuda_device_count": 1,
+          "cudnn_benchmark": false,
+          "cudnn_deterministic": false,
+          "cudnn_allow_tf32": true,
+          "matmul_allow_tf32": false,
+          "deterministic_algorithms": false
+        }
+      },
+      "peak_allocated_bytes": 14593216000,
+      "peak_reserved_bytes": 15120465920
+    }
+  ],
+  "active_run": "resumed",
+  "comparison": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_work_20261030/gpu_resume_comparison.json",
+  "exact": {
+    "model": false,
+    "ema": false,
+    "optimizer": false,
+    "rng": true
+  },
+  "within_tolerance": {
+    "model": false,
+    "ema": true,
+    "optimizer": false
+  },
+  "loss_abs_delta": 2.3283064365386963e-09,
+  "error_type": "RuntimeError",
+  "error": "GPU resumed training did not meet the predefined equivalence criteria",
+  "peak_allocated_bytes": 14593216000,
+  "peak_reserved_bytes": 15120465920,
+  "elapsed_seconds": 27.996127648977563
+}

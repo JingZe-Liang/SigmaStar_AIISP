@@ -1,0 +1,68 @@
+{
+  "status": "running",
+  "pid": 1216165,
+  "training_authorized": true,
+  "oom_policy": "stop_without_retry",
+  "config_path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/configs/a12_sampling_pilot_20261029.json",
+  "overrides": {
+    "device": "cuda:0",
+    "output_dir": "artifacts/a12_sampling_pilot_4090_20261030"
+  },
+  "device": "cuda:0",
+  "gpu_name": "NVIDIA GeForce RTX 4090",
+  "initial_free_bytes": 24855642112,
+  "total_bytes": 25282281472,
+  "output_dir": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_sampling_pilot_4090_20261030",
+  "completed_updates": 0
+}
+/home/jingzeliang/miniconda3/envs/aaa_312/lib/python3.12/site-packages/torch/functional.py:534: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at ../aten/src/ATen/native/TensorShape.cpp:3595.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+/home/jingzeliang/miniconda3/envs/aaa_312/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py:632: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+[a12] step=1 loss=0.006973 valid_fraction=0.0010
+[a12] step=10 loss=0.002978 valid_fraction=0.9993
+[a12] step=20 loss=0.005741 valid_fraction=0.6829
+[a12] step=30 loss=0.011239 valid_fraction=0.2517
+[a12] step=40 loss=0.002312 valid_fraction=1.0000
+[a12] step=50 loss=0.011029 valid_fraction=0.8455
+[a12] step=60 loss=0.002725 valid_fraction=0.9663
+[a12] step=70 loss=0.004136 valid_fraction=1.0000
+[a12] step=80 loss=0.006786 valid_fraction=0.8826
+[a12] step=90 loss=0.013664 valid_fraction=0.3311
+[a12] step=100 loss=0.006298 valid_fraction=0.6689
+[a12] step=110 loss=0.002362 valid_fraction=1.0000
+[a12] step=120 loss=0.010240 valid_fraction=0.7314
+[a12] step=130 loss=0.001682 valid_fraction=0.0132
+[a12] step=140 loss=0.002207 valid_fraction=1.0000
+[a12] step=150 loss=0.004251 valid_fraction=0.6572
+[a12] step=160 loss=0.009388 valid_fraction=0.7131
+[a12] step=170 loss=0.004494 valid_fraction=1.0000
+[a12] step=180 loss=0.006491 valid_fraction=0.9956
+[a12] step=190 loss=0.002170 valid_fraction=0.0042
+[a12] step=200 loss=0.008335 valid_fraction=0.7522
+{
+  "status": "training_completed",
+  "pid": 1216165,
+  "training_authorized": true,
+  "oom_policy": "stop_without_retry",
+  "config_path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/configs/a12_sampling_pilot_20261029.json",
+  "overrides": {
+    "device": "cuda:0",
+    "output_dir": "artifacts/a12_sampling_pilot_4090_20261030"
+  },
+  "device": "cuda:0",
+  "gpu_name": "NVIDIA GeForce RTX 4090",
+  "initial_free_bytes": 24855642112,
+  "total_bytes": 25282281472,
+  "output_dir": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_sampling_pilot_4090_20261030",
+  "completed_updates": 200,
+  "result": {
+    "schema": "a12_sampling_only_v1",
+    "status": "training_completed",
+    "step": 200,
+    "checkpoint": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_sampling_pilot_4090_20261030/checkpoint_step_000200.pth"
+  },
+  "elapsed_seconds": 204.04058591695502,
+  "peak_allocated_bytes": 14595755520,
+  "peak_reserved_bytes": 15797846016
+}

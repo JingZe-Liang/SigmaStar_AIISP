@@ -1,0 +1,79 @@
+/home/jingzeliang/miniconda3/envs/aaa_312/lib/python3.12/site-packages/torch/functional.py:534: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at ../aten/src/ATen/native/TensorShape.cpp:3595.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+[a14-eval] a3_ema mis20s1_1000x_roi0_f000000_p0
+/home/jingzeliang/miniconda3/envs/aaa_312/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py:632: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+/home/jingzeliang/miniconda3/envs/aaa_312/lib/python3.12/site-packages/torch/utils/checkpoint.py:87: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn(
+[a14-eval] a3_ema mis20s1_1000x_roi0_f000000_p1
+[a14-eval] a3_ema mis20s1_1000x_roi0_f000092_p0
+[a14-eval] a3_ema mis20s1_1000x_roi0_f000092_p1
+[a14-eval] a3_ema mis20s1_1000x_roi0_f000184_p0
+[a14-eval] a3_ema mis20s1_1000x_roi0_f000184_p1
+[a14-eval] a3_ema mis20s1_1000x_roi1_f000000_p0
+[a14-eval] a3_ema mis20s1_1000x_roi1_f000000_p1
+[a14-eval] a3_ema mis20s1_1000x_roi1_f000092_p0
+[a14-eval] a3_ema mis20s1_1000x_roi1_f000092_p1
+[a14-eval] a3_ema mis20s1_1000x_roi1_f000184_p0
+[a14-eval] a3_ema mis20s1_1000x_roi1_f000184_p1
+[a14-eval] a3_ema mis20s1_1000x_roi2_f000000_p0
+[a14-eval] a3_ema mis20s1_1000x_roi2_f000000_p1
+[a14-eval] a3_ema mis20s1_1000x_roi2_f000092_p0
+[a14-eval] a3_ema mis20s1_1000x_roi2_f000092_p1
+[a14-eval] a3_ema mis20s1_1000x_roi2_f000184_p0
+[a14-eval] a3_ema mis20s1_1000x_roi2_f000184_p1
+[a14-eval] a3_ema sc465sl_2000x_roi0_f000000_p0
+[a14-eval] a3_ema sc465sl_2000x_roi0_f000000_p1
+[a14-eval] a3_ema sc465sl_2000x_roi0_f000144_p0
+[a14-eval] a3_ema sc465sl_2000x_roi0_f000144_p1
+[a14-eval] a3_ema sc465sl_2000x_roi0_f000284_p0
+[a14-eval] a3_ema sc465sl_2000x_roi0_f000284_p1
+[a14-eval] a3_ema sc465sl_2000x_roi1_f000000_p0
+[a14-eval] a3_ema sc465sl_2000x_roi1_f000000_p1
+[a14-eval] a3_ema sc465sl_2000x_roi1_f000144_p0
+[a14-eval] a3_ema sc465sl_2000x_roi1_f000144_p1
+[a14-eval] a3_ema sc465sl_2000x_roi1_f000284_p0
+[a14-eval] a3_ema sc465sl_2000x_roi1_f000284_p1
+[a14-eval] a3_ema sc465sl_2000x_roi2_f000000_p0
+[a14-eval] a3_ema sc465sl_2000x_roi2_f000000_p1
+[a14-eval] a3_ema sc465sl_2000x_roi2_f000144_p0
+[a14-eval] a3_ema sc465sl_2000x_roi2_f000144_p1
+[a14-eval] a3_ema sc465sl_2000x_roi2_f000284_p0
+[a14-eval] a3_ema sc465sl_2000x_roi2_f000284_p1
+[a14-eval] a3_ema sc465sl_darkroom18_256x_roi0_f000000_p0
+[a14-eval] a3_ema sc465sl_darkroom18_256x_roi0_f000000_p1
+[a14-eval] a3_ema sc465sl_darkroom18_256x_roi0_f000144_p0
+[a14-eval] a3_ema sc465sl_darkroom18_256x_roi0_f000144_p1
+[a14-eval] a3_ema sc465sl_darkroom18_256x_roi0_f000284_p0
+[a14-eval] a3_ema sc465sl_darkroom18_256x_roi0_f000284_p1
+[a14-eval] a3_ema sc465sl_darkroom18_256x_roi1_f000000_p0
+[a14-eval] a3_ema sc465sl_darkroom18_256x_roi1_f000000_p1
+[a14-eval] a3_ema sc465sl_darkroom18_256x_roi1_f000144_p0
+[a14-eval] a3_ema sc465sl_darkroom18_256x_roi1_f000144_p1
+[a14-eval] a3_ema sc465sl_darkroom18_256x_roi1_f000284_p0
+[a14-eval] a3_ema sc465sl_darkroom18_256x_roi1_f000284_p1
+[a14-eval] a3_ema sc465sl_darkroom18_256x_roi2_f000000_p0
+[a14-eval] a3_ema sc465sl_darkroom18_256x_roi2_f000000_p1
+[a14-eval] a3_ema sc465sl_darkroom18_256x_roi2_f000144_p0
+[a14-eval] a3_ema sc465sl_darkroom18_256x_roi2_f000144_p1
+[a14-eval] a3_ema sc465sl_darkroom18_256x_roi2_f000284_p0
+[a14-eval] a3_ema sc465sl_darkroom18_256x_roi2_f000284_p1
+[a14-eval] a3_ema sc635hai_131x_low_cct_roi0_f000000_p0
+[a14-eval] a3_ema sc635hai_131x_low_cct_roi0_f000000_p1
+[a14-eval] a3_ema sc635hai_131x_low_cct_roi0_f000066_p0
+[a14-eval] a3_ema sc635hai_131x_low_cct_roi0_f000066_p1
+[a14-eval] a3_ema sc635hai_131x_low_cct_roi0_f000134_p0
+[a14-eval] a3_ema sc635hai_131x_low_cct_roi0_f000134_p1
+[a14-eval] a3_ema sc635hai_131x_low_cct_roi1_f000000_p0
+[a14-eval] a3_ema sc635hai_131x_low_cct_roi1_f000000_p1
+[a14-eval] a3_ema sc635hai_131x_low_cct_roi1_f000066_p0
+[a14-eval] a3_ema sc635hai_131x_low_cct_roi1_f000066_p1
+[a14-eval] a3_ema sc635hai_131x_low_cct_roi1_f000134_p0
+[a14-eval] a3_ema sc635hai_131x_low_cct_roi1_f000134_p1
+[a14-eval] a3_ema sc635hai_131x_low_cct_roi2_f000000_p0
+[a14-eval] a3_ema sc635hai_131x_low_cct_roi2_f000000_p1
+[a14-eval] a3_ema sc635hai_131x_low_cct_roi2_f000066_p0
+[a14-eval] a3_ema sc635hai_131x_low_cct_roi2_f000066_p1
+[a14-eval] a3_ema sc635hai_131x_low_cct_roi2_f000134_p0
+[a14-eval] a3_ema sc635hai_131x_low_cct_roi2_f000134_p1
+{"evaluation": "artifacts/a14_static_20261030/eval_a3_ema/evaluation.json", "cases": 72}

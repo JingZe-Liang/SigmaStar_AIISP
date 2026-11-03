@@ -1,0 +1,23 @@
+{
+  "step": 1,
+  "phase": "shared",
+  "runtime": {
+    "torch": "2.5.1+cu124",
+    "cuda": "12.4",
+    "device": "cuda:0",
+    "device_name": "NVIDIA GeForce RTX 3090",
+    "cuda_device_count": 1,
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": false,
+    "cudnn_allow_tf32": true,
+    "matmul_allow_tf32": false,
+    "deterministic_algorithms": false
+  },
+  "fork_parent_checkpoint_sha256": null,
+  "state_sha256": {
+    "model": "a38a55df11be7676323c8400be2f85e56004534b34fc041c706df1fc671306ee",
+    "ema": "452ce7f285f0ffbc7dc06f391c807fed904e0f5068829e464276ff7e65b3d7ef",
+    "optimizer": "178813e8d86bb0284143e50982d42aa38fa700fc251e47715f049ca0d83c9400",
+    "rng": "cbc26388bec6120c2e84baebe8f2790ac178ce5e712cea57e493303b51da50e9"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "src/raw_fusion/finetune/a7_capture.py": {
+    "sha256": "938a31a75249eefeaff202e8ca12cc9cbd21b8eca9913a6b58440fee1e448666",
+    "backup": "artifacts/a13_dynamic_data_20261030/prechange/a7_capture.py"
+  },
+  "src/tests/test_finetune_a7_capture.py": {
+    "sha256": "11ce998ad0136cdcc534b717dcfb7c2414c7077a28a6966adb55c72c69ed7971",
+    "backup": "artifacts/a13_dynamic_data_20261030/prechange/test_finetune_a7_capture.py"
+  }
+}

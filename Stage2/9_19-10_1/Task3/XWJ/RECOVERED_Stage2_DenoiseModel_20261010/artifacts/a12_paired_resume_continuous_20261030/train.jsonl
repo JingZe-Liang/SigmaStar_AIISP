@@ -1,0 +1,2 @@
+{"step": 1, "sample_index": 0, "phase": "shared", "source": "real", "gain": "128x", "valid_fraction": 0.0009765625, "loss": 0.0069699473679065704, "charbonnier": 0.006607457995414734, "gradient": 0.00040471216198056936, "highpass": 0.003220182377845049}
+{"step": 2, "sample_index": 1, "phase": "shared", "source": "synthetic", "gain": "100", "valid_fraction": 0.921630859375, "loss": 0.005441740155220032, "charbonnier": 0.004974990617483854, "gradient": 0.002533070743083954, "highpass": 0.0021344234701246023}

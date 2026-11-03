@@ -1,0 +1,9 @@
+{
+  "status": "evaluation_completed",
+  "phase": "native",
+  "oom_policy": "stop_without_retry",
+  "outputs": {
+    "native": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_eval_shared512_ema_20261030/native/evaluation.json"
+  },
+  "elapsed_seconds": 185.3896445450373
+}

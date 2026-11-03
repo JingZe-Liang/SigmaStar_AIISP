@@ -1,0 +1,4 @@
+{
+  "plan_is_not_accepted_as_capture_manifest": true,
+  "reason": "schema_version must be 'stage2_a7_motion_pilot_v1', got 'stage2_a13_capture_plan_v1'"
+}

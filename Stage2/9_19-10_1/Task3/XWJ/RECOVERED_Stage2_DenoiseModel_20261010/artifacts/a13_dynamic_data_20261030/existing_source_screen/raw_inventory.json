@@ -1,0 +1,3398 @@
+[
+  {
+    "relative_path": "01_fist_company/sc450ai/1435x_motion_black_object/raw_stream_2688x1520_16bit@RG[Shutter=83328,SenserG=61440,IspG=24493,R=1620,G=1024,B=2409][bl_R=4128_Gr=4128_Gb=4128_B=4128].raw",
+    "size_bytes": 1716019200
+  },
+  {
+    "relative_path": "01_fist_company/sc450ai/804x_lightchanging/lightchanging_804x.raw",
+    "size_bytes": 1225728000
+  },
+  {
+    "relative_path": "01_fist_company/sc635hai/131x_low_cct/raw_stream_normal_3200x1800_16_RG_0205213025917_131x.raw",
+    "size_bytes": 1728000000
+  },
+  {
+    "relative_path": "01_fist_company/sc635hai/16x_motion_color/3200x1800_RG_motion_color_16x.raw",
+    "size_bytes": 2304000000
+  },
+  {
+    "relative_path": "02_SC465SL_darkroom18/2000x/raw_stream_sc465sl_2560x1440_AG109568_darkroom18_2000x.raw",
+    "size_bytes": 2211840000
+  },
+  {
+    "relative_path": "02_SC465SL_darkroom18/256x/raw_stream_sc465sl_2560x1440_AG109568_darkroom18_256x.raw",
+    "size_bytes": 2211840000
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0000.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0001.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0002.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0003.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0004.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0005.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0006.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0007.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0008.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0009.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0010.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0011.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0012.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0013.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0014.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0015.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0016.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0017.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0018.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0019.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0020.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0021.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0022.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0023.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0024.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0025.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0026.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0027.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0028.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0029.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0030.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0031.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0032.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0033.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0034.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0035.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0036.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0037.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0038.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0039.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0040.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0041.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0042.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0043.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0044.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0045.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0046.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0047.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0048.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0049.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0050.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0051.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0052.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0053.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0054.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0055.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0056.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0057.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0058.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0059.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0060.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0061.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0062.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0063.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0064.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0065.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0066.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0067.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0068.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0069.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0070.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0071.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0072.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0073.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0074.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0075.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0076.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0077.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0078.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0079.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0080.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0081.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0082.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0083.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0084.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0085.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0086.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0087.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0088.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0089.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0090.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0091.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0092.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0093.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0094.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0095.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0096.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0097.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0098.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0099.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0100.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0101.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0102.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0103.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0104.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0105.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0106.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0107.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0108.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0109.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0110.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0111.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0112.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0113.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0114.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0115.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0116.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0117.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0118.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0119.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0120.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0121.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0122.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0123.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0124.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0125.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0126.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0127.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0128.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0129.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0130.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0131.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0132.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0133.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0134.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0135.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0136.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0137.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0138.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0139.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0140.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0141.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0142.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0143.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0144.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0145.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0146.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0147.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0148.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0149.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0150.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0151.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0152.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0153.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0154.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0155.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0156.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0157.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0158.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0159.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0160.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0161.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0162.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0163.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0164.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0165.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0166.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0167.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0168.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0169.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0170.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0171.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0172.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0173.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0174.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0175.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0176.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0177.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0178.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0179.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0180.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0181.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0182.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0183.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0184.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0185.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0186.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0187.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0188.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0189.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0190.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0191.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0192.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0193.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0194.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0195.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0196.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0197.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0198.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised/out_0199.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/denoised.raw",
+    "size_bytes": 829440000
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0000.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0001.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0002.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0003.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0004.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0005.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0006.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0007.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0008.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0009.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0010.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0011.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0012.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0013.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0014.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0015.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0016.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0017.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0018.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0019.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0020.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0021.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0022.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0023.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0024.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0025.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0026.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0027.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0028.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0029.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0030.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0031.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0032.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0033.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0034.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0035.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0036.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0037.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0038.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0039.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0040.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0041.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0042.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0043.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0044.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0045.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0046.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0047.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0048.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0049.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0050.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0051.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0052.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0053.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0054.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0055.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0056.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0057.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0058.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0059.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0060.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0061.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0062.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0063.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0064.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0065.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0066.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0067.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0068.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0069.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0070.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0071.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0072.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0073.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0074.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0075.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0076.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0077.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0078.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0079.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0080.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0081.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0082.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0083.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0084.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0085.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0086.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0087.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0088.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0089.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0090.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0091.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0092.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0093.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0094.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0095.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0096.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0097.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0098.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0099.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0100.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0101.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0102.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0103.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0104.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0105.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0106.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0107.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0108.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0109.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0110.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0111.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0112.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0113.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0114.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0115.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0116.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0117.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0118.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0119.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0120.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0121.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0122.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0123.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0124.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0125.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0126.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0127.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0128.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0129.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0130.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0131.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0132.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0133.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0134.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0135.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0136.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0137.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0138.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0139.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0140.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0141.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0142.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0143.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0144.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0145.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0146.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0147.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0148.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0149.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0150.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0151.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0152.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0153.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0154.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0155.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0156.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0157.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0158.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0159.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0160.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0161.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0162.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0163.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0164.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0165.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0166.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0167.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0168.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0169.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0170.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0171.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0172.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0173.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0174.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0175.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0176.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0177.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0178.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0179.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0180.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0181.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0182.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0183.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0184.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0185.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0186.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0187.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0188.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0189.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0190.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0191.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0192.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0193.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0194.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0195.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0196.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0197.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0198.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused/out_0199.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2120,G=1024,B=1956_645x/fused.raw",
+    "size_bytes": 829440000
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0000.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0001.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0002.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0003.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0004.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0005.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0006.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0007.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0008.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0009.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0010.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0011.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0012.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0013.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0014.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0015.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0016.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0017.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0018.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0019.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0020.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0021.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0022.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0023.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0024.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0025.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0026.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0027.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0028.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0029.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0030.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0031.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0032.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0033.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0034.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0035.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0036.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0037.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0038.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0039.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0040.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0041.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0042.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0043.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0044.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0045.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0046.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0047.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0048.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0049.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0050.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0051.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0052.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0053.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0054.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0055.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0056.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0057.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0058.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0059.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0060.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0061.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0062.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0063.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0064.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0065.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0066.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0067.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0068.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0069.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0070.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0071.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0072.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0073.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0074.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0075.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0076.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0077.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0078.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0079.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0080.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0081.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0082.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0083.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0084.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0085.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0086.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0087.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0088.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0089.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0090.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0091.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0092.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0093.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0094.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0095.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0096.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0097.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0098.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0099.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0100.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0101.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0102.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0103.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0104.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0105.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0106.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0107.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0108.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0109.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0110.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0111.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0112.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0113.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0114.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0115.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0116.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0117.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0118.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0119.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0120.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0121.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0122.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0123.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0124.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0125.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0126.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0127.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0128.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0129.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0130.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0131.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0132.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0133.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0134.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0135.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0136.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0137.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0138.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0139.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0140.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0141.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0142.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0143.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0144.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0145.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0146.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0147.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0148.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0149.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0150.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0151.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0152.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0153.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0154.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0155.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0156.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0157.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0158.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0159.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0160.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0161.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0162.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0163.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0164.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0165.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0166.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0167.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0168.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0169.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0170.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0171.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0172.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0173.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0174.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0175.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0176.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0177.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0178.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0179.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0180.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0181.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0182.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0183.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0184.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0185.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0186.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0187.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0188.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0189.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0190.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0191.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0192.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0193.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0194.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0195.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0196.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0197.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0198.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised/out_0199.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/denoised.raw",
+    "size_bytes": 829440000
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0000.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0001.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0002.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0003.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0004.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0005.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0006.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0007.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0008.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0009.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0010.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0011.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0012.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0013.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0014.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0015.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0016.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0017.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0018.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0019.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0020.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0021.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0022.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0023.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0024.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0025.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0026.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0027.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0028.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0029.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0030.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0031.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0032.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0033.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0034.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0035.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0036.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0037.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0038.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0039.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0040.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0041.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0042.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0043.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0044.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0045.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0046.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0047.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0048.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0049.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0050.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0051.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0052.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0053.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0054.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0055.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0056.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0057.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0058.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0059.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0060.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0061.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0062.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0063.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0064.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0065.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0066.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0067.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0068.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0069.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0070.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0071.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0072.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0073.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0074.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0075.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0076.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0077.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0078.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0079.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0080.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0081.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0082.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0083.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0084.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0085.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0086.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0087.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0088.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0089.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0090.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0091.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0092.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0093.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0094.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0095.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0096.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0097.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0098.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0099.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0100.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0101.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0102.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0103.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0104.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0105.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0106.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0107.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0108.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0109.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0110.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0111.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0112.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0113.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0114.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0115.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0116.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0117.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0118.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0119.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0120.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0121.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0122.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0123.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0124.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0125.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0126.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0127.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0128.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0129.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0130.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0131.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0132.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0133.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0134.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0135.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0136.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0137.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0138.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0139.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0140.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0141.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0142.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0143.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0144.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0145.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0146.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0147.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0148.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0149.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0150.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0151.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0152.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0153.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0154.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0155.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0156.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0157.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0158.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0159.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0160.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0161.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0162.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0163.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0164.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0165.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0166.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0167.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0168.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0169.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0170.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0171.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0172.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0173.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0174.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0175.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0176.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0177.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0178.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0179.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0180.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0181.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0182.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0183.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0184.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0185.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0186.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0187.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0188.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0189.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0190.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0191.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0192.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0193.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0194.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0195.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0196.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0197.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0198.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused/out_0199.raw",
+    "size_bytes": 4147200
+  },
+  {
+    "relative_path": "03_MIS20S1_2D3D/raw_stream_1920x1080_16bit@RG_R=2159,G=1024,B=1849_128x/fused.raw",
+    "size_bytes": 829440000
+  },
+  {
+    "relative_path": "04_Sigmastar_7_30/mis20s1_calibrationdata/black/100/raw_stream_normal_1920x1080_16_GR_0205175115888_[FN=10,US=83317,AG=1024,DG=1024,BV=-168611,R=2631,G=1024,B=1986].raw",
+    "size_bytes": 207360000
+  },
+  {
+    "relative_path": "04_Sigmastar_7_30/mis20s1_calibrationdata/black/12800/raw_stream_normal_1920x1080_16_GR_0205175518026_[FN=10,US=83317,AG=131072,DG=1024,BV=-283299,R=2631,G=1024,B=1986].raw",
+    "size_bytes": 207360000
+  },
+  {
+    "relative_path": "04_Sigmastar_7_30/mis20s1_calibrationdata/black/1600/raw_stream_normal_1920x1080_16_GR_0205175401348_[FN=10,US=83317,AG=16384,DG=1024,BV=-234147,R=2631,G=1024,B=1986].raw",
+    "size_bytes": 207360000
+  },
+  {
+    "relative_path": "04_Sigmastar_7_30/mis20s1_calibrationdata/black/200/raw_stream_normal_1920x1080_16_GR_0205175245601_[FN=10,US=83317,AG=2048,DG=1024,BV=-184995,R=2631,G=1024,B=1986].raw",
+    "size_bytes": 207360000
+  },
+  {
+    "relative_path": "04_Sigmastar_7_30/mis20s1_calibrationdata/black/25600/raw_stream_normal_1920x1080_16_GR_0205175549943_[FN=10,US=83317,AG=262144,DG=1024,BV=-299683,R=2631,G=1024,B=1986].raw",
+    "size_bytes": 207360000
+  },
+  {
+    "relative_path": "04_Sigmastar_7_30/mis20s1_calibrationdata/black/3200/raw_stream_normal_1920x1080_16_GR_0205175419790_[FN=10,US=83317,AG=32768,DG=1024,BV=-250531,R=2631,G=1024,B=1986].raw",
+    "size_bytes": 207360000
+  },
+  {
+    "relative_path": "04_Sigmastar_7_30/mis20s1_calibrationdata/black/400/raw_stream_normal_1920x1080_16_GR_0205175308935_[FN=10,US=83317,AG=4096,DG=1024,BV=-201379,R=2631,G=1024,B=1986].raw",
+    "size_bytes": 207360000
+  },
+  {
+    "relative_path": "04_Sigmastar_7_30/mis20s1_calibrationdata/black/6400/raw_stream_normal_1920x1080_16_GR_0205175442048_[FN=10,US=83317,AG=65536,DG=1024,BV=-266915,R=2631,G=1024,B=1986].raw",
+    "size_bytes": 207360000
+  },
+  {
+    "relative_path": "04_Sigmastar_7_30/mis20s1_calibrationdata/black/800/raw_stream_normal_1920x1080_16_GR_0205175339636_[FN=10,US=83317,AG=8192,DG=1024,BV=-217763,R=2631,G=1024,B=1986].raw",
+    "size_bytes": 207360000
+  },
+  {
+    "relative_path": "04_Sigmastar_7_30/mis20s1_calibrationdata/color/100/raw_stream_normal_1920x1080_16_GR_0205173227758_[FN=10,US=83317,AG=1024,DG=1024,BV=-24417,R=2299,G=1024,B=1952].raw",
+    "size_bytes": 207360000
+  },
+  {
+    "relative_path": "04_Sigmastar_7_30/mis20s1_calibrationdata/color/12800/raw_stream_normal_1920x1080_16_GR_0205174434739_[FN=10,US=623,AG=131072,DG=1071,BV=-23609,R=2420,G=1024,B=1908].raw",
+    "size_bytes": 207360000
+  },
+  {
+    "relative_path": "04_Sigmastar_7_30/mis20s1_calibrationdata/color/1600/raw_stream_normal_1920x1080_16_GR_0205174019158_[FN=10,US=5186,AG=16384,DG=1028,BV=-22874,R=2316,G=1024,B=1983].raw",
+    "size_bytes": 207360000
+  },
+  {
+    "relative_path": "04_Sigmastar_7_30/mis20s1_calibrationdata/color/200/raw_stream_normal_1920x1080_16_GR_0205173424232_[FN=10,US=41659,AG=2048,DG=1024,BV=-25117,R=2310,G=1024,B=1980].raw",
+    "size_bytes": 207360000
+  },
+  {
+    "relative_path": "04_Sigmastar_7_30/mis20s1_calibrationdata/color/25600/raw_stream_normal_1920x1080_16_GR_0205174518964_[FN=10,US=326,AG=262144,DG=1024,BV=-24141,R=2484,G=1024,B=1933].raw",
+    "size_bytes": 207360000
+  },
+  {
+    "relative_path": "04_Sigmastar_7_30/mis20s1_calibrationdata/color/3200/raw_stream_normal_1920x1080_16_GR_0205174119530_[FN=10,US=2578,AG=32768,DG=1034,BV=-23174,R=2316,G=1024,B=1983].raw",
+    "size_bytes": 207360000
+  },
+  {
+    "relative_path": "04_Sigmastar_7_30/mis20s1_calibrationdata/color/400/raw_stream_normal_1920x1080_16_GR_0205173607994_[FN=10,US=20830,AG=4096,DG=1024,BV=-25282,R=2304,G=1024,B=1982].raw",
+    "size_bytes": 207360000
+  },
+  {
+    "relative_path": "04_Sigmastar_7_30/mis20s1_calibrationdata/color/6400/raw_stream_normal_1920x1080_16_GR_0205174305901_[FN=10,US=1275,AG=65536,DG=1046,BV=-23138,R=2353,G=1024,B=1869].raw",
+    "size_bytes": 207360000
+  },
+  {
+    "relative_path": "04_Sigmastar_7_30/mis20s1_calibrationdata/color/800/raw_stream_normal_1920x1080_16_GR_0205173829970_[FN=10,US=10400,AG=8192,DG=1025,BV=-25381,R=2316,G=1024,B=1983].raw",
+    "size_bytes": 207360000
+  },
+  {
+    "relative_path": "04_Sigmastar_7_30/mis20s1_outdoor/1000x/raw_stream_1920x1080_16bit@RG_[Shutter=79999,SenserG=131072,IspG=8192,R=1829,G=1024,B=2349].raw",
+    "size_bytes": 829440000
+  },
+  {
+    "relative_path": "04_Sigmastar_7_30/mis20s1_outdoor/128x/raw_stream_1920x1080_16bit@RG_[Shutter=79999,SenserG=131072,IspG=1123,R=1896,G=1024,B=2221].raw",
+    "size_bytes": 829440000
+  },
+  {
+    "relative_path": "04_Sigmastar_7_30/mis20s1_outdoor/1500x/raw_stream_1920x1080_16bit@RG_[Shutter=79999,SenserG=131072,IspG=10455,R=1679,G=1024,B=2473].raw",
+    "size_bytes": 808704000
+  },
+  {
+    "relative_path": "04_Sigmastar_7_30/mis20s1_outdoor/512x/raw_stream_1920x1080_16bit@RG_[Shutter=79999,SenserG=131072,IspG=3957,R=1837,G=1024,B=2283].raw",
+    "size_bytes": 821145600
+  },
+  {
+    "relative_path": "04_Sigmastar_7_30/shdarkroom/1000x/raw_stream_1920x1080_16bit@RG_[Shutter=79999,SenserG=131072,IspG=7656,R=1878,G=1024,B=2218].raw",
+    "size_bytes": 829440000
+  },
+  {
+    "relative_path": "04_Sigmastar_7_30/shdarkroom/10x/raw_stream_1920x1080_16bit@RG_[Shutter=40000,SenserG=9500,IspG=1024,R=2113,G=1024,B=1789].raw",
+    "size_bytes": 829440000
+  },
+  {
+    "relative_path": "04_Sigmastar_7_30/shdarkroom/128x/raw_stream_1920x1080_16bit@RG_[Shutter=54992,SenserG=131072,IspG=1024,R=2159,G=1024,B=1849].raw",
+    "size_bytes": 829440000
+  },
+  {
+    "relative_path": "04_Sigmastar_7_30/shdarkroom/313x/raw_stream_1920x1080_16bit@RG_[Shutter=79999,SenserG=131072,IspG=2504,R=2065,G=1024,B=2021].raw",
+    "size_bytes": 1244160000
+  },
+  {
+    "relative_path": "04_Sigmastar_7_30/shdarkroom/632x/raw_stream_1920x1080_16bit@RG_[Shutter=79999,SenserG=131072,IspG=5055,R=2094,G=1024,B=1968].raw",
+    "size_bytes": 829440000
+  },
+  {
+    "relative_path": "04_Sigmastar_7_30/shdarkroom/645x/raw_stream_1920x1080_16bit@RG_[Shutter=79999,SenserG=131072,IspG=5167,R=2120,G=1024,B=1956].raw",
+    "size_bytes": 829440000
+  },
+  {
+    "relative_path": "04_Sigmastar_7_30/shdarkroom/64x/raw_stream_1920x1080_16bit@RG_[Shutter=40000,SenserG=69631,IspG=1024,R=2137,G=1024,B=1825].raw",
+    "size_bytes": 829440000
+  },
+  {
+    "relative_path": "05_2DNR3DNR/465_difficultpattern/shutter_83315/sensorG__ispG_4717_WB_1930_1024_2381/raw_stream_2560x1440_16bit@RG_[Shutter=83315,SenserG=109572,IspG=4717,R=1930,G=1024,B=2381].raw",
+    "size_bytes": 1474560000
+  },
+  {
+    "relative_path": "05_2DNR3DNR/465_difficultpattern/shutter_83315/sensorG__ispG_8880_WB_1962_1024_2172/raw_stream_2560x1440_16bit@RG_[Shutter=83315,SenserG=109572,IspG=8880,R=1962,G=1024,B=2172].raw",
+    "size_bytes": 1474560000
+  },
+  {
+    "relative_path": "05_2DNR3DNR/465_sh_normal/shutter_39999/sensorG__ispG_1024_WB_1535_1024_3003/raw_stream_2560x1440_16bit@RG_[Shutter=39999,SenserG=1079,IspG=1024,R=1535,G=1024,B=3003].raw",
+    "size_bytes": 737280000
+  },
+  {
+    "relative_path": "05_2DNR3DNR/465_sh_normal/shutter_39999/sensorG__ispG_1223_WB_1960_1024_2402/raw_stream_2560x1440_16bit@RG_[Shutter=39999,SenserG=109572,IspG=1223,R=1960,G=1024,B=2402].raw",
+    "size_bytes": 1474560000
+  },
+  {
+    "relative_path": "05_2DNR3DNR/465_sh_normal/shutter_83315/sensorG__ispG_19598_WB_2003_1024_1964/raw_stream_2560x1440_16bit@RG_[Shutter=83315,SenserG=109572,IspG=19598,R=2003,G=1024,B=1964].raw",
+    "size_bytes": 1474560000
+  },
+  {
+    "relative_path": "05_2DNR3DNR/465_sh_normal/shutter_83315/sensorG__ispG_2391_WB_1945_1024_2433/raw_stream_2560x1440_16bit@RG_[Shutter=83315,SenserG=109572,IspG=2391,R=1945,G=1024,B=2433].raw",
+    "size_bytes": 1474560000
+  },
+  {
+    "relative_path": "05_2DNR3DNR/465_sh_normal/shutter_83315/sensorG__ispG_3560_WB_1976_1024_2365/raw_stream_2560x1440_16bit@RG_[Shutter=83315,SenserG=109572,IspG=3560,R=1976,G=1024,B=2365].raw",
+    "size_bytes": 1474560000
+  },
+  {
+    "relative_path": "05_2DNR3DNR/465_sh_normal/shutter_83315/sensorG__ispG_5023_WB_1949_1024_2208/raw_stream_2560x1440_16bit@RG_[Shutter=83315,SenserG=109572,IspG=5023,R=1949,G=1024,B=2208].raw",
+    "size_bytes": 1474560000
+  },
+  {
+    "relative_path": "05_2DNR3DNR/465_sh_normal/shutter_83315/sensorG__ispG_6373_WB_1949_1024_2208/raw_stream_2560x1440_16bit@RG_[Shutter=83315,SenserG=109572,IspG=6373,R=1949,G=1024,B=2208].raw",
+    "size_bytes": 1474560000
+  },
+  {
+    "relative_path": "05_2DNR3DNR/465_sh_normal/shutter_83315/sensorG__ispG_9798_WB_1970_1024_2143/raw_stream_2560x1440_16bit@RG_[Shutter=83315,SenserG=109572,IspG=9798,R=1970,G=1024,B=2143].raw",
+    "size_bytes": 1474560000
+  }
+]

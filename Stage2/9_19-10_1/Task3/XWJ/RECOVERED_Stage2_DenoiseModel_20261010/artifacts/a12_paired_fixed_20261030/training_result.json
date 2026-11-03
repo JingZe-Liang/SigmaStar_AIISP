@@ -1,0 +1,23 @@
+{
+  "schema": "a12_paired_refresh_v1",
+  "status": "training_completed",
+  "phase": "fixed",
+  "purpose": "experiment",
+  "start_step": 512,
+  "step": 1024,
+  "completed_updates": 512,
+  "checkpoint": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_fixed_20261030/checkpoint_step_001024.pth",
+  "fork_parent_checkpoint_sha256": "ffd832ecfbb35e29dae699121b44034777c62be7c8aaf9476e840c1839bb4919",
+  "runtime": {
+    "torch": "2.5.1+cu124",
+    "cuda": "12.4",
+    "device": "cuda:0",
+    "device_name": "NVIDIA GeForce RTX 3090",
+    "cuda_device_count": 1,
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": false,
+    "cudnn_allow_tf32": true,
+    "matmul_allow_tf32": false,
+    "deterministic_algorithms": false
+  }
+}

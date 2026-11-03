@@ -1,0 +1,776 @@
+{
+  "schema": "a12_final_model_analysis_v1",
+  "summary_path": "artifacts/a12_paired_summary_20261030/summary.json",
+  "summary_sha256": "5dfed3ac6c31a8ec292377b9896831824ffaea66ac61f138bd32df7cb87c7fa6",
+  "summary_acceptance_status": "diagnostic_only_no_quality_pass_claim",
+  "primary_weights": "ema",
+  "model_weights_role": "diagnostic_only",
+  "metadata_checks": {
+    "a3_ema": {
+      "identity_matches_summary": true,
+      "file_hashes_match_summary": true,
+      "native_selected_metrics_match_source": true,
+      "probe_errors_match_source": true,
+      "model_ema_source_checkpoint_matches": true,
+      "expected_runtime": true
+    },
+    "shared512_ema": {
+      "identity_matches_summary": true,
+      "file_hashes_match_summary": true,
+      "native_selected_metrics_match_source": true,
+      "probe_errors_match_source": true,
+      "model_ema_source_checkpoint_matches": true,
+      "expected_runtime": true
+    },
+    "shared512_model": {
+      "identity_matches_summary": true,
+      "file_hashes_match_summary": true,
+      "native_selected_metrics_match_source": true,
+      "probe_errors_match_source": true,
+      "model_ema_source_checkpoint_matches": true,
+      "expected_runtime": true
+    },
+    "fixed1024_ema": {
+      "identity_matches_summary": true,
+      "file_hashes_match_summary": true,
+      "native_selected_metrics_match_source": true,
+      "probe_errors_match_source": true,
+      "model_ema_source_checkpoint_matches": true,
+      "expected_runtime": true
+    },
+    "fixed1024_model": {
+      "identity_matches_summary": true,
+      "file_hashes_match_summary": true,
+      "native_selected_metrics_match_source": true,
+      "probe_errors_match_source": true,
+      "model_ema_source_checkpoint_matches": true,
+      "expected_runtime": true
+    },
+    "refresh1024_ema": {
+      "identity_matches_summary": true,
+      "file_hashes_match_summary": true,
+      "native_selected_metrics_match_source": true,
+      "probe_errors_match_source": true,
+      "model_ema_source_checkpoint_matches": true,
+      "expected_runtime": true
+    },
+    "refresh1024_model": {
+      "identity_matches_summary": true,
+      "file_hashes_match_summary": true,
+      "native_selected_metrics_match_source": true,
+      "probe_errors_match_source": true,
+      "model_ema_source_checkpoint_matches": true,
+      "expected_runtime": true
+    }
+  },
+  "source_metadata_sha256": {
+    "artifacts/a12_paired_eval_a3_20261030/identity.json": "efc5b7cbcb082f803ba9e48d34b3cf6608f56972723ce972b6c167bd05cff194",
+    "artifacts/a12_paired_eval_a3_20261030/probes/evaluation.json": "1d0f7cea6679fc014698ff543e5e233bbff612036f252b2dea6cffa8b875face",
+    "artifacts/a12_paired_eval_a3_20261030/native/evaluation.json": "b21b9e70f400ab0147b420732efe96bb02ee00e3ffbc0180866b2b0148e11fd3",
+    "artifacts/a12_paired_eval_shared512_ema_20261030/identity.json": "3913f6a88839fafe006e296762e1c7ec2dcc5d100d613098073bc25ed1f5d1c2",
+    "artifacts/a12_paired_eval_shared512_ema_20261030/probes/evaluation.json": "d9833653a65fb986c78ce030e95d0e57d00002fcaa65b275eed7b4c7c6ae196f",
+    "artifacts/a12_paired_eval_shared512_ema_20261030/native/evaluation.json": "cfad8ea600f7321805f493213120285b00ae9a61b8c42ab3d938c59178538983",
+    "artifacts/a12_paired_eval_shared512_model_20261030/identity.json": "f626f695f6542f0d619d69cb9a1fabc13872d73bb2b58925e98d297de83fa75e",
+    "artifacts/a12_paired_eval_shared512_model_20261030/probes/evaluation.json": "03ac81a7f905b533ee27a2e7920d5810f3405b04fc7b6485f705f2599ea8c46a",
+    "artifacts/a12_paired_eval_shared512_model_20261030/native/evaluation.json": "1d3711c779a364ef8bc78695debf47721c811bea7372855fbe0066f17a98827b",
+    "artifacts/a12_paired_eval_fixed1024_ema_20261030/identity.json": "6f24d4516e2994887a89582ee24989ccb963fc07ff0c84fddf271b853d9330b1",
+    "artifacts/a12_paired_eval_fixed1024_ema_20261030/probes/evaluation.json": "8ab50734d0b8bf1393bac0c6022e0943cb99df791127b4e54e770a90a03536d6",
+    "artifacts/a12_paired_eval_fixed1024_ema_20261030/native/evaluation.json": "a5610b4a0d15ce53607858c99a1313698f2253164725ac6f7a40562bb01c1cee",
+    "artifacts/a12_paired_eval_fixed1024_model_20261030/identity.json": "a3bd36902bf3f32a1f2aea4da91cca5abdc3717179a60f4226ba54fa5b4e4e9a",
+    "artifacts/a12_paired_eval_fixed1024_model_20261030/probes/evaluation.json": "c56a7e4b1f8227f2ec022e70bcf7c032600409e304a700544b98e8f4ed7de432",
+    "artifacts/a12_paired_eval_fixed1024_model_20261030/native/evaluation.json": "22add432a7fc7c54dedf9ecaba703bcb11df00714c41df6078a6662b24bf33cb",
+    "artifacts/a12_paired_eval_refresh1024_ema_20261030/identity.json": "79f0d22ab97a4d2fb07c88ea57cbf19f39f36bb9c7efa76de98c2d699f62336e",
+    "artifacts/a12_paired_eval_refresh1024_ema_20261030/probes/evaluation.json": "eb035358eee26483425831ca0c8c4eb231c52f9528b2cc6f18660b54c45523fc",
+    "artifacts/a12_paired_eval_refresh1024_ema_20261030/native/evaluation.json": "93131ca0bfcef6ca3f96b4cd2d2929b6fe8d7746fbefaadcd5c21347597b1ece",
+    "artifacts/a12_paired_eval_refresh1024_model_20261030/identity.json": "c2d4470f561cd2315e625a1f7b39c175bc35bf68a34469238768f949352658d3",
+    "artifacts/a12_paired_eval_refresh1024_model_20261030/probes/evaluation.json": "d10b2c807eb602be532e8ae741ebb22e1e4d6363cab5afd98caabdb9891a663c",
+    "artifacts/a12_paired_eval_refresh1024_model_20261030/native/evaluation.json": "fb70c0982b7a02701dba7b23a0f0e1e6b1c18567830b79b1b8f22aab4a2e347f"
+  },
+  "refresh_model_native": [
+    {
+      "unit": "0-7",
+      "metrics": {
+        "finetuned.rmse_dn": {
+          "value": 8.433915138244629,
+          "delta_from_a3": -0.0856027603149414,
+          "delta_from_fixed_model": -0.6614217758178711,
+          "delta_from_refresh_ema": -0.3546876907348633
+        },
+        "finetuned.psnr_db": {
+          "value": 53.724493585026025,
+          "delta_from_a3": 0.08771585627353318,
+          "delta_from_fixed_model": 0.6557912841563933,
+          "delta_from_refresh_ema": 0.35781223216374514
+        },
+        "flat_residual_sigma_dn": {
+          "value": 6.5334930419921875,
+          "delta_from_a3": 0.21144962310791016,
+          "delta_from_fixed_model": 0.021857261657714844,
+          "delta_from_refresh_ema": 0.11957645416259766
+        },
+        "temporal_mad_dn": {
+          "value": 1.5097731351852417,
+          "delta_from_a3": 0.09275031089782715,
+          "delta_from_fixed_model": 0.07976353168487549,
+          "delta_from_refresh_ema": 0.09115135669708252
+        },
+        "high_frequency_ratio_mean": {
+          "value": 0.8569573653602737,
+          "delta_from_a3": -0.010499504422197603,
+          "delta_from_fixed_model": -0.018491286419656583,
+          "delta_from_refresh_ema": -0.010043783340341395
+        }
+      }
+    },
+    {
+      "unit": "96-103",
+      "metrics": {
+        "finetuned.rmse_dn": {
+          "value": 8.312694549560547,
+          "delta_from_a3": -0.0797739028930664,
+          "delta_from_fixed_model": -0.6047048568725586,
+          "delta_from_refresh_ema": -0.3200702667236328
+        },
+        "finetuned.psnr_db": {
+          "value": 53.85024166954161,
+          "delta_from_a3": 0.08295789554961175,
+          "delta_from_fixed_model": 0.6099279263742758,
+          "delta_from_refresh_ema": 0.3281617380558757
+        },
+        "flat_residual_sigma_dn": {
+          "value": 6.723104000091553,
+          "delta_from_a3": 0.18357229232788086,
+          "delta_from_fixed_model": 0.0044841766357421875,
+          "delta_from_refresh_ema": 0.0972757339477539
+        },
+        "temporal_mad_dn": {
+          "value": 1.4648380279541016,
+          "delta_from_a3": 0.09578406810760498,
+          "delta_from_fixed_model": 0.0791163444519043,
+          "delta_from_refresh_ema": 0.09317708015441895
+        },
+        "high_frequency_ratio_mean": {
+          "value": 0.851702341008522,
+          "delta_from_a3": -0.010079411010434525,
+          "delta_from_fixed_model": -0.0182444444125196,
+          "delta_from_refresh_ema": -0.009790167620588597
+        }
+      }
+    },
+    {
+      "unit": "192-199",
+      "metrics": {
+        "finetuned.rmse_dn": {
+          "value": 8.832138061523438,
+          "delta_from_a3": -0.05844688415527344,
+          "delta_from_fixed_model": -0.5964441299438477,
+          "delta_from_refresh_ema": -0.3048858642578125
+        },
+        "finetuned.psnr_db": {
+          "value": 53.323761137756264,
+          "delta_from_a3": 0.057289732021907014,
+          "delta_from_fixed_model": 0.567610841484381,
+          "delta_from_refresh_ema": 0.29477825855490636
+        },
+        "flat_residual_sigma_dn": {
+          "value": 7.063572406768799,
+          "delta_from_a3": 0.21065378189086914,
+          "delta_from_fixed_model": 0.007738590240478516,
+          "delta_from_refresh_ema": 0.12182950973510742
+        },
+        "temporal_mad_dn": {
+          "value": 1.554396390914917,
+          "delta_from_a3": 0.09984683990478516,
+          "delta_from_fixed_model": 0.08058905601501465,
+          "delta_from_refresh_ema": 0.09836184978485107
+        },
+        "high_frequency_ratio_mean": {
+          "value": 0.8540773709809416,
+          "delta_from_a3": -0.010372374692589337,
+          "delta_from_fixed_model": -0.01828289675104966,
+          "delta_from_refresh_ema": -0.009932260134975945
+        }
+      }
+    }
+  ],
+  "refresh_model_moving_patch": [
+    {
+      "case": "detail__moving_patch__gain_800",
+      "model_input_rmse_dn": 29.03375841758572,
+      "metrics": {
+        "rmse_dn": {
+          "value": 83.27999843064818,
+          "delta_from_a3": 10.641190227060335,
+          "delta_from_fixed_model": -1.6846671878247577,
+          "delta_from_refresh_ema": 6.819238119370539
+        },
+        "highpass_rmse_dn": {
+          "value": 56.772973881537844,
+          "delta_from_a3": 2.081751347789613,
+          "delta_from_fixed_model": 1.2851052028379186,
+          "delta_from_refresh_ema": 1.798287831103707
+        },
+        "gradient_rmse_dn": {
+          "value": 85.15655584073676,
+          "delta_from_a3": 3.3628266769636497,
+          "delta_from_fixed_model": 1.7981334488632825,
+          "delta_from_refresh_ema": 2.860504656594003
+        },
+        "temporal_difference_error_rmse_dn": {
+          "value": 110.55979938927341,
+          "delta_from_a3": 9.407776253894028,
+          "delta_from_fixed_model": 1.875633963462903,
+          "delta_from_refresh_ema": 6.419326272610704
+        }
+      }
+    },
+    {
+      "case": "detail__moving_patch__gain_12800",
+      "model_input_rmse_dn": 100.3111836330082,
+      "metrics": {
+        "rmse_dn": {
+          "value": 110.87917483399625,
+          "delta_from_a3": 13.839410365901344,
+          "delta_from_fixed_model": -3.44441735148456,
+          "delta_from_refresh_ema": 7.759637388620121
+        },
+        "highpass_rmse_dn": {
+          "value": 78.74735391733286,
+          "delta_from_a3": 3.897814970351291,
+          "delta_from_fixed_model": 0.7318107182544509,
+          "delta_from_refresh_ema": 2.5067637277704478
+        },
+        "gradient_rmse_dn": {
+          "value": 115.56900810215939,
+          "delta_from_a3": 6.086454937274041,
+          "delta_from_fixed_model": 0.6519730746083212,
+          "delta_from_refresh_ema": 3.824051083704717
+        },
+        "temporal_difference_error_rmse_dn": {
+          "value": 147.66084116902752,
+          "delta_from_a3": 13.942121235907194,
+          "delta_from_fixed_model": -0.1275945784979342,
+          "delta_from_refresh_ema": 8.035838767224533
+        }
+      }
+    },
+    {
+      "case": "dark__moving_patch__gain_800",
+      "model_input_rmse_dn": 19.818786251194506,
+      "metrics": {
+        "rmse_dn": {
+          "value": 69.30094170358534,
+          "delta_from_a3": 9.089484335368937,
+          "delta_from_fixed_model": 0.40501463408408256,
+          "delta_from_refresh_ema": 6.31691793459219
+        },
+        "highpass_rmse_dn": {
+          "value": 51.475548017078346,
+          "delta_from_a3": 2.786122041620402,
+          "delta_from_fixed_model": 1.7874085640767774,
+          "delta_from_refresh_ema": 2.309612841690992
+        },
+        "gradient_rmse_dn": {
+          "value": 76.14191645373359,
+          "delta_from_a3": 4.213483354713119,
+          "delta_from_fixed_model": 2.594152543596792,
+          "delta_from_refresh_ema": 3.5302041133603552
+        },
+        "temporal_difference_error_rmse_dn": {
+          "value": 96.54094235952451,
+          "delta_from_a3": 8.875204565976716,
+          "delta_from_fixed_model": 3.4431839207644828,
+          "delta_from_refresh_ema": 6.595527256030508
+        }
+      }
+    },
+    {
+      "case": "dark__moving_patch__gain_12800",
+      "model_input_rmse_dn": 86.86898014819391,
+      "metrics": {
+        "rmse_dn": {
+          "value": 96.81758032382331,
+          "delta_from_a3": 12.46269006728464,
+          "delta_from_fixed_model": -2.6573547542855778,
+          "delta_from_refresh_ema": 6.9598201669468125
+        },
+        "highpass_rmse_dn": {
+          "value": 70.30086151077165,
+          "delta_from_a3": 3.8295211284582393,
+          "delta_from_fixed_model": 0.6409427238570231,
+          "delta_from_refresh_ema": 2.348897673566114
+        },
+        "gradient_rmse_dn": {
+          "value": 102.6284949566236,
+          "delta_from_a3": 5.918542553950147,
+          "delta_from_fixed_model": 0.5877520009250787,
+          "delta_from_refresh_ema": 3.5542646940672427
+        },
+        "temporal_difference_error_rmse_dn": {
+          "value": 133.54425798399808,
+          "delta_from_a3": 12.58061521975742,
+          "delta_from_fixed_model": 0.0970591584856777,
+          "delta_from_refresh_ema": 7.220211661834497
+        }
+      }
+    }
+  ],
+  "direction_counts_vs_a3": {
+    "a3_ema": {
+      "static.rmse_dn": {
+        "lower": 0,
+        "equal": 4,
+        "higher": 0
+      },
+      "static.highpass_rmse_dn": {
+        "lower": 0,
+        "equal": 4,
+        "higher": 0
+      },
+      "static.gradient_rmse_dn": {
+        "lower": 0,
+        "equal": 4,
+        "higher": 0
+      },
+      "static.temporal_difference_error_rmse_dn": {
+        "lower": 0,
+        "equal": 4,
+        "higher": 0
+      },
+      "global_translation.rmse_dn": {
+        "lower": 0,
+        "equal": 4,
+        "higher": 0
+      },
+      "global_translation.highpass_rmse_dn": {
+        "lower": 0,
+        "equal": 4,
+        "higher": 0
+      },
+      "global_translation.gradient_rmse_dn": {
+        "lower": 0,
+        "equal": 4,
+        "higher": 0
+      },
+      "global_translation.temporal_difference_error_rmse_dn": {
+        "lower": 0,
+        "equal": 4,
+        "higher": 0
+      },
+      "moving_patch.rmse_dn": {
+        "lower": 0,
+        "equal": 4,
+        "higher": 0
+      },
+      "moving_patch.highpass_rmse_dn": {
+        "lower": 0,
+        "equal": 4,
+        "higher": 0
+      },
+      "moving_patch.gradient_rmse_dn": {
+        "lower": 0,
+        "equal": 4,
+        "higher": 0
+      },
+      "moving_patch.temporal_difference_error_rmse_dn": {
+        "lower": 0,
+        "equal": 4,
+        "higher": 0
+      }
+    },
+    "shared512_ema": {
+      "static.rmse_dn": {
+        "lower": 4,
+        "equal": 0,
+        "higher": 0
+      },
+      "static.highpass_rmse_dn": {
+        "lower": 4,
+        "equal": 0,
+        "higher": 0
+      },
+      "static.gradient_rmse_dn": {
+        "lower": 4,
+        "equal": 0,
+        "higher": 0
+      },
+      "static.temporal_difference_error_rmse_dn": {
+        "lower": 1,
+        "equal": 0,
+        "higher": 3
+      },
+      "global_translation.rmse_dn": {
+        "lower": 3,
+        "equal": 0,
+        "higher": 1
+      },
+      "global_translation.highpass_rmse_dn": {
+        "lower": 3,
+        "equal": 0,
+        "higher": 1
+      },
+      "global_translation.gradient_rmse_dn": {
+        "lower": 3,
+        "equal": 0,
+        "higher": 1
+      },
+      "global_translation.temporal_difference_error_rmse_dn": {
+        "lower": 2,
+        "equal": 0,
+        "higher": 2
+      },
+      "moving_patch.rmse_dn": {
+        "lower": 0,
+        "equal": 0,
+        "higher": 4
+      },
+      "moving_patch.highpass_rmse_dn": {
+        "lower": 1,
+        "equal": 0,
+        "higher": 3
+      },
+      "moving_patch.gradient_rmse_dn": {
+        "lower": 1,
+        "equal": 0,
+        "higher": 3
+      },
+      "moving_patch.temporal_difference_error_rmse_dn": {
+        "lower": 0,
+        "equal": 0,
+        "higher": 4
+      }
+    },
+    "shared512_model": {
+      "static.rmse_dn": {
+        "lower": 4,
+        "equal": 0,
+        "higher": 0
+      },
+      "static.highpass_rmse_dn": {
+        "lower": 4,
+        "equal": 0,
+        "higher": 0
+      },
+      "static.gradient_rmse_dn": {
+        "lower": 4,
+        "equal": 0,
+        "higher": 0
+      },
+      "static.temporal_difference_error_rmse_dn": {
+        "lower": 0,
+        "equal": 0,
+        "higher": 4
+      },
+      "global_translation.rmse_dn": {
+        "lower": 2,
+        "equal": 0,
+        "higher": 2
+      },
+      "global_translation.highpass_rmse_dn": {
+        "lower": 3,
+        "equal": 0,
+        "higher": 1
+      },
+      "global_translation.gradient_rmse_dn": {
+        "lower": 3,
+        "equal": 0,
+        "higher": 1
+      },
+      "global_translation.temporal_difference_error_rmse_dn": {
+        "lower": 2,
+        "equal": 0,
+        "higher": 2
+      },
+      "moving_patch.rmse_dn": {
+        "lower": 0,
+        "equal": 0,
+        "higher": 4
+      },
+      "moving_patch.highpass_rmse_dn": {
+        "lower": 0,
+        "equal": 0,
+        "higher": 4
+      },
+      "moving_patch.gradient_rmse_dn": {
+        "lower": 0,
+        "equal": 0,
+        "higher": 4
+      },
+      "moving_patch.temporal_difference_error_rmse_dn": {
+        "lower": 0,
+        "equal": 0,
+        "higher": 4
+      }
+    },
+    "fixed1024_ema": {
+      "static.rmse_dn": {
+        "lower": 4,
+        "equal": 0,
+        "higher": 0
+      },
+      "static.highpass_rmse_dn": {
+        "lower": 4,
+        "equal": 0,
+        "higher": 0
+      },
+      "static.gradient_rmse_dn": {
+        "lower": 4,
+        "equal": 0,
+        "higher": 0
+      },
+      "static.temporal_difference_error_rmse_dn": {
+        "lower": 0,
+        "equal": 0,
+        "higher": 4
+      },
+      "global_translation.rmse_dn": {
+        "lower": 2,
+        "equal": 0,
+        "higher": 2
+      },
+      "global_translation.highpass_rmse_dn": {
+        "lower": 3,
+        "equal": 0,
+        "higher": 1
+      },
+      "global_translation.gradient_rmse_dn": {
+        "lower": 3,
+        "equal": 0,
+        "higher": 1
+      },
+      "global_translation.temporal_difference_error_rmse_dn": {
+        "lower": 2,
+        "equal": 0,
+        "higher": 2
+      },
+      "moving_patch.rmse_dn": {
+        "lower": 0,
+        "equal": 0,
+        "higher": 4
+      },
+      "moving_patch.highpass_rmse_dn": {
+        "lower": 0,
+        "equal": 0,
+        "higher": 4
+      },
+      "moving_patch.gradient_rmse_dn": {
+        "lower": 0,
+        "equal": 0,
+        "higher": 4
+      },
+      "moving_patch.temporal_difference_error_rmse_dn": {
+        "lower": 0,
+        "equal": 0,
+        "higher": 4
+      }
+    },
+    "fixed1024_model": {
+      "static.rmse_dn": {
+        "lower": 4,
+        "equal": 0,
+        "higher": 0
+      },
+      "static.highpass_rmse_dn": {
+        "lower": 4,
+        "equal": 0,
+        "higher": 0
+      },
+      "static.gradient_rmse_dn": {
+        "lower": 4,
+        "equal": 0,
+        "higher": 0
+      },
+      "static.temporal_difference_error_rmse_dn": {
+        "lower": 0,
+        "equal": 0,
+        "higher": 4
+      },
+      "global_translation.rmse_dn": {
+        "lower": 2,
+        "equal": 0,
+        "higher": 2
+      },
+      "global_translation.highpass_rmse_dn": {
+        "lower": 3,
+        "equal": 0,
+        "higher": 1
+      },
+      "global_translation.gradient_rmse_dn": {
+        "lower": 3,
+        "equal": 0,
+        "higher": 1
+      },
+      "global_translation.temporal_difference_error_rmse_dn": {
+        "lower": 1,
+        "equal": 0,
+        "higher": 3
+      },
+      "moving_patch.rmse_dn": {
+        "lower": 0,
+        "equal": 0,
+        "higher": 4
+      },
+      "moving_patch.highpass_rmse_dn": {
+        "lower": 0,
+        "equal": 0,
+        "higher": 4
+      },
+      "moving_patch.gradient_rmse_dn": {
+        "lower": 0,
+        "equal": 0,
+        "higher": 4
+      },
+      "moving_patch.temporal_difference_error_rmse_dn": {
+        "lower": 0,
+        "equal": 0,
+        "higher": 4
+      }
+    },
+    "refresh1024_ema": {
+      "static.rmse_dn": {
+        "lower": 4,
+        "equal": 0,
+        "higher": 0
+      },
+      "static.highpass_rmse_dn": {
+        "lower": 4,
+        "equal": 0,
+        "higher": 0
+      },
+      "static.gradient_rmse_dn": {
+        "lower": 4,
+        "equal": 0,
+        "higher": 0
+      },
+      "static.temporal_difference_error_rmse_dn": {
+        "lower": 0,
+        "equal": 0,
+        "higher": 4
+      },
+      "global_translation.rmse_dn": {
+        "lower": 3,
+        "equal": 0,
+        "higher": 1
+      },
+      "global_translation.highpass_rmse_dn": {
+        "lower": 3,
+        "equal": 0,
+        "higher": 1
+      },
+      "global_translation.gradient_rmse_dn": {
+        "lower": 3,
+        "equal": 0,
+        "higher": 1
+      },
+      "global_translation.temporal_difference_error_rmse_dn": {
+        "lower": 2,
+        "equal": 0,
+        "higher": 2
+      },
+      "moving_patch.rmse_dn": {
+        "lower": 0,
+        "equal": 0,
+        "higher": 4
+      },
+      "moving_patch.highpass_rmse_dn": {
+        "lower": 0,
+        "equal": 0,
+        "higher": 4
+      },
+      "moving_patch.gradient_rmse_dn": {
+        "lower": 0,
+        "equal": 0,
+        "higher": 4
+      },
+      "moving_patch.temporal_difference_error_rmse_dn": {
+        "lower": 0,
+        "equal": 0,
+        "higher": 4
+      }
+    },
+    "refresh1024_model": {
+      "static.rmse_dn": {
+        "lower": 4,
+        "equal": 0,
+        "higher": 0
+      },
+      "static.highpass_rmse_dn": {
+        "lower": 4,
+        "equal": 0,
+        "higher": 0
+      },
+      "static.gradient_rmse_dn": {
+        "lower": 4,
+        "equal": 0,
+        "higher": 0
+      },
+      "static.temporal_difference_error_rmse_dn": {
+        "lower": 0,
+        "equal": 0,
+        "higher": 4
+      },
+      "global_translation.rmse_dn": {
+        "lower": 2,
+        "equal": 0,
+        "higher": 2
+      },
+      "global_translation.highpass_rmse_dn": {
+        "lower": 2,
+        "equal": 0,
+        "higher": 2
+      },
+      "global_translation.gradient_rmse_dn": {
+        "lower": 2,
+        "equal": 0,
+        "higher": 2
+      },
+      "global_translation.temporal_difference_error_rmse_dn": {
+        "lower": 1,
+        "equal": 0,
+        "higher": 3
+      },
+      "moving_patch.rmse_dn": {
+        "lower": 0,
+        "equal": 0,
+        "higher": 4
+      },
+      "moving_patch.highpass_rmse_dn": {
+        "lower": 0,
+        "equal": 0,
+        "higher": 4
+      },
+      "moving_patch.gradient_rmse_dn": {
+        "lower": 0,
+        "equal": 0,
+        "higher": 4
+      },
+      "moving_patch.temporal_difference_error_rmse_dn": {
+        "lower": 0,
+        "equal": 0,
+        "higher": 4
+      }
+    }
+  },
+  "ema_parameter_update_context": {
+    "implementation": "src/raw_fusion/finetune/a3.py:update_ema; fixed decay 0.999; buffers copied directly",
+    "initial_parameter_state_coefficient_after_1024": 0.35897147818971004,
+    "shared512_parameter_state_coefficient_after_branch512": 0.5991422854295214,
+    "interpretation": "Algebraic parameter-state coefficients, not image-output mixture coefficients; outputs and quality metrics are nonlinear."
+  },
+  "conclusions": [
+    "The refresh live model improves native reconstruction against A3 in all three windows (PSNR +0.0877158563/+0.0829578955/+0.0572897320 dB); do not state that all model/EMA candidates regress native reconstruction.",
+    "This is not a joint native quality gain: refresh live-model flat residual sigma and temporal MAD are higher than both A3 and fixed live model in every window; HF amplitude ratio is lower than both.",
+    "Every refresh live-model moving-patch reconstruction, high-pass, gradient, and temporal-difference error is worse than A3 and worse than refresh EMA; RMSE increase versus A3 is 9.0894843354–13.8394103659 DN.",
+    "The refresh model has worse reconstruction on 6/8 motion cases versus A3. Static probe reconstruction/high-pass/gradient improve on 4/4, while static temporal-difference error worsens on 4/4.",
+    "EMA and live-model differences make the native result sensitive to weight averaging and are consistent with EMA lag, but do not identify lag as the sole cause or prove that more training will improve the EMA.",
+    "EMA remains the predeclared primary state. Even if live weights had been eligible for promotion, the joint detail, motion, and flat-region behavior does not support replacing A3.",
+    "Do not extend training solely to wait for EMA: future parameter trajectory is unknown, and the current live weights still fail motion diagnostics. Preserve this native positive finding as a research observation and proceed to supervision/data qualification."
+  ],
+  "promotion_decision": "retain_a3_no_new_training",
+  "limits": [
+    "One final checkpoint per branch evaluated here, one seed, no proof about future training trajectory.",
+    "Native shared-scene reference contains evaluated frames; modest PSNR increase does not establish independent generalization.",
+    "Synthetic motion probes derive from a training reference; regression is a diagnostic warning rather than independent real-motion quality measurement.",
+    "No real dynamic or unseen-sensor acceptance has been performed."
+  ]
+}

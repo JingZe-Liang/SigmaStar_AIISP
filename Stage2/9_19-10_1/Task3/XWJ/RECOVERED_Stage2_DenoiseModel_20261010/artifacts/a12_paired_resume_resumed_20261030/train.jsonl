@@ -1,0 +1,1 @@
+{"step": 2, "sample_index": 1, "phase": "shared", "source": "synthetic", "gain": "100", "valid_fraction": 0.921630859375, "loss": 0.005441742483526468, "charbonnier": 0.004974992945790291, "gradient": 0.0025330735370516777, "highpass": 0.0021344232372939587}

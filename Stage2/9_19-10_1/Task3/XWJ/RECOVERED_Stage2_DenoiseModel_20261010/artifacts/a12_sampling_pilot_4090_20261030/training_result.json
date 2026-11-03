@@ -1,0 +1,6 @@
+{
+  "schema": "a12_sampling_only_v1",
+  "status": "training_completed",
+  "step": 200,
+  "checkpoint": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_sampling_pilot_4090_20261030/checkpoint_step_000200.pth"
+}

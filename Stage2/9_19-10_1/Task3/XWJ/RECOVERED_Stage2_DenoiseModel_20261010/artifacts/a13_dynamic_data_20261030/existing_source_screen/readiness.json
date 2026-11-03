@@ -1,0 +1,350 @@
+{
+  "schema": "a13_existing_dynamic_readiness_v1",
+  "date": "2026-10-30",
+  "dataset_access": "read_only_cpu",
+  "status": "existing_source_not_new_independent_dynamic_pilot",
+  "training_ready": false,
+  "scope": "Only the configured company-data root was inventoried. No claim about unknown external directories.",
+  "dataset_root": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset",
+  "raw_file_count": 849,
+  "raw_files_by_group": {
+    "01_fist_company": 4,
+    "02_SC465SL_darkroom18": 2,
+    "03_MIS20S1_2D3D": 804,
+    "04_Sigmastar_7_30": 29,
+    "05_2DNR3DNR": 10
+  },
+  "json_files_in_dataset_root": [],
+  "source": {
+    "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/shdarkroom/10x/raw_stream_1920x1080_16bit@RG_[Shutter=40000,SenserG=9500,IspG=1024,R=2113,G=1024,B=1789].raw",
+    "manifest": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/stream_manifests/04_shdarkroom_10x.json",
+    "size_bytes": 829440000,
+    "mtime_ns": 1789641248766301068,
+    "device": 2049,
+    "inode": 316801958,
+    "sampled_frame_sha256": {
+      "0": "bfa7172f9e549cf8ec402c192f52cc524fd47b36ee5a382e8ae6a11f23f8e854",
+      "1": "0772ab82d9b28f5f583873054ead6f829711bc735d0c6d25740b5c64ea91a997",
+      "9": "f3e45fbff667ea4140273699e71c507911800fa3efd4748396764577f460bdc5",
+      "10": "05bc62acb196bd3bc9b969990e92935e80a63d75e8d50982487e3ae7eadf9814",
+      "17": "899c72db196ac327fbc9be8e327da52ef142a998672f9ed4765e45dc30f2dbf6",
+      "18": "9ac92ff8293f57c980b69169a4de13dd6941f44b5f610744b3b175e8fd9df686",
+      "26": "1bb91558758e802b0be94687ba55ed7178d5f7bb0289169a4651226c1a644134",
+      "27": "33844d4a67d3988145430a08f2c985be747591a44cadeb2e6eabd65560ae7578",
+      "34": "51bb46ebc1c3cb981259ae9967e1c8153077221d724b54fa6a7a49a92aeaf42d",
+      "35": "2e256c24bde3a4c35e870043146541a4e6172c373a6f96856cd0509c295b1624",
+      "43": "465a44c68a2ce52174008ee04e013265f7448c9a7d8c320a8f0fb088d5a16b98",
+      "44": "a2b0fac38e2f1101560c9ce38b7ae51c136230ad383a61bf836c2d3632a8f838",
+      "52": "27a7b83e6839d9a58921a04bd6d4adf6b1a6df106b974d7266523c807ae74970",
+      "53": "45ba109a5ad80f5954002813a888cba11cb4f36bf4b79a983570adb3f97143b1",
+      "60": "d2e7d72d7f5eabb12d8ff47643d58101967b3adc2998e6d1aef988dc94da01e1",
+      "61": "c4cba5daa84fe76a2e07fd66c95e32d251487888471e16c99aa9124801f97d59",
+      "69": "19bb011cdf6486d80875e7cd2081edc6314ed23c4dee8dca96c86354497e3437",
+      "70": "e4dc6f24ee439292d812024f4638c004ac446b3f04c9d896d32ca2ce25a089d9",
+      "77": "a5c849477168e6f2957753881c8feeaa644e961923513022e4c21c62199d56bd",
+      "78": "cdaf6194eaf3d2d52766177ff468dc520d7e6148ae3fc4d76234082aab611dc8",
+      "86": "c860c45cd6b58fda604dd6f959a2d0b48c7dde3b558b8b32aa5ca42a25eb8630",
+      "87": "ff59479ec04718b149b1883cabc6e99927cf3d6b67cf3e8bf683c2febac1f7a8",
+      "95": "af68ec9d03c7b86a34121231cb5a043b5ea6814994d17422d7007a3925a3a628",
+      "96": "ed824381b6ffd98935da47ddf61c00044e34a48af5cdab76ea8e8328ac5cb879",
+      "103": "bd64b66f256ea410b7399802b706d51fa1c602970cc49802061eafb43c771b05",
+      "104": "7aff709909134cb0e1e86bfa8a6ebdcc2f97cfac379ff9cd92fea0c8bb5c4c1a",
+      "112": "dc865207cd63f204b9f5fa2f808e1e0e6c731e437a0a729ee3232169091253ce",
+      "113": "5814d808fcc40dd3898e23711648eb6195e779aaf0fd5e132336a63f9a2696e2",
+      "121": "9e687198ecdf8b90f977c5c5a4d98a649963ae53e3cb85e7623789fc65b3daed",
+      "122": "19fc7fc158833608962bd47f5016d7ccba66fd1c2e04636ef523c5b721915263",
+      "129": "75db6146e89971925f6cf9cbf2520bc12d5a103b48c946086df2b4c78128c0f1",
+      "130": "95738e2eafb21432772a3ea50ca1250dd7e069caaf3c982c6b8e525970b74eb7",
+      "138": "ab15f8f5cd17a676559e97e31b216e5c0760aa9737ffb6ee790cddde0ca84c82",
+      "139": "156f27d01b6605a15c5301467f1adcbb9938934622f11fe954aee666bd25d68c",
+      "146": "c482752aa58fea37ffc50f0d88fde5bc27759c53d1949408cdccdffe40dc0d72",
+      "147": "6b56fe11f54859a68f954fa23430508ead2309b36f2cae96d31ebb37c6c39eec",
+      "155": "7aeb63a5a0524c3ad49dc77e9d464bb73f81afdb45c1e61dca4fe17dc092c364",
+      "156": "eda36e52740e99846c88efa3c624f719cedbbd227656c7636306cca0aec89704",
+      "164": "e8e2344ed4d93fc5e36744be3e931103134f52e5a3e48cbc6cb1599a954024d9",
+      "165": "e33dee06e8d48aa3a4d57861978ff47d60918fe95b994d520fb0fc81a7fb2123",
+      "172": "bab5ab8ee99652031f67786b73fa9db2048b6f0fef4aa842968f2982727d273a",
+      "173": "5f00606af56c9347028e5ffa2c17d8c8d76611d5d2a157cb483a026889ff6ba8",
+      "181": "4336323f95729c79457b17fddf93b06d00ff3ff79dc14fbb7bb5e31a747c171d",
+      "182": "9fda41229aef52dbeb663dc7b46d908b955fab631b4fd8217f92cd3306dc3201",
+      "189": "96b5c840a854def611bcd03e5ea6fbdd7eb058276737ba7ae61aa3c23de6e3f5",
+      "190": "aa4ff24bbcf9c84a63e9934fb10732d749b3cffe09cf336edb76893c5a162476",
+      "198": "ebd81cb5f9e15460b89cc394211e529ad2faad85ea6829bc80018e28fbc6b61d",
+      "199": "e369d1e0d56586c5d4d55e09f4aa8d3c3fe1ae4639f280d052efac2275f66d00"
+    },
+    "full_raw_sha256": null
+  },
+  "filename_metadata_unverified_capture_claims": {
+    "width": 1920,
+    "height": 1080,
+    "cfa_name": "RG",
+    "shutter_us": 40000,
+    "sensor_gain": 9500,
+    "isp_gain": 1024,
+    "wb_r": 2113,
+    "wb_g": 1024,
+    "wb_b": 1789
+  },
+  "unknown_capture_controls": [
+    "fps",
+    "nr_disabled",
+    "auto_exposure",
+    "auto_gain",
+    "auto_white_balance",
+    "tripod_fixed",
+    "hardware_bypass_evidence",
+    "motion_blur_review"
+  ],
+  "metrics": {
+    "frames": 200,
+    "sampled_adjacent_pairs": 24,
+    "sampled_unique_frames": 48,
+    "high12_alignment_fraction": 1.0,
+    "quiet_pair_noise_dn": 12.605167645478456,
+    "saturation_fraction": 0.0032080078125,
+    "background_cv": 0.008201708909011379,
+    "background_max_deviation": 0.011582835376414071,
+    "active_pair_fraction": 1.0,
+    "mean_motion_fraction": 0.04820730452674896
+  },
+  "thresholds": {
+    "min_frames_per_clip": 160,
+    "min_train_scenes": 4,
+    "min_validation_scenes": 2,
+    "max_target_noise_dn": 8.0,
+    "preferred_target_noise_dn": 5.0,
+    "max_background_cv": 0.015,
+    "max_background_deviation": 0.04,
+    "max_saturation_fraction": 0.01,
+    "min_active_pair_fraction": 0.25,
+    "min_motion_fraction": 0.01,
+    "max_motion_fraction": 0.6,
+    "sample_pairs": 24,
+    "noise_block_size": 16,
+    "motion_block_size": 4
+  },
+  "signal_screen_checks": {
+    "minimum_frames": true,
+    "sampled_high12_alignment": true,
+    "quiet_pair_noise": false,
+    "saturation": true,
+    "background_cv": true,
+    "background_max_deviation": true,
+    "active_motion": true,
+    "motion_area_lower_bound": true,
+    "motion_area_upper_bound": true
+  },
+  "signal_screen_all_pass": false,
+  "screen_definition": "A7 quiet adjacent-pair and block-motion screening; no physical-scene, clean-target, NR-bypass, blur, or generalization certification.",
+  "limitations": [
+    "Quiet-pair noise is not total target error and may miss fixed-pattern or correlated noise.",
+    "Only the recorded adjacent pairs are screened; no whole-stream cleanliness claim.",
+    "The one-scene 200-frame source was already used in A3/A6 development; temporal splitting cannot create independent scenes."
+  ],
+  "required_before_new_training": [
+    "Independent multi-scene dynamic targets and scene-level train/validation split",
+    "Actual capture controls and provenance",
+    "Automatic A7 checks followed by fixed-ISP visual target review"
+  ],
+  "provenance_sha256": {
+    "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/scripts/audit_a13_existing_dynamic.py": "22bce945f248c3d707f3c8691dc6d1faf6a70ef39299c33fe0a92219b79367aa",
+    "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/src/raw_fusion/finetune/a7_capture.py": "084d73717e9cd94490ea1e5cc2cee18028945ce7e1740990c019a43fa522c761",
+    "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/src/raw_fusion/finetune/stream_io.py": "a1c1691244f81586efc05f08860d7122f77f2a824b5b4ce12a37ef030275a442",
+    "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/src/raw_fusion/finetune/adapters.py": "5b782423df9ec78becb1735ac4f119f4dd9ac3f2f61176b1a2fc6774b1fc9f01",
+    "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/stream_manifests/04_shdarkroom_10x.json": "f76739c8538b42d15582ab063e40d673ddeff94cdc81b1f264808f48db7ad1df"
+  },
+  "sampled_pairs": [
+    {
+      "indices": [
+        0,
+        1
+      ],
+      "quiet_pair_noise_dn": 12.37722656426841,
+      "motion_fraction": 0.05305555555555556
+    },
+    {
+      "indices": [
+        9,
+        10
+      ],
+      "quiet_pair_noise_dn": 12.326614200918053,
+      "motion_fraction": 0.056574074074074075
+    },
+    {
+      "indices": [
+        17,
+        18
+      ],
+      "quiet_pair_noise_dn": 12.386171676526445,
+      "motion_fraction": 0.054197530864197534
+    },
+    {
+      "indices": [
+        26,
+        27
+      ],
+      "quiet_pair_noise_dn": 12.402116807125001,
+      "motion_fraction": 0.05506172839506173
+    },
+    {
+      "indices": [
+        34,
+        35
+      ],
+      "quiet_pair_noise_dn": 12.536727502382783,
+      "motion_fraction": 0.050462962962962966
+    },
+    {
+      "indices": [
+        43,
+        44
+      ],
+      "quiet_pair_noise_dn": 12.518083894520208,
+      "motion_fraction": 0.053364197530864195
+    },
+    {
+      "indices": [
+        52,
+        53
+      ],
+      "quiet_pair_noise_dn": 12.509209184357921,
+      "motion_fraction": 0.0517283950617284
+    },
+    {
+      "indices": [
+        60,
+        61
+      ],
+      "quiet_pair_noise_dn": 12.39779125920359,
+      "motion_fraction": 0.053580246913580244
+    },
+    {
+      "indices": [
+        69,
+        70
+      ],
+      "quiet_pair_noise_dn": 12.392291264060312,
+      "motion_fraction": 0.055524691358024694
+    },
+    {
+      "indices": [
+        77,
+        78
+      ],
+      "quiet_pair_noise_dn": 12.431704838869056,
+      "motion_fraction": 0.05404320987654321
+    },
+    {
+      "indices": [
+        86,
+        87
+      ],
+      "quiet_pair_noise_dn": 12.360336265303886,
+      "motion_fraction": 0.052253086419753084
+    },
+    {
+      "indices": [
+        95,
+        96
+      ],
+      "quiet_pair_noise_dn": 12.554716991156468,
+      "motion_fraction": 0.04990740740740741
+    },
+    {
+      "indices": [
+        103,
+        104
+      ],
+      "quiet_pair_noise_dn": 12.701058941381206,
+      "motion_fraction": 0.049567901234567904
+    },
+    {
+      "indices": [
+        112,
+        113
+      ],
+      "quiet_pair_noise_dn": 12.777361056445667,
+      "motion_fraction": 0.04842592592592593
+    },
+    {
+      "indices": [
+        121,
+        122
+      ],
+      "quiet_pair_noise_dn": 12.855471507333599,
+      "motion_fraction": 0.044753086419753084
+    },
+    {
+      "indices": [
+        129,
+        130
+      ],
+      "quiet_pair_noise_dn": 12.858795511264477,
+      "motion_fraction": 0.04555555555555556
+    },
+    {
+      "indices": [
+        138,
+        139
+      ],
+      "quiet_pair_noise_dn": 12.873920363038573,
+      "motion_fraction": 0.0441358024691358
+    },
+    {
+      "indices": [
+        146,
+        147
+      ],
+      "quiet_pair_noise_dn": 12.888477142729704,
+      "motion_fraction": 0.043055555555555555
+    },
+    {
+      "indices": [
+        155,
+        156
+      ],
+      "quiet_pair_noise_dn": 12.820181715053074,
+      "motion_fraction": 0.041666666666666664
+    },
+    {
+      "indices": [
+        164,
+        165
+      ],
+      "quiet_pair_noise_dn": 12.658734604061864,
+      "motion_fraction": 0.036820987654320986
+    },
+    {
+      "indices": [
+        172,
+        173
+      ],
+      "quiet_pair_noise_dn": 12.655618299800446,
+      "motion_fraction": 0.0366358024691358
+    },
+    {
+      "indices": [
+        181,
+        182
+      ],
+      "quiet_pair_noise_dn": 12.775844579118766,
+      "motion_fraction": 0.04021604938271605
+    },
+    {
+      "indices": [
+        189,
+        190
+      ],
+      "quiet_pair_noise_dn": 12.913676777171847,
+      "motion_fraction": 0.04203703703703704
+    },
+    {
+      "indices": [
+        198,
+        199
+      ],
+      "quiet_pair_noise_dn": 13.032384421244622,
+      "motion_fraction": 0.04435185185185185
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "audit": "artifacts/a12_paired_audit_20261030/audit.json",
+  "status": "failed_not_authorized_for_training",
+  "empty_refresh_indices": [
+    590,
+    808,
+    814
+  ],
+  "execution_script_sha256": "40470031b0c476e7a5fbd82bf689717ad674498478242e85e3d9d84a1c529be7",
+  "recorded_script_sha256": "5c586daea60fc9e71ae608673be8ec9b27f187befe1b8e053484d9190e48e7ae",
+  "provenance_note": "A metadata-only audit-script edit occurred while this preliminary process was running, so its recorded on-disk script hash differs from the executing version. The sampling implementation was unchanged. Preserve this failed preliminary run for diagnosis; a complete new audit with frozen sources is required before any training."
+}

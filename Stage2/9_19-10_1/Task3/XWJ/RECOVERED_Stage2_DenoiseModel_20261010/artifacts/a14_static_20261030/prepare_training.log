@@ -1,0 +1,39 @@
+/home/jingzeliang/miniconda3/envs/aaa_312/lib/python3.12/site-packages/torch/functional.py:534: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at ../aten/src/ATen/native/TensorShape.cpp:3595.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+[a14 prepare] frozen=1/900 rejected=1
+[a14 prepare] frozen=30/900 rejected=2
+[a14 prepare] frozen=60/900 rejected=6
+[a14 prepare] frozen=90/900 rejected=6
+[a14 prepare] frozen=120/900 rejected=6
+[a14 prepare] frozen=150/900 rejected=7
+[a14 prepare] frozen=180/900 rejected=8
+[a14 prepare] frozen=210/900 rejected=8
+[a14 prepare] frozen=240/900 rejected=8
+[a14 prepare] frozen=270/900 rejected=8
+[a14 prepare] frozen=300/900 rejected=9
+[a14 prepare] frozen=330/900 rejected=10
+[a14 prepare] frozen=360/900 rejected=11
+[a14 prepare] frozen=390/900 rejected=12
+[a14 prepare] frozen=420/900 rejected=14
+[a14 prepare] frozen=450/900 rejected=14
+[a14 prepare] frozen=480/900 rejected=16
+[a14 prepare] frozen=510/900 rejected=16
+[a14 prepare] frozen=540/900 rejected=16
+[a14 prepare] frozen=570/900 rejected=17
+[a14 prepare] frozen=600/900 rejected=21
+[a14 prepare] frozen=630/900 rejected=21
+[a14 prepare] frozen=660/900 rejected=21
+[a14 prepare] frozen=690/900 rejected=23
+[a14 prepare] frozen=720/900 rejected=23
+[a14 prepare] frozen=750/900 rejected=24
+[a14 prepare] frozen=780/900 rejected=25
+[a14 prepare] frozen=810/900 rejected=25
+[a14 prepare] frozen=840/900 rejected=25
+[a14 prepare] frozen=870/900 rejected=27
+[a14 prepare] frozen=900/900 rejected=27
+{
+  "status": "prepared",
+  "output_dir": "artifacts/a14_static_20261030/training",
+  "prepared_dir": "artifacts/a14_static_20261030/prepared_training",
+  "training_requested": false
+}

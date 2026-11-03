@@ -1,0 +1,13 @@
+{
+  "status": "interrupted_attempt_preserved",
+  "evidence": "Previous exec session is unavailable, no paired evaluation process remains on host, log ends during second native window without traceback or OOM, native status remained running.",
+  "original_batch_status": "evaluation_batch_status.json",
+  "native_partial_sha256": {
+    "native/frames_000000_000007.npy": "a7266c4210c5f89204c410e6a214dafb31e5dde1c2f62ee379210e002736d287",
+    "native/frames_000000_metrics.json": "85a1bc91975c546717dfbdd94ffb711aac105a2366bbb10c248fffb2d363a4d4"
+  },
+  "archive_native": "native_interrupted_20261030",
+  "archive_status": "status_native_interrupted_20261030.json",
+  "action": "Preserve partial attempt and repeat all three native windows under the same evaluation identity; no training restart.",
+  "oom_policy": "stop_without_retry"
+}

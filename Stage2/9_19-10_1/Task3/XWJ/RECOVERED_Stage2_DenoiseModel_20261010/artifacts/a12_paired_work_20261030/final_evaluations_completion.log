@@ -1,0 +1,31 @@
+BEGIN native refresh1024_ema
+/home/jingzeliang/miniconda3/envs/aaa_312/lib/python3.12/site-packages/torch/functional.py:534: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at ../aten/src/ATen/native/TensorShape.cpp:3595.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+[a12-eval] refresh1024_ema native frames 0..7
+/home/jingzeliang/miniconda3/envs/aaa_312/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py:632: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+/home/jingzeliang/miniconda3/envs/aaa_312/lib/python3.12/site-packages/torch/utils/checkpoint.py:87: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn(
+[a12-eval] refresh1024_ema native frames 96..103
+[a12-eval] refresh1024_ema native frames 192..199
+END native refresh1024_ema
+BEGIN native shared512_ema
+[a12-eval] shared512_ema native frames 0..7
+[a12-eval] shared512_ema native frames 96..103
+[a12-eval] shared512_ema native frames 192..199
+END native shared512_ema
+BEGIN native shared512_model
+[a12-eval] shared512_model native frames 0..7
+[a12-eval] shared512_model native frames 96..103
+[a12-eval] shared512_model native frames 192..199
+END native shared512_model
+BEGIN native fixed1024_model
+[a12-eval] fixed1024_model native frames 0..7
+[a12-eval] fixed1024_model native frames 96..103
+[a12-eval] fixed1024_model native frames 192..199
+END native fixed1024_model
+BEGIN native refresh1024_model
+[a12-eval] refresh1024_model native frames 0..7
+[a12-eval] refresh1024_model native frames 96..103
+[a12-eval] refresh1024_model native frames 192..199
+END native refresh1024_model

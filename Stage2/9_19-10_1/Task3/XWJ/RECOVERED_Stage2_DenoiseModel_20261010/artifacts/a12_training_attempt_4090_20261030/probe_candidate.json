@@ -1,0 +1,6 @@
+{
+  "name": "a12_step200_ema",
+  "format": "ema",
+  "checkpoint": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_sampling_pilot_4090_20261030/checkpoint_step_000200.pth",
+  "checkpoint_sha256": "6ead120ce12b2decf5a44980d73700dc059bba60cf567a601766a2eaef0b6d9e"
+}

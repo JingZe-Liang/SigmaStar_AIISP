@@ -1,0 +1,9 @@
+{
+  "status": "evaluation_completed",
+  "device": "cuda:0",
+  "oom_policy": "stop_without_retry",
+  "phase": "complete",
+  "probe_comparison": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_training_attempt_4090_20261030/probe_comparison.json",
+  "native_comparison": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_native1000x_first8_4090_20261030/comparison.json",
+  "elapsed_seconds": 58.19745400897227
+}

@@ -1,0 +1,36 @@
+/home/jingzeliang/miniconda3/envs/aaa_312/lib/python3.12/site-packages/torch/functional.py:534: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at ../aten/src/ATen/native/TensorShape.cpp:3595.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+/home/jingzeliang/miniconda3/envs/aaa_312/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py:632: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+[a12 paired] phase=shared step=1 loss=0.006970 valid=0.0010
+{
+  "status": "completed",
+  "purpose": "uninterrupted_two_step_repeatability_control",
+  "oom_policy": "stop_without_retry",
+  "result": {
+    "schema": "a12_paired_refresh_v1",
+    "status": "training_completed",
+    "phase": "shared",
+    "purpose": "resume_verification",
+    "start_step": 0,
+    "step": 2,
+    "completed_updates": 2,
+    "checkpoint": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_resume_repeat_20261030/checkpoint_step_000002.pth",
+    "fork_parent_checkpoint_sha256": null,
+    "runtime": {
+      "torch": "2.5.1+cu124",
+      "cuda": "12.4",
+      "device": "cuda:0",
+      "device_name": "NVIDIA GeForce RTX 3090",
+      "cuda_device_count": 1,
+      "cudnn_benchmark": false,
+      "cudnn_deterministic": false,
+      "cudnn_allow_tf32": true,
+      "matmul_allow_tf32": false,
+      "deterministic_algorithms": false
+    }
+  },
+  "elapsed_seconds": 8.482839705888182,
+  "peak_allocated_bytes": 14591823360,
+  "peak_reserved_bytes": 15281946624
+}

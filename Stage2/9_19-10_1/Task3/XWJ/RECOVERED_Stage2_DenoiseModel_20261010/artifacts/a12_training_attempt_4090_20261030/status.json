@@ -1,0 +1,26 @@
+{
+  "status": "training_completed",
+  "pid": 1216165,
+  "training_authorized": true,
+  "oom_policy": "stop_without_retry",
+  "config_path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/configs/a12_sampling_pilot_20261029.json",
+  "overrides": {
+    "device": "cuda:0",
+    "output_dir": "artifacts/a12_sampling_pilot_4090_20261030"
+  },
+  "device": "cuda:0",
+  "gpu_name": "NVIDIA GeForce RTX 4090",
+  "initial_free_bytes": 24855642112,
+  "total_bytes": 25282281472,
+  "output_dir": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_sampling_pilot_4090_20261030",
+  "completed_updates": 200,
+  "result": {
+    "schema": "a12_sampling_only_v1",
+    "status": "training_completed",
+    "step": 200,
+    "checkpoint": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_sampling_pilot_4090_20261030/checkpoint_step_000200.pth"
+  },
+  "elapsed_seconds": 204.04058591695502,
+  "peak_allocated_bytes": 14595755520,
+  "peak_reserved_bytes": 15797846016
+}

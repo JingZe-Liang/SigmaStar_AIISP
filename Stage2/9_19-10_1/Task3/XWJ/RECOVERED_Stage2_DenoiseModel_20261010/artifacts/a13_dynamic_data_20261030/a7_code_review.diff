@@ -1,0 +1,148 @@
+diff --git a/artifacts/a13_dynamic_data_20261030/prechange/a7_capture.py b/src/raw_fusion/finetune/a7_capture.py
+index f4a4a81..d17d852 100755
+--- a/artifacts/a13_dynamic_data_20261030/prechange/a7_capture.py
++++ b/src/raw_fusion/finetune/a7_capture.py
+@@ -1,6 +1,8 @@
+ """Read-only validation for the A7 real-motion capture pilot."""
+ 
++import hashlib
+ import json
++import math
+ import os
+ import tempfile
+ from dataclasses import asdict, dataclass
+@@ -105,6 +107,8 @@ def load_capture_manifest(path: Path) -> CaptureManifest:
+     if width % 2 != 0 or height % 2 != 0:
+         raise ValueError("width and height must both be even for Bayer packing")
+     black_level_dn = _positive_number(payload, "black_level_dn")
++    if black_level_dn >= payload["white_level_dn"]:
++        raise ValueError("black_level_dn must be below white_level_dn")
+ 
+     raw_clips = payload.get("clips")
+     if not isinstance(raw_clips, list) or not raw_clips:
+@@ -237,15 +241,9 @@ def analyze_capture_clip(
+ ) -> dict:
+     """Measure one RAW clip without modifying the source file."""
+ 
+-    root = dataset_root.resolve()
+-    path = (root / clip.path).resolve()
+-    try:
+-        path.relative_to(root)
+-    except ValueError as error:
+-        raise ValueError(f"{clip.clip_id}: path escapes dataset root: {clip.path}") from error
+-    if not path.is_file():
+-        raise FileNotFoundError(f"{clip.clip_id}: missing RAW file {path}")
+-
++    path = _resolve_capture_path(dataset_root, clip)
++    if path.stat().st_size < 2 * manifest.width * manifest.height * 2:
++        raise ValueError(f"{clip.clip_id}: at least two complete RAW frames are required")
+     reader = RawStreamReader(path, manifest.width, manifest.height)
+     adapter = SourceAdapter(
+         group="A7",
+@@ -374,13 +372,68 @@ def validate_capture_dataset(
+     manifest = load_capture_manifest(manifest_path)
+     root = dataset_root if dataset_root is not None else manifest_path.parent
+     inventory = validate_capture_inventory(manifest, limits)
++    source_files: list[dict] = []
++    physical_groups: dict[tuple[int, int], list[str]] = {}
++    content_groups: dict[str, list[str]] = {}
++    file_hashes: dict[tuple[int, int], str] = {}
++    file_states: dict[Path, tuple[int, int, int, int]] = {}
++    for clip in manifest.clips:
++        path = _resolve_capture_path(root, clip)
++        before = path.stat()
++        physical = (before.st_dev, before.st_ino)
++        physical_groups.setdefault(physical, []).append(clip.clip_id)
++        if physical not in file_hashes:
++            digest = hashlib.sha256()
++            with path.open("rb") as stream:
++                for chunk in iter(lambda: stream.read(8 * 1024 * 1024), b""):
++                    digest.update(chunk)
++            file_hashes[physical] = digest.hexdigest()
++        else:
++            pass
++        state = (before.st_dev, before.st_ino, before.st_size, before.st_mtime_ns)
++        after = path.stat()
++        if state != (after.st_dev, after.st_ino, after.st_size, after.st_mtime_ns):
++            raise ValueError(f"{clip.clip_id}: RAW file changed during identity checks")
++        file_states.setdefault(path, state)
++        content_groups.setdefault(file_hashes[physical], []).append(clip.clip_id)
++        source_files.append({
++            "clip_id": clip.clip_id,
++            "path": str(path),
++            "size_bytes": before.st_size,
++            "sha256": file_hashes[physical],
++        })
++    duplicate_files = []
++    for kind, groups in (("physical_file", physical_groups), ("identical_content", content_groups)):
++        for clip_ids in groups.values():
++            if len(clip_ids) > 1:
++                duplicate_files.append({"kind": kind, "clip_ids": clip_ids})
++                inventory["failures"].append(f"duplicate RAW {kind}: {clip_ids}")
++            else:
++                pass
++    inventory["passed"] = not inventory["failures"]
++    inventory["duplicate_files"] = duplicate_files
+     clips = [analyze_capture_clip(root, manifest, clip, limits) for clip in manifest.clips]
++    for path, state in file_states.items():
++        after = path.stat()
++        if state != (after.st_dev, after.st_ino, after.st_size, after.st_mtime_ns):
++            raise ValueError(f"RAW file changed during quality checks: {path}")
++    overall_pass = inventory["passed"] and all(clip["passed"] for clip in clips)
+     return {
+         "schema_version": REPORT_SCHEMA_VERSION,
+         "created_at": datetime.now(timezone.utc).isoformat(),
+         "manifest_path": str(manifest_path.resolve()),
+         "dataset_root": str(root.resolve()),
+-        "overall_pass": inventory["passed"] and all(clip["passed"] for clip in clips),
++        "overall_pass": overall_pass,
++        "training_ready": False,
++        "admission_status": "manual_review_required" if overall_pass else "automatic_checks_failed",
++        "scope": "Automatic screening only; metadata are declarations, not verified hardware evidence.",
++        "manual_review_required": [
++            "Physical-scene isolation and actual motion-type coverage.",
++            "Per-frame target detail, exposure blur, and temporal/spatial NR artifacts.",
++            "Capture logs confirming low gain, fixed controls, and complete processing bypass.",
++            "Static-chart and lens-cap controls confirming RAW format, black level, and residual noise.",
++        ],
++        "source_files": source_files,
+         "capture_format": {
+             key: value for key, value in asdict(manifest).items() if key != "clips"
+         },
+@@ -419,8 +472,13 @@ def _positive_int(payload: dict, key: str) -> int:
+ 
+ def _positive_number(payload: dict, key: str) -> float:
+     value = payload.get(key)
+-    if isinstance(value, bool) or not isinstance(value, int | float) or value <= 0:
+-        raise ValueError(f"{key} must be a positive number")
++    if (
++        isinstance(value, bool)
++        or not isinstance(value, int | float)
++        or not math.isfinite(value)
++        or value <= 0
++    ):
++        raise ValueError(f"{key} must be a finite positive number")
+     return float(value)
+ 
+ 
+@@ -438,6 +496,20 @@ def _bool_field(payload: dict, key: str) -> bool:
+     return value
+ 
+ 
++def _resolve_capture_path(dataset_root: Path, clip: CaptureClip) -> Path:
++    if Path(clip.path).is_absolute():
++        raise ValueError(f"{clip.clip_id}: RAW path must be relative to dataset root")
++    root = dataset_root.resolve()
++    path = (root / clip.path).resolve()
++    try:
++        path.relative_to(root)
++    except ValueError as error:
++        raise ValueError(f"{clip.clip_id}: path escapes dataset root: {clip.path}") from error
++    if not path.is_file():
++        raise FileNotFoundError(f"{clip.clip_id}: missing RAW file {path}")
++    return path
++
++
+ def _block_means(image: np.ndarray, block: int) -> np.ndarray:
+     height = image.shape[-2] // block * block
+     width = image.shape[-1] // block * block

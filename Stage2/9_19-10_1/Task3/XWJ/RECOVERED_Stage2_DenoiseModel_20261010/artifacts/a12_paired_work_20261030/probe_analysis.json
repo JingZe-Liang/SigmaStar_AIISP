@@ -1,0 +1,2896 @@
+{
+  "scope": "Frozen constructed probes only; no native or independent real-motion conclusion",
+  "primary_weights": "ema",
+  "model_role": "diagnostic",
+  "prepared_manifest_sha256": "e9837bcff07e3b2fa301da5db3fac7c2282f6083fdc2d8c243ab54c271840e25",
+  "metric_protocol": {
+    "version": "a12_region_errors_v2",
+    "raw_input": "stored noisy RAW before black-level clipping",
+    "model_input": "the same input after channel-wise black subtraction, [0,1] clipping and DN reconstruction",
+    "storage_code_endpoints": "exact storage codes 0 and 4095; distinct from black-level normalization endpoints",
+    "normalized_domain_limits": "channel-wise (DN-black)/(4095-black); endpoint tolerance 1e-7; raw below-black samples are not claimed to be hardware clipping",
+    "acceptance": "report separate reconstruction, structural and temporal target-relative errors; no single-metric pass claim"
+  },
+  "weights": {
+    "ema": {
+      "cases": [
+        {
+          "name": "detail__static__gain_800",
+          "mode": "static",
+          "gain": "800",
+          "region": "all",
+          "input": {
+            "rmse_dn": 31.464001164445147,
+            "highpass_rmse_dn": 21.82131795460249,
+            "gradient_rmse_dn": 32.787941858147356,
+            "temporal_difference_error_rmse_dn": 31.461613731690885
+          },
+          "scores": {
+            "a3": {
+              "rmse_dn": 25.03195517548456,
+              "highpass_rmse_dn": 14.389019258742472,
+              "gradient_rmse_dn": 21.16989116922266,
+              "temporal_difference_error_rmse_dn": 4.280007276624575
+            },
+            "shared": {
+              "rmse_dn": 24.101095571368653,
+              "highpass_rmse_dn": 13.181601432437317,
+              "gradient_rmse_dn": 19.51344181278586,
+              "temporal_difference_error_rmse_dn": 4.333751332554877
+            },
+            "fixed": {
+              "rmse_dn": 23.45863902744063,
+              "highpass_rmse_dn": 12.226191777961235,
+              "gradient_rmse_dn": 18.221165511951902,
+              "temporal_difference_error_rmse_dn": 4.419427979780795
+            },
+            "refresh": {
+              "rmse_dn": 23.352942460964673,
+              "highpass_rmse_dn": 12.1970754818432,
+              "gradient_rmse_dn": 18.178029018444445,
+              "temporal_difference_error_rmse_dn": 4.416330226616548
+            }
+          },
+          "deltas": {
+            "fixed_minus_a3": {
+              "rmse_dn": -1.5733161480439293,
+              "highpass_rmse_dn": -2.162827480781237,
+              "gradient_rmse_dn": -2.9487256572707565,
+              "temporal_difference_error_rmse_dn": 0.1394207031562198
+            },
+            "refresh_minus_a3": {
+              "rmse_dn": -1.6790127145198852,
+              "highpass_rmse_dn": -2.1919437768992722,
+              "gradient_rmse_dn": -2.991862150778214,
+              "temporal_difference_error_rmse_dn": 0.13632294999197292
+            },
+            "refresh_minus_fixed": {
+              "rmse_dn": -0.10569656647595593,
+              "highpass_rmse_dn": -0.029116296118035123,
+              "gradient_rmse_dn": -0.04313649350745763,
+              "temporal_difference_error_rmse_dn": -0.0030977531642468747
+            },
+            "fixed_minus_shared": {
+              "rmse_dn": -0.6424565439280236,
+              "highpass_rmse_dn": -0.9554096544760817,
+              "gradient_rmse_dn": -1.292276300833958,
+              "temporal_difference_error_rmse_dn": 0.08567664722591761
+            },
+            "refresh_minus_shared": {
+              "rmse_dn": -0.7481531104039796,
+              "highpass_rmse_dn": -0.9845259505941168,
+              "gradient_rmse_dn": -1.3354127943414156,
+              "temporal_difference_error_rmse_dn": 0.08257889406167074
+            }
+          }
+        },
+        {
+          "name": "detail__static__gain_12800",
+          "mode": "static",
+          "gain": "12800",
+          "region": "all",
+          "input": {
+            "rmse_dn": 105.34934320666838,
+            "highpass_rmse_dn": 97.41564550469126,
+            "gradient_rmse_dn": 146.1554205152344,
+            "temporal_difference_error_rmse_dn": 145.96910874420414
+          },
+          "scores": {
+            "a3": {
+              "rmse_dn": 38.99129441518401,
+              "highpass_rmse_dn": 30.377204096272276,
+              "gradient_rmse_dn": 44.71927348996419,
+              "temporal_difference_error_rmse_dn": 11.202766704358428
+            },
+            "shared": {
+              "rmse_dn": 38.35246918761466,
+              "highpass_rmse_dn": 29.804974891916554,
+              "gradient_rmse_dn": 43.944597382340035,
+              "temporal_difference_error_rmse_dn": 11.233958721218896
+            },
+            "fixed": {
+              "rmse_dn": 37.87380075251987,
+              "highpass_rmse_dn": 29.444412640972217,
+              "gradient_rmse_dn": 43.45873424246807,
+              "temporal_difference_error_rmse_dn": 11.249521356382155
+            },
+            "refresh": {
+              "rmse_dn": 37.83202401695731,
+              "highpass_rmse_dn": 29.43628570387812,
+              "gradient_rmse_dn": 43.45094384382196,
+              "temporal_difference_error_rmse_dn": 11.26845431803475
+            }
+          },
+          "deltas": {
+            "fixed_minus_a3": {
+              "rmse_dn": -1.1174936626641383,
+              "highpass_rmse_dn": -0.9327914553000589,
+              "gradient_rmse_dn": -1.2605392474961192,
+              "temporal_difference_error_rmse_dn": 0.04675465202372742
+            },
+            "refresh_minus_a3": {
+              "rmse_dn": -1.1592703982266954,
+              "highpass_rmse_dn": -0.9409183923941562,
+              "gradient_rmse_dn": -1.2683296461422273,
+              "temporal_difference_error_rmse_dn": 0.0656876136763227
+            },
+            "refresh_minus_fixed": {
+              "rmse_dn": -0.04177673556255712,
+              "highpass_rmse_dn": -0.008126937094097286,
+              "gradient_rmse_dn": -0.007790398646108088,
+              "temporal_difference_error_rmse_dn": 0.01893296165259528
+            },
+            "fixed_minus_shared": {
+              "rmse_dn": -0.4786684350947894,
+              "highpass_rmse_dn": -0.36056225094433714,
+              "gradient_rmse_dn": -0.4858631398719666,
+              "temporal_difference_error_rmse_dn": 0.015562635163259841
+            },
+            "refresh_minus_shared": {
+              "rmse_dn": -0.5204451706573465,
+              "highpass_rmse_dn": -0.3686891880384344,
+              "gradient_rmse_dn": -0.4936535385180747,
+              "temporal_difference_error_rmse_dn": 0.03449559681585512
+            }
+          }
+        },
+        {
+          "name": "detail__global_translation__gain_800",
+          "mode": "global_translation",
+          "gain": "800",
+          "region": "motion_swept",
+          "input": {
+            "rmse_dn": 31.1293267712334,
+            "highpass_rmse_dn": 21.80874131851779,
+            "gradient_rmse_dn": 32.80627109369503,
+            "temporal_difference_error_rmse_dn": 31.29883638725826
+          },
+          "scores": {
+            "a3": {
+              "rmse_dn": 69.49390290745166,
+              "highpass_rmse_dn": 60.22084187806236,
+              "gradient_rmse_dn": 90.02512760343396,
+              "temporal_difference_error_rmse_dn": 102.48971919964899
+            },
+            "shared": {
+              "rmse_dn": 69.14947283895773,
+              "highpass_rmse_dn": 59.7710174391627,
+              "gradient_rmse_dn": 89.42661021980999,
+              "temporal_difference_error_rmse_dn": 101.97206333422936
+            },
+            "fixed": {
+              "rmse_dn": 69.5793268681625,
+              "highpass_rmse_dn": 59.708623916640555,
+              "gradient_rmse_dn": 89.38725474321816,
+              "temporal_difference_error_rmse_dn": 102.17191456751074
+            },
+            "refresh": {
+              "rmse_dn": 69.48263514167142,
+              "highpass_rmse_dn": 59.75644885120736,
+              "gradient_rmse_dn": 89.44042690127557,
+              "temporal_difference_error_rmse_dn": 102.15230219951668
+            }
+          },
+          "deltas": {
+            "fixed_minus_a3": {
+              "rmse_dn": 0.08542396071084113,
+              "highpass_rmse_dn": -0.5122179614218041,
+              "gradient_rmse_dn": -0.6378728602157935,
+              "temporal_difference_error_rmse_dn": -0.31780463213824817
+            },
+            "refresh_minus_a3": {
+              "rmse_dn": -0.011267765780232253,
+              "highpass_rmse_dn": -0.4643930268549994,
+              "gradient_rmse_dn": -0.5847007021583863,
+              "temporal_difference_error_rmse_dn": -0.33741700013230513
+            },
+            "refresh_minus_fixed": {
+              "rmse_dn": -0.09669172649107338,
+              "highpass_rmse_dn": 0.0478249345668047,
+              "gradient_rmse_dn": 0.05317215805740716,
+              "temporal_difference_error_rmse_dn": -0.019612367994056967
+            },
+            "fixed_minus_shared": {
+              "rmse_dn": 0.4298540292047619,
+              "highpass_rmse_dn": -0.06239352252214303,
+              "gradient_rmse_dn": -0.03935547659182248,
+              "temporal_difference_error_rmse_dn": 0.19985123328137888
+            },
+            "refresh_minus_shared": {
+              "rmse_dn": 0.3331623027136885,
+              "highpass_rmse_dn": -0.01456858795533833,
+              "gradient_rmse_dn": 0.01381668146558468,
+              "temporal_difference_error_rmse_dn": 0.18023886528732191
+            }
+          }
+        },
+        {
+          "name": "detail__global_translation__gain_12800",
+          "mode": "global_translation",
+          "gain": "12800",
+          "region": "motion_swept",
+          "input": {
+            "rmse_dn": 104.82177064197316,
+            "highpass_rmse_dn": 96.9853667060329,
+            "gradient_rmse_dn": 145.49269509179896,
+            "temporal_difference_error_rmse_dn": 145.21608092791763
+          },
+          "scores": {
+            "a3": {
+              "rmse_dn": 89.95217141812678,
+              "highpass_rmse_dn": 73.02967945235024,
+              "gradient_rmse_dn": 109.08162856858517,
+              "temporal_difference_error_rmse_dn": 130.41808765164387
+            },
+            "shared": {
+              "rmse_dn": 90.74682141970038,
+              "highpass_rmse_dn": 73.25905709677443,
+              "gradient_rmse_dn": 109.50723545905038,
+              "temporal_difference_error_rmse_dn": 131.42487329769187
+            },
+            "fixed": {
+              "rmse_dn": 92.05001875555482,
+              "highpass_rmse_dn": 73.6952508491164,
+              "gradient_rmse_dn": 110.23231221532083,
+              "temporal_difference_error_rmse_dn": 132.8756336356702
+            },
+            "refresh": {
+              "rmse_dn": 91.99245123346287,
+              "highpass_rmse_dn": 73.69137743120899,
+              "gradient_rmse_dn": 110.21752147570517,
+              "temporal_difference_error_rmse_dn": 132.8341717379917
+            }
+          },
+          "deltas": {
+            "fixed_minus_a3": {
+              "rmse_dn": 2.0978473374280355,
+              "highpass_rmse_dn": 0.6655713967661683,
+              "gradient_rmse_dn": 1.1506836467356578,
+              "temporal_difference_error_rmse_dn": 2.457545984026325
+            },
+            "refresh_minus_a3": {
+              "rmse_dn": 2.040279815336092,
+              "highpass_rmse_dn": 0.6616979788587543,
+              "gradient_rmse_dn": 1.1358929071199952,
+              "temporal_difference_error_rmse_dn": 2.416084086347837
+            },
+            "refresh_minus_fixed": {
+              "rmse_dn": -0.0575675220919436,
+              "highpass_rmse_dn": -0.003873417907414023,
+              "gradient_rmse_dn": -0.014790739615662574,
+              "temporal_difference_error_rmse_dn": -0.04146189767848796
+            },
+            "fixed_minus_shared": {
+              "rmse_dn": 1.3031973358544349,
+              "highpass_rmse_dn": 0.4361937523419783,
+              "gradient_rmse_dn": 0.7250767562704539,
+              "temporal_difference_error_rmse_dn": 1.4507603379783234
+            },
+            "refresh_minus_shared": {
+              "rmse_dn": 1.2456298137624913,
+              "highpass_rmse_dn": 0.4323203344345643,
+              "gradient_rmse_dn": 0.7102860166547913,
+              "temporal_difference_error_rmse_dn": 1.4092984402998354
+            }
+          }
+        },
+        {
+          "name": "detail__moving_patch__gain_800",
+          "mode": "moving_patch",
+          "gain": "800",
+          "region": "motion_swept",
+          "input": {
+            "rmse_dn": 29.03375841758572,
+            "highpass_rmse_dn": 21.20905904072357,
+            "gradient_rmse_dn": 32.11485365169982,
+            "temporal_difference_error_rmse_dn": 30.18878887895429
+          },
+          "scores": {
+            "a3": {
+              "rmse_dn": 72.63880820358784,
+              "highpass_rmse_dn": 54.69122253374823,
+              "gradient_rmse_dn": 81.79372916377311,
+              "temporal_difference_error_rmse_dn": 101.15202313537938
+            },
+            "shared": {
+              "rmse_dn": 73.86041449613883,
+              "highpass_rmse_dn": 54.62770567291824,
+              "gradient_rmse_dn": 81.73227741062121,
+              "temporal_difference_error_rmse_dn": 102.07866542639957
+            },
+            "fixed": {
+              "rmse_dn": 76.43249539437711,
+              "highpass_rmse_dn": 54.85858102237493,
+              "gradient_rmse_dn": 82.1611914369575,
+              "temporal_difference_error_rmse_dn": 103.97794135964114
+            },
+            "refresh": {
+              "rmse_dn": 76.46076031127764,
+              "highpass_rmse_dn": 54.97468605043414,
+              "gradient_rmse_dn": 82.29605118414275,
+              "temporal_difference_error_rmse_dn": 104.1404731166627
+            }
+          },
+          "deltas": {
+            "fixed_minus_a3": {
+              "rmse_dn": 3.793687190789271,
+              "highpass_rmse_dn": 0.16735848862669656,
+              "gradient_rmse_dn": 0.36746227318438685,
+              "temporal_difference_error_rmse_dn": 2.8259182242617555
+            },
+            "refresh_minus_a3": {
+              "rmse_dn": 3.821952107689796,
+              "highpass_rmse_dn": 0.28346351668590586,
+              "gradient_rmse_dn": 0.5023220203696468,
+              "temporal_difference_error_rmse_dn": 2.988449981283324
+            },
+            "refresh_minus_fixed": {
+              "rmse_dn": 0.02826491690052535,
+              "highpass_rmse_dn": 0.1161050280592093,
+              "gradient_rmse_dn": 0.13485974718525995,
+              "temporal_difference_error_rmse_dn": 0.16253175702156852
+            },
+            "fixed_minus_shared": {
+              "rmse_dn": 2.5720808982382835,
+              "highpass_rmse_dn": 0.23087534945668864,
+              "gradient_rmse_dn": 0.4289140263362867,
+              "temporal_difference_error_rmse_dn": 1.8992759332415687
+            },
+            "refresh_minus_shared": {
+              "rmse_dn": 2.600345815138809,
+              "highpass_rmse_dn": 0.34698037751589794,
+              "gradient_rmse_dn": 0.5637737735215467,
+              "temporal_difference_error_rmse_dn": 2.0618076902631373
+            }
+          }
+        },
+        {
+          "name": "detail__moving_patch__gain_12800",
+          "mode": "moving_patch",
+          "gain": "12800",
+          "region": "motion_swept",
+          "input": {
+            "rmse_dn": 100.3111836330082,
+            "highpass_rmse_dn": 92.72896874519319,
+            "gradient_rmse_dn": 139.93146270826082,
+            "temporal_difference_error_rmse_dn": 139.67078441090845
+          },
+          "scores": {
+            "a3": {
+              "rmse_dn": 97.0397644680949,
+              "highpass_rmse_dn": 74.84953894698157,
+              "gradient_rmse_dn": 109.48255316488535,
+              "temporal_difference_error_rmse_dn": 133.71871993312033
+            },
+            "shared": {
+              "rmse_dn": 99.31640431972282,
+              "highpass_rmse_dn": 75.30982944101287,
+              "gradient_rmse_dn": 110.25836176465205,
+              "temporal_difference_error_rmse_dn": 136.03766405252952
+            },
+            "fixed": {
+              "rmse_dn": 103.16130664381654,
+              "highpass_rmse_dn": 76.15328758229644,
+              "gradient_rmse_dn": 111.6743072854049,
+              "temporal_difference_error_rmse_dn": 139.6425520735774
+            },
+            "refresh": {
+              "rmse_dn": 103.11953744537612,
+              "highpass_rmse_dn": 76.24059018956241,
+              "gradient_rmse_dn": 111.74495701845467,
+              "temporal_difference_error_rmse_dn": 139.625002401803
+            }
+          },
+          "deltas": {
+            "fixed_minus_a3": {
+              "rmse_dn": 6.121542175721643,
+              "highpass_rmse_dn": 1.303748635314875,
+              "gradient_rmse_dn": 2.1917541205195477,
+              "temporal_difference_error_rmse_dn": 5.92383214045708
+            },
+            "refresh_minus_a3": {
+              "rmse_dn": 6.079772977281223,
+              "highpass_rmse_dn": 1.3910512425808435,
+              "gradient_rmse_dn": 2.2624038535693245,
+              "temporal_difference_error_rmse_dn": 5.906282468682662
+            },
+            "refresh_minus_fixed": {
+              "rmse_dn": -0.04176919844042004,
+              "highpass_rmse_dn": 0.08730260726596839,
+              "gradient_rmse_dn": 0.07064973304977684,
+              "temporal_difference_error_rmse_dn": -0.01754967177441813
+            },
+            "fixed_minus_shared": {
+              "rmse_dn": 3.8449023240937237,
+              "highpass_rmse_dn": 0.8434581412835769,
+              "gradient_rmse_dn": 1.4159455207528424,
+              "temporal_difference_error_rmse_dn": 3.604888021047884
+            },
+            "refresh_minus_shared": {
+              "rmse_dn": 3.8031331256533036,
+              "highpass_rmse_dn": 0.9307607485495453,
+              "gradient_rmse_dn": 1.4865952538026193,
+              "temporal_difference_error_rmse_dn": 3.587338349273466
+            }
+          }
+        },
+        {
+          "name": "dark__static__gain_800",
+          "mode": "static",
+          "gain": "800",
+          "region": "all",
+          "input": {
+            "rmse_dn": 14.767264013462986,
+            "highpass_rmse_dn": 12.475132326109474,
+            "gradient_rmse_dn": 18.675373426329443,
+            "temporal_difference_error_rmse_dn": 17.703063529925995
+          },
+          "scores": {
+            "a3": {
+              "rmse_dn": 11.280207811654117,
+              "highpass_rmse_dn": 8.951964297556506,
+              "gradient_rmse_dn": 11.173781739618075,
+              "temporal_difference_error_rmse_dn": 1.7440607654909566
+            },
+            "shared": {
+              "rmse_dn": 10.409156880145423,
+              "highpass_rmse_dn": 7.595495450044411,
+              "gradient_rmse_dn": 9.7697699223821,
+              "temporal_difference_error_rmse_dn": 1.8082545398879273
+            },
+            "fixed": {
+              "rmse_dn": 9.562998779604126,
+              "highpass_rmse_dn": 6.386942315787053,
+              "gradient_rmse_dn": 8.564741981908462,
+              "temporal_difference_error_rmse_dn": 1.9156815839401746
+            },
+            "refresh": {
+              "rmse_dn": 9.491432136437629,
+              "highpass_rmse_dn": 6.280539574184804,
+              "gradient_rmse_dn": 8.455864542669268,
+              "temporal_difference_error_rmse_dn": 1.9027279616105903
+            }
+          },
+          "deltas": {
+            "fixed_minus_a3": {
+              "rmse_dn": -1.7172090320499915,
+              "highpass_rmse_dn": -2.565021981769453,
+              "gradient_rmse_dn": -2.6090397577096134,
+              "temporal_difference_error_rmse_dn": 0.17162081844921806
+            },
+            "refresh_minus_a3": {
+              "rmse_dn": -1.7887756752164883,
+              "highpass_rmse_dn": -2.671424723371702,
+              "gradient_rmse_dn": -2.7179171969488074,
+              "temporal_difference_error_rmse_dn": 0.15866719611963376
+            },
+            "refresh_minus_fixed": {
+              "rmse_dn": -0.07156664316649675,
+              "highpass_rmse_dn": -0.10640274160224905,
+              "gradient_rmse_dn": -0.10887743923919402,
+              "temporal_difference_error_rmse_dn": -0.012953622329584302
+            },
+            "fixed_minus_shared": {
+              "rmse_dn": -0.846158100541297,
+              "highpass_rmse_dn": -1.2085531342573583,
+              "gradient_rmse_dn": -1.205027940473638,
+              "temporal_difference_error_rmse_dn": 0.10742704405224734
+            },
+            "refresh_minus_shared": {
+              "rmse_dn": -0.9177247437077938,
+              "highpass_rmse_dn": -1.3149558758596074,
+              "gradient_rmse_dn": -1.313905379712832,
+              "temporal_difference_error_rmse_dn": 0.09447342172266304
+            }
+          }
+        },
+        {
+          "name": "dark__static__gain_12800",
+          "mode": "static",
+          "gain": "12800",
+          "region": "all",
+          "input": {
+            "rmse_dn": 53.92454418304,
+            "highpass_rmse_dn": 50.38518805616346,
+            "gradient_rmse_dn": 75.67774870532365,
+            "temporal_difference_error_rmse_dn": 75.58084061458088
+          },
+          "scores": {
+            "a3": {
+              "rmse_dn": 15.063483456845727,
+              "highpass_rmse_dn": 13.10264494615839,
+              "gradient_rmse_dn": 16.07791092443264,
+              "temporal_difference_error_rmse_dn": 4.5037116218235695
+            },
+            "shared": {
+              "rmse_dn": 14.26624958459851,
+              "highpass_rmse_dn": 11.887246039739727,
+              "gradient_rmse_dn": 14.809273958847182,
+              "temporal_difference_error_rmse_dn": 4.489283832601139
+            },
+            "fixed": {
+              "rmse_dn": 13.515140395395813,
+              "highpass_rmse_dn": 10.90494964948615,
+              "gradient_rmse_dn": 13.805803500692887,
+              "temporal_difference_error_rmse_dn": 4.516749723565889
+            },
+            "refresh": {
+              "rmse_dn": 13.35846531035092,
+              "highpass_rmse_dn": 10.738832801300365,
+              "gradient_rmse_dn": 13.62155462364401,
+              "temporal_difference_error_rmse_dn": 4.522079893073034
+            }
+          },
+          "deltas": {
+            "fixed_minus_a3": {
+              "rmse_dn": -1.5483430614499145,
+              "highpass_rmse_dn": -2.19769529667224,
+              "gradient_rmse_dn": -2.2721074237397527,
+              "temporal_difference_error_rmse_dn": 0.013038101742319341
+            },
+            "refresh_minus_a3": {
+              "rmse_dn": -1.7050181464948064,
+              "highpass_rmse_dn": -2.3638121448580254,
+              "gradient_rmse_dn": -2.456356300788629,
+              "temporal_difference_error_rmse_dn": 0.018368271249464385
+            },
+            "refresh_minus_fixed": {
+              "rmse_dn": -0.15667508504489192,
+              "highpass_rmse_dn": -0.16611684818578532,
+              "gradient_rmse_dn": -0.18424887704887638,
+              "temporal_difference_error_rmse_dn": 0.005330169507145044
+            },
+            "fixed_minus_shared": {
+              "rmse_dn": -0.7511091892026975,
+              "highpass_rmse_dn": -0.9822963902535768,
+              "gradient_rmse_dn": -1.003470458154295,
+              "temporal_difference_error_rmse_dn": 0.027465890964750272
+            },
+            "refresh_minus_shared": {
+              "rmse_dn": -0.9077842742475895,
+              "highpass_rmse_dn": -1.1484132384393622,
+              "gradient_rmse_dn": -1.1877193352031714,
+              "temporal_difference_error_rmse_dn": 0.032796060471895316
+            }
+          }
+        },
+        {
+          "name": "dark__global_translation__gain_800",
+          "mode": "global_translation",
+          "gain": "800",
+          "region": "motion_swept",
+          "input": {
+            "rmse_dn": 14.848333684158984,
+            "highpass_rmse_dn": 12.480817911169682,
+            "gradient_rmse_dn": 18.68032451749641,
+            "temporal_difference_error_rmse_dn": 17.685241549799947
+          },
+          "scores": {
+            "a3": {
+              "rmse_dn": 15.526068977079134,
+              "highpass_rmse_dn": 13.439792644808378,
+              "gradient_rmse_dn": 17.51925870731733,
+              "temporal_difference_error_rmse_dn": 17.33100020860622
+            },
+            "shared": {
+              "rmse_dn": 14.830701890266944,
+              "highpass_rmse_dn": 12.475577295618864,
+              "gradient_rmse_dn": 16.551829789698754,
+              "temporal_difference_error_rmse_dn": 17.2029002919938
+            },
+            "fixed": {
+              "rmse_dn": 14.158348970756608,
+              "highpass_rmse_dn": 11.6360475280672,
+              "gradient_rmse_dn": 15.706915674034382,
+              "temporal_difference_error_rmse_dn": 17.019854837994195
+            },
+            "refresh": {
+              "rmse_dn": 14.114803148578906,
+              "highpass_rmse_dn": 11.599149231516586,
+              "gradient_rmse_dn": 15.674834961420636,
+              "temporal_difference_error_rmse_dn": 17.064103539172272
+            }
+          },
+          "deltas": {
+            "fixed_minus_a3": {
+              "rmse_dn": -1.3677200063225268,
+              "highpass_rmse_dn": -1.8037451167411778,
+              "gradient_rmse_dn": -1.8123430332829482,
+              "temporal_difference_error_rmse_dn": -0.3111453706120244
+            },
+            "refresh_minus_a3": {
+              "rmse_dn": -1.4112658285002286,
+              "highpass_rmse_dn": -1.840643413291792,
+              "gradient_rmse_dn": -1.8444237458966946,
+              "temporal_difference_error_rmse_dn": -0.2668966694339474
+            },
+            "refresh_minus_fixed": {
+              "rmse_dn": -0.043545822177701865,
+              "highpass_rmse_dn": -0.03689829655061416,
+              "gradient_rmse_dn": -0.03208071261374634,
+              "temporal_difference_error_rmse_dn": 0.044248701178077
+            },
+            "fixed_minus_shared": {
+              "rmse_dn": -0.6723529195103364,
+              "highpass_rmse_dn": -0.8395297675516638,
+              "gradient_rmse_dn": -0.8449141156643716,
+              "temporal_difference_error_rmse_dn": -0.18304545399960404
+            },
+            "refresh_minus_shared": {
+              "rmse_dn": -0.7158987416880382,
+              "highpass_rmse_dn": -0.8764280641022779,
+              "gradient_rmse_dn": -0.8769948282781179,
+              "temporal_difference_error_rmse_dn": -0.13879675282152704
+            }
+          }
+        },
+        {
+          "name": "dark__global_translation__gain_12800",
+          "mode": "global_translation",
+          "gain": "12800",
+          "region": "motion_swept",
+          "input": {
+            "rmse_dn": 53.51435501311048,
+            "highpass_rmse_dn": 49.97795323475052,
+            "gradient_rmse_dn": 75.0471940437213,
+            "temporal_difference_error_rmse_dn": 74.9990823087148
+          },
+          "scores": {
+            "a3": {
+              "rmse_dn": 19.983139414402668,
+              "highpass_rmse_dn": 17.558171930269108,
+              "gradient_rmse_dn": 22.406115522414392,
+              "temporal_difference_error_rmse_dn": 21.034325071034395
+            },
+            "shared": {
+              "rmse_dn": 19.555432993694424,
+              "highpass_rmse_dn": 16.76431128883222,
+              "gradient_rmse_dn": 21.646791193037174,
+              "temporal_difference_error_rmse_dn": 21.207301773851203
+            },
+            "fixed": {
+              "rmse_dn": 19.287139404123888,
+              "highpass_rmse_dn": 16.211924756021805,
+              "gradient_rmse_dn": 21.148100284433863,
+              "temporal_difference_error_rmse_dn": 21.46708160059109
+            },
+            "refresh": {
+              "rmse_dn": 19.1317063628213,
+              "highpass_rmse_dn": 16.081194105428686,
+              "gradient_rmse_dn": 20.99801718231782,
+              "temporal_difference_error_rmse_dn": 21.390053547056436
+            }
+          },
+          "deltas": {
+            "fixed_minus_a3": {
+              "rmse_dn": -0.6960000102787802,
+              "highpass_rmse_dn": -1.3462471742473028,
+              "gradient_rmse_dn": -1.2580152379805298,
+              "temporal_difference_error_rmse_dn": 0.43275652955669486
+            },
+            "refresh_minus_a3": {
+              "rmse_dn": -0.8514330515813668,
+              "highpass_rmse_dn": -1.4769778248404215,
+              "gradient_rmse_dn": -1.408098340096572,
+              "temporal_difference_error_rmse_dn": 0.3557284760220405
+            },
+            "refresh_minus_fixed": {
+              "rmse_dn": -0.15543304130258662,
+              "highpass_rmse_dn": -0.13073065059311872,
+              "gradient_rmse_dn": -0.15008310211604226,
+              "temporal_difference_error_rmse_dn": -0.07702805353465436
+            },
+            "fixed_minus_shared": {
+              "rmse_dn": -0.2682935895705363,
+              "highpass_rmse_dn": -0.5523865328104165,
+              "gradient_rmse_dn": -0.49869090860331156,
+              "temporal_difference_error_rmse_dn": 0.2597798267398872
+            },
+            "refresh_minus_shared": {
+              "rmse_dn": -0.4237266308731229,
+              "highpass_rmse_dn": -0.6831171834035352,
+              "gradient_rmse_dn": -0.6487740107193538,
+              "temporal_difference_error_rmse_dn": 0.18275177320523284
+            }
+          }
+        },
+        {
+          "name": "dark__moving_patch__gain_800",
+          "mode": "moving_patch",
+          "gain": "800",
+          "region": "motion_swept",
+          "input": {
+            "rmse_dn": 19.818786251194506,
+            "highpass_rmse_dn": 18.025559209047614,
+            "gradient_rmse_dn": 27.02093032736361,
+            "temporal_difference_error_rmse_dn": 26.83543431110123
+          },
+          "scores": {
+            "a3": {
+              "rmse_dn": 60.2114573682164,
+              "highpass_rmse_dn": 48.689425975457944,
+              "gradient_rmse_dn": 71.92843309902047,
+              "temporal_difference_error_rmse_dn": 87.66573779354779
+            },
+            "shared": {
+              "rmse_dn": 61.16862450944763,
+              "highpass_rmse_dn": 48.74051237452986,
+              "gradient_rmse_dn": 71.99848759555104,
+              "temporal_difference_error_rmse_dn": 88.35784523663331
+            },
+            "fixed": {
+              "rmse_dn": 62.90411276426503,
+              "highpass_rmse_dn": 49.0077889367634,
+              "gradient_rmse_dn": 72.41782521969378,
+              "temporal_difference_error_rmse_dn": 89.68269063790343
+            },
+            "refresh": {
+              "rmse_dn": 62.98402376899315,
+              "highpass_rmse_dn": 49.165935175387354,
+              "gradient_rmse_dn": 72.61171234037323,
+              "temporal_difference_error_rmse_dn": 89.945415103494
+            }
+          },
+          "deltas": {
+            "fixed_minus_a3": {
+              "rmse_dn": 2.692655396048629,
+              "highpass_rmse_dn": 0.3183629613054535,
+              "gradient_rmse_dn": 0.4893921206733154,
+              "temporal_difference_error_rmse_dn": 2.016952844355643
+            },
+            "refresh_minus_a3": {
+              "rmse_dn": 2.7725664007767463,
+              "highpass_rmse_dn": 0.47650919992941,
+              "gradient_rmse_dn": 0.6832792413527642,
+              "temporal_difference_error_rmse_dn": 2.2796773099462087
+            },
+            "refresh_minus_fixed": {
+              "rmse_dn": 0.07991100472811752,
+              "highpass_rmse_dn": 0.1581462386239565,
+              "gradient_rmse_dn": 0.1938871206794488,
+              "temporal_difference_error_rmse_dn": 0.2627244655905656
+            },
+            "fixed_minus_shared": {
+              "rmse_dn": 1.7354882548173975,
+              "highpass_rmse_dn": 0.26727656223354046,
+              "gradient_rmse_dn": 0.41933762414274156,
+              "temporal_difference_error_rmse_dn": 1.3248454012701245
+            },
+            "refresh_minus_shared": {
+              "rmse_dn": 1.815399259545515,
+              "highpass_rmse_dn": 0.42542280085749695,
+              "gradient_rmse_dn": 0.6132247448221904,
+              "temporal_difference_error_rmse_dn": 1.5875698668606901
+            }
+          }
+        },
+        {
+          "name": "dark__moving_patch__gain_12800",
+          "mode": "moving_patch",
+          "gain": "12800",
+          "region": "motion_swept",
+          "input": {
+            "rmse_dn": 86.86898014819391,
+            "highpass_rmse_dn": 82.32365375388007,
+            "gradient_rmse_dn": 123.24699563839653,
+            "temporal_difference_error_rmse_dn": 123.16004587262658
+          },
+          "scores": {
+            "a3": {
+              "rmse_dn": 84.35489025653867,
+              "highpass_rmse_dn": 66.47134038231341,
+              "gradient_rmse_dn": 96.70995240267345,
+              "temporal_difference_error_rmse_dn": 120.96364276424066
+            },
+            "shared": {
+              "rmse_dn": 86.7496147141983,
+              "highpass_rmse_dn": 67.0856438635269,
+              "gradient_rmse_dn": 97.71213140903812,
+              "temporal_difference_error_rmse_dn": 123.30552955021318
+            },
+            "fixed": {
+              "rmse_dn": 90.14752929072301,
+              "highpass_rmse_dn": 67.93622987463431,
+              "gradient_rmse_dn": 99.1126041194025,
+              "temporal_difference_error_rmse_dn": 126.49424697802763
+            },
+            "refresh": {
+              "rmse_dn": 89.8577601568765,
+              "highpass_rmse_dn": 67.95196383720554,
+              "gradient_rmse_dn": 99.07423026255636,
+              "temporal_difference_error_rmse_dn": 126.32404632216358
+            }
+          },
+          "deltas": {
+            "fixed_minus_a3": {
+              "rmse_dn": 5.792639034184347,
+              "highpass_rmse_dn": 1.4648894923208928,
+              "gradient_rmse_dn": 2.4026517167290535,
+              "temporal_difference_error_rmse_dn": 5.530604213786972
+            },
+            "refresh_minus_a3": {
+              "rmse_dn": 5.502869900337828,
+              "highpass_rmse_dn": 1.4806234548921253,
+              "gradient_rmse_dn": 2.364277859882904,
+              "temporal_difference_error_rmse_dn": 5.360403557922922
+            },
+            "refresh_minus_fixed": {
+              "rmse_dn": -0.28976913384651937,
+              "highpass_rmse_dn": 0.015733962571232496,
+              "gradient_rmse_dn": -0.03837385684614958,
+              "temporal_difference_error_rmse_dn": -0.17020065586405053
+            },
+            "fixed_minus_shared": {
+              "rmse_dn": 3.3979145765247125,
+              "highpass_rmse_dn": 0.85058601110741,
+              "gradient_rmse_dn": 1.400472710364383,
+              "temporal_difference_error_rmse_dn": 3.1887174278144528
+            },
+            "refresh_minus_shared": {
+              "rmse_dn": 3.108145442678193,
+              "highpass_rmse_dn": 0.8663199736786424,
+              "gradient_rmse_dn": 1.3620988535182335,
+              "temporal_difference_error_rmse_dn": 3.0185167719504022
+            }
+          }
+        }
+      ],
+      "direction_counts": {
+        "fixed_minus_a3": {
+          "static": {
+            "rmse_dn": {
+              "lower": 4,
+              "equal": 0,
+              "higher": 0
+            },
+            "highpass_rmse_dn": {
+              "lower": 4,
+              "equal": 0,
+              "higher": 0
+            },
+            "gradient_rmse_dn": {
+              "lower": 4,
+              "equal": 0,
+              "higher": 0
+            },
+            "temporal_difference_error_rmse_dn": {
+              "lower": 0,
+              "equal": 0,
+              "higher": 4
+            }
+          },
+          "global_translation": {
+            "rmse_dn": {
+              "lower": 2,
+              "equal": 0,
+              "higher": 2
+            },
+            "highpass_rmse_dn": {
+              "lower": 3,
+              "equal": 0,
+              "higher": 1
+            },
+            "gradient_rmse_dn": {
+              "lower": 3,
+              "equal": 0,
+              "higher": 1
+            },
+            "temporal_difference_error_rmse_dn": {
+              "lower": 2,
+              "equal": 0,
+              "higher": 2
+            }
+          },
+          "moving_patch": {
+            "rmse_dn": {
+              "lower": 0,
+              "equal": 0,
+              "higher": 4
+            },
+            "highpass_rmse_dn": {
+              "lower": 0,
+              "equal": 0,
+              "higher": 4
+            },
+            "gradient_rmse_dn": {
+              "lower": 0,
+              "equal": 0,
+              "higher": 4
+            },
+            "temporal_difference_error_rmse_dn": {
+              "lower": 0,
+              "equal": 0,
+              "higher": 4
+            }
+          },
+          "motion": {
+            "rmse_dn": {
+              "lower": 2,
+              "equal": 0,
+              "higher": 6
+            },
+            "highpass_rmse_dn": {
+              "lower": 3,
+              "equal": 0,
+              "higher": 5
+            },
+            "gradient_rmse_dn": {
+              "lower": 3,
+              "equal": 0,
+              "higher": 5
+            },
+            "temporal_difference_error_rmse_dn": {
+              "lower": 2,
+              "equal": 0,
+              "higher": 6
+            }
+          },
+          "all": {
+            "rmse_dn": {
+              "lower": 6,
+              "equal": 0,
+              "higher": 6
+            },
+            "highpass_rmse_dn": {
+              "lower": 7,
+              "equal": 0,
+              "higher": 5
+            },
+            "gradient_rmse_dn": {
+              "lower": 7,
+              "equal": 0,
+              "higher": 5
+            },
+            "temporal_difference_error_rmse_dn": {
+              "lower": 2,
+              "equal": 0,
+              "higher": 10
+            }
+          }
+        },
+        "refresh_minus_a3": {
+          "static": {
+            "rmse_dn": {
+              "lower": 4,
+              "equal": 0,
+              "higher": 0
+            },
+            "highpass_rmse_dn": {
+              "lower": 4,
+              "equal": 0,
+              "higher": 0
+            },
+            "gradient_rmse_dn": {
+              "lower": 4,
+              "equal": 0,
+              "higher": 0
+            },
+            "temporal_difference_error_rmse_dn": {
+              "lower": 0,
+              "equal": 0,
+              "higher": 4
+            }
+          },
+          "global_translation": {
+            "rmse_dn": {
+              "lower": 3,
+              "equal": 0,
+              "higher": 1
+            },
+            "highpass_rmse_dn": {
+              "lower": 3,
+              "equal": 0,
+              "higher": 1
+            },
+            "gradient_rmse_dn": {
+              "lower": 3,
+              "equal": 0,
+              "higher": 1
+            },
+            "temporal_difference_error_rmse_dn": {
+              "lower": 2,
+              "equal": 0,
+              "higher": 2
+            }
+          },
+          "moving_patch": {
+            "rmse_dn": {
+              "lower": 0,
+              "equal": 0,
+              "higher": 4
+            },
+            "highpass_rmse_dn": {
+              "lower": 0,
+              "equal": 0,
+              "higher": 4
+            },
+            "gradient_rmse_dn": {
+              "lower": 0,
+              "equal": 0,
+              "higher": 4
+            },
+            "temporal_difference_error_rmse_dn": {
+              "lower": 0,
+              "equal": 0,
+              "higher": 4
+            }
+          },
+          "motion": {
+            "rmse_dn": {
+              "lower": 3,
+              "equal": 0,
+              "higher": 5
+            },
+            "highpass_rmse_dn": {
+              "lower": 3,
+              "equal": 0,
+              "higher": 5
+            },
+            "gradient_rmse_dn": {
+              "lower": 3,
+              "equal": 0,
+              "higher": 5
+            },
+            "temporal_difference_error_rmse_dn": {
+              "lower": 2,
+              "equal": 0,
+              "higher": 6
+            }
+          },
+          "all": {
+            "rmse_dn": {
+              "lower": 7,
+              "equal": 0,
+              "higher": 5
+            },
+            "highpass_rmse_dn": {
+              "lower": 7,
+              "equal": 0,
+              "higher": 5
+            },
+            "gradient_rmse_dn": {
+              "lower": 7,
+              "equal": 0,
+              "higher": 5
+            },
+            "temporal_difference_error_rmse_dn": {
+              "lower": 2,
+              "equal": 0,
+              "higher": 10
+            }
+          }
+        },
+        "refresh_minus_fixed": {
+          "static": {
+            "rmse_dn": {
+              "lower": 4,
+              "equal": 0,
+              "higher": 0
+            },
+            "highpass_rmse_dn": {
+              "lower": 4,
+              "equal": 0,
+              "higher": 0
+            },
+            "gradient_rmse_dn": {
+              "lower": 4,
+              "equal": 0,
+              "higher": 0
+            },
+            "temporal_difference_error_rmse_dn": {
+              "lower": 2,
+              "equal": 0,
+              "higher": 2
+            }
+          },
+          "global_translation": {
+            "rmse_dn": {
+              "lower": 4,
+              "equal": 0,
+              "higher": 0
+            },
+            "highpass_rmse_dn": {
+              "lower": 3,
+              "equal": 0,
+              "higher": 1
+            },
+            "gradient_rmse_dn": {
+              "lower": 3,
+              "equal": 0,
+              "higher": 1
+            },
+            "temporal_difference_error_rmse_dn": {
+              "lower": 3,
+              "equal": 0,
+              "higher": 1
+            }
+          },
+          "moving_patch": {
+            "rmse_dn": {
+              "lower": 2,
+              "equal": 0,
+              "higher": 2
+            },
+            "highpass_rmse_dn": {
+              "lower": 0,
+              "equal": 0,
+              "higher": 4
+            },
+            "gradient_rmse_dn": {
+              "lower": 1,
+              "equal": 0,
+              "higher": 3
+            },
+            "temporal_difference_error_rmse_dn": {
+              "lower": 2,
+              "equal": 0,
+              "higher": 2
+            }
+          },
+          "motion": {
+            "rmse_dn": {
+              "lower": 6,
+              "equal": 0,
+              "higher": 2
+            },
+            "highpass_rmse_dn": {
+              "lower": 3,
+              "equal": 0,
+              "higher": 5
+            },
+            "gradient_rmse_dn": {
+              "lower": 4,
+              "equal": 0,
+              "higher": 4
+            },
+            "temporal_difference_error_rmse_dn": {
+              "lower": 5,
+              "equal": 0,
+              "higher": 3
+            }
+          },
+          "all": {
+            "rmse_dn": {
+              "lower": 10,
+              "equal": 0,
+              "higher": 2
+            },
+            "highpass_rmse_dn": {
+              "lower": 7,
+              "equal": 0,
+              "higher": 5
+            },
+            "gradient_rmse_dn": {
+              "lower": 8,
+              "equal": 0,
+              "higher": 4
+            },
+            "temporal_difference_error_rmse_dn": {
+              "lower": 7,
+              "equal": 0,
+              "higher": 5
+            }
+          }
+        },
+        "fixed_minus_shared": {
+          "static": {
+            "rmse_dn": {
+              "lower": 4,
+              "equal": 0,
+              "higher": 0
+            },
+            "highpass_rmse_dn": {
+              "lower": 4,
+              "equal": 0,
+              "higher": 0
+            },
+            "gradient_rmse_dn": {
+              "lower": 4,
+              "equal": 0,
+              "higher": 0
+            },
+            "temporal_difference_error_rmse_dn": {
+              "lower": 0,
+              "equal": 0,
+              "higher": 4
+            }
+          },
+          "global_translation": {
+            "rmse_dn": {
+              "lower": 2,
+              "equal": 0,
+              "higher": 2
+            },
+            "highpass_rmse_dn": {
+              "lower": 3,
+              "equal": 0,
+              "higher": 1
+            },
+            "gradient_rmse_dn": {
+              "lower": 3,
+              "equal": 0,
+              "higher": 1
+            },
+            "temporal_difference_error_rmse_dn": {
+              "lower": 1,
+              "equal": 0,
+              "higher": 3
+            }
+          },
+          "moving_patch": {
+            "rmse_dn": {
+              "lower": 0,
+              "equal": 0,
+              "higher": 4
+            },
+            "highpass_rmse_dn": {
+              "lower": 0,
+              "equal": 0,
+              "higher": 4
+            },
+            "gradient_rmse_dn": {
+              "lower": 0,
+              "equal": 0,
+              "higher": 4
+            },
+            "temporal_difference_error_rmse_dn": {
+              "lower": 0,
+              "equal": 0,
+              "higher": 4
+            }
+          },
+          "motion": {
+            "rmse_dn": {
+              "lower": 2,
+              "equal": 0,
+              "higher": 6
+            },
+            "highpass_rmse_dn": {
+              "lower": 3,
+              "equal": 0,
+              "higher": 5
+            },
+            "gradient_rmse_dn": {
+              "lower": 3,
+              "equal": 0,
+              "higher": 5
+            },
+            "temporal_difference_error_rmse_dn": {
+              "lower": 1,
+              "equal": 0,
+              "higher": 7
+            }
+          },
+          "all": {
+            "rmse_dn": {
+              "lower": 6,
+              "equal": 0,
+              "higher": 6
+            },
+            "highpass_rmse_dn": {
+              "lower": 7,
+              "equal": 0,
+              "higher": 5
+            },
+            "gradient_rmse_dn": {
+              "lower": 7,
+              "equal": 0,
+              "higher": 5
+            },
+            "temporal_difference_error_rmse_dn": {
+              "lower": 1,
+              "equal": 0,
+              "higher": 11
+            }
+          }
+        },
+        "refresh_minus_shared": {
+          "static": {
+            "rmse_dn": {
+              "lower": 4,
+              "equal": 0,
+              "higher": 0
+            },
+            "highpass_rmse_dn": {
+              "lower": 4,
+              "equal": 0,
+              "higher": 0
+            },
+            "gradient_rmse_dn": {
+              "lower": 4,
+              "equal": 0,
+              "higher": 0
+            },
+            "temporal_difference_error_rmse_dn": {
+              "lower": 0,
+              "equal": 0,
+              "higher": 4
+            }
+          },
+          "global_translation": {
+            "rmse_dn": {
+              "lower": 2,
+              "equal": 0,
+              "higher": 2
+            },
+            "highpass_rmse_dn": {
+              "lower": 3,
+              "equal": 0,
+              "higher": 1
+            },
+            "gradient_rmse_dn": {
+              "lower": 2,
+              "equal": 0,
+              "higher": 2
+            },
+            "temporal_difference_error_rmse_dn": {
+              "lower": 1,
+              "equal": 0,
+              "higher": 3
+            }
+          },
+          "moving_patch": {
+            "rmse_dn": {
+              "lower": 0,
+              "equal": 0,
+              "higher": 4
+            },
+            "highpass_rmse_dn": {
+              "lower": 0,
+              "equal": 0,
+              "higher": 4
+            },
+            "gradient_rmse_dn": {
+              "lower": 0,
+              "equal": 0,
+              "higher": 4
+            },
+            "temporal_difference_error_rmse_dn": {
+              "lower": 0,
+              "equal": 0,
+              "higher": 4
+            }
+          },
+          "motion": {
+            "rmse_dn": {
+              "lower": 2,
+              "equal": 0,
+              "higher": 6
+            },
+            "highpass_rmse_dn": {
+              "lower": 3,
+              "equal": 0,
+              "higher": 5
+            },
+            "gradient_rmse_dn": {
+              "lower": 2,
+              "equal": 0,
+              "higher": 6
+            },
+            "temporal_difference_error_rmse_dn": {
+              "lower": 1,
+              "equal": 0,
+              "higher": 7
+            }
+          },
+          "all": {
+            "rmse_dn": {
+              "lower": 6,
+              "equal": 0,
+              "higher": 6
+            },
+            "highpass_rmse_dn": {
+              "lower": 7,
+              "equal": 0,
+              "higher": 5
+            },
+            "gradient_rmse_dn": {
+              "lower": 6,
+              "equal": 0,
+              "higher": 6
+            },
+            "temporal_difference_error_rmse_dn": {
+              "lower": 1,
+              "equal": 0,
+              "higher": 11
+            }
+          }
+        }
+      }
+    },
+    "model": {
+      "cases": [
+        {
+          "name": "detail__static__gain_800",
+          "mode": "static",
+          "gain": "800",
+          "region": "all",
+          "input": {
+            "rmse_dn": 31.464001164445147,
+            "highpass_rmse_dn": 21.82131795460249,
+            "gradient_rmse_dn": 32.787941858147356,
+            "temporal_difference_error_rmse_dn": 31.461613731690885
+          },
+          "scores": {
+            "a3": {
+              "rmse_dn": 25.03195517548456,
+              "highpass_rmse_dn": 14.389019258742472,
+              "gradient_rmse_dn": 21.16989116922266,
+              "temporal_difference_error_rmse_dn": 4.280007276624575
+            },
+            "shared": {
+              "rmse_dn": 22.920991342154824,
+              "highpass_rmse_dn": 11.68942981268986,
+              "gradient_rmse_dn": 17.512162750144373,
+              "temporal_difference_error_rmse_dn": 4.588436594176469
+            },
+            "fixed": {
+              "rmse_dn": 22.886675670332153,
+              "highpass_rmse_dn": 11.497064815414728,
+              "gradient_rmse_dn": 17.26523413313223,
+              "temporal_difference_error_rmse_dn": 4.6830839915369005
+            },
+            "refresh": {
+              "rmse_dn": 22.963111197098954,
+              "highpass_rmse_dn": 11.597905887046734,
+              "gradient_rmse_dn": 17.392679101699255,
+              "temporal_difference_error_rmse_dn": 4.5446187217235545
+            }
+          },
+          "deltas": {
+            "fixed_minus_a3": {
+              "rmse_dn": -2.1452795051524056,
+              "highpass_rmse_dn": -2.8919544433277444,
+              "gradient_rmse_dn": -3.9046570360904305,
+              "temporal_difference_error_rmse_dn": 0.40307671491232533
+            },
+            "refresh_minus_a3": {
+              "rmse_dn": -2.0688439783856047,
+              "highpass_rmse_dn": -2.7911133716957384,
+              "gradient_rmse_dn": -3.777212067523404,
+              "temporal_difference_error_rmse_dn": 0.2646114450989794
+            },
+            "refresh_minus_fixed": {
+              "rmse_dn": 0.07643552676680088,
+              "highpass_rmse_dn": 0.10084107163200606,
+              "gradient_rmse_dn": 0.12744496856702625,
+              "temporal_difference_error_rmse_dn": -0.13846526981334595
+            },
+            "fixed_minus_shared": {
+              "rmse_dn": -0.03431567182267159,
+              "highpass_rmse_dn": -0.19236499727513312,
+              "gradient_rmse_dn": -0.24692861701214497,
+              "temporal_difference_error_rmse_dn": 0.09464739736043182
+            },
+            "refresh_minus_shared": {
+              "rmse_dn": 0.04211985494412929,
+              "highpass_rmse_dn": -0.09152392564312706,
+              "gradient_rmse_dn": -0.11948364844511872,
+              "temporal_difference_error_rmse_dn": -0.04381787245291413
+            }
+          }
+        },
+        {
+          "name": "detail__static__gain_12800",
+          "mode": "static",
+          "gain": "12800",
+          "region": "all",
+          "input": {
+            "rmse_dn": 105.34934320666838,
+            "highpass_rmse_dn": 97.41564550469126,
+            "gradient_rmse_dn": 146.1554205152344,
+            "temporal_difference_error_rmse_dn": 145.96910874420414
+          },
+          "scores": {
+            "a3": {
+              "rmse_dn": 38.99129441518401,
+              "highpass_rmse_dn": 30.377204096272276,
+              "gradient_rmse_dn": 44.71927348996419,
+              "temporal_difference_error_rmse_dn": 11.202766704358428
+            },
+            "shared": {
+              "rmse_dn": 37.2676297111352,
+              "highpass_rmse_dn": 29.104584806330838,
+              "gradient_rmse_dn": 42.98839190273205,
+              "temporal_difference_error_rmse_dn": 11.51550403588663
+            },
+            "fixed": {
+              "rmse_dn": 37.199863932686064,
+              "highpass_rmse_dn": 29.29787182339195,
+              "gradient_rmse_dn": 43.25161577355333,
+              "temporal_difference_error_rmse_dn": 11.458123455128916
+            },
+            "refresh": {
+              "rmse_dn": 37.85063432527471,
+              "highpass_rmse_dn": 29.411080501356906,
+              "gradient_rmse_dn": 43.4913858285502,
+              "temporal_difference_error_rmse_dn": 11.267283589439696
+            }
+          },
+          "deltas": {
+            "fixed_minus_a3": {
+              "rmse_dn": -1.791430482497944,
+              "highpass_rmse_dn": -1.0793322728803254,
+              "gradient_rmse_dn": -1.467657716410855,
+              "temporal_difference_error_rmse_dn": 0.25535675077048836
+            },
+            "refresh_minus_a3": {
+              "rmse_dn": -1.1406600899092965,
+              "highpass_rmse_dn": -0.9661235949153699,
+              "gradient_rmse_dn": -1.2278876614139875,
+              "temporal_difference_error_rmse_dn": 0.06451688508126807
+            },
+            "refresh_minus_fixed": {
+              "rmse_dn": 0.6507703925886474,
+              "highpass_rmse_dn": 0.11320867796495548,
+              "gradient_rmse_dn": 0.23977005499686754,
+              "temporal_difference_error_rmse_dn": -0.1908398656892203
+            },
+            "fixed_minus_shared": {
+              "rmse_dn": -0.0677657784491359,
+              "highpass_rmse_dn": 0.19328701706111318,
+              "gradient_rmse_dn": 0.2632238708212853,
+              "temporal_difference_error_rmse_dn": -0.05738058075771413
+            },
+            "refresh_minus_shared": {
+              "rmse_dn": 0.5830046141395115,
+              "highpass_rmse_dn": 0.30649569502606866,
+              "gradient_rmse_dn": 0.5029939258181528,
+              "temporal_difference_error_rmse_dn": -0.24822044644693442
+            }
+          }
+        },
+        {
+          "name": "detail__global_translation__gain_800",
+          "mode": "global_translation",
+          "gain": "800",
+          "region": "motion_swept",
+          "input": {
+            "rmse_dn": 31.1293267712334,
+            "highpass_rmse_dn": 21.80874131851779,
+            "gradient_rmse_dn": 32.80627109369503,
+            "temporal_difference_error_rmse_dn": 31.29883638725826
+          },
+          "scores": {
+            "a3": {
+              "rmse_dn": 69.49390290745166,
+              "highpass_rmse_dn": 60.22084187806236,
+              "gradient_rmse_dn": 90.02512760343396,
+              "temporal_difference_error_rmse_dn": 102.48971919964899
+            },
+            "shared": {
+              "rmse_dn": 70.39864352878607,
+              "highpass_rmse_dn": 59.339292416981756,
+              "gradient_rmse_dn": 88.87736720873488,
+              "temporal_difference_error_rmse_dn": 101.56264943580592
+            },
+            "fixed": {
+              "rmse_dn": 72.2636382832952,
+              "highpass_rmse_dn": 59.70468382892513,
+              "gradient_rmse_dn": 89.45254220450838,
+              "temporal_difference_error_rmse_dn": 102.91436660880703
+            },
+            "refresh": {
+              "rmse_dn": 73.69581925835685,
+              "highpass_rmse_dn": 62.10095028986379,
+              "gradient_rmse_dn": 92.92598844329109,
+              "temporal_difference_error_rmse_dn": 107.67354337891763
+            }
+          },
+          "deltas": {
+            "fixed_minus_a3": {
+              "rmse_dn": 2.7697353758435383,
+              "highpass_rmse_dn": -0.516158049137232,
+              "gradient_rmse_dn": -0.5725853989255825,
+              "temporal_difference_error_rmse_dn": 0.424647409158041
+            },
+            "refresh_minus_a3": {
+              "rmse_dn": 4.2019163509051936,
+              "highpass_rmse_dn": 1.8801084118014302,
+              "gradient_rmse_dn": 2.900860839857131,
+              "temporal_difference_error_rmse_dn": 5.18382417926864
+            },
+            "refresh_minus_fixed": {
+              "rmse_dn": 1.4321809750616552,
+              "highpass_rmse_dn": 2.396266460938662,
+              "gradient_rmse_dn": 3.4734462387827136,
+              "temporal_difference_error_rmse_dn": 4.759176770110599
+            },
+            "fixed_minus_shared": {
+              "rmse_dn": 1.8649947545091266,
+              "highpass_rmse_dn": 0.36539141194337077,
+              "gradient_rmse_dn": 0.5751749957734944,
+              "temporal_difference_error_rmse_dn": 1.3517171730011057
+            },
+            "refresh_minus_shared": {
+              "rmse_dn": 3.2971757295707818,
+              "highpass_rmse_dn": 2.761657872882033,
+              "gradient_rmse_dn": 4.048621234556208,
+              "temporal_difference_error_rmse_dn": 6.110893943111705
+            }
+          }
+        },
+        {
+          "name": "detail__global_translation__gain_12800",
+          "mode": "global_translation",
+          "gain": "12800",
+          "region": "motion_swept",
+          "input": {
+            "rmse_dn": 104.82177064197316,
+            "highpass_rmse_dn": 96.9853667060329,
+            "gradient_rmse_dn": 145.49269509179896,
+            "temporal_difference_error_rmse_dn": 145.21608092791763
+          },
+          "scores": {
+            "a3": {
+              "rmse_dn": 89.95217141812678,
+              "highpass_rmse_dn": 73.02967945235024,
+              "gradient_rmse_dn": 109.08162856858517,
+              "temporal_difference_error_rmse_dn": 130.41808765164387
+            },
+            "shared": {
+              "rmse_dn": 93.2621980477333,
+              "highpass_rmse_dn": 74.15569082824356,
+              "gradient_rmse_dn": 110.97308257592536,
+              "temporal_difference_error_rmse_dn": 134.23370700568623
+            },
+            "fixed": {
+              "rmse_dn": 95.0252591614729,
+              "highpass_rmse_dn": 74.68715772215725,
+              "gradient_rmse_dn": 111.79296881705224,
+              "temporal_difference_error_rmse_dn": 135.73551714252622
+            },
+            "refresh": {
+              "rmse_dn": 95.82157091871017,
+              "highpass_rmse_dn": 74.87136412744086,
+              "gradient_rmse_dn": 112.1195997422553,
+              "temporal_difference_error_rmse_dn": 136.57422348195558
+            }
+          },
+          "deltas": {
+            "fixed_minus_a3": {
+              "rmse_dn": 5.073087743346122,
+              "highpass_rmse_dn": 1.6574782698070152,
+              "gradient_rmse_dn": 2.7113402484670672,
+              "temporal_difference_error_rmse_dn": 5.317429490882347
+            },
+            "refresh_minus_a3": {
+              "rmse_dn": 5.869399500583384,
+              "highpass_rmse_dn": 1.8416846750906188,
+              "gradient_rmse_dn": 3.0379711736701296,
+              "temporal_difference_error_rmse_dn": 6.156135830311712
+            },
+            "refresh_minus_fixed": {
+              "rmse_dn": 0.7963117572372624,
+              "highpass_rmse_dn": 0.18420640528360366,
+              "gradient_rmse_dn": 0.32663092520306236,
+              "temporal_difference_error_rmse_dn": 0.8387063394293648
+            },
+            "fixed_minus_shared": {
+              "rmse_dn": 1.763061113739596,
+              "highpass_rmse_dn": 0.531466893913688,
+              "gradient_rmse_dn": 0.8198862411268806,
+              "temporal_difference_error_rmse_dn": 1.5018101368399925
+            },
+            "refresh_minus_shared": {
+              "rmse_dn": 2.5593728709768584,
+              "highpass_rmse_dn": 0.7156732991972916,
+              "gradient_rmse_dn": 1.146517166329943,
+              "temporal_difference_error_rmse_dn": 2.3405164762693573
+            }
+          }
+        },
+        {
+          "name": "detail__moving_patch__gain_800",
+          "mode": "moving_patch",
+          "gain": "800",
+          "region": "motion_swept",
+          "input": {
+            "rmse_dn": 29.03375841758572,
+            "highpass_rmse_dn": 21.20905904072357,
+            "gradient_rmse_dn": 32.11485365169982,
+            "temporal_difference_error_rmse_dn": 30.18878887895429
+          },
+          "scores": {
+            "a3": {
+              "rmse_dn": 72.63880820358784,
+              "highpass_rmse_dn": 54.69122253374823,
+              "gradient_rmse_dn": 81.79372916377311,
+              "temporal_difference_error_rmse_dn": 101.15202313537938
+            },
+            "shared": {
+              "rmse_dn": 80.13416440402492,
+              "highpass_rmse_dn": 55.28167028487306,
+              "gradient_rmse_dn": 82.71904287488971,
+              "temporal_difference_error_rmse_dn": 105.61377211391427
+            },
+            "fixed": {
+              "rmse_dn": 84.96466561847294,
+              "highpass_rmse_dn": 55.487868678699925,
+              "gradient_rmse_dn": 83.35842239187348,
+              "temporal_difference_error_rmse_dn": 108.6841654258105
+            },
+            "refresh": {
+              "rmse_dn": 83.27999843064818,
+              "highpass_rmse_dn": 56.772973881537844,
+              "gradient_rmse_dn": 85.15655584073676,
+              "temporal_difference_error_rmse_dn": 110.55979938927341
+            }
+          },
+          "deltas": {
+            "fixed_minus_a3": {
+              "rmse_dn": 12.325857414885093,
+              "highpass_rmse_dn": 0.7966461449516942,
+              "gradient_rmse_dn": 1.5646932281003672,
+              "temporal_difference_error_rmse_dn": 7.532142290431125
+            },
+            "refresh_minus_a3": {
+              "rmse_dn": 10.641190227060335,
+              "highpass_rmse_dn": 2.081751347789613,
+              "gradient_rmse_dn": 3.3628266769636497,
+              "temporal_difference_error_rmse_dn": 9.407776253894028
+            },
+            "refresh_minus_fixed": {
+              "rmse_dn": -1.6846671878247577,
+              "highpass_rmse_dn": 1.2851052028379186,
+              "gradient_rmse_dn": 1.7981334488632825,
+              "temporal_difference_error_rmse_dn": 1.875633963462903
+            },
+            "fixed_minus_shared": {
+              "rmse_dn": 4.83050121444802,
+              "highpass_rmse_dn": 0.20619839382686678,
+              "gradient_rmse_dn": 0.6393795169837659,
+              "temporal_difference_error_rmse_dn": 3.0703933118962397
+            },
+            "refresh_minus_shared": {
+              "rmse_dn": 3.1458340266232625,
+              "highpass_rmse_dn": 1.4913035966647854,
+              "gradient_rmse_dn": 2.4375129658470485,
+              "temporal_difference_error_rmse_dn": 4.9460272753591425
+            }
+          }
+        },
+        {
+          "name": "detail__moving_patch__gain_12800",
+          "mode": "moving_patch",
+          "gain": "12800",
+          "region": "motion_swept",
+          "input": {
+            "rmse_dn": 100.3111836330082,
+            "highpass_rmse_dn": 92.72896874519319,
+            "gradient_rmse_dn": 139.93146270826082,
+            "temporal_difference_error_rmse_dn": 139.67078441090845
+          },
+          "scores": {
+            "a3": {
+              "rmse_dn": 97.0397644680949,
+              "highpass_rmse_dn": 74.84953894698157,
+              "gradient_rmse_dn": 109.48255316488535,
+              "temporal_difference_error_rmse_dn": 133.71871993312033
+            },
+            "shared": {
+              "rmse_dn": 107.30849231579352,
+              "highpass_rmse_dn": 77.0423500737394,
+              "gradient_rmse_dn": 113.04273123841547,
+              "temporal_difference_error_rmse_dn": 142.50528772878258
+            },
+            "fixed": {
+              "rmse_dn": 114.3235921854808,
+              "highpass_rmse_dn": 78.01554319907841,
+              "gradient_rmse_dn": 114.91703502755107,
+              "temporal_difference_error_rmse_dn": 147.78843574752545
+            },
+            "refresh": {
+              "rmse_dn": 110.87917483399625,
+              "highpass_rmse_dn": 78.74735391733286,
+              "gradient_rmse_dn": 115.56900810215939,
+              "temporal_difference_error_rmse_dn": 147.66084116902752
+            }
+          },
+          "deltas": {
+            "fixed_minus_a3": {
+              "rmse_dn": 17.283827717385904,
+              "highpass_rmse_dn": 3.1660042520968403,
+              "gradient_rmse_dn": 5.43448186266572,
+              "temporal_difference_error_rmse_dn": 14.069715814405129
+            },
+            "refresh_minus_a3": {
+              "rmse_dn": 13.839410365901344,
+              "highpass_rmse_dn": 3.897814970351291,
+              "gradient_rmse_dn": 6.086454937274041,
+              "temporal_difference_error_rmse_dn": 13.942121235907194
+            },
+            "refresh_minus_fixed": {
+              "rmse_dn": -3.44441735148456,
+              "highpass_rmse_dn": 0.7318107182544509,
+              "gradient_rmse_dn": 0.6519730746083212,
+              "temporal_difference_error_rmse_dn": -0.1275945784979342
+            },
+            "fixed_minus_shared": {
+              "rmse_dn": 7.01509986968729,
+              "highpass_rmse_dn": 0.9731931253390087,
+              "gradient_rmse_dn": 1.8743037891355954,
+              "temporal_difference_error_rmse_dn": 5.283148018742878
+            },
+            "refresh_minus_shared": {
+              "rmse_dn": 3.57068251820273,
+              "highpass_rmse_dn": 1.7050038435934596,
+              "gradient_rmse_dn": 2.5262768637439166,
+              "temporal_difference_error_rmse_dn": 5.155553440244944
+            }
+          }
+        },
+        {
+          "name": "dark__static__gain_800",
+          "mode": "static",
+          "gain": "800",
+          "region": "all",
+          "input": {
+            "rmse_dn": 14.767264013462986,
+            "highpass_rmse_dn": 12.475132326109474,
+            "gradient_rmse_dn": 18.675373426329443,
+            "temporal_difference_error_rmse_dn": 17.703063529925995
+          },
+          "scores": {
+            "a3": {
+              "rmse_dn": 11.280207811654117,
+              "highpass_rmse_dn": 8.951964297556506,
+              "gradient_rmse_dn": 11.173781739618075,
+              "temporal_difference_error_rmse_dn": 1.7440607654909566
+            },
+            "shared": {
+              "rmse_dn": 9.228757919794644,
+              "highpass_rmse_dn": 5.757758941501507,
+              "gradient_rmse_dn": 8.00214510250426,
+              "temporal_difference_error_rmse_dn": 1.9893786511594154
+            },
+            "fixed": {
+              "rmse_dn": 9.23781565439321,
+              "highpass_rmse_dn": 5.402281722141653,
+              "gradient_rmse_dn": 7.689233818126163,
+              "temporal_difference_error_rmse_dn": 2.2416830998135597
+            },
+            "refresh": {
+              "rmse_dn": 8.361302909695766,
+              "highpass_rmse_dn": 5.251546448502393,
+              "gradient_rmse_dn": 7.540153975800948,
+              "temporal_difference_error_rmse_dn": 2.147832539750558
+            }
+          },
+          "deltas": {
+            "fixed_minus_a3": {
+              "rmse_dn": -2.042392157260908,
+              "highpass_rmse_dn": -3.5496825754148533,
+              "gradient_rmse_dn": -3.484547921491912,
+              "temporal_difference_error_rmse_dn": 0.49762233432260317
+            },
+            "refresh_minus_a3": {
+              "rmse_dn": -2.918904901958351,
+              "highpass_rmse_dn": -3.700417849054113,
+              "gradient_rmse_dn": -3.6336277638171275,
+              "temporal_difference_error_rmse_dn": 0.40377177425960165
+            },
+            "refresh_minus_fixed": {
+              "rmse_dn": -0.8765127446974432,
+              "highpass_rmse_dn": -0.15073527363925976,
+              "gradient_rmse_dn": -0.14907984232521532,
+              "temporal_difference_error_rmse_dn": -0.09385056006300152
+            },
+            "fixed_minus_shared": {
+              "rmse_dn": 0.009057734598565403,
+              "highpass_rmse_dn": -0.3554772193598543,
+              "gradient_rmse_dn": -0.3129112843780968,
+              "temporal_difference_error_rmse_dn": 0.25230444865414436
+            },
+            "refresh_minus_shared": {
+              "rmse_dn": -0.8674550100988778,
+              "highpass_rmse_dn": -0.5062124929991141,
+              "gradient_rmse_dn": -0.4619911267033121,
+              "temporal_difference_error_rmse_dn": 0.15845388859114284
+            }
+          }
+        },
+        {
+          "name": "dark__static__gain_12800",
+          "mode": "static",
+          "gain": "12800",
+          "region": "all",
+          "input": {
+            "rmse_dn": 53.92454418304,
+            "highpass_rmse_dn": 50.38518805616346,
+            "gradient_rmse_dn": 75.67774870532365,
+            "temporal_difference_error_rmse_dn": 75.58084061458088
+          },
+          "scores": {
+            "a3": {
+              "rmse_dn": 15.063483456845727,
+              "highpass_rmse_dn": 13.10264494615839,
+              "gradient_rmse_dn": 16.07791092443264,
+              "temporal_difference_error_rmse_dn": 4.5037116218235695
+            },
+            "shared": {
+              "rmse_dn": 13.248513645462928,
+              "highpass_rmse_dn": 10.41490381652971,
+              "gradient_rmse_dn": 13.35432601259631,
+              "temporal_difference_error_rmse_dn": 4.631608528711893
+            },
+            "fixed": {
+              "rmse_dn": 13.251816272909489,
+              "highpass_rmse_dn": 10.245329684099957,
+              "gradient_rmse_dn": 13.17987801903972,
+              "temporal_difference_error_rmse_dn": 4.694235843592621
+            },
+            "refresh": {
+              "rmse_dn": 12.139651158322057,
+              "highpass_rmse_dn": 9.419402865920182,
+              "gradient_rmse_dn": 12.327204438969382,
+              "temporal_difference_error_rmse_dn": 4.725463485512428
+            }
+          },
+          "deltas": {
+            "fixed_minus_a3": {
+              "rmse_dn": -1.8116671839362386,
+              "highpass_rmse_dn": -2.8573152620584334,
+              "gradient_rmse_dn": -2.8980329053929204,
+              "temporal_difference_error_rmse_dn": 0.19052422176905104
+            },
+            "refresh_minus_a3": {
+              "rmse_dn": -2.9238322985236707,
+              "highpass_rmse_dn": -3.683242080238209,
+              "gradient_rmse_dn": -3.750706485463258,
+              "temporal_difference_error_rmse_dn": 0.22175186368885846
+            },
+            "refresh_minus_fixed": {
+              "rmse_dn": -1.112165114587432,
+              "highpass_rmse_dn": -0.8259268181797754,
+              "gradient_rmse_dn": -0.8526735800703378,
+              "temporal_difference_error_rmse_dn": 0.031227641919807425
+            },
+            "fixed_minus_shared": {
+              "rmse_dn": 0.00330262744656018,
+              "highpass_rmse_dn": -0.16957413242975328,
+              "gradient_rmse_dn": -0.17444799355659057,
+              "temporal_difference_error_rmse_dn": 0.0626273148807277
+            },
+            "refresh_minus_shared": {
+              "rmse_dn": -1.1088624871408719,
+              "highpass_rmse_dn": -0.9955009506095287,
+              "gradient_rmse_dn": -1.0271215736269284,
+              "temporal_difference_error_rmse_dn": 0.09385495680053513
+            }
+          }
+        },
+        {
+          "name": "dark__global_translation__gain_800",
+          "mode": "global_translation",
+          "gain": "800",
+          "region": "motion_swept",
+          "input": {
+            "rmse_dn": 14.848333684158984,
+            "highpass_rmse_dn": 12.480817911169682,
+            "gradient_rmse_dn": 18.68032451749641,
+            "temporal_difference_error_rmse_dn": 17.685241549799947
+          },
+          "scores": {
+            "a3": {
+              "rmse_dn": 15.526068977079134,
+              "highpass_rmse_dn": 13.439792644808378,
+              "gradient_rmse_dn": 17.51925870731733,
+              "temporal_difference_error_rmse_dn": 17.33100020860622
+            },
+            "shared": {
+              "rmse_dn": 13.932409325738766,
+              "highpass_rmse_dn": 11.293607854525902,
+              "gradient_rmse_dn": 15.389091899833373,
+              "temporal_difference_error_rmse_dn": 16.980165711920623
+            },
+            "fixed": {
+              "rmse_dn": 13.694969717644724,
+              "highpass_rmse_dn": 10.77087791354916,
+              "gradient_rmse_dn": 14.820577507163511,
+              "temporal_difference_error_rmse_dn": 16.612504011469817
+            },
+            "refresh": {
+              "rmse_dn": 13.167011706457448,
+              "highpass_rmse_dn": 10.691804487378853,
+              "gradient_rmse_dn": 14.8099033799567,
+              "temporal_difference_error_rmse_dn": 16.93623832906758
+            }
+          },
+          "deltas": {
+            "fixed_minus_a3": {
+              "rmse_dn": -1.83109925943441,
+              "highpass_rmse_dn": -2.6689147312592176,
+              "gradient_rmse_dn": -2.6986812001538194,
+              "temporal_difference_error_rmse_dn": -0.7184961971364032
+            },
+            "refresh_minus_a3": {
+              "rmse_dn": -2.359057270621687,
+              "highpass_rmse_dn": -2.747988157429525,
+              "gradient_rmse_dn": -2.7093553273606314,
+              "temporal_difference_error_rmse_dn": -0.3947618795386383
+            },
+            "refresh_minus_fixed": {
+              "rmse_dn": -0.5279580111872768,
+              "highpass_rmse_dn": -0.07907342617030721,
+              "gradient_rmse_dn": -0.010674127206812045,
+              "temporal_difference_error_rmse_dn": 0.32373431759776494
+            },
+            "fixed_minus_shared": {
+              "rmse_dn": -0.23743960809404108,
+              "highpass_rmse_dn": -0.5227299409767419,
+              "gradient_rmse_dn": -0.5685143926698615,
+              "temporal_difference_error_rmse_dn": -0.3676617004508067
+            },
+            "refresh_minus_shared": {
+              "rmse_dn": -0.7653976192813179,
+              "highpass_rmse_dn": -0.6018033671470491,
+              "gradient_rmse_dn": -0.5791885198766735,
+              "temporal_difference_error_rmse_dn": -0.04392738285304176
+            }
+          }
+        },
+        {
+          "name": "dark__global_translation__gain_12800",
+          "mode": "global_translation",
+          "gain": "12800",
+          "region": "motion_swept",
+          "input": {
+            "rmse_dn": 53.51435501311048,
+            "highpass_rmse_dn": 49.97795323475052,
+            "gradient_rmse_dn": 75.0471940437213,
+            "temporal_difference_error_rmse_dn": 74.9990823087148
+          },
+          "scores": {
+            "a3": {
+              "rmse_dn": 19.983139414402668,
+              "highpass_rmse_dn": 17.558171930269108,
+              "gradient_rmse_dn": 22.406115522414392,
+              "temporal_difference_error_rmse_dn": 21.034325071034395
+            },
+            "shared": {
+              "rmse_dn": 19.561452478555665,
+              "highpass_rmse_dn": 16.106905026836102,
+              "gradient_rmse_dn": 21.144033729092357,
+              "temporal_difference_error_rmse_dn": 21.94019424174485
+            },
+            "fixed": {
+              "rmse_dn": 19.91040217221862,
+              "highpass_rmse_dn": 16.075903858537927,
+              "gradient_rmse_dn": 21.148790568383433,
+              "temporal_difference_error_rmse_dn": 22.220033251619814
+            },
+            "refresh": {
+              "rmse_dn": 18.61995744223723,
+              "highpass_rmse_dn": 15.295756750770465,
+              "gradient_rmse_dn": 20.292604728542802,
+              "temporal_difference_error_rmse_dn": 21.65837763193518
+            }
+          },
+          "deltas": {
+            "fixed_minus_a3": {
+              "rmse_dn": -0.07273724218404709,
+              "highpass_rmse_dn": -1.4822680717311805,
+              "gradient_rmse_dn": -1.2573249540309597,
+              "temporal_difference_error_rmse_dn": 1.1857081805854186
+            },
+            "refresh_minus_a3": {
+              "rmse_dn": -1.3631819721654388,
+              "highpass_rmse_dn": -2.2624151794986425,
+              "gradient_rmse_dn": -2.1135107938715905,
+              "temporal_difference_error_rmse_dn": 0.6240525609007861
+            },
+            "refresh_minus_fixed": {
+              "rmse_dn": -1.2904447299813917,
+              "highpass_rmse_dn": -0.780147107767462,
+              "gradient_rmse_dn": -0.8561858398406308,
+              "temporal_difference_error_rmse_dn": -0.5616556196846325
+            },
+            "fixed_minus_shared": {
+              "rmse_dn": 0.3489496936629557,
+              "highpass_rmse_dn": -0.03100116829817523,
+              "gradient_rmse_dn": 0.004756839291076176,
+              "temporal_difference_error_rmse_dn": 0.27983900987496213
+            },
+            "refresh_minus_shared": {
+              "rmse_dn": -0.941495036318436,
+              "highpass_rmse_dn": -0.8111482760656372,
+              "gradient_rmse_dn": -0.8514290005495546,
+              "temporal_difference_error_rmse_dn": -0.2818166098096704
+            }
+          }
+        },
+        {
+          "name": "dark__moving_patch__gain_800",
+          "mode": "moving_patch",
+          "gain": "800",
+          "region": "motion_swept",
+          "input": {
+            "rmse_dn": 19.818786251194506,
+            "highpass_rmse_dn": 18.025559209047614,
+            "gradient_rmse_dn": 27.02093032736361,
+            "temporal_difference_error_rmse_dn": 26.83543431110123
+          },
+          "scores": {
+            "a3": {
+              "rmse_dn": 60.2114573682164,
+              "highpass_rmse_dn": 48.689425975457944,
+              "gradient_rmse_dn": 71.92843309902047,
+              "temporal_difference_error_rmse_dn": 87.66573779354779
+            },
+            "shared": {
+              "rmse_dn": 66.47013385186652,
+              "highpass_rmse_dn": 49.63233117291604,
+              "gradient_rmse_dn": 73.29739625793931,
+              "temporal_difference_error_rmse_dn": 91.68430818512753
+            },
+            "fixed": {
+              "rmse_dn": 68.89592706950125,
+              "highpass_rmse_dn": 49.68813945300157,
+              "gradient_rmse_dn": 73.5477639101368,
+              "temporal_difference_error_rmse_dn": 93.09775843876002
+            },
+            "refresh": {
+              "rmse_dn": 69.30094170358534,
+              "highpass_rmse_dn": 51.475548017078346,
+              "gradient_rmse_dn": 76.14191645373359,
+              "temporal_difference_error_rmse_dn": 96.54094235952451
+            }
+          },
+          "deltas": {
+            "fixed_minus_a3": {
+              "rmse_dn": 8.684469701284854,
+              "highpass_rmse_dn": 0.9987134775436246,
+              "gradient_rmse_dn": 1.6193308111163276,
+              "temporal_difference_error_rmse_dn": 5.4320206452122335
+            },
+            "refresh_minus_a3": {
+              "rmse_dn": 9.089484335368937,
+              "highpass_rmse_dn": 2.786122041620402,
+              "gradient_rmse_dn": 4.213483354713119,
+              "temporal_difference_error_rmse_dn": 8.875204565976716
+            },
+            "refresh_minus_fixed": {
+              "rmse_dn": 0.40501463408408256,
+              "highpass_rmse_dn": 1.7874085640767774,
+              "gradient_rmse_dn": 2.594152543596792,
+              "temporal_difference_error_rmse_dn": 3.4431839207644828
+            },
+            "fixed_minus_shared": {
+              "rmse_dn": 2.425793217634734,
+              "highpass_rmse_dn": 0.05580828008552885,
+              "gradient_rmse_dn": 0.25036765219748247,
+              "temporal_difference_error_rmse_dn": 1.4134502536324902
+            },
+            "refresh_minus_shared": {
+              "rmse_dn": 2.8308078517188164,
+              "highpass_rmse_dn": 1.8432168441623062,
+              "gradient_rmse_dn": 2.8445201957942743,
+              "temporal_difference_error_rmse_dn": 4.856634174396973
+            }
+          }
+        },
+        {
+          "name": "dark__moving_patch__gain_12800",
+          "mode": "moving_patch",
+          "gain": "12800",
+          "region": "motion_swept",
+          "input": {
+            "rmse_dn": 86.86898014819391,
+            "highpass_rmse_dn": 82.32365375388007,
+            "gradient_rmse_dn": 123.24699563839653,
+            "temporal_difference_error_rmse_dn": 123.16004587262658
+          },
+          "scores": {
+            "a3": {
+              "rmse_dn": 84.35489025653867,
+              "highpass_rmse_dn": 66.47134038231341,
+              "gradient_rmse_dn": 96.70995240267345,
+              "temporal_difference_error_rmse_dn": 120.96364276424066
+            },
+            "shared": {
+              "rmse_dn": 94.70640607998185,
+              "highpass_rmse_dn": 69.02078273238399,
+              "gradient_rmse_dn": 100.77714120291175,
+              "temporal_difference_error_rmse_dn": 129.76988461357854
+            },
+            "fixed": {
+              "rmse_dn": 99.47493507810889,
+              "highpass_rmse_dn": 69.65991878691463,
+              "gradient_rmse_dn": 102.04074295569852,
+              "temporal_difference_error_rmse_dn": 133.4471988255124
+            },
+            "refresh": {
+              "rmse_dn": 96.81758032382331,
+              "highpass_rmse_dn": 70.30086151077165,
+              "gradient_rmse_dn": 102.6284949566236,
+              "temporal_difference_error_rmse_dn": 133.54425798399808
+            }
+          },
+          "deltas": {
+            "fixed_minus_a3": {
+              "rmse_dn": 15.120044821570218,
+              "highpass_rmse_dn": 3.188578404601216,
+              "gradient_rmse_dn": 5.330790553025068,
+              "temporal_difference_error_rmse_dn": 12.483556061271742
+            },
+            "refresh_minus_a3": {
+              "rmse_dn": 12.46269006728464,
+              "highpass_rmse_dn": 3.8295211284582393,
+              "gradient_rmse_dn": 5.918542553950147,
+              "temporal_difference_error_rmse_dn": 12.58061521975742
+            },
+            "refresh_minus_fixed": {
+              "rmse_dn": -2.6573547542855778,
+              "highpass_rmse_dn": 0.6409427238570231,
+              "gradient_rmse_dn": 0.5877520009250787,
+              "temporal_difference_error_rmse_dn": 0.0970591584856777
+            },
+            "fixed_minus_shared": {
+              "rmse_dn": 4.768528998127039,
+              "highpass_rmse_dn": 0.6391360545306384,
+              "gradient_rmse_dn": 1.2636017527867693,
+              "temporal_difference_error_rmse_dn": 3.6773142119338615
+            },
+            "refresh_minus_shared": {
+              "rmse_dn": 2.111174243841461,
+              "highpass_rmse_dn": 1.2800787783876615,
+              "gradient_rmse_dn": 1.851353753711848,
+              "temporal_difference_error_rmse_dn": 3.7743733704195392
+            }
+          }
+        }
+      ],
+      "direction_counts": {
+        "fixed_minus_a3": {
+          "static": {
+            "rmse_dn": {
+              "lower": 4,
+              "equal": 0,
+              "higher": 0
+            },
+            "highpass_rmse_dn": {
+              "lower": 4,
+              "equal": 0,
+              "higher": 0
+            },
+            "gradient_rmse_dn": {
+              "lower": 4,
+              "equal": 0,
+              "higher": 0
+            },
+            "temporal_difference_error_rmse_dn": {
+              "lower": 0,
+              "equal": 0,
+              "higher": 4
+            }
+          },
+          "global_translation": {
+            "rmse_dn": {
+              "lower": 2,
+              "equal": 0,
+              "higher": 2
+            },
+            "highpass_rmse_dn": {
+              "lower": 3,
+              "equal": 0,
+              "higher": 1
+            },
+            "gradient_rmse_dn": {
+              "lower": 3,
+              "equal": 0,
+              "higher": 1
+            },
+            "temporal_difference_error_rmse_dn": {
+              "lower": 1,
+              "equal": 0,
+              "higher": 3
+            }
+          },
+          "moving_patch": {
+            "rmse_dn": {
+              "lower": 0,
+              "equal": 0,
+              "higher": 4
+            },
+            "highpass_rmse_dn": {
+              "lower": 0,
+              "equal": 0,
+              "higher": 4
+            },
+            "gradient_rmse_dn": {
+              "lower": 0,
+              "equal": 0,
+              "higher": 4
+            },
+            "temporal_difference_error_rmse_dn": {
+              "lower": 0,
+              "equal": 0,
+              "higher": 4
+            }
+          },
+          "motion": {
+            "rmse_dn": {
+              "lower": 2,
+              "equal": 0,
+              "higher": 6
+            },
+            "highpass_rmse_dn": {
+              "lower": 3,
+              "equal": 0,
+              "higher": 5
+            },
+            "gradient_rmse_dn": {
+              "lower": 3,
+              "equal": 0,
+              "higher": 5
+            },
+            "temporal_difference_error_rmse_dn": {
+              "lower": 1,
+              "equal": 0,
+              "higher": 7
+            }
+          },
+          "all": {
+            "rmse_dn": {
+              "lower": 6,
+              "equal": 0,
+              "higher": 6
+            },
+            "highpass_rmse_dn": {
+              "lower": 7,
+              "equal": 0,
+              "higher": 5
+            },
+            "gradient_rmse_dn": {
+              "lower": 7,
+              "equal": 0,
+              "higher": 5
+            },
+            "temporal_difference_error_rmse_dn": {
+              "lower": 1,
+              "equal": 0,
+              "higher": 11
+            }
+          }
+        },
+        "refresh_minus_a3": {
+          "static": {
+            "rmse_dn": {
+              "lower": 4,
+              "equal": 0,
+              "higher": 0
+            },
+            "highpass_rmse_dn": {
+              "lower": 4,
+              "equal": 0,
+              "higher": 0
+            },
+            "gradient_rmse_dn": {
+              "lower": 4,
+              "equal": 0,
+              "higher": 0
+            },
+            "temporal_difference_error_rmse_dn": {
+              "lower": 0,
+              "equal": 0,
+              "higher": 4
+            }
+          },
+          "global_translation": {
+            "rmse_dn": {
+              "lower": 2,
+              "equal": 0,
+              "higher": 2
+            },
+            "highpass_rmse_dn": {
+              "lower": 2,
+              "equal": 0,
+              "higher": 2
+            },
+            "gradient_rmse_dn": {
+              "lower": 2,
+              "equal": 0,
+              "higher": 2
+            },
+            "temporal_difference_error_rmse_dn": {
+              "lower": 1,
+              "equal": 0,
+              "higher": 3
+            }
+          },
+          "moving_patch": {
+            "rmse_dn": {
+              "lower": 0,
+              "equal": 0,
+              "higher": 4
+            },
+            "highpass_rmse_dn": {
+              "lower": 0,
+              "equal": 0,
+              "higher": 4
+            },
+            "gradient_rmse_dn": {
+              "lower": 0,
+              "equal": 0,
+              "higher": 4
+            },
+            "temporal_difference_error_rmse_dn": {
+              "lower": 0,
+              "equal": 0,
+              "higher": 4
+            }
+          },
+          "motion": {
+            "rmse_dn": {
+              "lower": 2,
+              "equal": 0,
+              "higher": 6
+            },
+            "highpass_rmse_dn": {
+              "lower": 2,
+              "equal": 0,
+              "higher": 6
+            },
+            "gradient_rmse_dn": {
+              "lower": 2,
+              "equal": 0,
+              "higher": 6
+            },
+            "temporal_difference_error_rmse_dn": {
+              "lower": 1,
+              "equal": 0,
+              "higher": 7
+            }
+          },
+          "all": {
+            "rmse_dn": {
+              "lower": 6,
+              "equal": 0,
+              "higher": 6
+            },
+            "highpass_rmse_dn": {
+              "lower": 6,
+              "equal": 0,
+              "higher": 6
+            },
+            "gradient_rmse_dn": {
+              "lower": 6,
+              "equal": 0,
+              "higher": 6
+            },
+            "temporal_difference_error_rmse_dn": {
+              "lower": 1,
+              "equal": 0,
+              "higher": 11
+            }
+          }
+        },
+        "refresh_minus_fixed": {
+          "static": {
+            "rmse_dn": {
+              "lower": 2,
+              "equal": 0,
+              "higher": 2
+            },
+            "highpass_rmse_dn": {
+              "lower": 2,
+              "equal": 0,
+              "higher": 2
+            },
+            "gradient_rmse_dn": {
+              "lower": 2,
+              "equal": 0,
+              "higher": 2
+            },
+            "temporal_difference_error_rmse_dn": {
+              "lower": 3,
+              "equal": 0,
+              "higher": 1
+            }
+          },
+          "global_translation": {
+            "rmse_dn": {
+              "lower": 2,
+              "equal": 0,
+              "higher": 2
+            },
+            "highpass_rmse_dn": {
+              "lower": 2,
+              "equal": 0,
+              "higher": 2
+            },
+            "gradient_rmse_dn": {
+              "lower": 2,
+              "equal": 0,
+              "higher": 2
+            },
+            "temporal_difference_error_rmse_dn": {
+              "lower": 1,
+              "equal": 0,
+              "higher": 3
+            }
+          },
+          "moving_patch": {
+            "rmse_dn": {
+              "lower": 3,
+              "equal": 0,
+              "higher": 1
+            },
+            "highpass_rmse_dn": {
+              "lower": 0,
+              "equal": 0,
+              "higher": 4
+            },
+            "gradient_rmse_dn": {
+              "lower": 0,
+              "equal": 0,
+              "higher": 4
+            },
+            "temporal_difference_error_rmse_dn": {
+              "lower": 1,
+              "equal": 0,
+              "higher": 3
+            }
+          },
+          "motion": {
+            "rmse_dn": {
+              "lower": 5,
+              "equal": 0,
+              "higher": 3
+            },
+            "highpass_rmse_dn": {
+              "lower": 2,
+              "equal": 0,
+              "higher": 6
+            },
+            "gradient_rmse_dn": {
+              "lower": 2,
+              "equal": 0,
+              "higher": 6
+            },
+            "temporal_difference_error_rmse_dn": {
+              "lower": 2,
+              "equal": 0,
+              "higher": 6
+            }
+          },
+          "all": {
+            "rmse_dn": {
+              "lower": 7,
+              "equal": 0,
+              "higher": 5
+            },
+            "highpass_rmse_dn": {
+              "lower": 4,
+              "equal": 0,
+              "higher": 8
+            },
+            "gradient_rmse_dn": {
+              "lower": 4,
+              "equal": 0,
+              "higher": 8
+            },
+            "temporal_difference_error_rmse_dn": {
+              "lower": 5,
+              "equal": 0,
+              "higher": 7
+            }
+          }
+        },
+        "fixed_minus_shared": {
+          "static": {
+            "rmse_dn": {
+              "lower": 2,
+              "equal": 0,
+              "higher": 2
+            },
+            "highpass_rmse_dn": {
+              "lower": 3,
+              "equal": 0,
+              "higher": 1
+            },
+            "gradient_rmse_dn": {
+              "lower": 3,
+              "equal": 0,
+              "higher": 1
+            },
+            "temporal_difference_error_rmse_dn": {
+              "lower": 1,
+              "equal": 0,
+              "higher": 3
+            }
+          },
+          "global_translation": {
+            "rmse_dn": {
+              "lower": 1,
+              "equal": 0,
+              "higher": 3
+            },
+            "highpass_rmse_dn": {
+              "lower": 2,
+              "equal": 0,
+              "higher": 2
+            },
+            "gradient_rmse_dn": {
+              "lower": 1,
+              "equal": 0,
+              "higher": 3
+            },
+            "temporal_difference_error_rmse_dn": {
+              "lower": 1,
+              "equal": 0,
+              "higher": 3
+            }
+          },
+          "moving_patch": {
+            "rmse_dn": {
+              "lower": 0,
+              "equal": 0,
+              "higher": 4
+            },
+            "highpass_rmse_dn": {
+              "lower": 0,
+              "equal": 0,
+              "higher": 4
+            },
+            "gradient_rmse_dn": {
+              "lower": 0,
+              "equal": 0,
+              "higher": 4
+            },
+            "temporal_difference_error_rmse_dn": {
+              "lower": 0,
+              "equal": 0,
+              "higher": 4
+            }
+          },
+          "motion": {
+            "rmse_dn": {
+              "lower": 1,
+              "equal": 0,
+              "higher": 7
+            },
+            "highpass_rmse_dn": {
+              "lower": 2,
+              "equal": 0,
+              "higher": 6
+            },
+            "gradient_rmse_dn": {
+              "lower": 1,
+              "equal": 0,
+              "higher": 7
+            },
+            "temporal_difference_error_rmse_dn": {
+              "lower": 1,
+              "equal": 0,
+              "higher": 7
+            }
+          },
+          "all": {
+            "rmse_dn": {
+              "lower": 3,
+              "equal": 0,
+              "higher": 9
+            },
+            "highpass_rmse_dn": {
+              "lower": 5,
+              "equal": 0,
+              "higher": 7
+            },
+            "gradient_rmse_dn": {
+              "lower": 4,
+              "equal": 0,
+              "higher": 8
+            },
+            "temporal_difference_error_rmse_dn": {
+              "lower": 2,
+              "equal": 0,
+              "higher": 10
+            }
+          }
+        },
+        "refresh_minus_shared": {
+          "static": {
+            "rmse_dn": {
+              "lower": 2,
+              "equal": 0,
+              "higher": 2
+            },
+            "highpass_rmse_dn": {
+              "lower": 3,
+              "equal": 0,
+              "higher": 1
+            },
+            "gradient_rmse_dn": {
+              "lower": 3,
+              "equal": 0,
+              "higher": 1
+            },
+            "temporal_difference_error_rmse_dn": {
+              "lower": 2,
+              "equal": 0,
+              "higher": 2
+            }
+          },
+          "global_translation": {
+            "rmse_dn": {
+              "lower": 2,
+              "equal": 0,
+              "higher": 2
+            },
+            "highpass_rmse_dn": {
+              "lower": 2,
+              "equal": 0,
+              "higher": 2
+            },
+            "gradient_rmse_dn": {
+              "lower": 2,
+              "equal": 0,
+              "higher": 2
+            },
+            "temporal_difference_error_rmse_dn": {
+              "lower": 2,
+              "equal": 0,
+              "higher": 2
+            }
+          },
+          "moving_patch": {
+            "rmse_dn": {
+              "lower": 0,
+              "equal": 0,
+              "higher": 4
+            },
+            "highpass_rmse_dn": {
+              "lower": 0,
+              "equal": 0,
+              "higher": 4
+            },
+            "gradient_rmse_dn": {
+              "lower": 0,
+              "equal": 0,
+              "higher": 4
+            },
+            "temporal_difference_error_rmse_dn": {
+              "lower": 0,
+              "equal": 0,
+              "higher": 4
+            }
+          },
+          "motion": {
+            "rmse_dn": {
+              "lower": 2,
+              "equal": 0,
+              "higher": 6
+            },
+            "highpass_rmse_dn": {
+              "lower": 2,
+              "equal": 0,
+              "higher": 6
+            },
+            "gradient_rmse_dn": {
+              "lower": 2,
+              "equal": 0,
+              "higher": 6
+            },
+            "temporal_difference_error_rmse_dn": {
+              "lower": 2,
+              "equal": 0,
+              "higher": 6
+            }
+          },
+          "all": {
+            "rmse_dn": {
+              "lower": 4,
+              "equal": 0,
+              "higher": 8
+            },
+            "highpass_rmse_dn": {
+              "lower": 5,
+              "equal": 0,
+              "higher": 7
+            },
+            "gradient_rmse_dn": {
+              "lower": 5,
+              "equal": 0,
+              "higher": 7
+            },
+            "temporal_difference_error_rmse_dn": {
+              "lower": 4,
+              "equal": 0,
+              "higher": 8
+            }
+          }
+        }
+      }
+    }
+  },
+  "source_reports": {
+    "a3_ema": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_eval_a3_20261030/probes/evaluation.json",
+    "shared512_ema": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_eval_shared512_ema_20261030/probes/evaluation.json",
+    "shared512_model": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_eval_shared512_model_20261030/probes/evaluation.json",
+    "fixed1024_ema": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_eval_fixed1024_ema_20261030/probes/evaluation.json",
+    "refresh1024_ema": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_eval_refresh1024_ema_20261030/probes/evaluation.json",
+    "fixed1024_model": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_eval_fixed1024_model_20261030/probes/evaluation.json",
+    "refresh1024_model": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_eval_refresh1024_model_20261030/probes/evaluation.json"
+  },
+  "source_identities": {
+    "a3_ema": {
+      "source_report_sha256": "1d0f7cea6679fc014698ff543e5e233bbff612036f252b2dea6cffa8b875face",
+      "checkpoint_sha256": "97c4332f685f98959b243e4b100434469f714aed6329e100d22b6d8552592e0b",
+      "weights": "ema",
+      "gpu_name": "NVIDIA GeForce RTX 3090",
+      "cuda_visible_devices": "GPU-07a5046e-9b56-8557-3845-d6cca9ea0497"
+    },
+    "shared512_ema": {
+      "source_report_sha256": "d9833653a65fb986c78ce030e95d0e57d00002fcaa65b275eed7b4c7c6ae196f",
+      "checkpoint_sha256": "ffd832ecfbb35e29dae699121b44034777c62be7c8aaf9476e840c1839bb4919",
+      "weights": "ema",
+      "gpu_name": "NVIDIA GeForce RTX 3090",
+      "cuda_visible_devices": "GPU-07a5046e-9b56-8557-3845-d6cca9ea0497"
+    },
+    "shared512_model": {
+      "source_report_sha256": "03ac81a7f905b533ee27a2e7920d5810f3405b04fc7b6485f705f2599ea8c46a",
+      "checkpoint_sha256": "ffd832ecfbb35e29dae699121b44034777c62be7c8aaf9476e840c1839bb4919",
+      "weights": "model",
+      "gpu_name": "NVIDIA GeForce RTX 3090",
+      "cuda_visible_devices": "GPU-07a5046e-9b56-8557-3845-d6cca9ea0497"
+    },
+    "fixed1024_ema": {
+      "source_report_sha256": "8ab50734d0b8bf1393bac0c6022e0943cb99df791127b4e54e770a90a03536d6",
+      "checkpoint_sha256": "eec225e4d5de8ca10667c3aac2f5325631ac5da4135c26c6a9a67217279a882b",
+      "weights": "ema",
+      "gpu_name": "NVIDIA GeForce RTX 3090",
+      "cuda_visible_devices": "GPU-07a5046e-9b56-8557-3845-d6cca9ea0497"
+    },
+    "refresh1024_ema": {
+      "source_report_sha256": "eb035358eee26483425831ca0c8c4eb231c52f9528b2cc6f18660b54c45523fc",
+      "checkpoint_sha256": "f75a2d42cffff00af234b305423bd5582bb7d4762dbf5ff0ee43146ef917abd4",
+      "weights": "ema",
+      "gpu_name": "NVIDIA GeForce RTX 3090",
+      "cuda_visible_devices": "GPU-07a5046e-9b56-8557-3845-d6cca9ea0497"
+    },
+    "fixed1024_model": {
+      "source_report_sha256": "c56a7e4b1f8227f2ec022e70bcf7c032600409e304a700544b98e8f4ed7de432",
+      "checkpoint_sha256": "eec225e4d5de8ca10667c3aac2f5325631ac5da4135c26c6a9a67217279a882b",
+      "weights": "model",
+      "gpu_name": "NVIDIA GeForce RTX 3090",
+      "cuda_visible_devices": "GPU-07a5046e-9b56-8557-3845-d6cca9ea0497"
+    },
+    "refresh1024_model": {
+      "source_report_sha256": "d10b2c807eb602be532e8ae741ebb22e1e4d6363cab5afd98caabdb9891a663c",
+      "checkpoint_sha256": "f75a2d42cffff00af234b305423bd5582bb7d4762dbf5ff0ee43146ef917abd4",
+      "weights": "model",
+      "gpu_name": "NVIDIA GeForce RTX 3090",
+      "cuda_visible_devices": "GPU-07a5046e-9b56-8557-3845-d6cca9ea0497"
+    }
+  },
+  "limitations": [
+    "One seed and two sampling cycles; no significance or multi-seed replication claim.",
+    "Constructed probes derive from the A3 training reference, not independent real motion or cross-sensor data.",
+    "Refreshing was compared under a frozen source/gain schedule; three audited empty refresh samples were replaced offline and this protocol detail must be disclosed.",
+    "Shared first-cycle training already degraded moving-patch probes before the fixed/refresh fork.",
+    "EMA is the primary comparison; raw model states are diagnostics.",
+    "Native evaluations are excluded from this intermediate analysis."
+  ]
+}

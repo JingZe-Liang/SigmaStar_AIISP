@@ -1,0 +1,76 @@
+/home/jingzeliang/miniconda3/envs/aaa_312/lib/python3.12/site-packages/torch/functional.py:534: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at ../aten/src/ATen/native/TensorShape.cpp:3595.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+/home/jingzeliang/miniconda3/envs/aaa_312/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py:632: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+[a12 paired] phase=shared step=1 loss=0.006970 valid=0.0010
+[a12 paired] phase=shared step=16 loss=0.002704 valid=1.0000
+[a12 paired] phase=shared step=32 loss=0.003297 valid=0.9800
+[a12 paired] phase=shared step=48 loss=0.004483 valid=0.9973
+[a12 paired] phase=shared step=64 loss=0.002401 valid=1.0000
+[a12 paired] phase=shared step=80 loss=0.006787 valid=0.8826
+[a12 paired] phase=shared step=96 loss=0.004005 valid=0.9919
+[a12 paired] phase=shared step=112 loss=0.003782 valid=1.0000
+[a12 paired] phase=shared step=128 loss=0.003191 valid=0.1069
+[a12 paired] phase=shared step=144 loss=0.013661 valid=0.6650
+[a12 paired] phase=shared step=160 loss=0.009388 valid=0.7131
+[a12 paired] phase=shared step=176 loss=0.005186 valid=1.0000
+[a12 paired] phase=shared step=192 loss=0.008746 valid=0.2095
+[a12 paired] phase=shared step=208 loss=0.002501 valid=1.0000
+[a12 paired] phase=shared step=224 loss=0.003290 valid=0.2026
+[a12 paired] phase=shared step=240 loss=0.002281 valid=0.9597
+[a12 paired] phase=shared step=256 loss=0.001497 valid=0.9973
+[a12 paired] phase=shared step=272 loss=0.004469 valid=0.8184
+[a12 paired] phase=shared step=288 loss=0.006566 valid=1.0000
+[a12 paired] phase=shared step=304 loss=0.006083 valid=0.7480
+[a12 paired] phase=shared step=320 loss=0.002334 valid=1.0000
+[a12 paired] phase=shared step=336 loss=0.005068 valid=0.9956
+[a12 paired] phase=shared step=352 loss=0.001342 valid=1.0000
+[a12 paired] phase=shared step=368 loss=0.002944 valid=1.0000
+[a12 paired] phase=shared step=384 loss=0.002756 valid=0.9756
+[a12 paired] phase=shared step=400 loss=0.002383 valid=1.0000
+[a12 paired] phase=shared step=416 loss=0.002025 valid=0.9822
+[a12 paired] phase=shared step=432 loss=0.002501 valid=0.9990
+[a12 paired] phase=shared step=448 loss=0.004202 valid=0.8606
+[a12 paired] phase=shared step=464 loss=0.002262 valid=0.0042
+[a12 paired] phase=shared step=480 loss=0.002016 valid=0.9290
+[a12 paired] phase=shared step=496 loss=0.005442 valid=0.9927
+[a12 paired] phase=shared step=512 loss=0.006411 valid=0.4885
+{
+  "status": "training_completed",
+  "phase": "shared",
+  "pid": 1225904,
+  "gpu_name": "NVIDIA GeForce RTX 3090",
+  "initial_free_bytes": 15407644672,
+  "total_bytes": 25327697920,
+  "oom_policy": "stop_without_retry",
+  "restore_basis": "All restored starting states are bitwise identical; strict GPU trajectory test failed and is retained; repeatability control showed comparable numerical variation.",
+  "output_dir": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_shared_20261030",
+  "completed_updates": 512,
+  "result": {
+    "schema": "a12_paired_refresh_v1",
+    "status": "training_completed",
+    "phase": "shared",
+    "purpose": "experiment",
+    "start_step": 0,
+    "step": 512,
+    "completed_updates": 512,
+    "checkpoint": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_shared_20261030/checkpoint_step_000512.pth",
+    "fork_parent_checkpoint_sha256": null,
+    "runtime": {
+      "torch": "2.5.1+cu124",
+      "cuda": "12.4",
+      "device": "cuda:0",
+      "device_name": "NVIDIA GeForce RTX 3090",
+      "cuda_device_count": 1,
+      "cudnn_benchmark": false,
+      "cudnn_deterministic": false,
+      "cudnn_allow_tf32": true,
+      "matmul_allow_tf32": false,
+      "deterministic_algorithms": false
+    }
+  },
+  "last_step": 512,
+  "elapsed_seconds": 658.6733184400946,
+  "peak_allocated_bytes": 14591823360,
+  "peak_reserved_bytes": 15281946624
+}

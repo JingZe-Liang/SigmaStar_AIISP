@@ -1,0 +1,7 @@
+{
+  "status": "evaluation_completed",
+  "completed_cases": 72,
+  "oom_policy": "stop_without_retry",
+  "evaluation": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a14_static_20261030/eval_a3_ema/evaluation.json",
+  "elapsed_seconds": 30.475656060036272
+}

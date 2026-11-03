@@ -1,0 +1,32 @@
+/home/jingzeliang/miniconda3/envs/aaa_312/lib/python3.12/site-packages/torch/functional.py:534: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at ../aten/src/ATen/native/TensorShape.cpp:3595.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+{
+  "status": "verified",
+  "step": 512,
+  "checkpoint": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_shared_20261030/checkpoint_step_000512.pth",
+  "checkpoint_sha256": "ffd832ecfbb35e29dae699121b44034777c62be7c8aaf9476e840c1839bb4919",
+  "finite_model_ema_adam": true,
+  "consecutive_updates": true,
+  "source_counts": {
+    "real": 256,
+    "synthetic": 256
+  },
+  "state_sha256": {
+    "model": "1c63a989ef72eb01854891934bc30a2f49d82e48fed66c1774deae2c9632cf2a",
+    "ema": "b5e824f0b79b16ae8885f3a60a351d5cc40989bacefafaf41036e90de7e77df5",
+    "optimizer": "fba780a7c667fa4f6b8dbf1eb53dbccdf3967074e45755f86360528881f4e09e",
+    "rng": "f60c1800bd0ea5e8ddacb81a91243339678cfa16f2d18085e3a63eaa63a4babb"
+  },
+  "runtime": {
+    "torch": "2.5.1+cu124",
+    "cuda": "12.4",
+    "device": "cuda:0",
+    "device_name": "NVIDIA GeForce RTX 3090",
+    "cuda_device_count": 1,
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": false,
+    "cudnn_allow_tf32": true,
+    "matmul_allow_tf32": false,
+    "deterministic_algorithms": false
+  }
+}

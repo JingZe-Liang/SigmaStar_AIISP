@@ -1,0 +1,67 @@
+{
+  "status": "completed",
+  "oom_policy": "stop_without_retry",
+  "completed": [
+    {
+      "label": "refresh1024_ema",
+      "result": {
+        "status": "evaluation_completed",
+        "phase": "native",
+        "oom_policy": "stop_without_retry",
+        "outputs": {
+          "native": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_eval_refresh1024_ema_20261030/native/evaluation.json"
+        },
+        "elapsed_seconds": 191.07530724117532
+      }
+    },
+    {
+      "label": "shared512_ema",
+      "result": {
+        "status": "evaluation_completed",
+        "phase": "native",
+        "oom_policy": "stop_without_retry",
+        "outputs": {
+          "native": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_eval_shared512_ema_20261030/native/evaluation.json"
+        },
+        "elapsed_seconds": 185.3896445450373
+      }
+    },
+    {
+      "label": "shared512_model",
+      "result": {
+        "status": "evaluation_completed",
+        "phase": "native",
+        "oom_policy": "stop_without_retry",
+        "outputs": {
+          "native": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_eval_shared512_model_20261030/native/evaluation.json"
+        },
+        "elapsed_seconds": 186.1046811840497
+      }
+    },
+    {
+      "label": "fixed1024_model",
+      "result": {
+        "status": "evaluation_completed",
+        "phase": "native",
+        "oom_policy": "stop_without_retry",
+        "outputs": {
+          "native": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_eval_fixed1024_model_20261030/native/evaluation.json"
+        },
+        "elapsed_seconds": 186.03153707808815
+      }
+    },
+    {
+      "label": "refresh1024_model",
+      "result": {
+        "status": "evaluation_completed",
+        "phase": "native",
+        "oom_policy": "stop_without_retry",
+        "outputs": {
+          "native": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_eval_refresh1024_model_20261030/native/evaluation.json"
+        },
+        "elapsed_seconds": 185.8169213249348
+      }
+    }
+  ],
+  "active": null
+}

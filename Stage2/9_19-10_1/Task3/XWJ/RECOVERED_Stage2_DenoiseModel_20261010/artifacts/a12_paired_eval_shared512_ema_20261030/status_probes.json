@@ -1,0 +1,9 @@
+{
+  "status": "evaluation_completed",
+  "phase": "probes",
+  "oom_policy": "stop_without_retry",
+  "outputs": {
+    "probes": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_eval_shared512_ema_20261030/probes/evaluation.json"
+  },
+  "elapsed_seconds": 7.4645659069065005
+}

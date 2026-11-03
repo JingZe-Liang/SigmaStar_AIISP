@@ -1,0 +1,3796 @@
+{
+  "protocol": "A12 controlled packed-RAW motion mechanism diagnostic v1",
+  "scope": "MIS20S1 A3 training-reference-derived constructed targets; development diagnostic, not independent real dynamic or cross-sensor validation",
+  "prepared_manifest": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_dynamic_probe_20261029/prepared/manifest.json",
+  "prepared_manifest_sha256": "e9837bcff07e3b2fa301da5db3fac7c2282f6083fdc2d8c243ab54c271840e25",
+  "checkpoint": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_shared_20261030/checkpoint_step_000512.pth",
+  "checkpoint_sha256": "ffd832ecfbb35e29dae699121b44034777c62be7c8aaf9476e840c1839bb4919",
+  "weights": "model",
+  "baseline": {
+    "name": "shared512_model",
+    "format": "model",
+    "checkpoint": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_shared_20261030/checkpoint_step_000512.pth",
+    "checkpoint_sha256": "ffd832ecfbb35e29dae699121b44034777c62be7c8aaf9476e840c1839bb4919"
+  },
+  "metric_protocol": {
+    "version": "a12_region_errors_v2",
+    "raw_input": "stored noisy RAW before black-level clipping",
+    "model_input": "the same input after channel-wise black subtraction, [0,1] clipping and DN reconstruction",
+    "storage_code_endpoints": "exact storage codes 0 and 4095; distinct from black-level normalization endpoints",
+    "normalized_domain_limits": "channel-wise (DN-black)/(4095-black); endpoint tolerance 1e-7; raw below-black samples are not claimed to be hardware clipping",
+    "acceptance": "report separate reconstruction, structural and temporal target-relative errors; no single-metric pass claim"
+  },
+  "device": "cuda:0",
+  "training_performed": false,
+  "acceptance_status": "diagnostic_only_no_quality_pass_claim",
+  "cases": [
+    {
+      "name": "detail__static__gain_800",
+      "mode": "static",
+      "gain": "800",
+      "prediction": {
+        "file": "detail__static__gain_800__shared512_model_dn.npy",
+        "sha256": "cbceaa46245190cd344113bec9a553889cdbfa8ee7ad22144f43e2111ed092ea"
+      },
+      "raw_input": {
+        "all": {
+          "pixels": 32768,
+          "rmse_dn": 31.464001164445147,
+          "highpass_rmse_dn": 21.82131795460249,
+          "highpass_pixels": 30752,
+          "gradient_rmse_dn": 32.787941858147356,
+          "temporal_difference_error_rmse_dn": 31.461613731690885,
+          "channel_bias_dn": {
+            "R": 2.148652508854866,
+            "Gr": 12.517529211938381,
+            "Gb": 12.767307966947556,
+            "B": 5.026414856314659
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": null,
+        "static": {
+          "pixels": 32768,
+          "rmse_dn": 31.464001164445147,
+          "highpass_rmse_dn": 21.82131795460249,
+          "highpass_pixels": 30752,
+          "gradient_rmse_dn": 32.787941858147356,
+          "temporal_difference_error_rmse_dn": 31.461613731690885,
+          "channel_bias_dn": {
+            "R": 2.148652508854866,
+            "Gr": 12.517529211938381,
+            "Gb": 12.767307966947556,
+            "B": 5.026414856314659
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        }
+      },
+      "model_input": {
+        "all": {
+          "pixels": 32768,
+          "rmse_dn": 31.464001164445147,
+          "highpass_rmse_dn": 21.82131795460249,
+          "highpass_pixels": 30752,
+          "gradient_rmse_dn": 32.787941858147356,
+          "temporal_difference_error_rmse_dn": 31.461613731690885,
+          "channel_bias_dn": {
+            "R": 2.148652508854866,
+            "Gr": 12.517529211938381,
+            "Gb": 12.767307966947556,
+            "B": 5.026414856314659
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": null,
+        "static": {
+          "pixels": 32768,
+          "rmse_dn": 31.464001164445147,
+          "highpass_rmse_dn": 21.82131795460249,
+          "highpass_pixels": 30752,
+          "gradient_rmse_dn": 32.787941858147356,
+          "temporal_difference_error_rmse_dn": 31.461613731690885,
+          "channel_bias_dn": {
+            "R": 2.148652508854866,
+            "Gr": 12.517529211938381,
+            "Gb": 12.767307966947556,
+            "B": 5.026414856314659
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        }
+      },
+      "unaligned_temporal_mean_raw_input": {
+        "all": {
+          "pixels": 32768,
+          "rmse_dn": 23.61507302926096,
+          "highpass_rmse_dn": 9.685387739427782,
+          "highpass_pixels": 30752,
+          "gradient_rmse_dn": 14.615636305340889,
+          "temporal_difference_error_rmse_dn": 0.0,
+          "channel_bias_dn": {
+            "R": 2.148652508854866,
+            "Gr": 12.517529211938381,
+            "Gb": 12.767307966947556,
+            "B": 5.026414856314659
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": null,
+        "static": {
+          "pixels": 32768,
+          "rmse_dn": 23.61507302926096,
+          "highpass_rmse_dn": 9.685387739427782,
+          "highpass_pixels": 30752,
+          "gradient_rmse_dn": 14.615636305340889,
+          "temporal_difference_error_rmse_dn": 0.0,
+          "channel_bias_dn": {
+            "R": 2.148652508854866,
+            "Gr": 12.517529211938381,
+            "Gb": 12.767307966947556,
+            "B": 5.026414856314659
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        }
+      },
+      "unaligned_temporal_mean_model_input": {
+        "all": {
+          "pixels": 32768,
+          "rmse_dn": 23.61507302926096,
+          "highpass_rmse_dn": 9.685387739427782,
+          "highpass_pixels": 30752,
+          "gradient_rmse_dn": 14.615636305340889,
+          "temporal_difference_error_rmse_dn": 0.0,
+          "channel_bias_dn": {
+            "R": 2.148652508854866,
+            "Gr": 12.517529211938381,
+            "Gb": 12.767307966947556,
+            "B": 5.026414856314659
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": null,
+        "static": {
+          "pixels": 32768,
+          "rmse_dn": 23.61507302926096,
+          "highpass_rmse_dn": 9.685387739427782,
+          "highpass_pixels": 30752,
+          "gradient_rmse_dn": 14.615636305340889,
+          "temporal_difference_error_rmse_dn": 0.0,
+          "channel_bias_dn": {
+            "R": 2.148652508854866,
+            "Gr": 12.517529211938381,
+            "Gb": 12.767307966947556,
+            "B": 5.026414856314659
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        }
+      },
+      "shared512_model": {
+        "all": {
+          "pixels": 32768,
+          "rmse_dn": 22.920991342154824,
+          "highpass_rmse_dn": 11.68942981268986,
+          "highpass_pixels": 30752,
+          "gradient_rmse_dn": 17.512162750144373,
+          "temporal_difference_error_rmse_dn": 4.588436594176469,
+          "channel_bias_dn": {
+            "R": -3.1101448759436607,
+            "Gr": 1.7897822093218565,
+            "Gb": 4.3633538680151105,
+            "B": 0.2986835213378072
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": null,
+        "static": {
+          "pixels": 32768,
+          "rmse_dn": 22.920991342154824,
+          "highpass_rmse_dn": 11.68942981268986,
+          "highpass_pixels": 30752,
+          "gradient_rmse_dn": 17.512162750144373,
+          "temporal_difference_error_rmse_dn": 4.588436594176469,
+          "channel_bias_dn": {
+            "R": -3.1101448759436607,
+            "Gr": 1.7897822093218565,
+            "Gb": 4.3633538680151105,
+            "B": 0.2986835213378072
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        }
+      }
+    },
+    {
+      "name": "detail__static__gain_12800",
+      "mode": "static",
+      "gain": "12800",
+      "prediction": {
+        "file": "detail__static__gain_12800__shared512_model_dn.npy",
+        "sha256": "615791ca2c5c1a43b7577a456509f143a1dc5e0823f05392586daeecc93b30c4"
+      },
+      "raw_input": {
+        "all": {
+          "pixels": 32768,
+          "rmse_dn": 105.43436692804273,
+          "highpass_rmse_dn": 97.49802313221615,
+          "highpass_pixels": 30752,
+          "gradient_rmse_dn": 146.27785523058296,
+          "temporal_difference_error_rmse_dn": 146.08610202479602,
+          "channel_bias_dn": {
+            "R": 2.889924481511116,
+            "Gr": 13.372479163110256,
+            "Gb": 12.829930037260056,
+            "B": 5.607561096549034
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 7.62939453125e-05,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0038299560546875,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": null,
+        "static": {
+          "pixels": 32768,
+          "rmse_dn": 105.43436692804273,
+          "highpass_rmse_dn": 97.49802313221615,
+          "highpass_pixels": 30752,
+          "gradient_rmse_dn": 146.27785523058296,
+          "temporal_difference_error_rmse_dn": 146.08610202479602,
+          "channel_bias_dn": {
+            "R": 2.889924481511116,
+            "Gr": 13.372479163110256,
+            "Gb": 12.829930037260056,
+            "B": 5.607561096549034
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 7.62939453125e-05,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0038299560546875,
+            "above_white_fraction": 0.0
+          }
+        }
+      },
+      "model_input": {
+        "all": {
+          "pixels": 32768,
+          "rmse_dn": 105.34934320666838,
+          "highpass_rmse_dn": 97.41564550469126,
+          "highpass_pixels": 30752,
+          "gradient_rmse_dn": 146.1554205152344,
+          "temporal_difference_error_rmse_dn": 145.96910874420414,
+          "channel_bias_dn": {
+            "R": 3.046266034245491,
+            "Gr": 13.377007208764553,
+            "Gb": 12.83727714419365,
+            "B": 5.723436340689659
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.00390625,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": null,
+        "static": {
+          "pixels": 32768,
+          "rmse_dn": 105.34934320666838,
+          "highpass_rmse_dn": 97.41564550469126,
+          "highpass_pixels": 30752,
+          "gradient_rmse_dn": 146.1554205152344,
+          "temporal_difference_error_rmse_dn": 145.96910874420414,
+          "channel_bias_dn": {
+            "R": 3.046266034245491,
+            "Gr": 13.377007208764553,
+            "Gb": 12.83727714419365,
+            "B": 5.723436340689659
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.00390625,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        }
+      },
+      "unaligned_temporal_mean_raw_input": {
+        "all": {
+          "pixels": 32768,
+          "rmse_dn": 42.53021369287269,
+          "highpass_rmse_dn": 34.87419676989747,
+          "highpass_pixels": 30752,
+          "gradient_rmse_dn": 52.36206678050049,
+          "temporal_difference_error_rmse_dn": 0.0,
+          "channel_bias_dn": {
+            "R": 2.889924481511116,
+            "Gr": 13.372479163110256,
+            "Gb": 12.829930037260056,
+            "B": 5.607561096549034
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": null,
+        "static": {
+          "pixels": 32768,
+          "rmse_dn": 42.53021369287269,
+          "highpass_rmse_dn": 34.87419676989747,
+          "highpass_pixels": 30752,
+          "gradient_rmse_dn": 52.36206678050049,
+          "temporal_difference_error_rmse_dn": 0.0,
+          "channel_bias_dn": {
+            "R": 2.889924481511116,
+            "Gr": 13.372479163110256,
+            "Gb": 12.829930037260056,
+            "B": 5.607561096549034
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        }
+      },
+      "unaligned_temporal_mean_model_input": {
+        "all": {
+          "pixels": 32768,
+          "rmse_dn": 42.5054077958649,
+          "highpass_rmse_dn": 34.84514588841074,
+          "highpass_pixels": 30752,
+          "gradient_rmse_dn": 52.3178178307679,
+          "temporal_difference_error_rmse_dn": 0.0,
+          "channel_bias_dn": {
+            "R": 3.046266034245491,
+            "Gr": 13.377007208764553,
+            "Gb": 12.83727714419365,
+            "B": 5.723436340689659
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": null,
+        "static": {
+          "pixels": 32768,
+          "rmse_dn": 42.5054077958649,
+          "highpass_rmse_dn": 34.84514588841074,
+          "highpass_pixels": 30752,
+          "gradient_rmse_dn": 52.3178178307679,
+          "temporal_difference_error_rmse_dn": 0.0,
+          "channel_bias_dn": {
+            "R": 3.046266034245491,
+            "Gr": 13.377007208764553,
+            "Gb": 12.83727714419365,
+            "B": 5.723436340689659
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        }
+      },
+      "shared512_model": {
+        "all": {
+          "pixels": 32768,
+          "rmse_dn": 37.2676297111352,
+          "highpass_rmse_dn": 29.104584806330838,
+          "highpass_pixels": 30752,
+          "gradient_rmse_dn": 42.98839190273205,
+          "temporal_difference_error_rmse_dn": 11.51550403588663,
+          "channel_bias_dn": {
+            "R": 2.1487359553575516,
+            "Gr": 8.534245553426445,
+            "Gb": 9.174756509251893,
+            "B": 4.90291602909565
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": null,
+        "static": {
+          "pixels": 32768,
+          "rmse_dn": 37.2676297111352,
+          "highpass_rmse_dn": 29.104584806330838,
+          "highpass_pixels": 30752,
+          "gradient_rmse_dn": 42.98839190273205,
+          "temporal_difference_error_rmse_dn": 11.51550403588663,
+          "channel_bias_dn": {
+            "R": 2.1487359553575516,
+            "Gr": 8.534245553426445,
+            "Gb": 9.174756509251893,
+            "B": 4.90291602909565
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        }
+      }
+    },
+    {
+      "name": "detail__global_translation__gain_800",
+      "mode": "global_translation",
+      "gain": "800",
+      "prediction": {
+        "file": "detail__global_translation__gain_800__shared512_model_dn.npy",
+        "sha256": "6b66ea345334a366a4bccd0906cd15ca55c0746a287004cb7201f9280f678f75"
+      },
+      "raw_input": {
+        "all": {
+          "pixels": 29184,
+          "rmse_dn": 31.1293267712334,
+          "highpass_rmse_dn": 21.80874131851779,
+          "highpass_pixels": 27280,
+          "gradient_rmse_dn": 32.80627109369503,
+          "temporal_difference_error_rmse_dn": 31.29883638725826,
+          "channel_bias_dn": {
+            "R": 1.0064893417191088,
+            "Gr": 10.421306616381594,
+            "Gb": 10.5795044156543,
+            "B": 3.9058180503677904
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": {
+          "pixels": 29184,
+          "rmse_dn": 31.1293267712334,
+          "highpass_rmse_dn": 21.80874131851779,
+          "highpass_pixels": 27280,
+          "gradient_rmse_dn": 32.80627109369503,
+          "temporal_difference_error_rmse_dn": 31.29883638725826,
+          "channel_bias_dn": {
+            "R": 1.0064893417191088,
+            "Gr": 10.421306616381594,
+            "Gb": 10.5795044156543,
+            "B": 3.9058180503677904
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "static": null
+      },
+      "model_input": {
+        "all": {
+          "pixels": 29184,
+          "rmse_dn": 31.1293267712334,
+          "highpass_rmse_dn": 21.80874131851779,
+          "highpass_pixels": 27280,
+          "gradient_rmse_dn": 32.80627109369503,
+          "temporal_difference_error_rmse_dn": 31.29883638725826,
+          "channel_bias_dn": {
+            "R": 1.0064893417191088,
+            "Gr": 10.421306616381594,
+            "Gb": 10.5795044156543,
+            "B": 3.9058180503677904
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": {
+          "pixels": 29184,
+          "rmse_dn": 31.1293267712334,
+          "highpass_rmse_dn": 21.80874131851779,
+          "highpass_pixels": 27280,
+          "gradient_rmse_dn": 32.80627109369503,
+          "temporal_difference_error_rmse_dn": 31.29883638725826,
+          "channel_bias_dn": {
+            "R": 1.0064893417191088,
+            "Gr": 10.421306616381594,
+            "Gb": 10.5795044156543,
+            "B": 3.9058180503677904
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "static": null
+      },
+      "unaligned_temporal_mean_raw_input": {
+        "all": {
+          "pixels": 29184,
+          "rmse_dn": 152.10621601221487,
+          "highpass_rmse_dn": 77.61495838636169,
+          "highpass_pixels": 27280,
+          "gradient_rmse_dn": 117.74417184952375,
+          "temporal_difference_error_rmse_dn": 142.77657519901953,
+          "channel_bias_dn": {
+            "R": -22.546660500660277,
+            "Gr": -29.499454759714897,
+            "Gb": -29.635819049257982,
+            "B": -21.61325918373309
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 5.9964364035087716e-05,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.025741844846491228,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": {
+          "pixels": 29184,
+          "rmse_dn": 152.10621601221487,
+          "highpass_rmse_dn": 77.61495838636169,
+          "highpass_pixels": 27280,
+          "gradient_rmse_dn": 117.74417184952375,
+          "temporal_difference_error_rmse_dn": 142.77657519901953,
+          "channel_bias_dn": {
+            "R": -22.546660500660277,
+            "Gr": -29.499454759714897,
+            "Gb": -29.635819049257982,
+            "B": -21.61325918373309
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 5.9964364035087716e-05,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.025741844846491228,
+            "above_white_fraction": 0.0
+          }
+        },
+        "static": null
+      },
+      "unaligned_temporal_mean_model_input": {
+        "all": {
+          "pixels": 29184,
+          "rmse_dn": 130.62189390243162,
+          "highpass_rmse_dn": 77.21884707334692,
+          "highpass_pixels": 27280,
+          "gradient_rmse_dn": 117.16720993284873,
+          "temporal_difference_error_rmse_dn": 142.77657519901953,
+          "channel_bias_dn": {
+            "R": -10.82823602149361,
+            "Gr": -18.157919158015336,
+            "Gb": -18.317755212909297,
+            "B": -9.955647136035719
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": {
+          "pixels": 29184,
+          "rmse_dn": 130.62189390243162,
+          "highpass_rmse_dn": 77.21884707334692,
+          "highpass_pixels": 27280,
+          "gradient_rmse_dn": 117.16720993284873,
+          "temporal_difference_error_rmse_dn": 142.77657519901953,
+          "channel_bias_dn": {
+            "R": -10.82823602149361,
+            "Gr": -18.157919158015336,
+            "Gb": -18.317755212909297,
+            "B": -9.955647136035719
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "static": null
+      },
+      "shared512_model": {
+        "all": {
+          "pixels": 29184,
+          "rmse_dn": 70.39864352878607,
+          "highpass_rmse_dn": 59.339292416981756,
+          "highpass_pixels": 27280,
+          "gradient_rmse_dn": 88.87736720873488,
+          "temporal_difference_error_rmse_dn": 101.56264943580592,
+          "channel_bias_dn": {
+            "R": -6.376581259986811,
+            "Gr": -5.573054444371608,
+            "Gb": -6.008608699890605,
+            "B": -4.831944543018675
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": {
+          "pixels": 29184,
+          "rmse_dn": 70.39864352878607,
+          "highpass_rmse_dn": 59.339292416981756,
+          "highpass_pixels": 27280,
+          "gradient_rmse_dn": 88.87736720873488,
+          "temporal_difference_error_rmse_dn": 101.56264943580592,
+          "channel_bias_dn": {
+            "R": -6.376581259986811,
+            "Gr": -5.573054444371608,
+            "Gb": -6.008608699890605,
+            "B": -4.831944543018675
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "static": null
+      }
+    },
+    {
+      "name": "detail__global_translation__gain_12800",
+      "mode": "global_translation",
+      "gain": "12800",
+      "prediction": {
+        "file": "detail__global_translation__gain_12800__shared512_model_dn.npy",
+        "sha256": "ef06772cd35f56d79b3c236a9b59968c6812673ab226408a18a80383c9e83dca"
+      },
+      "raw_input": {
+        "all": {
+          "pixels": 29184,
+          "rmse_dn": 104.91664019567139,
+          "highpass_rmse_dn": 97.0767522671054,
+          "highpass_pixels": 27280,
+          "gradient_rmse_dn": 145.62889557224358,
+          "temporal_difference_error_rmse_dn": 145.34752218891188,
+          "channel_bias_dn": {
+            "R": 1.683915328561214,
+            "Gr": 11.188644883925456,
+            "Gb": 10.632821301619211,
+            "B": 4.4507741907186675
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.00011136239035087719,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.003974780701754386,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": {
+          "pixels": 29184,
+          "rmse_dn": 104.91664019567139,
+          "highpass_rmse_dn": 97.0767522671054,
+          "highpass_pixels": 27280,
+          "gradient_rmse_dn": 145.62889557224358,
+          "temporal_difference_error_rmse_dn": 145.34752218891188,
+          "channel_bias_dn": {
+            "R": 1.683915328561214,
+            "Gr": 11.188644883925456,
+            "Gb": 10.632821301619211,
+            "B": 4.4507741907186675
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.00011136239035087719,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.003974780701754386,
+            "above_white_fraction": 0.0
+          }
+        },
+        "static": null
+      },
+      "model_input": {
+        "all": {
+          "pixels": 29184,
+          "rmse_dn": 104.82177064197316,
+          "highpass_rmse_dn": 96.9853667060329,
+          "highpass_pixels": 27280,
+          "gradient_rmse_dn": 145.49269509179896,
+          "temporal_difference_error_rmse_dn": 145.21608092791763,
+          "channel_bias_dn": {
+            "R": 1.8500465991204245,
+            "Gr": 11.190079745493437,
+            "Gb": 10.639297452935,
+            "B": 4.582490199490597
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.004086143092105263,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": {
+          "pixels": 29184,
+          "rmse_dn": 104.82177064197316,
+          "highpass_rmse_dn": 96.9853667060329,
+          "highpass_pixels": 27280,
+          "gradient_rmse_dn": 145.49269509179896,
+          "temporal_difference_error_rmse_dn": 145.21608092791763,
+          "channel_bias_dn": {
+            "R": 1.8500465991204245,
+            "Gr": 11.190079745493437,
+            "Gb": 10.639297452935,
+            "B": 4.582490199490597
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.004086143092105263,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "static": null
+      },
+      "unaligned_temporal_mean_raw_input": {
+        "all": {
+          "pixels": 29184,
+          "rmse_dn": 155.81839929489675,
+          "highpass_rmse_dn": 84.19617309793439,
+          "highpass_pixels": 27280,
+          "gradient_rmse_dn": 127.42985389811614,
+          "temporal_difference_error_rmse_dn": 142.77657519901953,
+          "channel_bias_dn": {
+            "R": -21.738113865517732,
+            "Gr": -28.76809511059209,
+            "Gb": -29.630306610935612,
+            "B": -20.916014974577386
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 4.2831688596491226e-05,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.026624177631578948,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": {
+          "pixels": 29184,
+          "rmse_dn": 155.81839929489675,
+          "highpass_rmse_dn": 84.19617309793439,
+          "highpass_pixels": 27280,
+          "gradient_rmse_dn": 127.42985389811614,
+          "temporal_difference_error_rmse_dn": 142.77657519901953,
+          "channel_bias_dn": {
+            "R": -21.738113865517732,
+            "Gr": -28.76809511059209,
+            "Gb": -29.630306610935612,
+            "B": -20.916014974577386
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 4.2831688596491226e-05,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.026624177631578948,
+            "above_white_fraction": 0.0
+          }
+        },
+        "static": null
+      },
+      "unaligned_temporal_mean_model_input": {
+        "all": {
+          "pixels": 29184,
+          "rmse_dn": 134.96361437122962,
+          "highpass_rmse_dn": 83.79307247199661,
+          "highpass_pixels": 27280,
+          "gradient_rmse_dn": 126.85928682952526,
+          "temporal_difference_error_rmse_dn": 142.77657519901953,
+          "channel_bias_dn": {
+            "R": -9.901070237159729,
+            "Gr": -17.446204262867308,
+            "Gb": -18.321546352746193,
+            "B": -9.181661390421683
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 2.5699013157894735e-05,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": {
+          "pixels": 29184,
+          "rmse_dn": 134.96361437122962,
+          "highpass_rmse_dn": 83.79307247199661,
+          "highpass_pixels": 27280,
+          "gradient_rmse_dn": 126.85928682952526,
+          "temporal_difference_error_rmse_dn": 142.77657519901953,
+          "channel_bias_dn": {
+            "R": -9.901070237159729,
+            "Gr": -17.446204262867308,
+            "Gb": -18.321546352746193,
+            "B": -9.181661390421683
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 2.5699013157894735e-05,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "static": null
+      },
+      "shared512_model": {
+        "all": {
+          "pixels": 29184,
+          "rmse_dn": 93.2621980477333,
+          "highpass_rmse_dn": 74.15569082824356,
+          "highpass_pixels": 27280,
+          "gradient_rmse_dn": 110.97308257592536,
+          "temporal_difference_error_rmse_dn": 134.23370700568623,
+          "channel_bias_dn": {
+            "R": 1.6106775214797573,
+            "Gr": 3.6570810016832853,
+            "Gb": 3.8665418039288437,
+            "B": 4.150291081060443
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": {
+          "pixels": 29184,
+          "rmse_dn": 93.2621980477333,
+          "highpass_rmse_dn": 74.15569082824356,
+          "highpass_pixels": 27280,
+          "gradient_rmse_dn": 110.97308257592536,
+          "temporal_difference_error_rmse_dn": 134.23370700568623,
+          "channel_bias_dn": {
+            "R": 1.6106775214797573,
+            "Gr": 3.6570810016832853,
+            "Gb": 3.8665418039288437,
+            "B": 4.150291081060443
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "static": null
+      }
+    },
+    {
+      "name": "detail__moving_patch__gain_800",
+      "mode": "moving_patch",
+      "gain": "800",
+      "prediction": {
+        "file": "detail__moving_patch__gain_800__shared512_model_dn.npy",
+        "sha256": "d38c50b2de9d983259a15a0a6c78eeafbe913965a6800f8a728dffc533df60c2"
+      },
+      "raw_input": {
+        "all": {
+          "pixels": 32736,
+          "rmse_dn": 31.530448354707136,
+          "highpass_rmse_dn": 21.878943137396128,
+          "highpass_pixels": 30512,
+          "gradient_rmse_dn": 32.904797521079225,
+          "temporal_difference_error_rmse_dn": 31.57558252920869,
+          "channel_bias_dn": {
+            "R": 2.129434923971853,
+            "Gr": 12.489076851167054,
+            "Gb": 12.732733010546553,
+            "B": 5.028411507256919
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 7.636852394916911e-06,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": {
+          "pixels": 11744,
+          "rmse_dn": 29.033926252682786,
+          "highpass_rmse_dn": 21.209061222406344,
+          "highpass_pixels": 10320,
+          "gradient_rmse_dn": 32.11491424678266,
+          "temporal_difference_error_rmse_dn": 30.188794141422292,
+          "channel_bias_dn": {
+            "R": 0.31021945807849355,
+            "Gr": 5.5352972274905,
+            "Gb": 5.649683505377912,
+            "B": 1.6186375007317566
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 2.1287465940054495e-05,
+            "above_white_fraction": 0.0
+          }
+        },
+        "static": {
+          "pixels": 20992,
+          "rmse_dn": 32.84445715130707,
+          "highpass_rmse_dn": 22.27300023279538,
+          "highpass_pixels": 17696,
+          "gradient_rmse_dn": 33.37107803789803,
+          "temporal_difference_error_rmse_dn": 32.32346119828612,
+          "channel_bias_dn": {
+            "R": 3.147197234921339,
+            "Gr": 16.379377341851956,
+            "Gb": 16.6953536940784,
+            "B": 6.936013733468404
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        }
+      },
+      "model_input": {
+        "all": {
+          "pixels": 32736,
+          "rmse_dn": 31.530392911548525,
+          "highpass_rmse_dn": 21.878942422083792,
+          "highpass_pixels": 30512,
+          "gradient_rmse_dn": 32.90477657320556,
+          "temporal_difference_error_rmse_dn": 31.575580727377805,
+          "channel_bias_dn": {
+            "R": 2.129434923971853,
+            "Gr": 12.489076851167054,
+            "Gb": 12.732866655463464,
+            "B": 5.028411507256919
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 7.636852394916911e-06,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": {
+          "pixels": 11744,
+          "rmse_dn": 29.03375841758572,
+          "highpass_rmse_dn": 21.20905904072357,
+          "highpass_pixels": 10320,
+          "gradient_rmse_dn": 32.11485365169982,
+          "temporal_difference_error_rmse_dn": 30.18878887895429,
+          "channel_bias_dn": {
+            "R": 0.31021945807849355,
+            "Gr": 5.5352972274905,
+            "Gb": 5.650056036031863,
+            "B": 1.6186375007317566
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 2.1287465940054495e-05,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "static": {
+          "pixels": 20992,
+          "rmse_dn": 32.84445715130707,
+          "highpass_rmse_dn": 22.27300023279538,
+          "highpass_pixels": 17696,
+          "gradient_rmse_dn": 33.37107803789803,
+          "temporal_difference_error_rmse_dn": 32.32346119828612,
+          "channel_bias_dn": {
+            "R": 3.147197234921339,
+            "Gr": 16.379377341851956,
+            "Gb": 16.6953536940784,
+            "B": 6.936013733468404
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        }
+      },
+      "unaligned_temporal_mean_raw_input": {
+        "all": {
+          "pixels": 32736,
+          "rmse_dn": 95.24332867706968,
+          "highpass_rmse_dn": 68.7906902028887,
+          "highpass_pixels": 30512,
+          "gradient_rmse_dn": 96.20230466859839,
+          "temporal_difference_error_rmse_dn": 125.73804577695313,
+          "channel_bias_dn": {
+            "R": 2.4727648970901326,
+            "Gr": 13.00565645771642,
+            "Gb": 13.234779686988391,
+            "B": 5.153602428566792
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": {
+          "pixels": 11744,
+          "rmse_dn": 155.4664077780427,
+          "highpass_rmse_dn": 111.81200693228446,
+          "highpass_pixels": 10320,
+          "gradient_rmse_dn": 156.85705859437576,
+          "temporal_difference_error_rmse_dn": 210.11236514536847,
+          "channel_bias_dn": {
+            "R": 1.2672400643455235,
+            "Gr": 6.975245286073607,
+            "Gb": 7.049121516277095,
+            "B": 1.96760292988707
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "static": {
+          "pixels": 20992,
+          "rmse_dn": 24.98820810047262,
+          "highpass_rmse_dn": 9.484577002885583,
+          "highpass_pixels": 17696,
+          "gradient_rmse_dn": 14.40514952523554,
+          "temporal_difference_error_rmse_dn": 0.0,
+          "channel_bias_dn": {
+            "R": 3.147197234921339,
+            "Gr": 16.379377341851956,
+            "Gb": 16.6953536940784,
+            "B": 6.936013733468404
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        }
+      },
+      "unaligned_temporal_mean_model_input": {
+        "all": {
+          "pixels": 32736,
+          "rmse_dn": 95.24331192556112,
+          "highpass_rmse_dn": 68.79068549928039,
+          "highpass_pixels": 30512,
+          "gradient_rmse_dn": 96.20229696522243,
+          "temporal_difference_error_rmse_dn": 125.73804577695313,
+          "channel_bias_dn": {
+            "R": 2.4727648970901326,
+            "Gr": 13.00565645771642,
+            "Gb": 13.234913331905302,
+            "B": 5.153602428566792
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": {
+          "pixels": 11744,
+          "rmse_dn": 155.4663791717554,
+          "highpass_rmse_dn": 111.81199837643068,
+          "highpass_pixels": 10320,
+          "gradient_rmse_dn": 156.85704525586897,
+          "temporal_difference_error_rmse_dn": 210.11236514536847,
+          "channel_bias_dn": {
+            "R": 1.2672400643455235,
+            "Gr": 6.975245286073607,
+            "Gb": 7.049494046931046,
+            "B": 1.96760292988707
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "static": {
+          "pixels": 20992,
+          "rmse_dn": 24.98820810047262,
+          "highpass_rmse_dn": 9.484577002885583,
+          "highpass_pixels": 17696,
+          "gradient_rmse_dn": 14.40514952523554,
+          "temporal_difference_error_rmse_dn": 0.0,
+          "channel_bias_dn": {
+            "R": 3.147197234921339,
+            "Gr": 16.379377341851956,
+            "Gb": 16.6953536940784,
+            "B": 6.936013733468404
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        }
+      },
+      "shared512_model": {
+        "all": {
+          "pixels": 32736,
+          "rmse_dn": 51.61193631391449,
+          "highpass_rmse_dn": 36.344486958873915,
+          "highpass_pixels": 30512,
+          "gradient_rmse_dn": 52.60853975606109,
+          "temporal_difference_error_rmse_dn": 63.38514311871172,
+          "channel_bias_dn": {
+            "R": -5.667182235307591,
+            "Gr": -2.6808733590537153,
+            "Gb": -0.4074171388836783,
+            "B": -2.3913489833022608
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 4.5821114369501466e-05,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": {
+          "pixels": 11744,
+          "rmse_dn": 80.13416440402492,
+          "highpass_rmse_dn": 55.28167028487306,
+          "highpass_pixels": 10320,
+          "gradient_rmse_dn": 82.71904287488971,
+          "temporal_difference_error_rmse_dn": 105.61377211391427,
+          "channel_bias_dn": {
+            "R": -14.136773353701392,
+            "Gr": -21.629965194889245,
+            "Gb": -21.050915588150232,
+            "B": -12.261087877549008
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.00012772479564032696,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "static": {
+          "pixels": 20992,
+          "rmse_dn": 23.696970500352005,
+          "highpass_rmse_dn": 10.451561487081177,
+          "highpass_pixels": 17696,
+          "gradient_rmse_dn": 16.219593871556942,
+          "temporal_difference_error_rmse_dn": 5.998328714389066,
+          "channel_bias_dn": {
+            "R": -0.9288591553525227,
+            "Gr": 7.920219177153053,
+            "Gb": 11.141613243556604,
+            "B": 3.130288477351026
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        }
+      }
+    },
+    {
+      "name": "detail__moving_patch__gain_12800",
+      "mode": "moving_patch",
+      "gain": "12800",
+      "prediction": {
+        "file": "detail__moving_patch__gain_12800__shared512_model_dn.npy",
+        "sha256": "bf7fe006cc6860e69432561843798ce1d162dc106f434bb55ade94d617eee4b2"
+      },
+      "raw_input": {
+        "all": {
+          "pixels": 32736,
+          "rmse_dn": 105.65112354295348,
+          "highpass_rmse_dn": 97.66536387791095,
+          "highpass_pixels": 30512,
+          "gradient_rmse_dn": 146.64419713962852,
+          "temporal_difference_error_rmse_dn": 146.41547385727148,
+          "channel_bias_dn": {
+            "R": 3.025329352124346,
+            "Gr": 13.187635013434894,
+            "Gb": 12.734504760302174,
+            "B": 5.579914439808238
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 9.164222873900293e-05,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.004322458455522971,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": {
+          "pixels": 11744,
+          "rmse_dn": 100.42697106148312,
+          "highpass_rmse_dn": 92.83794786314355,
+          "highpass_pixels": 10320,
+          "gradient_rmse_dn": 140.08701950413993,
+          "temporal_difference_error_rmse_dn": 139.82878971967833,
+          "channel_bias_dn": {
+            "R": 1.9630634635280848,
+            "Gr": 5.407402132122653,
+            "Gb": 5.8949151130073405,
+            "B": 2.047196765036934
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.00012772479564032696,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0057901907356948225,
+            "above_white_fraction": 0.0
+          }
+        },
+        "static": {
+          "pixels": 20992,
+          "rmse_dn": 108.46407606180662,
+          "highpass_rmse_dn": 100.46419165983151,
+          "highpass_pixels": 17696,
+          "gradient_rmse_dn": 150.22793948418175,
+          "temporal_difference_error_rmse_dn": 149.96468429541395,
+          "channel_bias_dn": {
+            "R": 3.6196152989457295,
+            "Gr": 17.540295786973907,
+            "Gb": 16.560921529444254,
+            "B": 7.556297651151332
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 7.145579268292682e-05,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0035013338414634147,
+            "above_white_fraction": 0.0
+          }
+        }
+      },
+      "model_input": {
+        "all": {
+          "pixels": 32736,
+          "rmse_dn": 105.55993086301993,
+          "highpass_rmse_dn": 97.57985620554845,
+          "highpass_pixels": 30512,
+          "gradient_rmse_dn": 146.51684579740618,
+          "temporal_difference_error_rmse_dn": 146.2925572903607,
+          "channel_bias_dn": {
+            "R": 3.1429063315964862,
+            "Gr": 13.195516245106448,
+            "Gb": 12.743130585082232,
+            "B": 5.76179371644558
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.004414100684261975,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": {
+          "pixels": 11744,
+          "rmse_dn": 100.3111836330082,
+          "highpass_rmse_dn": 92.72896874519319,
+          "highpass_pixels": 10320,
+          "gradient_rmse_dn": 139.93146270826082,
+          "temporal_difference_error_rmse_dn": 139.67078441090845,
+          "channel_bias_dn": {
+            "R": 2.050618810939529,
+            "Gr": 5.423963780624016,
+            "Gb": 5.91031659461497,
+            "B": 2.330575511630939
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.00591791553133515,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "static": {
+          "pixels": 20992,
+          "rmse_dn": 108.38552789956539,
+          "highpass_rmse_dn": 100.3885701637706,
+          "highpass_pixels": 17696,
+          "gradient_rmse_dn": 150.11408575593038,
+          "temporal_difference_error_rmse_dn": 149.85991393076617,
+          "channel_bias_dn": {
+            "R": 3.7539879170859733,
+            "Gr": 17.54332074886415,
+            "Gb": 16.56575670474913,
+            "B": 7.681392925541576
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0035727896341463416,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        }
+      },
+      "unaligned_temporal_mean_raw_input": {
+        "all": {
+          "pixels": 32736,
+          "rmse_dn": 101.60957485577998,
+          "highpass_rmse_dn": 76.47239882897824,
+          "highpass_pixels": 30512,
+          "gradient_rmse_dn": 108.57902798902286,
+          "temporal_difference_error_rmse_dn": 125.73804577695313,
+          "channel_bias_dn": {
+            "R": 3.364199403443994,
+            "Gr": 13.723043279563926,
+            "Gb": 13.193834702873044,
+            "B": 5.708389207647926
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": {
+          "pixels": 11744,
+          "rmse_dn": 159.0734863648354,
+          "highpass_rmse_dn": 116.08751209454135,
+          "highpass_pixels": 10320,
+          "gradient_rmse_dn": 163.97185233420703,
+          "temporal_difference_error_rmse_dn": 210.11236514536847,
+          "channel_bias_dn": {
+            "R": 2.907652189686123,
+            "Gr": 6.899834437980964,
+            "Gb": 7.1752816831708275,
+            "B": 2.4053158045464706
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "static": {
+          "pixels": 20992,
+          "rmse_dn": 44.09081626801918,
+          "highpass_rmse_dn": 35.95722133000494,
+          "highpass_pixels": 17696,
+          "gradient_rmse_dn": 53.758972108562666,
+          "temporal_difference_error_rmse_dn": 0.0,
+          "channel_bias_dn": {
+            "R": 3.6196152989457295,
+            "Gr": 17.540295786973907,
+            "Gb": 16.560921529444254,
+            "B": 7.556297651151332
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        }
+      },
+      "unaligned_temporal_mean_model_input": {
+        "all": {
+          "pixels": 32736,
+          "rmse_dn": 101.59690312435913,
+          "highpass_rmse_dn": 76.45856509770336,
+          "highpass_pixels": 30512,
+          "gradient_rmse_dn": 108.55629270556925,
+          "temporal_difference_error_rmse_dn": 125.73804577695313,
+          "channel_bias_dn": {
+            "R": 3.4817763829161343,
+            "Gr": 13.73092451123548,
+            "Gb": 13.202460527653102,
+            "B": 5.889856094255942
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": {
+          "pixels": 11744,
+          "rmse_dn": 159.06270460393188,
+          "highpass_rmse_dn": 116.07820946172855,
+          "highpass_pixels": 10320,
+          "gradient_rmse_dn": 163.9558909740095,
+          "temporal_difference_error_rmse_dn": 210.11236514536847,
+          "channel_bias_dn": {
+            "R": 2.995207537097567,
+            "Gr": 6.916396086482326,
+            "Gb": 7.1906831647784575,
+            "B": 2.687545027979713
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "static": {
+          "pixels": 20992,
+          "rmse_dn": 44.06703396706305,
+          "highpass_rmse_dn": 35.92901427713275,
+          "highpass_pixels": 17696,
+          "gradient_rmse_dn": 53.71422879604739,
+          "temporal_difference_error_rmse_dn": 0.0,
+          "channel_bias_dn": {
+            "R": 3.7539879170859733,
+            "Gr": 17.54332074886415,
+            "Gb": 16.56575670474913,
+            "B": 7.681392925541576
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        }
+      },
+      "shared512_model": {
+        "all": {
+          "pixels": 32736,
+          "rmse_dn": 70.21742283227373,
+          "highpass_rmse_dn": 52.20155172296099,
+          "highpass_pixels": 30512,
+          "gradient_rmse_dn": 75.10966181539118,
+          "temporal_difference_error_rmse_dn": 85.726826491806,
+          "channel_bias_dn": {
+            "R": -1.253093917115809,
+            "Gr": 2.292671252089395,
+            "Gb": 3.223635718270131,
+            "B": 1.1700381309755388
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 6.87316715542522e-05,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": {
+          "pixels": 11744,
+          "rmse_dn": 107.30849231579352,
+          "highpass_rmse_dn": 77.0423500737394,
+          "highpass_pixels": 10320,
+          "gradient_rmse_dn": 113.04273123841547,
+          "temporal_difference_error_rmse_dn": 142.50528772878258,
+          "channel_bias_dn": {
+            "R": -12.920777520951523,
+            "Gr": -23.67933464829863,
+            "Gb": -22.408565555021614,
+            "B": -12.138537297781546
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.00019158719346049047,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "static": {
+          "pixels": 20992,
+          "rmse_dn": 35.30877218666815,
+          "highpass_rmse_dn": 23.80467501146257,
+          "highpass_pixels": 17696,
+          "gradient_rmse_dn": 36.09573665509874,
+          "temporal_difference_error_rmse_dn": 10.913298856110647,
+          "channel_bias_dn": {
+            "R": 5.274405903932525,
+            "Gr": 16.822741626239406,
+            "Gb": 17.563601979395237,
+            "B": 8.615536884563726
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        }
+      }
+    },
+    {
+      "name": "dark__static__gain_800",
+      "mode": "static",
+      "gain": "800",
+      "prediction": {
+        "file": "dark__static__gain_800__shared512_model_dn.npy",
+        "sha256": "24de2041fa2703aaf5ad67b58304968eeb566bff3b04b4143b66b64946d87060"
+      },
+      "raw_input": {
+        "all": {
+          "pixels": 32768,
+          "rmse_dn": 14.772677578912864,
+          "highpass_rmse_dn": 12.480353994144087,
+          "highpass_pixels": 30752,
+          "gradient_rmse_dn": 18.683256354527455,
+          "temporal_difference_error_rmse_dn": 17.71134956039652,
+          "channel_bias_dn": {
+            "R": -1.3814017325639725,
+            "Gr": -3.372746519744396,
+            "Gb": -3.1219238489866257,
+            "B": -3.622823938727379
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.00189971923828125,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": null,
+        "static": {
+          "pixels": 32768,
+          "rmse_dn": 14.772677578912864,
+          "highpass_rmse_dn": 12.480353994144087,
+          "highpass_pixels": 30752,
+          "gradient_rmse_dn": 18.683256354527455,
+          "temporal_difference_error_rmse_dn": 17.71134956039652,
+          "channel_bias_dn": {
+            "R": -1.3814017325639725,
+            "Gr": -3.372746519744396,
+            "Gb": -3.1219238489866257,
+            "B": -3.622823938727379
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.00189971923828125,
+            "above_white_fraction": 0.0
+          }
+        }
+      },
+      "model_input": {
+        "all": {
+          "pixels": 32768,
+          "rmse_dn": 14.767264013462986,
+          "highpass_rmse_dn": 12.475132326109474,
+          "highpass_pixels": 30752,
+          "gradient_rmse_dn": 18.675373426329443,
+          "temporal_difference_error_rmse_dn": 17.703063529925995,
+          "channel_bias_dn": {
+            "R": -1.3641249686479568,
+            "Gr": -3.372746519744396,
+            "Gb": -3.1219238489866257,
+            "B": -3.622823938727379
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.00189971923828125,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": null,
+        "static": {
+          "pixels": 32768,
+          "rmse_dn": 14.767264013462986,
+          "highpass_rmse_dn": 12.475132326109474,
+          "highpass_pixels": 30752,
+          "gradient_rmse_dn": 18.675373426329443,
+          "temporal_difference_error_rmse_dn": 17.703063529925995,
+          "channel_bias_dn": {
+            "R": -1.3641249686479568,
+            "Gr": -3.372746519744396,
+            "Gb": -3.1219238489866257,
+            "B": -3.622823938727379
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.00189971923828125,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        }
+      },
+      "unaligned_temporal_mean_raw_input": {
+        "all": {
+          "pixels": 32768,
+          "rmse_dn": 9.022656988878992,
+          "highpass_rmse_dn": 5.857206968045775,
+          "highpass_pixels": 30752,
+          "gradient_rmse_dn": 8.674927180005836,
+          "temporal_difference_error_rmse_dn": 0.0,
+          "channel_bias_dn": {
+            "R": -1.3814017325639725,
+            "Gr": -3.372746519744396,
+            "Gb": -3.1219238489866257,
+            "B": -3.622823938727379
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": null,
+        "static": {
+          "pixels": 32768,
+          "rmse_dn": 9.022656988878992,
+          "highpass_rmse_dn": 5.857206968045775,
+          "highpass_pixels": 30752,
+          "gradient_rmse_dn": 8.674927180005836,
+          "temporal_difference_error_rmse_dn": 0.0,
+          "channel_bias_dn": {
+            "R": -1.3814017325639725,
+            "Gr": -3.372746519744396,
+            "Gb": -3.1219238489866257,
+            "B": -3.622823938727379
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        }
+      },
+      "unaligned_temporal_mean_model_input": {
+        "all": {
+          "pixels": 32768,
+          "rmse_dn": 9.020961324556886,
+          "highpass_rmse_dn": 5.855853142867114,
+          "highpass_pixels": 30752,
+          "gradient_rmse_dn": 8.672791466443044,
+          "temporal_difference_error_rmse_dn": 0.0,
+          "channel_bias_dn": {
+            "R": -1.3641249686479568,
+            "Gr": -3.372746519744396,
+            "Gb": -3.1219238489866257,
+            "B": -3.622823938727379
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": null,
+        "static": {
+          "pixels": 32768,
+          "rmse_dn": 9.020961324556886,
+          "highpass_rmse_dn": 5.855853142867114,
+          "highpass_pixels": 30752,
+          "gradient_rmse_dn": 8.672791466443044,
+          "temporal_difference_error_rmse_dn": 0.0,
+          "channel_bias_dn": {
+            "R": -1.3641249686479568,
+            "Gr": -3.372746519744396,
+            "Gb": -3.1219238489866257,
+            "B": -3.622823938727379
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        }
+      },
+      "shared512_model": {
+        "all": {
+          "pixels": 32768,
+          "rmse_dn": 9.228757919794644,
+          "highpass_rmse_dn": 5.757758941501507,
+          "highpass_pixels": 30752,
+          "gradient_rmse_dn": 8.00214510250426,
+          "temporal_difference_error_rmse_dn": 1.9893786511594154,
+          "channel_bias_dn": {
+            "R": -2.0198699682950974,
+            "Gr": -5.223922942765057,
+            "Gb": -4.317043853923678,
+            "B": -4.440081449225545
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": null,
+        "static": {
+          "pixels": 32768,
+          "rmse_dn": 9.228757919794644,
+          "highpass_rmse_dn": 5.757758941501507,
+          "highpass_pixels": 30752,
+          "gradient_rmse_dn": 8.00214510250426,
+          "temporal_difference_error_rmse_dn": 1.9893786511594154,
+          "channel_bias_dn": {
+            "R": -2.0198699682950974,
+            "Gr": -5.223922942765057,
+            "Gb": -4.317043853923678,
+            "B": -4.440081449225545
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        }
+      }
+    },
+    {
+      "name": "dark__static__gain_12800",
+      "mode": "static",
+      "gain": "12800",
+      "prediction": {
+        "file": "dark__static__gain_12800__shared512_model_dn.npy",
+        "sha256": "1997fac1d2674250254ffd2c9fa7dd197295c3f78a26bfa1f4b3d336fccb62c5"
+      },
+      "raw_input": {
+        "all": {
+          "pixels": 32768,
+          "rmse_dn": 54.94582089330773,
+          "highpass_rmse_dn": 51.351213730962826,
+          "highpass_pixels": 30752,
+          "gradient_rmse_dn": 77.1125967920017,
+          "temporal_difference_error_rmse_dn": 77.0031783486578,
+          "channel_bias_dn": {
+            "R": -1.3731925040483475,
+            "Gr": -3.266209654510021,
+            "Gb": -3.3799804896116257,
+            "B": -3.274954065680504
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0002899169921875,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0548248291015625,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": null,
+        "static": {
+          "pixels": 32768,
+          "rmse_dn": 54.94582089330773,
+          "highpass_rmse_dn": 51.351213730962826,
+          "highpass_pixels": 30752,
+          "gradient_rmse_dn": 77.1125967920017,
+          "temporal_difference_error_rmse_dn": 77.0031783486578,
+          "channel_bias_dn": {
+            "R": -1.3731925040483475,
+            "Gr": -3.266209654510021,
+            "Gb": -3.3799804896116257,
+            "B": -3.274954065680504
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0002899169921875,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0548248291015625,
+            "above_white_fraction": 0.0
+          }
+        }
+      },
+      "model_input": {
+        "all": {
+          "pixels": 32768,
+          "rmse_dn": 53.92454418304,
+          "highpass_rmse_dn": 50.38518805616346,
+          "highpass_pixels": 30752,
+          "gradient_rmse_dn": 75.67774870532365,
+          "temporal_difference_error_rmse_dn": 75.58084061458088,
+          "channel_bias_dn": {
+            "R": 0.7393639534711838,
+            "Gr": -2.9204416796565056,
+            "Gb": -3.008596822619438,
+            "B": -2.765341028571129
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.05511474609375,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": null,
+        "static": {
+          "pixels": 32768,
+          "rmse_dn": 53.92454418304,
+          "highpass_rmse_dn": 50.38518805616346,
+          "highpass_pixels": 30752,
+          "gradient_rmse_dn": 75.67774870532365,
+          "temporal_difference_error_rmse_dn": 75.58084061458088,
+          "channel_bias_dn": {
+            "R": 0.7393639534711838,
+            "Gr": -2.9204416796565056,
+            "Gb": -3.008596822619438,
+            "B": -2.765341028571129
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.05511474609375,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        }
+      },
+      "unaligned_temporal_mean_raw_input": {
+        "all": {
+          "pixels": 32768,
+          "rmse_dn": 20.781232945869125,
+          "highpass_rmse_dn": 18.648003195953603,
+          "highpass_pixels": 30752,
+          "gradient_rmse_dn": 27.929107820015023,
+          "temporal_difference_error_rmse_dn": 0.0,
+          "channel_bias_dn": {
+            "R": -1.3731925040483475,
+            "Gr": -3.266209654510021,
+            "Gb": -3.3799804896116257,
+            "B": -3.274954065680504
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.000244140625,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0030517578125,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": null,
+        "static": {
+          "pixels": 32768,
+          "rmse_dn": 20.781232945869125,
+          "highpass_rmse_dn": 18.648003195953603,
+          "highpass_pixels": 30752,
+          "gradient_rmse_dn": 27.929107820015023,
+          "temporal_difference_error_rmse_dn": 0.0,
+          "channel_bias_dn": {
+            "R": -1.3731925040483475,
+            "Gr": -3.266209654510021,
+            "Gb": -3.3799804896116257,
+            "B": -3.274954065680504
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.000244140625,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0030517578125,
+            "above_white_fraction": 0.0
+          }
+        }
+      },
+      "unaligned_temporal_mean_model_input": {
+        "all": {
+          "pixels": 32768,
+          "rmse_dn": 20.407130297474595,
+          "highpass_rmse_dn": 18.30290576441119,
+          "highpass_pixels": 30752,
+          "gradient_rmse_dn": 27.41782466992227,
+          "temporal_difference_error_rmse_dn": 0.0,
+          "channel_bias_dn": {
+            "R": 0.7393639534711838,
+            "Gr": -2.9204416796565056,
+            "Gb": -3.008596822619438,
+            "B": -2.765341028571129
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": null,
+        "static": {
+          "pixels": 32768,
+          "rmse_dn": 20.407130297474595,
+          "highpass_rmse_dn": 18.30290576441119,
+          "highpass_pixels": 30752,
+          "gradient_rmse_dn": 27.41782466992227,
+          "temporal_difference_error_rmse_dn": 0.0,
+          "channel_bias_dn": {
+            "R": 0.7393639534711838,
+            "Gr": -2.9204416796565056,
+            "Gb": -3.008596822619438,
+            "B": -2.765341028571129
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        }
+      },
+      "shared512_model": {
+        "all": {
+          "pixels": 32768,
+          "rmse_dn": 13.248513645462928,
+          "highpass_rmse_dn": 10.41490381652971,
+          "highpass_pixels": 30752,
+          "gradient_rmse_dn": 13.35432601259631,
+          "temporal_difference_error_rmse_dn": 4.631608528711893,
+          "channel_bias_dn": {
+            "R": -1.3577506942674518,
+            "Gr": -5.012557982467115,
+            "Gb": -4.907761071808636,
+            "B": -4.842502918094397
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": null,
+        "static": {
+          "pixels": 32768,
+          "rmse_dn": 13.248513645462928,
+          "highpass_rmse_dn": 10.41490381652971,
+          "highpass_pixels": 30752,
+          "gradient_rmse_dn": 13.35432601259631,
+          "temporal_difference_error_rmse_dn": 4.631608528711893,
+          "channel_bias_dn": {
+            "R": -1.3577506942674518,
+            "Gr": -5.012557982467115,
+            "Gb": -4.907761071808636,
+            "B": -4.842502918094397
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        }
+      }
+    },
+    {
+      "name": "dark__global_translation__gain_800",
+      "mode": "global_translation",
+      "gain": "800",
+      "prediction": {
+        "file": "dark__global_translation__gain_800__shared512_model_dn.npy",
+        "sha256": "fbb27f5bf23ea446709859fde66aade69dfedd2bacbe2ae54fe6fa1a1d34a982"
+      },
+      "raw_input": {
+        "all": {
+          "pixels": 29184,
+          "rmse_dn": 14.855067361356296,
+          "highpass_rmse_dn": 12.487291970188451,
+          "highpass_pixels": 27280,
+          "gradient_rmse_dn": 18.68985372996737,
+          "temporal_difference_error_rmse_dn": 17.694822372128225,
+          "channel_bias_dn": {
+            "R": -1.3970222964621426,
+            "Gr": -3.366951198954331,
+            "Gb": -3.0754619104820384,
+            "B": -3.5793191340931676
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0024671052631578946,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": {
+          "pixels": 29184,
+          "rmse_dn": 14.855067361356296,
+          "highpass_rmse_dn": 12.487291970188451,
+          "highpass_pixels": 27280,
+          "gradient_rmse_dn": 18.68985372996737,
+          "temporal_difference_error_rmse_dn": 17.694822372128225,
+          "channel_bias_dn": {
+            "R": -1.3970222964621426,
+            "Gr": -3.366951198954331,
+            "Gb": -3.0754619104820384,
+            "B": -3.5793191340931676
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0024671052631578946,
+            "above_white_fraction": 0.0
+          }
+        },
+        "static": null
+      },
+      "model_input": {
+        "all": {
+          "pixels": 29184,
+          "rmse_dn": 14.848333684158984,
+          "highpass_rmse_dn": 12.480817911169682,
+          "highpass_pixels": 27280,
+          "gradient_rmse_dn": 18.68032451749641,
+          "temporal_difference_error_rmse_dn": 17.685241549799947,
+          "channel_bias_dn": {
+            "R": -1.3754351254095112,
+            "Gr": -3.366951198954331,
+            "Gb": -3.0754619104820384,
+            "B": -3.5793191340931676
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0024671052631578946,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": {
+          "pixels": 29184,
+          "rmse_dn": 14.848333684158984,
+          "highpass_rmse_dn": 12.480817911169682,
+          "highpass_pixels": 27280,
+          "gradient_rmse_dn": 18.68032451749641,
+          "temporal_difference_error_rmse_dn": 17.685241549799947,
+          "channel_bias_dn": {
+            "R": -1.3754351254095112,
+            "Gr": -3.366951198954331,
+            "Gb": -3.0754619104820384,
+            "B": -3.5793191340931676
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0024671052631578946,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "static": null
+      },
+      "unaligned_temporal_mean_raw_input": {
+        "all": {
+          "pixels": 29184,
+          "rmse_dn": 65.2574057038713,
+          "highpass_rmse_dn": 20.252848629194972,
+          "highpass_pixels": 27280,
+          "gradient_rmse_dn": 28.280166238601584,
+          "temporal_difference_error_rmse_dn": 36.321681627299746,
+          "channel_bias_dn": {
+            "R": -15.124244404466529,
+            "Gr": -21.256051390840295,
+            "Gb": -20.812830845514934,
+            "B": -20.928744332832203
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.08271655701754387,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": {
+          "pixels": 29184,
+          "rmse_dn": 65.2574057038713,
+          "highpass_rmse_dn": 20.252848629194972,
+          "highpass_pixels": 27280,
+          "gradient_rmse_dn": 28.280166238601584,
+          "temporal_difference_error_rmse_dn": 36.321681627299746,
+          "channel_bias_dn": {
+            "R": -15.124244404466529,
+            "Gr": -21.256051390840295,
+            "Gb": -20.812830845514934,
+            "B": -20.928744332832203
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.08271655701754387,
+            "above_white_fraction": 0.0
+          }
+        },
+        "static": null
+      },
+      "unaligned_temporal_mean_model_input": {
+        "all": {
+          "pixels": 29184,
+          "rmse_dn": 36.92621411318739,
+          "highpass_rmse_dn": 19.610612479650797,
+          "highpass_pixels": 27280,
+          "gradient_rmse_dn": 27.25360340872772,
+          "temporal_difference_error_rmse_dn": 36.321681627299746,
+          "channel_bias_dn": {
+            "R": -2.9342708744500814,
+            "Gr": -8.644282099447752,
+            "Gb": -8.20338731481318,
+            "B": -8.689777775814658
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 2.5699013157894735e-05,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": {
+          "pixels": 29184,
+          "rmse_dn": 36.92621411318739,
+          "highpass_rmse_dn": 19.610612479650797,
+          "highpass_pixels": 27280,
+          "gradient_rmse_dn": 27.25360340872772,
+          "temporal_difference_error_rmse_dn": 36.321681627299746,
+          "channel_bias_dn": {
+            "R": -2.9342708744500814,
+            "Gr": -8.644282099447752,
+            "Gb": -8.20338731481318,
+            "B": -8.689777775814658
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 2.5699013157894735e-05,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "static": null
+      },
+      "shared512_model": {
+        "all": {
+          "pixels": 29184,
+          "rmse_dn": 13.932409325738766,
+          "highpass_rmse_dn": 11.293607854525902,
+          "highpass_pixels": 27280,
+          "gradient_rmse_dn": 15.389091899833373,
+          "temporal_difference_error_rmse_dn": 16.980165711920623,
+          "channel_bias_dn": {
+            "R": -1.7347067280819541,
+            "Gr": -4.4842794004239535,
+            "Gb": -3.5022151470184326,
+            "B": -4.099956488400175
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": {
+          "pixels": 29184,
+          "rmse_dn": 13.932409325738766,
+          "highpass_rmse_dn": 11.293607854525902,
+          "highpass_pixels": 27280,
+          "gradient_rmse_dn": 15.389091899833373,
+          "temporal_difference_error_rmse_dn": 16.980165711920623,
+          "channel_bias_dn": {
+            "R": -1.7347067280819541,
+            "Gr": -4.4842794004239535,
+            "Gb": -3.5022151470184326,
+            "B": -4.099956488400175
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "static": null
+      }
+    },
+    {
+      "name": "dark__global_translation__gain_12800",
+      "mode": "global_translation",
+      "gain": "12800",
+      "prediction": {
+        "file": "dark__global_translation__gain_12800__shared512_model_dn.npy",
+        "sha256": "b45312f7a1d60f802d96d05600707339ddebc9fab22b4d5237765481d0eb54fe"
+      },
+      "raw_input": {
+        "all": {
+          "pixels": 29184,
+          "rmse_dn": 54.56473805234693,
+          "highpass_rmse_dn": 50.96746986335371,
+          "highpass_pixels": 27280,
+          "gradient_rmse_dn": 76.51924559503068,
+          "temporal_difference_error_rmse_dn": 76.44056265409701,
+          "channel_bias_dn": {
+            "R": -1.3037177460235463,
+            "Gr": -3.3247705520245066,
+            "Gb": -3.258267557411863,
+            "B": -3.1514476976896586
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0002826891447368421,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.05775424890350877,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": {
+          "pixels": 29184,
+          "rmse_dn": 54.56473805234693,
+          "highpass_rmse_dn": 50.96746986335371,
+          "highpass_pixels": 27280,
+          "gradient_rmse_dn": 76.51924559503068,
+          "temporal_difference_error_rmse_dn": 76.44056265409701,
+          "channel_bias_dn": {
+            "R": -1.3037177460235463,
+            "Gr": -3.3247705520245066,
+            "Gb": -3.258267557411863,
+            "B": -3.1514476976896586
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0002826891447368421,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.05775424890350877,
+            "above_white_fraction": 0.0
+          }
+        },
+        "static": null
+      },
+      "model_input": {
+        "all": {
+          "pixels": 29184,
+          "rmse_dn": 53.51435501311048,
+          "highpass_rmse_dn": 49.97795323475052,
+          "highpass_pixels": 27280,
+          "gradient_rmse_dn": 75.0471940437213,
+          "temporal_difference_error_rmse_dn": 74.9990823087148,
+          "channel_bias_dn": {
+            "R": 0.9326746265093485,
+            "Gr": -2.9582555095354715,
+            "Gb": -2.8475373627846703,
+            "B": -2.6893794411107113
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.05803693804824561,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": {
+          "pixels": 29184,
+          "rmse_dn": 53.51435501311048,
+          "highpass_rmse_dn": 49.97795323475052,
+          "highpass_pixels": 27280,
+          "gradient_rmse_dn": 75.0471940437213,
+          "temporal_difference_error_rmse_dn": 74.9990823087148,
+          "channel_bias_dn": {
+            "R": 0.9326746265093485,
+            "Gr": -2.9582555095354715,
+            "Gb": -2.8475373627846703,
+            "B": -2.6893794411107113
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.05803693804824561,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "static": null
+      },
+      "unaligned_temporal_mean_raw_input": {
+        "all": {
+          "pixels": 29184,
+          "rmse_dn": 67.54929914871693,
+          "highpass_rmse_dn": 26.64158735190305,
+          "highpass_pixels": 27280,
+          "gradient_rmse_dn": 38.38060929447889,
+          "temporal_difference_error_rmse_dn": 36.321681627299746,
+          "channel_bias_dn": {
+            "R": -14.972196193117844,
+            "Gr": -21.119722409206524,
+            "Gb": -20.892442105109232,
+            "B": -20.45455470838045
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0003426535087719298,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.08454975328947369,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": {
+          "pixels": 29184,
+          "rmse_dn": 67.54929914871693,
+          "highpass_rmse_dn": 26.64158735190305,
+          "highpass_pixels": 27280,
+          "gradient_rmse_dn": 38.38060929447889,
+          "temporal_difference_error_rmse_dn": 36.321681627299746,
+          "channel_bias_dn": {
+            "R": -14.972196193117844,
+            "Gr": -21.119722409206524,
+            "Gb": -20.892442105109232,
+            "B": -20.45455470838045
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0003426535087719298,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.08454975328947369,
+            "above_white_fraction": 0.0
+          }
+        },
+        "static": null
+      },
+      "unaligned_temporal_mean_model_input": {
+        "all": {
+          "pixels": 29184,
+          "rmse_dn": 40.9563858007302,
+          "highpass_rmse_dn": 25.908354972710303,
+          "highpass_pixels": 27280,
+          "gradient_rmse_dn": 37.248936671222054,
+          "temporal_difference_error_rmse_dn": 36.321681627299746,
+          "channel_bias_dn": {
+            "R": -0.7803685863812765,
+            "Gr": -8.23934810307988,
+            "Gb": -7.96615811816433,
+            "B": -7.852679537053694
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0005910773026315789,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": {
+          "pixels": 29184,
+          "rmse_dn": 40.9563858007302,
+          "highpass_rmse_dn": 25.908354972710303,
+          "highpass_pixels": 27280,
+          "gradient_rmse_dn": 37.248936671222054,
+          "temporal_difference_error_rmse_dn": 36.321681627299746,
+          "channel_bias_dn": {
+            "R": -0.7803685863812765,
+            "Gr": -8.23934810307988,
+            "Gb": -7.96615811816433,
+            "B": -7.852679537053694
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0005910773026315789,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "static": null
+      },
+      "shared512_model": {
+        "all": {
+          "pixels": 29184,
+          "rmse_dn": 19.561452478555665,
+          "highpass_rmse_dn": 16.106905026836102,
+          "highpass_pixels": 27280,
+          "gradient_rmse_dn": 21.144033729092357,
+          "temporal_difference_error_rmse_dn": 21.94019424174485,
+          "channel_bias_dn": {
+            "R": -1.3651661935605501,
+            "Gr": -4.896490216255188,
+            "Gb": -4.758944983022255,
+            "B": -4.840780153609159
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": {
+          "pixels": 29184,
+          "rmse_dn": 19.561452478555665,
+          "highpass_rmse_dn": 16.106905026836102,
+          "highpass_pixels": 27280,
+          "gradient_rmse_dn": 21.144033729092357,
+          "temporal_difference_error_rmse_dn": 21.94019424174485,
+          "channel_bias_dn": {
+            "R": -1.3651661935605501,
+            "Gr": -4.896490216255188,
+            "Gb": -4.758944983022255,
+            "B": -4.840780153609159
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "static": null
+      }
+    },
+    {
+      "name": "dark__moving_patch__gain_800",
+      "mode": "moving_patch",
+      "gain": "800",
+      "prediction": {
+        "file": "dark__moving_patch__gain_800__shared512_model_dn.npy",
+        "sha256": "35e8d22fbcd17f7a86f508b05a0ef8efb3eeb89717b15af4f192845d59f73a46"
+      },
+      "raw_input": {
+        "all": {
+          "pixels": 32736,
+          "rmse_dn": 17.357686246767457,
+          "highpass_rmse_dn": 15.257560359135537,
+          "highpass_pixels": 30512,
+          "gradient_rmse_dn": 22.77523185706155,
+          "temporal_difference_error_rmse_dn": 21.909410347323586,
+          "channel_bias_dn": {
+            "R": -1.395801545121686,
+            "Gr": -3.3306455397769037,
+            "Gb": -3.0821896046837054,
+            "B": -3.605180940786531
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0010538856304985337,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": {
+          "pixels": 11744,
+          "rmse_dn": 19.820009129345042,
+          "highpass_rmse_dn": 18.026464061452558,
+          "highpass_pixels": 10320,
+          "gradient_rmse_dn": 27.022477886078143,
+          "temporal_difference_error_rmse_dn": 26.837072556107014,
+          "channel_bias_dn": {
+            "R": -1.5600268418522556,
+            "Gr": -4.708144554325281,
+            "Gb": -4.45778332224334,
+            "B": -5.555803233986005
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0008727861035422343,
+            "above_white_fraction": 0.0
+          }
+        },
+        "static": {
+          "pixels": 20992,
+          "rmse_dn": 15.813764722434902,
+          "highpass_rmse_dn": 13.585229411635938,
+          "highpass_pixels": 17696,
+          "gradient_rmse_dn": 20.0445974901651,
+          "temporal_difference_error_rmse_dn": 18.601203652724717,
+          "channel_bias_dn": {
+            "R": -1.3039255025910168,
+            "Gr": -2.5600020362109674,
+            "Gb": -2.312612021841654,
+            "B": -2.513902920048411
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.001155201981707317,
+            "above_white_fraction": 0.0
+          }
+        }
+      },
+      "model_input": {
+        "all": {
+          "pixels": 32736,
+          "rmse_dn": 17.355486104357176,
+          "highpass_rmse_dn": 15.255633992242425,
+          "highpass_pixels": 30512,
+          "gradient_rmse_dn": 22.772119974231682,
+          "temporal_difference_error_rmse_dn": 21.90614303218346,
+          "channel_bias_dn": {
+            "R": -1.3873322758157232,
+            "Gr": -3.3306455397769037,
+            "Gb": -3.0821896046837054,
+            "B": -3.605180940786531
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0010538856304985337,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": {
+          "pixels": 11744,
+          "rmse_dn": 19.818786251194506,
+          "highpass_rmse_dn": 18.025559209047614,
+          "highpass_pixels": 10320,
+          "gradient_rmse_dn": 27.02093032736361,
+          "temporal_difference_error_rmse_dn": 26.83543431110123,
+          "channel_bias_dn": {
+            "R": -1.5543963071111113,
+            "Gr": -4.708144554325281,
+            "Gb": -4.45778332224334,
+            "B": -5.555803233986005
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0008727861035422343,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "static": {
+          "pixels": 20992,
+          "rmse_dn": 15.81085613753381,
+          "highpass_rmse_dn": 13.582695785284564,
+          "highpass_pixels": 17696,
+          "gradient_rmse_dn": 20.0402706237453,
+          "temporal_difference_error_rmse_dn": 18.596526652278254,
+          "channel_bias_dn": {
+            "R": -1.293868099770895,
+            "Gr": -2.5600020362109674,
+            "Gb": -2.312612021841654,
+            "B": -2.513902920048411
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.001155201981707317,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        }
+      },
+      "unaligned_temporal_mean_raw_input": {
+        "all": {
+          "pixels": 32736,
+          "rmse_dn": 105.10727850158142,
+          "highpass_rmse_dn": 66.79778685852983,
+          "highpass_pixels": 30512,
+          "gradient_rmse_dn": 92.89153327727877,
+          "temporal_difference_error_rmse_dn": 131.0794671128039,
+          "channel_bias_dn": {
+            "R": -1.046213171465772,
+            "Gr": -2.760252852826757,
+            "Gb": -2.5263947610864426,
+            "B": -3.463796073973237
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": {
+          "pixels": 11744,
+          "rmse_dn": 174.97850817820753,
+          "highpass_rmse_dn": 108.36157642489954,
+          "highpass_pixels": 10320,
+          "gradient_rmse_dn": 150.89433761215804,
+          "temporal_difference_error_rmse_dn": 219.03805397072517,
+          "channel_bias_dn": {
+            "R": -0.585561157247351,
+            "Gr": -3.11819436699558,
+            "Gb": -2.9085241260580537,
+            "B": -5.1616977333048055
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "static": {
+          "pixels": 20992,
+          "rmse_dn": 9.955607935502888,
+          "highpass_rmse_dn": 6.889796255980318,
+          "highpass_pixels": 17696,
+          "gradient_rmse_dn": 9.908286573959472,
+          "temporal_difference_error_rmse_dn": 0.0,
+          "channel_bias_dn": {
+            "R": -1.3039255025910168,
+            "Gr": -2.5600020362109674,
+            "Gb": -2.312612021841654,
+            "B": -2.513902920048411
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        }
+      },
+      "unaligned_temporal_mean_model_input": {
+        "all": {
+          "pixels": 32736,
+          "rmse_dn": 105.10720702236551,
+          "highpass_rmse_dn": 66.79773175091623,
+          "highpass_pixels": 30512,
+          "gradient_rmse_dn": 92.89143229909294,
+          "temporal_difference_error_rmse_dn": 131.0794671128039,
+          "channel_bias_dn": {
+            "R": -1.0377439021598092,
+            "Gr": -2.760252852826757,
+            "Gb": -2.5263947610864426,
+            "B": -3.463796073973237
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": {
+          "pixels": 11744,
+          "rmse_dn": 174.97847448326362,
+          "highpass_rmse_dn": 108.36155614698144,
+          "highpass_pixels": 10320,
+          "gradient_rmse_dn": 150.89429761968543,
+          "temporal_difference_error_rmse_dn": 219.03805397072517,
+          "channel_bias_dn": {
+            "R": -0.5799306225062066,
+            "Gr": -3.11819436699558,
+            "Gb": -2.9085241260580537,
+            "B": -5.1616977333048055
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "static": {
+          "pixels": 20992,
+          "rmse_dn": 9.954762379369742,
+          "highpass_rmse_dn": 6.889270573424147,
+          "highpass_pixels": 17696,
+          "gradient_rmse_dn": 9.90719893742143,
+          "temporal_difference_error_rmse_dn": 0.0,
+          "channel_bias_dn": {
+            "R": -1.293868099770895,
+            "Gr": -2.5600020362109674,
+            "Gb": -2.312612021841654,
+            "B": -2.513902920048411
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        }
+      },
+      "shared512_model": {
+        "all": {
+          "pixels": 32736,
+          "rmse_dn": 40.85963527108541,
+          "highpass_rmse_dn": 31.86908245207394,
+          "highpass_pixels": 30512,
+          "gradient_rmse_dn": 45.61008337811093,
+          "temporal_difference_error_rmse_dn": 54.93151770948417,
+          "channel_bias_dn": {
+            "R": -5.391915998151226,
+            "Gr": -11.273940370695799,
+            "Gb": -10.48288346548817,
+            "B": -7.752974225861819
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 3.0547409579667644e-05,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": {
+          "pixels": 11744,
+          "rmse_dn": 66.47013385186652,
+          "highpass_rmse_dn": 49.63233117291604,
+          "highpass_pixels": 10320,
+          "gradient_rmse_dn": 73.29739625793931,
+          "temporal_difference_error_rmse_dn": 91.68430818512753,
+          "channel_bias_dn": {
+            "R": -11.166014455644572,
+            "Gr": -22.610694448694545,
+            "Gb": -24.311639845533655,
+            "B": -14.574661140545837
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "static": {
+          "pixels": 20992,
+          "rmse_dn": 11.476396705256533,
+          "highpass_rmse_dn": 7.883810436196672,
+          "highpass_pixels": 17696,
+          "gradient_rmse_dn": 10.635682978748852,
+          "temporal_difference_error_rmse_dn": 3.3256870364334628,
+          "channel_bias_dn": {
+            "R": -2.1615895745230884,
+            "Gr": -4.9315794764495475,
+            "Gb": -2.7463688443346723,
+            "B": -3.936573162311461
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 4.763719512195122e-05,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        }
+      }
+    },
+    {
+      "name": "dark__moving_patch__gain_12800",
+      "mode": "moving_patch",
+      "gain": "12800",
+      "prediction": {
+        "file": "dark__moving_patch__gain_12800__shared512_model_dn.npy",
+        "sha256": "ac322728e7aaab2a97d90afa2ad7119780370e7ac67ffa9edcfadaef81cfb726"
+      },
+      "raw_input": {
+        "all": {
+          "pixels": 32736,
+          "rmse_dn": 69.98112978151688,
+          "highpass_rmse_dn": 66.1275985426218,
+          "highpass_pixels": 30512,
+          "gradient_rmse_dn": 98.894422308455,
+          "temporal_difference_error_rmse_dn": 98.61305532693805,
+          "channel_bias_dn": {
+            "R": -1.2281268139388903,
+            "Gr": -3.0580404566879498,
+            "Gb": -3.4410911198352205,
+            "B": -3.3007760043251433
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.00029020039100684263,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.03761149804496579,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": {
+          "pixels": 11744,
+          "rmse_dn": 87.19008667198321,
+          "highpass_rmse_dn": 82.60538407135965,
+          "highpass_pixels": 10320,
+          "gradient_rmse_dn": 123.67594351800187,
+          "temporal_difference_error_rmse_dn": 123.59496619726886,
+          "channel_bias_dn": {
+            "R": -1.0635179862664246,
+            "Gr": -4.088679295469695,
+            "Gb": -5.590446809981759,
+            "B": -4.885418356601809
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.00027673705722070847,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.023990974114441416,
+            "above_white_fraction": 0.0
+          }
+        },
+        "static": {
+          "pixels": 20992,
+          "rmse_dn": 58.173716878928936,
+          "highpass_rmse_dn": 55.25231795353545,
+          "highpass_pixels": 17696,
+          "gradient_rmse_dn": 81.95022548495587,
+          "temporal_difference_error_rmse_dn": 81.40873339738633,
+          "channel_bias_dn": {
+            "R": -1.3202174233227242,
+            "Gr": -2.48144830145487,
+            "Gb": -2.238631457817264,
+            "B": -2.414245907853289
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0002977324695121951,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.045231516768292686,
+            "above_white_fraction": 0.0
+          }
+        }
+      },
+      "model_input": {
+        "all": {
+          "pixels": 32736,
+          "rmse_dn": 69.36035336450827,
+          "highpass_rmse_dn": 65.55585527602285,
+          "highpass_pixels": 30512,
+          "gradient_rmse_dn": 98.0340044102866,
+          "temporal_difference_error_rmse_dn": 97.75666839699684,
+          "channel_bias_dn": {
+            "R": 0.1747247867453716,
+            "Gr": -2.8248797162187413,
+            "Gb": -3.2026418590825325,
+            "B": -2.7883737560357984
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.03790169843597263,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": {
+          "pixels": 11744,
+          "rmse_dn": 86.86898014819391,
+          "highpass_rmse_dn": 82.32365375388007,
+          "highpass_pixels": 10320,
+          "gradient_rmse_dn": 123.24699563839653,
+          "temporal_difference_error_rmse_dn": 123.16004587262658,
+          "channel_bias_dn": {
+            "R": -0.31974457005389056,
+            "Gr": -3.9750361585487135,
+            "Gb": -5.40309582224334,
+            "B": -4.429611135893362
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.024267711171662126,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "static": {
+          "pixels": 20992,
+          "rmse_dn": 57.27615140254509,
+          "highpass_rmse_dn": 54.422104107587444,
+          "highpass_pixels": 17696,
+          "gradient_rmse_dn": 80.69013347454649,
+          "temporal_difference_error_rmse_dn": 80.15774280260659,
+          "channel_bias_dn": {
+            "R": 0.4513562714181295,
+            "Gr": -2.181423291927431,
+            "Gb": -1.9715952059117758,
+            "B": -1.8701815023654844
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.04552924923780488,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        }
+      },
+      "unaligned_temporal_mean_raw_input": {
+        "all": {
+          "pixels": 32736,
+          "rmse_dn": 107.7951809499959,
+          "highpass_rmse_dn": 70.55474199433289,
+          "highpass_pixels": 30512,
+          "gradient_rmse_dn": 98.96155556688508,
+          "temporal_difference_error_rmse_dn": 131.0794671128039,
+          "channel_bias_dn": {
+            "R": -0.8525120473210995,
+            "Gr": -2.488980400480716,
+            "Gb": -2.846795084888984,
+            "B": -3.151128063220549
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.00012218963831867058,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.001710654936461388,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": {
+          "pixels": 11744,
+          "rmse_dn": 177.53683963010025,
+          "highpass_rmse_dn": 112.02063822071003,
+          "highpass_pixels": 10320,
+          "gradient_rmse_dn": 156.87390477400626,
+          "temporal_difference_error_rmse_dn": 219.03805397072517,
+          "channel_bias_dn": {
+            "R": -0.016504617737814257,
+            "Gr": -2.5024437709465337,
+            "Gb": -3.9338668542596884,
+            "B": -4.468279817773471
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "static": {
+          "pixels": 20992,
+          "rmse_dn": 22.067750466468272,
+          "highpass_rmse_dn": 20.248830106430123,
+          "highpass_pixels": 17696,
+          "gradient_rmse_dn": 29.815597987114707,
+          "temporal_difference_error_rmse_dn": 0.0,
+          "channel_bias_dn": {
+            "R": -1.3202174233227242,
+            "Gr": -2.48144830145487,
+            "Gb": -2.238631457817264,
+            "B": -2.414245907853289
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.00019054878048780488,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0026676829268292685,
+            "above_white_fraction": 0.0
+          }
+        }
+      },
+      "unaligned_temporal_mean_model_input": {
+        "all": {
+          "pixels": 32736,
+          "rmse_dn": 107.73782618661836,
+          "highpass_rmse_dn": 70.48216378509078,
+          "highpass_pixels": 30512,
+          "gradient_rmse_dn": 98.84698183922137,
+          "temporal_difference_error_rmse_dn": 131.0794671128039,
+          "channel_bias_dn": {
+            "R": 0.5503390760598877,
+            "Gr": -2.255819660011508,
+            "Gb": -2.608345824136296,
+            "B": -2.638985467912631
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": {
+          "pixels": 11744,
+          "rmse_dn": 177.51038883075958,
+          "highpass_rmse_dn": 111.99030508228554,
+          "highpass_pixels": 10320,
+          "gradient_rmse_dn": 156.82620840831336,
+          "temporal_difference_error_rmse_dn": 219.03805397072517,
+          "channel_bias_dn": {
+            "R": 0.7272674680080986,
+            "Gr": -2.3888006340255528,
+            "Gb": -3.746515866521269,
+            "B": -4.013196370906986
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "static": {
+          "pixels": 20992,
+          "rmse_dn": 21.747686812637998,
+          "highpass_rmse_dn": 19.95000662440755,
+          "highpass_pixels": 17696,
+          "gradient_rmse_dn": 29.362032169847495,
+          "temporal_difference_error_rmse_dn": 0.0,
+          "channel_bias_dn": {
+            "R": 0.4513562714181295,
+            "Gr": -2.181423291927431,
+            "Gb": -1.9715952059117758,
+            "B": -1.8701815023654844
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 0.0,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        }
+      },
+      "shared512_model": {
+        "all": {
+          "pixels": 32736,
+          "rmse_dn": 58.3883603992553,
+          "highpass_rmse_dn": 44.81932515286037,
+          "highpass_pixels": 30512,
+          "gradient_rmse_dn": 63.32782518768996,
+          "temporal_difference_error_rmse_dn": 77.81101337783375,
+          "channel_bias_dn": {
+            "R": -6.361420676155873,
+            "Gr": -13.864771440231905,
+            "Gb": -13.519905261862895,
+            "B": -9.162004568709657
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 6.87316715542522e-05,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "motion_swept": {
+          "pixels": 11744,
+          "rmse_dn": 94.70640607998185,
+          "highpass_rmse_dn": 69.02078273238399,
+          "highpass_pixels": 10320,
+          "gradient_rmse_dn": 100.77714120291175,
+          "temporal_difference_error_rmse_dn": 129.76988461357854,
+          "channel_bias_dn": {
+            "R": -14.632111879395529,
+            "Gr": -31.22527443940373,
+            "Gb": -34.58090325077483,
+            "B": -17.393203088308226
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 8.514986376021798e-05,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        },
+        "static": {
+          "pixels": 20992,
+          "rmse_dn": 17.279883721040257,
+          "highpass_rmse_dn": 14.310958190777484,
+          "highpass_pixels": 17696,
+          "gradient_rmse_dn": 17.867526253584856,
+          "temporal_difference_error_rmse_dn": 6.077796692579949,
+          "channel_bias_dn": {
+            "R": -1.7343723962946636,
+            "Gr": -4.152416866000106,
+            "Gb": -1.7373042528222247,
+            "B": -4.557050518873261
+          },
+          "storage_code_endpoints": {
+            "zero_fraction": 0.0,
+            "white_fraction": 0.0,
+            "outside_12bit_range_fraction": 0.0
+          },
+          "normalized_domain_limits": {
+            "black_endpoint_fraction": 5.954649390243902e-05,
+            "white_endpoint_fraction": 0.0,
+            "below_black_fraction": 0.0,
+            "above_white_fraction": 0.0
+          }
+        }
+      }
+    }
+  ]
+}

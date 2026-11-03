@@ -1,0 +1,9 @@
+{
+  "overall_pass": false,
+  "training_ready": false,
+  "admission_status": "automatic_checks_failed",
+  "clips_passed": 30,
+  "clips_total": 30,
+  "inventory_passed": false,
+  "report": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/alias_cli_validation.json"
+}

@@ -1,0 +1,19 @@
+/home/jingzeliang/miniconda3/envs/aaa_312/lib/python3.12/site-packages/torch/functional.py:534: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at ../aten/src/ATen/native/TensorShape.cpp:3595.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+/home/jingzeliang/miniconda3/envs/aaa_312/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py:632: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+/home/jingzeliang/miniconda3/envs/aaa_312/lib/python3.12/site-packages/torch/utils/checkpoint.py:87: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn(
+[a12-eval] a3_ema native frames 0..7
+[a12-eval] a3_ema native frames 96..103
+[a12-eval] a3_ema native frames 192..199
+{
+  "status": "evaluation_completed",
+  "phase": "all",
+  "oom_policy": "stop_without_retry",
+  "outputs": {
+    "probes": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_eval_a3_20261030/probes/evaluation.json",
+    "native": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_eval_a3_20261030/native/evaluation.json"
+  },
+  "elapsed_seconds": 209.03272477304563
+}

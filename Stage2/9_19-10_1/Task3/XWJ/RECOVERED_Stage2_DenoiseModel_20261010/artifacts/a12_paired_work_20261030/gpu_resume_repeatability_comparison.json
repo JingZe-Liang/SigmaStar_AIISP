@@ -1,0 +1,91 @@
+{
+  "strict_original_verification": "failed_preserved",
+  "restored_start_exact": {
+    "model": true,
+    "ema": true,
+    "optimizer": true,
+    "rng": true
+  },
+  "fresh_repeat_initial_state_exact": true,
+  "continuous_vs_resumed": {
+    "model_parameters": {
+      "parameter_elements": 7505716,
+      "exact": false,
+      "within_original_tolerance": false,
+      "max_abs": 1.6177073121070862e-06,
+      "worst_tensor": "stage1.residual_group1.blocks.1.attn.hi_qkv_self.weight",
+      "relative_l2": 2.8549527506032133e-08,
+      "absolute_l2": 8.972553879298496e-06
+    },
+    "ema_parameters": {
+      "parameter_elements": 7505716,
+      "exact": false,
+      "within_original_tolerance": true,
+      "max_abs": 2.9802322387695312e-08,
+      "worst_tensor": "stage1.residual_group1.blocks.2.attn.hi_qkv_self.weight",
+      "relative_l2": 5.123487514354557e-10,
+      "absolute_l2": 1.6102113394242456e-07
+    },
+    "adam_exp_avg": {
+      "parameter_elements": 7505716,
+      "exact": false,
+      "within_original_tolerance": false,
+      "max_abs": 1.4435499906539917e-07,
+      "worst_tensor": "1204",
+      "relative_l2": 2.740803340256668e-05,
+      "absolute_l2": 7.404638084176432e-07
+    },
+    "adam_exp_avg_sq": {
+      "parameter_elements": 7505716,
+      "exact": false,
+      "within_original_tolerance": true,
+      "max_abs": 5.820766091346741e-11,
+      "worst_tensor": "1207",
+      "relative_l2": 1.590371011281591e-06,
+      "absolute_l2": 9.154482830208973e-11
+    },
+    "rng_exact": true,
+    "step2_loss_abs_delta": 2.3283064365386963e-09
+  },
+  "continuous_vs_repeat": {
+    "model_parameters": {
+      "parameter_elements": 7505716,
+      "exact": false,
+      "within_original_tolerance": false,
+      "max_abs": 1.341104507446289e-06,
+      "worst_tensor": "stage1.conv1.weight",
+      "relative_l2": 2.5587004248393564e-08,
+      "absolute_l2": 8.041491200862902e-06
+    },
+    "ema_parameters": {
+      "parameter_elements": 7505716,
+      "exact": false,
+      "within_original_tolerance": true,
+      "max_abs": 2.9802322387695312e-08,
+      "worst_tensor": "stage1.residual_group1.blocks.2.attn.g_kv_self.weight",
+      "relative_l2": 5.309492998971124e-10,
+      "absolute_l2": 1.6686692042449486e-07
+    },
+    "adam_exp_avg": {
+      "parameter_elements": 7505716,
+      "exact": false,
+      "within_original_tolerance": false,
+      "max_abs": 7.776543498039246e-08,
+      "worst_tensor": "1204",
+      "relative_l2": 2.4457359766719128e-05,
+      "absolute_l2": 6.607475075176084e-07
+    },
+    "adam_exp_avg_sq": {
+      "parameter_elements": 7505716,
+      "exact": false,
+      "within_original_tolerance": true,
+      "max_abs": 1.0550138540565968e-10,
+      "worst_tensor": "1207",
+      "relative_l2": 2.182608415317595e-06,
+      "absolute_l2": 1.2563515759126698e-10
+    },
+    "rng_exact": true,
+    "step2_loss_abs_delta": 2.7939677238464355e-09
+  },
+  "limitation": "Matching restored state is distinct from bitwise deterministic GPU training; original strict end-to-end comparison did not pass."
+}

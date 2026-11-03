@@ -1,0 +1,9 @@
+[a12 paired audit] 128/1024 indices read for both modes
+[a12 paired audit] 256/1024 indices read for both modes
+[a12 paired audit] 384/1024 indices read for both modes
+[a12 paired audit] 512/1024 indices read for both modes
+[a12 paired audit] 640/1024 indices read for both modes
+[a12 paired audit] 768/1024 indices read for both modes
+[a12 paired audit] 896/1024 indices read for both modes
+[a12 paired audit] 1024/1024 indices read for both modes
+{"status": "failed", "report": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_audit_20261030/audit.json", "elapsed_seconds": 119.95552816195413}

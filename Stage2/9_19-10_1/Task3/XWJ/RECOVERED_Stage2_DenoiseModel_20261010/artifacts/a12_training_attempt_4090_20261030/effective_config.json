@@ -1,0 +1,23 @@
+{
+  "dataset_root": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset",
+  "supervision_dir": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision",
+  "noise_dir": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/noise_model",
+  "output_dir": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_sampling_pilot_4090_20261030",
+  "checkpoint": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/training/checkpoint_step_005000.pth",
+  "seed": 20260921,
+  "steps": 200,
+  "temporal_frames": 8,
+  "patch_size": 64,
+  "batch_size": 1,
+  "learning_rate": 1e-05,
+  "real_fraction": 0.5,
+  "holdout_gain": "1000x",
+  "gradient_weight": 0.1,
+  "highpass_weight": 0.1,
+  "device": "cuda:0",
+  "synthetic_temporal_variants": 8,
+  "resume_checkpoint": null,
+  "samples_per_epoch": 512,
+  "checkpoint_interval": 50,
+  "expected_checkpoint_sha256": "97c4332f685f98959b243e4b100434469f714aed6329e100d22b6d8552592e0b"
+}

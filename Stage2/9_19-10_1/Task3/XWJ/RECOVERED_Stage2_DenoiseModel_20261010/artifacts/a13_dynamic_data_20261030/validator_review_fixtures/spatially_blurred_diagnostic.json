@@ -1,0 +1,34 @@
+{
+  "clip_id": "clip0",
+  "scene_id": "s0",
+  "split": "train",
+  "motion_type": "depth_walk",
+  "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a13_dynamic_data_20261030/validator_review_fixtures/spatially_blurred.raw",
+  "passed": true,
+  "checks": {
+    "minimum_frames": true,
+    "high12_alignment": true,
+    "target_noise": true,
+    "background_cv": true,
+    "background_max_deviation": true,
+    "saturation": true,
+    "active_motion": true,
+    "motion_area_lower_bound": true,
+    "motion_area_upper_bound": true
+  },
+  "failures": [],
+  "warnings": [],
+  "metrics": {
+    "frames": 160,
+    "sampled_adjacent_pairs": 24,
+    "high12_alignment_fraction": 1.0,
+    "target_noise_dn": 0.3342524963061433,
+    "background_level_dn": 520.0,
+    "background_cv": 5.440720579853612e-06,
+    "background_max_deviation": 3.0048076923076925e-05,
+    "saturation_fraction": 0.0,
+    "active_pair_fraction": 1.0,
+    "mean_motion_fraction": 0.13107638888888887,
+    "detail_energy_dn": 0.0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "status": "existing_source_not_new_independent_dynamic_pilot",
+  "training_ready": false,
+  "raw_file_count": 849,
+  "metrics": {
+    "frames": 200,
+    "sampled_adjacent_pairs": 24,
+    "sampled_unique_frames": 48,
+    "high12_alignment_fraction": 1.0,
+    "quiet_pair_noise_dn": 12.605167645478456,
+    "saturation_fraction": 0.0032080078125,
+    "background_cv": 0.008201708909011379,
+    "background_max_deviation": 0.011582835376414071,
+    "active_pair_fraction": 1.0,
+    "mean_motion_fraction": 0.04820730452674896
+  },
+  "signal_screen_checks": {
+    "minimum_frames": true,
+    "sampled_high12_alignment": true,
+    "quiet_pair_noise": false,
+    "saturation": true,
+    "background_cv": true,
+    "background_max_deviation": true,
+    "active_motion": true,
+    "motion_area_lower_bound": true,
+    "motion_area_upper_bound": true
+  }
+}

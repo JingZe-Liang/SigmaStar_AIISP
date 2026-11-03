@@ -1,0 +1,29 @@
+[
+  {
+    "sample_index": 590,
+    "gain": "645x",
+    "reference_valid_fraction": 0.016357421875,
+    "unsaturated_fraction": 0.0,
+    "static_all8_fraction": 0.0,
+    "after_reference_and_saturation_fraction": 0.0,
+    "final_valid_fraction": 0.0
+  },
+  {
+    "sample_index": 808,
+    "gain": "128x",
+    "reference_valid_fraction": 1.0,
+    "unsaturated_fraction": 1.0,
+    "static_all8_fraction": 0.0,
+    "after_reference_and_saturation_fraction": 1.0,
+    "final_valid_fraction": 0.0
+  },
+  {
+    "sample_index": 814,
+    "gain": "645x",
+    "reference_valid_fraction": 0.0,
+    "unsaturated_fraction": 0.999267578125,
+    "static_all8_fraction": 0.948486328125,
+    "after_reference_and_saturation_fraction": 0.0,
+    "final_valid_fraction": 0.0
+  }
+]

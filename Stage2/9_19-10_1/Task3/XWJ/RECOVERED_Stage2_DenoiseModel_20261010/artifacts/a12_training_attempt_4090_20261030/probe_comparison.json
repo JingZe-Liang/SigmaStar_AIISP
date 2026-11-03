@@ -1,0 +1,271 @@
+{
+  "baseline": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_dynamic_probe_20261029/a3_baseline_rescored/evaluation.json",
+  "candidate": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_dynamic_probe_20261029/a12_step200_4090_20261030/evaluation.json",
+  "scope": "MIS20S1 A3 training-reference-derived constructed targets; development diagnostic, not independent real dynamic or cross-sensor validation",
+  "cases": [
+    {
+      "name": "detail__static__gain_800",
+      "region": "all",
+      "a3": {
+        "rmse_dn": 25.03195517548456,
+        "highpass_rmse_dn": 14.389019258742472,
+        "gradient_rmse_dn": 21.16989116922266,
+        "temporal_difference_error_rmse_dn": 4.280007276624575
+      },
+      "a12": {
+        "rmse_dn": 24.700111065468523,
+        "highpass_rmse_dn": 13.966636216973109,
+        "gradient_rmse_dn": 20.59178371568072,
+        "temporal_difference_error_rmse_dn": 4.296020050317042
+      },
+      "delta_a12_minus_a3": {
+        "rmse_dn": -0.33184411001603564,
+        "highpass_rmse_dn": -0.42238304176936303,
+        "gradient_rmse_dn": -0.5781074535419393,
+        "temporal_difference_error_rmse_dn": 0.016012773692466453
+      }
+    },
+    {
+      "name": "detail__static__gain_12800",
+      "region": "all",
+      "a3": {
+        "rmse_dn": 38.99129441518401,
+        "highpass_rmse_dn": 30.377204096272276,
+        "gradient_rmse_dn": 44.71927348996419,
+        "temporal_difference_error_rmse_dn": 11.202766704358428
+      },
+      "a12": {
+        "rmse_dn": 38.765904800910334,
+        "highpass_rmse_dn": 30.160243804792934,
+        "gradient_rmse_dn": 44.424448773641814,
+        "temporal_difference_error_rmse_dn": 11.229348123470118
+      },
+      "delta_a12_minus_a3": {
+        "rmse_dn": -0.22538961427367354,
+        "highpass_rmse_dn": -0.21696029147934226,
+        "gradient_rmse_dn": -0.29482471632237406,
+        "temporal_difference_error_rmse_dn": 0.02658141911168954
+      }
+    },
+    {
+      "name": "detail__global_translation__gain_800",
+      "region": "motion_swept",
+      "a3": {
+        "rmse_dn": 69.49390290745166,
+        "highpass_rmse_dn": 60.22084187806236,
+        "gradient_rmse_dn": 90.02512760343396,
+        "temporal_difference_error_rmse_dn": 102.48971919964899
+      },
+      "a12": {
+        "rmse_dn": 69.34865002971537,
+        "highpass_rmse_dn": 60.04804425179882,
+        "gradient_rmse_dn": 89.79506425520428,
+        "temporal_difference_error_rmse_dn": 102.31313624392008
+      },
+      "delta_a12_minus_a3": {
+        "rmse_dn": -0.14525287773628293,
+        "highpass_rmse_dn": -0.172797626263538,
+        "gradient_rmse_dn": -0.23006334822967744,
+        "temporal_difference_error_rmse_dn": -0.1765829557289038
+      }
+    },
+    {
+      "name": "detail__global_translation__gain_12800",
+      "region": "motion_swept",
+      "a3": {
+        "rmse_dn": 89.95217141812678,
+        "highpass_rmse_dn": 73.02967945235024,
+        "gradient_rmse_dn": 109.08162856858517,
+        "temporal_difference_error_rmse_dn": 130.41808765164387
+      },
+      "a12": {
+        "rmse_dn": 90.16691870517383,
+        "highpass_rmse_dn": 73.07537072513172,
+        "gradient_rmse_dn": 109.18329238863281,
+        "temporal_difference_error_rmse_dn": 130.7191919853988
+      },
+      "delta_a12_minus_a3": {
+        "rmse_dn": 0.2147472870470466,
+        "highpass_rmse_dn": 0.04569127278148244,
+        "gradient_rmse_dn": 0.10166382004763364,
+        "temporal_difference_error_rmse_dn": 0.30110433375492107
+      }
+    },
+    {
+      "name": "detail__moving_patch__gain_800",
+      "region": "motion_swept",
+      "a3": {
+        "rmse_dn": 72.63880820358784,
+        "highpass_rmse_dn": 54.69122253374823,
+        "gradient_rmse_dn": 81.79372916377311,
+        "temporal_difference_error_rmse_dn": 101.15202313537938
+      },
+      "a12": {
+        "rmse_dn": 72.91262527688139,
+        "highpass_rmse_dn": 54.617925496388196,
+        "gradient_rmse_dn": 81.70577513211325,
+        "temporal_difference_error_rmse_dn": 101.36482563724964
+      },
+      "delta_a12_minus_a3": {
+        "rmse_dn": 0.273817073293543,
+        "highpass_rmse_dn": -0.07329703736003523,
+        "gradient_rmse_dn": -0.08795403165986215,
+        "temporal_difference_error_rmse_dn": 0.2128025018702573
+      }
+    },
+    {
+      "name": "detail__moving_patch__gain_12800",
+      "region": "motion_swept",
+      "a3": {
+        "rmse_dn": 97.0397644680949,
+        "highpass_rmse_dn": 74.84953894698157,
+        "gradient_rmse_dn": 109.48255316488535,
+        "temporal_difference_error_rmse_dn": 133.71871993312033
+      },
+      "a12": {
+        "rmse_dn": 97.66656638153222,
+        "highpass_rmse_dn": 74.94151972847062,
+        "gradient_rmse_dn": 109.65768214362842,
+        "temporal_difference_error_rmse_dn": 134.3779532777005
+      },
+      "delta_a12_minus_a3": {
+        "rmse_dn": 0.6268019134373191,
+        "highpass_rmse_dn": 0.09198078148905608,
+        "gradient_rmse_dn": 0.17512897874307498,
+        "temporal_difference_error_rmse_dn": 0.6592333445801728
+      }
+    },
+    {
+      "name": "dark__static__gain_800",
+      "region": "all",
+      "a3": {
+        "rmse_dn": 11.280207811654117,
+        "highpass_rmse_dn": 8.951964297556506,
+        "gradient_rmse_dn": 11.173781739618075,
+        "temporal_difference_error_rmse_dn": 1.7440607654909566
+      },
+      "a12": {
+        "rmse_dn": 11.028732778959982,
+        "highpass_rmse_dn": 8.484645602888282,
+        "gradient_rmse_dn": 10.684416090653475,
+        "temporal_difference_error_rmse_dn": 1.760745975300249
+      },
+      "delta_a12_minus_a3": {
+        "rmse_dn": -0.2514750326941346,
+        "highpass_rmse_dn": -0.46731869466822396,
+        "gradient_rmse_dn": -0.48936564896460055,
+        "temporal_difference_error_rmse_dn": 0.016685209809292445
+      }
+    },
+    {
+      "name": "dark__static__gain_12800",
+      "region": "all",
+      "a3": {
+        "rmse_dn": 15.063483456845727,
+        "highpass_rmse_dn": 13.10264494615839,
+        "gradient_rmse_dn": 16.07791092443264,
+        "temporal_difference_error_rmse_dn": 4.5037116218235695
+      },
+      "a12": {
+        "rmse_dn": 14.822937486415999,
+        "highpass_rmse_dn": 12.678504476561086,
+        "gradient_rmse_dn": 15.63094402504549,
+        "temporal_difference_error_rmse_dn": 4.5002811657936554
+      },
+      "delta_a12_minus_a3": {
+        "rmse_dn": -0.24054597042972858,
+        "highpass_rmse_dn": -0.42414046959730456,
+        "gradient_rmse_dn": -0.4469668993871494,
+        "temporal_difference_error_rmse_dn": -0.0034304560299140974
+      }
+    },
+    {
+      "name": "dark__global_translation__gain_800",
+      "region": "motion_swept",
+      "a3": {
+        "rmse_dn": 15.526068977079134,
+        "highpass_rmse_dn": 13.439792644808378,
+        "gradient_rmse_dn": 17.51925870731733,
+        "temporal_difference_error_rmse_dn": 17.33100020860622
+      },
+      "a12": {
+        "rmse_dn": 15.320326209619195,
+        "highpass_rmse_dn": 13.102602760871083,
+        "gradient_rmse_dn": 17.178887214695855,
+        "temporal_difference_error_rmse_dn": 17.286939341969713
+      },
+      "delta_a12_minus_a3": {
+        "rmse_dn": -0.2057427674599399,
+        "highpass_rmse_dn": -0.3371898839372953,
+        "gradient_rmse_dn": -0.34037149262147537,
+        "temporal_difference_error_rmse_dn": -0.044060866636506546
+      }
+    },
+    {
+      "name": "dark__global_translation__gain_12800",
+      "region": "motion_swept",
+      "a3": {
+        "rmse_dn": 19.983139414402668,
+        "highpass_rmse_dn": 17.558171930269108,
+        "gradient_rmse_dn": 22.406115522414392,
+        "temporal_difference_error_rmse_dn": 21.034325071034395
+      },
+      "a12": {
+        "rmse_dn": 19.844006190186153,
+        "highpass_rmse_dn": 17.26787017607127,
+        "gradient_rmse_dn": 22.12299376335446,
+        "temporal_difference_error_rmse_dn": 21.07639181332504
+      },
+      "delta_a12_minus_a3": {
+        "rmse_dn": -0.13913322421651486,
+        "highpass_rmse_dn": -0.2903017541978379,
+        "gradient_rmse_dn": -0.28312175905993087,
+        "temporal_difference_error_rmse_dn": 0.04206674229064333
+      }
+    },
+    {
+      "name": "dark__moving_patch__gain_800",
+      "region": "motion_swept",
+      "a3": {
+        "rmse_dn": 60.2114573682164,
+        "highpass_rmse_dn": 48.689425975457944,
+        "gradient_rmse_dn": 71.92843309902047,
+        "temporal_difference_error_rmse_dn": 87.66573779354779
+      },
+      "a12": {
+        "rmse_dn": 60.41111974001135,
+        "highpass_rmse_dn": 48.65637238163537,
+        "gradient_rmse_dn": 71.88195341050609,
+        "temporal_difference_error_rmse_dn": 87.79557750693935
+      },
+      "delta_a12_minus_a3": {
+        "rmse_dn": 0.1996623717949504,
+        "highpass_rmse_dn": -0.033053593822572225,
+        "gradient_rmse_dn": -0.04647968851438122,
+        "temporal_difference_error_rmse_dn": 0.12983971339156142
+      }
+    },
+    {
+      "name": "dark__moving_patch__gain_12800",
+      "region": "motion_swept",
+      "a3": {
+        "rmse_dn": 84.35489025653867,
+        "highpass_rmse_dn": 66.47134038231341,
+        "gradient_rmse_dn": 96.70995240267345,
+        "temporal_difference_error_rmse_dn": 120.96364276424066
+      },
+      "a12": {
+        "rmse_dn": 85.02651785345105,
+        "highpass_rmse_dn": 66.61408009075174,
+        "gradient_rmse_dn": 96.95779912784162,
+        "temporal_difference_error_rmse_dn": 121.61710683546143
+      },
+      "delta_a12_minus_a3": {
+        "rmse_dn": 0.671627596912387,
+        "highpass_rmse_dn": 0.14273970843832728,
+        "gradient_rmse_dn": 0.24784672516817352,
+        "temporal_difference_error_rmse_dn": 0.6534640712207676
+      }
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{"status": "running", "training_authorized": true, "oom_policy": "stop_without_retry", "config_path": "configs/a12_sampling_pilot_20261029.json", "overrides": {"device": "cuda:0", "output_dir": "artifacts/a12_sampling_pilot_4090_20261029"}, "device": "cuda:0", "gpu_name": "NVIDIA GeForce RTX 4090", "initial_free_bytes": 13487702016, "total_bytes": 25282281472, "output_dir": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_sampling_pilot_4090_20261029"}
+/home/jingzeliang/miniconda3/envs/aaa_312/lib/python3.12/site-packages/torch/functional.py:534: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at ../aten/src/ATen/native/TensorShape.cpp:3595.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+/home/jingzeliang/miniconda3/envs/aaa_312/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py:632: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+Traceback (most recent call last):
+  File "<stdin>", line 33, in <module>
+  File "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/src/raw_fusion/finetune/a12_train.py", line 225, in train_a12
+    prediction = model(inputs).clamp(0.0, 1.0)
+                 ^^^^^^^^^^^^^
+  File "/home/jingzeliang/miniconda3/envs/aaa_312/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jingzeliang/miniconda3/envs/aaa_312/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/src/raw_fusion/finetune/rvideformer_arch.py", line 986, in forward
+    self.forward_features(x).transpose(1, 4)).transpose(1, 4)
+    ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/src/raw_fusion/finetune/rvideformer_arch.py", line 1003, in forward_features
+    x = layer(x)
+        ^^^^^^^^
+  File "/home/jingzeliang/miniconda3/envs/aaa_312/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jingzeliang/miniconda3/envs/aaa_312/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/src/raw_fusion/finetune/rvideformer_arch.py", line 748, in forward
+    return x + self.conv(self.linear(self.residual_group(x).transpose(1, 4)).transpose(1, 4))
+                                     ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jingzeliang/miniconda3/envs/aaa_312/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jingzeliang/miniconda3/envs/aaa_312/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/src/raw_fusion/finetune/rvideformer_arch.py", line 702, in forward
+    x = blk(x, attn_mask)
+        ^^^^^^^^^^^^^^^^^
+  File "/home/jingzeliang/miniconda3/envs/aaa_312/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jingzeliang/miniconda3/envs/aaa_312/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/src/raw_fusion/finetune/rvideformer_arch.py", line 633, in forward
+    x = x + self.forward_part1(x, mask_matrix)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/src/raw_fusion/finetune/rvideformer_arch.py", line 599, in forward_part1
+    attn_windows = self.attn(x_windows, x_resize_windows, mask=attn_mask)  # B*nW, Wd*Wh*Ww, C
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jingzeliang/miniconda3/envs/aaa_312/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jingzeliang/miniconda3/envs/aaa_312/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/src/raw_fusion/finetune/rvideformer_arch.py", line 320, in forward
+    x_out_hi = self.hi_attention(hi_q, hi_k, hi_v, mask, (B_, N, self.hi_dim), relative_position_encoding=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/src/raw_fusion/finetune/rvideformer_arch.py", line 363, in hi_attention
+    attn = (q * self.scale) @ k.transpose(-2, -1)
+           ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 432.00 MiB. GPU 0 has a total capacity of 23.55 GiB of which 164.88 MiB is free. Process 959858 has 10.58 GiB memory in use. Including non-PyTorch memory, this process has 12.78 GiB memory in use. Of the allocated memory 11.92 GiB is allocated by PyTorch, and 414.53 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+{"status": "stopped_oom", "training_authorized": true, "oom_policy": "stop_without_retry", "config_path": "configs/a12_sampling_pilot_20261029.json", "overrides": {"device": "cuda:0", "output_dir": "artifacts/a12_sampling_pilot_4090_20261029"}, "device": "cuda:0", "gpu_name": "NVIDIA GeForce RTX 4090", "initial_free_bytes": 13487702016, "total_bytes": 25282281472, "output_dir": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_sampling_pilot_4090_20261029", "error_type": "OutOfMemoryError", "error": "CUDA out of memory. Tried to allocate 432.00 MiB. GPU 0 has a total capacity of 23.55 GiB of which 164.88 MiB is free. Process 959858 has 10.58 GiB memory in use. Including non-PyTorch memory, this process has 12.78 GiB memory in use. Of the allocated memory 11.92 GiB is allocated by PyTorch, and 414.53 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)", "elapsed_seconds": 4.1727200478781015, "peak_allocated_bytes": 12809733120, "peak_reserved_bytes": 13237223424}
+Traceback (most recent call last):
+  File "<stdin>", line 33, in <module>
+  File "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/src/raw_fusion/finetune/a12_train.py", line 225, in train_a12
+    prediction = model(inputs).clamp(0.0, 1.0)
+                 ^^^^^^^^^^^^^
+  File "/home/jingzeliang/miniconda3/envs/aaa_312/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jingzeliang/miniconda3/envs/aaa_312/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/src/raw_fusion/finetune/rvideformer_arch.py", line 986, in forward
+    self.forward_features(x).transpose(1, 4)).transpose(1, 4)
+    ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/src/raw_fusion/finetune/rvideformer_arch.py", line 1003, in forward_features
+    x = layer(x)
+        ^^^^^^^^
+  File "/home/jingzeliang/miniconda3/envs/aaa_312/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jingzeliang/miniconda3/envs/aaa_312/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/src/raw_fusion/finetune/rvideformer_arch.py", line 748, in forward
+    return x + self.conv(self.linear(self.residual_group(x).transpose(1, 4)).transpose(1, 4))
+                                     ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jingzeliang/miniconda3/envs/aaa_312/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jingzeliang/miniconda3/envs/aaa_312/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/src/raw_fusion/finetune/rvideformer_arch.py", line 702, in forward
+    x = blk(x, attn_mask)
+        ^^^^^^^^^^^^^^^^^
+  File "/home/jingzeliang/miniconda3/envs/aaa_312/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jingzeliang/miniconda3/envs/aaa_312/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/src/raw_fusion/finetune/rvideformer_arch.py", line 633, in forward
+    x = x + self.forward_part1(x, mask_matrix)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/src/raw_fusion/finetune/rvideformer_arch.py", line 599, in forward_part1
+    attn_windows = self.attn(x_windows, x_resize_windows, mask=attn_mask)  # B*nW, Wd*Wh*Ww, C
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jingzeliang/miniconda3/envs/aaa_312/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jingzeliang/miniconda3/envs/aaa_312/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/src/raw_fusion/finetune/rvideformer_arch.py", line 320, in forward
+    x_out_hi = self.hi_attention(hi_q, hi_k, hi_v, mask, (B_, N, self.hi_dim), relative_position_encoding=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/src/raw_fusion/finetune/rvideformer_arch.py", line 363, in hi_attention
+    attn = (q * self.scale) @ k.transpose(-2, -1)
+           ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 432.00 MiB. GPU 0 has a total capacity of 23.55 GiB of which 164.88 MiB is free. Process 959858 has 10.58 GiB memory in use. Including non-PyTorch memory, this process has 12.78 GiB memory in use. Of the allocated memory 11.92 GiB is allocated by PyTorch, and 414.53 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

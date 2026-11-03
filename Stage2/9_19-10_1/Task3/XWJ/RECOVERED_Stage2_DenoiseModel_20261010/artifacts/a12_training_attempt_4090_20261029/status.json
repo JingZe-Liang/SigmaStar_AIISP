@@ -1,0 +1,20 @@
+{
+  "status": "stopped_oom",
+  "training_authorized": true,
+  "oom_policy": "stop_without_retry",
+  "config_path": "configs/a12_sampling_pilot_20261029.json",
+  "overrides": {
+    "device": "cuda:0",
+    "output_dir": "artifacts/a12_sampling_pilot_4090_20261029"
+  },
+  "device": "cuda:0",
+  "gpu_name": "NVIDIA GeForce RTX 4090",
+  "initial_free_bytes": 13487702016,
+  "total_bytes": 25282281472,
+  "output_dir": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_sampling_pilot_4090_20261029",
+  "error_type": "OutOfMemoryError",
+  "error": "CUDA out of memory. Tried to allocate 432.00 MiB. GPU 0 has a total capacity of 23.55 GiB of which 164.88 MiB is free. Process 959858 has 10.58 GiB memory in use. Including non-PyTorch memory, this process has 12.78 GiB memory in use. Of the allocated memory 11.92 GiB is allocated by PyTorch, and 414.53 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)",
+  "elapsed_seconds": 4.1727200478781015,
+  "peak_allocated_bytes": 12809733120,
+  "peak_reserved_bytes": 13237223424
+}

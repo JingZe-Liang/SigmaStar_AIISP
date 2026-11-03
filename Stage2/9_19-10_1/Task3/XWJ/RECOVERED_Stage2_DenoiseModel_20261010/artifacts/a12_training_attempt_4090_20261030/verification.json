@@ -1,0 +1,39 @@
+{
+  "status": "verified",
+  "completed_updates": 200,
+  "finite_losses": true,
+  "consecutive_steps": true,
+  "checkpoints": [
+    {
+      "step": 50,
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_sampling_pilot_4090_20261030/checkpoint_step_000050.pth",
+      "sha256": "b7efe07110aba58416afdddc38b7f335b9d7d172154e91c4aa397efbab97a770"
+    },
+    {
+      "step": 100,
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_sampling_pilot_4090_20261030/checkpoint_step_000100.pth",
+      "sha256": "6c0e0022c1bbb8f882107daf12756f3ffb45504c240f9114b56c85cbe28cebdc"
+    },
+    {
+      "step": 150,
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_sampling_pilot_4090_20261030/checkpoint_step_000150.pth",
+      "sha256": "aa449326a45740a838b0ee1553a74283a52109b05430c7ec14e95247a651eb1b"
+    },
+    {
+      "step": 200,
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_sampling_pilot_4090_20261030/checkpoint_step_000200.pth",
+      "sha256": "6ead120ce12b2decf5a44980d73700dc059bba60cf567a601766a2eaef0b6d9e"
+    }
+  ],
+  "final_model_and_ema_strict_load": true,
+  "ema_changed_from_a3": true,
+  "torch_version": "2.5.1+cu124",
+  "cuda_version": "12.4",
+  "source_sha256": {
+    "src/raw_fusion/finetune/a12_train.py": "cd84c30e1b677c356ba55a4cdc1e16890cc3f9acbfad5e1d804f2ce4f960e758",
+    "src/raw_fusion/finetune/a12_sampling.py": "c6b784536bf8129814d8f49bf74a1e3721e6c59d3cfab4aaef68de525079859c",
+    "src/raw_fusion/finetune/a3.py": "2f5c175a431e06fd886576f8bb4cd0e15da4dba4117f9e2d5a81ecad77470362",
+    "src/raw_fusion/finetune/a4.py": "f6c96b72bf013f2a0248c745d5c9d768f65eb06288db515bf9a37404ab68fa2b",
+    "src/raw_fusion/finetune/rvideformer_arch.py": "a7e3d2d1211686c7d5fafbd94d6ea4e562049f181e0af196f2d9284b7cf7a498"
+  }
+}
