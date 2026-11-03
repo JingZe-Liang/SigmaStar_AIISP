@@ -1,0 +1,20 @@
+{
+  "schema": "a12_paired_evaluation_v1",
+  "checkpoint": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_fixed_20261030/checkpoint_step_001024.pth",
+  "checkpoint_sha256": "eec225e4d5de8ca10667c3aac2f5325631ac5da4135c26c6a9a67217279a882b",
+  "weights": "ema",
+  "label": "fixed1024_ema",
+  "device": "cuda:0",
+  "gpu_name": "NVIDIA GeForce RTX 3090",
+  "cuda_visible_devices": "GPU-07a5046e-9b56-8557-3845-d6cca9ea0497",
+  "torch_version": "2.5.1+cu124",
+  "cuda_version": "12.4",
+  "prepared_manifest_sha256": "e9837bcff07e3b2fa301da5db3fac7c2282f6083fdc2d8c243ab54c271840e25",
+  "native_starts": [
+    0,
+    96,
+    192
+  ],
+  "native_frames": 8,
+  "tile_batch": 1
+}

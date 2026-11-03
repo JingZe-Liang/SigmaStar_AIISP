@@ -1,0 +1,10 @@
+{
+  "status": "evaluation_completed",
+  "phase": "all",
+  "oom_policy": "stop_without_retry",
+  "outputs": {
+    "probes": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_eval_a3_20261030/probes/evaluation.json",
+    "native": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_eval_a3_20261030/native/evaluation.json"
+  },
+  "elapsed_seconds": 209.03272477304563
+}

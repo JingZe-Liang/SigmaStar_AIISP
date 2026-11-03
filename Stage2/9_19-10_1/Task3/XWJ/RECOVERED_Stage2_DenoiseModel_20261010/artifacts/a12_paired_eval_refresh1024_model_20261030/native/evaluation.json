@@ -1,0 +1,207 @@
+{
+  "protocol": "A12 paired native1000x three independent eight-frame windows v1",
+  "scope": "Development same-scene gain holdout; native reference includes evaluated frames; not independent clean truth.",
+  "label": "refresh1024_model",
+  "checkpoint": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_refresh_20261030/checkpoint_step_001024.pth",
+  "checkpoint_sha256": "f75a2d42cffff00af234b305423bd5582bb7d4762dbf5ff0ee43146ef917abd4",
+  "weights": "model",
+  "device": "cuda:0",
+  "prediction_dtype": "float32",
+  "tile_batch": 1,
+  "spatial_tile": 64,
+  "spatial_stride": 56,
+  "temporal_frames": 8,
+  "temporal_policy": "Each window is inferred independently; no joining sparse clips.",
+  "manifest": {
+    "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/stream_manifests/04_shdarkroom_1000x.json",
+    "sha256": "228945cb49cea38ceb4bbbec2b1b9697b0f591e1c8924705a882539a1f7c230c"
+  },
+  "raw": {
+    "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/shdarkroom/1000x/raw_stream_1920x1080_16bit@RG_[Shutter=79999,SenserG=131072,IspG=7656,R=1878,G=1024,B=2218].raw",
+    "size_bytes": 829440000,
+    "cfa": "RGGB",
+    "bit_shift": 4,
+    "identity_note": "Selected normalized input bytes are hashed per window; complete RAW is not rehashed."
+  },
+  "motion_mask": {
+    "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/motion_masks/04_shdarkroom_1000x.npy",
+    "sha256": "b2c7eb88bab2c8edda44b533ccece976ea157d50c9691f4bb0a088a468007ffd"
+  },
+  "reference": {
+    "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/evaluation/1000x_self_reference_probe/temporal_mean_native_dn.npy",
+    "sha256": "9d8be5d2f7a6676041d332bac21c87c0cbb3b0212bcb000d6a42e81fcfb103dd"
+  },
+  "valid_region": {
+    "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/evaluation/1000x_self_reference_probe/valid_region.npy",
+    "sha256": "377208b21f37abdd392534191138becd239b5759451f70c6772b5cdae6f2acd7"
+  },
+  "training_performed": false,
+  "acceptance_status": "diagnostic_only_no_quality_pass_claim",
+  "windows": [
+    {
+      "frame_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "input_shape": [
+        8,
+        4,
+        540,
+        960
+      ],
+      "input_sha256": "3fda60f0b314c3e601a55c5b88b40677267b899b16913f637a59df6ea8a132e0",
+      "motion_window_sha256": "ca7c55a217e7e37930cd377f28ce7d8c4b798343cc7deffd4653294b28e6325e",
+      "black_dn": [
+        254.75,
+        257.125,
+        256.875,
+        255.125
+      ],
+      "prediction": {
+        "file": "frames_000000_000007.npy",
+        "sha256": "ac9be20b8002bb033227f0afdbb5c318c150ad34b387933a085ca63b8e5adde9"
+      },
+      "metrics": {
+        "finetuned": {
+          "rmse_dn": 8.433915138244629,
+          "psnr_db": 53.724493585026025,
+          "pixels": 15359240
+        },
+        "input": {
+          "rmse_dn": 23.75747299194336,
+          "psnr_db": 44.729073237513006,
+          "pixels": 15359240
+        },
+        "temporal_mad_dn": 1.5097731351852417,
+        "input_temporal_mad_dn": 22.503097534179688,
+        "legal_fraction": 1.0,
+        "high_frequency_ratio_mean": 0.8569573653602737,
+        "high_frequency_ratio_per_channel": [
+          0.8543744930427567,
+          0.8887401667939018,
+          0.8794639676548093,
+          0.8052508339496272
+        ],
+        "flat_residual_sigma_dn": 6.5334930419921875,
+        "static_pixels": 15359240,
+        "static_fraction": 0.925880111882716
+      }
+    },
+    {
+      "frame_indices": [
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103
+      ],
+      "input_shape": [
+        8,
+        4,
+        540,
+        960
+      ],
+      "input_sha256": "fdf0b5cd650674ec950852d61b73ff352d4d7abe58e929940f9ca71d46f27b0e",
+      "motion_window_sha256": "df2ea713c5a87843d9e733c48d43f85027422ee7b21d2a96094a446a6ba46083",
+      "black_dn": [
+        254.75,
+        257.125,
+        256.875,
+        255.125
+      ],
+      "prediction": {
+        "file": "frames_000096_000103.npy",
+        "sha256": "89753aca822a9022f6e0d7c80478f3b96527707532d6ba79d155fa0708d34c39"
+      },
+      "metrics": {
+        "finetuned": {
+          "rmse_dn": 8.312694549560547,
+          "psnr_db": 53.85024166954161,
+          "pixels": 15347720
+        },
+        "input": {
+          "rmse_dn": 23.888198852539062,
+          "psnr_db": 44.68141001005574,
+          "pixels": 15347720
+        },
+        "temporal_mad_dn": 1.4648380279541016,
+        "input_temporal_mad_dn": 22.69117546081543,
+        "legal_fraction": 1.0,
+        "high_frequency_ratio_mean": 0.851702341008522,
+        "high_frequency_ratio_per_channel": [
+          0.8549197028330906,
+          0.885574261789656,
+          0.8718736934680672,
+          0.7944417059432746
+        ],
+        "flat_residual_sigma_dn": 6.723104000091553,
+        "static_pixels": 15347720,
+        "static_fraction": 0.9251856674382716
+      }
+    },
+    {
+      "frame_indices": [
+        192,
+        193,
+        194,
+        195,
+        196,
+        197,
+        198,
+        199
+      ],
+      "input_shape": [
+        8,
+        4,
+        540,
+        960
+      ],
+      "input_sha256": "c74ef1cb5f8340e054fc23a8efa281474b1c107626b69ff91c78e4288d164679",
+      "motion_window_sha256": "3e2e75e601a780924f845d003bea131af7c2f9a93124b81d2d99483641d134a8",
+      "black_dn": [
+        254.75,
+        257.125,
+        256.875,
+        255.125
+      ],
+      "prediction": {
+        "file": "frames_000192_000199.npy",
+        "sha256": "a81b7691522e14c1fa81d81106bad0f1268dcb907ec5c5670227f09ca1ca2870"
+      },
+      "metrics": {
+        "finetuned": {
+          "rmse_dn": 8.832138061523438,
+          "psnr_db": 53.323761137756264,
+          "pixels": 15275852
+        },
+        "input": {
+          "rmse_dn": 23.968616485595703,
+          "psnr_db": 44.652218792955516,
+          "pixels": 15275852
+        },
+        "temporal_mad_dn": 1.554396390914917,
+        "input_temporal_mad_dn": 22.695255279541016,
+        "legal_fraction": 1.0,
+        "high_frequency_ratio_mean": 0.8540773709809416,
+        "high_frequency_ratio_per_channel": [
+          0.8541619425433191,
+          0.8873343645285857,
+          0.8736429368343799,
+          0.8011702400174817
+        ],
+        "flat_residual_sigma_dn": 7.063572406768799,
+        "static_pixels": 15275852,
+        "static_fraction": 0.9208533468364197
+      }
+    }
+  ]
+}

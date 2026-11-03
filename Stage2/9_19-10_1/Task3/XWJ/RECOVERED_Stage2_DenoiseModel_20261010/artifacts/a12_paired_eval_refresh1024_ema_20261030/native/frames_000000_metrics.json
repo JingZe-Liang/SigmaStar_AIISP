@@ -1,0 +1,55 @@
+{
+  "frame_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "input_shape": [
+    8,
+    4,
+    540,
+    960
+  ],
+  "input_sha256": "3fda60f0b314c3e601a55c5b88b40677267b899b16913f637a59df6ea8a132e0",
+  "motion_window_sha256": "ca7c55a217e7e37930cd377f28ce7d8c4b798343cc7deffd4653294b28e6325e",
+  "black_dn": [
+    254.75,
+    257.125,
+    256.875,
+    255.125
+  ],
+  "prediction": {
+    "file": "frames_000000_000007.npy",
+    "sha256": "a7266c4210c5f89204c410e6a214dafb31e5dde1c2f62ee379210e002736d287"
+  },
+  "metrics": {
+    "finetuned": {
+      "rmse_dn": 8.788602828979492,
+      "psnr_db": 53.36668135286228,
+      "pixels": 15359240
+    },
+    "input": {
+      "rmse_dn": 23.75747299194336,
+      "psnr_db": 44.729073237513006,
+      "pixels": 15359240
+    },
+    "temporal_mad_dn": 1.4186217784881592,
+    "input_temporal_mad_dn": 22.503097534179688,
+    "legal_fraction": 1.0,
+    "high_frequency_ratio_mean": 0.8670011487006151,
+    "high_frequency_ratio_per_channel": [
+      0.8649081742585082,
+      0.9031625215943174,
+      0.8924039574501011,
+      0.8075299414995334
+    ],
+    "flat_residual_sigma_dn": 6.41391658782959,
+    "static_pixels": 15359240,
+    "static_fraction": 0.925880111882716
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "status": "running",
+  "phase": "native",
+  "oom_policy": "stop_without_retry",
+  "outputs": {}
+}
