@@ -1,0 +1,45 @@
+{
+  "sequence": {
+    "name": "04_mis20s1_calibrationdata_25600_color",
+    "group": "04",
+    "category": "calibration",
+    "sensor": "MIS20S1",
+    "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/mis20s1_calibrationdata/color/25600/raw_stream_normal_1920x1080_16_GR_0205174518964_[FN=10,US=326,AG=262144,DG=1024,BV=-24141,R=2484,G=1024,B=1933].raw",
+    "width": 1920,
+    "height": 1080,
+    "frames": 50,
+    "bit_shift": 4,
+    "cfa": "GRBG",
+    "role": "calibration_flat",
+    "wb_rgb": [
+      2.42578125,
+      1.0,
+      1.8876953125
+    ],
+    "black_levels": [
+      295.625,
+      342.5,
+      341.75,
+      306.375
+    ],
+    "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/stream_manifests/04_mis20s1_calibrationdata_25600_color.json"
+  },
+  "source_sha256": "1929d0068e81f70656d41a471517e4a867824333c23c5f944efe3838cdfbd862",
+  "clip_starts": [
+    0,
+    21,
+    42
+  ],
+  "black_levels_R_Gr_Gb_B": [
+    295.625,
+    342.5,
+    341.75,
+    306.375
+  ],
+  "black_level_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/stream_manifests/04_mis20s1_calibrationdata_25600_color.json",
+  "fixed_exposure_ev": 2.321913454938489,
+  "input_normalized_p995_after_wb": 0.8000081181526184,
+  "exposure_target_before_tone_map_linear": 4.000000000000001,
+  "exposure_target_after_tone_map_linear": 0.8,
+  "dataset_read_only": true
+}
