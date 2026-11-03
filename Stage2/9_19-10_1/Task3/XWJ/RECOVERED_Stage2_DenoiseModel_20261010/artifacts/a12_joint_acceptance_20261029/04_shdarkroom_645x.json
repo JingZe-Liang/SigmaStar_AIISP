@@ -1,0 +1,20 @@
+{
+  "id": "04_shdarkroom_645x",
+  "sensor": "MIS20S1",
+  "assessment_kind": "historical_only",
+  "data_identity": {
+    "a3_training": true,
+    "development_exposed": true,
+    "final_unseen_holdout": false,
+    "note": "645x participated in A3 training; old artifact text calling it leave-one-gain-out is superseded by the 2026-10-23 report."
+  },
+  "historical_evidence": {
+    "evidence_class": "historical_not_new_run",
+    "preview_runtime": "artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/raw_scene/04_shdarkroom_645x/runtime.json",
+    "inference_manifest": "artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/raw_scene/04_shdarkroom_645x/inference/manifest.json",
+    "video_manifest": "artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/raw_scene/04_shdarkroom_645x/traditional_isp_video/video_manifest.json",
+    "metrics": "artifacts/finetune_mis20s1/evaluation/metrics_645x.json"
+  },
+  "measurement_origin": "historical_only_not_recomputed",
+  "acceptance": "not_assessed_in_this_run"
+}

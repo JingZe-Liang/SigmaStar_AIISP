@@ -1,0 +1,21 @@
+{
+  "id": "04_mis20s1_outdoor_1500x",
+  "sensor": "MIS20S1",
+  "assessment_kind": "historical_only",
+  "data_identity": {
+    "a3_training": false,
+    "development_exposed": true,
+    "final_unseen_holdout": false,
+    "note": "Outdoor capture was excluded from A3 training but used in A11 diagnosis and candidate selection."
+  },
+  "historical_evidence": {
+    "evidence_class": "historical_not_new_run",
+    "preview_runtime": "artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/raw_scene/04_mis20s1_outdoor_1500x/runtime.json",
+    "inference_manifest": "artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/raw_scene/04_mis20s1_outdoor_1500x/inference/manifest.json",
+    "video_manifest": "artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/raw_scene/04_mis20s1_outdoor_1500x/traditional_isp_video/video_manifest.json",
+    "high_gain_metrics": "artifacts/a3_high_gain_diagnostic_20261018/04_mis20s1_outdoor_1500x/evaluation.json",
+    "a11_metrics": "artifacts/a11_high_gain_confidence_gate_20261019/04_mis20s1_outdoor_1500x/evaluation.json"
+  },
+  "measurement_origin": "historical_only_not_recomputed",
+  "acceptance": "not_assessed_in_this_run"
+}

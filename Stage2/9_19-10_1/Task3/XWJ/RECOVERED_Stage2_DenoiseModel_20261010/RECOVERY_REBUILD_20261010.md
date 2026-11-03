@@ -171,11 +171,37 @@ Post-rebuild checksums are stored separately in
 `.recovery/SHA256SUMS_POST_REBUILD`; the original
 `.recovery/SHA256SUMS` was not modified.
 
+## Post-Handoff Replenishment
+
+On 2026-10-11, two recoverable omissions were filled after the recovery-ready
+handoff was checked:
+
+- `GITHUB_UPLOAD_EXCLUDED_LARGE_FILES_20261011.tsv` was restored exactly from
+  GitHub backup commit `9964f776dd7ebd015a61f4fd416989b3cf4aba85`. Its Git
+  blob ID is `ea5a99f336db461fc8164ca21b6cb348ea19b487`; it contains
+  53 entries totaling `20.842314 GiB`.
+- The missing final same-window A5 EMA evaluation was regenerated under
+  `artifacts/finetune_mis20s1/evaluation/a5_same_window_teacher_flow1_r1_ema/`
+  from the surviving step-20 checkpoint. The checkpoint contains complete
+  `model` and `ema` states with 1265 keys each.
+
+The regenerated EMA metrics match the historical handoff values within
+`1.1e-5` absolute error. The prediction arrays are reconstructed GPU outputs,
+not byte-identical historical recovery artifacts. Full provenance and metric
+deltas are recorded in the output directory's
+`README_RECONSTRUCTED_20261011.md`. Checksums are stored in
+`.recovery/SHA256SUMS_REPLENISH_20261011`.
+
+This replenishment did not start training and does not change the preserved
+A5 rejection decision.
+
 ## Remaining Irrecoverable Gaps
 
 - Historical prediction arrays cannot generally be reproduced byte for byte
   across GPU runs; the 645x baseline is therefore verified by explicit metric
   tolerance.
+- The original final A5 EMA prediction arrays remain unavailable byte for
+  byte; explicitly marked reconstructed replacements now exist.
 - Some early A5 checkpoints and logs were already absent from the journal
   recovery, so those exact training runs cannot be resumed.
 - One old Git tree object remains missing:

@@ -1,0 +1,22 @@
+{
+  "id": "04_shdarkroom_1000x",
+  "sensor": "MIS20S1",
+  "assessment_kind": "historical_only",
+  "data_identity": {
+    "a3_training": false,
+    "development_exposed": true,
+    "final_unseen_holdout": false,
+    "note": "1000x raw gain was excluded from A3 training but shares the training scene and has been repeatedly used for A3-A11 selection."
+  },
+  "historical_evidence": {
+    "evidence_class": "historical_not_new_run",
+    "preview_runtime": "artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/raw_scene/04_shdarkroom_1000x/runtime.json",
+    "inference_manifest": "artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/raw_scene/04_shdarkroom_1000x/inference/manifest.json",
+    "video_manifest": "artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/raw_scene/04_shdarkroom_1000x/traditional_isp_video/video_manifest.json",
+    "metrics": "artifacts/finetune_mis20s1/evaluation/native_1000x/native_metrics_1000x.json",
+    "high_gain_metrics": "artifacts/a3_high_gain_diagnostic_20261018/04_shdarkroom_1000x/evaluation.json",
+    "a11_metrics": "artifacts/a11_high_gain_confidence_gate_20261019/04_shdarkroom_1000x/evaluation.json"
+  },
+  "measurement_origin": "historical_only_not_recomputed",
+  "acceptance": "not_assessed_in_this_run"
+}

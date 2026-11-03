@@ -1,0 +1,113 @@
+{
+  "id": "sc635hai_16x_motion_color",
+  "sensor": "sc635hai",
+  "assessment_kind": "cross_sensor_stress",
+  "data_identity": {
+    "a3_training": false,
+    "development_exposed": true,
+    "final_unseen_holdout": false,
+    "later_use": [
+      "A8 dynamic sequence was excluded from backpropagation but inspected for candidate acceptance"
+    ],
+    "note": "No A3 training; previously inspected in zero-shot audit and later development. This is a frozen development regression set."
+  },
+  "measurement_origin": "new_CPU_measurements_from_historical_A3_prediction_cache",
+  "raw_source_size_verified": true,
+  "raw_source_full_hash_rechecked": false,
+  "prediction_and_reference_hashes_rechecked": true,
+  "cache_manifest_sha256": "4096bcc5f9a58d0af8a5b2efb19c6e9cb0dd3b4c577d2dfca288bd1a22e73d85",
+  "directions": {
+    "stress": {
+      "clips": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        [
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103
+        ],
+        [
+          192,
+          193,
+          194,
+          195,
+          196,
+          197,
+          198,
+          199
+        ]
+      ],
+      "target": null,
+      "prediction_sha256": "63880922e301dda6b54a7df82fae69aa5ffaf547cf647b7704a3b431af2948c1",
+      "roi_metrics": {
+        "left_motion": {
+          "status": "diagnostic_only_no_clean_dynamic_target",
+          "values": 53760000,
+          "mean_change_from_noisy_input_dn": -2.34015085227603,
+          "endpoint_clip_fraction": 0.004289546130952381,
+          "lower_endpoint_fraction": 0.003521707589285714,
+          "upper_endpoint_fraction": 0.0007678385416666667,
+          "input_temporal_mad_dn": 59.75473887117347,
+          "output_temporal_mad_dn": 16.570121347434505,
+          "temporal_response_ratio_to_noisy_input": 0.27730221335513466,
+          "hf_rms_ratio_to_noisy_input": 0.5348675381578195
+        },
+        "center_detail": {
+          "status": "diagnostic_only_no_clean_dynamic_target",
+          "values": 57600000,
+          "mean_change_from_noisy_input_dn": -2.101400663922628,
+          "endpoint_clip_fraction": 0.03249701388888889,
+          "lower_endpoint_fraction": 0.03246366319444444,
+          "upper_endpoint_fraction": 3.3350694444444445e-05,
+          "input_temporal_mad_dn": 40.0683391765873,
+          "output_temporal_mad_dn": 2.8059871389873443,
+          "temporal_response_ratio_to_noisy_input": 0.07003003360386188,
+          "hf_rms_ratio_to_noisy_input": 0.7785934664595107
+        },
+        "right_motion": {
+          "status": "diagnostic_only_no_clean_dynamic_target",
+          "values": 53760000,
+          "mean_change_from_noisy_input_dn": -2.6874465254477093,
+          "endpoint_clip_fraction": 0.04902354910714286,
+          "lower_endpoint_fraction": 0.04899981398809524,
+          "upper_endpoint_fraction": 2.3735119047619048e-05,
+          "input_temporal_mad_dn": 50.66959336734694,
+          "output_temporal_mad_dn": 19.975447336730827,
+          "temporal_response_ratio_to_noisy_input": 0.39422947786282464,
+          "hf_rms_ratio_to_noisy_input": 0.6989712367729741
+        }
+      },
+      "roi_endpoint_fractions_all_pixels": {
+        "left_motion": {
+          "lower": 0.003521707589285714,
+          "upper": 0.0007678385416666667,
+          "values": 53760000
+        },
+        "center_detail": {
+          "lower": 0.03246366319444444,
+          "upper": 3.3350694444444445e-05,
+          "values": 57600000
+        },
+        "right_motion": {
+          "lower": 0.04899981398809524,
+          "upper": 2.3735119047619048e-05,
+          "values": 53760000
+        }
+      }
+    }
+  },
+  "acceptance": "baseline_recorded_not_candidate_acceptance"
+}

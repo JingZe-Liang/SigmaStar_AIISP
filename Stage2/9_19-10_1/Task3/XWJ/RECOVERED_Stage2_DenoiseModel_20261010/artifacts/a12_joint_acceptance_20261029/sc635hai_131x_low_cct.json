@@ -1,0 +1,1009 @@
+{
+  "id": "sc635hai_131x_low_cct",
+  "sensor": "sc635hai",
+  "assessment_kind": "cross_sensor_static",
+  "data_identity": {
+    "a3_training": false,
+    "development_exposed": true,
+    "final_unseen_holdout": false,
+    "later_use": [
+      "A8 sensor adaptation used all 150 frames, including its later reported tail segment",
+      "A9 unified candidate development"
+    ],
+    "note": "No A3 training; previously inspected in zero-shot audit and later development. This is a frozen development regression set."
+  },
+  "measurement_origin": "new_CPU_measurements_from_historical_A3_prediction_cache",
+  "raw_source_size_verified": true,
+  "raw_source_full_hash_rechecked": false,
+  "prediction_and_reference_hashes_rechecked": true,
+  "cache_manifest_sha256": "4339516f96d168d806c4cdf89d952fcb6564c1e7fe29234314dc55d11a7ec792",
+  "directions": {
+    "even_input": {
+      "clips": [
+        [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10,
+          12,
+          14
+        ],
+        [
+          66,
+          68,
+          70,
+          72,
+          74,
+          76,
+          78,
+          80
+        ],
+        [
+          134,
+          136,
+          138,
+          140,
+          142,
+          144,
+          146,
+          148
+        ]
+      ],
+      "target": "odd_mean",
+      "prediction_sha256": "b6d9b15f733da337e2c5a91a60dea43d6b8f80feee565fef318e3c4282ed34a5",
+      "roi_metrics": {
+        "center_detail": {
+          "all_static": {
+            "input": {
+              "status": "measured",
+              "values": 40909760,
+              "rmse_dn": 41.87620572440284,
+              "psnr_db_4095": 39.80573162817516,
+              "bias_dn": 3.3371917593135354,
+              "bias_dn_per_channel": {
+                "R": 3.1785652413186245,
+                "Gr": 2.799236509544331,
+                "Gb": 2.8227816053480184,
+                "B": 4.548183681043168
+              },
+              "residual_std_dn": 41.743020458923176,
+              "highpass_error_rmse_dn": 38.528065952406635,
+              "lowpass_error_rmse_dn": 16.052744923644394,
+              "signed_gradient_error_rmse_dn": 55.941946310253066
+            },
+            "a3": {
+              "status": "measured",
+              "values": 40909760,
+              "rmse_dn": 8.895921722366438,
+              "psnr_db_4095": 53.261259066337,
+              "bias_dn": -1.309173580774453,
+              "bias_dn_per_channel": {
+                "R": -1.5916462454989753,
+                "Gr": -0.9405093441515441,
+                "Gb": -1.541706331403037,
+                "B": -1.1628324020442555
+              },
+              "residual_std_dn": 8.799061758271348,
+              "highpass_error_rmse_dn": 7.024901824916932,
+              "lowpass_error_rmse_dn": 5.049845178860592,
+              "signed_gradient_error_rmse_dn": 10.112806411921042
+            }
+          },
+          "detail": {
+            "input": {
+              "status": "measured",
+              "values": 10351036,
+              "rmse_dn": 48.988208076091325,
+              "psnr_db_4095": 38.443247045355115,
+              "bias_dn": 2.061631272754752,
+              "bias_dn_per_channel": {
+                "R": 1.6375369582075943,
+                "Gr": 1.2662477346923293,
+                "Gb": 1.3431501474679628,
+                "B": 3.9995902506511203
+              },
+              "residual_std_dn": 48.94480776345556,
+              "highpass_error_rmse_dn": 45.30800551125723,
+              "lowpass_error_rmse_dn": 18.47059468763844,
+              "signed_gradient_error_rmse_dn": 65.54200688432257
+            },
+            "a3": {
+              "status": "measured",
+              "values": 10351036,
+              "rmse_dn": 12.109815378142178,
+              "psnr_db_4095": 50.58232767998477,
+              "bias_dn": -0.47065137621229863,
+              "bias_dn_per_channel": {
+                "R": -0.7405230473828938,
+                "Gr": -0.0325371977688355,
+                "Gb": -0.7337972238384501,
+                "B": -0.3757480358590152
+              },
+              "residual_std_dn": 12.100665922781202,
+              "highpass_error_rmse_dn": 9.544112606238901,
+              "lowpass_error_rmse_dn": 6.7124151915757455,
+              "signed_gradient_error_rmse_dn": 13.701543193747789
+            }
+          },
+          "flat": {
+            "input": {
+              "status": "measured",
+              "values": 10831140,
+              "rmse_dn": 35.266499510339635,
+              "psnr_db_4095": 41.29783103166332,
+              "bias_dn": 4.597319671560589,
+              "bias_dn_per_channel": {
+                "R": 4.490209779874324,
+                "Gr": 4.403636960431894,
+                "Gb": 4.42204208724671,
+                "B": 5.073389858689428
+              },
+              "residual_std_dn": 34.96556362408975,
+              "highpass_error_rmse_dn": 32.19384669330139,
+              "lowpass_error_rmse_dn": 13.985066069440311,
+              "signed_gradient_error_rmse_dn": 47.292258377498904
+            },
+            "a3": {
+              "status": "measured",
+              "values": 10831140,
+              "rmse_dn": 6.760711630344999,
+              "psnr_db_4095": 55.64522988100789,
+              "bias_dn": -1.8008233589911964,
+              "bias_dn_per_channel": {
+                "R": -2.0488174545121876,
+                "Gr": -1.3079505269535627,
+                "Gb": -1.8478552463362798,
+                "B": -1.998670208162755
+              },
+              "residual_std_dn": 6.51646046396307,
+              "highpass_error_rmse_dn": 5.335190288696569,
+              "lowpass_error_rmse_dn": 3.9888154848451576,
+              "signed_gradient_error_rmse_dn": 7.6605850808287
+            }
+          },
+          "dark": {
+            "input": {
+              "status": "measured",
+              "values": 13269440,
+              "rmse_dn": 24.701116986605044,
+              "psnr_db_4095": 44.390746271188384,
+              "bias_dn": 6.7886718494625855,
+              "bias_dn_per_channel": {
+                "R": 6.5937510234008405,
+                "Gr": 7.144949462362214,
+                "Gb": 7.165921408315896,
+                "B": 6.250065503771392
+              },
+              "residual_std_dn": 23.74992873476176,
+              "highpass_error_rmse_dn": 22.027080366266308,
+              "lowpass_error_rmse_dn": 11.199314156577023,
+              "signed_gradient_error_rmse_dn": 32.6915309749796
+            },
+            "a3": {
+              "status": "measured",
+              "values": 13269440,
+              "rmse_dn": 6.020819062191665,
+              "psnr_db_4095": 56.651966602441036,
+              "bias_dn": -1.5156840954109325,
+              "bias_dn_per_channel": {
+                "R": -1.6920456765250966,
+                "Gr": -0.6951603985713602,
+                "Gb": -0.903882569788587,
+                "B": -2.771647736758686
+              },
+              "residual_std_dn": 5.82691718686381,
+              "highpass_error_rmse_dn": 4.7002606428881295,
+              "lowpass_error_rmse_dn": 3.848904464613232,
+              "signed_gradient_error_rmse_dn": 6.969632058757156
+            }
+          }
+        },
+        "color_chart": {
+          "all_static": {
+            "input": {
+              "status": "measured",
+              "values": 22556776,
+              "rmse_dn": 38.98264517764267,
+              "psnr_db_4095": 40.42765202297325,
+              "bias_dn": 3.801366961040735,
+              "bias_dn_per_channel": {
+                "R": 3.765741304975099,
+                "Gr": 3.3769978764198796,
+                "Gb": 3.4240932410760045,
+                "B": 4.638635421691956
+              },
+              "residual_std_dn": 38.79685856191832,
+              "highpass_error_rmse_dn": 35.78967350938403,
+              "lowpass_error_rmse_dn": 15.061862593630499,
+              "signed_gradient_error_rmse_dn": 52.15717024448683
+            },
+            "a3": {
+              "status": "measured",
+              "values": 22556776,
+              "rmse_dn": 7.65258484271152,
+              "psnr_db_4095": 54.56891505724777,
+              "bias_dn": -1.670064598037283,
+              "bias_dn_per_channel": {
+                "R": -1.932686242969727,
+                "Gr": -1.2951228964795047,
+                "Gb": -1.8669374255148206,
+                "B": -1.5855118271850797
+              },
+              "residual_std_dn": 7.4681282135004,
+              "highpass_error_rmse_dn": 6.067002978488507,
+              "lowpass_error_rmse_dn": 4.466484323675831,
+              "signed_gradient_error_rmse_dn": 8.825772175128224
+            }
+          },
+          "detail": {
+            "input": {
+              "status": "measured",
+              "values": 3067668,
+              "rmse_dn": 45.09125512968063,
+              "psnr_db_4095": 39.16323163788301,
+              "bias_dn": 2.6769631808473404,
+              "bias_dn_per_channel": {
+                "R": 2.4170728659668277,
+                "Gr": 2.0254059042225334,
+                "Gb": 2.1413374320111602,
+                "B": 4.124036521188839
+              },
+              "residual_std_dn": 45.01172244314072,
+              "highpass_error_rmse_dn": 41.66297254414246,
+              "lowpass_error_rmse_dn": 17.082037315590263,
+              "signed_gradient_error_rmse_dn": 60.36237253376755
+            },
+            "a3": {
+              "status": "measured",
+              "values": 3067668,
+              "rmse_dn": 10.268909761848077,
+              "psnr_db_4095": 52.014591371788626,
+              "bias_dn": -0.8152860960021291,
+              "bias_dn_per_channel": {
+                "R": -1.2743030965753266,
+                "Gr": -0.4507289341699766,
+                "Gb": -1.0946494967186164,
+                "B": -0.4414628565445965
+              },
+              "residual_std_dn": 10.236494335398438,
+              "highpass_error_rmse_dn": 8.345169150162958,
+              "lowpass_error_rmse_dn": 5.5781541635270395,
+              "signed_gradient_error_rmse_dn": 11.953143733487073
+            }
+          },
+          "flat": {
+            "input": {
+              "status": "measured",
+              "values": 8027080,
+              "rmse_dn": 33.96473743741728,
+              "psnr_db_4095": 41.6245128889387,
+              "bias_dn": 4.720003327822616,
+              "bias_dn_per_channel": {
+                "R": 4.679724122500426,
+                "Gr": 4.544662890167686,
+                "Gb": 4.549470162244698,
+                "B": 5.1061561363776535
+              },
+              "residual_std_dn": 33.635174412778625,
+              "highpass_error_rmse_dn": 30.986162525036082,
+              "lowpass_error_rmse_dn": 13.510455469239483,
+              "signed_gradient_error_rmse_dn": 45.53816055554016
+            },
+            "a3": {
+              "status": "measured",
+              "values": 8027080,
+              "rmse_dn": 6.658697511586311,
+              "psnr_db_4095": 55.77729239393143,
+              "bias_dn": -2.042609332944482,
+              "bias_dn_per_channel": {
+                "R": -2.2532805509061666,
+                "Gr": -1.543139519114516,
+                "Gb": -2.1189488462991983,
+                "B": -2.255068415458047
+              },
+              "residual_std_dn": 6.337665158697944,
+              "highpass_error_rmse_dn": 5.18312732846314,
+              "lowpass_error_rmse_dn": 4.045851288234707,
+              "signed_gradient_error_rmse_dn": 7.458154135074775
+            }
+          },
+          "dark": {
+            "input": {
+              "status": "measured",
+              "values": 8841152,
+              "rmse_dn": 24.737091188736702,
+              "psnr_db_4095": 44.37810552160562,
+              "bias_dn": 6.653199353440062,
+              "bias_dn_per_channel": {
+                "R": 6.195617452479675,
+                "Gr": 7.116630629889519,
+                "Gb": 7.154638801225057,
+                "B": 6.145910530165994
+              },
+              "residual_std_dn": 23.82558748159759,
+              "highpass_error_rmse_dn": 22.064821016697483,
+              "lowpass_error_rmse_dn": 11.11893398493928,
+              "signed_gradient_error_rmse_dn": 32.71132764578572
+            },
+            "a3": {
+              "status": "measured",
+              "values": 8841152,
+              "rmse_dn": 6.038680708676233,
+              "psnr_db_4095": 56.626236778399324,
+              "bias_dn": -2.0187692005896314,
+              "bias_dn_per_channel": {
+                "R": -2.3901679377405594,
+                "Gr": -1.1329237100522178,
+                "Gb": -1.4531636208999767,
+                "B": -3.098821533665772
+              },
+              "residual_std_dn": 5.691242009973675,
+              "highpass_error_rmse_dn": 4.629391198847348,
+              "lowpass_error_rmse_dn": 3.9808381076590202,
+              "signed_gradient_error_rmse_dn": 6.852154963209222
+            }
+          }
+        },
+        "right_subject": {
+          "all_static": {
+            "input": {
+              "status": "measured",
+              "values": 17503236,
+              "rmse_dn": 40.10108293193524,
+              "psnr_db_4095": 40.18195610343368,
+              "bias_dn": 3.5488515023352605,
+              "bias_dn_per_channel": {
+                "R": 3.3616785414285824,
+                "Gr": 3.111237389629829,
+                "Gb": 3.1318790566890344,
+                "B": 4.590611021593596
+              },
+              "residual_std_dn": 39.94374175422628,
+              "highpass_error_rmse_dn": 36.93809740844826,
+              "lowpass_error_rmse_dn": 15.361960599588517,
+              "signed_gradient_error_rmse_dn": 53.451219130131086
+            },
+            "a3": {
+              "status": "measured",
+              "values": 17503236,
+              "rmse_dn": 8.890048565100779,
+              "psnr_db_4095": 53.26699545258595,
+              "bias_dn": -1.731832172003144,
+              "bias_dn_per_channel": {
+                "R": -2.0852222085964214,
+                "Gr": -1.2530550267811236,
+                "Gb": -1.7708454265700564,
+                "B": -1.8182060260649746
+              },
+              "residual_std_dn": 8.719731694144338,
+              "highpass_error_rmse_dn": 7.080296285545135,
+              "lowpass_error_rmse_dn": 5.085570518057465,
+              "signed_gradient_error_rmse_dn": 10.148093611278117
+            }
+          },
+          "detail": {
+            "input": {
+              "status": "measured",
+              "values": 5135284,
+              "rmse_dn": 49.856369934238494,
+              "psnr_db_4095": 38.29066503926409,
+              "bias_dn": 1.8567813546378769,
+              "bias_dn_per_channel": {
+                "R": 1.4312559345425733,
+                "Gr": 1.1629596560540532,
+                "Gb": 1.1411985019163193,
+                "B": 3.6917113260385617
+              },
+              "residual_std_dn": 49.821782244523426,
+              "highpass_error_rmse_dn": 46.19880174344129,
+              "lowpass_error_rmse_dn": 18.659998185306453,
+              "signed_gradient_error_rmse_dn": 66.9964891988134
+            },
+            "a3": {
+              "status": "measured",
+              "values": 5135284,
+              "rmse_dn": 11.93352422413252,
+              "psnr_db_4095": 50.70970374128082,
+              "bias_dn": -0.44666299002071397,
+              "bias_dn_per_channel": {
+                "R": -0.7321791850653672,
+                "Gr": 0.05442380678919273,
+                "Gb": -0.5664173608267774,
+                "B": -0.5424792209799042
+              },
+              "residual_std_dn": 11.925162161635516,
+              "highpass_error_rmse_dn": 9.778546748288594,
+              "lowpass_error_rmse_dn": 6.379177502439583,
+              "signed_gradient_error_rmse_dn": 14.017423661101159
+            }
+          },
+          "flat": {
+            "input": {
+              "status": "measured",
+              "values": 4321836,
+              "rmse_dn": 30.85507881482905,
+              "psnr_db_4095": 42.4585449200455,
+              "bias_dn": 5.096952494983977,
+              "bias_dn_per_channel": {
+                "R": 5.100817681417192,
+                "Gr": 4.946487055717204,
+                "Gb": 5.01089531128325,
+                "B": 5.329609931518263
+              },
+              "residual_std_dn": 30.43118407050881,
+              "highpass_error_rmse_dn": 28.083955208474883,
+              "lowpass_error_rmse_dn": 12.445926352403152,
+              "signed_gradient_error_rmse_dn": 41.23931936415211
+            },
+            "a3": {
+              "status": "measured",
+              "values": 4321836,
+              "rmse_dn": 6.517575182867438,
+              "psnr_db_4095": 55.96335712929131,
+              "bias_dn": -2.4336325452910237,
+              "bias_dn_per_channel": {
+                "R": -2.6494015834014903,
+                "Gr": -1.9135463297657325,
+                "Gb": -2.3770653184552506,
+                "B": -2.7945169495416207
+              },
+              "residual_std_dn": 6.046173905771307,
+              "highpass_error_rmse_dn": 4.979258243364363,
+              "lowpass_error_rmse_dn": 4.072360714124652,
+              "signed_gradient_error_rmse_dn": 7.181843396003184
+            }
+          },
+          "dark": {
+            "input": {
+              "status": "measured",
+              "values": 7536848,
+              "rmse_dn": 26.602657518378408,
+              "psnr_db_4095": 43.746577654030936,
+              "bias_dn": 5.927523544260537,
+              "bias_dn_per_channel": {
+                "R": 6.063696073003245,
+                "Gr": 5.904205036673316,
+                "Gb": 5.954868842914106,
+                "B": 5.78732422445148
+              },
+              "residual_std_dn": 25.93387459814619,
+              "highpass_error_rmse_dn": 24.054421553568858,
+              "lowpass_error_rmse_dn": 11.247865951116422,
+              "signed_gradient_error_rmse_dn": 35.7271538200512
+            },
+            "a3": {
+              "status": "measured",
+              "values": 7536848,
+              "rmse_dn": 6.013902473419418,
+              "psnr_db_4095": 56.66195050330394,
+              "bias_dn": -1.9870599332819574,
+              "bias_dn_per_channel": {
+                "R": -1.9218155706667994,
+                "Gr": -1.466114208769856,
+                "Gb": -1.7787761752410924,
+                "B": -2.781533778450082
+              },
+              "residual_std_dn": 5.676144446835872,
+              "highpass_error_rmse_dn": 4.745114785874365,
+              "lowpass_error_rmse_dn": 3.9030572750795227,
+              "signed_gradient_error_rmse_dn": 7.071533714913729
+            }
+          }
+        }
+      },
+      "roi_endpoint_fractions_all_pixels": {
+        "center_detail": {
+          "lower": 0.004819345238095238,
+          "upper": 3.373015873015873e-06,
+          "values": 60480000
+        },
+        "color_chart": {
+          "lower": 0.002640729959695477,
+          "upper": 5.597850425436632e-07,
+          "values": 26796000
+        },
+        "right_subject": {
+          "lower": 0.0004812962962962963,
+          "upper": 0.002774206349206349,
+          "values": 37800000
+        }
+      }
+    },
+    "odd_input": {
+      "clips": [
+        [
+          1,
+          3,
+          5,
+          7,
+          9,
+          11,
+          13,
+          15
+        ],
+        [
+          67,
+          69,
+          71,
+          73,
+          75,
+          77,
+          79,
+          81
+        ],
+        [
+          135,
+          137,
+          139,
+          141,
+          143,
+          145,
+          147,
+          149
+        ]
+      ],
+      "target": "even_mean",
+      "prediction_sha256": "2a4d0d117216490c460ea5afbe55fa007527c89bbde17cf5c91289aea1cdc1e6",
+      "roi_metrics": {
+        "center_detail": {
+          "all_static": {
+            "input": {
+              "status": "measured",
+              "values": 40927696,
+              "rmse_dn": 41.89329163505801,
+              "psnr_db_4095": 39.80218842113555,
+              "bias_dn": 3.385467553273126,
+              "bias_dn_per_channel": {
+                "R": 3.1674370907103415,
+                "Gr": 2.882513568727707,
+                "Gb": 2.898098596699653,
+                "B": 4.593820956954803
+              },
+              "residual_std_dn": 41.75627489929815,
+              "highpass_error_rmse_dn": 38.54468609678308,
+              "lowpass_error_rmse_dn": 16.059544490494204,
+              "signed_gradient_error_rmse_dn": 55.97109793671719
+            },
+            "a3": {
+              "status": "measured",
+              "values": 40927696,
+              "rmse_dn": 8.886931880796675,
+              "psnr_db_4095": 53.27004109650303,
+              "bias_dn": -1.2542857870695816,
+              "bias_dn_per_channel": {
+                "R": -1.6004679614066215,
+                "Gr": -0.842773275277228,
+                "Gb": -1.458882147771603,
+                "B": -1.1150197638228738
+              },
+              "residual_std_dn": 8.797972801633088,
+              "highpass_error_rmse_dn": 7.023765348992639,
+              "lowpass_error_rmse_dn": 5.037216102768226,
+              "signed_gradient_error_rmse_dn": 10.11390938118587
+            }
+          },
+          "detail": {
+            "input": {
+              "status": "measured",
+              "values": 10360952,
+              "rmse_dn": 49.07194089079923,
+              "psnr_db_4095": 38.4284134116708,
+              "bias_dn": 2.1195081028219667,
+              "bias_dn_per_channel": {
+                "R": 1.5853675485138592,
+                "Gr": 1.4099542906187503,
+                "Gb": 1.4029649760677627,
+                "B": 4.079745596087495
+              },
+              "residual_std_dn": 49.026146781000094,
+              "highpass_error_rmse_dn": 45.38704446943347,
+              "lowpass_error_rmse_dn": 18.506228031898285,
+              "signed_gradient_error_rmse_dn": 65.66095608544734
+            },
+            "a3": {
+              "status": "measured",
+              "values": 10360952,
+              "rmse_dn": 12.110057576023632,
+              "psnr_db_4095": 50.5821539628003,
+              "bias_dn": -0.4154730752272262,
+              "bias_dn_per_channel": {
+                "R": -0.7885826306364142,
+                "Gr": 0.09504850121303857,
+                "Gb": -0.6664925754840653,
+                "B": -0.30186559600146384
+              },
+              "residual_std_dn": 12.10292843151477,
+              "highpass_error_rmse_dn": 9.535488045493565,
+              "lowpass_error_rmse_dn": 6.7218185174108145,
+              "signed_gradient_error_rmse_dn": 13.699945390846779
+            }
+          },
+          "flat": {
+            "input": {
+              "status": "measured",
+              "values": 10785056,
+              "rmse_dn": 35.341250435127684,
+              "psnr_db_4095": 41.27943989114051,
+              "bias_dn": 4.6027630693472155,
+              "bias_dn_per_channel": {
+                "R": 4.509663703167974,
+                "Gr": 4.401239099067453,
+                "Gb": 4.415327725768111,
+                "B": 5.0848217493853225
+              },
+              "residual_std_dn": 35.04024192904304,
+              "highpass_error_rmse_dn": 32.26865023212136,
+              "lowpass_error_rmse_dn": 14.000561718170113,
+              "signed_gradient_error_rmse_dn": 47.41065776405137
+            },
+            "a3": {
+              "status": "measured",
+              "values": 10785056,
+              "rmse_dn": 6.7447600424131,
+              "psnr_db_4095": 55.66574805321471,
+              "bias_dn": -1.7590925489602687,
+              "bias_dn_per_channel": {
+                "R": -2.0237913719623397,
+                "Gr": -1.245433866998737,
+                "Gb": -1.833338626931826,
+                "B": -1.9338063299481716
+              },
+              "residual_std_dn": 6.511327163791175,
+              "highpass_error_rmse_dn": 5.340843843369957,
+              "lowpass_error_rmse_dn": 3.958649539524056,
+              "signed_gradient_error_rmse_dn": 7.668951876530271
+            }
+          },
+          "dark": {
+            "input": {
+              "status": "measured",
+              "values": 13270976,
+              "rmse_dn": 24.702051928775663,
+              "psnr_db_4095": 44.39041751476683,
+              "bias_dn": 6.804053614190021,
+              "bias_dn_per_channel": {
+                "R": 6.554696283067311,
+                "Gr": 7.175245990616763,
+                "Gb": 7.197817577287205,
+                "B": 6.2884546057888056
+              },
+              "residual_std_dn": 23.74649919266327,
+              "highpass_error_rmse_dn": 22.025008424412203,
+              "lowpass_error_rmse_dn": 11.206987772171962,
+              "signed_gradient_error_rmse_dn": 32.70108815716332
+            },
+            "a3": {
+              "status": "measured",
+              "values": 13270976,
+              "rmse_dn": 6.019112473552822,
+              "psnr_db_4095": 56.65442894878077,
+              "bias_dn": -1.4873295355717207,
+              "bias_dn_per_channel": {
+                "R": -1.7119802834187285,
+                "Gr": -0.6554983665263173,
+                "Gb": -0.8627426806389784,
+                "B": -2.7190968117028587
+              },
+              "residual_std_dn": 5.832457957147671,
+              "highpass_error_rmse_dn": 4.703483256951122,
+              "lowpass_error_rmse_dn": 3.833521228249209,
+              "signed_gradient_error_rmse_dn": 6.980122855055849
+            }
+          }
+        },
+        "color_chart": {
+          "all_static": {
+            "input": {
+              "status": "measured",
+              "values": 22559656,
+              "rmse_dn": 39.00337981643649,
+              "psnr_db_4095": 40.423033277794076,
+              "bias_dn": 3.8514525077064268,
+              "bias_dn_per_channel": {
+                "R": 3.7293984514809866,
+                "Gr": 3.5031461060429447,
+                "Gb": 3.498296797005902,
+                "B": 4.674968676295873
+              },
+              "residual_std_dn": 38.81275499994927,
+              "highpass_error_rmse_dn": 35.8065267292832,
+              "lowpass_error_rmse_dn": 15.068031330598707,
+              "signed_gradient_error_rmse_dn": 52.193007456899444
+            },
+            "a3": {
+              "status": "measured",
+              "values": 22559656,
+              "rmse_dn": 7.662019304161608,
+              "psnr_db_4095": 54.55821328519664,
+              "bias_dn": -1.6182722368414344,
+              "bias_dn_per_channel": {
+                "R": -1.9792352129879862,
+                "Gr": -1.164012207811906,
+                "Gb": -1.7866409492950108,
+                "B": -1.5432005772708346
+              },
+              "residual_std_dn": 7.489174506233204,
+              "highpass_error_rmse_dn": 6.074788199566511,
+              "lowpass_error_rmse_dn": 4.48130245123484,
+              "signed_gradient_error_rmse_dn": 8.836148804455847
+            }
+          },
+          "detail": {
+            "input": {
+              "status": "measured",
+              "values": 3075876,
+              "rmse_dn": 45.20774737797516,
+              "psnr_db_4095": 39.140820772965185,
+              "bias_dn": 2.735805437023004,
+              "bias_dn_per_channel": {
+                "R": 2.333695322892587,
+                "Gr": 2.230533272217836,
+                "Gb": 2.1393381579342026,
+                "B": 4.23965499504739
+              },
+              "residual_std_dn": 45.124891042545194,
+              "highpass_error_rmse_dn": 41.77675995873609,
+              "lowpass_error_rmse_dn": 17.125254229303295,
+              "signed_gradient_error_rmse_dn": 60.54782359668376
+            },
+            "a3": {
+              "status": "measured",
+              "values": 3075876,
+              "rmse_dn": 10.281025973613618,
+              "psnr_db_4095": 52.00434899519179,
+              "bias_dn": -0.7256435312538175,
+              "bias_dn_per_channel": {
+                "R": -1.359405400126352,
+                "Gr": -0.22633729530345456,
+                "Gb": -0.982572281649081,
+                "B": -0.3342591479363826
+              },
+              "residual_std_dn": 10.255385733148573,
+              "highpass_error_rmse_dn": 8.323532637246192,
+              "lowpass_error_rmse_dn": 5.679020679351469,
+              "signed_gradient_error_rmse_dn": 11.937668693838202
+            }
+          },
+          "flat": {
+            "input": {
+              "status": "measured",
+              "values": 7922800,
+              "rmse_dn": 33.952391485931145,
+              "psnr_db_4095": 41.627670724818,
+              "bias_dn": 4.732548220554486,
+              "bias_dn_per_channel": {
+                "R": 4.645139800375195,
+                "Gr": 4.563181108139715,
+                "Gb": 4.616909100477691,
+                "B": 5.104962873225343
+              },
+              "residual_std_dn": 33.620943992607586,
+              "highpass_error_rmse_dn": 30.970347790875376,
+              "lowpass_error_rmse_dn": 13.501967487751589,
+              "signed_gradient_error_rmse_dn": 45.52405890011322
+            },
+            "a3": {
+              "status": "measured",
+              "values": 7922800,
+              "rmse_dn": 6.662294956759773,
+              "psnr_db_4095": 55.77260099986457,
+              "bias_dn": -2.0299520699630125,
+              "bias_dn_per_channel": {
+                "R": -2.301718834979907,
+                "Gr": -1.5067049183587686,
+                "Gb": -2.091530932541383,
+                "B": -2.219853593971991
+              },
+              "residual_std_dn": 6.345507756241386,
+              "highpass_error_rmse_dn": 5.198920269199059,
+              "lowpass_error_rmse_dn": 4.030569009503949,
+              "signed_gradient_error_rmse_dn": 7.476969032150714
+            }
+          },
+          "dark": {
+            "input": {
+              "status": "measured",
+              "values": 8840408,
+              "rmse_dn": 24.744959628334016,
+              "psnr_db_4095": 44.37534313009542,
+              "bias_dn": 6.651469077367651,
+              "bias_dn_per_channel": {
+                "R": 6.133960415777557,
+                "Gr": 7.104299595948725,
+                "Gb": 7.16497354807404,
+                "B": 6.2026427496702805
+              },
+              "residual_std_dn": 23.83423978482851,
+              "highpass_error_rmse_dn": 22.06845983042834,
+              "lowpass_error_rmse_dn": 11.124229418356533,
+              "signed_gradient_error_rmse_dn": 32.71728554025462
+            },
+            "a3": {
+              "status": "measured",
+              "values": 8840408,
+              "rmse_dn": 6.055601572952291,
+              "psnr_db_4095": 56.60193225959346,
+              "bias_dn": -2.0209919964243293,
+              "bias_dn_per_channel": {
+                "R": -2.45110731391437,
+                "Gr": -1.143125364359752,
+                "Gb": -1.4431094723076974,
+                "B": -3.046625835115497
+              },
+              "residual_std_dn": 5.7084062364841435,
+              "highpass_error_rmse_dn": 4.642979370819957,
+              "lowpass_error_rmse_dn": 3.9958334186816273,
+              "signed_gradient_error_rmse_dn": 6.875941293049217
+            }
+          }
+        },
+        "right_subject": {
+          "all_static": {
+            "input": {
+              "status": "measured",
+              "values": 17498564,
+              "rmse_dn": 40.11791679531307,
+              "psnr_db_4095": 40.17831065579345,
+              "bias_dn": 3.5813449193713667,
+              "bias_dn_per_channel": {
+                "R": 3.3354723953762777,
+                "Gr": 3.135415639938536,
+                "Gb": 3.2243115916292004,
+                "B": 4.630180050541453
+              },
+              "residual_std_dn": 39.95774288625617,
+              "highpass_error_rmse_dn": 36.956931227639245,
+              "lowpass_error_rmse_dn": 15.358864922573149,
+              "signed_gradient_error_rmse_dn": 53.466447649198315
+            },
+            "a3": {
+              "status": "measured",
+              "values": 17498564,
+              "rmse_dn": 8.867971014096698,
+              "psnr_db_4095": 53.288592823784356,
+              "bias_dn": -1.7018000082375035,
+              "bias_dn_per_channel": {
+                "R": -2.1043189311548707,
+                "Gr": -1.2142068412150424,
+                "Gb": -1.6785889906490818,
+                "B": -1.8100852699310193
+              },
+              "residual_std_dn": 8.70314808783707,
+              "highpass_error_rmse_dn": 7.07188362076112,
+              "lowpass_error_rmse_dn": 5.056488461082481,
+              "signed_gradient_error_rmse_dn": 10.13828026103871
+            }
+          },
+          "detail": {
+            "input": {
+              "status": "measured",
+              "values": 5137776,
+              "rmse_dn": 49.857837522063775,
+              "psnr_db_4095": 38.29040936244109,
+              "bias_dn": 1.8671248806819252,
+              "bias_dn_per_channel": {
+                "R": 1.390501159567039,
+                "Gr": 1.1492529906141236,
+                "Gb": 1.2050893014068733,
+                "B": 3.723656071139665
+              },
+              "residual_std_dn": 49.82286430000235,
+              "highpass_error_rmse_dn": 46.20481442523807,
+              "lowpass_error_rmse_dn": 18.636948673868183,
+              "signed_gradient_error_rmse_dn": 67.01953010031262
+            },
+            "a3": {
+              "status": "measured",
+              "values": 5137776,
+              "rmse_dn": 11.908673606149613,
+              "psnr_db_4095": 50.727810277006995,
+              "bias_dn": -0.45310752393619413,
+              "bias_dn_per_channel": {
+                "R": -0.7742940745535799,
+                "Gr": 0.03941980718548776,
+                "Gb": -0.49312938793526917,
+                "B": -0.5844264404414151
+              },
+              "residual_std_dn": 11.90005044651311,
+              "highpass_error_rmse_dn": 9.759019977714868,
+              "lowpass_error_rmse_dn": 6.352550469822226,
+              "signed_gradient_error_rmse_dn": 14.002500276549277
+            }
+          },
+          "flat": {
+            "input": {
+              "status": "measured",
+              "values": 4334828,
+              "rmse_dn": 30.970112524783517,
+              "psnr_db_4095": 42.42622245599173,
+              "bias_dn": 5.088655546752313,
+              "bias_dn_per_channel": {
+                "R": 5.0389550228360775,
+                "Gr": 4.951502672849933,
+                "Gb": 5.041890873117994,
+                "B": 5.322273618205249
+              },
+              "residual_std_dn": 30.5491972811768,
+              "highpass_error_rmse_dn": 28.20160042051479,
+              "lowpass_error_rmse_dn": 12.4745667001474,
+              "signed_gradient_error_rmse_dn": 41.38622877678341
+            },
+            "a3": {
+              "status": "measured",
+              "values": 4334828,
+              "rmse_dn": 6.516690114927607,
+              "psnr_db_4095": 55.96453672818449,
+              "bias_dn": -2.394138883006531,
+              "bias_dn_per_channel": {
+                "R": -2.635227697460239,
+                "Gr": -1.8653162556085252,
+                "Gb": -2.2975804911662765,
+                "B": -2.778431087791083
+              },
+              "residual_std_dn": 6.060969317103612,
+              "highpass_error_rmse_dn": 4.9864978218959415,
+              "lowpass_error_rmse_dn": 4.056259679167935,
+              "signed_gradient_error_rmse_dn": 7.18687304389368
+            }
+          },
+          "dark": {
+            "input": {
+              "status": "measured",
+              "values": 7557452,
+              "rmse_dn": 26.664238837312904,
+              "psnr_db_4095": 43.72649430715221,
+              "bias_dn": 5.988077774710944,
+              "bias_dn_per_channel": {
+                "R": 6.050855817424826,
+                "Gr": 5.963338767709554,
+                "Gb": 6.072062796493882,
+                "B": 5.866053717215515
+              },
+              "residual_std_dn": 25.983159110032766,
+              "highpass_error_rmse_dn": 24.104841209233356,
+              "lowpass_error_rmse_dn": 11.275635161768678,
+              "signed_gradient_error_rmse_dn": 35.79080807046598
+            },
+            "a3": {
+              "status": "measured",
+              "values": 7557452,
+              "rmse_dn": 5.970020800709727,
+              "psnr_db_4095": 56.72556123596543,
+              "bias_dn": -1.9346281520952233,
+              "bias_dn_per_channel": {
+                "R": -1.9513026475717719,
+                "Gr": -1.3881278561316863,
+                "Gb": -1.6716373505686941,
+                "B": -2.727444754108741
+              },
+              "residual_std_dn": 5.647863514111105,
+              "highpass_error_rmse_dn": 4.731784371157357,
+              "lowpass_error_rmse_dn": 3.8512038305455416,
+              "signed_gradient_error_rmse_dn": 7.0499759542811775
+            }
+          }
+        }
+      },
+      "roi_endpoint_fractions_all_pixels": {
+        "center_detail": {
+          "lower": 0.004611276455026455,
+          "upper": 3.2076719576719576e-06,
+          "values": 60480000
+        },
+        "color_chart": {
+          "lower": 0.002686781609195402,
+          "upper": 4.1050903119868637e-07,
+          "values": 26796000
+        },
+        "right_subject": {
+          "lower": 0.0004320899470899471,
+          "upper": 0.0027875661375661377,
+          "values": 37800000
+        }
+      }
+    }
+  },
+  "acceptance": "baseline_recorded_not_candidate_acceptance"
+}

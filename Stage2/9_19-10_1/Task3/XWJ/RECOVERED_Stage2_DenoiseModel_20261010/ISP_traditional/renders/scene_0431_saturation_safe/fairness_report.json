@@ -1,0 +1,112 @@
+{
+  "tool": "opencv-fixed-raw-compare-isp",
+  "fairness_contract": {
+    "shared_metadata_reference": "F:\\RAW_MEF\\data_RAW\\iPhone17Pro\\core_matadata_mef\\scene_0431\\under\\scene_0431_metadata_numeric.json",
+    "shared_metadata_validated_against": "F:\\RAW_MEF\\data_RAW\\iPhone17Pro\\core_matadata_mef\\scene_0431\\over\\scene_0431_metadata_numeric.json",
+    "fixed_ev_for_all_frames": 0.0,
+    "uses_baseline_exposure": false,
+    "uses_exposure_time_or_iso": false,
+    "uses_role_dependent_ev": false,
+    "uses_highlight_reconstruction": false,
+    "uses_camera_specific_tint": false,
+    "uses_image_adaptive_tone_mapping": false,
+    "tone_map": "hard-clip",
+    "false_color_suppression_enabled": false,
+    "scene_wide_saturation_scale_enabled": true,
+    "scene_wide_saturation_scale_applied_equally_to_all_frames": true
+  },
+  "shared_metadata": {
+    "black_level": 528.0,
+    "white_level": 4095.0,
+    "cfa": "BGGR",
+    "as_shot_neutral": [
+      0.4271561205,
+      1.0,
+      0.5097697377
+    ]
+  },
+  "fused_packed_contract": "[R, Gr, B, Gb] normalized packed RAW",
+  "scene_wide_saturation_scale": {
+    "enabled": true,
+    "triggered": true,
+    "reason": "one_or_more_inputs_reach_white_level",
+    "headroom": 0.98,
+    "raw_peaks_before_scale": {
+      "under": 0.08606672286987305,
+      "fused": 1.0092175006866455,
+      "over": 1.0
+    },
+    "raw_saturated_frames": {
+      "under": false,
+      "fused": true,
+      "over": true
+    },
+    "raw_scale": 0.971049351931802,
+    "linear_srgb_peaks_after_raw_scale": {
+      "under": 0.10505307465791702,
+      "fused": 2.4796159267425537,
+      "over": 2.571669578552246
+    },
+    "linear_srgb_scale": 0.38107539482257413,
+    "scene_scale": 0.3700430151796162
+  },
+  "fused_packed_range_before_scene_scale": {
+    "minimum": -0.02049863338470459,
+    "maximum": 1.0092175006866455,
+    "fraction_below_black_clipped": 1.5657567740901075e-07,
+    "fraction_at_or_above_white": 2.3486351611351612e-07,
+    "out_of_range_fraction": 3.9143919352252684e-07
+  },
+  "frames": {
+    "under": {
+      "input": "F:\\RAW_MEF\\data_RAW\\iPhone17Pro\\core_data_mef\\scene_0431\\under\\scene_0431_unprocessed_BGGR_16bit.tiff",
+      "output": "C:\\Users\\jie\\Documents\\Codex\\2026-08-01\\c-users-jie-downloads-emvd-main\\outputs\\opencv_fixed_raw_compare_isp\\renders\\scene_0431_saturation_safe\\under.png",
+      "details": {
+        "normalized_mosaic_mean": 0.003601496573537588,
+        "normalized_mosaic_median": 0.0007261847495101392,
+        "normalized_mosaic_peak": 0.03184838965535164,
+        "linear_srgb_peak_before_tone_map": 0.04000317305326462,
+        "linear_srgb_fraction_above_one_before_tone_map": 0.0,
+        "resolved_white_xy": [
+          0.34942424297332764,
+          0.3670208752155304
+        ],
+        "dual_illuminant_weight": 0.7429712691967484
+      }
+    },
+    "fused": {
+      "input": "F:\\RAW_MEF\\scripts\\U2Fusion-master\\u2fusion_raw_emvd_bf16\\outputs\\raw_mef_fused_bf16_test\\scene_0431\\fused_packed_float32.npy",
+      "output": "C:\\Users\\jie\\Documents\\Codex\\2026-08-01\\c-users-jie-downloads-emvd-main\\outputs\\opencv_fixed_raw_compare_isp\\renders\\scene_0431_saturation_safe\\fused.png",
+      "details": {
+        "normalized_mosaic_mean": 0.13229647278785706,
+        "normalized_mosaic_median": 0.05323536694049835,
+        "normalized_mosaic_peak": 0.37345388531684875,
+        "linear_srgb_peak_before_tone_map": 0.9449144005775452,
+        "linear_srgb_fraction_above_one_before_tone_map": 0.0,
+        "resolved_white_xy": [
+          0.34942424297332764,
+          0.3670208752155304
+        ],
+        "dual_illuminant_weight": 0.7429712691967484
+      }
+    },
+    "over": {
+      "input": "F:\\RAW_MEF\\data_RAW\\iPhone17Pro\\core_data_mef\\scene_0431\\over\\scene_0431_unprocessed_BGGR_16bit.tiff",
+      "output": "C:\\Users\\jie\\Documents\\Codex\\2026-08-01\\c-users-jie-downloads-emvd-main\\outputs\\opencv_fixed_raw_compare_isp\\renders\\scene_0431_saturation_safe\\over.png",
+      "details": {
+        "normalized_mosaic_mean": 0.1375659704208374,
+        "normalized_mosaic_median": 0.05342645198106766,
+        "normalized_mosaic_peak": 0.370043009519577,
+        "linear_srgb_peak_before_tone_map": 0.9799808859825134,
+        "linear_srgb_fraction_above_one_before_tone_map": 0.0,
+        "resolved_white_xy": [
+          0.34942424297332764,
+          0.3670208752155304
+        ],
+        "dual_illuminant_weight": 0.7429712691967484
+      }
+    }
+  },
+  "preview": "C:\\Users\\jie\\Documents\\Codex\\2026-08-01\\c-users-jie-downloads-emvd-main\\outputs\\opencv_fixed_raw_compare_isp\\renders\\scene_0431_saturation_safe\\comparison_preview.png",
+  "preview_long_edge": 1200
+}

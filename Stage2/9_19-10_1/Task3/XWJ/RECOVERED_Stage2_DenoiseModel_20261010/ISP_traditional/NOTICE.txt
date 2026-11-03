@@ -1,0 +1,14 @@
+OpenCV source-match ISP tool
+
+This package contains a traditional, non-learning ISP pipeline extracted from the
+DatasetMEF analysis workspace. It does not include DatasetMEF images, LibRaw,
+rawpy, trained models, or third-party binary files.
+
+The input metadata follows Adobe DNG metadata semantics. DNG technology may be
+used under license from Adobe Systems Incorporated.
+
+DNG specification reference:
+https://helpx.adobe.com/content/dam/help/en/photoshop/pdf/DNG_Spec_1_7_1_0.pdf
+
+Third-party Python dependencies are installed separately from requirements.txt
+and remain subject to their own licenses.

@@ -1,0 +1,175 @@
+{
+  "sequence": {
+    "name": "04_shdarkroom_1000x",
+    "group": "04",
+    "category": "raw_scene",
+    "sensor": "MIS20S1",
+    "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/shdarkroom/1000x/raw_stream_1920x1080_16bit@RG_[Shutter=79999,SenserG=131072,IspG=7656,R=1878,G=1024,B=2218].raw",
+    "width": 1920,
+    "height": 1080,
+    "frames": 200,
+    "bit_shift": 4,
+    "cfa": "RGGB",
+    "role": "noisy",
+    "wb_rgb": [
+      1.833984375,
+      1.0,
+      2.166015625
+    ],
+    "black_levels": [
+      254.75,
+      257.125,
+      256.875,
+      255.125
+    ],
+    "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/stream_manifests/04_shdarkroom_1000x.json"
+  },
+  "source_start": 0,
+  "frames": 8,
+  "layout": "2x3: five fixed-ISP branches plus A11 confidence weight",
+  "videos": {
+    "overview": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_shdarkroom_1000x/traditional_isp_video/04_shdarkroom_1000x_a11_5way_overview.mp4",
+      "sha256": "a02b4dcc0841558973275bf27e37c74672953bcf72cb24b6aef352813157c38f",
+      "ffmpeg_command": [
+        "ffmpeg",
+        "-y",
+        "-f",
+        "rawvideo",
+        "-pix_fmt",
+        "rgb24",
+        "-s",
+        "1920x1080",
+        "-r",
+        "6",
+        "-i",
+        "-",
+        "-c:v",
+        "libx265",
+        "-x265-params",
+        "crf=16",
+        "-pix_fmt",
+        "yuv444p",
+        "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_shdarkroom_1000x/traditional_isp_video/04_shdarkroom_1000x_a11_5way_overview.mp4"
+      ],
+      "encoder": "libx265"
+    },
+    "detail": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_shdarkroom_1000x/traditional_isp_video/04_shdarkroom_1000x_a11_5way_detail.mp4",
+      "sha256": "3b685707287924c2838a8e2f7d1046e875d568bb2eb026a54128f3d890af9e00",
+      "ffmpeg_command": [
+        "ffmpeg",
+        "-y",
+        "-f",
+        "rawvideo",
+        "-pix_fmt",
+        "rgb24",
+        "-s",
+        "1920x1080",
+        "-r",
+        "6",
+        "-i",
+        "-",
+        "-c:v",
+        "libx265",
+        "-x265-params",
+        "crf=16",
+        "-pix_fmt",
+        "yuv444p",
+        "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_shdarkroom_1000x/traditional_isp_video/04_shdarkroom_1000x_a11_5way_detail.mp4"
+      ],
+      "encoder": "libx265"
+    }
+  },
+  "inspection_frames": {
+    "overview": [
+      {
+        "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_shdarkroom_1000x/traditional_isp_video/inspection_frames/overview_frame0000.png",
+        "sha256": "eb257528bc5e3026a8e6b6ad3165c31835c36bb7fc46c712c44f997cfc5f31fb"
+      },
+      {
+        "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_shdarkroom_1000x/traditional_isp_video/inspection_frames/overview_frame0001.png",
+        "sha256": "4c1713b73336e5566218e8cb30f7c2ae4237c022c2270a8bd420bb0ef5cb81fa"
+      },
+      {
+        "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_shdarkroom_1000x/traditional_isp_video/inspection_frames/overview_frame0002.png",
+        "sha256": "3cc060248bdac7943e7a799999f264219be2229e821f2bf951b0c0b210502676"
+      },
+      {
+        "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_shdarkroom_1000x/traditional_isp_video/inspection_frames/overview_frame0003.png",
+        "sha256": "903e7652aceb45d59ba7cfd0a767babf756b50765572273bfaaf447e03c73c1e"
+      },
+      {
+        "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_shdarkroom_1000x/traditional_isp_video/inspection_frames/overview_frame0004.png",
+        "sha256": "a4b1a4661b5f84a14cf6cd9d9c6b3e5c17a985c3d73852d3f9b2e732959196cd"
+      },
+      {
+        "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_shdarkroom_1000x/traditional_isp_video/inspection_frames/overview_frame0005.png",
+        "sha256": "806ed592e71278711afc03b0a2cb8609a307c883d5da029b5aab4e44df1d0402"
+      },
+      {
+        "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_shdarkroom_1000x/traditional_isp_video/inspection_frames/overview_frame0006.png",
+        "sha256": "6b1a9a6c9ac51df7f3fd0e63b62a9a94d7355ff2c8a0b1b8524c3edf7b72b204"
+      },
+      {
+        "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_shdarkroom_1000x/traditional_isp_video/inspection_frames/overview_frame0007.png",
+        "sha256": "8052d77af630b81eb31cf111471e7fe3e7f87dc6eaafcc1e1370ff79f9574156"
+      }
+    ],
+    "detail": [
+      {
+        "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_shdarkroom_1000x/traditional_isp_video/inspection_frames/detail_frame0000.png",
+        "sha256": "e7c2943e5fa8b8438b9ae8a101bc2af4b7c26938d3dcf3961288f33902e404ba"
+      },
+      {
+        "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_shdarkroom_1000x/traditional_isp_video/inspection_frames/detail_frame0001.png",
+        "sha256": "1d59dc44772d6aa744f0933e0c0f199442021f86620b49eecd48c9ef3586cbea"
+      },
+      {
+        "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_shdarkroom_1000x/traditional_isp_video/inspection_frames/detail_frame0002.png",
+        "sha256": "c49591efb107bade8c7616bd092bfa9ca7b38a9130ed6be764ee9ed37ba4b1bb"
+      },
+      {
+        "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_shdarkroom_1000x/traditional_isp_video/inspection_frames/detail_frame0003.png",
+        "sha256": "c824074b7a5e1c2f5f195dcf48b02d0a854552ad45b1e9fcfcf7801964c56470"
+      },
+      {
+        "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_shdarkroom_1000x/traditional_isp_video/inspection_frames/detail_frame0004.png",
+        "sha256": "01bb57346e5598fbd537180855a4cec24fdf11d9bc7fe37c6173a5b30fa3f07a"
+      },
+      {
+        "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_shdarkroom_1000x/traditional_isp_video/inspection_frames/detail_frame0005.png",
+        "sha256": "1942f94bb86c2c46d4331a7c8b5b7135bcbcd76fda0b94eeb662a0e3e7226b8f"
+      },
+      {
+        "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_shdarkroom_1000x/traditional_isp_video/inspection_frames/detail_frame0006.png",
+        "sha256": "b77f55da2a116925018d5e6b3699b94cfc4c921b540805c07e041b5fab549c0c"
+      },
+      {
+        "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_shdarkroom_1000x/traditional_isp_video/inspection_frames/detail_frame0007.png",
+        "sha256": "985da971dced3f2e3fe65ccddd240f94963c1c8a4f29088ddc4ef6978de51143"
+      }
+    ]
+  },
+  "isp": {
+    "implementation": "ISP_traditional OpenCV edge-aware Bayer demosaic plus fixed exposure and sRGB gamma",
+    "highlight_recovery": true,
+    "tone_map": "reinhard",
+    "input_and_all_a3_variants_share_identical_parameters": true,
+    "sensor_color_accuracy_claimed": false,
+    "fixed_exposure_ev": 4.7393475987657245,
+    "black_levels_R_Gr_Gb_B": [
+      254.75,
+      257.125,
+      256.875,
+      255.125
+    ],
+    "wb_rgb": [
+      1.833984375,
+      1.0,
+      2.166015625
+    ],
+    "group03_2dnr_enabled": false,
+    "group03_3dnr_enabled": false
+  }
+}

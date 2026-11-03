@@ -1,0 +1,131 @@
+{
+  "status": "complete",
+  "phase": "render",
+  "checkpoint_sha256": "97c4332f685f98959b243e4b100434469f714aed6329e100d22b6d8552592e0b",
+  "config_sha256": "61002688d15c88ada0f4927d267bcb071ae5a4361e6c1b38fe083806a4c6a046",
+  "cpu_only_postprocess": true,
+  "dataset_mutated": false,
+  "training_performed": false,
+  "old_teacher_used": false,
+  "hard_holdout_used": false,
+  "sequences": {
+    "04_mis20s1_outdoor_1500x": {
+      "status": "complete",
+      "source_start": 0,
+      "evaluation": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_mis20s1_outdoor_1500x/evaluation.json",
+      "videos": {
+        "overview": {
+          "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_mis20s1_outdoor_1500x/traditional_isp_video/04_mis20s1_outdoor_1500x_a11_5way_overview.mp4",
+          "sha256": "12b1dc1139c3eaa764985c8ebb4cc45a5147e272dbbad3a52aa51b242eee391b",
+          "ffmpeg_command": [
+            "ffmpeg",
+            "-y",
+            "-f",
+            "rawvideo",
+            "-pix_fmt",
+            "rgb24",
+            "-s",
+            "1920x1080",
+            "-r",
+            "6",
+            "-i",
+            "-",
+            "-c:v",
+            "libx265",
+            "-x265-params",
+            "crf=16",
+            "-pix_fmt",
+            "yuv444p",
+            "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_mis20s1_outdoor_1500x/traditional_isp_video/04_mis20s1_outdoor_1500x_a11_5way_overview.mp4"
+          ],
+          "encoder": "libx265"
+        },
+        "detail": {
+          "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_mis20s1_outdoor_1500x/traditional_isp_video/04_mis20s1_outdoor_1500x_a11_5way_detail.mp4",
+          "sha256": "c4b2d9df2c9de6e5774fa1bc0e7fc428d1870cf3754eca2399010c5bf8297933",
+          "ffmpeg_command": [
+            "ffmpeg",
+            "-y",
+            "-f",
+            "rawvideo",
+            "-pix_fmt",
+            "rgb24",
+            "-s",
+            "1920x1080",
+            "-r",
+            "6",
+            "-i",
+            "-",
+            "-c:v",
+            "libx265",
+            "-x265-params",
+            "crf=16",
+            "-pix_fmt",
+            "yuv444p",
+            "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_mis20s1_outdoor_1500x/traditional_isp_video/04_mis20s1_outdoor_1500x_a11_5way_detail.mp4"
+          ],
+          "encoder": "libx265"
+        }
+      }
+    },
+    "04_shdarkroom_1000x": {
+      "status": "complete",
+      "source_start": 0,
+      "evaluation": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_shdarkroom_1000x/evaluation.json",
+      "videos": {
+        "overview": {
+          "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_shdarkroom_1000x/traditional_isp_video/04_shdarkroom_1000x_a11_5way_overview.mp4",
+          "sha256": "a02b4dcc0841558973275bf27e37c74672953bcf72cb24b6aef352813157c38f",
+          "ffmpeg_command": [
+            "ffmpeg",
+            "-y",
+            "-f",
+            "rawvideo",
+            "-pix_fmt",
+            "rgb24",
+            "-s",
+            "1920x1080",
+            "-r",
+            "6",
+            "-i",
+            "-",
+            "-c:v",
+            "libx265",
+            "-x265-params",
+            "crf=16",
+            "-pix_fmt",
+            "yuv444p",
+            "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_shdarkroom_1000x/traditional_isp_video/04_shdarkroom_1000x_a11_5way_overview.mp4"
+          ],
+          "encoder": "libx265"
+        },
+        "detail": {
+          "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_shdarkroom_1000x/traditional_isp_video/04_shdarkroom_1000x_a11_5way_detail.mp4",
+          "sha256": "3b685707287924c2838a8e2f7d1046e875d568bb2eb026a54128f3d890af9e00",
+          "ffmpeg_command": [
+            "ffmpeg",
+            "-y",
+            "-f",
+            "rawvideo",
+            "-pix_fmt",
+            "rgb24",
+            "-s",
+            "1920x1080",
+            "-r",
+            "6",
+            "-i",
+            "-",
+            "-c:v",
+            "libx265",
+            "-x265-params",
+            "crf=16",
+            "-pix_fmt",
+            "yuv444p",
+            "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_shdarkroom_1000x/traditional_isp_video/04_shdarkroom_1000x_a11_5way_detail.mp4"
+          ],
+          "encoder": "libx265"
+        }
+      }
+    }
+  }
+}

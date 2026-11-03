@@ -1,0 +1,40 @@
+{
+  "verified_at": "2026-07-26",
+  "reference_implementation": "scripts/analyze_raw_isp.py OpenCV source-match chain",
+  "pixel_equivalence_test": {
+    "scene": "scene_0245",
+    "exposure": "normal",
+    "shape": [
+      3024,
+      4032,
+      3
+    ],
+    "exact_equal": true,
+    "max_absolute_difference": 0,
+    "mean_absolute_difference": 0.0
+  },
+  "cli_scene_test": {
+    "scene": "scene_0245",
+    "exposures": [
+      "under",
+      "normal",
+      "over"
+    ],
+    "max_long_edge": 640,
+    "generated_images": 3,
+    "image_size": [
+      640,
+      480
+    ],
+    "image_mode": "RGB",
+    "report_frames": 3,
+    "passed": true
+  },
+  "verification_environment": {
+    "python": "3.13.5",
+    "opencv": "4.13.0",
+    "numpy": "2.4.4",
+    "tifffile": "2025.2.18",
+    "pillow": "11.1.0"
+  }
+}

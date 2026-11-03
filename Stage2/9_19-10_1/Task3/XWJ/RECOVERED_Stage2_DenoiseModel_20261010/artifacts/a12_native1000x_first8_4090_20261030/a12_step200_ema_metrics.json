@@ -1,0 +1,31 @@
+{
+  "checkpoint": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_sampling_pilot_4090_20261030/checkpoint_step_000200.pth",
+  "checkpoint_sha256": "6ead120ce12b2decf5a44980d73700dc059bba60cf567a601766a2eaef0b6d9e",
+  "prediction": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_native1000x_first8_4090_20261030/a12_step200_ema_prediction.npy",
+  "prediction_sha256": "b31ec5d64324897145689ebe03b5c3db94f810b26012e7812b01eb92d077c441",
+  "metrics": {
+    "finetuned": {
+      "rmse_dn": 8.668965339660645,
+      "psnr_db": 53.485732790836515,
+      "pixels": 15359240
+    },
+    "input": {
+      "rmse_dn": 23.75747299194336,
+      "psnr_db": 44.729073237513006,
+      "pixels": 15359240
+    },
+    "temporal_mad_dn": 1.4177168607711792,
+    "input_temporal_mad_dn": 22.503097534179688,
+    "legal_fraction": 1.0,
+    "high_frequency_ratio_mean": 0.8683864163572599,
+    "high_frequency_ratio_per_channel": [
+      0.8678875265758227,
+      0.9080778592846195,
+      0.8942021819646413,
+      0.8033780976039565
+    ],
+    "flat_residual_sigma_dn": 6.338771820068359,
+    "static_pixels": 15359240,
+    "static_fraction": 0.925880111882716
+  }
+}

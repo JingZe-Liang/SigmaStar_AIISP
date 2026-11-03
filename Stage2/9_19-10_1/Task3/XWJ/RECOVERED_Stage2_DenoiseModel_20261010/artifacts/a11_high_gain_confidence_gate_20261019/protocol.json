@@ -1,0 +1,64 @@
+{
+  "config": {
+    "protocol": "A11 deterministic high-gain motion and misalignment confidence gate",
+    "date": "2026-10-19",
+    "catalog_config": "configs/a3_all_dataset_traditional_isp_preview_20261017.json",
+    "baseline_preview_root": "artifacts/a3_all_dataset_traditional_isp_preview_20261017",
+    "diagnostic_root": "artifacts/a3_high_gain_diagnostic_20261018",
+    "checkpoint": "artifacts/finetune_mis20s1/training/checkpoint_step_005000.pth",
+    "checkpoint_sha256": "97c4332f685f98959b243e4b100434469f714aed6329e100d22b6d8552592e0b",
+    "output_dir": "artifacts/a11_high_gain_confidence_gate_20261019",
+    "sequences": [
+      "04_mis20s1_outdoor_1500x",
+      "04_shdarkroom_1000x"
+    ],
+    "sampling": {
+      "clip_index": 0,
+      "frames": 8
+    },
+    "mask": {
+      "temporal_gap": 2,
+      "residual_low_z": 2.5,
+      "residual_high_z": 6.0,
+      "gradient_low": 0.18,
+      "gradient_high": 0.6,
+      "structure_low": 0.002,
+      "structure_high": 0.012,
+      "flow_low_px": 0.75,
+      "flow_high_px": 2.5,
+      "fb_low_px": 0.75,
+      "fb_high_px": 2.5,
+      "photometric_low_z": 4.0,
+      "photometric_high_z": 10.0,
+      "seed_threshold": 0.45,
+      "min_component_area": 48,
+      "dilation_radius": 3,
+      "feather_sigma": 2.0,
+      "min_weight": 0.01,
+      "max_weight_residual": 0.35,
+      "max_weight_gradient": 0.5,
+      "max_weight_full": 0.65
+    },
+    "isp": {
+      "implementation": "ISP_traditional OpenCV edge-aware Bayer demosaic plus fixed exposure and sRGB gamma",
+      "highlight_recovery": true,
+      "tone_map": "reinhard",
+      "input_and_all_a3_variants_share_identical_parameters": true,
+      "sensor_color_accuracy_claimed": false
+    },
+    "video": {
+      "fps": 6,
+      "preferred_encoder": "libx264",
+      "pixel_format": "yuv444p",
+      "crf": 16
+    },
+    "constraints": {
+      "dataset_read_only": true,
+      "no_training": true,
+      "no_checkpoint_replacement": true,
+      "no_old_teacher": true,
+      "hard_holdout_used_for_tuning": false
+    }
+  },
+  "config_sha256": "61002688d15c88ada0f4927d267bcb071ae5a4361e6c1b38fe083806a4c6a046"
+}

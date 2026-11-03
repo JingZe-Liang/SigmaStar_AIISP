@@ -1,0 +1,175 @@
+{
+  "sequence": {
+    "name": "04_mis20s1_outdoor_1500x",
+    "group": "04",
+    "category": "raw_scene",
+    "sensor": "MIS20S1",
+    "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/mis20s1_outdoor/1500x/raw_stream_1920x1080_16bit@RG_[Shutter=79999,SenserG=131072,IspG=10455,R=1679,G=1024,B=2473].raw",
+    "width": 1920,
+    "height": 1080,
+    "frames": 195,
+    "bit_shift": 4,
+    "cfa": "RGGB",
+    "role": "noisy",
+    "wb_rgb": [
+      1.6396484375,
+      1.0,
+      2.4150390625
+    ],
+    "black_levels": [
+      253.0,
+      254.625,
+      254.5,
+      252.625
+    ],
+    "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/stream_manifests/04_mis20s1_outdoor_1500x.json"
+  },
+  "source_start": 0,
+  "frames": 8,
+  "layout": "2x3: five fixed-ISP branches plus A11 confidence weight",
+  "videos": {
+    "overview": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_mis20s1_outdoor_1500x/traditional_isp_video/04_mis20s1_outdoor_1500x_a11_5way_overview.mp4",
+      "sha256": "12b1dc1139c3eaa764985c8ebb4cc45a5147e272dbbad3a52aa51b242eee391b",
+      "ffmpeg_command": [
+        "ffmpeg",
+        "-y",
+        "-f",
+        "rawvideo",
+        "-pix_fmt",
+        "rgb24",
+        "-s",
+        "1920x1080",
+        "-r",
+        "6",
+        "-i",
+        "-",
+        "-c:v",
+        "libx265",
+        "-x265-params",
+        "crf=16",
+        "-pix_fmt",
+        "yuv444p",
+        "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_mis20s1_outdoor_1500x/traditional_isp_video/04_mis20s1_outdoor_1500x_a11_5way_overview.mp4"
+      ],
+      "encoder": "libx265"
+    },
+    "detail": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_mis20s1_outdoor_1500x/traditional_isp_video/04_mis20s1_outdoor_1500x_a11_5way_detail.mp4",
+      "sha256": "c4b2d9df2c9de6e5774fa1bc0e7fc428d1870cf3754eca2399010c5bf8297933",
+      "ffmpeg_command": [
+        "ffmpeg",
+        "-y",
+        "-f",
+        "rawvideo",
+        "-pix_fmt",
+        "rgb24",
+        "-s",
+        "1920x1080",
+        "-r",
+        "6",
+        "-i",
+        "-",
+        "-c:v",
+        "libx265",
+        "-x265-params",
+        "crf=16",
+        "-pix_fmt",
+        "yuv444p",
+        "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_mis20s1_outdoor_1500x/traditional_isp_video/04_mis20s1_outdoor_1500x_a11_5way_detail.mp4"
+      ],
+      "encoder": "libx265"
+    }
+  },
+  "inspection_frames": {
+    "overview": [
+      {
+        "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_mis20s1_outdoor_1500x/traditional_isp_video/inspection_frames/overview_frame0000.png",
+        "sha256": "5a7dcd861b790f5ff0a38c9d53b65b3427fd3f1a24d3ce8354c3182c7b1a4818"
+      },
+      {
+        "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_mis20s1_outdoor_1500x/traditional_isp_video/inspection_frames/overview_frame0001.png",
+        "sha256": "8928700f95919a2da9963b90cc86a2fee3642b67d2d438cda785a2c3df417249"
+      },
+      {
+        "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_mis20s1_outdoor_1500x/traditional_isp_video/inspection_frames/overview_frame0002.png",
+        "sha256": "500190abebd322babbff25523f0ea9e977d745ce548adc77eac7c97685cd885e"
+      },
+      {
+        "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_mis20s1_outdoor_1500x/traditional_isp_video/inspection_frames/overview_frame0003.png",
+        "sha256": "d763adc255de32d63fe0ff3a1cf148bdaf9980422229b0e84da622111ec52850"
+      },
+      {
+        "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_mis20s1_outdoor_1500x/traditional_isp_video/inspection_frames/overview_frame0004.png",
+        "sha256": "3125f2720c0f2fb5def2f2ec2e191ad30a824ae0bc08fd722d2f609996a41370"
+      },
+      {
+        "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_mis20s1_outdoor_1500x/traditional_isp_video/inspection_frames/overview_frame0005.png",
+        "sha256": "039afe913538bef80ec5f57d36d1ba4045deb3cfe08308bc17f7f7c73649b0db"
+      },
+      {
+        "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_mis20s1_outdoor_1500x/traditional_isp_video/inspection_frames/overview_frame0006.png",
+        "sha256": "d035566a866156e1e50835cd5534a950e36f7427a1fbd8672fb79bff0c8bc7cf"
+      },
+      {
+        "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_mis20s1_outdoor_1500x/traditional_isp_video/inspection_frames/overview_frame0007.png",
+        "sha256": "611d25d847f2ffaf12070bf38827fc5a88a68405b12611593320994825ea84a7"
+      }
+    ],
+    "detail": [
+      {
+        "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_mis20s1_outdoor_1500x/traditional_isp_video/inspection_frames/detail_frame0000.png",
+        "sha256": "11e172f21fbff1acbaa464a938e0e40b7d77cc7d25645f0aaeac5caf8b0fc8ef"
+      },
+      {
+        "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_mis20s1_outdoor_1500x/traditional_isp_video/inspection_frames/detail_frame0001.png",
+        "sha256": "439ff75b6c423c45f6220d72779df324d6e399e3004c90c05915f9d636e52ec1"
+      },
+      {
+        "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_mis20s1_outdoor_1500x/traditional_isp_video/inspection_frames/detail_frame0002.png",
+        "sha256": "65efdeb17127b6923005e9485d3b7d3982237f443adf7c5cbe52ba38539cf7b2"
+      },
+      {
+        "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_mis20s1_outdoor_1500x/traditional_isp_video/inspection_frames/detail_frame0003.png",
+        "sha256": "14787e842db8334f6193af6ddc15bdc8aa4cdf16572c88197220f2a3680508a2"
+      },
+      {
+        "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_mis20s1_outdoor_1500x/traditional_isp_video/inspection_frames/detail_frame0004.png",
+        "sha256": "f899dfca22b3bf6c2becdc021a4d688438f817a671e6f7c5a570471909851d85"
+      },
+      {
+        "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_mis20s1_outdoor_1500x/traditional_isp_video/inspection_frames/detail_frame0005.png",
+        "sha256": "7d6c3b13dd775684d6ce8f8fcc2129aa674e8be496df1deca1f42c3e8772eacb"
+      },
+      {
+        "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_mis20s1_outdoor_1500x/traditional_isp_video/inspection_frames/detail_frame0006.png",
+        "sha256": "50533eb67aef31c1e1eeed30e50ce82c44aa541cdc63a103ba586b4820c6d86d"
+      },
+      {
+        "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_mis20s1_outdoor_1500x/traditional_isp_video/inspection_frames/detail_frame0007.png",
+        "sha256": "439cbda78ef12b2436a166130fbd175db51628d0cbcdd8d7ecb6d1f16b10bc24"
+      }
+    ]
+  },
+  "isp": {
+    "implementation": "ISP_traditional OpenCV edge-aware Bayer demosaic plus fixed exposure and sRGB gamma",
+    "highlight_recovery": true,
+    "tone_map": "reinhard",
+    "input_and_all_a3_variants_share_identical_parameters": true,
+    "sensor_color_accuracy_claimed": false,
+    "fixed_exposure_ev": 3.164515948550519,
+    "black_levels_R_Gr_Gb_B": [
+      253.0,
+      254.625,
+      254.5,
+      252.625
+    ],
+    "wb_rgb": [
+      1.6396484375,
+      1.0,
+      2.4150390625
+    ],
+    "group03_2dnr_enabled": false,
+    "group03_3dnr_enabled": false
+  }
+}

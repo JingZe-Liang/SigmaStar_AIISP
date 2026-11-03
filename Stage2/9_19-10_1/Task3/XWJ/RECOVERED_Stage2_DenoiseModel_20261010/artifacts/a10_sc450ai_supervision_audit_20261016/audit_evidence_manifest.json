@@ -1,0 +1,14 @@
+{
+  "figure": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a10_sc450ai_supervision_audit_20261016/audit_evidence.png",
+  "sha256": "0252f3545a5f3a109915c11cd65c61d3c51233673a2ce1e36f417710459fbf26",
+  "shape": [
+    1400,
+    2240,
+    4
+  ],
+  "sources": [
+    "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a10_sc450ai_supervision_audit_20261016/audit.json",
+    "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc450ai/sc450ai_804x_lightchanging/profile/frame_means.npy",
+    "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc450ai/sc450ai_1435x_motion_black_object/profile/frame_means.npy"
+  ]
+}

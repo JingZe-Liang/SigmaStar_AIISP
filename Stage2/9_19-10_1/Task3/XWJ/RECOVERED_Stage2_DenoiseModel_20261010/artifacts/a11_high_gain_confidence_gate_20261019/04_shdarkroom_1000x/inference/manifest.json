@@ -1,0 +1,50 @@
+{
+  "protocol": "A11 deterministic high-gain motion and misalignment confidence gate",
+  "config_sha256": "61002688d15c88ada0f4927d267bcb071ae5a4361e6c1b38fe083806a4c6a046",
+  "checkpoint_sha256": "97c4332f685f98959b243e4b100434469f714aed6329e100d22b6d8552592e0b",
+  "source_start": 0,
+  "frames": 8,
+  "source_artifact_sha256": {
+    "baseline_prediction": "be747703d6490fc0828688d6384bf4926a1107aba050ba418a430dcd6e9a08eb",
+    "a3_weighted": "205123427bf713d9abaae3223ad84138ee6cb4da169fed09cfc956c86b5660bd",
+    "a3_frame_repeated": "a8c41eff09941ea99cda2239151251f23ed8cbe240f6d345f67645e0dc7329a1"
+  },
+  "selected_candidate": "full",
+  "artifacts": {
+    "weights": {
+      "residual_only": {
+        "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_shdarkroom_1000x/inference/weights_residual_only.npy",
+        "sha256": "a51902b58d6dec44670d1b5bf128eea85ef24e1af2e520b020c25f928893df9b"
+      },
+      "residual_gradient": {
+        "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_shdarkroom_1000x/inference/weights_residual_gradient.npy",
+        "sha256": "699e9649996ad1d95809d5a2bdf234c0362d149bc8bebf38a85120d35dc495df"
+      },
+      "full": {
+        "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_shdarkroom_1000x/inference/weights_full.npy",
+        "sha256": "7b3d65dfee3fbf9e977eae4580114598eb3d3a03870d52f61c6f9a07e98aeeb8"
+      }
+    },
+    "candidates": {
+      "residual_only": {
+        "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_shdarkroom_1000x/inference/a11_residual_only.npy",
+        "sha256": "3bfd0356989886b210ec1f384e92cddcce4e6242f34e1ec38c6e0401e52a079d"
+      },
+      "residual_gradient": {
+        "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_shdarkroom_1000x/inference/a11_residual_gradient.npy",
+        "sha256": "fce6c38a83ebe19f6dde35db4a6f2ce4b89fa880b8860ef6d9bbf87b44e9a17b"
+      },
+      "full": {
+        "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_shdarkroom_1000x/inference/a11_full.npy",
+        "sha256": "216a3866951af222311326aaca06f8d2c9b9388cd3c476965cbc1dfb2af8bb38"
+      }
+    },
+    "evidence_masks": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a11_high_gain_confidence_gate_20261019/04_shdarkroom_1000x/inference/evidence_masks.npz",
+      "sha256": "7f766e20f5967efc0ee9ac52fe02ab9a1ebc1e3e1a41f7431493f4897494e9b8"
+    }
+  },
+  "dataset_mutated": false,
+  "training_performed": false,
+  "old_teacher_used": false
+}

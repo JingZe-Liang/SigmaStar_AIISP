@@ -1,0 +1,29 @@
+{
+  "fixed_isp_evidence": {
+    "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a10b_sc450ai_degradation_validation_20261016/fixed_isp_evidence.png",
+    "sha256": "5401bd8d6976a4451606da0b8faa830ce5f6e945bf105a776bf9c3cbc57baa11",
+    "shape": [
+      876,
+      1920,
+      3
+    ]
+  },
+  "fixed_isp_noise_crops": {
+    "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a10b_sc450ai_degradation_validation_20261016/fixed_isp_noise_crops.png",
+    "sha256": "f889766946e754a79c6287daac96cde1c4715383191f8a2fd1ba88b24dc8a71b",
+    "shape": [
+      1384,
+      1920,
+      3
+    ]
+  },
+  "statistical_evidence": {
+    "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a10b_sc450ai_degradation_validation_20261016/statistical_evidence.png",
+    "sha256": "50d49ece83928e6cf296896268b36093f6f2333346250a894c3baa7adf6c4075"
+  },
+  "conditioning_proxy_is_clean_ground_truth": false,
+  "sources": [
+    "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a10b_sc450ai_degradation_validation_20261016/validation.json",
+    "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a10b_sc450ai_degradation_validation_20261016/visual_samples.npz"
+  ]
+}
