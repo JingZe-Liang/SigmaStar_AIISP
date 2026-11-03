@@ -173,6 +173,8 @@ def _render_video(
     candidate_prediction_path: Path,
     output_dir: Path,
     fps: int,
+    candidate_label: str = "A8 sc450ai",
+    video_stem: str = "sc450ai_1435x_input_a3_a8_fixed_isp",
 ) -> dict[str, object]:
     reader = open_sequence(spec)
     black = channel_vector(profile.black_levels)
@@ -181,8 +183,8 @@ def _render_video(
     clips = contiguous_clip_indices(spec)
     crop = dict(spec.panel_crops)["black_subject"]
     output_dir.mkdir(parents=True, exist_ok=True)
-    video_path = output_dir / "sc450ai_1435x_input_a3_a8_fixed_isp.mp4"
-    preview_path = output_dir / "sc450ai_1435x_input_a3_a8_fixed_isp_frame0000.png"
+    video_path = output_dir / f"{video_stem}.mp4"
+    preview_path = output_dir / f"{video_stem}_frame0000.png"
     encoder = _video_encoder()
     command = [
         "ffmpeg",
@@ -243,7 +245,7 @@ def _render_video(
                 labels = (
                     f"Input | clip {clip_index + 1} | frame {source_index}",
                     f"A3 baseline | clip {clip_index + 1} | frame {source_index}",
-                    f"A8 sc450ai | clip {clip_index + 1} | frame {source_index}",
+                    f"{candidate_label} | clip {clip_index + 1} | frame {source_index}",
                 )
                 cells = [
                     _comparison_cell(image, text, crop)
@@ -281,7 +283,7 @@ def _render_video(
         "preview": str(preview_path.resolve()),
         "preview_sha256": _sha256(preview_path),
         "layout": (
-            "Input | A3 baseline | A8 candidate; overview above fitted "
+            f"Input | A3 baseline | {candidate_label}; overview above fitted "
             "black-subject crop"
         ),
     }
@@ -324,6 +326,17 @@ def main() -> int:
     )
     parser.add_argument("--device", default="cuda:0")
     parser.add_argument("--fps", type=int, default=6)
+    parser.add_argument("--candidate-label", default="A8 sc450ai")
+    parser.add_argument(
+        "--video-stem", default="sc450ai_1435x_input_a3_a8_fixed_isp"
+    )
+    parser.add_argument(
+        "--protocol-label", default="A8 sc450ai blind-spot adaptation evaluation"
+    )
+    parser.add_argument(
+        "--training-source-description",
+        default="sc450ai_804x_lightchanging frames 0-119",
+    )
     args = parser.parse_args()
     evaluation_path = args.output_dir / "evaluation.json"
     if evaluation_path.is_file():
@@ -418,13 +431,15 @@ def main() -> int:
         holdout_prediction,
         args.output_dir / "fixed_isp_video",
         args.fps,
+        args.candidate_label,
+        args.video_stem,
     )
     result = {
-        "protocol": "A8 sc450ai blind-spot adaptation evaluation",
+        "protocol": args.protocol_label,
         "candidate_checkpoint": str(args.candidate_checkpoint.resolve()),
         "candidate_checkpoint_sha256": _sha256(args.candidate_checkpoint),
         "weights": "ema",
-        "training_sequence": "sc450ai_804x_lightchanging frames 0-119",
+        "training_sequence": args.training_source_description,
         "train_domain_validation": "sc450ai_804x_lightchanging frames 142-149",
         "held_out_sequence": "sc450ai_1435x_motion_black_object",
         "clean_target_available": False,

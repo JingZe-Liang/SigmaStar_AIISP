@@ -1,0 +1,1211 @@
+\documentclass[11pt,a4paper,UTF8,fontset=fandol]{ctexart}
+
+\usepackage{geometry}
+\geometry{left=2.35cm,right=2.35cm,top=2.55cm,bottom=2.55cm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{amsmath,amssymb}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{url}
+\urlstyle{tt}
+
+\graphicspath{{assets/stage2_report_20261023/}}
+\hypersetup{
+  unicode=true,
+  colorlinks=true,
+  linkcolor=black,
+  citecolor=black,
+  urlcolor=blue,
+  pdftitle={Stage2 RAW Video Denoising Research Report},
+  pdfauthor={Stage2 DenoiseModel Project}
+}
+
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0.30em}
+\renewcommand{\arraystretch}{1.16}
+\newcommand{\dn}{\ensuremath{\,\mathrm{DN}}}
+\newcommand{\db}{\ensuremath{\,\mathrm{dB}}}
+\newcommand{\psnr}{\ensuremath{\mathrm{PSNR}}}
+\newcommand{\rmse}{\ensuremath{\mathrm{RMSE}}}
+
+\title{\textbf{视频去噪研究报告}\\[0.4em]
+\large 从静态基线到跨传感器泛化的完整实验历程}
+\author{肖纬杰\quad 邸锦承}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+\noindent
+本报告系统记录了 Stage2 RAW 视频去噪项目的完整研究历程。项目起点是 Stage1 伪 GT 主线中 RViDeformer-L\_CRVD 教师在 RAW 数据上过度平滑的问题；目标是通过公司数据微调得到一个既抑制噪声又保留高频细节、并能在多种传感器与增益条件下工作的 RAW 视频去噪模型。报告按四条主线展开：静态基线（A0--A4）、运动保真（A5--A7）、跨传感器泛化（A3 零样本审计、A8--A10b）以及高增益动态失效（全数据集预览、四路诊断、A11 置信门控）。我们给出了 A3 这一可靠的静态基线（645x 跨增益 29.57\db，native 1000x 53.27\db），也完整记录了一连串探索实验：A4 的 1000x 跨捕获曝光拟合失效、A5 的动态监督与标量扫描、A6 的四种冻结运动专家、A7 的 36 组旧教师融合、A8 的 sc450ai 盲点适配、A9 的统一多传感器微调、A10b 的全部退化生成器，以及 A11 的置信门控。核心结论是：静态去噪可以通过可信的时域均值监督解决；运动保真、高增益动态和 sc450ai 空间细节的瓶颈不是网络容量或训练步数，而是缺少可信的干净动态/空间监督。报告最后给出失败模式分类、方法论反思与后续研究建议。
+
+\vspace{0.8em}
+\noindent\textbf{关键词：} RAW 视频去噪；RViDeformer；跨传感器泛化；运动保真；高增益；负结果；固定 ISP 评测
+\end{abstract}
+
+\newpage
+\tableofcontents
+\newpage
+
+%========================================================
+\section{引言}
+%========================================================
+
+\subsection{研究背景}
+
+RAW 域视频去噪位于计算摄影与图像处理的核心位置。与 sRGB 域相比，RAW 域保留了传感器的线性响应、Bayer 采样和噪声统计，理论上更有利于在去噪的同时恢复真实的高频细节\cite{r1,r2,r8}。近年来，CRVD/RViDeNet\cite{r1}、RViDeformer\cite{r2}、RVRT\cite{r3}、EMVD\cite{r15}、FastDVDNet\cite{r16} 等工作把深度时空模型引入 RAW 视频去噪，在公开数据上取得了显著进展。然而，这些模型通常在特定传感器、特定增益和特定场景分布上训练；一旦部署到公司自采数据，传感器响应、黑电平、CFA 相位、增益档位、噪声相关性和场景统计都会发生变化，零样本迁移往往出现过度平滑、细节塌陷或颜色异常。
+
+本项目源于一个更具体的工程问题。Stage1 的伪 GT 主线使用 RViDeformer-L\_CRVD 作为教师，为下游学生模型生成伪干净目标。该教师在 CRVD 上表现良好，但在公司 MIS20S1 RAW 上会把图卡细线、棋盘纹理和文字边缘一起抹平。主线只能在学生端打补丁，无法从根源上解决教师端的高频损失。因此，Stage2 的目标不是再训练一个学生，而是直接对公司数据微调教师：让教师在真实噪声域上学会“抑噪但不抹细节”，并最终反哺伪 GT 主线。
+
+\subsection{研究问题}
+
+围绕上述目标，本项目逐步形成了四个研究问题：
+
+\begin{enumerate}
+  \item \textbf{RQ1（静态基线）}：在只有少量公司数据、且没有逐像素干净 GT 的条件下，能否构造可信的静态监督，使 RViDeformer 在公司 RAW 上显著优于零样本教师，同时保留高频细节？
+  \item \textbf{RQ2（运动保真）}：静态去噪模型在运动区域会把真实运动误当作噪声平均掉。能否在不引入旧教师伪真值的前提下，恢复运动区域的真实内容？
+  \item \textbf{RQ3（跨传感器泛化）}：在 MIS20S1 上微调的模型能否零样本迁移到 SC465SL、sc635hai、sc450ai？如果不能，逐传感器适配需要什么样的监督，边界在哪里？
+  \item \textbf{RQ4（高增益动态）}：在更高总增益、更低信噪比的动态场景中，模型出现朦胧、重影和过度平滑。失效主因是空间拼接、ISP、时域对齐，还是训练分布？在不训练的前提下能否修复？
+\end{enumerate}
+
+这四个问题并不是预先设计好的四条平行实验，而是在项目推进中依次暴露出来的。A3 解决了 RQ1，却把 RQ2 推到了前台；A5--A7 的连续失败说明 RQ2 的瓶颈是监督而不是模型；跨传感器审计把 RQ3 从“泛化好不好”变成了“哪些传感器根本没有可用监督”；全数据集预览又把 RQ4 从“某个视频的编码问题”变成了“高增益时域融合的系统性失效”。报告将按这一真实顺序展开，而不是按事后整理的四条平行线展开。
+
+\subsection{主要工作与贡献}
+
+本报告的主要工作可以概括为：
+
+\begin{enumerate}
+  \item \textbf{建立了一个可复现的静态去噪基线}：A3 step-5000 在 MIS20S1 645x 跨增益留出上达到 29.57\db（输入 24.35\db），在 native 1000x 上达到 53.27\db（输入 44.62\db），并通过奇偶分半参考验证。
+  \item \textbf{建立了一套多证据评测协议}：分离增益、场景、奇偶帧池；同时报告 PSNR/RMSE、高频保持率、平坦区残差、temporal MAD、legal RAW fraction 与固定 ISP 视频；硬留出从不参与调参。
+  \item \textbf{系统记录并分类了失败路线}：A5 动态监督、A6 冻结运动专家、A7 旧教师融合、A8 sc450ai 盲点、A9 统一多传感器、A10b 退化生成器、A11 置信门控。每条路线都给出明确的否决理由，而不是“略有改善、建议继续观察”。
+  \item \textbf{给出了传感器支持边界}：SC465SL 在已测静态域支持；sc635hai 静态低色温条件支持，且仅保留一个 12,400 参数的可选输出头；sc450ai 不支持；MIS20S1 高增益动态未解决。
+  \item \textbf{总结了若干可复用的方法论经验}：实验前预注册通过门槛、保留硬留出与互斥帧池、用固定 ISP 复评视觉结果，并区分指标变化究竟来自模型能力还是评价域设置。A4 的 1000x 案例表明，评价域选择本身就可能改变对模型的判断。
+\end{enumerate}
+
+\subsection{报告组织}
+
+第 2 节介绍相关工作与技术背景；第 3 节描述数据集、元数据陷阱、噪声统计与评测协议；第 4 节记录 A0--A4 静态基线的建立与第一次评价失败；第 5 节记录 A5--A7 的运动保真探索；第 6 节记录跨传感器审计与 A8--A10b；第 7 节记录高增益动态诊断与 A11；第 8 节进行综合讨论；第 9 节总结。附录给出实验索引、复现入口与术语表。
+
+图~\ref{fig:timeline} 给出了整个项目的四阶段时间线与五个关键决策点。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.98\textwidth]{fig01_timeline.png}
+  \caption{Stage2 项目时间线。四个科学阶段（静态基线、运动保真、跨传感器、高增益动态）依次推进；M1--M5 为五个关键决策点。}
+  \label{fig:timeline}
+\end{figure}
+
+%========================================================
+\section{相关工作与技术背景}
+%========================================================
+
+\subsection{RAW 视频去噪}
+
+RAW 视频去噪的早期工作多采用多帧对齐加时空融合。HDR+\cite{r10} 与 Deep Burst Denoising\cite{r9} 通过 burst 对齐和帧间融合提升低照度信噪比；KPN\cite{r17} 使用核预测网络进行 burst 去噪；EMVD\cite{r15} 与 FastDVDNet\cite{r16} 则把循环或非局部时空融合引入视频去噪。经典方法方面，NL-means\cite{r18} 与 BM3D\cite{r19} 仍是重要的非局部先验来源。在图像域，DnCNN\cite{r14} 等判别式 CNN 奠定了残差去噪范式；CBDNet\cite{r20} 则把真实噪声估计与盲去噪结合起来，说明“噪声模型 + 网络”的组合对真实数据尤为重要。
+
+CRVD/RViDeNet\cite{r1} 首次提供了动态场景的 RAW 视频 noisy-clean 配对基准，并采用 Bayer 打包、可变形卷积对齐和时空融合。RViDeformer\cite{r2} 在此基础上引入多分支空间/时间注意力与重参数化，在更大的 ReCRVD 数据集上训练，显著提升了 RAW 视频去噪的效率与质量。RVRT\cite{r3} 则提供了递归视频 Transformer 与引导式可变形注意力的通用框架。本项目的基座正是 RViDeformer-L\_CRVD：它不是从零训练，而是在官方 CRVD 权重上做小学习率全参数微调。
+
+\subsection{无干净真值的监督}
+
+公司数据无法提供逐像素干净 GT，因此项目大量依赖无干净真值监督。Noise2Noise\cite{r4} 表明，在噪声独立同分布的假设下，可以用另一张噪声观测作为目标；Noise2Void\cite{r5} 与 Noise2Self\cite{r6} 则通过盲点（blind-spot）结构从单张噪声图中构造自监督。盲点方法可以学习噪声统计，但它有一个根本限制：如果某个空间结构在输入中已经被抹掉，盲点目标无法“凭空”恢复该结构。A8 的 sc450ai 失败正是这一限制的实证。
+
+另一个重要资源是时域平均。对于静态场景，低增益流的长时间平均可以逼近干净参考；HDR+\cite{r10} 与 burst 去噪\cite{r9,r17} 都利用了多帧平均。但时域平均在运动区域会产生重影，因此不能直接作为动态真值。这一区分贯穿 A1、A5 和 A7。
+
+\subsection{噪声建模与合成}
+
+Foi 等人\cite{r7} 提出的 Poisson-Gaussian 模型把 RAW 噪声方差写成信号相关项与读出噪声项之和；Unprocessing\cite{r8} 则把 sRGB 图像反处理回 RAW 域以构造训练对。本项目在 A2 中使用标定平场与黑帧拟合
+\begin{equation}
+\sigma^2(\mu,G)=a\,\mu\,G+b\,G^2,
+\label{eq:noise}
+\end{equation}
+其中 $\mu$ 为信号均值，$G$ 为增益因子，$a$ 为 shot 系数，$b$ 为读出噪声系数。该模型用于从 A1 干净参考合成不同增益的噪声对，并以 15\% 的相对误差作为真实性硬门槛。
+
+\subsection{运动对齐、光流与固定 ISP}
+
+A5 的动态探针使用 DIS 光流\cite{r11} 把后一帧 warp 到当前帧，并以 forward-backward error 和光度误差构造置信度。A11 的置信门控同样使用 DIS 光流，但只把它作为输入证据之一，而不是直接做光流融合。固定 ISP 评测使用 Bayer 去马赛克、固定曝光/白平衡、Reinhard tone mapping\cite{r12} 和高光重建；2DNR/3DNR 一律关闭，以避免把 ISP 的时域处理误认为模型效果。
+
+损失函数方面，A3 使用 Charbonnier 主项\cite{r13}，并叠加梯度损失与高通损失。Charbonnier 是 L1 的平滑近似，较 L2 更适合保留边缘；梯度与高通项则直接约束高频结构。
+
+\subsection{本文的定位}
+
+与追求单一 benchmark 最高 PSNR 的工作不同，本项目更像一次“部署前的系统性可行性审计”。我们关心的不是某一个数字，而是：在真实公司数据、真实传感器差异、真实运动和高增益条件下，哪些结论可以成立、哪些不能成立、失败的原因是什么。因此，报告中有大量“负结果”，它们与 A3 的正结果具有同等的重要性。
+
+%========================================================
+\section{数据、监督与评测}
+%========================================================
+
+\subsection{数据集全景}
+
+公司数据集包含 5 个顶层分组、45 条原始 RAW 流，覆盖 4 种传感器：MIS20S1、SC465SL、sc635hai、sc450ai。分辨率包括 1920$\times$1080、2560$\times$1440、2688$\times$1520、3200$\times$1800；位对齐包括高 12 位（存储值需右移 4 位）、低 12 位和低对齐有效 10 位；CFA 以 RGGB 为主，标定流为 GRBG；黑电平逐流实测，范围约 250--321\dn。表~\ref{tab:dataset} 给出了主要数据源及其在项目中的角色。
+
+\begin{table}[H]
+\centering
+\small
+\caption{主要数据源与项目角色。}
+\label{tab:dataset}
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.18\textwidth}p{0.27\textwidth}p{0.14\textwidth}p{0.29\textwidth}}
+\toprule
+分组/场景 & 内容 & 规模 & 项目角色 \\
+\midrule
+04/shdarkroom & MIS20S1 暗房，同一布景 7 个增益点（10x--1000x） & 200 帧$\times$6 + 300 帧$\times$1 & 主监督源；10x 时域均值作为 A1 主参考；跨增益配对 \\
+04/mis20s1\_\allowbreak outdoor & MIS20S1 公园黄昏，4 个增益点（128x--1500x） & 195--200 帧$\times$4 & 运动丰富；高增益失效代表序列 \\
+04/calibration & ColorChecker 平场 + 盖镜头黑帧，9 个增益（100x--25600x） & 50 帧$\times$18 & A2 噪声模型与合成数据 \\
+02/SC465SL & SC465SL 暗房，两条流（标称 256x/2000x） & 300 帧$\times$2 & 跨传感器静态审计 \\
+05/SC465SL & 超市布景 6 级增益梯子 + difficultpattern & 100--200 帧$\times$10 & 细节压力测试；不作为干净真值 \\
+01/sc635hai & 131x 低色温 + 16x 运动彩色 & 150/200 帧 & 跨传感器静态/动态审计；A8 条件适配 \\
+01/sc450ai & 1435x 黑物运动 + 804x 灯光变化 & 210/150 帧 & 跨传感器压力测试；1435x 硬留出 \\
+03/MIS20S1 & 别家 2DNR/3DNR 输出 & 200 帧$\times$4 & 仅作已处理流参考，不进主训练 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{五类元数据陷阱}
+
+数据勘查阶段最重要的发现不是“数据有多少”，而是“元数据有多不可信”。项目最终总结了五类陷阱，并在 A0 适配层中逐源处理：
+
+\begin{enumerate}
+  \item \textbf{位对齐}：04 场景流与 05 高 12 位（读取后需 \texttt{>>4}）；02、03 低 12 位；01 组内分裂。sc450ai 随数据提供的 readme 给出的处理方式是：数据按高 12 位存储，读取后应右移 4 位（\texttt{>>4}），并以 4128\dn{} 作为黑电平。但实测数据是低对齐、有效 10 位（抽样值全部不超过 4095，且 \texttt{value \% 4 == 0} 占 100\%），黑电平约 256--258\dn。若按 readme 右移 4 位，像素值会被压到 0--255；再减 4128，整幅图会被裁成负数或零。这不是精度损失，而是直接把数据破坏。
+  \item \textbf{黑电平}：传感器名义 256\dn，但场景底座在 250--273\dn 之间漂移；标定流约 256.7\dn；03 组约 300--321\dn。任何跨流对齐都必须使用各自实测黑电平，不能用常数 256 或 252。
+  \item \textbf{CFA 相位}：场景流均为 RGGB；标定流为 GRBG，与场景流相位相反，使用前必须翻相位。绿通道两相位类均等 0.5--0.7\% 曾在两次独立测量中确认。
+  \item \textbf{帧数}：文件名中的帧数不可信。标定组每档实际 50 帧而非文件名暗示的 10 帧；1500x 为 195 帧、512x 为 198 帧、313x 为 300 帧。
+  \item \textbf{增益标签}：标称增益完全不预测噪声量级。shdarkroom 的 128x 反而比 1000x 更噪（79.05\dn{} vs.\ 28.93\dn），因为每档增益重新打过灯；标定梯度的 1600x/3200x 也出现非单调。模型条件不能使用标称增益，只能使用实测噪声统计。
+\end{enumerate}
+
+这些陷阱听起来是工程细节，但它们直接决定了监督是否可信。A1 的黑电平错误会让时域均值出现系统性偏置；A2 的位对齐错误会让合成噪声的方差偏大 16 倍；A5 的运动 mask 如果建立在错误的黑电平上，会把噪声误判为运动。项目在 A0 阶段花了整整一天做逐源适配与复核，这是后续所有数字能够对齐的前提。
+
+\subsection{噪声统计：标称增益为何不可信}
+
+图~\ref{fig:noise} 给出了两组实测噪声。左图是 shdarkroom 场景流的时域分半 $\sigma_{Gr}$：10x 为 21.60\dn，64x 为 54.31\dn，128x 达到峰值 79.05\dn，之后 313x 为 52.39\dn、632x 为 32.92\dn、645x 为 37.95\dn、1000x 为 28.93\dn。右图是标定平场梯度的分半 $\sigma_{Gr}$：100x 为 1.26\dn，800x 为 5.45\dn，1600x 反而降到 2.10\dn，3200x 为 3.35\dn，之后才恢复单调上升，25600x 达到 19.08\dn。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.98\textwidth]{fig03_data_noise.png}
+  \caption{实测噪声与标称增益的关系。(a) shdarkroom 场景流的时域分半 $\sigma_{Gr}$ 在 128x 达到峰值，1000x 反而低于 128x；(b) 标定平场梯度在 1600x/3200x 出现非单调。两图共同说明：不能把标称增益当作模型条件。}
+  \label{fig:noise}
+\end{figure}
+
+这一发现改变了 A2 的设计。最初计划按标称增益拟合 $\sigma(G)$，但数据表明标称增益与真实噪声之间没有稳定映射。最终 A2 改为按每个增益点的实测 $\sigma$ 拟合，并在合成时使用实测 shot/read 系数；标称增益只作为文件名标签，不进入模型。
+
+另一个容易被忽略的问题是量化下限。标定组 100x 的真实读出约 0.3 dn12，低于 1 LSB；实测 1.26\dn 是量化地板，不是真实读噪。A2 在低增益端做了量化感知处理，否则合成噪声会系统性偏小。
+
+\subsection{监督资源分级}
+
+项目逐渐形成了一张“监督资源分级表”（表~\ref{tab:supervision}）。这张表解释了为什么某些路线可行、某些路线从一开始就注定失败。
+
+\begin{table}[H]
+\centering
+\small
+\caption{监督资源分级。级别越低，可信度越差。}
+\label{tab:supervision}
+\begin{tabular}{p{0.10\textwidth}p{0.28\textwidth}p{0.24\textwidth}p{0.28\textwidth}}
+\toprule
+级别 & 资源 & 适用条件 & 项目中的使用 \\
+\midrule
+A & 跨增益静态参考（10x 时域均值） & 同一场景、静态、未饱和、已配准 & A1 主参考；A3 静态监督 \\
+B & 同流奇偶分半参考 & 静态、帧池互斥 & 跨传感器审计；A8/A9 静态适配 \\
+C & 同流时域均值 & 静态区域可信，动态区域有重影 & 次级参考；不作为动态真值 \\
+D & 旧教师输出 & 有运动行为，但不是干净目标 & A6/A7 仅作诊断，不作真值 \\
+E & 单帧盲点自监督 & 可学噪声统计，不能恢复已丢失结构 & A8 sc450ai 失败 \\
+F & 无监督/无参考 & 只能做压力测试 & sc450ai 1435x、difficultpattern \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+A3 之所以成功，是因为它站在 A 级资源上；A5/A6/A7 之所以失败，是因为它们试图用 C/D 级资源去监督动态细节；A8 sc450ai 之所以失败，是因为它只有 E 级资源；A10b 之所以被否决，是因为 F 级资源连噪声统计都不足以跨拍摄条件迁移。
+
+\subsection{评测协议与指标}
+
+项目最终固定了以下评测协议：
+
+\begin{enumerate}
+  \item \textbf{静态定量}：对每条流测逐通道黑电平；构造初步时域均值；用 $\mathrm{median}+3\times1.4826\times\mathrm{MAD}$ 规则剔除运动帧；保留在全部、偶数、奇数帧中至少 90\% 静态的像素；用偶数帧 8 帧片段对奇数参考评估，再反向评估。输入与目标来自互斥帧池。
+  \item \textbf{指标}：native DN 域的 PSNR/RMSE、temporal MAD、输出偏置、legal RAW fraction、归一化裁剪率、高频保持率、平坦区残差 $\sigma$、可用覆盖率。
+  \item \textbf{动态压力}：对连续 8 帧片段报告输出变化、temporal MAD、motion/static 时序比、空间高频比、legal fraction、端点裁剪；只做诊断，不用无干净目标的 PSNR。
+  \item \textbf{固定 ISP}：Bayer 去马赛克、固定曝光/白平衡、Reinhard tone mapping、高光重建；2DNR/3DNR 关闭；Input 与所有模型分支共享完全相同的 ISP 参数。
+  \item \textbf{硬留出}：sc450ai 1435x 黑色运动物体序列、MIS20S1 1000x 原生增益、SC465SL difficultpattern 等，不参与训练、不参与阈值选择。
+\end{enumerate}
+
+指标的定义与陷阱需要在报告开头说清楚。PSNR/RMSE 只在有可信参考时使用；高频保持率是输出高频能量与参考高频能量之比，接近 1 表示细节保留，但降低也可能是去噪，必须结合噪声指标解释；temporal MAD 是帧间平均绝对差，过低表示时域被过度平均，过高表示闪烁或噪声回流；legal RAW fraction 只说明数值范围合法，不说明画质；motion/input ratio 只说明输出跟随输入运动的程度，不是干净参考质量。项目在 A5 之后明确规定：motion/input ratio 永远不能单独作为通过依据。
+
+\subsection{小结}
+
+本章的核心结论是：数据与评测协议本身是研究的一部分。A3 的成功不仅来自模型，更来自 A1/A2 对监督的精细构造；A5--A11 的失败也不仅来自模型，更来自监督资源的级别不足。理解了这一点，后面的实验序列就不再是“不断换模型”，而是“不断验证当前监督能支持到哪一步”。
+
+%========================================================
+\section{静态基线：A0--A4}
+%========================================================
+
+\subsection{技术路线}
+
+项目选择 RViDeformer-L\_CRVD 作为基座，而不是从零训练。理由有三：第一，公司数据量有限（约两个场景、十余个增益点），从零训练必然过拟合；第二，RViDeformer 已在 CRVD 上学习了 RAW 域的时空先验，小学习率微调可以保留这些先验；第三，官方权重提供了可复现的起点，便于把“模型能力”和“数据适配”分开分析。
+
+整体路线如图~\ref{fig:pipeline} 所示：数据经过 A0 适配层进入监督构造（A1 干净参考、A2 噪声模型、运动/饱和 mask），再进入 A3 微调，最后由 A4 在分离增益上评估。评估结果如果失败，反馈到监督或模型，而不是直接加训练步数。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.98\textwidth]{fig02_pipeline.png}
+  \caption{研究设计与证据流。数据、监督、模型、评测、决策五个环节构成闭环；失败路线会回到监督与证据层重新审视，而不是盲目延长训练。}
+  \label{fig:pipeline}
+\end{figure}
+
+\subsection{A0：数据管线与适配层}
+
+A0 的目标是把 33 条流变成可复现的 manifest。新增子包 \path{src/raw_fusion/finetune/} 包含适配器、流读取、配准、运动 mask、曝光拟合、统计与 manifest 编排。每条流落一份 \texttt{stream\_\allowbreak manifest.json}，记录帧数、逐通道黑电平、分半 $\sigma$、运动统计、配准位移与曝光拟合系数。50/50 个单元（33 流 + 11 配准 + 6 曝光拟合）全部成功，15 份运动 mask 全部生成。
+
+配准是一个典型坑。632x 与 1000x 相对 645x 整体横移约 62 像素（packed 坐标 $-31$），这是采集间碰了相机造成的；如果不配准，跨增益监督会把场景结构错位当成噪声。A0 用相位相关估计整数位移，并把浮点位移写入 manifest；后续 A3/A4 都使用 packed 整数位移。1000x 的配准重叠率为 0.9677，说明配准本身不是后来 A4 失败的原因。
+
+曝光拟合是另一个坑。A0 在每个 (noisy, reference) 对上用静态区稳健回归拟合逐通道线性系数。645x 的拟合在 256--2048\dn{} 范围内残差约 $-70$ 到 $+45$\dn，表现稳定；1000x 的拟合在高亮端严重失效，这为 A4 的“假失败”埋下伏笔。
+
+\subsection{A1：干净参考构建}
+
+A1 以 shdarkroom 10x 的 200 帧时域平均作为主参考。10x 是同一场景的最低增益，噪声最小，且图卡细节仍然存在。具体做法是分块累加 200 帧，扣除长平均估计的 FPN（DSNU+PRNU），并用 A0 的运动 mask 标记无效区域。最终参考形状为 $(4,540,960)$，单位为 12-bit DN。
+
+A1 设置了三项硬校验：
+
+\begin{enumerate}
+  \item \textbf{分半残差}：奇偶帧各自平均后的残差 $\sigma$ 在 R/Gr/Gb/B 上分别为 0.511/0.797/0.763/0.560\dn，全部低于 1\dn 门槛。
+  \item \textbf{跨增益一致性}：与 64x 时域平均（曝光归一化后）逐通道 signed median 偏差为 1.17--1.86\dn，低于 2\dn 门槛。
+  \item \textbf{高频真实性}：图卡区 10x 参考的归一化细节能量是 645x 单帧噪声校正后细节的 2.97 倍，远高于 0.9 的门槛；这证明时域平均没有把真实高频平均掉。
+\end{enumerate}
+
+这里有一个值得记录的方法论错误。最初的分半 $\sigma$ 估计使用 1.2533（半正态分布的均值系数）作用在 $|even-odd|$ 的中位数上，系统性低估约 15.5\%。后来改为 1.4826（中位数无偏系数），并与逐帧两遍精确 std 交叉验证，才得到上表的数字。这个错误没有影响最终结论，但它说明：在一个没有外部 GT 的项目里，估计器本身的偏差可能比模型误差更大。项目随后把所有“分半 $\sigma$”统一到 1.4826，并在报告中明确口径。
+
+A1 还生成了 64x、128x、645x 的次级参考。64x 的静态比例为 88.50\%，128x 为 84.56\%，645x 为 89.84\%。这些次级参考用于中增益课程和交叉验证，但主 GT 始终是 10x。
+
+\subsection{A2：噪声模型与合成数据}
+
+A2 用标定平场与黑帧拟合式~\eqref{eq:noise}。四个通道的 shot 系数为 R=0.1543、Gr=0.1320、Gb=0.1329、B=0.1482；读出项 $b$ 在 0.063--0.232 之间。这个结果与勘察阶段的 $a\approx0.136$--$0.157$ 一致，说明标定数据内部自洽。
+
+合成器从 A1 干净参考出发，按目标增益加入 shot+read 噪声、FPN、量化与黑电平，生成 9 个增益点（100x--25600x）的 noisy-clean 对。真实性硬门槛是：合成对的 3$\times$3 高通差分 $\sigma$ 与同增益真实流实测 $\sigma$ 的相对误差不超过 15\%。实际最大逐通道相对误差为 8.66\%（6400x 的 Gb），全部通过。这个门槛很重要：如果合成噪声统计不对，模型会把没见过的高频当成噪声抹掉，或者把噪声当成细节保留。
+
+A2 还显式处理了两个异常：1600x/3200x 的非单调（疑似模数混合增益分级），以及 100x 的量化地板。前者没有被当作离群点一删了之，而是保留在拟合中并记录残差；后者在低增益端使用量化感知合成。
+
+\subsection{A3：RViDeformer 微调}
+
+A3 的训练配置见表~\ref{tab:a3config}。模型为 RViDeformer-L，输入 8 帧 packed RGGB（$4\times64\times64$ patch），输出 8 帧。真实数据使用 128x/313x/632x/645x 四个增益，1000x 作为独立 holdout；合成数据覆盖 9 个增益点。真实与合成比例约 1:1。
+
+\begin{table}[H]
+\centering
+\small
+\caption{A3 训练配置。}
+\label{tab:a3config}
+\begin{tabular}{ll}
+\toprule
+项目 & 设置 \\
+\midrule
+基座 & RViDeformer-L\_CRVD（官方 checkpoint，strict 加载） \\
+输入/输出 & 8 帧 packed RGGB，$4\times64\times64$ patch，8 帧输出 \\
+真实训练增益 & 128x、313x、632x、645x（1000x 为 holdout） \\
+合成数据 & A2 的 9 个增益点，每点 8 个时序变体 \\
+真实:合成 & 约 1:1 \\
+损失 & Charbonnier + 0.1$\times$梯度 + 0.1$\times$高通 \\
+掩码 & 运动区、饱和区、无效区不计损失 \\
+优化 & Adam，lr $1\times10^{-4}$，batch 1，5000 步，EMA 0.999 \\
+参数 & 全参数微调；model/EMA 各 1265 个张量 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+A3 的关键设计不是损失函数，而是“什么不算损失”。运动 mask 排除所有被判定为运动的像素；饱和 mask 排除接近 3800\dn 的像素；无效区排除参考不可信的位置。这样做避免了把时域均值中的运动重影当作目标，但也埋下了 A5 的隐患：被排除的运动区域没有得到任何正向监督。
+
+A3 训练从 step 200 恢复到 step 5000，最终 checkpoint 为 \texttt{checkpoint\_step\_005000.pth}，SHA-256 为 \texttt{97c4332f...592e0b}。该文件后来成为整个项目的不可变基线，所有后续实验都以它为参照，且从未被覆盖。
+
+\subsection{A4：第一次评估与“假失败”}
+
+A4 使用 leave-one-gain-out 协议，完整评估 645x 与 1000x 各 200 帧。645x 的结果符合预期：输入 24.35\db，A3 29.57\db，提升 5.22\db；RMSE 从 248.12\dn 降到 136.02\dn；高频保持率 0.971；平坦区残差 83.19\dn；legal fraction 1.0。图~\ref{fig:a3success} 给出了 645x 的固定 ISP 对比：输入彩噪严重，A3 输出干净且图卡、棋盘、文字边缘仍然可辨。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.98\textwidth]{fig04_a3_645x_isp.jpg}
+  \caption{MIS20S1 645x 固定 ISP 对比。左列为输入，右列为 A3 EMA；上半部为全景，下半部为固定中心裁剪。A3 显著抑制彩噪，同时保留图卡与棋盘结构。}
+  \label{fig:a3success}
+\end{figure}
+
+1000x 的结果却像一次灾难：输入 18.73\db，A3 18.84\db，仅提升 0.10\db；高频保持率只有 0.339；平坦区残差 226.19\dn。更奇怪的是，旧教师也只有 18.78\db。三个方法都“失败”，这提示问题可能不在模型。图~\ref{fig:fourpanel} 的四宫格显示了当时的困惑：input、旧教师、A3 都比 A1 参考暗很多，且高频几乎消失。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.98\textwidth]{fig05_four_panel_645x.jpg}
+  \caption{645x 四宫格：input、旧教师、A3 EMA、A1 参考。A3 明显优于旧教师，但旧教师与输入都带有明显噪声/偏色；该图用于说明“有参考时”的视觉判断必须与定量指标一起看。}
+  \label{fig:fourpanel}
+\end{figure}
+
+项目没有立即改模型，而是先问：这是模型的错，还是评价协议的错？A4 之后的诊断按以下顺序进行：
+
+\begin{enumerate}
+  \item \textbf{配准检查}：1000x manifest 的浮点位移为 $(-61.94,-0.60)$ 传感器像素，除以 2 得 packed $(-30.97,-0.30)$，整数位移 $(-31,0)$ 正确；packed 重叠率 0.9677。配准不是根因。
+  \item \textbf{曝光分桶}：1000x 到 10x 的线性曝光映射在高亮端严重欠映射：参考 1024--2048\dn{} 时残差约 $-570$ 到 $-705$\dn，2048--3072\dn{} 时约 $-1.4$k 到 $-1.8$k\dn，更高区间约 $-2.7$k 到 $-3.1$k\dn。645x 在 256--2048\dn{} 的残差仅 $-70$ 到 $+45$\dn。这说明 1000x 与 10x 不是同一照明条件下的简单线性关系。
+  \item \textbf{直接 1000x--645x 配对}：低亮度 256--512\dn{} 残差约 $+3$ 到 $+10$\dn，512--1024\dn{} 约 $-211$ 到 $-247$\dn，更高区间几乎没有 1000x 对应样本。稳健拟合的中位数残差约 $-6$ 到 $-7$\dn，但只覆盖低亮度可配对样本。
+  \item \textbf{原生参考探针}：用 1000x 自身 200 帧构造 motion-aware 时域均值，valid fraction 0.9321，逐帧曝光尺度 0.98--1.02，分半残差 $\sigma$ 为 R=2.09、Gr=2.35、Gb=2.34、B=2.02\dn。这个参考足够稳定。
+\end{enumerate}
+
+用原生参考重新评估后，A3 在 1000x 上达到 53.27\db，输入 44.62\db，提升 8.65\db；RMSE 从 24.06\dn 降到 8.89\dn；高频保持率 0.856；平坦区残差 7.17\dn；legal fraction 1.0。奇偶分半验证也稳定：奇数输入对偶数参考 53.10\db，偶数输入对奇数参考 53.07\db。
+
+表~\ref{tab:a4} 汇总了 A4 的三组结果。最关键的一行是“1000x cross-capture”：它不是模型失败，而是跨捕获曝光拟合失败。项目从此确立一条原则：\textbf{评价域本身是模型的一部分；不能把协议失败归因于模型能力。}
+
+\begin{table}[H]
+\centering
+\small
+\caption{A3 在三种评估域上的结果。1000x cross-capture 行仅用于诊断，不是有效质量门槛。}
+\label{tab:a4}
+\begin{tabular}{lrrrrrrr}
+\toprule
+协议 & 输入 PSNR & A3 PSNR & $\Delta$ & 输入 RMSE & A3 RMSE & HF 比 & 平坦 $\sigma$ \\
+ & (dB) & (dB) & (dB) & (DN) & (DN) & & (DN) \\
+\midrule
+645x 跨增益 & 24.3519 & 29.5729 & +5.2210 & 248.1197 & 136.0228 & 0.9712 & 83.19 \\
+1000x 原生 & 44.6204 & 53.2675 & +8.6471 & 24.0565 & 8.8895 & 0.8562 & 7.17 \\
+1000x 跨捕获（无效） & 18.7349 & 18.8372 & +0.1023 & 473.7036 & 468.1600 & 0.3394 & 226.19 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{A3 的接受与残余风险}
+
+A3 step-5000 EMA 被接受为当前候选基线。接受依据不是单一 PSNR，而是：645x 跨增益提升 5.22\db 且高频保持 0.971；native 1000x 提升 8.65\db 且奇偶分半一致；legal RAW fraction 为 1.0；固定 ISP 下没有明显色偏或结构断裂；完整测试套件 34 项通过。
+
+但 A3 的接受是有边界的。第一，它的静态监督排除了运动区域，因此运动保真没有保障；第二，1000x 是训练 holdout，模型在该增益上的成功依赖于 native 参考，而不是跨增益泛化；第三，MIS20S1 只有一个暗房场景提供可信静态 GT，场景多样性不足；第四，sc450ai 等传感器完全没有进入训练。A3 是一个强静态基线，但不是通用去噪模型。
+
+\subsection{小结}
+
+A0--A4 完成了项目的第一条闭环：数据适配、干净参考、噪声模型、微调、评估。A3 证明了“在可信静态监督下，RViDeformer 可以适应公司传感器并显著优于零样本教师”。A4 则给了一个更重要的教训：当评估协议本身失效时，模型会被误判。这个教训在后续的 A5、A8、A9 中反复出现。
+
+%========================================================
+\section{运动保真：A5--A7 的连续否决}
+%========================================================
+
+\subsection{现象：运动被时域平均掉}
+
+A3 在静态区域表现很好，但在 645x 固定 ISP 预览中，移动的人被时域平均成了半透明残影。运动审计脚本 \texttt{audit\_motion\_temporal\_fidelity.py} 给出了量化证据：运动 mask 在 packed 分辨率下覆盖约 3.91\% 的像素；A3 在运动区的帧间差只有输入的 27\%--32\%；个别转场的 prediction/input 变化比只有约 0.10。这不是 MP4 编码伪影，而是模型行为。
+
+更严重的是，A3 比官方教师更压制运动。官方教师在 645x 上的 motion/input ratio 为 R/Gr/Gb/B = 0.334/0.371/0.406/0.399；A3 降到 0.270/0.323/0.308/0.286；最低转场比从 0.176--0.224 降到 0.097--0.127（图~\ref{fig:motionaudit}）。这说明 A3 的微调在改善静态去噪的同时，把“运动也是噪声”这一错误先验强化了。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.86\textwidth]{fig06_motion_audit.png}
+  \caption{官方教师与 A3 在 645x 上的 motion/input ratio。A3 在所有通道上都更强烈地压制真实运动；该指标是诊断量，不是干净参考质量。}
+  \label{fig:motionaudit}
+\end{figure}
+
+\subsection{根因：静态监督把运动排除了}
+
+A3 的真实数据采样器把每个被标记为运动的像素从训练 mask 中排除，损失只作用于剩余静态像素；合成时序数据则是同一张干净图加独立噪声，重复 8 次，没有任何运动内容。因此，模型收到的信号是：静态区域越平均越好，运动区域没有正向目标。时域融合在静态区被奖励，在运动区不受约束，模型自然学会了“把运动平均掉”。
+
+这不是一个可以通过调 loss 权重解决的问题。只要监督目标里没有“运动物体在该时刻的干净纹理”，任何权重组合都只能在“静态更干净”和“动态更清晰”之间移动，而不会产生缺失的真细节。A5--A7 的整个失败序列，本质上是在反复验证这一点。
+
+\subsection{A5：动态监督探针与第一次修正}
+
+A5 的第一步是构造动态 Noise2Noise 目标。具体做法是：用 DIS 光流\cite{r11} 把后一帧 warp 到当前帧坐标，取两帧的噪声独立性作为监督信号；用 forward-backward error 和光度误差构造置信度；只在置信区域内计算 Charbonnier 损失。初始探针包含三对样本（34$\rightarrow$38、50$\rightarrow$54、148$\rightarrow$152），置信度覆盖 37\%--44\% 的动态像素，FB 误差 P95 为 1.16--1.28 packed 像素，warped 绿色通道光度误差 P95 约 0.072--0.073（归一化 A1 单位）。
+
+随后构造 8 帧窗口（gap 4，起点 30/46/140），以匹配模型的 8 帧输入。窗口的平均置信度覆盖 31\%--41\% 的动态像素，高通源/目标相关均值为 0.039--0.105（绿色通道约 0.08--0.20）。这些数字说明 N2N 假设“勉强可用”，但远不是干净监督。
+
+真正的打击来自运动 mask 噪声审计。脚本 \texttt{diagnose\_motion\_mask\_noise.py} 发现，初始置信规则里混入了大量低 Flow 像素：三个窗口中分别有 39.2\%、77.0\%、65.8\% 的置信像素 Flow 小于 1 px，第二个窗口甚至有 51.6\% 小于 0.5 px。低 Flow 不一定都是噪声（慢速运动或低纹理物体也可能），但这说明初始 mask 不是可靠的“纯运动区域”。项目因此把规则收紧到 \texttt{flow\_magnitude\_px >= 1.0}，重新生成 strict-1px 探针；新探针的置信度覆盖降到 1.81\%/2.27\%/3.82\%，高通相关仍为 0.027/0.099/0.096（绿色通道低于 0.19）。
+
+这是一次重要的自我修正：如果直接用初始 mask 训练，模型会把噪声和静态纹理当成运动目标，动态损失越大，引入的伪影越多。A5 之后的所有动态实验都使用 strict-1px mask。
+
+\subsection{A5：九组训练实验与标量扫描的关闭}
+
+A5 使用固定协议：训练帧 $[0,160)$，动态留出 $[160,200)$，native 1000x 留出 $[0,40)$；每次从 A3 step-5000 EMA 初始化，训练 20 步。\textbf{表~\ref{tab:a5} 中的 645x 指标均来自 $[160,200)$ 的 40 帧不相交留出，与第 4 章全 200 帧的 29.57\db{} 不可直接比较。}基线为：motion/input ratio 0.488799，645x 静态 PSNR 29.51644\db，HF 0.973896，temporal MAD 11.758\dn，native PSNR 52.363733\db，RMSE 9.864323\dn。表~\ref{tab:a5} 汇总了九组候选。
+
+\begin{table}[H]
+\centering
+\small
+\caption{A5 运动监督实验矩阵。所有候选均从 A3 EMA 初始化，训练 20 步；加粗表示未通过的门槛。}
+\label{tab:a5}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrr}
+\toprule
+候选 & motion/input & 645x PSNR & native PSNR & 结论 \\
+ & & (dB) & (dB) & \\
+\midrule
+A3 基线 & 0.488799 & 29.516440 & 52.363733 & 基线 \\
+A1 静态控制，lr $10^{-5}$ & 0.485890 & 29.554080 & 51.016080 & 仅控制；native 回退 \\
+全模型，lr $10^{-5}$，dyn 0.1 & 0.494240 & 29.525200 & 51.055440 & 否决；native 回退 \\
+全模型，lr $10^{-6}$，dyn 1.0 & 0.489270 & 29.510660 & 52.281960 & 否决；运动增益小 \\
+仅互注意力，lr $10^{-5}$，dyn 1.0 & 0.487940 & 29.511750 & 52.339290 & 否决；无运动增益 \\
+教师锚定 w=1，live & 0.494620 & 29.489150 & 52.393620 & 有希望，但静态回退 \\
+教师锚定 w=1，EMA & 0.488450 & 29.511550 & 52.369880 & 否决；无运动增益 \\
+教师锚定 w=2，live & 0.491590 & 29.501140 & 52.403570 & 否决；静态/细节回退 \\
+教师锚定 w=2，EMA & 0.488160 & 29.512810 & 52.370020 & 否决；无运动增益 \\
+同窗锚定，live & 0.493882 & 29.485918 & 52.385133 & 否决；静态/HF/时序回退 \\
+同窗锚定，EMA & 0.488084 & 29.513075 & 52.345669 & 否决；无运动增益 \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+图~\ref{fig:a5tradeoff} 把候选放进三维门槛空间：横轴是 645x 静态 PSNR，纵轴是 motion/input ratio，颜色是 native 1000x PSNR。可行域要求三者在基线上方；没有任何候选同时满足。这个图比单看表格更能说明问题：A5 不是“差一点”，而是所有候选都落在可行域的不同侧面。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.88\textwidth]{fig07_a5_tradeoff.png}
+  \caption{A5 候选的三门槛空间。横轴为 645x 静态 PSNR，纵轴为 motion/input ratio，颜色为 native 1000x PSNR。阴影区只表示“运动提升且 645x 不退化”；可行还要求 native 不低于基线（亮黄色）。没有候选同时满足三项。}
+  \label{fig:a5tradeoff}
+\end{figure}
+
+几组结果值得单独解释：
+
+\begin{enumerate}
+  \item \textbf{静态控制}：只继续原来的 A1 静态目标、不加动态损失，native PSNR 就从 52.364 掉到 51.016\db（$-1.348$\db）。这说明在 lr $10^{-5}$ 下，普通的继续微调本身就会造成大部分域漂移；不能把动态候选的 native 回退全部归因于动态损失。
+  \item \textbf{教师锚定 w=1 live}：这是第一个同时出现运动增益（+0.00582）和 native 增益（+0.030\db）的候选，但 645x 静态 PSNR 回退 0.027\db，HF 也下降。它证明“冻结 A3 输出作为静态锚”方向有效，但还不能上线。
+  \item \textbf{教师锚定 w=2}：把静态锚权重翻倍，静态回退从 $-0.027$ 降到 $-0.015$\db（改善约 44\%），但运动增益从 +0.00582 降到 +0.00279（减少约 52\%）。这是一个标量 trade-off，不是一个可通过的工作点；继续扫权重没有意义。
+  \item \textbf{同窗锚定}：把冻结 A3 教师直接作用于同一动态窗口的静态像素，并对 strict mask 做 1 像素膨胀以排除边界。live 模型运动比升到 0.493882，但 645x 静态 PSNR 降到 29.485918\db，HF 降到 0.9610，temporal MAD 从 11.758 升到 12.057\dn；EMA 则失去运动增益，native 也回退。两条权重集都没有通过全部门槛。
+\end{enumerate}
+
+A5 的结论是：\textbf{简单标量/冻结范围扫描已经关闭}。继续调 \texttt{static\_anchor\_weight}、\texttt{dynamic\_weight} 或冻结层，只会在已知的 trade-off 上移动，不会产生新的监督信息。
+
+\subsection{为什么 A5 注定失败：N2N 目标不是干净真值}
+
+A5 的动态目标是“后一帧 warp 到当前帧”的噪声观测，不是干净真值。N2N 的独立性假设只能在统计意义上成立；在高增益、低信噪比、遮挡和快速运动的组合下，warp 误差、遮挡边界和噪声相关性都会破坏这个假设。A5 的验证报告显示，高通源/目标相关只有 0.03--0.10，绿色通道低于 0.20；这足以做“目标构造探针”，但不足以让模型学到“运动物体在该时刻的干净纹理”。
+
+更根本的是，N2N 只能告诉模型“另一个噪声观测长什么样”，不能告诉模型“被时域平均抹掉的细节应该是什么”。当运动物体的纹理在输入中已经被噪声淹没、在参考中又被平均掉时，任何只依赖输入的损失都无法恢复它。A5 的失败不是优化问题，而是信息问题。
+
+\subsection{A6：冻结运动专家 v1--v4}
+
+A6 换了一个思路：保留 A3 主干，冻结全部参数，只训练一个小的门控残差专家：
+\begin{equation}
+\hat{y} = y_{\mathrm{A3}} + g(x)\odot r(x),
+\label{eq:a6}
+\end{equation}
+其中 $g(x)$ 是运动门控，$r(x)$ 是空间残差。专家只使用空间卷积，不能在时间上平均；门控由运动 mask 监督；静态像素由 A3 教师锚定。A6 还尝试了同帧 10x 动态目标、旧教师蒸馏和程序化局部运动。四版实验见表~\ref{tab:a6}。
+
+\begin{table}[H]
+\centering
+\small
+\caption{A6 冻结运动专家四版实验。所有版本均未通过推广门槛。}
+\label{tab:a6}
+\begin{tabular}{p{0.06\textwidth}p{0.30\textwidth}p{0.52\textwidth}}
+\toprule
+版本 & 设计 & 结果与裁决 \\
+\midrule
+v1 & 噪声输入时序特征，100 步 & live exact holdout RMSE 79.89$\rightarrow$82.94\dn；EMA 79.87\dn；无时序增益。否决。 \\
+v2 & A3 时序特征 + 纯空间专家，200 步 & EMA 79.68\dn；静态偏移 1.10\dn；门控 IoU 0.533；temporal ratio 0.292258$\rightarrow$0.292305。门控能定位运动，但残差没有恢复内容。否决。 \\
+v3 & 10x 精确目标 + 旧教师 645x 蒸馏，200 步 & 旧教师 holdout 166.54$\rightarrow$153.55\dn；10x exact 79.89$\rightarrow$84.60\dn；静态偏移 4.78\dn。旧教师行为与低噪声目标冲突。否决。 \\
+v4 & 真实 10x + 程序化局部运动，300 步 & 程序化 holdout 35.57$\rightarrow$35.60\dn；真实 10x 79.89$\rightarrow$79.93\dn；时序比略降。单参考平移不能代表真实人体运动。否决。 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+A6 的结论很重要：门控可以学会定位运动（v2 的 IoU 0.533 证明这一点），但残差分支没有足够监督去判断“应该恢复什么干净动态结构”。旧教师携带的运动纹理与目标域冲突；程序化平移又过于狭窄。A6 解决了全局参数漂移，却没有解决信息缺失。
+
+\subsection{A7：旧教师确定性融合的 36 组配置}
+
+A7 是最后一条“不训练”的路线：把旧教师的残差限制在运动区域，按置信度融合进 A3。评估帧同样为 $[160,200)$ 的 40 帧不相交留出：
+\begin{equation}
+\hat{y} = y_{\mathrm{A3}} + \alpha\,w\,\mathrm{clip}\left(y_{\mathrm{teacher}}-y_{\mathrm{A3}}, \pm c\right),
+\label{eq:a7}
+\end{equation}
+其中 $w$ 是 flow/motion 权重，$\alpha\in\{0.1,0.2,0.3,0.4\}$，$c\in\{32,64,96\}$\dn，膨胀半径 $r\in\{3,7,11\}$，共 36 组。静态 guard 强制 $w=0$，因此静态 PSNR、HF、temporal MAD 在所有配置中保持不变，静态非零权重为 0。
+
+最强的配置是 r11/$\alpha=0.4$/$c=96$：motion/input ratio 从 0.488790 升到 0.493269，相对提升 0.9162\%；运动区平均位移 9.116\dn，P95 位移 38.386\dn；静态位移 mean $1.16\times10^{-5}$\dn，max $2.28\times10^{-4}$\dn；融合覆盖率 2.808\%。图~\ref{fig:a7person} 给出了人体裁剪的五路对比，图~\ref{fig:a7sweep} 给出了 36 组配置的位移--增益关系。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.98\textwidth]{fig08_a7_person.jpg}
+  \caption{A7 人体裁剪对比：A3 基线、旧教师（诊断用）、r3/r7/r11 最强配置。旧教师的纹理更“活”，但带有明显噪声和伪细节；r3/r7/r11 的差异在正常观看尺度下几乎不可辨。}
+  \label{fig:a7person}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.86\textwidth]{fig09_a7_sweep.png}
+  \caption{A7 的 36 组配置：横轴为运动区平均位移，纵轴为 motion/input ratio 相对增益。最强配置也只有 +0.9162\%，却带来 9.12\dn 平均位移和 38.39\dn P95 位移；静态指标不变。}
+  \label{fig:a7sweep}
+\end{figure}
+
+固定 ISP 逐帧复核的结论是：在 frames 167--173 上，预览配置和最强配置都没有产生稳定可见的脸、手臂、躯干、短裤、腿或鞋边界改善；旧教师在白衬衫、短裤、四肢和运动边缘上的局部纹理与 A3 明显不同，但没有干净动态目标证明那是恢复的细节还是教师噪声/时序残留；没有出现大的新双影或边缘断裂；r7/r11 只是扩大了旧教师的暴露面积，没有带来相应的清晰度收益。
+
+因此，全部 36 组配置被否决，没有保留任何 A7 可选后处理。这一步确认了一个关键原则：\textbf{旧教师不是干净动态真值；扩大融合区域或增加残差强度不能产生不存在的干净信息。}
+
+\subsection{A7 真实运动采集方案：一条未能执行的路}
+
+A7 还设计了一套真实运动采集协议：4 个训练场景 + 2 个验证场景，每个场景 5 种运动类型（横向行走、纵深行走、快慢手势、遮挡进出、细纹理运动），每段至少 160 帧（最好 200 帧），总计至少 30 段、4800 帧；低增益干净拍摄，后期用 A2 校准噪声合成同帧 noisy 输入；关闭 2DNR/3DNR、自动曝光/增益/白平衡，固定曝光、增益、WB、FPS、光照、焦距和光圈；自动验收门槛包括场景不重叠、每场景 5 种运动、不少于 160 帧、高位对齐、静态噪声 $\le$8\dn、背景 CV $\le$1.5\%、饱和 $\le$1\%、运动活跃帧比例 $\ge$25\%、变化面积 1\%--60\% 等。
+
+这套协议在科学上是正确的：它把“动态监督”从“猜”变成了“可控采集”。但项目硬约束是不能重新拍摄，因此 A7 采集从未执行。这个未执行项后来成为整个项目最重要的“缺口”：所有动态失败最终都回到“没有可信干净动态真值”这一件事上。
+
+\subsection{阶段结论}
+
+A5--A7 的连续否决给出了一个清晰结论：运动保真的瓶颈不是“找不到运动区域”，而是“没有可信的干净动态目标”。A5 的 N2N 目标、A6 的冻结专家、A7 的旧教师融合，都只能利用已有的噪声观测或带噪教师，无法凭空恢复被抹掉的内容。A3 因此继续作为唯一基线；A5/A6/A7 不再重复。
+
+%========================================================
+\section{跨传感器泛化：审计、A8--A10b}
+%========================================================
+
+\subsection{零样本审计协议}
+
+在讨论“适配”之前，项目先回答了“A3 在别的传感器上到底怎么样”。A3 跨传感器审计覆盖 8 条序列：SC465SL darkroom18 的 256x/2000x、sc635hai 的 131x 低色温和 16x 运动彩色、sc450ai 的 1435x 黑物运动和 804x 灯光变化、SC465SL difficultpattern 的 4717/8880。每条序列都有显式 manifest，记录宽高、位对齐、CFA、标称黑电平、评估帧数、clip 起点、固定 ISP 白平衡/曝光和面板裁剪；文件名与实测冲突时以像素为准。
+
+静态协议是：每条流测逐通道黑电平；构造初步时域均值；用 median + 3$\times$1.4826$\times$MAD 剔除运动帧；保留在全部、偶数、奇数帧中至少 90\% 静态的像素；用偶数帧 8 帧片段对奇数参考评估，再反向评估。输入与目标互斥。A3 保留 8 帧时序输入、64$\times$64 packed tile、56 像素 stride 和 EMA 权重；推理实现从固定 540$\times$960 扩展到任意不小于 64$\times$64 的 native 形状，不改变模型算术。
+
+\subsection{审计结果：支持边界并不一致}
+
+表~\ref{tab:cross} 给出了静态定量结果。SC465SL 256x 在两个奇偶方向上分别提升 13.211/13.158\db，HF 保持 0.957/0.958；SC465SL 2000x 提升 10.523/10.613\db，HF 0.911/0.912；sc635hai 131x 提升 13.588/13.587\db，HF 0.919/0.921。三组都 legal 100\%，temporal MAD 从 20--47\dn 降到 1.3--2.2\dn，说明 A3 在这些静态域上确实有效。
+
+sc450ai 则是另一幅图景：1435x 黑物运动的 HF 只有 0.127，端点裁剪 3.28\%，temporal ratio 0.063，运动/静态比 0.057/0.088；视觉上黑色衣物内部结构消失，边界发软发空，墙面有持续低频伪影。804x 灯光变化的 HF 为 0.690，裁剪 1.855\%，暗部有低频色斑，运动人物明显发软。SC465SL difficultpattern 的 HF 为 0.635/0.527，主要细节还在，但暗部有低频色斑，不能作为干净细节证据。
+
+\begin{table}[H]
+\centering
+\small
+\caption{A3 跨传感器零样本静态结果。even 表示偶数帧输入 / 奇数帧参考，odd 反之；HF 为输出/参考高频 RMS 比；Clip 为归一化端点裁剪比例。}
+\label{tab:cross}
+\begin{tabular}{lrrrrrr}
+\toprule
+序列 & 输入 PSNR & A3 PSNR & 增益 & HF & temporal MAD & Clip \\
+ & (dB) & (dB) & (dB) & & 输入$\rightarrow$A3 (DN) & \\
+\midrule
+SC465SL 256x even & 41.840 & 55.052 & +13.211 & 0.957 & 31.889$\rightarrow$1.567 & 0.603\% \\
+SC465SL 256x odd & 41.840 & 54.999 & +13.158 & 0.958 & 31.886$\rightarrow$1.578 & 0.592\% \\
+SC465SL 2000x even & 46.039 & 56.563 & +10.523 & 0.911 & 20.238$\rightarrow$1.312 & 0.083\% \\
+SC465SL 2000x odd & 46.034 & 56.647 & +10.613 & 0.912 & 20.248$\rightarrow$1.301 & 0.079\% \\
+sc635hai 131x even & 38.737 & 52.325 & +13.588 & 0.919 & 47.481$\rightarrow$2.165 & 0.743\% \\
+sc635hai 131x odd & 38.736 & 52.324 & +13.587 & 0.921 & 47.481$\rightarrow$2.163 & 0.725\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+图~\ref{fig:cross} 把静态 PSNR 与 HF 保持率放在一起。左图显示 A3 在所有已测静态域上都有 5--14\db 的提升；右图显示 HF 保持率从 0.856 到 0.971 不等，sc450ai 的 0.127 是明显的断崖。这个断崖不是“去噪更强”，而是“细节被抹掉”。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.98\textwidth]{fig10_cross_sensor.png}
+  \caption{A3 零样本静态支持边界。(a) 输入与 A3 的 PSNR；(b) A3 的高频保持率，1.0 为参考细节。MIS20S1 与 SC465SL/sc635hai 静态域支持，sc450ai 明显塌陷。}
+  \label{fig:cross}
+\end{figure}
+
+审计的最终裁决是：SC465SL 在已测 darkroom18 256x/2000x 域支持（difficultpattern 仍条件）；sc635hai 静态低色温支持，动态/颜色条件；sc450ai 不支持部署。这个结论直接推动了 A8 的“逐传感器适配”，也提前暴露了一个问题：如果目标传感器的数据本身没有干净监督，适配可能从第一步就走不通。
+
+\subsection{A8 数据准入：先证明“能训”，再谈“怎么训”}
+
+A8 的第一版计划是对 sc635hai 和 sc450ai 做保守微调。但在动手前，项目先写了一个数据准入 gate：它检查文件存在性、字节推导帧数、源位置、inode 身份、全文件 SHA-256、目标语义，并与冻结的八条审计序列逐项比对；任何被审计使用的流都不能同时作为训练源，任何复制/硬链接/同内容别名都会被拒绝；训练源必须有哈希绑定的监督 manifest、独立目标产物和互斥帧池。
+
+结果是没有一个目标传感器有合规训练源：sc635hai 的两条流都在冻结审计中，sc450ai 的两条流也都在冻结审计中；SC465SL 的 8 条非审计流是已处理显示流，不是干净 RAW。gate 状态为 \texttt{blocked\_no\_compliant\_training\_source}。这不是 GPU 或实现失败，而是数据资格失败。
+
+项目没有偷偷把审计流拿来训练。直到用户明确授权“数据集可自行合理划分”后，才把 sc635hai 131x 与 sc450ai 804x 重新分类为适配数据，同时保留 sc635hai 16x 与 sc450ai 1435x 作为独立留出。这个治理步骤看似繁琐，但它避免了“用测试集训练、再用测试集报告”的经典错误。
+
+\subsection{A8 sc635hai：输出头适配的条件通过}
+
+sc635hai 的适配采用最保守的方案：冻结 A3 主干，只训练 \texttt{norm}、\texttt{conv\_after\_body}、\texttt{conv\_last} 三个模块，共 6 个张量、12,400 个参数；500 步，lr $10^{-5}$，BF16 autocast，EMA 0.999；sc635hai 131x 奇偶分半静态监督，50\% 概率混入 MIS20S1 回放；16x 运动彩色完整保留，不参与反向传播。实际采样为 sc635hai 238 步、MIS20S1 回放 262 步。
+
+静态结果：A3 52.3535/52.3552\db，A8 52.3875/52.3884\db，提升约 0.034\db；HF 从 0.9199 降到 0.9181（$-0.0017$）；temporal MAD 从 2.1628 降到 2.1247\dn；clip 从 0.00741 降到 0.00644。动态 16x 留出：temporal MAD 14.6745$\rightarrow$14.6218\dn，motion ratio 0.599602$\rightarrow$0.596438，static ratio 0.101329$\rightarrow$0.101169，HF 0.763605$\rightarrow$0.763078，legal 1.0，clip 0.021994$\rightarrow$0.019344；平均输出偏置从 $-2.3691$ 变为 $-2.9808$\dn（多负 0.61\dn）。固定 ISP 首/中/末帧未见新增双影、拖影、断边、色偏或静态污染；A8 与 A3 的差异很小，符合“只更新输出头”的预期。
+
+9 项自动安全门槛全部通过：静态 PSNR 不低于 A3$-0.10$\db；HF 不恶化 0.02；动态 legal；裁剪受控；动态 HF 受控；运动响应受控；静态闪烁受控；MIS20S1 PSNR 不遗忘；MIS20S1 HF 不遗忘。因此 sc635hai step-500 EMA 被登记为“sc635hai 专用可选权重”，不能替换 A3，也不能宣传为统一模型。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.94\textwidth]{fig11_a8_sc635hai.jpg}
+  \caption{A8 sc635hai 固定 ISP 对比：Input、A3、A8。A8 只更新 12,400 个输出头参数，视觉差异很小；未见新增重影或颜色异常。}
+  \label{fig:a8sc635}
+\end{figure}
+
+\subsection{A8 sc450ai：盲点适配的全部否决}
+
+sc450ai 的适配采用单帧盲点自监督：同一帧复制为 8 帧输入，随机选 5\% packed 空间位置，在全部时刻与全部通道同时遮挡，遮挡位置用半径 2 的同 CFA packed 通道邻域替换；只在遮挡位置对原始 RAW 计算 Charbonnier 损失。这样模型不能从相邻时刻直接读取目标像素。训练 500 步，仍只更新 6 个张量/12,400 参数，50\% MIS20S1 回放。
+
+结果是否决性的。完整 1435x 留出上，A3 的 HF 为 0.126621，step-100/200/300/400/500 分别为 0.126548/0.126429/0.126329/0.126227/0.126079，没有任何 checkpoint 达到“HF 至少 +0.02”的门槛；裁剪从 0.032798 升到 0.046436，负偏置从 $-4.8287$ 扩大到 $-5.3414$\dn。同域 804x 未训练尾段的 HF 从 0.684561 降到 0.681220，裁剪从 0.015772 升到 0.026944。固定 ISP 中，黑衣内部结构仍然空洞、过软，A8 与 A3 几乎相同，只是整体略暗；没有可确认的细节恢复。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.94\textwidth]{fig12_a8_sc450ai.jpg}
+  \caption{A8 sc450ai 固定 ISP 对比：Input、A3、A8 step-500。黑色运动物体在 A3 中已经空洞、发软，A8 没有恢复内部结构，反而略向更暗方向偏移。}
+  \label{fig:a8sc450}
+\end{figure}
+
+这一步的教训是：盲点自监督可以学习噪声统计，但不能恢复被模型抹掉的确定性空间结构。sc450ai 的失败不是“训练不够久”，而是“监督里没有空间细节”。A8 因此没有任何可保留的 sc450ai checkpoint。
+
+\subsection{A9：统一多传感器小步微调}
+
+A9 试图用一个小步数、少参数的统一微调，同时覆盖 MIS20S1、SC465SL、sc635hai 和 sc450ai。配置为：从 A3 step-5000 初始化，只训练 \texttt{conv\_first}、\texttt{norm}、\texttt{conv\_after\_body}、\texttt{conv\_last}，共 8 个张量、15,508 个参数；100 步，batch 1，64$\times$64 patch，BF16，lr $5\times10^{-6}$，EMA 0.999；采样比例 MIS20S1 40\%、SC465SL 20\%、sc635hai 20\%、sc450ai 合成噪声 20\%。实际样本计数为 39/19/24/18。
+
+结果：SC465SL 2000x 留出 PSNR 56.60490$\rightarrow$56.68683（+0.08192\db），HF 0.9112685$\rightarrow$0.9111807；sc635hai 131x 静态尾段 52.35436$\rightarrow$52.36445（+0.01009\db），HF 0.9199258$\rightarrow$0.9198020；MIS20S1 回放 PSNR $-0.000346$\db，HF +0.001016；sc450ai 1435x 的 HF 0.1266212$\rightarrow$0.1265891（$-0.0000322$），motion ratio 0.0568871$\rightarrow$0.0568476，static ratio 0.0879080$\rightarrow$0.0882128。四段固定 ISP 视频中，MIS20S1/SC465SL/sc635hai 没有新增伪影，但 sc450ai 的黑衣与运动轮廓仍然中空、过平滑，A9 与 A3 肉眼几乎无差异。
+
+A9 step-100 被否决，且不再继续同方案到 500 步。原因不是“步数不够”，而是 sc450ai 分支只学了经过真实性验证的信号相关噪声幅度；它没有获得 sc450ai 干净空间细节监督，也没有建模空间相关噪声、行列固定模式、PRNU/DSNU、黑电平漂移、光学模糊与 CFA 响应差异。继续训练最多改变去噪强度和裁剪行为，不能凭空恢复监督中不存在的黑衣纹理。
+
+\subsection{A10：sc450ai 现有数据到底能支持什么}
+
+A10 对 sc450ai 做了一次彻底的监督可行性审计。数据集里实际只有两条 sc450ai RAW 流：804x 灯光变化 150 帧、1435x 黑物运动 210 帧；没有暗场、平场、跨增益配对或独立干净 RAW。两条流都是低位对齐、有效 10 位、uint16 保存；抽样值全部不超过 4095，且 \texttt{value \% 4 == 0} 占 100\%；文件名/readme 的“高 12 位、黑电平 4128”与实际数据冲突（按该说明右移 4 位再减 4128 会把数据压成 0，详见 3.2 节），实测黑电平约 256--258\dn。
+
+八帧窗口审计以 4 帧步长检查全部窗口，并用 A9 已验证的噪声方差判断像素变化是否超过 3 倍预期 $\sigma$。804x 有 36 个窗口，最佳 0--7，frame-mean CV 0.01265\%，平坦稳定像素 95.49\%，奇偶分半 RMSE 14.069\dn；1435x 有 51 个窗口，最佳 172--179，CV 0.01329\%，平坦稳定 94.84\%，分半 RMSE 14.962\dn。两条流的最佳平坦稳定比例都低于 96\%，分半不确定度约 14--15\dn，且没有第二条同场景干净序列可验证场景细节。因此 \texttt{clean\_reference\_eligible} 固定为 false：窗口均值、奇偶均值或时域均值都不能当作干净运动真值。
+
+空间噪声结构方面，A10 最初在高通残差上直接算邻域相关，得到约 $-0.15$；这个结果由 3$\times$3 高通算子自身引入，已被否决并修正。最终方法只用高通做平坦/异常像素筛选，相关性在去除全局偏置后的原始相邻帧差分上计算。每通道水平/垂直相关约 0.015--0.030，训练/验证差异小于 0.05；行、列公共分量 $\sigma$ 比在互斥范围间约 0.23--0.25。跨通道耦合没有通过：最大训练/验证差异 0.06893，主要来自 Gr/Gb（训练 $+0.02914$，验证 $-0.03980$），因此下一版退化模型必须继续使用通道独立 identity。
+
+A10 只登记了一个 \texttt{partial\_noise\_model\_only}：信号相关方差可继续使用 A9 噪声模型；每通道空间结构只作为初步信号；跨通道 identity；PRNU/DSNU、sensor blur/MTF、CFA 光谱响应、运动细节真值均无法识别。结论是 \texttt{next\_model\_training\_allowed=false}。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.98\textwidth]{fig13_a10_audit.png}
+  \caption{A10 sc450ai 数据审计。(a) 两条流的帧均值漂移；(b) 八帧窗口稳定性；(c) 每通道最近邻相关；(d) 跨通道相关训练/验证差异。数据只能支持噪声统计，不能支持干净空间监督。}
+  \label{fig:a10}
+\end{figure}
+
+\subsection{A10b：退化生成器的独立验证与全部否决}
+
+A10b 比较了三个确定性 sc450ai 噪声生成器：A9 legacy 独立高斯（1\dn{} 量化）、修正为实测 4\dn{} 格点的独立高斯（Q4 IID）、以及在 Q4 量化基础上增加四通道共享最小水平/垂直频谱整形的 shared spectral Q4。拟合只用 804x 的 $[0,120)$ 帧，验证用 $[120,150)$，1435x 的 $[172,180)$ 是传感器级硬留出。
+
+验证门槛是预注册的：sigma 相对误差、weighted ACF MAE、lag-1 最大误差、逐通道 sigma、以及 8 个独立验证帧对中至少 7 个胜出。shared spectral 在 804x 上把聚合空间相关 RMSE 相对 Q4 IID 降低 36.58\%，但：
+\begin{enumerate}
+  \item lag-1 最大相关误差 0.015381，超过 0.015 门槛；
+  \item 8 个独立验证帧对只胜出 6 个，低于 7 个门槛；
+  \item Gr/Gb/B 的逐通道 sigma 门槛没有全部通过：Gr median 相对误差 0.11111（门槛 0.10），Gr P90 0.25714（门槛 0.25），B median 0.12698（门槛 0.10）；
+  \item 在 1435x 硬留出上，weighted ACF MAE 0.015773，lag-1 最大误差 0.049863，明显失败；Q4 IID 也失败（ACF 0.01491，lag-1 0.03386）。
+\end{enumerate}
+
+\begin{table}[H]
+\centering
+\small
+\caption{A10b 三个退化生成器的独立验证与硬留出结果。}
+\label{tab:a10b}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrr}
+\toprule
+候选 & sigma median & sigma P90 & 804x weighted ACF MAE & 1435x ACF MAE / lag-1 \\
+\midrule
+Legacy A9 IID Q1 & 0.08333 & 0.11905 & 0.01319 & 未通过（Q1 非法） \\
+Q4 IID & 0.00000 & 0.15429 & 0.01341 & 0.01491 / 0.03386 \\
+A10b shared spectral Q4 & 0.00000 & 0.15429 & 0.00719 & 0.01577 / 0.04986 \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+A10b 还修正了 A10 的一个测量错误：A10 在 Bayer 打包后先执行 \texttt{spatial\_sample\_stride=4}，再在抽样网格上计算“相邻”相关，因此原指标实际对应 packed lag 4，即传感器坐标 lag 8，不是最近同色像素相关。A10 中大量精确等于 0.25 的行列 $\sigma$ 比值不能解释成物理行列噪声；在 full packed resolution 重算后，训练/验证区间的行列比值降为 0.0，而仅改变抽样步长就能产生原来的 0.25 平台值。这个现象主要来自量化与中位数估计器。A10 的“每通道空间结构通过”因此只保留为发现弱相关的初步信号，原建议参数不得直接进入生成器。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.96\textwidth]{fig14a_a10b_isp.jpg}
+  \caption{A10b 固定 ISP 证据：804x 验证与 1435x 硬留出上的 Real RAW、Proxy（非 GT）、Q4 IID、shared spectral。两个候选肉眼近似，频谱候选没有稳定视觉优势。}
+  \label{fig:a10bisp}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.96\textwidth]{fig14b_a10b_stats.png}
+  \caption{A10b 统计证据：水平/垂直 ACF、信号分桶 sigma 相对误差、逐帧 ACF MAE。shared spectral 改善了聚合 ACF，但逐通道 sigma、lag-1 与 1435x 硬留出仍失败。}
+  \label{fig:a10bstats}
+\end{figure}
+
+A10b 的最终状态是“否决全部生成器”（\texttt{rejected\_all\_generators}），没有选中的生成器（\texttt{selected\_generator} 为 \texttt{null}），且 \texttt{model\_training\_allowed} 为 \texttt{false}。即使未来噪声生成器通过，也不能自动获得训练授权，因为现有数据仍无法识别 sc450ai 的干净空间细节、sensor blur/MTF、CFA 光谱响应、PRNU/DSNU 和动态运动真值。
+
+\subsection{阶段结论}
+
+跨传感器阶段把“泛化”拆成了三个不同的问题：SC465SL/sc635hai 的静态域可以通过 A3 零样本或极少量输出头适配支持；sc450ai 的失败不是噪声幅度问题，而是空间细节和传感器响应问题；统一多传感器微调不能替代逐传感器的监督审计。最终只保留 sc635hai 的一个 12,400 参数可选输出头，A3 仍是默认基线。
+
+%========================================================
+\section{高增益动态失效：全数据集预览、四路诊断与 A11}
+%========================================================
+
+\subsection{45 条序列的全数据集预览}
+
+在完成跨传感器审计后，项目做了一次“把所有原始流都跑一遍”的全数据集预览：45/45 条原始 RAW 流，使用 A3 EMA step-5000 推理，并为每条流生成 Input 与 A3 的固定 ISP 对比视频。每条流取首、中、尾三个连续 8 帧片段，共 24 帧；视频为 1920$\times$1080、HEVC、yuv444p、6 fps，总计 1080 帧、918,042,365 字节；全部产物约 6.6 GiB。
+
+ISP 设置是：按项目 canonical 通道序做 Bayer 重建；OpenCV edge-aware 去马赛克；开启高光重建；Reinhard tone mapping；\textbf{不启用 2DNR/3DNR}；每条序列根据 Input 的 99.5 百分位估计一次曝光，并在 Input/A3 间冻结共享；白平衡使用对应流的固定 WB；色彩模式为 uncalibrated camera RGB。由于没有传感器 ColorMatrix，视频只用于比较降噪、纹理和时序表现，不构成色彩准确性结论。
+
+预览的发现是：MIS20S1 和 sc635hai 的多数场景降噪明显；SC465SL difficultpattern 高增益仍有时域拖影、重影和纹理涂抹；最刺眼的是 MIS20S1 outdoor 1500x 等高总增益序列，人物周围出现共同的朦胧、过平滑和半透明残影。图~\ref{fig:all1500} 给出了 1500x 的代表帧：输入彩噪极重，A3 把噪声压下去了，但人物姿态被平均、树木区域蜡化，画面像蒙了一层雾。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.98\textwidth]{fig15_a3_1500x_isp.jpg}
+  \caption{MIS20S1 outdoor 1500x 固定 ISP 对比：左 Input，右 A3 EMA；上半部全景，下半部中心裁剪。A3 显著降噪，但运动人物出现朦胧和姿态平均，说明问题不是噪声残留，而是结构被时域融合抹掉。}
+  \label{fig:all1500}
+\end{figure}
+
+这个现象最初被怀疑是视频编码或 ISP 的 2DNR/3DNR 造成。但预览明确关闭了 2DNR/3DNR，且 MP4 使用无损/高质量编码；因此项目决定做一次专门的高增益推理诊断，而不是继续调 ISP 锐化。
+
+\subsection{失效模式：时域对齐/融合在低信噪比下失效}
+
+诊断的核心假设是：高增益输入超出 A3 的主要训练分布，邻帧对齐/融合在低信噪比和运动下失效。A3 的时域模块会把“错位的运动内容”当成噪声平均掉，导致主体朦胧、重影和过度平滑；空间 tiling 只影响拼接边界，不解释主体朦胧；ISP 只是把 RAW 中已经丢失的结构显示出来，不能恢复它。
+
+为了分离这三个因素，项目设计了四路诊断：Input、A3 uniform（原 64/56 均匀 tiling）、A3 weighted（64/48、Hann、floor 0.05）、A3 frame-repeat（每个目标帧重复 8 次作为模型输入，取 temporal output index 4，并使用 weighted tiling）。前两者比较空间拼接，后两者比较时域融合。代表序列为 \texttt{04\_mis20s1\_outdoor\_1500x} 与 \texttt{04\_shdarkroom\_1000x} 的 frames 0--7。
+
+\subsection{四路诊断结果}
+
+表~\ref{tab:highgain} 给出了完整指标。所有结构、高频和时序指标都以 Input 为 1.0；seam amp 是原 64/56 网格处边界/普通邻接差异相对输入的放大倍数，小于 1.0 表示没有放大输入自身的差异。
+
+\begin{table}[H]
+\centering
+\small
+\caption{高增益四路诊断指标（Input = 1.0）。}
+\label{tab:highgain}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llrrrrrrr}
+\toprule
+序列 & 分支 & 梯度保持 & 时序均值梯度 & 低频结构 & 高频残留 & temporal MAD & seam amp & legal \\
+\midrule
+outdoor 1500x & A3 uniform & 0.3832 & 0.6111 & 0.7931 & 0.7927 & 0.0782 & 1.0147 & 1.0 \\
+outdoor 1500x & A3 weighted & 0.3810 & 0.6076 & 0.7917 & 0.7926 & 0.0779 & 0.9236 & 1.0 \\
+outdoor 1500x & frame-repeat & 0.7579 & 0.8474 & 0.9515 & 0.9139 & 0.5513 & 0.9831 & 1.0 \\
+shdarkroom 1000x & A3 uniform & 0.3800 & 0.6303 & 0.8257 & 0.8038 & 0.0725 & 1.1415 & 1.0 \\
+shdarkroom 1000x & A3 weighted & 0.3788 & 0.6285 & 0.8254 & 0.8022 & 0.0722 & 1.0655 & 1.0 \\
+shdarkroom 1000x & frame-repeat & 0.8551 & 0.9074 & 0.9732 & 0.8943 & 0.6936 & 1.0008 & 1.0 \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+图~\ref{fig:highgain4way} 是 outdoor 1500x 的四路细节裁剪。A3 uniform 与 weighted 都把人物姿态平均成半透明；frame-repeat 恢复了当前帧的姿态和树枝结构，但暗部彩噪明显回流。图~\ref{fig:highgainmetrics} 把两段序列的梯度保持、低频结构和 temporal MAD 放在一起，差异非常清楚。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.98\textwidth]{fig16_highgain_4way.jpg}
+  \caption{outdoor 1500x 四路细节：Input、A3 uniform 64/56、A3 weighted 64/48、A3 frame-repeat。frame-repeat 恢复姿态与树枝，但彩噪显著；uniform/weighted 的朦胧几乎相同。}
+  \label{fig:highgain4way}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.98\textwidth]{fig17_highgain_metrics.png}
+  \caption{高增益诊断指标：梯度保持、低频结构、temporal MAD。frame-repeat 把结构恢复到 0.95--0.97，但 temporal MAD 升到 0.55--0.69；A11 与 A3 weighted 几乎重合。}
+  \label{fig:highgainmetrics}
+\end{figure}
+
+结果可以归纳为四点：
+
+\begin{enumerate}
+  \item \textbf{空间拼接不是主因}。uniform 与 weighted 的结构/时序指标几乎相同（梯度 0.3832 vs.\ 0.3810，temporal MAD 0.0782 vs.\ 0.0779）；weighted 只在原 64/56 网格上把 seam amp 从 1.0147 降到 0.9236、从 1.1415 降到 1.0655，属于小幅、稳定的空间改善，但不能修复主体朦胧。
+  \item \textbf{时域融合是主因}。A3 uniform 的 temporal MAD 只有输入的 7.2\%--7.8\%，说明真实时域变化被强烈压制；frame-repeat 把低频结构恢复到 95.2\%--97.3\%，把 temporal MAD 恢复到 55.1\%--69.4\%，证明“跨帧融合”是清晰度损失的主要来源。
+  \item \textbf{frame-repeat 不是默认方案}。它的高频残留升到 89.4\%--91.4\%，固定 ISP 面板可见明显彩噪；它恢复的是“当前帧的结构”，代价是把高增益噪声也带回来。
+  \item \textbf{两个分支互补}。正常时域 A3 去噪强但会把错位运动平均掉；frame-repeat 细节强但噪声大；两者来自同一个 checkpoint，不需要旧教师或新训练。这直接构成了 A11 的设计依据。
+\end{enumerate}
+
+\subsection{A11：输入证据驱动的置信门控}
+
+A11 的目标不是“再训练一个模型”，而是在同一个 A3 checkpoint 的两个推理分支之间做保守、连续、边界平滑的 RAW 融合。A11 的后处理与 ISP 渲染均为 CPU-only，未加载模型，也未使用旧教师或动态时域均值：
+\begin{equation}
+\hat{y} = (1-w)\cdot y_{\mathrm{A3,weighted}} + w\cdot y_{\mathrm{A3,frame\mbox{-}repeat}},
+\label{eq:a11}
+\end{equation}
+其中 $w\in[0,0.65]$ 只依赖 noisy input 的可观测证据。
+
+置信证据由四部分组成：
+
+\begin{enumerate}
+  \item \textbf{时域残差}：对 Bayer 绿通道亮度做轻度低通，在原始高频局部噪声标尺下计算鲁棒时域残差，并用 smoothstep 映射为 0--1 分数。
+  \item \textbf{梯度一致性}：计算梯度幅值与方向；幅值不一致和方向余弦共同构成 gradient disagreement，再乘以结构强度，避免在平坦区误触发。
+  \item \textbf{光流匹配可靠度}：使用前后 gap=2 的双向 DIS 光流\cite{r11}，计算 forward-backward error、warp photometric error 和 flow magnitude；可靠运动与遮挡/错位分别进入 matched motion 与 mismatch 两项。
+  \item \textbf{空间后处理}：对 seed 做小连通域过滤（最小面积 48）、3 像素椭圆膨胀、Gaussian feather（$\sigma=2.0$）；高置信静态 core 强制 $w=0$；最大权重 0.65。
+\end{enumerate}
+
+完整参数为：temporal\_gap 2；residual z 2.5--6.0；gradient 0.18--0.60；structure 0.002--0.012；flow 0.75--2.50 px；FB 0.75--2.50 px；photometric 4.0--10.0 z；seed threshold 0.45；min component area 48；dilation 3；feather 2.0；max weight full 0.65。三种结构消融只用于验证证据链：residual\_only、residual\_gradient、full；最终候选固定为 full。项目明确没有做 alpha/clip/阈值网格扫描。
+
+A11 还记录了一次预检修正：未平滑的高增益像素残差会被局部噪声标尺压成稀疏孤点，全部被连通域过滤。最终实现只做了一次结构性修正：在低通亮度上计算结构残差、梯度和匹配光度误差，同时保留原始高频估计作为噪声标尺；配置阈值和最大融合权重没有因此扫描或逐序列调整。
+
+\subsection{A11 结果：保守、干净，但覆盖不足}
+
+A11 在两条代表序列 frames 0--7 上生成五路固定 ISP 视频（Input、A3 uniform、A3 weighted、frame-repeat、A11 gated），并输出 overview/detail 与逐帧 PNG。表~\ref{tab:a11coverage} 给出 mask 覆盖与区域时序比，表~\ref{tab:a11global} 给出全局结构指标。
+
+\begin{table}[H]
+\centering
+\small
+\caption{A11 mask 覆盖与区域时序比。}
+\label{tab:a11coverage}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llrrrrr}
+\toprule
+序列 & 配置 & $w>0$ & $w\ge0.5$ & weight mean & motion temporal/input & static temporal/input \\
+\midrule
+outdoor & residual only & 0.4870\% & 0.0000\% & 0.000762 & 0.6215 & 0.0878 \\
+outdoor & residual + gradient & 0.4527\% & 0.0000\% & 0.000889 & 0.6346 & 0.0878 \\
+outdoor & full & 0.4869\% & 0.0951\% & 0.001271 & 0.6780 & 0.0878 \\
+shdarkroom & residual only & 0.6760\% & 0.0000\% & 0.000969 & 0.6180 & 0.0642 \\
+shdarkroom & residual + gradient & 0.5587\% & 0.0000\% & 0.001003 & 0.6263 & 0.0642 \\
+shdarkroom & full & 0.7126\% & 0.1325\% & 0.001751 & 0.6850 & 0.0642 \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\begin{table}[H]
+\centering
+\small
+\caption{A11 全局结构指标（Input = 1.0）。}
+\label{tab:a11global}
+\begin{tabular}{llrrrr}
+\toprule
+序列 & 分支 & 梯度保持 & 低频结构 & 高频残留 & temporal MAD \\
+\midrule
+outdoor 1500x & A3 weighted & 0.3810 & 0.7917 & 0.7926 & 0.0779 \\
+outdoor 1500x & frame-repeat & 0.7579 & 0.9515 & 0.9139 & 0.5513 \\
+outdoor 1500x & A11 full & 0.3820 & 0.7919 & 0.7927 & 0.0787 \\
+shdarkroom 1000x & A3 weighted & 0.3788 & 0.8254 & 0.8022 & 0.0722 \\
+shdarkroom 1000x & frame-repeat & 0.8551 & 0.9732 & 0.8943 & 0.6936 \\
+shdarkroom 1000x & A11 full & 0.3800 & 0.8256 & 0.8024 & 0.0732 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+A11 的全局指标几乎等于 A3 weighted：outdoor 梯度 0.3820 vs.\ 0.3810，低频 0.7919 vs.\ 0.7917，temporal MAD 0.0787 vs.\ 0.0779；shdarkroom 0.3800 vs.\ 0.3788，0.8256 vs.\ 0.8254，0.0732 vs.\ 0.0722。这证明噪声和静态背景保护得很好，但也说明门控覆盖不足以改变主要朦胧失效模式。
+
+静态保护是严格的：outdoor 的 motion core 为 0.1475\%，static core 为 20.5559\%，static nonzero weight 为 0，静态 shift 为 0；shdarkroom 为 0.1945\%、39.0139\%、0、0。边界指标：outdoor boundary fraction 0.2249\%，A11/A3 boundary gradient 1.0081，shift-gradient mean 0.000366、P99 0.002720；shdarkroom 0.3521\%、1.0046、0.000370、0.002905。没有发现 halo、断裂、明显锐度台阶或 tile seam 回归。
+
+但是，固定 ISP 逐帧检查显示：outdoor frames 0--7 的 mask 持续命中人物腿、脚、手或少数局部边缘，主体躯干、头部及大面积重影/朦胧区域多数未被覆盖；A11 在少数四肢像素上略向 frame-repeat 靠近，但 A3 weighted 与 A11 在 overview/detail 中没有稳定、明确的轮廓改善。shdarkroom 的 mask 命中人物局部轮廓、风扇/小物体边缘等稀疏区域，人物主体、标定板、钟表和复杂小物体的整体朦胧没有得到可信修复；A11 与 A3 weighted 的画面差异非常小，无法在每帧或连续视频中稳定辨认出重影减少。
+
+图~\ref{fig:a11contact} 是 outdoor 第 4 帧的五路细节，右下是 A11 权重热图。可以看到权重几乎只落在手臂/边缘的几个小斑块上，躯干和大面积重影区没有权重。图~\ref{fig:a11coverage} 把覆盖率和全局指标画在一起：覆盖率低于 0.72\%，全局输出几乎与 A3 重合。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.99\textwidth]{fig18_a11_contact.jpg}
+  \caption{A11 outdoor 1500x 第 4 帧的五路细节：Input、A3 uniform、A3 weighted、frame-repeat、A11 gated，右下为 A11 权重热图。权重只覆盖手臂/边缘的稀疏区域，躯干与大面积朦胧区未被覆盖。}
+  \label{fig:a11contact}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.96\textwidth]{fig19_a11_coverage.png}
+  \caption{A11 覆盖率与全局指标。(a) $w>0$ 覆盖 0.487\%/0.713\%，$w\ge0.5$ 仅 0.095\%/0.133\%；(b) A11 与 A3 weighted 的全局梯度/低频/temporal MAD 比值接近 1。}
+  \label{fig:a11coverage}
+\end{figure}
+
+\subsection{A11 的逐项裁决}
+
+A11 的通过条件在实验前就已预注册。表~\ref{tab:a11verdict} 给出逐项结果。
+
+\begin{table}[H]
+\centering
+\small
+\caption{A11 通过条件与逐项裁决。}
+\label{tab:a11verdict}
+\begin{tabular}{p{0.44\textwidth}p{0.10\textwidth}p{0.36\textwidth}}
+\toprule
+条件 & 结果 & 说明 \\
+\midrule
+两条序列均有可重复运动边缘/重影改善 & 失败 & 局部极小，主体与主要重影未改善 \\
+噪声明显低于纯 frame-repeat & 通过 & 高频残留接近 A3 weighted，未大面积回流 \\
+高置信静态区与 A3 基本一致 & 通过 & static nonzero 与 shift 均为零 \\
+mask 边界无突变/halo/锐度台阶 & 通过 & 指标和逐帧检查均无异常 \\
+legal RAW fraction 为 1.0 & 通过 & 两条序列均为 1.0 \\
+无旧教师纹理、伪细节或新闪烁 & 通过 & 未使用旧教师，未见新增闪烁 \\
+指标和 fixed-ISP 肉眼结论一致 & 未达到 & 指标近零变化，视觉也无可信改善 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+由于第一项和第七项失败，A11a 被整体否决。它不能登记为“可选高增益后处理”，不能进入 A11b，也不能替换 A3。
+
+\subsection{为什么 A11 失败：覆盖与证据的悖论}
+
+A11 的失败不是实现错误，而是一个结构性悖论：
+
+\begin{enumerate}
+  \item \textbf{保守证据只能覆盖很小的区域}。完整规则的 $w>0$ 覆盖 0.49\%/0.71\%，$w\ge0.5$ 只有 0.10\%/0.13\%，motion core 只有 0.15\%/0.19\%。这些区域主要是四肢、手、脚和少数边缘，而主体躯干、头部和大面积重影区没有足够强的输入证据。
+  \item \textbf{降低阈值会把门控变成新的标量扫描}。如果为了覆盖主体而降低 residual/gradient/flow 阈值，就会把噪声和静态纹理引入 mask；这既违反预注册，也会重蹈 A5/A7 的覆辙。
+  \item \textbf{frame-repeat 分支本身噪声太大}。门控只能在“A3 的朦胧”和“frame-repeat 的彩噪”之间选择，不能创造第三种“既干净又清晰”的结果。要得到后者，需要新的监督或新的生成模型，而不是更好的 mask。
+  \item \textbf{没有干净动态 GT 来验证“主体改善”}。即使把 mask 扩大到主体，也无法证明引入的是真实细节还是 frame-repeat 的噪声；固定 ISP 视觉复核仍然是最终裁决，而当前视觉没有可信改善。
+\end{enumerate}
+
+这与 A5--A7 的结论完全一致：当监督/证据中不存在干净动态信息时，推理端的门控只能做保守选择，不能凭空恢复。A11 是这一结论在“后处理”层面的最后一次验证。
+
+\subsection{阶段结论}
+
+高增益动态问题仍未解决。A3 在低/中增益静态域可靠，但在高增益动态场景中，时域对齐/融合会把运动平均掉；frame-repeat 能恢复结构但噪声不可接受；A11 的置信门控太稀疏，无法改变主体失效模式。下一步若继续，应该是高增益条件化微调或新的动态数据，而不是继续调 mask 阈值。
+
+%========================================================
+\section{综合讨论}
+%========================================================
+
+\subsection{已经建立的能力}
+
+尽管大量路线被否决，项目仍然建立了四项可复用的能力：
+
+\begin{enumerate}
+  \item \textbf{A3 静态基线}：在 MIS20S1 645x 跨增益上 29.57\db（输入 24.35\db），native 1000x 53.27\db（输入 44.62\db），并通过奇偶分半验证。A3 是当前唯一默认模型。
+  \item \textbf{可信监督管线}：A1 的 10x 时域均值、A2 的 Poisson-Gaussian+FPN 噪声模型、A0 的逐源适配/配准/运动 mask，构成了可复现的监督基础。
+  \item \textbf{多证据评测协议}：分离增益/场景/奇偶帧池；同时报告 PSNR/RMSE、HF、temporal MAD、flat residual、legal RAW、固定 ISP 视频；硬留出从不调参。
+  \item \textbf{传感器支持边界}：SC465SL 静态支持；sc635hai 静态条件支持且保留一个 12,400 参数可选输出头；sc450ai 不支持；MIS20S1 高增益动态未解决。
+\end{enumerate}
+
+\subsection{失败模式分类}
+
+把失败路线放在一起看，可以发现它们并不是“同一个模型反复失败”，而是四种不同性质的失败（表~\ref{tab:failure}）。
+
+\begin{table}[H]
+\centering
+\small
+\caption{失败模式分类。}
+\label{tab:failure}
+\begin{tabular}{p{0.18\textwidth}p{0.24\textwidth}p{0.30\textwidth}p{0.18\textwidth}}
+\toprule
+类型 & 代表实验 & 根因 & 正确应对 \\
+\midrule
+评价协议失败 & A4 1000x 跨捕获 & 不同照明的线性曝光拟合失效；配准不是根因 & 换 native 参考，不修模型 \\
+监督目标失败 & A5/A6/A7；A8 sc450ai；A9 sc450ai & N2N/旧教师/盲点都不能提供干净动态或空间细节 & 停止同类扫描，转数据/监督问题 \\
+数据资格失败 & A10；A10b；A7 采集 & 没有暗场/平场/配对/干净 GT；退化生成器跨拍摄不迁移 & 明确“当前数据不足以训练” \\
+推理后处理失败 & A11 & 输入证据只覆盖 <0.72\% 像素；frame-repeat 噪声太大 & 不继续调阈值；转条件化训练/新数据 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+值得注意的是，“模型容量不足”并不是任何一次失败的主因。A6 的门控 IoU 达到 0.533，说明网络有能力定位运动；A9 的 15,508 参数也足以改变输出；真正缺的是“告诉模型该恢复什么”的监督。这是本项目最重要的科学判断。
+
+\subsection{方法论反思}
+
+回顾整个项目，有五条方法论教训值得记录：
+
+\begin{enumerate}
+  \item \textbf{预注册门槛}。A5 的 promotion gate、A8 的 9 项安全检查、A10b 的 7/8 帧对门槛、A11 的 7 项通过条件，都在实验前写死。这样即使结果“差一点”，也不能事后改门槛。
+  \item \textbf{硬留出与互斥帧池}。sc450ai 1435x、MIS20S1 1000x、SC465SL difficultpattern、A5 的 $[160,200)$ 都从未参与训练或调参。A8 的数据 gate 甚至拒绝了“把审计流拿来训练”的诱惑。
+  \item \textbf{固定 ISP 与关闭 2DNR/3DNR}。RAW 指标好不代表画面好；ISP 的时域/空域处理会掩盖或放大模型问题。所有对比视频共享完全相同的 ISP 参数，且关闭 2DNR/3DNR。
+  \item \textbf{指标陷阱}。PSNR 在错误域上会误导（A4 1000x）；HF 比降低可能是去噪也可能是细节塌陷；motion/input ratio 提升可能是噪声回流；legal RAW 只说明数值范围；单个 crop 不能代表全图。项目最终要求“指标 + 固定 ISP 逐帧”双重证据。
+  \item \textbf{负结果与自我修正}。A1 的 1.2533/1.4826 估计器错误、A10 的 stride=4 空间相关伪影、A11 的高增益残差稀疏化，都是项目自己发现并纠正的。把这些错误写进报告，比只展示成功数字更有价值。
+\end{enumerate}
+
+\subsection{核心科学判断：缺少可信动态/空间真值}
+
+项目的所有失败最终指向同一个瓶颈：缺少可信的干净动态/空间真值。
+
+\begin{itemize}
+  \item 静态时域均值在静态区域可信，在动态区域有重影；不能作为动态 GT。
+  \item 旧教师有运动行为，但带噪、带伪纹理、与目标域不一致；不能作为干净 GT。
+  \item Noise2Noise 的 later-frame warp 是另一个噪声观测，不是干净真值；只能做目标构造探针。
+  \item 盲点自监督可以学噪声统计，但不能恢复已经被抹掉的确定性结构。
+  \item 噪声退化模型可以匹配幅度/相关性，但不能创造干净空间细节、blur/MTF 或 CFA 响应。
+\end{itemize}
+
+这也解释了为什么 A5--A7、A8 sc450ai、A9、A10b、A11 会连续失败：它们都在用不同方式试图“从现有噪声观测里挤出干净信息”，而信息本身不存在。要继续推进，必须引入新的数据或新的监督假设，而不是继续换模型/调阈值。
+
+\subsection{局限性}
+
+本报告的结论有以下局限：
+
+\begin{enumerate}
+  \item \textbf{场景多样性不足}：可信静态 GT 主要来自 MIS20S1 shdarkroom 一个场景；模型可能学到“暗房先验”。
+  \item \textbf{传感器覆盖有限}：SC465SL、sc635hai、sc450ai 各只有少量序列；支持矩阵只对已测域成立，不能外推到所有增益/场景。
+  \item \textbf{没有动态 GT}：所有动态结论都是无参考诊断 + 固定 ISP 视觉，不是有监督质量评估。
+  \item \textbf{不能重新拍摄}：A7 的真实运动采集协议未执行，这是最大的数据缺口。
+  \item \textbf{固定 ISP 不是色彩校准}：没有传感器 ColorMatrix，视频不能用于色彩准确性结论；序列间绝对亮度也不可直接比较。
+\end{enumerate}
+
+\subsection{后续工作建议}
+
+基于当前证据，后续工作应按优先级考虑：
+
+\begin{enumerate}
+  \item \textbf{采集可信动态数据}：按 A7 协议执行 4+2 场景、5 种运动、30 段/4800 帧的低增益干净拍摄；用 A2 校准噪声合成同帧 noisy 输入；训练/验证场景严格分离。这是解决运动保真和高增益动态的最直接路径。
+  \item \textbf{完善传感器退化模型}：在 A10b 基础上加入空间相关噪声、行列固定模式、PRNU/DSNU、sensor blur/MTF、CFA 光谱响应和黑电平漂移；但必须先有独立平场/暗场/配对数据，不能只用 1435x 反向拟合。
+  \item \textbf{高增益条件化微调}：在 A3 基础上加入增益/噪声条件 embedding，冻结大部分主干，只训练 adapter/输出头；静态区用可信均值监督，动态区用保守一致性约束；保持 A3 为不可覆盖基线。
+  \item \textbf{测试时自适应/自监督}：如果确实无法采集，可研究 test-time adaptation 或遮挡自监督；但必须证明它不会把噪声当细节，且在硬留出上通过。
+  \item \textbf{评测基准化}：把本项目的分离增益/场景/奇偶协议、固定 ISP 和硬留出固化成 benchmark，避免后续工作重复踩坑。
+  \item \textbf{部署打包}：默认 A3；sc635hai 可选输出头；sc450ai 明确不支持；高增益动态标注为“未解决”，不要用 A11 或 frame-repeat 冒充默认输出。
+\end{enumerate}
+
+\subsection{小结}
+
+回看整个过程，有四次判断转折，它们构成了这份报告真正的“心路”。
+
+第一次转折发生在 A4。我们最初把 1000x 的 18.84\db{} 当成模型失败，甚至准备修改训练；但配准检查、曝光分桶和原生参考探针一步步证明，失败的是“1000x 到 10x 的跨捕获曝光拟合”，不是 A3。用 1000x 自身 200 帧构造原生参考后，同一个 checkpoint 达到 53.27\db。那一刻我们意识到：\textbf{评价域本身是模型的一部分}。如果不先把“我们在哪个域上比较”说清楚，后面的所有数字都可能是错的。
+
+第二次转折发生在 A5--A7。我们试过动态 N2N、教师锚定、冻结运动专家、旧教师融合，几乎把“不引入新数据”能想到的组合都做了一遍。每一次都有一点点运动指标提升，但每一次都伴随静态、HF、native 或时序的回退。最后我们不得不承认：\textbf{不是模型不会定位运动，而是监督里没有“运动物体在该时刻的干净纹理”}。继续调权重只会在 trade-off 上移动，不会创造信息。
+
+第三次转折发生在 A8--A10b。我们原以为“逐传感器适配”只是换一批数据再训几百步；A8 的数据 gate 却先告诉我们，目标传感器的流都在冻结审计里，根本没有合规训练源。用户授权重划后，sc635hai 的输出头适配条件通过，sc450ai 的盲点适配却全线失败；A9 的统一微调也没有救回 sc450ai；A10/A10b 进一步证明，现有 sc450ai 数据连可信的干净空间监督和跨拍摄退化模型都不支持。我们这才把“泛化”拆成“哪些域支持、哪些域不支持、为什么不支持”，而不是笼统地说“模型泛化不好”。
+
+第四次转折发生在 A11。四路诊断已经证明高增益朦胧的主因是时域融合，frame-repeat 能恢复结构但噪声大；我们以为一个保守的置信门控可以把两者的优点结合起来。结果门控只覆盖不到 0.72\% 的像素，主体朦胧区根本没有权重。A11 的失败让我们确认：\textbf{推理端的 mask 只能在已有信息之间做选择，不能创造缺失的干净细节}。这与 A5--A7 的结论是同一个事实在不同层面的表现。
+
+所以，Stage2 的故事不是一个“模型越训越好”的故事，而是一个“逐步确认哪些事情不能做”的故事。A3 证明了静态去噪可以被可信监督解决；A5--A11 证明了运动、高增益和 sc450ai 空间细节不能被现有数据/监督解决。这个结论本身是有价值的：它把后续研究从“继续调模型”引导到“先解决数据与监督”。
+
+%========================================================
+\section{结论}
+%========================================================
+
+本报告完整记录了 Stage2 RAW 视频去噪项目从 A0 到 A11 的研究历程。主要结论如下：
+
+\begin{enumerate}
+  \item \textbf{RQ1（静态基线）成立}。在可信的 10x 时域均值监督、实测噪声模型和运动/饱和掩码下，RViDeformer-L 可以适应公司 MIS20S1 数据。A3 step-5000 在 645x 跨增益上达到 29.57\db（输入 24.35\db），在 native 1000x 上达到 53.27\db（输入 44.62\db），并通过奇偶分半验证。A3 是唯一默认基线。
+  \item \textbf{RQ2（运动保真）不成立}。A3 在运动区只保留输入的 27\%--32\% 帧差；A5 的 N2N/教师锚定、A6 的冻结运动专家、A7 的 36 组旧教师融合都没有通过“运动提升 + 静态/native 不回退”的联合门槛。根因是缺少干净动态真值，不是运动定位能力。
+  \item \textbf{RQ3（跨传感器）部分成立}。SC465SL 在已测静态域支持（+13.21/+10.52\db）；sc635hai 静态低色温条件支持（+13.59\db），仅保留一个 12,400 参数输出头；sc450ai 不支持（HF 0.127、裁剪 3.28\%）。A9 的统一多传感器微调没有解决 sc450ai；A10/A10b 证明现有 sc450ai 数据不具备训练级监督。
+  \item \textbf{RQ4（高增益动态）不成立}。45 条序列预览发现共同的高增益朦胧/重影；四路诊断证明主因是时域对齐/融合，而不是 tiling 或 ISP；A11 的置信门控覆盖低于 0.72\% 像素，无法改变主体失效模式。高增益动态仍未解决。
+\end{enumerate}
+
+最终的支持矩阵见表~\ref{tab:support}。项目没有达到“一个模型在所有传感器、增益、静态/动态条件下都可靠”的最终目标；但它给出了一个可信的静态基线、一套可复现的评测协议，以及一份明确的失败清单。这些负结果与 A3 的正结果一起，构成了后续工作的起点。
+
+\begin{table}[H]
+\centering
+\small
+\caption{最终模型与传感器支持矩阵。}
+\label{tab:support}
+\begin{tabular}{p{0.26\textwidth}p{0.18\textwidth}p{0.34\textwidth}p{0.14\textwidth}}
+\toprule
+对象 & 状态 & 允许用途 & 禁止事项 \\
+\midrule
+A3 step-5000 & 默认基线 & MIS20S1 静态、已支持域、所有对比基准 & 不得覆盖/替换 \\
+A8 sc635hai step-500 & 条件保留 & sc635hai 专用可选推理 & 不得宣传为统一模型 \\
+A8 sc450ai checkpoints & 全部否决 & 仅历史审计 & 不得部署/继续盲点扫描 \\
+A9 step-100 & 统一模型否决 & 仅历史审计 & 不得继续同方案到 500 步 \\
+A5/A6/A7 & 全部否决 & 仅历史审计 & 不得原样复用 \\
+A11 & 全部否决 & 仅历史审计 & 不得作为高增益默认输出 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\small
+\caption{传感器/条件支持状态。}
+\label{tab:sensor}
+\begin{tabular}{p{0.30\textwidth}p{0.22\textwidth}p{0.40\textwidth}}
+\toprule
+传感器/条件 & 状态 & 主要风险 \\
+\midrule
+MIS20S1 低/中增益静态 & 支持（A3） & 动态仍需检查 \\
+MIS20S1 高增益动态 & 未解决 & 朦胧、重影、过度平滑 \\
+SC465SL 已测静态域 & 支持 & 不能外推到所有动态/高增益 \\
+sc635hai 静态低色温 & 支持/条件支持 & 动态和颜色域仍有风险 \\
+sc450ai & 不支持 & 高频塌陷、黑物体发空、裁剪、监督不足 \\
+difficultpattern & 条件压力测试 & 不能代表完整传感器支持 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection*{数据与代码可用性}
+
+项目根目录为 \path{/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010}。A3 checkpoint 的 SHA-256 为 \texttt{97c4332f...592e0b}，在全部后续实验中未被覆盖。数据集目录 \path{/HardDisk/jingzeliang/Data/Company_Dataset/dataset} 全程只读。所有新增代码、配置、产物均位于项目目录内。关键报告、评估 JSON、固定 ISP 视频与图像见附录 A/B。
+
+%========================================================
+\begin{thebibliography}{99}
+%========================================================
+
+\bibitem{r1} H. Yue, C. Cao, L. Liao, R. Chu, and J. Yang. Supervised Raw Video Denoising With a Benchmark Dataset on Dynamic Scenes. In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}, pp. 2301--2310, 2020.
+
+\bibitem{r2} H. Yue, C. Cao, L. Liao, and J. Yang. RViDeformer: Efficient Raw Video Denoising Transformer With a Larger Benchmark Dataset. \emph{IEEE Transactions on Circuits and Systems for Video Technology}, 35(9):8929--8944, 2025. DOI: 10.1109/TCSVT.2025.3553160.
+
+\bibitem{r3} J. Liang, Y. Fan, X. Xiang, R. Ranjan, E. Ilg, S. Green, J. Cao, K. Zhang, R. Timofte, and L. Van Gool. Recurrent Video Restoration Transformer with Guided Deformable Attention. In \emph{Advances in Neural Information Processing Systems (NeurIPS)}, 2022.
+
+\bibitem{r4} J. Lehtinen, J. Munkberg, J. Hasselgren, S. Laine, T. Karras, M. Aittala, and T. Aila. Noise2Noise: Learning Image Restoration without Clean Data. In \emph{Proceedings of the International Conference on Machine Learning (ICML)}, PMLR 80:2965--2974, 2018.
+
+\bibitem{r5} A. Krull, T.-O. Buchholz, and F. Jug. Noise2Void -- Learning Denoising from Single Noisy Images. In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}, pp. 2129--2137, 2019.
+
+\bibitem{r6} J. Batson and L. Royer. Noise2Self: Blind Denoising by Self-Supervision. In \emph{Proceedings of the International Conference on Machine Learning (ICML)}, PMLR 97:524--533, 2019.
+
+\bibitem{r7} A. Foi, M. Trimeche, V. Katkovnik, and K. Egiazarian. Practical Poissonian-Gaussian Noise Modeling and Fitting for Single-Image Raw-Data. \emph{IEEE Transactions on Image Processing}, 17(10):1737--1754, 2008.
+
+\bibitem{r8} T. Brooks, B. Mildenhall, J. T. Barron, J. Chen, D. Sharlet, and R. Ng. Unprocessing Images for Learned Raw Denoising. In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}, pp. 11036--11045, 2019.
+
+\bibitem{r9} C. Godard, K. Matzen, and M. Uyttendaele. Deep Burst Denoising. In \emph{Proceedings of the European Conference on Computer Vision (ECCV)}, 2018.
+
+\bibitem{r10} S. W. Hasinoff, D. Sharlet, R. Geiss, A. Adams, J. T. Barron, F. Kainz, J. Chen, and M. Levoy. Burst Photography for High Dynamic Range and Low-Light Imaging on Mobile Cameras. \emph{ACM Transactions on Graphics}, 35(6):192, 2016.
+
+\bibitem{r11} T. Kroeger, R. Timofte, D. Dai, and L. Van Gool. Fast Optical Flow Using Dense Inverse Search. In \emph{Proceedings of the European Conference on Computer Vision (ECCV)}, pp. 471--488, 2016.
+
+\bibitem{r12} E. Reinhard, M. Stark, P. Shirley, and J. Ferwerda. Photographic Tone Reproduction for Digital Images. \emph{ACM Transactions on Graphics}, 21(3):267--276, 2002.
+
+\bibitem{r13} P. Charbonnier, L. Blanc-Feraud, G. Aubert, and M. Barlaud. Two Deterministic Half-Quadratic Regularization Algorithms for Computed Imaging. In \emph{Proceedings of the IEEE International Conference on Image Processing (ICIP)}, vol. 2, pp. 168--172, 1994.
+
+\bibitem{r14} K. Zhang, W. Zuo, Y. Chen, D. Meng, and L. Zhang. Beyond a Gaussian Denoiser: Residual Learning of Deep CNN for Image Denoising. \emph{IEEE Transactions on Image Processing}, 26(7):3142--3155, 2017.
+
+\bibitem{r15} D. Maggioni, E. Sanchez-Monge, and A. Foi. Efficient Multi-Stage Video Denoising With Recurrent Spatio-Temporal Fusion. In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}, 2021.
+
+\bibitem{r16} M. Tassano, J. Delon, and T. Veit. FastDVDNet: Towards Real-Time Deep Video Denoising Without Flow Estimation. In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}, 2020.
+
+\bibitem{r17} B. Mildenhall, J. T. Barron, J. Chen, D. Sharlet, R. Ng, and R. Carroll. Burst Denoising with Kernel Prediction Networks. In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}, 2018.
+
+\bibitem{r18} A. Buades, B. Coll, and J.-M. Morel. A Non-Local Algorithm for Image Denoising. In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}, 2005.
+
+\bibitem{r19} K. Dabov, A. Foi, V. Katkovnik, and K. Egiazarian. Image Denoising by Sparse 3-D Transform-Domain Collaborative Filtering. \emph{IEEE Transactions on Image Processing}, 16(8):2080--2095, 2007.
+
+\bibitem{r20} S. Guo, Z. Yan, K. Zhang, L. Zhang, and W. Zuo. Toward Convolutional Blind Denoising of Real Photographs. In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}, 2019.
+
+\end{thebibliography}
+
+%========================================================
+\appendix
+\section{实验索引}
+%========================================================
+
+\begin{table}[H]
+\centering
+\small
+\caption{Stage2 实验索引。}
+\label{tab:index}
+\begin{tabular}{p{0.06\textwidth}p{0.12\textwidth}p{0.24\textwidth}>{\raggedright\arraybackslash}p{0.34\textwidth}p{0.09\textwidth}}
+\toprule
+阶段 & 日期 & 核心问题 & 关键结果 & 裁决 \\
+\midrule
+A0 & 09-20 & 数据适配与 manifest & 33 流、15 运动 mask、50/50 单元 & 完成 \\
+A1 & 09-20/21 & 干净参考 & 分半 $\sigma$ 0.51--0.80\dn；图卡 HF 2.97$\times$ & 通过 \\
+A2 & 09-21/22 & 噪声模型与合成 & 最大逐通道误差 8.66\% & 通过 \\
+A3 & 09-21/22 & RViDeformer 微调 & 645x 29.57\db；native 1000x 53.27\db & 基线 \\
+A4 & 09-22 & 增益留出评估 & 1000x 跨捕获假失败；native 修复 & A3 接受 \\
+A5 & 09-24--10-01 & 动态监督 & 9 组候选全部失败 & 否决 \\
+A6 & 10-07--10-09 & 冻结运动专家 & v1--v4 全部失败 & 否决 \\
+A7 & 10-09--10-11 & 旧教师融合 & 36 组全部否决 & 否决 \\
+审计 & 10-12--10-13 & 跨传感器零样本 & SC465SL/sc635hai 支持；sc450ai 不支持 & 边界确定 \\
+A8 & 10-13--10-14 & 逐传感器适配 & sc635hai 条件通过；sc450ai 全否决 & 条件/否决 \\
+A9 & 10-16 & 统一多传感器 & sc450ai HF 未恢复 & 否决 \\
+A10 & 10-16 & sc450ai 监督审计 & 0 暗场/平场/配对；不可训练 & 阻断 \\
+A10b & 10-16 & 退化生成器 & 3 个候选全部失败 & 否决 \\
+预览 & 10-17 & 45 条全数据 & 高增益共同朦胧 & 发现失效 \\
+诊断 & 10-18 & 四路高增益 & 时域融合为主因 & 机理解释 \\
+A11 & 10-19 & 置信门控 & 覆盖 <0.72\%，无可见改善 & 否决 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{关键产物与复现入口}
+
+项目使用 Python 3.12 环境：
+\begin{center}
+\texttt{\detokenize{/home/jingzeliang/miniconda3/envs/aaa_312/bin/python}}
+\end{center}
+
+关键产物根目录（每个路径单独一行）：
+\begin{description}
+  \item[A1/A2 监督] \texttt{\detokenize{artifacts/finetune_mis20s1/supervision/}}
+  \item[] \texttt{\detokenize{artifacts/finetune_mis20s1/noise_model/}}
+  \item[A3 checkpoint] \texttt{\detokenize{artifacts/finetune_mis20s1/training/checkpoint_step_005000.pth}}
+  \item[A4/native 评估] \texttt{\detokenize{artifacts/finetune_mis20s1/evaluation/}}
+  \item[A5/A6/A7 评估] \texttt{\detokenize{artifacts/finetune_mis20s1/evaluation/a5_*}}
+  \item[] \texttt{\detokenize{artifacts/finetune_mis20s1/evaluation/a6_*}}
+  \item[] \texttt{\detokenize{artifacts/finetune_mis20s1/evaluation/a7_*}}
+  \item[跨传感器审计] \texttt{\detokenize{artifacts/a3_cross_sensor_zero_shot_20261012/}}
+  \item[] \texttt{\detokenize{artifacts/a3_cross_sensor_extension_20261012/}}
+  \item[A8/A9/A10/A10b] \texttt{\detokenize{artifacts/a8_sensor_adaptation/}}
+  \item[] \texttt{\detokenize{artifacts/a9_multi_sensor_generalization/}}
+  \item[] \texttt{\detokenize{artifacts/a10_sc450ai_supervision_audit_20261016/}}
+  \item[] \texttt{\detokenize{artifacts/a10b_sc450ai_degradation_validation_20261016/}}
+  \item[全数据预览/高增益/A11] \texttt{\detokenize{artifacts/a3_all_dataset_traditional_isp_preview_20261017/}}
+  \item[] \texttt{\detokenize{artifacts/a3_high_gain_diagnostic_20261018/}}
+  \item[] \texttt{\detokenize{artifacts/a11_high_gain_confidence_gate_20261019/}}
+\end{description}
+
+代表性复现命令（从项目根目录执行）：
+{\small
+\begin{verbatim}
+python scripts/run_a4_eval.py --max-frames 200 \
+  --tile-batch 8 --output-dir artifacts/finetune_mis20s1/evaluation
+python scripts/run_native_1000x_eval.py --max-frames 200 \
+  --tile-batch 8 --output-dir artifacts/finetune_mis20s1/evaluation/native_1000x
+python scripts/evaluate_a3_cross_sensor.py \
+  --config configs/a3_cross_sensor_zero_shot_20261012.json \
+  --output-dir artifacts/a3_cross_sensor_zero_shot_20261012 \
+  --phase all --device cuda:0 --tile-batch 2
+python scripts/run_a8_sensor_adaptation.py \
+  --config configs/a8_sc635hai_adaptation_20261013.json
+A9_OUT=artifacts/a9_multi_sensor_generalization/training_smoke_4090_retry2_20261016
+python scripts/run_a9_generalization.py --output-dir "$A9_OUT" \
+  --device cuda:0
+python scripts/run_a11_high_gain_confidence_gate.py
+python -m pytest -q src/tests
+\end{verbatim}
+}
+
+说明：命令中的路径与参数以项目当前脚本为准；GPU 运行前必须先 \texttt{nvidia-smi} 确认空闲卡，且不得终止其他用户进程。A3 checkpoint 的 SHA-256 为 \texttt{97c4332f...592e0b}，复现前后应校验。
+
+\section{术语表}
+
+\begin{description}
+  \item[RAW] 传感器原始数据，未经过 ISP 去马赛克/降噪/色调映射。
+  \item[DN] Digital Number，RAW 像素数值单位。
+  \item[CFA] Color Filter Array，Bayer 彩色滤波阵列；本项目主要为 RGGB，标定流为 GRBG。
+  \item[PSNR] Peak Signal-to-Noise Ratio，峰值信噪比，单位 dB。
+  \item[RMSE] Root Mean Square Error，均方根误差，单位 DN。
+  \item[HF ratio] 高频保持率，输出高频 RMS 与参考高频 RMS 之比；接近 1 表示细节保留。
+  \item[temporal MAD] 帧间平均绝对差，衡量时域稳定性；过低表示过度平均，过高表示闪烁/噪声。
+  \item[legal RAW] 输出是否落在合法 RAW 数值范围内；只说明范围，不说明画质。
+  \item[FPN] Fixed Pattern Noise，固定图样噪声，包括 DSNU 与 PRNU。
+  \item[N2N] Noise2Noise，用另一噪声观测作为目标的无干净真值监督。
+  \item[N2V/N2S] Noise2Void/Noise2Self，盲点自监督。
+  \item[Hard holdout] 硬留出，完全不参与训练、调参和阈值选择。
+  \item[Disjoint parity] 奇偶帧分半，输入与参考来自互斥帧池。
+  \item[motion/input ratio] 运动区输出帧差与输入帧差之比；只作诊断，不作通过依据。
+\end{description}
+
+\end{document}

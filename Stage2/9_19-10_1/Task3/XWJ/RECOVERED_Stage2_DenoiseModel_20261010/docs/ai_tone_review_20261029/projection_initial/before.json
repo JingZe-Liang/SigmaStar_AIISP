@@ -1,0 +1,300 @@
+{
+ "meta": {
+  "篇数": 1,
+  "万汉字": 1.22,
+  "段数": 147,
+  "小标题数": 46
+ },
+ "density": {
+  "翻案腔": 0.082,
+  "提示语冒号": 0.082,
+  "起手式": 0.0,
+  "当…时从句": 0.0,
+  "前置话题壳": 0.0,
+  "句首连接词": 0.082,
+  "顿号并列≥3": 2.789,
+  "过长前置定语": 0.0,
+  "拟人化喻体": 0.0,
+  "概括替代(已否决)": 0.0,
+  "序数词小标题(已否决)": 0.0,
+  "「这意味着」复述(已否决)": 0.0,
+  "空转句引列表(已否决)": 0.246
+ },
+ "char_density": {
+  "破折号": 0.0,
+  "分号": 7.629,
+  "引号": 0.656
+ },
+ "hits": {
+  "翻案腔": [
+   {
+    "file": "before.txt",
+    "line": 267,
+    "excerpt": "不是等参数或等帧数消融，而是"
+   }
+  ],
+  "提示语冒号": [
+   {
+    "file": "before.txt",
+    "line": 147,
+    "excerpt": "问题是："
+   }
+  ],
+  "起手式": [],
+  "当…时从句": [],
+  "前置话题壳": [],
+  "句首连接词": [
+   {
+    "file": "before.txt",
+    "line": 324,
+    "excerpt": "因此，"
+   }
+  ],
+  "顿号并列≥3": [
+   {
+    "file": "before.txt",
+    "line": 61,
+    "excerpt": "依次检查噪声建模、单帧适配、多帧与频域补偿"
+   },
+   {
+    "file": "before.txt",
+    "line": 63,
+    "excerpt": "展示覆盖公司 MIS20S1、SC465SL、sc635hai 和 sc4"
+   },
+   {
+    "file": "before.txt",
+    "line": 63,
+    "excerpt": "集中列出采纳方案的训练超参数、损失、模型与推理配置"
+   },
+   {
+    "file": "before.txt",
+    "line": 79,
+    "excerpt": "可利用的资源是低增益静态序列、同场景不同增益拍摄、平场与黑帧标定"
+   },
+   {
+    "file": "before.txt",
+    "line": 85,
+    "excerpt": "法0至方法4依次完成数据适配、参考构建、噪声合成"
+   },
+   {
+    "file": "before.txt",
+    "line": 97,
+    "excerpt": "实际生成器采用逐增益经验系数、通道相关高斯采样、固定图样偏置和量化"
+   },
+   {
+    "file": "before.txt",
+    "line": 97,
+    "excerpt": "数据集预览及图 [REF] 、图 [REF] 、图 [REF] 使用 Rei"
+   },
+   {
+    "file": "before.txt",
+    "line": 134,
+    "excerpt": "应参考 DN 域的 PSNR、RMSE、高频保持率和残差"
+   },
+   {
+    "file": "before.txt",
+    "line": 134,
+    "excerpt": "只保留在全部、奇数、偶数帧池中均达到90%静态置"
+   },
+   {
+    "file": "before.txt",
+    "line": 157,
+    "excerpt": "又逐流检查位对齐、CFA、黑电平与信号相关方差"
+   },
+   {
+    "file": "before.txt",
+    "line": 163,
+    "excerpt": "发流包含2条 SC450AI、2条 SC635HAI、2条 SC465SL"
+   },
+   {
+    "file": "before.txt",
+    "line": 163,
+    "excerpt": "输入、参考、引导与教师窗口均须完整落在所"
+   },
+   {
+    "file": "before.txt",
+    "line": 174,
+    "excerpt": "ATH]  packed裁块、batch size 32、AdamW"
+   },
+   {
+    "file": "before.txt",
+    "line": 198,
+    "excerpt": "并按64、32、16通道逐级增加 TAP 融"
+   },
+   {
+    "file": "before.txt",
+    "line": 230,
+    "excerpt": "残差分支共享卷积提取16、32、64通道的三级特征"
+   },
+   {
+    "file": "before.txt",
+    "line": 232,
+    "excerpt": "ATH]  packed裁块、batch size 2、梯度累积4"
+   },
+   {
+    "file": "before.txt",
+    "line": 232,
+    "excerpt": "amW学习率 [MATH] 、权重衰减0、梯度裁剪1"
+   },
+   {
+    "file": "before.txt",
+    "line": 256,
+    "excerpt": "每例保留输入、官方 RViDeformer、公司单帧基准"
+   },
+   {
+    "file": "before.txt",
+    "line": 263,
+    "excerpt": "八帧 RViDeformer、公司单帧基准、五帧输出补偿第2300步"
+   },
+   {
+    "file": "before.txt",
+    "line": 284,
+    "excerpt": "四列仍为输入、官方 RViDeformer、单帧基准和五帧第2300步候"
+   },
+   {
+    "file": "before.txt",
+    "line": 299,
+    "excerpt": "方法0建立逐流适配、配准、曝光映射与运动掩码"
+   },
+   {
+    "file": "before.txt",
+    "line": 338,
+    "excerpt": "四路诊断比较原始输入、正常时域推理、加权空间拼接和单帧重复8次的"
+   },
+   {
+    "file": "before.txt",
+    "line": 351,
+    "excerpt": "RAW适配、可信静态监督、真实与合成混合训练"
+   },
+   {
+    "file": "before.txt",
+    "line": 398,
+    "excerpt": "Gb/B 上分别为0.511、0.797、0.763和0.560DN"
+   },
+   {
+    "file": "before.txt",
+    "line": 400,
+    "excerpt": "真实输入选用128x、313x、632x和645x"
+   },
+   {
+    "file": "before.txt",
+    "line": 407,
+    "excerpt": "有效掩码同时满足参考有效、输入8帧均为静态、全部输入通道均未饱和"
+   },
+   {
+    "file": "before.txt",
+    "line": 424,
+    "excerpt": "合成增益标签为100、200、400"
+   },
+   {
+    "file": "before.txt",
+    "line": 424,
+    "excerpt": "800、1600、3200"
+   },
+   {
+    "file": "before.txt",
+    "line": 467,
+    "excerpt": "batch size为1、学习率  [MATH] 、训练500步"
+   },
+   {
+    "file": "before.txt",
+    "line": 478,
+    "excerpt": "每流取首、中、尾3个连续8帧片段"
+   },
+   {
+    "file": "before.txt",
+    "line": 546,
+    "excerpt": "风扇、人偶、线缆及背景卡片仍可辨"
+   },
+   {
+    "file": "before.txt",
+    "line": 908,
+    "excerpt": "图 [REF] 、图 [REF] 、图 [REF] 使用各自评测"
+   },
+   {
+    "file": "before.txt",
+    "line": 908,
+    "excerpt": "固定曝光分别为4.7393、2.0011、6.2803 EV"
+   },
+   {
+    "file": "before.txt",
+    "line": 973,
+    "excerpt": "核查范围包括研究报告与台账、服务器历史实验、本地训练与补充验证"
+   }
+  ],
+  "过长前置定语": [],
+  "拟人化喻体": [],
+  "概括替代(已否决)": [],
+  "序数词小标题(已否决)": [],
+  "「这意味着」复述(已否决)": [],
+  "空转句引列表(已否决)": [
+   {
+    "file": "before.txt",
+    "line": 225,
+    "excerpt": "在最终 RAW 输出处叠加一条五帧残差分支："
+   },
+   {
+    "file": "before.txt",
+    "line": 439,
+    "excerpt": "harbonnier 项 [REF] 约束重建误差："
+   },
+   {
+    "file": "before.txt",
+    "line": 443,
+    "excerpt": "梯度项约束水平、垂直梯度的幅值差："
+   }
+  ]
+ },
+ "syn_hits": [
+  {
+   "file": "before.txt",
+   "line": 61,
+   "excerpt": "使用／采用",
+   "context": "本报告记录 Stage2 RAW 视频去噪项目从公司数据适配、监督构建到跨传感器验证的研究过程。针对预训练教师在公司 RAW 上噪声与细节难"
+  },
+  {
+   "file": "before.txt",
+   "line": 93,
+   "excerpt": "采用／利用",
+   "context": "RAW 保留了传感器的线性响应和 Bayer 采样信息，适合在噪声统计层面建立恢复模型。CRVD/RViDeNet [REF] 、RViDe"
+  },
+  {
+   "file": "before.txt",
+   "line": 97,
+   "excerpt": "使用／采用",
+   "context": "噪声标定以信号相关方差模型 [REF] 为基础，并参考 RAW 数据合成的思路 [REF] 。实际生成器采用逐增益经验系数、通道相关高斯采样"
+  },
+  {
+   "file": "before.txt",
+   "line": 134,
+   "excerpt": "使用／采用",
+   "context": "静态评测在有效区域计算对应参考 DN 域的 PSNR、RMSE、高频保持率和残差。645x使用映射到10x亮度的参考域，1000x及跨传感器"
+  },
+  {
+   "file": "before.txt",
+   "line": 204,
+   "excerpt": "使用／采用",
+   "context": "既然附加模块的收益较小，研究继续检查两种可能：冻结主干是否限制了新特征的使用；运动教师目标是否使模型更倾向于复现已有平滑结果。相应实验取消教"
+  },
+  {
+   "file": "before.txt",
+   "line": 467,
+   "excerpt": "使用／采用",
+   "context": "适配使用 sc635hai 131x低色温序列，奇偶输入与参考帧池互斥；以0.5概率混入 MIS20S1 回放，减少原域漂移。batch s"
+  },
+  {
+   "file": "before.txt",
+   "line": 713,
+   "excerpt": "方法／路径",
+   "context": "本附录记录最终方法3及方法8的 sc635hai 专用可选头。训练设置以最终 checkpoint 中保存的配置和优化器状态为准，模型与损失"
+  }
+ ],
+ "structure": {
+  "句长CV": 0.516,
+  "节长CV": 0.656,
+  "小标题/千字": 3.774,
+  "两句同构/百段": 19.05,
+  "三句同构/百段": 4.08,
+  "mtld粗估": 1241
+ }
+}

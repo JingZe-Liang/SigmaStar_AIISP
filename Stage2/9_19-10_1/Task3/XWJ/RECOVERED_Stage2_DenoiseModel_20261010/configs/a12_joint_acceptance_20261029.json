@@ -1,0 +1,1380 @@
+{
+  "schema_version": 1,
+  "protocol": "A12 frozen development acceptance manifest for joint RAW denoising quality",
+  "date": "2026-10-29",
+  "timezone": "Asia/Shanghai",
+  "status": "development_manifest_v1_thresholds_pending_confirmation",
+  "baseline": {
+    "name": "A3 step-5000 EMA",
+    "checkpoint": "artifacts/finetune_mis20s1/training/checkpoint_step_005000.pth",
+    "checkpoint_sha256": "97c4332f685f98959b243e4b100434469f714aed6329e100d22b6d8552592e0b",
+    "weights": "ema",
+    "temporal_frames": 8,
+    "spatial_tile_packed": 64,
+    "spatial_stride_packed": 56,
+    "spatial_blend": "uniform",
+    "unchanged": true
+  },
+  "scope": {
+    "sensors": [
+      "MIS20S1",
+      "SC465SL",
+      "sc635hai",
+      "sc450ai"
+    ],
+    "purpose": "Freeze existing development examples and report noise, detail, dark-region and motion evidence separately before selecting a candidate.",
+    "not_an_unseen_final_holdout": true,
+    "historical_baseline_evidence": "Read existing metrics with original domains, dates, masks and sample identities; do not present them as newly executed experiments.",
+    "new_cpu_measurements": "Read existing prediction caches and original RAW; recompute explicitly named ROI diagnostics without running model inference.",
+    "new_model_inference_performed_by_this_manifest": false,
+    "training_performed_by_this_manifest": false,
+    "sampling_policy": "Keep the recorded source frame indices; do not concatenate sparse clips into an apparently continuous video."
+  },
+  "constraints": {
+    "raw_data_read_only": true,
+    "historical_artifacts_read_only": true,
+    "no_baseline_checkpoint_replacement": true,
+    "dynamic_temporal_mean_is_not_ground_truth": true,
+    "old_teacher_output_is_not_ground_truth": true,
+    "no_dynamic_psnr_without_qualified_target": true,
+    "no_pass_from_hf_energy_or_motion_ratio_alone": true,
+    "do_not_rank_absolute_psnr_across_reference_domains": true,
+    "output_directory_for_new_reports": "artifacts/a12_joint_acceptance_20261029"
+  },
+  "metric_protocol": {
+    "canonical_channel_order": [
+      "R",
+      "Gr",
+      "Gb",
+      "B"
+    ],
+    "prediction_storage": "float16 normalized packed Bayer; cast to float32 before arithmetic and restore native DN using the matching per-channel black levels",
+    "roi_coordinate_system": "raw sensor pixels, half-open [x0, y0, x1, y1]; convert to packed Bayer coordinates consistently",
+    "existing_roi_status": "Fixed historical panel crops are heuristic regions, not semantic segmentation or clean-motion truth.",
+    "static_mask": "Use opposite-parity reference, existing reference.valid_region, source-frame motion rejection and unsaturated input; report valid population and fraction for every ROI.",
+    "neighborhood_metrics": "Use only valid neighborhoods for high-pass and signed gradient errors; do not let excluded motion or saturated pixels leak through a convolution boundary.",
+    "static_metrics": [
+      {
+        "name": "rmse_dn",
+        "target": "qualified static reference",
+        "direction": "lower"
+      },
+      {
+        "name": "psnr_db",
+        "target": "qualified static reference",
+        "direction": "higher",
+        "white_level_dn": 4095.0
+      },
+      {
+        "name": "signed_gradient_error_dn",
+        "target": "qualified static reference",
+        "direction": "lower",
+        "note": "Compare signed horizontal and vertical differences, not only gradient magnitudes."
+      },
+      {
+        "name": "highpass_error_dn",
+        "target": "qualified static reference",
+        "direction": "lower",
+        "operator": "identity minus spatial 3x3 box mean"
+      },
+      {
+        "name": "highpass_reference_ratio",
+        "target": "qualified static reference",
+        "direction": "diagnostic_only",
+        "note": "A ratio near one is not sufficient evidence of correct texture or edge phase."
+      },
+      {
+        "name": "bias_dn_per_channel",
+        "target": "qualified static reference",
+        "direction": "absolute_value_lower"
+      },
+      {
+        "name": "flat_residual_sigma_dn",
+        "target": "qualified static reference",
+        "direction": "lower",
+        "note": "Flat-region noise metric must accompany structure errors; smoothing alone can reduce it."
+      },
+      {
+        "name": "low_frequency_residual_dn",
+        "target": "qualified static reference",
+        "direction": "lower",
+        "status": "proposal_operator_and_roi_pending"
+      },
+      {
+        "name": "endpoint_clip_fraction",
+        "target": "none",
+        "direction": "diagnostic_guard",
+        "note": "Report lower and upper endpoints separately; legal RAW after clipping is not a quality pass."
+      }
+    ],
+    "dynamic_metrics": [
+      {
+        "name": "input_relative_highpass_ratio",
+        "target": "noisy input",
+        "direction": "diagnostic_only",
+        "note": "Not interchangeable with static output/reference HF ratio."
+      },
+      {
+        "name": "temporal_mad_ratio",
+        "target": "noisy input",
+        "direction": "diagnostic_only"
+      },
+      {
+        "name": "motion_static_temporal_ratios",
+        "target": "input-derived heuristic regions",
+        "direction": "diagnostic_only"
+      },
+      {
+        "name": "input_output_bias_dn_per_channel",
+        "target": "noisy input",
+        "direction": "diagnostic_only"
+      },
+      {
+        "name": "endpoint_clip_fraction",
+        "target": "none",
+        "direction": "diagnostic_guard"
+      },
+      {
+        "name": "fixed_isp_motion_detail_review",
+        "target": "same source frames",
+        "direction": "human_review_required",
+        "criteria": [
+          "current-frame contour fidelity",
+          "ghost duplicate and trailing",
+          "thin lines and texture",
+          "dark chroma mottling",
+          "occlusion and disocclusion",
+          "noise visibility",
+          "flicker across adjacent windows"
+        ]
+      }
+    ],
+    "aggregation": "Report each sensor, sequence, parity, ROI and channel before aggregate summaries; a pooled average must not hide a known failing domain."
+  },
+  "acceptance_proposal": {
+    "status": "proposal_not_approved_thresholds",
+    "comparison": "same frames, masks, reference domain and frozen ISP as A3 baseline",
+    "static_rule": "Joint no-regression in residual noise, reference structure errors, bias and clipping; any claimed gain must be reported with its trade-offs.",
+    "dynamic_rule": "Require improved current-frame structure and ghosting with acceptable residual noise on fixed examples; no clean-target pass is possible for existing real dynamic streams.",
+    "cross_sensor_rule": "Every required sensor must satisfy its own joint requirements; improvement on another sensor does not compensate for a failure.",
+    "numeric_tolerances": null,
+    "tolerance_next_step": "Define tolerances using reference uncertainty, repeatability, numerical storage precision and product acceptance before choosing a candidate.",
+    "automatic_final_pass_enabled": false
+  },
+  "required_additions": [
+    {
+      "id": "unseen_final_holdout",
+      "status": "missing",
+      "requirement": "New scenes and captures separated from all A3-A11 development and candidate selection, covering all four sensors."
+    },
+    {
+      "id": "qualified_dynamic_target",
+      "status": "missing",
+      "requirement": "Obtain qualified paired or controlled dynamic targets; do not use motion temporal means or old-teacher outputs as clean truth."
+    },
+    {
+      "id": "semantic_rois_and_occlusions",
+      "status": "pending_annotation",
+      "requirement": "Freeze small detail, dark flat, moving boundary, occlusion and disocclusion ROIs with frame indices; existing display crops alone are insufficient."
+    },
+    {
+      "id": "continuous_video",
+      "status": "not_covered_by_sparse_stress_cache",
+      "requirement": "Evaluate longer genuinely consecutive intervals and temporal-window boundaries; raw files exist but additional candidate/baseline inference may be needed."
+    },
+    {
+      "id": "sensor_noise_calibration",
+      "status": "incomplete",
+      "requirement": "Add sc450ai dark/flat data and independently validate per-channel signal-dependent, correlated and quantization behavior."
+    }
+  ],
+  "sequences": [
+    {
+      "id": "sc465sl_darkroom18_256x",
+      "sensor": "SC465SL",
+      "assessment_kind": "cross_sensor_static",
+      "source_config": "configs/a3_cross_sensor_zero_shot_20261012.json",
+      "source_key": "sc465sl_darkroom18_256x",
+      "artifact_dir": "artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_256x",
+      "coverage_tags": [
+        "static",
+        "detail",
+        "dark_regions"
+      ],
+      "data_identity": {
+        "a3_training": false,
+        "development_exposed": true,
+        "final_unseen_holdout": false,
+        "later_use": [
+          "A9 unified candidate development"
+        ],
+        "note": "No A3 training; previously inspected in zero-shot audit and later development. This is a frozen development regression set."
+      },
+      "raw_source": {
+        "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/02_SC465SL_darkroom18/256x/raw_stream_sc465sl_2560x1440_AG109568_darkroom18_256x.raw",
+        "available_at_manifest_creation": true,
+        "size_bytes": 2211840000,
+        "width": 2560,
+        "height": 1440,
+        "frames_used": 300,
+        "bit_shift": 0,
+        "cfa": "RGGB"
+      },
+      "sampling": {
+        "clip_starts": [
+          0,
+          72,
+          144,
+          216,
+          284
+        ],
+        "frames_per_clip": 8,
+        "source_stride_within_clip": 2,
+        "parity_directions": [
+          "even_input_vs_odd_reference",
+          "odd_input_vs_even_reference"
+        ],
+        "sparse_clips_not_continuous_video": true
+      },
+      "historical_evidence": {
+        "metrics": "artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_256x/metrics.json",
+        "inference_manifest": "artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_256x/inference/manifest.json",
+        "source_manifest": "artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_256x/source_manifest.json",
+        "reference_or_profile_report": "artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_256x/reference/report.json",
+        "panels_manifest": "artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_256x/panels/panel_manifest.json",
+        "evidence_class": "historical_not_new_run"
+      },
+      "cache": {
+        "input": null,
+        "input_access": "Read original RAW using source_config; no independent input .npy cache is assumed.",
+        "predictions": {
+          "even_input": {
+            "path": "artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_256x/inference/prediction_even_input.npy",
+            "shape": [
+              40,
+              4,
+              720,
+              1280
+            ],
+            "dtype": "float16",
+            "domain": "normalized_native_dn"
+          },
+          "odd_input": {
+            "path": "artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_256x/inference/prediction_odd_input.npy",
+            "shape": [
+              40,
+              4,
+              720,
+              1280
+            ],
+            "dtype": "float16",
+            "domain": "normalized_native_dn"
+          }
+        },
+        "references": {
+          "even": "artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_256x/reference/even_mean_dn.npy",
+          "odd": "artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_256x/reference/odd_mean_dn.npy",
+          "full_for_motion_mask_only": "artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_256x/reference/full_mean_dn.npy",
+          "valid_region": "artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_256x/reference/valid_region.npy",
+          "confidence": "artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_256x/reference/confidence.npy",
+          "even_confidence": "artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_256x/reference/even_confidence.npy",
+          "odd_confidence": "artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_256x/reference/odd_confidence.npy"
+        },
+        "dynamic_clean_target": null,
+        "display_only_temporal_mean": null
+      },
+      "roi_plan": {
+        "status": "fixed_existing_heuristic_crops_not_ground_truth",
+        "panel_crops_raw_xyxy": {
+          "motion_center": [
+            900,
+            250,
+            1900,
+            1400
+          ],
+          "dark_left": [
+            120,
+            250,
+            1000,
+            1350
+          ],
+          "static_right": [
+            1800,
+            250,
+            2500,
+            1350
+          ]
+        },
+        "per_frame_occlusion_labels": null
+      },
+      "gaps": [
+        "No final unseen holdout identity.",
+        "Small semantic ROIs and occlusion labels still need annotation.",
+        "Long continuous dynamic evaluation is not established by these sparse clips."
+      ]
+    },
+    {
+      "id": "sc465sl_darkroom18_2000x",
+      "sensor": "SC465SL",
+      "assessment_kind": "cross_sensor_static",
+      "source_config": "configs/a3_cross_sensor_zero_shot_20261012.json",
+      "source_key": "sc465sl_darkroom18_2000x",
+      "artifact_dir": "artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_2000x",
+      "coverage_tags": [
+        "static",
+        "detail",
+        "dark_regions"
+      ],
+      "data_identity": {
+        "a3_training": false,
+        "development_exposed": true,
+        "final_unseen_holdout": false,
+        "later_use": [
+          "A9 unified candidate development"
+        ],
+        "note": "No A3 training; previously inspected in zero-shot audit and later development. This is a frozen development regression set."
+      },
+      "raw_source": {
+        "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/02_SC465SL_darkroom18/2000x/raw_stream_sc465sl_2560x1440_AG109568_darkroom18_2000x.raw",
+        "available_at_manifest_creation": true,
+        "size_bytes": 2211840000,
+        "width": 2560,
+        "height": 1440,
+        "frames_used": 300,
+        "bit_shift": 0,
+        "cfa": "RGGB"
+      },
+      "sampling": {
+        "clip_starts": [
+          0,
+          72,
+          144,
+          216,
+          284
+        ],
+        "frames_per_clip": 8,
+        "source_stride_within_clip": 2,
+        "parity_directions": [
+          "even_input_vs_odd_reference",
+          "odd_input_vs_even_reference"
+        ],
+        "sparse_clips_not_continuous_video": true
+      },
+      "historical_evidence": {
+        "metrics": "artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_2000x/metrics.json",
+        "inference_manifest": "artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_2000x/inference/manifest.json",
+        "source_manifest": "artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_2000x/source_manifest.json",
+        "reference_or_profile_report": "artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_2000x/reference/report.json",
+        "panels_manifest": "artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_2000x/panels/panel_manifest.json",
+        "evidence_class": "historical_not_new_run"
+      },
+      "cache": {
+        "input": null,
+        "input_access": "Read original RAW using source_config; no independent input .npy cache is assumed.",
+        "predictions": {
+          "even_input": {
+            "path": "artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_2000x/inference/prediction_even_input.npy",
+            "shape": [
+              40,
+              4,
+              720,
+              1280
+            ],
+            "dtype": "float16",
+            "domain": "normalized_native_dn"
+          },
+          "odd_input": {
+            "path": "artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_2000x/inference/prediction_odd_input.npy",
+            "shape": [
+              40,
+              4,
+              720,
+              1280
+            ],
+            "dtype": "float16",
+            "domain": "normalized_native_dn"
+          }
+        },
+        "references": {
+          "even": "artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_2000x/reference/even_mean_dn.npy",
+          "odd": "artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_2000x/reference/odd_mean_dn.npy",
+          "full_for_motion_mask_only": "artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_2000x/reference/full_mean_dn.npy",
+          "valid_region": "artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_2000x/reference/valid_region.npy",
+          "confidence": "artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_2000x/reference/confidence.npy",
+          "even_confidence": "artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_2000x/reference/even_confidence.npy",
+          "odd_confidence": "artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_2000x/reference/odd_confidence.npy"
+        },
+        "dynamic_clean_target": null,
+        "display_only_temporal_mean": null
+      },
+      "roi_plan": {
+        "status": "fixed_existing_heuristic_crops_not_ground_truth",
+        "panel_crops_raw_xyxy": {
+          "motion_center": [
+            900,
+            250,
+            1900,
+            1400
+          ],
+          "dark_left": [
+            120,
+            250,
+            1000,
+            1350
+          ],
+          "static_right": [
+            1800,
+            250,
+            2500,
+            1350
+          ]
+        },
+        "per_frame_occlusion_labels": null
+      },
+      "gaps": [
+        "No final unseen holdout identity.",
+        "Small semantic ROIs and occlusion labels still need annotation.",
+        "Long continuous dynamic evaluation is not established by these sparse clips."
+      ]
+    },
+    {
+      "id": "sc635hai_131x_low_cct",
+      "sensor": "sc635hai",
+      "assessment_kind": "cross_sensor_static",
+      "source_config": "configs/a3_cross_sensor_extension_20261012.json",
+      "source_key": "sc635hai_131x_low_cct",
+      "artifact_dir": "artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_131x_low_cct",
+      "coverage_tags": [
+        "static",
+        "detail",
+        "dark_regions"
+      ],
+      "data_identity": {
+        "a3_training": false,
+        "development_exposed": true,
+        "final_unseen_holdout": false,
+        "later_use": [
+          "A8 sensor adaptation used all 150 frames, including its later reported tail segment",
+          "A9 unified candidate development"
+        ],
+        "note": "No A3 training; previously inspected in zero-shot audit and later development. This is a frozen development regression set."
+      },
+      "raw_source": {
+        "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/01_fist_company/sc635hai/131x_low_cct/raw_stream_normal_3200x1800_16_RG_0205213025917_131x.raw",
+        "available_at_manifest_creation": true,
+        "size_bytes": 1728000000,
+        "width": 3200,
+        "height": 1800,
+        "frames_used": 150,
+        "bit_shift": 4,
+        "cfa": "RGGB"
+      },
+      "sampling": {
+        "clip_starts": [
+          0,
+          66,
+          134
+        ],
+        "frames_per_clip": 8,
+        "source_stride_within_clip": 2,
+        "parity_directions": [
+          "even_input_vs_odd_reference",
+          "odd_input_vs_even_reference"
+        ],
+        "sparse_clips_not_continuous_video": true
+      },
+      "historical_evidence": {
+        "metrics": "artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_131x_low_cct/metrics.json",
+        "inference_manifest": "artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_131x_low_cct/inference/manifest.json",
+        "source_manifest": "artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_131x_low_cct/source_manifest.json",
+        "reference_or_profile_report": "artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_131x_low_cct/reference/report.json",
+        "panels_manifest": "artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_131x_low_cct/panels/panel_manifest.json",
+        "evidence_class": "historical_not_new_run"
+      },
+      "cache": {
+        "input": null,
+        "input_access": "Read original RAW using source_config; no independent input .npy cache is assumed.",
+        "predictions": {
+          "even_input": {
+            "path": "artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_131x_low_cct/inference/prediction_even_input.npy",
+            "shape": [
+              24,
+              4,
+              900,
+              1600
+            ],
+            "dtype": "float16",
+            "domain": "normalized_native_dn"
+          },
+          "odd_input": {
+            "path": "artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_131x_low_cct/inference/prediction_odd_input.npy",
+            "shape": [
+              24,
+              4,
+              900,
+              1600
+            ],
+            "dtype": "float16",
+            "domain": "normalized_native_dn"
+          }
+        },
+        "references": {
+          "even": "artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_131x_low_cct/reference/even_mean_dn.npy",
+          "odd": "artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_131x_low_cct/reference/odd_mean_dn.npy",
+          "full_for_motion_mask_only": "artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_131x_low_cct/reference/full_mean_dn.npy",
+          "valid_region": "artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_131x_low_cct/reference/valid_region.npy",
+          "confidence": "artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_131x_low_cct/reference/confidence.npy",
+          "even_confidence": "artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_131x_low_cct/reference/even_confidence.npy",
+          "odd_confidence": "artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_131x_low_cct/reference/odd_confidence.npy"
+        },
+        "dynamic_clean_target": null,
+        "display_only_temporal_mean": null
+      },
+      "roi_plan": {
+        "status": "fixed_existing_heuristic_crops_not_ground_truth",
+        "panel_crops_raw_xyxy": {
+          "center_detail": [
+            600,
+            300,
+            2400,
+            1700
+          ],
+          "color_chart": [
+            850,
+            80,
+            2300,
+            850
+          ],
+          "right_subject": [
+            2100,
+            250,
+            3150,
+            1750
+          ]
+        },
+        "per_frame_occlusion_labels": null
+      },
+      "gaps": [
+        "No final unseen holdout identity.",
+        "Small semantic ROIs and occlusion labels still need annotation.",
+        "Long continuous dynamic evaluation is not established by these sparse clips."
+      ]
+    },
+    {
+      "id": "sc635hai_16x_motion_color",
+      "sensor": "sc635hai",
+      "assessment_kind": "cross_sensor_stress",
+      "source_config": "configs/a3_cross_sensor_extension_20261012.json",
+      "source_key": "sc635hai_16x_motion_color",
+      "artifact_dir": "artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_16x_motion_color",
+      "coverage_tags": [
+        "dynamic_stress",
+        "detail",
+        "dark_regions",
+        "moving_boundary",
+        "occlusion_annotation_pending"
+      ],
+      "data_identity": {
+        "a3_training": false,
+        "development_exposed": true,
+        "final_unseen_holdout": false,
+        "later_use": [
+          "A8 dynamic sequence was excluded from backpropagation but inspected for candidate acceptance"
+        ],
+        "note": "No A3 training; previously inspected in zero-shot audit and later development. This is a frozen development regression set."
+      },
+      "raw_source": {
+        "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/01_fist_company/sc635hai/16x_motion_color/3200x1800_RG_motion_color_16x.raw",
+        "available_at_manifest_creation": true,
+        "size_bytes": 2304000000,
+        "width": 3200,
+        "height": 1800,
+        "frames_used": 200,
+        "bit_shift": 4,
+        "cfa": "RGGB"
+      },
+      "sampling": {
+        "clip_starts": [
+          0,
+          96,
+          192
+        ],
+        "frames_per_clip": 8,
+        "source_stride_within_clip": 1,
+        "parity_directions": [],
+        "sparse_clips_not_continuous_video": true
+      },
+      "historical_evidence": {
+        "metrics": "artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_16x_motion_color/metrics.json",
+        "inference_manifest": "artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_16x_motion_color/inference/manifest.json",
+        "source_manifest": "artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_16x_motion_color/source_manifest.json",
+        "reference_or_profile_report": "artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_16x_motion_color/profile/report.json",
+        "panels_manifest": "artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_16x_motion_color/panels/panel_manifest.json",
+        "evidence_class": "historical_not_new_run"
+      },
+      "cache": {
+        "input": null,
+        "input_access": "Read original RAW using source_config; no independent input .npy cache is assumed.",
+        "predictions": {
+          "stress": {
+            "path": "artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_16x_motion_color/inference/prediction_stress.npy",
+            "shape": [
+              24,
+              4,
+              900,
+              1600
+            ],
+            "dtype": "float16",
+            "domain": "normalized_native_dn"
+          }
+        },
+        "references": {},
+        "dynamic_clean_target": null,
+        "display_only_temporal_mean": "artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_16x_motion_color/profile/temporal_mean_display_only_dn.npy"
+      },
+      "roi_plan": {
+        "status": "fixed_existing_heuristic_crops_not_ground_truth",
+        "panel_crops_raw_xyxy": {
+          "left_motion": [
+            0,
+            200,
+            1400,
+            1800
+          ],
+          "center_detail": [
+            800,
+            250,
+            2400,
+            1750
+          ],
+          "right_motion": [
+            1800,
+            200,
+            3200,
+            1800
+          ]
+        },
+        "per_frame_occlusion_labels": null
+      },
+      "gaps": [
+        "No final unseen holdout identity.",
+        "Small semantic ROIs and occlusion labels still need annotation.",
+        "Long continuous dynamic evaluation is not established by these sparse clips.",
+        "No clean dynamic target; no dynamic PSNR or automatic fidelity pass."
+      ]
+    },
+    {
+      "id": "sc450ai_1435x_motion_black_object",
+      "sensor": "sc450ai",
+      "assessment_kind": "cross_sensor_stress",
+      "source_config": "configs/a3_cross_sensor_extension_20261012.json",
+      "source_key": "sc450ai_1435x_motion_black_object",
+      "artifact_dir": "artifacts/a3_cross_sensor_extension_20261012/sequences/sc450ai/sc450ai_1435x_motion_black_object",
+      "coverage_tags": [
+        "dynamic_stress",
+        "detail",
+        "dark_regions",
+        "moving_boundary",
+        "occlusion_annotation_pending"
+      ],
+      "data_identity": {
+        "a3_training": false,
+        "development_exposed": true,
+        "final_unseen_holdout": false,
+        "later_use": [
+          "Excluded from target adaptation backpropagation but repeatedly inspected for A8-A10 selection"
+        ],
+        "note": "No A3 training; previously inspected in zero-shot audit and later development. This is a frozen development regression set."
+      },
+      "raw_source": {
+        "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/01_fist_company/sc450ai/1435x_motion_black_object/raw_stream_2688x1520_16bit@RG[Shutter=83328,SenserG=61440,IspG=24493,R=1620,G=1024,B=2409][bl_R=4128_Gr=4128_Gb=4128_B=4128].raw",
+        "available_at_manifest_creation": true,
+        "size_bytes": 1716019200,
+        "width": 2688,
+        "height": 1520,
+        "frames_used": 210,
+        "bit_shift": 0,
+        "cfa": "RGGB"
+      },
+      "sampling": {
+        "clip_starts": [
+          0,
+          101,
+          202
+        ],
+        "frames_per_clip": 8,
+        "source_stride_within_clip": 1,
+        "parity_directions": [],
+        "sparse_clips_not_continuous_video": true
+      },
+      "historical_evidence": {
+        "metrics": "artifacts/a3_cross_sensor_extension_20261012/sequences/sc450ai/sc450ai_1435x_motion_black_object/metrics.json",
+        "inference_manifest": "artifacts/a3_cross_sensor_extension_20261012/sequences/sc450ai/sc450ai_1435x_motion_black_object/inference/manifest.json",
+        "source_manifest": "artifacts/a3_cross_sensor_extension_20261012/sequences/sc450ai/sc450ai_1435x_motion_black_object/source_manifest.json",
+        "reference_or_profile_report": "artifacts/a3_cross_sensor_extension_20261012/sequences/sc450ai/sc450ai_1435x_motion_black_object/profile/report.json",
+        "panels_manifest": "artifacts/a3_cross_sensor_extension_20261012/sequences/sc450ai/sc450ai_1435x_motion_black_object/panels/panel_manifest.json",
+        "evidence_class": "historical_not_new_run"
+      },
+      "cache": {
+        "input": null,
+        "input_access": "Read original RAW using source_config; no independent input .npy cache is assumed.",
+        "predictions": {
+          "stress": {
+            "path": "artifacts/a3_cross_sensor_extension_20261012/sequences/sc450ai/sc450ai_1435x_motion_black_object/inference/prediction_stress.npy",
+            "shape": [
+              24,
+              4,
+              760,
+              1344
+            ],
+            "dtype": "float16",
+            "domain": "normalized_native_dn"
+          }
+        },
+        "references": {},
+        "dynamic_clean_target": null,
+        "display_only_temporal_mean": "artifacts/a3_cross_sensor_extension_20261012/sequences/sc450ai/sc450ai_1435x_motion_black_object/profile/temporal_mean_display_only_dn.npy"
+      },
+      "roi_plan": {
+        "status": "fixed_existing_heuristic_crops_not_ground_truth",
+        "panel_crops_raw_xyxy": {
+          "black_subject": [
+            700,
+            100,
+            2050,
+            1520
+          ],
+          "flat_wall": [
+            0,
+            0,
+            1300,
+            1050
+          ],
+          "floor_detail": [
+            250,
+            750,
+            2200,
+            1520
+          ]
+        },
+        "per_frame_occlusion_labels": null
+      },
+      "gaps": [
+        "No final unseen holdout identity.",
+        "Small semantic ROIs and occlusion labels still need annotation.",
+        "Long continuous dynamic evaluation is not established by these sparse clips.",
+        "No clean dynamic target; no dynamic PSNR or automatic fidelity pass."
+      ]
+    },
+    {
+      "id": "sc450ai_804x_lightchanging",
+      "sensor": "sc450ai",
+      "assessment_kind": "cross_sensor_stress",
+      "source_config": "configs/a3_cross_sensor_extension_20261012.json",
+      "source_key": "sc450ai_804x_lightchanging",
+      "artifact_dir": "artifacts/a3_cross_sensor_extension_20261012/sequences/sc450ai/sc450ai_804x_lightchanging",
+      "coverage_tags": [
+        "dynamic_stress",
+        "detail",
+        "dark_regions",
+        "illumination_change"
+      ],
+      "data_identity": {
+        "a3_training": false,
+        "development_exposed": true,
+        "final_unseen_holdout": false,
+        "later_use": [
+          "A8 blind-spot adaptation",
+          "A9 unified candidate development",
+          "A10 degradation development"
+        ],
+        "note": "No A3 training; previously inspected in zero-shot audit and later development. This is a frozen development regression set."
+      },
+      "raw_source": {
+        "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/01_fist_company/sc450ai/804x_lightchanging/lightchanging_804x.raw",
+        "available_at_manifest_creation": true,
+        "size_bytes": 1225728000,
+        "width": 2688,
+        "height": 1520,
+        "frames_used": 150,
+        "bit_shift": 0,
+        "cfa": "RGGB"
+      },
+      "sampling": {
+        "clip_starts": [
+          0,
+          71,
+          142
+        ],
+        "frames_per_clip": 8,
+        "source_stride_within_clip": 1,
+        "parity_directions": [],
+        "sparse_clips_not_continuous_video": true
+      },
+      "historical_evidence": {
+        "metrics": "artifacts/a3_cross_sensor_extension_20261012/sequences/sc450ai/sc450ai_804x_lightchanging/metrics.json",
+        "inference_manifest": "artifacts/a3_cross_sensor_extension_20261012/sequences/sc450ai/sc450ai_804x_lightchanging/inference/manifest.json",
+        "source_manifest": "artifacts/a3_cross_sensor_extension_20261012/sequences/sc450ai/sc450ai_804x_lightchanging/source_manifest.json",
+        "reference_or_profile_report": "artifacts/a3_cross_sensor_extension_20261012/sequences/sc450ai/sc450ai_804x_lightchanging/profile/report.json",
+        "panels_manifest": "artifacts/a3_cross_sensor_extension_20261012/sequences/sc450ai/sc450ai_804x_lightchanging/panels/panel_manifest.json",
+        "evidence_class": "historical_not_new_run"
+      },
+      "cache": {
+        "input": null,
+        "input_access": "Read original RAW using source_config; no independent input .npy cache is assumed.",
+        "predictions": {
+          "stress": {
+            "path": "artifacts/a3_cross_sensor_extension_20261012/sequences/sc450ai/sc450ai_804x_lightchanging/inference/prediction_stress.npy",
+            "shape": [
+              24,
+              4,
+              760,
+              1344
+            ],
+            "dtype": "float16",
+            "domain": "normalized_native_dn"
+          }
+        },
+        "references": {},
+        "dynamic_clean_target": null,
+        "display_only_temporal_mean": "artifacts/a3_cross_sensor_extension_20261012/sequences/sc450ai/sc450ai_804x_lightchanging/profile/temporal_mean_display_only_dn.npy"
+      },
+      "roi_plan": {
+        "status": "fixed_existing_heuristic_crops_not_ground_truth",
+        "panel_crops_raw_xyxy": {
+          "flat_transition": [
+            0,
+            150,
+            1500,
+            1350
+          ],
+          "center_subject": [
+            700,
+            200,
+            2100,
+            1500
+          ],
+          "right_shelf": [
+            1600,
+            100,
+            2688,
+            1450
+          ]
+        },
+        "per_frame_occlusion_labels": null
+      },
+      "gaps": [
+        "No final unseen holdout identity.",
+        "Small semantic ROIs and occlusion labels still need annotation.",
+        "Long continuous dynamic evaluation is not established by these sparse clips.",
+        "No clean dynamic target; no dynamic PSNR or automatic fidelity pass."
+      ]
+    },
+    {
+      "id": "sc465sl_difficultpattern_4717",
+      "sensor": "SC465SL",
+      "assessment_kind": "cross_sensor_stress",
+      "source_config": "configs/a3_cross_sensor_extension_20261012.json",
+      "source_key": "sc465sl_difficultpattern_4717",
+      "artifact_dir": "artifacts/a3_cross_sensor_extension_20261012/sequences/SC465SL/sc465sl_difficultpattern_4717",
+      "coverage_tags": [
+        "dynamic_stress",
+        "detail",
+        "dark_regions",
+        "complex_texture"
+      ],
+      "data_identity": {
+        "a3_training": false,
+        "development_exposed": true,
+        "final_unseen_holdout": false,
+        "later_use": [],
+        "note": "No A3 training; previously inspected in zero-shot audit and later development. This is a frozen development regression set."
+      },
+      "raw_source": {
+        "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/05_2DNR3DNR/465_difficultpattern/shutter_83315/sensorG__ispG_4717_WB_1930_1024_2381/raw_stream_2560x1440_16bit@RG_[Shutter=83315,SenserG=109572,IspG=4717,R=1930,G=1024,B=2381].raw",
+        "available_at_manifest_creation": true,
+        "size_bytes": 1474560000,
+        "width": 2560,
+        "height": 1440,
+        "frames_used": 200,
+        "bit_shift": 4,
+        "cfa": "RGGB"
+      },
+      "sampling": {
+        "clip_starts": [
+          0,
+          96,
+          192
+        ],
+        "frames_per_clip": 8,
+        "source_stride_within_clip": 1,
+        "parity_directions": [],
+        "sparse_clips_not_continuous_video": true
+      },
+      "historical_evidence": {
+        "metrics": "artifacts/a3_cross_sensor_extension_20261012/sequences/SC465SL/sc465sl_difficultpattern_4717/metrics.json",
+        "inference_manifest": "artifacts/a3_cross_sensor_extension_20261012/sequences/SC465SL/sc465sl_difficultpattern_4717/inference/manifest.json",
+        "source_manifest": "artifacts/a3_cross_sensor_extension_20261012/sequences/SC465SL/sc465sl_difficultpattern_4717/source_manifest.json",
+        "reference_or_profile_report": "artifacts/a3_cross_sensor_extension_20261012/sequences/SC465SL/sc465sl_difficultpattern_4717/profile/report.json",
+        "panels_manifest": "artifacts/a3_cross_sensor_extension_20261012/sequences/SC465SL/sc465sl_difficultpattern_4717/panels/panel_manifest.json",
+        "evidence_class": "historical_not_new_run"
+      },
+      "cache": {
+        "input": null,
+        "input_access": "Read original RAW using source_config; no independent input .npy cache is assumed.",
+        "predictions": {
+          "stress": {
+            "path": "artifacts/a3_cross_sensor_extension_20261012/sequences/SC465SL/sc465sl_difficultpattern_4717/inference/prediction_stress.npy",
+            "shape": [
+              24,
+              4,
+              720,
+              1280
+            ],
+            "dtype": "float16",
+            "domain": "normalized_native_dn"
+          }
+        },
+        "references": {},
+        "dynamic_clean_target": null,
+        "display_only_temporal_mean": "artifacts/a3_cross_sensor_extension_20261012/sequences/SC465SL/sc465sl_difficultpattern_4717/profile/temporal_mean_display_only_dn.npy"
+      },
+      "roi_plan": {
+        "status": "fixed_existing_heuristic_crops_not_ground_truth",
+        "panel_crops_raw_xyxy": {
+          "foreground_detail": [
+            0,
+            650,
+            2050,
+            1440
+          ],
+          "center_shelves": [
+            650,
+            250,
+            1900,
+            1300
+          ],
+          "right_line": [
+            1750,
+            200,
+            2560,
+            1400
+          ]
+        },
+        "per_frame_occlusion_labels": null
+      },
+      "gaps": [
+        "No final unseen holdout identity.",
+        "Small semantic ROIs and occlusion labels still need annotation.",
+        "Long continuous dynamic evaluation is not established by these sparse clips.",
+        "No clean dynamic target; no dynamic PSNR or automatic fidelity pass."
+      ]
+    },
+    {
+      "id": "sc465sl_difficultpattern_8880",
+      "sensor": "SC465SL",
+      "assessment_kind": "cross_sensor_stress",
+      "source_config": "configs/a3_cross_sensor_extension_20261012.json",
+      "source_key": "sc465sl_difficultpattern_8880",
+      "artifact_dir": "artifacts/a3_cross_sensor_extension_20261012/sequences/SC465SL/sc465sl_difficultpattern_8880",
+      "coverage_tags": [
+        "dynamic_stress",
+        "detail",
+        "dark_regions",
+        "complex_texture"
+      ],
+      "data_identity": {
+        "a3_training": false,
+        "development_exposed": true,
+        "final_unseen_holdout": false,
+        "later_use": [],
+        "note": "No A3 training; previously inspected in zero-shot audit and later development. This is a frozen development regression set."
+      },
+      "raw_source": {
+        "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/05_2DNR3DNR/465_difficultpattern/shutter_83315/sensorG__ispG_8880_WB_1962_1024_2172/raw_stream_2560x1440_16bit@RG_[Shutter=83315,SenserG=109572,IspG=8880,R=1962,G=1024,B=2172].raw",
+        "available_at_manifest_creation": true,
+        "size_bytes": 1474560000,
+        "width": 2560,
+        "height": 1440,
+        "frames_used": 200,
+        "bit_shift": 4,
+        "cfa": "RGGB"
+      },
+      "sampling": {
+        "clip_starts": [
+          0,
+          96,
+          192
+        ],
+        "frames_per_clip": 8,
+        "source_stride_within_clip": 1,
+        "parity_directions": [],
+        "sparse_clips_not_continuous_video": true
+      },
+      "historical_evidence": {
+        "metrics": "artifacts/a3_cross_sensor_extension_20261012/sequences/SC465SL/sc465sl_difficultpattern_8880/metrics.json",
+        "inference_manifest": "artifacts/a3_cross_sensor_extension_20261012/sequences/SC465SL/sc465sl_difficultpattern_8880/inference/manifest.json",
+        "source_manifest": "artifacts/a3_cross_sensor_extension_20261012/sequences/SC465SL/sc465sl_difficultpattern_8880/source_manifest.json",
+        "reference_or_profile_report": "artifacts/a3_cross_sensor_extension_20261012/sequences/SC465SL/sc465sl_difficultpattern_8880/profile/report.json",
+        "panels_manifest": "artifacts/a3_cross_sensor_extension_20261012/sequences/SC465SL/sc465sl_difficultpattern_8880/panels/panel_manifest.json",
+        "evidence_class": "historical_not_new_run"
+      },
+      "cache": {
+        "input": null,
+        "input_access": "Read original RAW using source_config; no independent input .npy cache is assumed.",
+        "predictions": {
+          "stress": {
+            "path": "artifacts/a3_cross_sensor_extension_20261012/sequences/SC465SL/sc465sl_difficultpattern_8880/inference/prediction_stress.npy",
+            "shape": [
+              24,
+              4,
+              720,
+              1280
+            ],
+            "dtype": "float16",
+            "domain": "normalized_native_dn"
+          }
+        },
+        "references": {},
+        "dynamic_clean_target": null,
+        "display_only_temporal_mean": "artifacts/a3_cross_sensor_extension_20261012/sequences/SC465SL/sc465sl_difficultpattern_8880/profile/temporal_mean_display_only_dn.npy"
+      },
+      "roi_plan": {
+        "status": "fixed_existing_heuristic_crops_not_ground_truth",
+        "panel_crops_raw_xyxy": {
+          "foreground_detail": [
+            0,
+            650,
+            2050,
+            1440
+          ],
+          "center_shelves": [
+            650,
+            250,
+            1900,
+            1300
+          ],
+          "right_line": [
+            1750,
+            200,
+            2560,
+            1400
+          ]
+        },
+        "per_frame_occlusion_labels": null
+      },
+      "gaps": [
+        "No final unseen holdout identity.",
+        "Small semantic ROIs and occlusion labels still need annotation.",
+        "Long continuous dynamic evaluation is not established by these sparse clips.",
+        "No clean dynamic target; no dynamic PSNR or automatic fidelity pass."
+      ]
+    },
+    {
+      "id": "04_shdarkroom_645x",
+      "sensor": "MIS20S1",
+      "assessment_kind": "historical_only",
+      "source_config": "configs/a3_all_dataset_traditional_isp_preview_20261017.json",
+      "source_key": "04_shdarkroom_645x",
+      "artifact_dir": "artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/raw_scene/04_shdarkroom_645x",
+      "source_key_note": "Catalog-discovered PreviewSequence.name; not a direct sequences mapping key in source_config.",
+      "stream_manifest": "artifacts/finetune_mis20s1/supervision/stream_manifests/04_shdarkroom_645x.json",
+      "coverage_tags": [
+        "static",
+        "detail",
+        "dark_regions",
+        "training_domain_regression"
+      ],
+      "data_identity": {
+        "a3_training": true,
+        "development_exposed": true,
+        "final_unseen_holdout": false,
+        "note": "645x participated in A3 training; old artifact text calling it leave-one-gain-out is superseded by the 2026-10-23 report."
+      },
+      "raw_source": {
+        "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/shdarkroom/645x/raw_stream_1920x1080_16bit@RG_[Shutter=79999,SenserG=131072,IspG=5167,R=2120,G=1024,B=1956].raw",
+        "available_at_manifest_creation": true,
+        "size_bytes": 829440000,
+        "width": 1920,
+        "height": 1080,
+        "frames_used": 200,
+        "bit_shift": 4,
+        "cfa": "RGGB"
+      },
+      "sampling": {
+        "preview_clip_starts": [
+          0,
+          96,
+          192
+        ],
+        "frames_per_clip": 8,
+        "source_stride_within_clip": 1,
+        "sparse_clips_not_continuous_video": true
+      },
+      "historical_evidence": {
+        "evidence_class": "historical_not_new_run",
+        "preview_runtime": "artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/raw_scene/04_shdarkroom_645x/runtime.json",
+        "inference_manifest": "artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/raw_scene/04_shdarkroom_645x/inference/manifest.json",
+        "video_manifest": "artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/raw_scene/04_shdarkroom_645x/traditional_isp_video/video_manifest.json",
+        "metrics": "artifacts/finetune_mis20s1/evaluation/metrics_645x.json"
+      },
+      "cache": {
+        "input": null,
+        "input_access": "Read original RAW with stream manifest.",
+        "predictions": {
+          "preview": {
+            "path": "artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/raw_scene/04_shdarkroom_645x/inference/prediction.npy",
+            "shape": [
+              24,
+              4,
+              540,
+              960
+            ],
+            "dtype": "float16",
+            "domain": "normalized_native_dn"
+          },
+          "historical_static": {
+            "path": "artifacts/finetune_mis20s1/evaluation/prediction_645x.npy",
+            "shape": [
+              200,
+              4,
+              540,
+              960
+            ],
+            "dtype": "float16",
+            "domain": "10x_exposure_mapped_normalized"
+          }
+        },
+        "references": {
+          "static": "artifacts/finetune_mis20s1/supervision/references/04_shdarkroom_10x_clean_reference.npy",
+          "valid_region": "artifacts/finetune_mis20s1/supervision/references/04_shdarkroom_10x_valid_region.npy"
+        },
+        "dynamic_clean_target": null
+      },
+      "roi_plan": {
+        "status": "pending_semantic_roi_annotation",
+        "panel_crops_raw_xyxy": {},
+        "per_frame_occlusion_labels": null
+      },
+      "gaps": [
+        "Current A12 CPU report imports historical metrics; it does not rerun the full MIS20S1 inference/evaluation.",
+        "No qualified clean dynamic target.",
+        "Freeze semantic detail, dark, boundary and occlusion ROIs before candidate selection.",
+        "Existing development examples are not a final unseen holdout."
+      ]
+    },
+    {
+      "id": "04_shdarkroom_1000x",
+      "sensor": "MIS20S1",
+      "assessment_kind": "historical_only",
+      "source_config": "configs/a3_all_dataset_traditional_isp_preview_20261017.json",
+      "source_key": "04_shdarkroom_1000x",
+      "artifact_dir": "artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/raw_scene/04_shdarkroom_1000x",
+      "source_key_note": "Catalog-discovered PreviewSequence.name; not a direct sequences mapping key in source_config.",
+      "stream_manifest": "artifacts/finetune_mis20s1/supervision/stream_manifests/04_shdarkroom_1000x.json",
+      "coverage_tags": [
+        "static",
+        "detail",
+        "dark_regions",
+        "real_gain_not_in_a3_training",
+        "dynamic_stress"
+      ],
+      "data_identity": {
+        "a3_training": false,
+        "development_exposed": true,
+        "final_unseen_holdout": false,
+        "note": "1000x raw gain was excluded from A3 training but shares the training scene and has been repeatedly used for A3-A11 selection."
+      },
+      "raw_source": {
+        "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/shdarkroom/1000x/raw_stream_1920x1080_16bit@RG_[Shutter=79999,SenserG=131072,IspG=7656,R=1878,G=1024,B=2218].raw",
+        "available_at_manifest_creation": true,
+        "size_bytes": 829440000,
+        "width": 1920,
+        "height": 1080,
+        "frames_used": 200,
+        "bit_shift": 4,
+        "cfa": "RGGB"
+      },
+      "sampling": {
+        "preview_clip_starts": [
+          0,
+          96,
+          192
+        ],
+        "frames_per_clip": 8,
+        "source_stride_within_clip": 1,
+        "sparse_clips_not_continuous_video": true
+      },
+      "historical_evidence": {
+        "evidence_class": "historical_not_new_run",
+        "preview_runtime": "artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/raw_scene/04_shdarkroom_1000x/runtime.json",
+        "inference_manifest": "artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/raw_scene/04_shdarkroom_1000x/inference/manifest.json",
+        "video_manifest": "artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/raw_scene/04_shdarkroom_1000x/traditional_isp_video/video_manifest.json",
+        "metrics": "artifacts/finetune_mis20s1/evaluation/native_1000x/native_metrics_1000x.json",
+        "high_gain_metrics": "artifacts/a3_high_gain_diagnostic_20261018/04_shdarkroom_1000x/evaluation.json",
+        "a11_metrics": "artifacts/a11_high_gain_confidence_gate_20261019/04_shdarkroom_1000x/evaluation.json"
+      },
+      "cache": {
+        "input": null,
+        "input_access": "Read original RAW with stream manifest.",
+        "predictions": {
+          "preview": {
+            "path": "artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/raw_scene/04_shdarkroom_1000x/inference/prediction.npy",
+            "shape": [
+              24,
+              4,
+              540,
+              960
+            ],
+            "dtype": "float16",
+            "domain": "normalized_native_dn"
+          },
+          "historical_static": {
+            "path": "artifacts/finetune_mis20s1/evaluation/native_1000x/native_prediction_1000x.npy",
+            "shape": [
+              200,
+              4,
+              540,
+              960
+            ],
+            "dtype": "float16",
+            "domain": "normalized_native_dn"
+          }
+        },
+        "references": {
+          "static": "artifacts/finetune_mis20s1/evaluation/1000x_self_reference_probe/temporal_mean_native_dn.npy",
+          "even": "artifacts/finetune_mis20s1/evaluation/1000x_self_reference_probe/even_mean_native_dn.npy",
+          "odd": "artifacts/finetune_mis20s1/evaluation/1000x_self_reference_probe/odd_mean_native_dn.npy",
+          "valid_region": "artifacts/finetune_mis20s1/evaluation/1000x_self_reference_probe/valid_region.npy"
+        },
+        "dynamic_clean_target": null,
+        "reference_caveat": "The 200-frame native result uses a same-stream full mean; preserve its historical protocol and do not label it disjoint-input evaluation.",
+        "high_gain_first_clip": {
+          "source_start": 0,
+          "frames": 8,
+          "a3_weighted": "artifacts/a3_high_gain_diagnostic_20261018/04_shdarkroom_1000x/inference/a3_weighted.npy",
+          "a3_frame_repeated": "artifacts/a3_high_gain_diagnostic_20261018/04_shdarkroom_1000x/inference/a3_frame_repeated.npy",
+          "a11_full": "artifacts/a11_high_gain_confidence_gate_20261019/04_shdarkroom_1000x/inference/a11_full.npy",
+          "a11_weights": "artifacts/a11_high_gain_confidence_gate_20261019/04_shdarkroom_1000x/inference/weights_full.npy",
+          "a11_evidence_masks": "artifacts/a11_high_gain_confidence_gate_20261019/04_shdarkroom_1000x/inference/evidence_masks.npz",
+          "mask_keys": [
+            "static_core",
+            "motion_core",
+            "residual_seed",
+            "gradient_seed"
+          ],
+          "mask_caveat": "Heuristic A11 evidence; not independent motion or occlusion ground truth."
+        }
+      },
+      "roi_plan": {
+        "status": "pending_semantic_roi_annotation",
+        "panel_crops_raw_xyxy": {},
+        "per_frame_occlusion_labels": null
+      },
+      "gaps": [
+        "Current A12 CPU report imports historical metrics; it does not rerun the full MIS20S1 inference/evaluation.",
+        "No qualified clean dynamic target.",
+        "Freeze semantic detail, dark, boundary and occlusion ROIs before candidate selection.",
+        "Existing development examples are not a final unseen holdout."
+      ]
+    },
+    {
+      "id": "04_mis20s1_outdoor_1500x",
+      "sensor": "MIS20S1",
+      "assessment_kind": "historical_only",
+      "source_config": "configs/a3_all_dataset_traditional_isp_preview_20261017.json",
+      "source_key": "04_mis20s1_outdoor_1500x",
+      "artifact_dir": "artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/raw_scene/04_mis20s1_outdoor_1500x",
+      "source_key_note": "Catalog-discovered PreviewSequence.name; not a direct sequences mapping key in source_config.",
+      "stream_manifest": "artifacts/finetune_mis20s1/supervision/stream_manifests/04_mis20s1_outdoor_1500x.json",
+      "coverage_tags": [
+        "outdoor",
+        "high_gain",
+        "dynamic_stress",
+        "moving_boundary",
+        "complex_texture",
+        "occlusion_annotation_pending"
+      ],
+      "data_identity": {
+        "a3_training": false,
+        "development_exposed": true,
+        "final_unseen_holdout": false,
+        "note": "Outdoor capture was excluded from A3 training but used in A11 diagnosis and candidate selection."
+      },
+      "raw_source": {
+        "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/mis20s1_outdoor/1500x/raw_stream_1920x1080_16bit@RG_[Shutter=79999,SenserG=131072,IspG=10455,R=1679,G=1024,B=2473].raw",
+        "available_at_manifest_creation": true,
+        "size_bytes": 808704000,
+        "width": 1920,
+        "height": 1080,
+        "frames_used": 195,
+        "bit_shift": 4,
+        "cfa": "RGGB"
+      },
+      "sampling": {
+        "preview_clip_starts": [
+          0,
+          94,
+          187
+        ],
+        "frames_per_clip": 8,
+        "source_stride_within_clip": 1,
+        "sparse_clips_not_continuous_video": true
+      },
+      "historical_evidence": {
+        "evidence_class": "historical_not_new_run",
+        "preview_runtime": "artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/raw_scene/04_mis20s1_outdoor_1500x/runtime.json",
+        "inference_manifest": "artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/raw_scene/04_mis20s1_outdoor_1500x/inference/manifest.json",
+        "video_manifest": "artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/raw_scene/04_mis20s1_outdoor_1500x/traditional_isp_video/video_manifest.json",
+        "high_gain_metrics": "artifacts/a3_high_gain_diagnostic_20261018/04_mis20s1_outdoor_1500x/evaluation.json",
+        "a11_metrics": "artifacts/a11_high_gain_confidence_gate_20261019/04_mis20s1_outdoor_1500x/evaluation.json"
+      },
+      "cache": {
+        "input": null,
+        "input_access": "Read original RAW with stream manifest.",
+        "predictions": {
+          "preview": {
+            "path": "artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/raw_scene/04_mis20s1_outdoor_1500x/inference/prediction.npy",
+            "shape": [
+              24,
+              4,
+              540,
+              960
+            ],
+            "dtype": "float16",
+            "domain": "normalized_native_dn"
+          }
+        },
+        "references": {},
+        "dynamic_clean_target": null,
+        "high_gain_first_clip": {
+          "source_start": 0,
+          "frames": 8,
+          "a3_weighted": "artifacts/a3_high_gain_diagnostic_20261018/04_mis20s1_outdoor_1500x/inference/a3_weighted.npy",
+          "a3_frame_repeated": "artifacts/a3_high_gain_diagnostic_20261018/04_mis20s1_outdoor_1500x/inference/a3_frame_repeated.npy",
+          "a11_full": "artifacts/a11_high_gain_confidence_gate_20261019/04_mis20s1_outdoor_1500x/inference/a11_full.npy",
+          "a11_weights": "artifacts/a11_high_gain_confidence_gate_20261019/04_mis20s1_outdoor_1500x/inference/weights_full.npy",
+          "a11_evidence_masks": "artifacts/a11_high_gain_confidence_gate_20261019/04_mis20s1_outdoor_1500x/inference/evidence_masks.npz",
+          "mask_keys": [
+            "static_core",
+            "motion_core",
+            "residual_seed",
+            "gradient_seed"
+          ],
+          "mask_caveat": "Heuristic A11 evidence; not independent motion or occlusion ground truth."
+        }
+      },
+      "roi_plan": {
+        "status": "pending_semantic_roi_annotation",
+        "panel_crops_raw_xyxy": {},
+        "per_frame_occlusion_labels": null
+      },
+      "gaps": [
+        "Current A12 CPU report imports historical metrics; it does not rerun the full MIS20S1 inference/evaluation.",
+        "No qualified clean dynamic target.",
+        "Freeze semantic detail, dark, boundary and occlusion ROIs before candidate selection.",
+        "Existing development examples are not a final unseen holdout."
+      ]
+    }
+  ]
+}

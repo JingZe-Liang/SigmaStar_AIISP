@@ -1,0 +1,1687 @@
+{
+  "schema_version": "stage2_a13_capture_plan_v1",
+  "created_date": "2026-10-30",
+  "timezone": "Asia/Shanghai",
+  "status": "planned_not_acquired",
+  "usable_as_capture_manifest": false,
+  "training_ready": false,
+  "automatic_validation_status": "not_run",
+  "manual_dataset_review_status": "pending",
+  "protocol": "docs/A7_REAL_MOTION_CAPTURE_PILOT_2026-10-09.md",
+  "purpose": "Plan new multi-scene low-noise dynamic RAW acquisition; this is neither captured data nor a validated clean target dataset.",
+  "expected_format": {
+    "sensor": "MIS20S1",
+    "width": 1920,
+    "height": 1080,
+    "dtype": "uint16_le",
+    "bit_alignment": "high12",
+    "cfa": "RGGB",
+    "white_level_dn": 4095
+  },
+  "measured_black_level_dn": null,
+  "dataset_root": null,
+  "required_train_scenes": 4,
+  "required_validation_scenes": 2,
+  "required_motion_types": [
+    "lateral_walk",
+    "depth_walk",
+    "fast_slow_gesture",
+    "occlusion_reentry",
+    "fine_texture_motion"
+  ],
+  "planned_clip_count": 30,
+  "minimum_frame_count": 4800,
+  "preferred_frame_count": 6000,
+  "raw_bytes_without_controls_or_previews": {
+    "minimum": 19906560000,
+    "preferred": 24883200000
+  },
+  "capture_constraints": [
+    "One low sensor/ISP gain setting and one FPS across this pilot.",
+    "Exposure and white balance may differ between physical scenes but remain fixed within each clip.",
+    "Keep illumination, focus, aperture, camera pose, exposure, gain and white balance fixed within each clip.",
+    "Disable hardware/software spatial and temporal NR, sharpening, tone mapping, WDR and automatic exposure/gain/white balance.",
+    "Retain native RAW bytes and original device/pipeline settings records; do not decode and re-encode the source.",
+    "A physical scene belongs to exactly one split; renaming files or splitting frames does not create a new scene."
+  ],
+  "controls": {
+    "static_chart": {
+      "status": "not_acquired",
+      "raw_path": null,
+      "capture_settings_record_path": null,
+      "same_low_gain_pipeline_verified": null,
+      "manual_review_record_path": null
+    },
+    "lens_cap": {
+      "status": "not_acquired",
+      "raw_path": null,
+      "capture_settings_record_path": null,
+      "same_low_gain_pipeline_verified": null,
+      "black_level_measurement_path": null
+    },
+    "pipeline_bypass": {
+      "status": "not_recorded",
+      "device_configuration_export_path": null,
+      "raw_export_route_description": null,
+      "reviewer": null
+    }
+  },
+  "scenes": [
+    {
+      "planned_scene_id": "s01",
+      "split": "train",
+      "physical_scene_description": null,
+      "scene_provenance_path": null,
+      "scene_independence_review": null
+    },
+    {
+      "planned_scene_id": "s02",
+      "split": "train",
+      "physical_scene_description": null,
+      "scene_provenance_path": null,
+      "scene_independence_review": null
+    },
+    {
+      "planned_scene_id": "s03",
+      "split": "train",
+      "physical_scene_description": null,
+      "scene_provenance_path": null,
+      "scene_independence_review": null
+    },
+    {
+      "planned_scene_id": "s04",
+      "split": "train",
+      "physical_scene_description": null,
+      "scene_provenance_path": null,
+      "scene_independence_review": null
+    },
+    {
+      "planned_scene_id": "s05",
+      "split": "validation",
+      "physical_scene_description": null,
+      "scene_provenance_path": null,
+      "scene_independence_review": null
+    },
+    {
+      "planned_scene_id": "s06",
+      "split": "validation",
+      "physical_scene_description": null,
+      "scene_provenance_path": null,
+      "scene_independence_review": null
+    }
+  ],
+  "planned_clips": [
+    {
+      "planned_clip_id": "train_s01_lateral_walk",
+      "planned_scene_id": "s01",
+      "split": "train",
+      "motion_type": "lateral_walk",
+      "planned_relative_path": "train/s01/lateral_walk.raw",
+      "status": "not_acquired",
+      "minimum_frames": 160,
+      "preferred_frames": 200,
+      "actual_raw_path": null,
+      "actual_frames": null,
+      "capture_timestamp": null,
+      "capture_metadata": {
+        "fps": null,
+        "exposure_us": null,
+        "sensor_gain": null,
+        "isp_gain": null,
+        "wb_r": null,
+        "wb_g": null,
+        "wb_b": null,
+        "nr_disabled": null,
+        "auto_exposure": null,
+        "auto_gain": null,
+        "auto_white_balance": null,
+        "tripod_fixed": null,
+        "sharpening_disabled": null,
+        "tone_mapping_disabled": null,
+        "wdr_disabled": null,
+        "illumination_description": null,
+        "focus_setting": null,
+        "aperture_setting": null
+      },
+      "evidence": {
+        "raw_export_log_path": null,
+        "pipeline_bypass_record_path": null,
+        "capture_settings_record_path": null,
+        "raw_sha256": null
+      },
+      "manual_review": {
+        "status": "pending",
+        "reviewer": null,
+        "fixed_isp_preview_path": null,
+        "checks": {
+          "motion_edges_not_dominated_by_exposure_blur": null,
+          "fine_texture_visible": null,
+          "no_visible_temporal_nr_trails": null,
+          "no_visible_spatial_nr_texture_loss": null,
+          "cfa_black_level_bit_alignment_confirmed": null,
+          "physical_scene_split_confirmed": null
+        }
+      }
+    },
+    {
+      "planned_clip_id": "train_s01_depth_walk",
+      "planned_scene_id": "s01",
+      "split": "train",
+      "motion_type": "depth_walk",
+      "planned_relative_path": "train/s01/depth_walk.raw",
+      "status": "not_acquired",
+      "minimum_frames": 160,
+      "preferred_frames": 200,
+      "actual_raw_path": null,
+      "actual_frames": null,
+      "capture_timestamp": null,
+      "capture_metadata": {
+        "fps": null,
+        "exposure_us": null,
+        "sensor_gain": null,
+        "isp_gain": null,
+        "wb_r": null,
+        "wb_g": null,
+        "wb_b": null,
+        "nr_disabled": null,
+        "auto_exposure": null,
+        "auto_gain": null,
+        "auto_white_balance": null,
+        "tripod_fixed": null,
+        "sharpening_disabled": null,
+        "tone_mapping_disabled": null,
+        "wdr_disabled": null,
+        "illumination_description": null,
+        "focus_setting": null,
+        "aperture_setting": null
+      },
+      "evidence": {
+        "raw_export_log_path": null,
+        "pipeline_bypass_record_path": null,
+        "capture_settings_record_path": null,
+        "raw_sha256": null
+      },
+      "manual_review": {
+        "status": "pending",
+        "reviewer": null,
+        "fixed_isp_preview_path": null,
+        "checks": {
+          "motion_edges_not_dominated_by_exposure_blur": null,
+          "fine_texture_visible": null,
+          "no_visible_temporal_nr_trails": null,
+          "no_visible_spatial_nr_texture_loss": null,
+          "cfa_black_level_bit_alignment_confirmed": null,
+          "physical_scene_split_confirmed": null
+        }
+      }
+    },
+    {
+      "planned_clip_id": "train_s01_fast_slow_gesture",
+      "planned_scene_id": "s01",
+      "split": "train",
+      "motion_type": "fast_slow_gesture",
+      "planned_relative_path": "train/s01/fast_slow_gesture.raw",
+      "status": "not_acquired",
+      "minimum_frames": 160,
+      "preferred_frames": 200,
+      "actual_raw_path": null,
+      "actual_frames": null,
+      "capture_timestamp": null,
+      "capture_metadata": {
+        "fps": null,
+        "exposure_us": null,
+        "sensor_gain": null,
+        "isp_gain": null,
+        "wb_r": null,
+        "wb_g": null,
+        "wb_b": null,
+        "nr_disabled": null,
+        "auto_exposure": null,
+        "auto_gain": null,
+        "auto_white_balance": null,
+        "tripod_fixed": null,
+        "sharpening_disabled": null,
+        "tone_mapping_disabled": null,
+        "wdr_disabled": null,
+        "illumination_description": null,
+        "focus_setting": null,
+        "aperture_setting": null
+      },
+      "evidence": {
+        "raw_export_log_path": null,
+        "pipeline_bypass_record_path": null,
+        "capture_settings_record_path": null,
+        "raw_sha256": null
+      },
+      "manual_review": {
+        "status": "pending",
+        "reviewer": null,
+        "fixed_isp_preview_path": null,
+        "checks": {
+          "motion_edges_not_dominated_by_exposure_blur": null,
+          "fine_texture_visible": null,
+          "no_visible_temporal_nr_trails": null,
+          "no_visible_spatial_nr_texture_loss": null,
+          "cfa_black_level_bit_alignment_confirmed": null,
+          "physical_scene_split_confirmed": null
+        }
+      }
+    },
+    {
+      "planned_clip_id": "train_s01_occlusion_reentry",
+      "planned_scene_id": "s01",
+      "split": "train",
+      "motion_type": "occlusion_reentry",
+      "planned_relative_path": "train/s01/occlusion_reentry.raw",
+      "status": "not_acquired",
+      "minimum_frames": 160,
+      "preferred_frames": 200,
+      "actual_raw_path": null,
+      "actual_frames": null,
+      "capture_timestamp": null,
+      "capture_metadata": {
+        "fps": null,
+        "exposure_us": null,
+        "sensor_gain": null,
+        "isp_gain": null,
+        "wb_r": null,
+        "wb_g": null,
+        "wb_b": null,
+        "nr_disabled": null,
+        "auto_exposure": null,
+        "auto_gain": null,
+        "auto_white_balance": null,
+        "tripod_fixed": null,
+        "sharpening_disabled": null,
+        "tone_mapping_disabled": null,
+        "wdr_disabled": null,
+        "illumination_description": null,
+        "focus_setting": null,
+        "aperture_setting": null
+      },
+      "evidence": {
+        "raw_export_log_path": null,
+        "pipeline_bypass_record_path": null,
+        "capture_settings_record_path": null,
+        "raw_sha256": null
+      },
+      "manual_review": {
+        "status": "pending",
+        "reviewer": null,
+        "fixed_isp_preview_path": null,
+        "checks": {
+          "motion_edges_not_dominated_by_exposure_blur": null,
+          "fine_texture_visible": null,
+          "no_visible_temporal_nr_trails": null,
+          "no_visible_spatial_nr_texture_loss": null,
+          "cfa_black_level_bit_alignment_confirmed": null,
+          "physical_scene_split_confirmed": null
+        }
+      }
+    },
+    {
+      "planned_clip_id": "train_s01_fine_texture_motion",
+      "planned_scene_id": "s01",
+      "split": "train",
+      "motion_type": "fine_texture_motion",
+      "planned_relative_path": "train/s01/fine_texture_motion.raw",
+      "status": "not_acquired",
+      "minimum_frames": 160,
+      "preferred_frames": 200,
+      "actual_raw_path": null,
+      "actual_frames": null,
+      "capture_timestamp": null,
+      "capture_metadata": {
+        "fps": null,
+        "exposure_us": null,
+        "sensor_gain": null,
+        "isp_gain": null,
+        "wb_r": null,
+        "wb_g": null,
+        "wb_b": null,
+        "nr_disabled": null,
+        "auto_exposure": null,
+        "auto_gain": null,
+        "auto_white_balance": null,
+        "tripod_fixed": null,
+        "sharpening_disabled": null,
+        "tone_mapping_disabled": null,
+        "wdr_disabled": null,
+        "illumination_description": null,
+        "focus_setting": null,
+        "aperture_setting": null
+      },
+      "evidence": {
+        "raw_export_log_path": null,
+        "pipeline_bypass_record_path": null,
+        "capture_settings_record_path": null,
+        "raw_sha256": null
+      },
+      "manual_review": {
+        "status": "pending",
+        "reviewer": null,
+        "fixed_isp_preview_path": null,
+        "checks": {
+          "motion_edges_not_dominated_by_exposure_blur": null,
+          "fine_texture_visible": null,
+          "no_visible_temporal_nr_trails": null,
+          "no_visible_spatial_nr_texture_loss": null,
+          "cfa_black_level_bit_alignment_confirmed": null,
+          "physical_scene_split_confirmed": null
+        }
+      }
+    },
+    {
+      "planned_clip_id": "train_s02_lateral_walk",
+      "planned_scene_id": "s02",
+      "split": "train",
+      "motion_type": "lateral_walk",
+      "planned_relative_path": "train/s02/lateral_walk.raw",
+      "status": "not_acquired",
+      "minimum_frames": 160,
+      "preferred_frames": 200,
+      "actual_raw_path": null,
+      "actual_frames": null,
+      "capture_timestamp": null,
+      "capture_metadata": {
+        "fps": null,
+        "exposure_us": null,
+        "sensor_gain": null,
+        "isp_gain": null,
+        "wb_r": null,
+        "wb_g": null,
+        "wb_b": null,
+        "nr_disabled": null,
+        "auto_exposure": null,
+        "auto_gain": null,
+        "auto_white_balance": null,
+        "tripod_fixed": null,
+        "sharpening_disabled": null,
+        "tone_mapping_disabled": null,
+        "wdr_disabled": null,
+        "illumination_description": null,
+        "focus_setting": null,
+        "aperture_setting": null
+      },
+      "evidence": {
+        "raw_export_log_path": null,
+        "pipeline_bypass_record_path": null,
+        "capture_settings_record_path": null,
+        "raw_sha256": null
+      },
+      "manual_review": {
+        "status": "pending",
+        "reviewer": null,
+        "fixed_isp_preview_path": null,
+        "checks": {
+          "motion_edges_not_dominated_by_exposure_blur": null,
+          "fine_texture_visible": null,
+          "no_visible_temporal_nr_trails": null,
+          "no_visible_spatial_nr_texture_loss": null,
+          "cfa_black_level_bit_alignment_confirmed": null,
+          "physical_scene_split_confirmed": null
+        }
+      }
+    },
+    {
+      "planned_clip_id": "train_s02_depth_walk",
+      "planned_scene_id": "s02",
+      "split": "train",
+      "motion_type": "depth_walk",
+      "planned_relative_path": "train/s02/depth_walk.raw",
+      "status": "not_acquired",
+      "minimum_frames": 160,
+      "preferred_frames": 200,
+      "actual_raw_path": null,
+      "actual_frames": null,
+      "capture_timestamp": null,
+      "capture_metadata": {
+        "fps": null,
+        "exposure_us": null,
+        "sensor_gain": null,
+        "isp_gain": null,
+        "wb_r": null,
+        "wb_g": null,
+        "wb_b": null,
+        "nr_disabled": null,
+        "auto_exposure": null,
+        "auto_gain": null,
+        "auto_white_balance": null,
+        "tripod_fixed": null,
+        "sharpening_disabled": null,
+        "tone_mapping_disabled": null,
+        "wdr_disabled": null,
+        "illumination_description": null,
+        "focus_setting": null,
+        "aperture_setting": null
+      },
+      "evidence": {
+        "raw_export_log_path": null,
+        "pipeline_bypass_record_path": null,
+        "capture_settings_record_path": null,
+        "raw_sha256": null
+      },
+      "manual_review": {
+        "status": "pending",
+        "reviewer": null,
+        "fixed_isp_preview_path": null,
+        "checks": {
+          "motion_edges_not_dominated_by_exposure_blur": null,
+          "fine_texture_visible": null,
+          "no_visible_temporal_nr_trails": null,
+          "no_visible_spatial_nr_texture_loss": null,
+          "cfa_black_level_bit_alignment_confirmed": null,
+          "physical_scene_split_confirmed": null
+        }
+      }
+    },
+    {
+      "planned_clip_id": "train_s02_fast_slow_gesture",
+      "planned_scene_id": "s02",
+      "split": "train",
+      "motion_type": "fast_slow_gesture",
+      "planned_relative_path": "train/s02/fast_slow_gesture.raw",
+      "status": "not_acquired",
+      "minimum_frames": 160,
+      "preferred_frames": 200,
+      "actual_raw_path": null,
+      "actual_frames": null,
+      "capture_timestamp": null,
+      "capture_metadata": {
+        "fps": null,
+        "exposure_us": null,
+        "sensor_gain": null,
+        "isp_gain": null,
+        "wb_r": null,
+        "wb_g": null,
+        "wb_b": null,
+        "nr_disabled": null,
+        "auto_exposure": null,
+        "auto_gain": null,
+        "auto_white_balance": null,
+        "tripod_fixed": null,
+        "sharpening_disabled": null,
+        "tone_mapping_disabled": null,
+        "wdr_disabled": null,
+        "illumination_description": null,
+        "focus_setting": null,
+        "aperture_setting": null
+      },
+      "evidence": {
+        "raw_export_log_path": null,
+        "pipeline_bypass_record_path": null,
+        "capture_settings_record_path": null,
+        "raw_sha256": null
+      },
+      "manual_review": {
+        "status": "pending",
+        "reviewer": null,
+        "fixed_isp_preview_path": null,
+        "checks": {
+          "motion_edges_not_dominated_by_exposure_blur": null,
+          "fine_texture_visible": null,
+          "no_visible_temporal_nr_trails": null,
+          "no_visible_spatial_nr_texture_loss": null,
+          "cfa_black_level_bit_alignment_confirmed": null,
+          "physical_scene_split_confirmed": null
+        }
+      }
+    },
+    {
+      "planned_clip_id": "train_s02_occlusion_reentry",
+      "planned_scene_id": "s02",
+      "split": "train",
+      "motion_type": "occlusion_reentry",
+      "planned_relative_path": "train/s02/occlusion_reentry.raw",
+      "status": "not_acquired",
+      "minimum_frames": 160,
+      "preferred_frames": 200,
+      "actual_raw_path": null,
+      "actual_frames": null,
+      "capture_timestamp": null,
+      "capture_metadata": {
+        "fps": null,
+        "exposure_us": null,
+        "sensor_gain": null,
+        "isp_gain": null,
+        "wb_r": null,
+        "wb_g": null,
+        "wb_b": null,
+        "nr_disabled": null,
+        "auto_exposure": null,
+        "auto_gain": null,
+        "auto_white_balance": null,
+        "tripod_fixed": null,
+        "sharpening_disabled": null,
+        "tone_mapping_disabled": null,
+        "wdr_disabled": null,
+        "illumination_description": null,
+        "focus_setting": null,
+        "aperture_setting": null
+      },
+      "evidence": {
+        "raw_export_log_path": null,
+        "pipeline_bypass_record_path": null,
+        "capture_settings_record_path": null,
+        "raw_sha256": null
+      },
+      "manual_review": {
+        "status": "pending",
+        "reviewer": null,
+        "fixed_isp_preview_path": null,
+        "checks": {
+          "motion_edges_not_dominated_by_exposure_blur": null,
+          "fine_texture_visible": null,
+          "no_visible_temporal_nr_trails": null,
+          "no_visible_spatial_nr_texture_loss": null,
+          "cfa_black_level_bit_alignment_confirmed": null,
+          "physical_scene_split_confirmed": null
+        }
+      }
+    },
+    {
+      "planned_clip_id": "train_s02_fine_texture_motion",
+      "planned_scene_id": "s02",
+      "split": "train",
+      "motion_type": "fine_texture_motion",
+      "planned_relative_path": "train/s02/fine_texture_motion.raw",
+      "status": "not_acquired",
+      "minimum_frames": 160,
+      "preferred_frames": 200,
+      "actual_raw_path": null,
+      "actual_frames": null,
+      "capture_timestamp": null,
+      "capture_metadata": {
+        "fps": null,
+        "exposure_us": null,
+        "sensor_gain": null,
+        "isp_gain": null,
+        "wb_r": null,
+        "wb_g": null,
+        "wb_b": null,
+        "nr_disabled": null,
+        "auto_exposure": null,
+        "auto_gain": null,
+        "auto_white_balance": null,
+        "tripod_fixed": null,
+        "sharpening_disabled": null,
+        "tone_mapping_disabled": null,
+        "wdr_disabled": null,
+        "illumination_description": null,
+        "focus_setting": null,
+        "aperture_setting": null
+      },
+      "evidence": {
+        "raw_export_log_path": null,
+        "pipeline_bypass_record_path": null,
+        "capture_settings_record_path": null,
+        "raw_sha256": null
+      },
+      "manual_review": {
+        "status": "pending",
+        "reviewer": null,
+        "fixed_isp_preview_path": null,
+        "checks": {
+          "motion_edges_not_dominated_by_exposure_blur": null,
+          "fine_texture_visible": null,
+          "no_visible_temporal_nr_trails": null,
+          "no_visible_spatial_nr_texture_loss": null,
+          "cfa_black_level_bit_alignment_confirmed": null,
+          "physical_scene_split_confirmed": null
+        }
+      }
+    },
+    {
+      "planned_clip_id": "train_s03_lateral_walk",
+      "planned_scene_id": "s03",
+      "split": "train",
+      "motion_type": "lateral_walk",
+      "planned_relative_path": "train/s03/lateral_walk.raw",
+      "status": "not_acquired",
+      "minimum_frames": 160,
+      "preferred_frames": 200,
+      "actual_raw_path": null,
+      "actual_frames": null,
+      "capture_timestamp": null,
+      "capture_metadata": {
+        "fps": null,
+        "exposure_us": null,
+        "sensor_gain": null,
+        "isp_gain": null,
+        "wb_r": null,
+        "wb_g": null,
+        "wb_b": null,
+        "nr_disabled": null,
+        "auto_exposure": null,
+        "auto_gain": null,
+        "auto_white_balance": null,
+        "tripod_fixed": null,
+        "sharpening_disabled": null,
+        "tone_mapping_disabled": null,
+        "wdr_disabled": null,
+        "illumination_description": null,
+        "focus_setting": null,
+        "aperture_setting": null
+      },
+      "evidence": {
+        "raw_export_log_path": null,
+        "pipeline_bypass_record_path": null,
+        "capture_settings_record_path": null,
+        "raw_sha256": null
+      },
+      "manual_review": {
+        "status": "pending",
+        "reviewer": null,
+        "fixed_isp_preview_path": null,
+        "checks": {
+          "motion_edges_not_dominated_by_exposure_blur": null,
+          "fine_texture_visible": null,
+          "no_visible_temporal_nr_trails": null,
+          "no_visible_spatial_nr_texture_loss": null,
+          "cfa_black_level_bit_alignment_confirmed": null,
+          "physical_scene_split_confirmed": null
+        }
+      }
+    },
+    {
+      "planned_clip_id": "train_s03_depth_walk",
+      "planned_scene_id": "s03",
+      "split": "train",
+      "motion_type": "depth_walk",
+      "planned_relative_path": "train/s03/depth_walk.raw",
+      "status": "not_acquired",
+      "minimum_frames": 160,
+      "preferred_frames": 200,
+      "actual_raw_path": null,
+      "actual_frames": null,
+      "capture_timestamp": null,
+      "capture_metadata": {
+        "fps": null,
+        "exposure_us": null,
+        "sensor_gain": null,
+        "isp_gain": null,
+        "wb_r": null,
+        "wb_g": null,
+        "wb_b": null,
+        "nr_disabled": null,
+        "auto_exposure": null,
+        "auto_gain": null,
+        "auto_white_balance": null,
+        "tripod_fixed": null,
+        "sharpening_disabled": null,
+        "tone_mapping_disabled": null,
+        "wdr_disabled": null,
+        "illumination_description": null,
+        "focus_setting": null,
+        "aperture_setting": null
+      },
+      "evidence": {
+        "raw_export_log_path": null,
+        "pipeline_bypass_record_path": null,
+        "capture_settings_record_path": null,
+        "raw_sha256": null
+      },
+      "manual_review": {
+        "status": "pending",
+        "reviewer": null,
+        "fixed_isp_preview_path": null,
+        "checks": {
+          "motion_edges_not_dominated_by_exposure_blur": null,
+          "fine_texture_visible": null,
+          "no_visible_temporal_nr_trails": null,
+          "no_visible_spatial_nr_texture_loss": null,
+          "cfa_black_level_bit_alignment_confirmed": null,
+          "physical_scene_split_confirmed": null
+        }
+      }
+    },
+    {
+      "planned_clip_id": "train_s03_fast_slow_gesture",
+      "planned_scene_id": "s03",
+      "split": "train",
+      "motion_type": "fast_slow_gesture",
+      "planned_relative_path": "train/s03/fast_slow_gesture.raw",
+      "status": "not_acquired",
+      "minimum_frames": 160,
+      "preferred_frames": 200,
+      "actual_raw_path": null,
+      "actual_frames": null,
+      "capture_timestamp": null,
+      "capture_metadata": {
+        "fps": null,
+        "exposure_us": null,
+        "sensor_gain": null,
+        "isp_gain": null,
+        "wb_r": null,
+        "wb_g": null,
+        "wb_b": null,
+        "nr_disabled": null,
+        "auto_exposure": null,
+        "auto_gain": null,
+        "auto_white_balance": null,
+        "tripod_fixed": null,
+        "sharpening_disabled": null,
+        "tone_mapping_disabled": null,
+        "wdr_disabled": null,
+        "illumination_description": null,
+        "focus_setting": null,
+        "aperture_setting": null
+      },
+      "evidence": {
+        "raw_export_log_path": null,
+        "pipeline_bypass_record_path": null,
+        "capture_settings_record_path": null,
+        "raw_sha256": null
+      },
+      "manual_review": {
+        "status": "pending",
+        "reviewer": null,
+        "fixed_isp_preview_path": null,
+        "checks": {
+          "motion_edges_not_dominated_by_exposure_blur": null,
+          "fine_texture_visible": null,
+          "no_visible_temporal_nr_trails": null,
+          "no_visible_spatial_nr_texture_loss": null,
+          "cfa_black_level_bit_alignment_confirmed": null,
+          "physical_scene_split_confirmed": null
+        }
+      }
+    },
+    {
+      "planned_clip_id": "train_s03_occlusion_reentry",
+      "planned_scene_id": "s03",
+      "split": "train",
+      "motion_type": "occlusion_reentry",
+      "planned_relative_path": "train/s03/occlusion_reentry.raw",
+      "status": "not_acquired",
+      "minimum_frames": 160,
+      "preferred_frames": 200,
+      "actual_raw_path": null,
+      "actual_frames": null,
+      "capture_timestamp": null,
+      "capture_metadata": {
+        "fps": null,
+        "exposure_us": null,
+        "sensor_gain": null,
+        "isp_gain": null,
+        "wb_r": null,
+        "wb_g": null,
+        "wb_b": null,
+        "nr_disabled": null,
+        "auto_exposure": null,
+        "auto_gain": null,
+        "auto_white_balance": null,
+        "tripod_fixed": null,
+        "sharpening_disabled": null,
+        "tone_mapping_disabled": null,
+        "wdr_disabled": null,
+        "illumination_description": null,
+        "focus_setting": null,
+        "aperture_setting": null
+      },
+      "evidence": {
+        "raw_export_log_path": null,
+        "pipeline_bypass_record_path": null,
+        "capture_settings_record_path": null,
+        "raw_sha256": null
+      },
+      "manual_review": {
+        "status": "pending",
+        "reviewer": null,
+        "fixed_isp_preview_path": null,
+        "checks": {
+          "motion_edges_not_dominated_by_exposure_blur": null,
+          "fine_texture_visible": null,
+          "no_visible_temporal_nr_trails": null,
+          "no_visible_spatial_nr_texture_loss": null,
+          "cfa_black_level_bit_alignment_confirmed": null,
+          "physical_scene_split_confirmed": null
+        }
+      }
+    },
+    {
+      "planned_clip_id": "train_s03_fine_texture_motion",
+      "planned_scene_id": "s03",
+      "split": "train",
+      "motion_type": "fine_texture_motion",
+      "planned_relative_path": "train/s03/fine_texture_motion.raw",
+      "status": "not_acquired",
+      "minimum_frames": 160,
+      "preferred_frames": 200,
+      "actual_raw_path": null,
+      "actual_frames": null,
+      "capture_timestamp": null,
+      "capture_metadata": {
+        "fps": null,
+        "exposure_us": null,
+        "sensor_gain": null,
+        "isp_gain": null,
+        "wb_r": null,
+        "wb_g": null,
+        "wb_b": null,
+        "nr_disabled": null,
+        "auto_exposure": null,
+        "auto_gain": null,
+        "auto_white_balance": null,
+        "tripod_fixed": null,
+        "sharpening_disabled": null,
+        "tone_mapping_disabled": null,
+        "wdr_disabled": null,
+        "illumination_description": null,
+        "focus_setting": null,
+        "aperture_setting": null
+      },
+      "evidence": {
+        "raw_export_log_path": null,
+        "pipeline_bypass_record_path": null,
+        "capture_settings_record_path": null,
+        "raw_sha256": null
+      },
+      "manual_review": {
+        "status": "pending",
+        "reviewer": null,
+        "fixed_isp_preview_path": null,
+        "checks": {
+          "motion_edges_not_dominated_by_exposure_blur": null,
+          "fine_texture_visible": null,
+          "no_visible_temporal_nr_trails": null,
+          "no_visible_spatial_nr_texture_loss": null,
+          "cfa_black_level_bit_alignment_confirmed": null,
+          "physical_scene_split_confirmed": null
+        }
+      }
+    },
+    {
+      "planned_clip_id": "train_s04_lateral_walk",
+      "planned_scene_id": "s04",
+      "split": "train",
+      "motion_type": "lateral_walk",
+      "planned_relative_path": "train/s04/lateral_walk.raw",
+      "status": "not_acquired",
+      "minimum_frames": 160,
+      "preferred_frames": 200,
+      "actual_raw_path": null,
+      "actual_frames": null,
+      "capture_timestamp": null,
+      "capture_metadata": {
+        "fps": null,
+        "exposure_us": null,
+        "sensor_gain": null,
+        "isp_gain": null,
+        "wb_r": null,
+        "wb_g": null,
+        "wb_b": null,
+        "nr_disabled": null,
+        "auto_exposure": null,
+        "auto_gain": null,
+        "auto_white_balance": null,
+        "tripod_fixed": null,
+        "sharpening_disabled": null,
+        "tone_mapping_disabled": null,
+        "wdr_disabled": null,
+        "illumination_description": null,
+        "focus_setting": null,
+        "aperture_setting": null
+      },
+      "evidence": {
+        "raw_export_log_path": null,
+        "pipeline_bypass_record_path": null,
+        "capture_settings_record_path": null,
+        "raw_sha256": null
+      },
+      "manual_review": {
+        "status": "pending",
+        "reviewer": null,
+        "fixed_isp_preview_path": null,
+        "checks": {
+          "motion_edges_not_dominated_by_exposure_blur": null,
+          "fine_texture_visible": null,
+          "no_visible_temporal_nr_trails": null,
+          "no_visible_spatial_nr_texture_loss": null,
+          "cfa_black_level_bit_alignment_confirmed": null,
+          "physical_scene_split_confirmed": null
+        }
+      }
+    },
+    {
+      "planned_clip_id": "train_s04_depth_walk",
+      "planned_scene_id": "s04",
+      "split": "train",
+      "motion_type": "depth_walk",
+      "planned_relative_path": "train/s04/depth_walk.raw",
+      "status": "not_acquired",
+      "minimum_frames": 160,
+      "preferred_frames": 200,
+      "actual_raw_path": null,
+      "actual_frames": null,
+      "capture_timestamp": null,
+      "capture_metadata": {
+        "fps": null,
+        "exposure_us": null,
+        "sensor_gain": null,
+        "isp_gain": null,
+        "wb_r": null,
+        "wb_g": null,
+        "wb_b": null,
+        "nr_disabled": null,
+        "auto_exposure": null,
+        "auto_gain": null,
+        "auto_white_balance": null,
+        "tripod_fixed": null,
+        "sharpening_disabled": null,
+        "tone_mapping_disabled": null,
+        "wdr_disabled": null,
+        "illumination_description": null,
+        "focus_setting": null,
+        "aperture_setting": null
+      },
+      "evidence": {
+        "raw_export_log_path": null,
+        "pipeline_bypass_record_path": null,
+        "capture_settings_record_path": null,
+        "raw_sha256": null
+      },
+      "manual_review": {
+        "status": "pending",
+        "reviewer": null,
+        "fixed_isp_preview_path": null,
+        "checks": {
+          "motion_edges_not_dominated_by_exposure_blur": null,
+          "fine_texture_visible": null,
+          "no_visible_temporal_nr_trails": null,
+          "no_visible_spatial_nr_texture_loss": null,
+          "cfa_black_level_bit_alignment_confirmed": null,
+          "physical_scene_split_confirmed": null
+        }
+      }
+    },
+    {
+      "planned_clip_id": "train_s04_fast_slow_gesture",
+      "planned_scene_id": "s04",
+      "split": "train",
+      "motion_type": "fast_slow_gesture",
+      "planned_relative_path": "train/s04/fast_slow_gesture.raw",
+      "status": "not_acquired",
+      "minimum_frames": 160,
+      "preferred_frames": 200,
+      "actual_raw_path": null,
+      "actual_frames": null,
+      "capture_timestamp": null,
+      "capture_metadata": {
+        "fps": null,
+        "exposure_us": null,
+        "sensor_gain": null,
+        "isp_gain": null,
+        "wb_r": null,
+        "wb_g": null,
+        "wb_b": null,
+        "nr_disabled": null,
+        "auto_exposure": null,
+        "auto_gain": null,
+        "auto_white_balance": null,
+        "tripod_fixed": null,
+        "sharpening_disabled": null,
+        "tone_mapping_disabled": null,
+        "wdr_disabled": null,
+        "illumination_description": null,
+        "focus_setting": null,
+        "aperture_setting": null
+      },
+      "evidence": {
+        "raw_export_log_path": null,
+        "pipeline_bypass_record_path": null,
+        "capture_settings_record_path": null,
+        "raw_sha256": null
+      },
+      "manual_review": {
+        "status": "pending",
+        "reviewer": null,
+        "fixed_isp_preview_path": null,
+        "checks": {
+          "motion_edges_not_dominated_by_exposure_blur": null,
+          "fine_texture_visible": null,
+          "no_visible_temporal_nr_trails": null,
+          "no_visible_spatial_nr_texture_loss": null,
+          "cfa_black_level_bit_alignment_confirmed": null,
+          "physical_scene_split_confirmed": null
+        }
+      }
+    },
+    {
+      "planned_clip_id": "train_s04_occlusion_reentry",
+      "planned_scene_id": "s04",
+      "split": "train",
+      "motion_type": "occlusion_reentry",
+      "planned_relative_path": "train/s04/occlusion_reentry.raw",
+      "status": "not_acquired",
+      "minimum_frames": 160,
+      "preferred_frames": 200,
+      "actual_raw_path": null,
+      "actual_frames": null,
+      "capture_timestamp": null,
+      "capture_metadata": {
+        "fps": null,
+        "exposure_us": null,
+        "sensor_gain": null,
+        "isp_gain": null,
+        "wb_r": null,
+        "wb_g": null,
+        "wb_b": null,
+        "nr_disabled": null,
+        "auto_exposure": null,
+        "auto_gain": null,
+        "auto_white_balance": null,
+        "tripod_fixed": null,
+        "sharpening_disabled": null,
+        "tone_mapping_disabled": null,
+        "wdr_disabled": null,
+        "illumination_description": null,
+        "focus_setting": null,
+        "aperture_setting": null
+      },
+      "evidence": {
+        "raw_export_log_path": null,
+        "pipeline_bypass_record_path": null,
+        "capture_settings_record_path": null,
+        "raw_sha256": null
+      },
+      "manual_review": {
+        "status": "pending",
+        "reviewer": null,
+        "fixed_isp_preview_path": null,
+        "checks": {
+          "motion_edges_not_dominated_by_exposure_blur": null,
+          "fine_texture_visible": null,
+          "no_visible_temporal_nr_trails": null,
+          "no_visible_spatial_nr_texture_loss": null,
+          "cfa_black_level_bit_alignment_confirmed": null,
+          "physical_scene_split_confirmed": null
+        }
+      }
+    },
+    {
+      "planned_clip_id": "train_s04_fine_texture_motion",
+      "planned_scene_id": "s04",
+      "split": "train",
+      "motion_type": "fine_texture_motion",
+      "planned_relative_path": "train/s04/fine_texture_motion.raw",
+      "status": "not_acquired",
+      "minimum_frames": 160,
+      "preferred_frames": 200,
+      "actual_raw_path": null,
+      "actual_frames": null,
+      "capture_timestamp": null,
+      "capture_metadata": {
+        "fps": null,
+        "exposure_us": null,
+        "sensor_gain": null,
+        "isp_gain": null,
+        "wb_r": null,
+        "wb_g": null,
+        "wb_b": null,
+        "nr_disabled": null,
+        "auto_exposure": null,
+        "auto_gain": null,
+        "auto_white_balance": null,
+        "tripod_fixed": null,
+        "sharpening_disabled": null,
+        "tone_mapping_disabled": null,
+        "wdr_disabled": null,
+        "illumination_description": null,
+        "focus_setting": null,
+        "aperture_setting": null
+      },
+      "evidence": {
+        "raw_export_log_path": null,
+        "pipeline_bypass_record_path": null,
+        "capture_settings_record_path": null,
+        "raw_sha256": null
+      },
+      "manual_review": {
+        "status": "pending",
+        "reviewer": null,
+        "fixed_isp_preview_path": null,
+        "checks": {
+          "motion_edges_not_dominated_by_exposure_blur": null,
+          "fine_texture_visible": null,
+          "no_visible_temporal_nr_trails": null,
+          "no_visible_spatial_nr_texture_loss": null,
+          "cfa_black_level_bit_alignment_confirmed": null,
+          "physical_scene_split_confirmed": null
+        }
+      }
+    },
+    {
+      "planned_clip_id": "validation_s05_lateral_walk",
+      "planned_scene_id": "s05",
+      "split": "validation",
+      "motion_type": "lateral_walk",
+      "planned_relative_path": "validation/s05/lateral_walk.raw",
+      "status": "not_acquired",
+      "minimum_frames": 160,
+      "preferred_frames": 200,
+      "actual_raw_path": null,
+      "actual_frames": null,
+      "capture_timestamp": null,
+      "capture_metadata": {
+        "fps": null,
+        "exposure_us": null,
+        "sensor_gain": null,
+        "isp_gain": null,
+        "wb_r": null,
+        "wb_g": null,
+        "wb_b": null,
+        "nr_disabled": null,
+        "auto_exposure": null,
+        "auto_gain": null,
+        "auto_white_balance": null,
+        "tripod_fixed": null,
+        "sharpening_disabled": null,
+        "tone_mapping_disabled": null,
+        "wdr_disabled": null,
+        "illumination_description": null,
+        "focus_setting": null,
+        "aperture_setting": null
+      },
+      "evidence": {
+        "raw_export_log_path": null,
+        "pipeline_bypass_record_path": null,
+        "capture_settings_record_path": null,
+        "raw_sha256": null
+      },
+      "manual_review": {
+        "status": "pending",
+        "reviewer": null,
+        "fixed_isp_preview_path": null,
+        "checks": {
+          "motion_edges_not_dominated_by_exposure_blur": null,
+          "fine_texture_visible": null,
+          "no_visible_temporal_nr_trails": null,
+          "no_visible_spatial_nr_texture_loss": null,
+          "cfa_black_level_bit_alignment_confirmed": null,
+          "physical_scene_split_confirmed": null
+        }
+      }
+    },
+    {
+      "planned_clip_id": "validation_s05_depth_walk",
+      "planned_scene_id": "s05",
+      "split": "validation",
+      "motion_type": "depth_walk",
+      "planned_relative_path": "validation/s05/depth_walk.raw",
+      "status": "not_acquired",
+      "minimum_frames": 160,
+      "preferred_frames": 200,
+      "actual_raw_path": null,
+      "actual_frames": null,
+      "capture_timestamp": null,
+      "capture_metadata": {
+        "fps": null,
+        "exposure_us": null,
+        "sensor_gain": null,
+        "isp_gain": null,
+        "wb_r": null,
+        "wb_g": null,
+        "wb_b": null,
+        "nr_disabled": null,
+        "auto_exposure": null,
+        "auto_gain": null,
+        "auto_white_balance": null,
+        "tripod_fixed": null,
+        "sharpening_disabled": null,
+        "tone_mapping_disabled": null,
+        "wdr_disabled": null,
+        "illumination_description": null,
+        "focus_setting": null,
+        "aperture_setting": null
+      },
+      "evidence": {
+        "raw_export_log_path": null,
+        "pipeline_bypass_record_path": null,
+        "capture_settings_record_path": null,
+        "raw_sha256": null
+      },
+      "manual_review": {
+        "status": "pending",
+        "reviewer": null,
+        "fixed_isp_preview_path": null,
+        "checks": {
+          "motion_edges_not_dominated_by_exposure_blur": null,
+          "fine_texture_visible": null,
+          "no_visible_temporal_nr_trails": null,
+          "no_visible_spatial_nr_texture_loss": null,
+          "cfa_black_level_bit_alignment_confirmed": null,
+          "physical_scene_split_confirmed": null
+        }
+      }
+    },
+    {
+      "planned_clip_id": "validation_s05_fast_slow_gesture",
+      "planned_scene_id": "s05",
+      "split": "validation",
+      "motion_type": "fast_slow_gesture",
+      "planned_relative_path": "validation/s05/fast_slow_gesture.raw",
+      "status": "not_acquired",
+      "minimum_frames": 160,
+      "preferred_frames": 200,
+      "actual_raw_path": null,
+      "actual_frames": null,
+      "capture_timestamp": null,
+      "capture_metadata": {
+        "fps": null,
+        "exposure_us": null,
+        "sensor_gain": null,
+        "isp_gain": null,
+        "wb_r": null,
+        "wb_g": null,
+        "wb_b": null,
+        "nr_disabled": null,
+        "auto_exposure": null,
+        "auto_gain": null,
+        "auto_white_balance": null,
+        "tripod_fixed": null,
+        "sharpening_disabled": null,
+        "tone_mapping_disabled": null,
+        "wdr_disabled": null,
+        "illumination_description": null,
+        "focus_setting": null,
+        "aperture_setting": null
+      },
+      "evidence": {
+        "raw_export_log_path": null,
+        "pipeline_bypass_record_path": null,
+        "capture_settings_record_path": null,
+        "raw_sha256": null
+      },
+      "manual_review": {
+        "status": "pending",
+        "reviewer": null,
+        "fixed_isp_preview_path": null,
+        "checks": {
+          "motion_edges_not_dominated_by_exposure_blur": null,
+          "fine_texture_visible": null,
+          "no_visible_temporal_nr_trails": null,
+          "no_visible_spatial_nr_texture_loss": null,
+          "cfa_black_level_bit_alignment_confirmed": null,
+          "physical_scene_split_confirmed": null
+        }
+      }
+    },
+    {
+      "planned_clip_id": "validation_s05_occlusion_reentry",
+      "planned_scene_id": "s05",
+      "split": "validation",
+      "motion_type": "occlusion_reentry",
+      "planned_relative_path": "validation/s05/occlusion_reentry.raw",
+      "status": "not_acquired",
+      "minimum_frames": 160,
+      "preferred_frames": 200,
+      "actual_raw_path": null,
+      "actual_frames": null,
+      "capture_timestamp": null,
+      "capture_metadata": {
+        "fps": null,
+        "exposure_us": null,
+        "sensor_gain": null,
+        "isp_gain": null,
+        "wb_r": null,
+        "wb_g": null,
+        "wb_b": null,
+        "nr_disabled": null,
+        "auto_exposure": null,
+        "auto_gain": null,
+        "auto_white_balance": null,
+        "tripod_fixed": null,
+        "sharpening_disabled": null,
+        "tone_mapping_disabled": null,
+        "wdr_disabled": null,
+        "illumination_description": null,
+        "focus_setting": null,
+        "aperture_setting": null
+      },
+      "evidence": {
+        "raw_export_log_path": null,
+        "pipeline_bypass_record_path": null,
+        "capture_settings_record_path": null,
+        "raw_sha256": null
+      },
+      "manual_review": {
+        "status": "pending",
+        "reviewer": null,
+        "fixed_isp_preview_path": null,
+        "checks": {
+          "motion_edges_not_dominated_by_exposure_blur": null,
+          "fine_texture_visible": null,
+          "no_visible_temporal_nr_trails": null,
+          "no_visible_spatial_nr_texture_loss": null,
+          "cfa_black_level_bit_alignment_confirmed": null,
+          "physical_scene_split_confirmed": null
+        }
+      }
+    },
+    {
+      "planned_clip_id": "validation_s05_fine_texture_motion",
+      "planned_scene_id": "s05",
+      "split": "validation",
+      "motion_type": "fine_texture_motion",
+      "planned_relative_path": "validation/s05/fine_texture_motion.raw",
+      "status": "not_acquired",
+      "minimum_frames": 160,
+      "preferred_frames": 200,
+      "actual_raw_path": null,
+      "actual_frames": null,
+      "capture_timestamp": null,
+      "capture_metadata": {
+        "fps": null,
+        "exposure_us": null,
+        "sensor_gain": null,
+        "isp_gain": null,
+        "wb_r": null,
+        "wb_g": null,
+        "wb_b": null,
+        "nr_disabled": null,
+        "auto_exposure": null,
+        "auto_gain": null,
+        "auto_white_balance": null,
+        "tripod_fixed": null,
+        "sharpening_disabled": null,
+        "tone_mapping_disabled": null,
+        "wdr_disabled": null,
+        "illumination_description": null,
+        "focus_setting": null,
+        "aperture_setting": null
+      },
+      "evidence": {
+        "raw_export_log_path": null,
+        "pipeline_bypass_record_path": null,
+        "capture_settings_record_path": null,
+        "raw_sha256": null
+      },
+      "manual_review": {
+        "status": "pending",
+        "reviewer": null,
+        "fixed_isp_preview_path": null,
+        "checks": {
+          "motion_edges_not_dominated_by_exposure_blur": null,
+          "fine_texture_visible": null,
+          "no_visible_temporal_nr_trails": null,
+          "no_visible_spatial_nr_texture_loss": null,
+          "cfa_black_level_bit_alignment_confirmed": null,
+          "physical_scene_split_confirmed": null
+        }
+      }
+    },
+    {
+      "planned_clip_id": "validation_s06_lateral_walk",
+      "planned_scene_id": "s06",
+      "split": "validation",
+      "motion_type": "lateral_walk",
+      "planned_relative_path": "validation/s06/lateral_walk.raw",
+      "status": "not_acquired",
+      "minimum_frames": 160,
+      "preferred_frames": 200,
+      "actual_raw_path": null,
+      "actual_frames": null,
+      "capture_timestamp": null,
+      "capture_metadata": {
+        "fps": null,
+        "exposure_us": null,
+        "sensor_gain": null,
+        "isp_gain": null,
+        "wb_r": null,
+        "wb_g": null,
+        "wb_b": null,
+        "nr_disabled": null,
+        "auto_exposure": null,
+        "auto_gain": null,
+        "auto_white_balance": null,
+        "tripod_fixed": null,
+        "sharpening_disabled": null,
+        "tone_mapping_disabled": null,
+        "wdr_disabled": null,
+        "illumination_description": null,
+        "focus_setting": null,
+        "aperture_setting": null
+      },
+      "evidence": {
+        "raw_export_log_path": null,
+        "pipeline_bypass_record_path": null,
+        "capture_settings_record_path": null,
+        "raw_sha256": null
+      },
+      "manual_review": {
+        "status": "pending",
+        "reviewer": null,
+        "fixed_isp_preview_path": null,
+        "checks": {
+          "motion_edges_not_dominated_by_exposure_blur": null,
+          "fine_texture_visible": null,
+          "no_visible_temporal_nr_trails": null,
+          "no_visible_spatial_nr_texture_loss": null,
+          "cfa_black_level_bit_alignment_confirmed": null,
+          "physical_scene_split_confirmed": null
+        }
+      }
+    },
+    {
+      "planned_clip_id": "validation_s06_depth_walk",
+      "planned_scene_id": "s06",
+      "split": "validation",
+      "motion_type": "depth_walk",
+      "planned_relative_path": "validation/s06/depth_walk.raw",
+      "status": "not_acquired",
+      "minimum_frames": 160,
+      "preferred_frames": 200,
+      "actual_raw_path": null,
+      "actual_frames": null,
+      "capture_timestamp": null,
+      "capture_metadata": {
+        "fps": null,
+        "exposure_us": null,
+        "sensor_gain": null,
+        "isp_gain": null,
+        "wb_r": null,
+        "wb_g": null,
+        "wb_b": null,
+        "nr_disabled": null,
+        "auto_exposure": null,
+        "auto_gain": null,
+        "auto_white_balance": null,
+        "tripod_fixed": null,
+        "sharpening_disabled": null,
+        "tone_mapping_disabled": null,
+        "wdr_disabled": null,
+        "illumination_description": null,
+        "focus_setting": null,
+        "aperture_setting": null
+      },
+      "evidence": {
+        "raw_export_log_path": null,
+        "pipeline_bypass_record_path": null,
+        "capture_settings_record_path": null,
+        "raw_sha256": null
+      },
+      "manual_review": {
+        "status": "pending",
+        "reviewer": null,
+        "fixed_isp_preview_path": null,
+        "checks": {
+          "motion_edges_not_dominated_by_exposure_blur": null,
+          "fine_texture_visible": null,
+          "no_visible_temporal_nr_trails": null,
+          "no_visible_spatial_nr_texture_loss": null,
+          "cfa_black_level_bit_alignment_confirmed": null,
+          "physical_scene_split_confirmed": null
+        }
+      }
+    },
+    {
+      "planned_clip_id": "validation_s06_fast_slow_gesture",
+      "planned_scene_id": "s06",
+      "split": "validation",
+      "motion_type": "fast_slow_gesture",
+      "planned_relative_path": "validation/s06/fast_slow_gesture.raw",
+      "status": "not_acquired",
+      "minimum_frames": 160,
+      "preferred_frames": 200,
+      "actual_raw_path": null,
+      "actual_frames": null,
+      "capture_timestamp": null,
+      "capture_metadata": {
+        "fps": null,
+        "exposure_us": null,
+        "sensor_gain": null,
+        "isp_gain": null,
+        "wb_r": null,
+        "wb_g": null,
+        "wb_b": null,
+        "nr_disabled": null,
+        "auto_exposure": null,
+        "auto_gain": null,
+        "auto_white_balance": null,
+        "tripod_fixed": null,
+        "sharpening_disabled": null,
+        "tone_mapping_disabled": null,
+        "wdr_disabled": null,
+        "illumination_description": null,
+        "focus_setting": null,
+        "aperture_setting": null
+      },
+      "evidence": {
+        "raw_export_log_path": null,
+        "pipeline_bypass_record_path": null,
+        "capture_settings_record_path": null,
+        "raw_sha256": null
+      },
+      "manual_review": {
+        "status": "pending",
+        "reviewer": null,
+        "fixed_isp_preview_path": null,
+        "checks": {
+          "motion_edges_not_dominated_by_exposure_blur": null,
+          "fine_texture_visible": null,
+          "no_visible_temporal_nr_trails": null,
+          "no_visible_spatial_nr_texture_loss": null,
+          "cfa_black_level_bit_alignment_confirmed": null,
+          "physical_scene_split_confirmed": null
+        }
+      }
+    },
+    {
+      "planned_clip_id": "validation_s06_occlusion_reentry",
+      "planned_scene_id": "s06",
+      "split": "validation",
+      "motion_type": "occlusion_reentry",
+      "planned_relative_path": "validation/s06/occlusion_reentry.raw",
+      "status": "not_acquired",
+      "minimum_frames": 160,
+      "preferred_frames": 200,
+      "actual_raw_path": null,
+      "actual_frames": null,
+      "capture_timestamp": null,
+      "capture_metadata": {
+        "fps": null,
+        "exposure_us": null,
+        "sensor_gain": null,
+        "isp_gain": null,
+        "wb_r": null,
+        "wb_g": null,
+        "wb_b": null,
+        "nr_disabled": null,
+        "auto_exposure": null,
+        "auto_gain": null,
+        "auto_white_balance": null,
+        "tripod_fixed": null,
+        "sharpening_disabled": null,
+        "tone_mapping_disabled": null,
+        "wdr_disabled": null,
+        "illumination_description": null,
+        "focus_setting": null,
+        "aperture_setting": null
+      },
+      "evidence": {
+        "raw_export_log_path": null,
+        "pipeline_bypass_record_path": null,
+        "capture_settings_record_path": null,
+        "raw_sha256": null
+      },
+      "manual_review": {
+        "status": "pending",
+        "reviewer": null,
+        "fixed_isp_preview_path": null,
+        "checks": {
+          "motion_edges_not_dominated_by_exposure_blur": null,
+          "fine_texture_visible": null,
+          "no_visible_temporal_nr_trails": null,
+          "no_visible_spatial_nr_texture_loss": null,
+          "cfa_black_level_bit_alignment_confirmed": null,
+          "physical_scene_split_confirmed": null
+        }
+      }
+    },
+    {
+      "planned_clip_id": "validation_s06_fine_texture_motion",
+      "planned_scene_id": "s06",
+      "split": "validation",
+      "motion_type": "fine_texture_motion",
+      "planned_relative_path": "validation/s06/fine_texture_motion.raw",
+      "status": "not_acquired",
+      "minimum_frames": 160,
+      "preferred_frames": 200,
+      "actual_raw_path": null,
+      "actual_frames": null,
+      "capture_timestamp": null,
+      "capture_metadata": {
+        "fps": null,
+        "exposure_us": null,
+        "sensor_gain": null,
+        "isp_gain": null,
+        "wb_r": null,
+        "wb_g": null,
+        "wb_b": null,
+        "nr_disabled": null,
+        "auto_exposure": null,
+        "auto_gain": null,
+        "auto_white_balance": null,
+        "tripod_fixed": null,
+        "sharpening_disabled": null,
+        "tone_mapping_disabled": null,
+        "wdr_disabled": null,
+        "illumination_description": null,
+        "focus_setting": null,
+        "aperture_setting": null
+      },
+      "evidence": {
+        "raw_export_log_path": null,
+        "pipeline_bypass_record_path": null,
+        "capture_settings_record_path": null,
+        "raw_sha256": null
+      },
+      "manual_review": {
+        "status": "pending",
+        "reviewer": null,
+        "fixed_isp_preview_path": null,
+        "checks": {
+          "motion_edges_not_dominated_by_exposure_blur": null,
+          "fine_texture_visible": null,
+          "no_visible_temporal_nr_trails": null,
+          "no_visible_spatial_nr_texture_loss": null,
+          "cfa_black_level_bit_alignment_confirmed": null,
+          "physical_scene_split_confirmed": null
+        }
+      }
+    }
+  ],
+  "target_semantics": {
+    "candidate_target": "The original low-noise dynamic frame, only after signal checks and manual provenance/clarity review.",
+    "candidate_input": "The exact same frame plus independently sampled A2 calibrated noise; sensor, gain and signal units must match the calibration.",
+    "residual_risk": "Low gain does not prove clean truth. Residual noise, fixed-pattern bias, prior NR and exposure blur can remain in the target.",
+    "prohibited_target_substitutions": [
+      "temporal mean of moving content",
+      "teacher prediction relabeled as clean truth",
+      "ISP-denoised stream relabeled as native clean RAW"
+    ],
+    "validation_scope": "New physical scenes are reserved before training. Previously inspected development streams remain development diagnostics, not new independent validation."
+  },
+  "next_action": "Acquire and record actual values, retain source/control evidence, then create a separate A7 capture manifest from verified records. Do not change only the schema string or fill unknowns with example values."
+}

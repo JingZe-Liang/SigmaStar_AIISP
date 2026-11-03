@@ -1,0 +1,57 @@
+{
+  "protocol": "A3 step-5000 all-company-dataset traditional-ISP visual preview",
+  "date": "2026-10-17",
+  "dataset_root": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset",
+  "checkpoint": "artifacts/finetune_mis20s1/training/checkpoint_step_005000.pth",
+  "checkpoint_sha256": "97c4332f685f98959b243e4b100434469f714aed6329e100d22b6d8552592e0b",
+  "output_dir": "artifacts/a3_all_dataset_traditional_isp_preview_20261017",
+  "catalog": {
+    "a0_manifest_dir": "artifacts/finetune_mis20s1/supervision/stream_manifests",
+    "cross_sensor_configs": [
+      "configs/a3_cross_sensor_zero_shot_20261012.json",
+      "configs/a3_cross_sensor_extension_20261012.json"
+    ],
+    "a8_sensor_config": "configs/a8_sensor_training_data_20261013.json",
+    "expected_unique_sequences": 45
+  },
+  "sampling": {
+    "temporal_frames": 8,
+    "clips_per_sequence": 3,
+    "positions": "evenly spaced first/middle/last contiguous clips"
+  },
+  "inference": {
+    "weights": "ema",
+    "spatial_tile": 64,
+    "spatial_stride": 56,
+    "tile_batch": 12,
+    "preferred_device": "cuda:0",
+    "stop_on_cuda_oom": true
+  },
+  "isp": {
+    "implementation": "ISP_traditional OpenCV edge-aware Bayer demosaic plus fixed exposure and sRGB gamma",
+    "camera_color_mode": "uncalibrated_camera_rgb",
+    "sensor_color_matrix_available": false,
+    "false_color_suppression": false,
+    "highlight_recovery": true,
+    "tone_map": "reinhard",
+    "exposure_selection": "per-sequence input-only 99.5th percentile targets 0.8 after Reinhard, then freezes EV for Input and A3",
+    "exposure_target_after_tone_map_linear": 0.8,
+    "exposure_ev_limits": [-6.0, 8.0],
+    "output_layout": "Input left, A3 EMA right; overview above, fixed center crop below"
+  },
+  "video": {
+    "fps": 6,
+    "width": 1920,
+    "height": 1080,
+    "preferred_encoder": "libx264",
+    "pixel_format": "yuv444p",
+    "crf": 16
+  },
+  "constraints": {
+    "dataset_read_only": true,
+    "no_training": true,
+    "no_checkpoint_replacement": true,
+    "include_group03_2dnr_3dnr": false,
+    "calibration_streams_are_diagnostic_only": true
+  }
+}

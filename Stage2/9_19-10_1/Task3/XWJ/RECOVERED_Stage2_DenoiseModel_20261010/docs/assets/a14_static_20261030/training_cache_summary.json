@@ -1,0 +1,115 @@
+{
+  "schema": "a14_static_training_v1",
+  "status": "prepared",
+  "config_sha256": "37ed31d5ef252a46c8770d9c73fabe4c8ec3cd55e498b91cdef951791875ae60",
+  "plan_sha256": "8f961f7fc56ff7963981f86005aacfd61b7b144aa1c51febd4e26b6284ee4637",
+  "source_inventory_sha256": "2b660aa493be9e1b9c6b348afa0a3f2f87a7695c7cb9bf0ff5c4e043fd4c31cb",
+  "source_summary": [
+    {
+      "source": "mis20s1_static_replay",
+      "samples": 300,
+      "kind_counts": {
+        "real": 150,
+        "synthetic": 150
+      },
+      "input_parity_counts": {},
+      "valid_fraction_min": 0.254150390625,
+      "valid_fraction_mean": 0.872998046875
+    },
+    {
+      "source": "sc465sl_static_split_half",
+      "samples": 300,
+      "kind_counts": {
+        "static_split_half": 300
+      },
+      "input_parity_counts": {
+        "0": 150,
+        "1": 150
+      },
+      "valid_fraction_min": 0.250244140625,
+      "valid_fraction_mean": 0.8373575846354167
+    },
+    {
+      "source": "sc635hai_static_split_half",
+      "samples": 300,
+      "kind_counts": {
+        "static_split_half": 300
+      },
+      "input_parity_counts": {
+        "0": 150,
+        "1": 150
+      },
+      "valid_fraction_min": 0.25634765625,
+      "valid_fraction_mean": 0.8266536458333333
+    }
+  ],
+  "mis_gain_coverage": {
+    "real": {
+      "expected_gains": [
+        "128x",
+        "313x",
+        "632x",
+        "645x"
+      ],
+      "accepted_counts": {
+        "313x": 38,
+        "645x": 37,
+        "128x": 36,
+        "632x": 39
+      },
+      "rejected_counts": {
+        "128x": 6,
+        "632x": 3,
+        "313x": 4,
+        "645x": 4
+      },
+      "missing_gains": []
+    },
+    "synthetic": {
+      "expected_gains": [
+        "100",
+        "12800",
+        "1600",
+        "200",
+        "25600",
+        "3200",
+        "400",
+        "6400",
+        "800"
+      ],
+      "accepted_counts": {
+        "100": 17,
+        "200": 18,
+        "400": 16,
+        "800": 18,
+        "1600": 17,
+        "12800": 17,
+        "3200": 16,
+        "6400": 16,
+        "25600": 15
+      },
+      "rejected_counts": {
+        "3200": 2,
+        "6400": 2,
+        "25600": 2,
+        "100": 1,
+        "1600": 1,
+        "400": 2
+      },
+      "missing_gains": []
+    }
+  },
+  "trainable_parameters": 7505716,
+  "elapsed_seconds": 77.54806567588821,
+  "limitations": [
+    "Static reference supervision only; no claim of dynamic or unseen-scene generalization.",
+    "Split halves use disjoint frames; noise independence is unverified and fixed-pattern or temporally correlated residuals can remain.",
+    "MIS real cross-gain registration/exposure fits and references retain A3 limitations.",
+    "The original highpass loss can include invalid neighbors at mask boundaries.",
+    "BF16 autocast training is evaluated separately with FP32 inference."
+  ],
+  "total_samples": 900,
+  "rejected_candidates": 27,
+  "audit_path": "artifacts/a14_static_20261030/prepared_training/audit.json",
+  "audit_sha256": "d333aa8b49e170d64dd87afd1f6dacb81c462e162da47aea7cecbba82d21bf97"
+}

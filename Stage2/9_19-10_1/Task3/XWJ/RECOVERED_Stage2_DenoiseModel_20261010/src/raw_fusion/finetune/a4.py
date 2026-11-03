@@ -36,8 +36,12 @@ def _starts(length: int, tile: int, stride: int) -> list[int]:
 def infer_video(model: torch.nn.Module, video: np.ndarray, device: torch.device, tile_batch: int = 4) -> np.ndarray:
     """Run overlapping 8-frame/64-pixel windows and blend their outputs."""
 
-    if video.ndim != 4 or video.shape[1:] != (4, _PACKED_HEIGHT, _PACKED_WIDTH):
-        raise ValueError(f"expected [T,4,540,960], got {video.shape}")
+    if video.ndim != 4 or video.shape[1] != 4:
+        raise ValueError(f"expected [T,4,H,W], got {video.shape}")
+    if video.shape[0] <= 0 or video.shape[2] < 64 or video.shape[3] < 64:
+        raise ValueError(f"expected T > 0 and packed H/W >= 64, got {video.shape}")
+    if tile_batch <= 0:
+        raise ValueError(f"tile_batch must be positive, got {tile_batch}")
     temporal = 8
     out = np.zeros_like(video, dtype=np.float32)
     weights = np.zeros((video.shape[0], 1, video.shape[2], video.shape[3]), dtype=np.float32)

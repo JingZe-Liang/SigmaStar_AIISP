@@ -1,0 +1,202 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand*\HyPL@Entry[1]{}
+\HyPL@Entry{0<</S/D>>}
+\citation{r1}
+\citation{r2}
+\citation{r3}
+\citation{r10}
+\citation{r9}
+\citation{r17}
+\citation{r15}
+\citation{r16}
+\citation{r14}
+\citation{r20}
+\citation{r18}
+\citation{r19}
+\citation{r4}
+\citation{r5}
+\citation{r6}
+\@writefile{toc}{\contentsline {section}{\numberline {1}引言}{3}{section.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}项目起点与研究目标}{3}{subsection.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}研究过程与报告主线}{3}{subsection.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}相关工作与数据基础}{3}{section.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}技术背景}{3}{subsection.2.1}\protected@file@percent }
+\citation{r7}
+\citation{r8}
+\citation{r11}
+\citation{r12}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}公司数据集与实验分工}{4}{subsection.2.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces 主要数据集、内容与实验用途。}}{4}{table.1}\protected@file@percent }
+\newlabel{tab:dataset}{{1}{4}{主要数据集、内容与实验用途。}{table.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}RAW 适配与参考资格}{4}{subsection.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}评测口径}{5}{subsection.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}ExposureDiffusion与多帧补偿的探索}{5}{section.3}\protected@file@percent }
+\newlabel{sec:djc}{{3}{5}{ExposureDiffusion与多帧补偿的探索}{section.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}起点：先让噪声模型与公司RAW对应起来}{5}{subsection.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}单帧适配：误差下降后，细节问题仍然存在}{6}{subsection.3.2}\protected@file@percent }
+\newlabel{eq:djc_mix}{{1}{6}{单帧适配：误差下降后，细节问题仍然存在}{equation.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}从五帧残差到特征与频域补偿}{7}{subsection.3.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces 不同补偿位置的实际试验。前三项共用混合代理误差基线$3.254105\times 10^{-4}$；多尺度首步另用独立评测设置。}}{7}{table.2}\protected@file@percent }
+\newlabel{tab:djc_pilots}{{2}{7}{不同补偿位置的实际试验。前三项共用混合代理误差基线$3.254105\times 10^{-4}$；多尺度首步另用独立评测设置。}{table.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}进一步检查监督与主干冻结的影响}{7}{subsection.3.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces 静态监督与主干更新实验。各行按自身起点比较，指标是组合目标，不是干净真值PSNR。}}{8}{table.3}\protected@file@percent }
+\newlabel{tab:djc_unfreeze}{{3}{8}{静态监督与主干更新实验。各行按自身起点比较，指标是组合目标，不是干净真值PSNR。}{table.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}回到清晰的输出残差：五帧候选的完整验证}{8}{subsection.3.5}\protected@file@percent }
+\newlabel{eq:djc_v3}{{2}{8}{回到清晰的输出残差：五帧候选的完整验证}{equation.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces 单帧适配与五帧输出补偿的固定验证曲线。左图使用单帧阶段的40裁块；右图使用五帧阶段的20裁块及等域汇总。两图各自比较训练前后的代理误差，不能直接比较绝对值或累加下降比例。五帧候选在第2300步最佳，继续训练至5000步后反而高于冻结基线。}}{9}{figure.1}\protected@file@percent }
+\newlabel{fig:djc_training}{{1}{9}{单帧适配与五帧输出补偿的固定验证曲线。左图使用单帧阶段的40裁块；右图使用五帧阶段的20裁块及等域汇总。两图各自比较训练前后的代理误差，不能直接比较绝对值或累加下降比例。五帧候选在第2300步最佳，继续训练至5000步后反而高于冻结基线。}{figure.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces 五帧候选的分域固定验证。正值表示代理误差相对冻结单帧基准下降。所有域均在开发训练中出现，属于同域时间留出；465型号未确认的10条流独立统计。改善随数据域和训练阶段改变，没有形成各域一致的优势。}}{9}{figure.2}\protected@file@percent }
+\newlabel{fig:djc_domains}{{2}{9}{五帧候选的分域固定验证。正值表示代理误差相对冻结单帧基准下降。所有域均在开发训练中出现，属于同域时间留出；465型号未确认的10条流独立统计。改善随数据域和训练阶段改变，没有形成各域一致的优势。}{figure.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6}从实际画面决定是否采用}{10}{subsection.3.6}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces MIS20S1暗房1000x序列第99帧：全图与同位置局部。该序列未参加本路线训练及选权重。四列依次为输入、官方CRVD权重的八帧 RViDeformer、公司单帧基准、五帧输出补偿第2300步。后两列总体接近，棋盘格和玩偶衣物条纹在官方 RViDeformer 输出中更易辨认。此处的 RViDeformer 是冻结官方参照，并非后文方法3微调权重。}}{10}{figure.3}\protected@file@percent }
+\newlabel{fig:djc_1000}{{3}{10}{MIS20S1暗房1000x序列第99帧：全图与同位置局部。该序列未参加本路线训练及选权重。四列依次为输入、官方CRVD权重的八帧 RViDeformer、公司单帧基准、五帧输出补偿第2300步。后两列总体接近，棋盘格和玩偶衣物条纹在官方 RViDeformer 输出中更易辨认。此处的 RViDeformer 是冻结官方参照，并非后文方法3微调权重。}{figure.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces MIS20S1暗房10x序列第8帧，列顺序同图\ref {fig:djc_1000}。该流亦为本路线留出。低噪输入原本含有较清楚的结构，模型间差异小于1000x样本，五帧补偿仍未呈现普遍、清晰的细节增益。该流在后文方法3中用于构建参考，数据身份随路线分别记录。}}{10}{figure.4}\protected@file@percent }
+\newlabel{fig:djc_10}{{4}{10}{MIS20S1暗房10x序列第8帧，列顺序同图\ref {fig:djc_1000}。该流亦为本路线留出。低噪输入原本含有较清楚的结构，模型间差异小于1000x样本，五帧补偿仍未呈现普遍、清晰的细节增益。该流在后文方法3中用于构建参考，数据身份随路线分别记录。}{figure.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces 开发域的时间留出画面：上为SC450AI灯光变化804x序列第132帧，下为SC635HAI低色温131x序列第132帧。四列仍为输入、官方 RViDeformer、单帧基准和五帧第2300步候选。两流的前段参与训练，图示尾段属于验证，不能称为新传感器零样本结果。}}{11}{figure.5}\protected@file@percent }
+\newlabel{fig:djc_sensors}{{5}{11}{开发域的时间留出画面：上为SC450AI灯光变化804x序列第132帧，下为SC635HAI低色温131x序列第132帧。四列仍为输入、官方 RViDeformer、单帧基准和五帧第2300步候选。两流的前段参与训练，图示尾段属于验证，不能称为新传感器零样本结果。}{figure.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.7}未采纳的原因与RViDeformer路线的衔接}{11}{subsection.3.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}RViDeformer微调与后续方案选择}{12}{section.4}\protected@file@percent }
+\newlabel{sec:exploration}{{4}{12}{RViDeformer微调与后续方案选择}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}方法0至方法4：形成静态基线}{12}{subsection.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}方法5至方法7：运动保真探索}{12}{subsection.4.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces 运动保真路线的简要比较。}}{12}{table.4}\protected@file@percent }
+\newlabel{tab:motion_trials}{{4}{12}{运动保真路线的简要比较。}{table.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}方法8至方法10：跨传感器适配与退化验证}{12}{subsection.4.3}\protected@file@percent }
+\citation{r2}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}方法11：高增益推理门控}{13}{subsection.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}最终方案的确定}{13}{subsection.4.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}最终采纳的方法}{13}{section.5}\protected@file@percent }
+\newlabel{sec:adopted}{{5}{13}{最终采纳的方法}{section.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}整体流程}{13}{subsection.5.1}\protected@file@percent }
+\citation{r2}
+\citation{r2}
+\citation{r2}
+\citation{r2}
+\citation{r2}
+\citation{r2}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces 最终方法3的完整流程。训练数据进入统一参考域；输出在对应协议的参考 DN 域评测，再使用该协议的固定 ISP 展示。}}{14}{figure.6}\protected@file@percent }
+\newlabel{fig:adopted_pipeline}{{6}{14}{最终方法3的完整流程。训练数据进入统一参考域；输出在对应协议的参考 DN 域评测，再使用该协议的固定 ISP 展示。}{figure.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}网络架构与数据流}{14}{subsection.5.2}\protected@file@percent }
+\newlabel{sec:network_flow}{{5.2}{14}{网络架构与数据流}{subsection.5.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces RViDeformer整体架构\cite  {r2}。左侧为U形时空重建，右侧为全分辨率特征细化，长跳接用于残差重建。入口Conv2d在本项目中对应时间核为1的$1\times 3\times 3$卷积，逐帧提取空间特征。}}{14}{figure.7}\protected@file@percent }
+\newlabel{fig:rvideformer_overview}{{7}{14}{RViDeformer整体架构\cite {r2}。左侧为U形时空重建，右侧为全分辨率特征细化，长跳接用于残差重建。入口Conv2d在本项目中对应时间核为1的$1\times 3\times 3$卷积，逐帧提取空间特征。}{figure.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces 多分支空间自注意力MSSA\cite  {r2}。不同分支从不同空间范围提取信息；图中C表示拼接，圆圈加号表示逐元素相加。}}{15}{figure.8}\protected@file@percent }
+\newlabel{fig:rvideformer_mssa}{{8}{15}{多分支空间自注意力MSSA\cite {r2}。不同分支从不同空间范围提取信息；图中C表示拼接，圆圈加号表示逐元素相加。}{figure.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces 多分支时域互注意力MTSA\cite  {r2}。参考帧生成查询，支持帧提供键和值，融合局部与较大范围的跨帧信息。}}{15}{figure.9}\protected@file@percent }
+\newlabel{fig:rvideformer_mtsa}{{9}{15}{多分支时域互注意力MTSA\cite {r2}。参考帧生成查询，支持帧提供键和值，融合局部与较大范围的跨帧信息。}{figure.9}{}}
+\citation{r13}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}真实样本与静态监督构建}{16}{subsection.5.3}\protected@file@percent }
+\newlabel{eq:normalization}{{3}{16}{真实样本与静态监督构建}{equation.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}实测噪声合成与混合采样}{16}{subsection.5.4}\protected@file@percent }
+\newlabel{eq:synthetic}{{6}{16}{实测噪声合成与混合采样}{equation.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5}优化目标}{16}{subsection.5.5}\protected@file@percent }
+\newlabel{eq:loss}{{8}{17}{优化目标}{equation.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.6}训练、权重选定与完整画面推理}{17}{subsection.5.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.7}sc635hai 专用可选输出头}{17}{subsection.5.7}\protected@file@percent }
+\newlabel{sec:head}{{5.7}{17}{sc635hai 专用可选输出头}{subsection.5.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}多数据集泛化效果展示}{17}{section.6}\protected@file@percent }
+\newlabel{sec:results}{{6}{17}{多数据集泛化效果展示}{section.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}展示范围与分组}{17}{subsection.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}MIS20S1：训练覆盖增益与未见真实增益}{18}{subsection.6.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces MIS20S1静态结果。645x在训练覆盖内，使用10x跨增益参考；1000x真实序列未参与训练，使用原生静态参考。}}{18}{table.5}\protected@file@percent }
+\newlabel{tab:mis20s1}{{5}{18}{MIS20S1静态结果。645x在训练覆盖内，使用10x跨增益参考；1000x真实序列未参与训练，使用原生静态参考。}{table.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces MIS20S1暗房645x固定 ISP 对比，上为全景，下为固定中心裁剪。该图展示最终方法3在训练覆盖域的恢复效果；静态定量只统计有效区域。}}{18}{figure.10}\protected@file@percent }
+\newlabel{fig:mis645}{{10}{18}{MIS20S1暗房645x固定 ISP 对比，上为全景，下为固定中心裁剪。该图展示最终方法3在训练覆盖域的恢复效果；静态定量只统计有效区域。}{figure.10}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces MIS20S1 1000x输入、方法3与原生参考。该序列不参与主方法训练；展示保持相同亮度映射，定量按表\ref {tab:mis20s1}所列协议计算。}}{19}{figure.11}\protected@file@percent }
+\newlabel{fig:mis1000}{{11}{19}{MIS20S1 1000x输入、方法3与原生参考。该序列不参与主方法训练；展示保持相同亮度映射，定量按表\ref {tab:mis20s1}所列协议计算。}{figure.11}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}SC465SL与sc635hai：跨传感器零样本静态泛化}{19}{subsection.6.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces 不同数据集上的零样本静态泛化。偶/奇表示输入帧池，参考使用相反奇偶池；HF为输出/参考高频 RMS，MAD为时序平均绝对差。}}{19}{table.6}\protected@file@percent }
+\newlabel{tab:zero_shot}{{6}{19}{不同数据集上的零样本静态泛化。偶/奇表示输入帧池，参考使用相反奇偶池；HF为输出/参考高频 RMS，MAD为时序平均绝对差。}{table.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces 方法3在三组未参与训练的目标域静态数据上的泛化：左为相对输入的 PSNR 提升，右为高频保持率。数据来自表\ref {tab:zero_shot}，参考均采用互斥奇偶帧池。}}{19}{figure.12}\protected@file@percent }
+\newlabel{fig:zero_shot_plot}{{12}{19}{方法3在三组未参与训练的目标域静态数据上的泛化：左为相对输入的 PSNR 提升，右为高频保持率。数据来自表\ref {tab:zero_shot}，参考均采用互斥奇偶帧池。}{figure.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces SC465SL暗室256x的零样本结果，上为全景，下为中心裁剪。模型未在SC465SL训练；固定 ISP 下可观察到明显降噪及背景结构保留。}}{20}{figure.13}\protected@file@percent }
+\newlabel{fig:sc465_256}{{13}{20}{SC465SL暗室256x的零样本结果，上为全景，下为中心裁剪。模型未在SC465SL训练；固定 ISP 下可观察到明显降噪及背景结构保留。}{figure.13}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces SC465SL暗室2000x的零样本结果，使用与256x相同的方法3权重和推理流程。静态PSNR提升约10.52--10.61\ensuremath {\,\mathrm  {dB}}，高频比约0.911--0.912。}}{20}{figure.14}\protected@file@percent }
+\newlabel{fig:sc465_2000}{{14}{20}{SC465SL暗室2000x的零样本结果，使用与256x相同的方法3权重和推理流程。静态PSNR提升约10.52--10.61\db ，高频比约0.911--0.912。}{figure.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces sc635hai 131x低色温数据集的零样本静态对比，选自偶输入方向的第8帧。参考为对侧奇数帧池的静态均值，动态像素不计入静态指标。}}{21}{figure.15}\protected@file@percent }
+\newlabel{fig:sc635_static}{{15}{21}{sc635hai 131x低色温数据集的零样本静态对比，选自偶输入方向的第8帧。参考为对侧奇数帧池的静态均值，动态像素不计入静态指标。}{figure.15}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.4}sc635hai专用输出头：适配域与动态保留集}{21}{subsection.6.4}\protected@file@percent }
+\newlabel{sec:head_results}{{6.4}{21}{sc635hai专用输出头：适配域与动态保留集}{subsection.6.4}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces sc635hai专用头效果。131x为训练数据尾段复评，16x为完整保留的动态序列；本表与零样本表采用不同评测样本，基线数值不混用。}}{21}{table.7}\protected@file@percent }
+\newlabel{tab:head_results}{{7}{21}{sc635hai专用头效果。131x为训练数据尾段复评，16x为完整保留的动态序列；本表与零样本表采用不同评测样本，基线数值不混用。}{table.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.5}室外、高增益和sc450ai数据集的实际输出}{21}{subsection.6.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces sc635hai 16x动态保留集：输入、方法3和方法8专用输出头。上为全景，下为同位置局部，两种输出在结构与纹理上接近。}}{22}{figure.16}\protected@file@percent }
+\newlabel{fig:sc635_head}{{16}{22}{sc635hai 16x动态保留集：输入、方法3和方法8专用输出头。上为全景，下为同位置局部，两种输出在结构与纹理上接近。}{figure.16}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces MIS20S1室外1500x跨场景输出。上为全景，下为中心裁剪；同一默认方法3显著降噪，同时可见人物与背景细节的平滑现象。}}{22}{figure.17}\protected@file@percent }
+\newlabel{fig:outdoor}{{17}{22}{MIS20S1室外1500x跨场景输出。上为全景，下为中心裁剪；同一默认方法3显著降噪，同时可见人物与背景细节的平滑现象。}{figure.17}{}}
+\gdef \LT@i {\LT@entry 
+    {1}{129.58014pt}\LT@entry 
+    {1}{115.66731pt}\LT@entry 
+    {1}{194.509pt}}
+\bibcite{r1}{1}
+\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces sc450ai 1435x黑物运动的零样本结果：输入与方法3。黑衣内部与运动轮廓仍偏软。}}{23}{figure.18}\protected@file@percent }
+\newlabel{fig:sc450}{{18}{23}{sc450ai 1435x黑物运动的零样本结果：输入与方法3。黑衣内部与运动轮廓仍偏软。}{figure.18}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {8}{最终方法在不同公司数据集中的展示结果。}}{23}{table.8}\protected@file@percent }
+\newlabel{tab:result_scope}{{8}{23}{最终方法在不同公司数据集中的展示结果。}{table.8}{}}
+\bibcite{r2}{2}
+\bibcite{r3}{3}
+\bibcite{r4}{4}
+\bibcite{r5}{5}
+\bibcite{r6}{6}
+\bibcite{r7}{7}
+\bibcite{r8}{8}
+\bibcite{r9}{9}
+\bibcite{r10}{10}
+\bibcite{r11}{11}
+\bibcite{r12}{12}
+\bibcite{r13}{13}
+\bibcite{r14}{14}
+\bibcite{r15}{15}
+\bibcite{r16}{16}
+\bibcite{r17}{17}
+\bibcite{r18}{18}
+\bibcite{r19}{19}
+\bibcite{r20}{20}
+\@writefile{toc}{\contentsline {section}{\numberline {A}采纳方法的超参数与模型配置}{25}{appendix.A}\protected@file@percent }
+\newlabel{app:configuration}{{A}{25}{采纳方法的超参数与模型配置}{appendix.A}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.1}权重与运行环境}{25}{subsection.A.1}\protected@file@percent }
+\gdef \LT@ii {\LT@entry 
+    {1}{134.22247pt}\LT@entry 
+    {1}{310.4539pt}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.2}方法3训练超参数}{26}{subsection.A.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {9}{最终主方法的训练与采样配置。}}{26}{table.9}\protected@file@percent }
+\newlabel{tab:training_config}{{9}{26}{最终主方法的训练与采样配置。}{table.9}{}}
+\gdef \LT@iii {\LT@entry 
+    {1}{134.22247pt}\LT@entry 
+    {1}{310.4539pt}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.3}参考、归一化与损失设置}{27}{subsection.A.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {10}{主方法监督与损失参数。}}{27}{table.10}\protected@file@percent }
+\newlabel{tab:loss_config}{{10}{27}{主方法监督与损失参数。}{table.10}{}}
+\gdef \LT@iv {\LT@entry 
+    {1}{152.77054pt}\LT@entry 
+    {1}{291.90584pt}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.4}网络构造参数}{28}{subsection.A.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {11}{RViDeformer-L在最终方法中的实际构造配置。}}{28}{table.11}\protected@file@percent }
+\newlabel{tab:model_config}{{11}{28}{RViDeformer-L在最终方法中的实际构造配置。}{table.11}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.5}噪声合成参数}{29}{subsection.A.5}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {12}{\ignorespaces 逐增益经验shot系数 $\alpha _{c,g}$，单位DN。}}{29}{table.12}\protected@file@percent }
+\newlabel{tab:shot}{{12}{29}{逐增益经验shot系数 $\alpha _{c,g}$，单位DN。}{table.12}{}}
+\gdef \LT@v {\LT@entry 
+    {1}{134.22247pt}\LT@entry 
+    {1}{310.4539pt}}
+\@writefile{lot}{\contentsline {table}{\numberline {13}{\ignorespaces 逐增益read variance $v_{c,g}$，单位DN$^2$。}}{30}{table.13}\protected@file@percent }
+\newlabel{tab:read}{{13}{30}{逐增益read variance $v_{c,g}$，单位DN$^2$。}{table.13}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.6}推理、评测与固定 ISP 参数}{30}{subsection.A.6}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {14}{最终主方法的推理与展示配置。}}{30}{table.14}\protected@file@percent }
+\newlabel{tab:inference_config}{{14}{30}{最终主方法的推理与展示配置。}{table.14}{}}
+\gdef \LT@vi {\LT@entry 
+    {1}{134.22247pt}\LT@entry 
+    {1}{310.4539pt}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.7}方法8的sc635hai专用头完整配置}{31}{subsection.A.7}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {15}{专用可选输出头的训练设置。}}{31}{table.15}\protected@file@percent }
+\newlabel{tab:head_config}{{15}{31}{专用可选输出头的训练设置。}{table.15}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.8}结果来源与复现入口}{32}{subsection.A.8}\protected@file@percent }
+\gdef \LT@vii {\LT@entry 
+    {1}{101.7545pt}\LT@entry 
+    {1}{352.19945pt}}
+\@writefile{toc}{\contentsline {section}{\numberline {B}补充探索的记录与图表来源}{33}{appendix.B}\protected@file@percent }
+\newlabel{app:djc_sources}{{B}{33}{补充探索的记录与图表来源}{appendix.B}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {16}{ExposureDiffusion路线的主要证据入口。}}{33}{table.16}\protected@file@percent }
+\newlabel{tab:djc_sources}{{16}{33}{ExposureDiffusion路线的主要证据入口。}{table.16}{}}
+\gdef \@abspage@last{33}

@@ -1,0 +1,33 @@
+{
+  "status": "completed",
+  "steps": 100,
+  "source_counts": {
+    "mis20s1_replay": 39,
+    "sc465sl_static_split_half": 19,
+    "sc635hai_static_split_half": 24,
+    "sc450ai_verified_noise": 18
+  },
+  "trainable": {
+    "scope": "input_output_heads",
+    "prefixes": [
+      "conv_first.",
+      "norm.",
+      "conv_after_body.",
+      "conv_last."
+    ],
+    "parameter_tensors": 8,
+    "parameters": 15508,
+    "names": [
+      "conv_first.weight",
+      "conv_first.bias",
+      "norm.weight",
+      "norm.bias",
+      "conv_after_body.weight",
+      "conv_after_body.bias",
+      "conv_last.weight",
+      "conv_last.bias"
+    ]
+  },
+  "checkpoint": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a9_multi_sensor_generalization/training_smoke_4090_retry2_20261016/checkpoint_step_000100.pth",
+  "log": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a9_multi_sensor_generalization/training_smoke_4090_retry2_20261016/train.jsonl"
+}

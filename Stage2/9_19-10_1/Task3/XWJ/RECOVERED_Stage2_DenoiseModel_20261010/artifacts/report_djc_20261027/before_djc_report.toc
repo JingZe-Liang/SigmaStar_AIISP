@@ -1,0 +1,36 @@
+\contentsline {section}{\numberline {1}引言}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}项目起点与研究目标}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}研究过程与报告主线}{3}{subsection.1.2}%
+\contentsline {section}{\numberline {2}相关工作与数据基础}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}技术背景}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}公司数据集与实验分工}{4}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}RAW 适配与参考资格}{4}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}评测口径}{5}{subsection.2.4}%
+\contentsline {section}{\numberline {3}试过的方法与方案选择}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}方法0至方法4：形成静态基线}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}方法5至方法7：运动保真探索}{5}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}方法8至方法10：跨传感器适配与退化验证}{6}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}方法11：高增益推理门控}{6}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}最终方案的确定}{7}{subsection.3.5}%
+\contentsline {section}{\numberline {4}最终采纳的方法}{7}{section.4}%
+\contentsline {subsection}{\numberline {4.1}整体流程}{7}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}真实样本与静态监督构建}{7}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}实测噪声合成与混合采样}{8}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}网络与优化目标}{8}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}训练、权重选定与完整画面推理}{9}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}sc635hai 专用可选输出头}{9}{subsection.4.6}%
+\contentsline {section}{\numberline {5}多数据集泛化效果展示}{9}{section.5}%
+\contentsline {subsection}{\numberline {5.1}展示范围与分组}{9}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}MIS20S1：训练覆盖增益与未见真实增益}{10}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}SC465SL与sc635hai：跨传感器零样本静态泛化}{11}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}sc635hai专用输出头：适配域与动态保留集}{13}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}室外、高增益和sc450ai数据集的实际输出}{14}{subsection.5.5}%
+\contentsline {section}{\numberline {A}采纳方法的超参数与模型配置}{19}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}权重与运行环境}{19}{subsection.A.1}%
+\contentsline {subsection}{\numberline {A.2}方法3训练超参数}{19}{subsection.A.2}%
+\contentsline {subsection}{\numberline {A.3}参考、归一化与损失设置}{20}{subsection.A.3}%
+\contentsline {subsection}{\numberline {A.4}网络构造参数}{21}{subsection.A.4}%
+\contentsline {subsection}{\numberline {A.5}噪声合成参数}{22}{subsection.A.5}%
+\contentsline {subsection}{\numberline {A.6}推理、评测与固定 ISP 参数}{23}{subsection.A.6}%
+\contentsline {subsection}{\numberline {A.7}方法8的sc635hai专用头完整配置}{25}{subsection.A.7}%
+\contentsline {subsection}{\numberline {A.8}结果来源与复现入口}{26}{subsection.A.8}%

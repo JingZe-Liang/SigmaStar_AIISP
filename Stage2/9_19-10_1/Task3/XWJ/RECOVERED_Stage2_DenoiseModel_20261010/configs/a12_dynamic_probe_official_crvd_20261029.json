@@ -1,0 +1,12 @@
+{
+  "name": "official_crvd",
+  "format": "official_serialized_module",
+  "checkpoint": "artifacts/pretrained/RViDeformer-L_CRVD.pth",
+  "checkpoint_sha256": "0870c25a4eede7fd77a8da2131c5d5d357c5e9a94e9bbc7d24651aa07d7f2e37",
+  "purpose": "Compare official CRVD initialization and A3 EMA on exactly the same frozen constructed targets, clipped model inputs and inference settings.",
+  "limitations": [
+    "The probe uses an MIS20S1 training-scene reference, artificial integer motion and MIS20S1 synthetic noise.",
+    "Differences diagnose behaviour under this construction; they do not establish real-world causal attribution or independent dynamic generalization.",
+    "This comparison performs inference only and does not modify either checkpoint."
+  ]
+}

@@ -1,0 +1,255 @@
+{
+  "protocol": "A7 recovered existing-data unified fixed-ISP review",
+  "holdout_range": [
+    160,
+    200
+  ],
+  "frames": [
+    167,
+    168,
+    169,
+    170,
+    171,
+    172,
+    173
+  ],
+  "full_frames": [
+    168,
+    170,
+    172
+  ],
+  "crop_xyxy": [
+    520,
+    150,
+    1150,
+    850
+  ],
+  "settings": [
+    {
+      "name": "preview",
+      "alpha": 0.3,
+      "residual_clip_dn": 64.0
+    },
+    {
+      "name": "strongest",
+      "alpha": 0.4,
+      "residual_clip_dn": 96.0
+    }
+  ],
+  "sources": {
+    "baseline_prediction": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/evaluation/prediction_645x.npy",
+    "teacher_prediction": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/evaluation/old_teacher_645x.npy",
+    "reference_report": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/references/a1_reference_report.json",
+    "weights": {
+      "r3": {
+        "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/evaluation/a7_motion_fusion/fusion_weights_645x_holdout.npy",
+        "sha256": "0a9a41db6afa3687aaf75e1d12e83d3748135a8729b7c9ffffeea3c8da0f3462"
+      },
+      "r7": {
+        "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/evaluation/a7_motion_fusion_r7/fusion_weights_645x_holdout.npy",
+        "sha256": "d67685094cf4634f62c64ed0ddcd1512d21c9ed187ccf76f3b58d0a1f4ab626f"
+      },
+      "r11": {
+        "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/evaluation/a7_motion_fusion_r11/fusion_weights_645x_holdout.npy",
+        "sha256": "7ca6f1ddd42ca0d5d1203e06a4ac07256f843aadd942cb45c271b73117d4310b"
+      }
+    }
+  },
+  "outputs": [
+    {
+      "frame": 167,
+      "kind": "weights",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/evaluation/a7_motion_fusion_final_review_20261011/frame_0167_weights.png"
+    },
+    {
+      "frame": 167,
+      "kind": "person_crop",
+      "setting": "preview",
+      "alpha": 0.3,
+      "residual_clip_dn": 64.0,
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/evaluation/a7_motion_fusion_final_review_20261011/frame_0167_preview_person_crop.png"
+    },
+    {
+      "frame": 167,
+      "kind": "person_crop",
+      "setting": "strongest",
+      "alpha": 0.4,
+      "residual_clip_dn": 96.0,
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/evaluation/a7_motion_fusion_final_review_20261011/frame_0167_strongest_person_crop.png"
+    },
+    {
+      "frame": 168,
+      "kind": "weights",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/evaluation/a7_motion_fusion_final_review_20261011/frame_0168_weights.png"
+    },
+    {
+      "frame": 168,
+      "kind": "full",
+      "setting": "preview",
+      "alpha": 0.3,
+      "residual_clip_dn": 64.0,
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/evaluation/a7_motion_fusion_final_review_20261011/frame_0168_preview_full.png"
+    },
+    {
+      "frame": 168,
+      "kind": "person_crop",
+      "setting": "preview",
+      "alpha": 0.3,
+      "residual_clip_dn": 64.0,
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/evaluation/a7_motion_fusion_final_review_20261011/frame_0168_preview_person_crop.png"
+    },
+    {
+      "frame": 168,
+      "kind": "full",
+      "setting": "strongest",
+      "alpha": 0.4,
+      "residual_clip_dn": 96.0,
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/evaluation/a7_motion_fusion_final_review_20261011/frame_0168_strongest_full.png"
+    },
+    {
+      "frame": 168,
+      "kind": "person_crop",
+      "setting": "strongest",
+      "alpha": 0.4,
+      "residual_clip_dn": 96.0,
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/evaluation/a7_motion_fusion_final_review_20261011/frame_0168_strongest_person_crop.png"
+    },
+    {
+      "frame": 169,
+      "kind": "weights",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/evaluation/a7_motion_fusion_final_review_20261011/frame_0169_weights.png"
+    },
+    {
+      "frame": 169,
+      "kind": "person_crop",
+      "setting": "preview",
+      "alpha": 0.3,
+      "residual_clip_dn": 64.0,
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/evaluation/a7_motion_fusion_final_review_20261011/frame_0169_preview_person_crop.png"
+    },
+    {
+      "frame": 169,
+      "kind": "person_crop",
+      "setting": "strongest",
+      "alpha": 0.4,
+      "residual_clip_dn": 96.0,
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/evaluation/a7_motion_fusion_final_review_20261011/frame_0169_strongest_person_crop.png"
+    },
+    {
+      "frame": 170,
+      "kind": "weights",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/evaluation/a7_motion_fusion_final_review_20261011/frame_0170_weights.png"
+    },
+    {
+      "frame": 170,
+      "kind": "full",
+      "setting": "preview",
+      "alpha": 0.3,
+      "residual_clip_dn": 64.0,
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/evaluation/a7_motion_fusion_final_review_20261011/frame_0170_preview_full.png"
+    },
+    {
+      "frame": 170,
+      "kind": "person_crop",
+      "setting": "preview",
+      "alpha": 0.3,
+      "residual_clip_dn": 64.0,
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/evaluation/a7_motion_fusion_final_review_20261011/frame_0170_preview_person_crop.png"
+    },
+    {
+      "frame": 170,
+      "kind": "full",
+      "setting": "strongest",
+      "alpha": 0.4,
+      "residual_clip_dn": 96.0,
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/evaluation/a7_motion_fusion_final_review_20261011/frame_0170_strongest_full.png"
+    },
+    {
+      "frame": 170,
+      "kind": "person_crop",
+      "setting": "strongest",
+      "alpha": 0.4,
+      "residual_clip_dn": 96.0,
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/evaluation/a7_motion_fusion_final_review_20261011/frame_0170_strongest_person_crop.png"
+    },
+    {
+      "frame": 171,
+      "kind": "weights",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/evaluation/a7_motion_fusion_final_review_20261011/frame_0171_weights.png"
+    },
+    {
+      "frame": 171,
+      "kind": "person_crop",
+      "setting": "preview",
+      "alpha": 0.3,
+      "residual_clip_dn": 64.0,
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/evaluation/a7_motion_fusion_final_review_20261011/frame_0171_preview_person_crop.png"
+    },
+    {
+      "frame": 171,
+      "kind": "person_crop",
+      "setting": "strongest",
+      "alpha": 0.4,
+      "residual_clip_dn": 96.0,
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/evaluation/a7_motion_fusion_final_review_20261011/frame_0171_strongest_person_crop.png"
+    },
+    {
+      "frame": 172,
+      "kind": "weights",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/evaluation/a7_motion_fusion_final_review_20261011/frame_0172_weights.png"
+    },
+    {
+      "frame": 172,
+      "kind": "full",
+      "setting": "preview",
+      "alpha": 0.3,
+      "residual_clip_dn": 64.0,
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/evaluation/a7_motion_fusion_final_review_20261011/frame_0172_preview_full.png"
+    },
+    {
+      "frame": 172,
+      "kind": "person_crop",
+      "setting": "preview",
+      "alpha": 0.3,
+      "residual_clip_dn": 64.0,
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/evaluation/a7_motion_fusion_final_review_20261011/frame_0172_preview_person_crop.png"
+    },
+    {
+      "frame": 172,
+      "kind": "full",
+      "setting": "strongest",
+      "alpha": 0.4,
+      "residual_clip_dn": 96.0,
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/evaluation/a7_motion_fusion_final_review_20261011/frame_0172_strongest_full.png"
+    },
+    {
+      "frame": 172,
+      "kind": "person_crop",
+      "setting": "strongest",
+      "alpha": 0.4,
+      "residual_clip_dn": 96.0,
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/evaluation/a7_motion_fusion_final_review_20261011/frame_0172_strongest_person_crop.png"
+    },
+    {
+      "frame": 173,
+      "kind": "weights",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/evaluation/a7_motion_fusion_final_review_20261011/frame_0173_weights.png"
+    },
+    {
+      "frame": 173,
+      "kind": "person_crop",
+      "setting": "preview",
+      "alpha": 0.3,
+      "residual_clip_dn": 64.0,
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/evaluation/a7_motion_fusion_final_review_20261011/frame_0173_preview_person_crop.png"
+    },
+    {
+      "frame": 173,
+      "kind": "person_crop",
+      "setting": "strongest",
+      "alpha": 0.4,
+      "residual_clip_dn": 96.0,
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/evaluation/a7_motion_fusion_final_review_20261011/frame_0173_strongest_person_crop.png"
+    }
+  ]
+}

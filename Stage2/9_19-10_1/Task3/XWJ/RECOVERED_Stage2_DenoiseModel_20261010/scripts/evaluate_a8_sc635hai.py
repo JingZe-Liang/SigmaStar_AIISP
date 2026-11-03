@@ -291,6 +291,8 @@ def _render_video(
     candidate_prediction_path: Path,
     output_dir: Path,
     fps: int,
+    candidate_label: str = "A8 sc635hai",
+    video_stem: str = "sc635hai_16x_input_a3_a8_fixed_isp",
 ) -> dict[str, object]:
     reader = open_sequence(spec)
     black = channel_vector(profile.black_levels)
@@ -299,8 +301,8 @@ def _render_video(
     clips = contiguous_clip_indices(spec)
     crop = dict(spec.panel_crops)["center_detail"]
     output_dir.mkdir(parents=True, exist_ok=True)
-    video_path = output_dir / "sc635hai_16x_input_a3_a8_fixed_isp.mp4"
-    preview_path = output_dir / "sc635hai_16x_input_a3_a8_fixed_isp_frame0000.png"
+    video_path = output_dir / f"{video_stem}.mp4"
+    preview_path = output_dir / f"{video_stem}_frame0000.png"
     encoder = _video_encoder()
     command = [
         "ffmpeg",
@@ -359,7 +361,7 @@ def _render_video(
                 labels = (
                     f"Input | clip {clip_index + 1} | frame {source_index}",
                     f"A3 baseline | clip {clip_index + 1} | frame {source_index}",
-                    f"A8 sc635hai | clip {clip_index + 1} | frame {source_index}",
+                    f"{candidate_label} | clip {clip_index + 1} | frame {source_index}",
                 )
                 cells = [
                     _comparison_cell(image, label, crop)
@@ -394,7 +396,10 @@ def _render_video(
         "video_sha256": _sha256(video_path),
         "preview": str(preview_path.resolve()),
         "preview_sha256": _sha256(preview_path),
-        "layout": "Input | A3 baseline | A8 candidate; overview above center-detail crop",
+        "layout": (
+            f"Input | A3 baseline | {candidate_label}; overview above "
+            "center-detail crop"
+        ),
     }
 
 
@@ -490,6 +495,20 @@ def main() -> int:
     )
     parser.add_argument("--device", default="cuda:0")
     parser.add_argument("--fps", type=int, default=6)
+    parser.add_argument("--candidate-label", default="A8 sc635hai")
+    parser.add_argument(
+        "--video-stem", default="sc635hai_16x_input_a3_a8_fixed_isp"
+    )
+    parser.add_argument(
+        "--protocol-label", default="A8 sc635hai adaptation evaluation"
+    )
+    parser.add_argument(
+        "--candidate-static-protocol",
+        default="A8 train-domain tail diagnostic",
+    )
+    parser.add_argument(
+        "--training-source-description", default="sc635hai_131x_low_cct"
+    )
     args = parser.parse_args()
     if (args.output_dir / "evaluation.json").is_file():
         raise FileExistsError(
@@ -574,7 +593,7 @@ def main() -> int:
         evaluate_disjoint_prediction(static_spec, reference, 1, static_odd)
     )
     candidate_static = {
-        "protocol": "A8 train-domain tail diagnostic",
+        "protocol": args.candidate_static_protocol,
         "even_input_vs_odd_reference": candidate_even,
         "odd_input_vs_even_reference": candidate_odd,
         "summary": _static_summary(candidate_even, candidate_odd),
@@ -622,13 +641,15 @@ def main() -> int:
         dynamic_prediction,
         args.output_dir / "fixed_isp_video",
         args.fps,
+        args.candidate_label,
+        args.video_stem,
     )
     result = {
-        "protocol": "A8 sc635hai adaptation evaluation",
+        "protocol": args.protocol_label,
         "candidate_checkpoint": str(args.candidate_checkpoint.resolve()),
         "candidate_checkpoint_sha256": _sha256(args.candidate_checkpoint),
         "weights": "ema",
-        "training_sequence": "sc635hai_131x_low_cct",
+        "training_sequence": args.training_source_description,
         "held_out_sequence": "sc635hai_16x_motion_color",
         "static_train_domain": {
             "baseline_a3": baseline_static,

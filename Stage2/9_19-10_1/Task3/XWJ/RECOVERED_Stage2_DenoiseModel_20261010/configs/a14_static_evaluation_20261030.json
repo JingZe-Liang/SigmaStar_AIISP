@@ -1,0 +1,192 @@
+{
+  "protocol": "A14 static split-half fixed ROI development comparison v1",
+  "roi_count": 3,
+  "roi_grid_size": 7,
+  "min_valid_fraction": 0.25,
+  "sources": [
+    {
+      "name": "mis20s1_1000x",
+      "role": "gain_holdout",
+      "kind": "mis20s1_native_split_half",
+      "reference_dir": "artifacts/finetune_mis20s1/evaluation/1000x_self_reference_probe",
+      "manifest_path": "artifacts/finetune_mis20s1/supervision/stream_manifests/04_shdarkroom_1000x.json",
+      "clip_starts": [
+        0,
+        92,
+        184
+      ]
+    },
+    {
+      "name": "sc465sl_2000x",
+      "role": "gain_holdout",
+      "kind": "cross_sensor_split_half",
+      "reference_dir": "artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_2000x/reference",
+      "source": {
+        "name": "sc465sl_darkroom18_2000x",
+        "sensor": "SC465SL",
+        "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/02_SC465SL_darkroom18/2000x/raw_stream_sc465sl_2560x1440_AG109568_darkroom18_2000x.raw",
+        "width": 2560,
+        "height": 1440,
+        "frames_used": 300,
+        "bit_shift": 0,
+        "cfa": "RGGB",
+        "nominal_black_dn": 252.0,
+        "reference_mode": "motion_aware_split_half",
+        "clip_starts": [
+          0,
+          72,
+          144,
+          216,
+          284
+        ],
+        "fixed_isp_wb": [
+          1.8,
+          1.0,
+          1.0,
+          1.6
+        ],
+        "fixed_isp_exposure": 6.0,
+        "panel_crops": {
+          "motion_center": [
+            900,
+            250,
+            1900,
+            1400
+          ],
+          "dark_left": [
+            120,
+            250,
+            1000,
+            1350
+          ],
+          "static_right": [
+            1800,
+            250,
+            2500,
+            1350
+          ]
+        }
+      },
+      "source_sha256": "8df12bc10c7b2191791d1d7f4a9715167a6b6c1a6a1805554ef27b2b05aef7b0",
+      "clip_starts": [
+        0,
+        144,
+        284
+      ]
+    },
+    {
+      "name": "sc465sl_darkroom18_256x",
+      "role": "train_distribution",
+      "kind": "cross_sensor_split_half",
+      "reference_dir": "artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_256x/reference",
+      "source": {
+        "name": "sc465sl_darkroom18_256x",
+        "sensor": "SC465SL",
+        "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/02_SC465SL_darkroom18/256x/raw_stream_sc465sl_2560x1440_AG109568_darkroom18_256x.raw",
+        "width": 2560,
+        "height": 1440,
+        "frames_used": 300,
+        "bit_shift": 0,
+        "cfa": "RGGB",
+        "nominal_black_dn": 252.0,
+        "reference_mode": "motion_aware_split_half",
+        "clip_starts": [
+          0,
+          72,
+          144,
+          216,
+          284
+        ],
+        "fixed_isp_wb": [
+          1.8,
+          1.0,
+          1.0,
+          1.6
+        ],
+        "fixed_isp_exposure": 2.5,
+        "panel_crops": {
+          "motion_center": [
+            900,
+            250,
+            1900,
+            1400
+          ],
+          "dark_left": [
+            120,
+            250,
+            1000,
+            1350
+          ],
+          "static_right": [
+            1800,
+            250,
+            2500,
+            1350
+          ]
+        }
+      },
+      "source_sha256": "cec46afe5696c9e2bfc569670a0cc93814d4ad851677275fd4f77c274e6c35cd",
+      "clip_starts": [
+        0,
+        144,
+        284
+      ]
+    },
+    {
+      "name": "sc635hai_131x_low_cct",
+      "role": "train_distribution",
+      "kind": "cross_sensor_split_half",
+      "reference_dir": "artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_131x_low_cct/reference",
+      "source": {
+        "name": "sc635hai_131x_low_cct",
+        "sensor": "sc635hai",
+        "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/01_fist_company/sc635hai/131x_low_cct/raw_stream_normal_3200x1800_16_RG_0205213025917_131x.raw",
+        "width": 3200,
+        "height": 1800,
+        "frames_used": 150,
+        "bit_shift": 4,
+        "cfa": "RGGB",
+        "nominal_black_dn": 257.5,
+        "reference_mode": "motion_aware_split_half",
+        "clip_starts": [
+          0,
+          66,
+          134
+        ],
+        "fixed_isp_wb": [
+          1.128,
+          1.0,
+          1.0,
+          3.604
+        ],
+        "fixed_isp_exposure": 0.65,
+        "panel_crops": {
+          "center_detail": [
+            600,
+            300,
+            2400,
+            1700
+          ],
+          "color_chart": [
+            850,
+            80,
+            2300,
+            850
+          ],
+          "right_subject": [
+            2100,
+            250,
+            3150,
+            1750
+          ]
+        }
+      },
+      "source_sha256": "80445b9133f49dfa7f5117d93bcf9fd5a9dfae1de0e0faae69c9f4144dac440a",
+      "clip_starts": [
+        0,
+        66,
+        134
+      ]
+    }
+  ]
+}

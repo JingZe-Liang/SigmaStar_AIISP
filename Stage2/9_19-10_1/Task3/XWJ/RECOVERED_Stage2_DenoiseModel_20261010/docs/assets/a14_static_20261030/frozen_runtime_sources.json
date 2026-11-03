@@ -1,0 +1,95 @@
+{
+  "note": "Frozen before A14 training; includes recovered workspace dependencies rather than implying a clean repository. Baseline UUID guard failure happened before inference, is preserved, and was corrected.",
+  "files": [
+    {
+      "path": "configs/a14_static_training_20261030.json",
+      "sha256": "a44ae35ac3d590eb7523b5a9a2ee64a958f16d0c233d71e39f266140a5efd4b2",
+      "bytes": 3577
+    },
+    {
+      "path": "configs/a14_static_evaluation_20261030.json",
+      "sha256": "77986ac73f074421fe564a88b07673f9dc0c296e938e5842b4bfee74074d3b7c",
+      "bytes": 4948
+    },
+    {
+      "path": "docs/A14_STATIC_MULTISCENE_PROTOCOL_2026-10-30.md",
+      "sha256": "87d651f5be95e6cf254b7ef21899da314b24190772598182fd5169746d406399",
+      "bytes": 5096
+    },
+    {
+      "path": "src/raw_fusion/finetune/a3.py",
+      "sha256": "2f5c175a431e06fd886576f8bb4cd0e15da4dba4117f9e2d5a81ecad77470362",
+      "bytes": 21408
+    },
+    {
+      "path": "src/raw_fusion/finetune/a8_adaptation.py",
+      "sha256": "d1fb60bf3df53618454bd298f471a8161320eb79d546e1b901afe9f4ec487a0e",
+      "bytes": 22782
+    },
+    {
+      "path": "src/raw_fusion/finetune/a12_sampling.py",
+      "sha256": "c6b784536bf8129814d8f49bf74a1e3721e6c59d3cfab4aaef68de525079859c",
+      "bytes": 9122
+    },
+    {
+      "path": "src/raw_fusion/finetune/a12_train.py",
+      "sha256": "cd84c30e1b677c356ba55a4cdc1e16890cc3f9acbfad5e1d804f2ce4f960e758",
+      "bytes": 13271
+    },
+    {
+      "path": "src/raw_fusion/finetune/a12_paired_eval.py",
+      "sha256": "3f2dae813ecf78fd27466eadb68ab3fcc95c4e1bd75925eac84a4f0bf73ee0b0",
+      "bytes": 11828
+    },
+    {
+      "path": "src/raw_fusion/finetune/a12_dynamic_probe.py",
+      "sha256": "959adaeca0150ffd4845c00092c892ca0e8725f8f922213587dd49493d1812ab",
+      "bytes": 22409
+    },
+    {
+      "path": "src/raw_fusion/finetune/a14_static_train.py",
+      "sha256": "d647a2a76118b4b31a1568e9a73d0c2e57b1232296ff101ebeaad364df193eb2",
+      "bytes": 26880
+    },
+    {
+      "path": "src/raw_fusion/finetune/a14_static_eval.py",
+      "sha256": "94ab1f52a2a6ee250a9e35a311a6571341a963f5d377ac4d52a218644c0783ef",
+      "bytes": 30138
+    },
+    {
+      "path": "src/raw_fusion/finetune/cross_sensor.py",
+      "sha256": "628d990ff5d676a1fa2cfd4796cb3643f8589adfb456e06209d77dd5a7fe82cc",
+      "bytes": 37183
+    },
+    {
+      "path": "src/raw_fusion/finetune/stream_io.py",
+      "sha256": "a1c1691244f81586efc05f08860d7122f77f2a824b5b4ce12a37ef030275a442",
+      "bytes": 4593
+    },
+    {
+      "path": "src/raw_fusion/finetune/adapters.py",
+      "sha256": "5b782423df9ec78becb1735ac4f119f4dd9ac3f2f61176b1a2fc6774b1fc9f01",
+      "bytes": 5978
+    },
+    {
+      "path": "src/raw_fusion/finetune/noise.py",
+      "sha256": "94a09f0bca0ecaae941130a84d7c7677875161ab30d7f1c2c34e4eaa65c6bc98",
+      "bytes": 26161
+    },
+    {
+      "path": "src/raw_fusion/finetune/rvideformer_arch.py",
+      "sha256": "a7e3d2d1211686c7d5fafbd94d6ea4e562049f181e0af196f2d9284b7cf7a498",
+      "bytes": 43452
+    },
+    {
+      "path": "artifacts/a14_static_20261030/prepared_training/audit.json",
+      "sha256": "d333aa8b49e170d64dd87afd1f6dacb81c462e162da47aea7cecbba82d21bf97",
+      "bytes": 803285
+    },
+    {
+      "path": "artifacts/a14_static_20261030/prepared_evaluation/manifest.json",
+      "sha256": "706e3d43ef7899f5f2a2d99a845415f3084bc5a5a053ac00b3ddffe82e301c8e",
+      "bytes": 663436
+    }
+  ]
+}

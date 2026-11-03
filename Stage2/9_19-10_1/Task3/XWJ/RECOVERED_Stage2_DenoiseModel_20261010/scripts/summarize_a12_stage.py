@@ -1,0 +1,110 @@
+"""Write the A12 evidence summary from completed immutable evaluation records."""
+
+import csv
+import hashlib
+import json
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[1]
+
+
+def read_json(relative: str) -> dict:
+    return json.loads((ROOT / relative).read_text(encoding="utf-8"))
+
+
+def main() -> None:
+    sources = {
+        "joint": "artifacts/a12_joint_acceptance_20261029/report.json",
+        "protocol": "configs/a12_joint_acceptance_20261029.json",
+        "a3": "artifacts/a12_dynamic_probe_20261029/a3_baseline_rescored/evaluation.json",
+        "official": "artifacts/a12_dynamic_probe_20261029/official_crvd/evaluation.json",
+        "sampling": "artifacts/a12_sampling_audit_20261029/audit.json",
+        "coverage": "artifacts/a12_sampling_pilot_coverage_20261029/audit.json",
+        "prepare": "artifacts/a12_sampling_pilot_ready_20261029/prepare.json",
+    }
+    records = {key: read_json(path) for key, path in sources.items()}
+    rows = []
+    for a3, official in zip(records["a3"]["cases"], records["official"]["cases"], strict=True):
+        if a3["name"] != official["name"]:
+            raise ValueError("probe identities differ between models")
+        region = "all" if a3["mode"] == "static" else "motion_swept"
+        row = {"case": a3["name"], "region": region}
+        for label, values in (("input", a3["model_input"][region]), ("official", official["official_crvd"][region]), ("a3", a3["a3_ema"][region])):
+            for metric in ("rmse_dn", "highpass_rmse_dn", "temporal_difference_error_rmse_dn"):
+                row[f"{label}_{metric}"] = values[metric]
+        rows.append(row)
+    measured = [item for item in records["joint"]["sequences"] if item["assessment_kind"] != "historical_only"]
+    frames = sum(sum(len(clip) for clip in direction["clips"]) for item in measured for direction in item["directions"].values())
+    entries = {entry["id"]: entry for entry in records["protocol"]["sequences"]}
+    static_rows = []
+    for item in measured:
+        if item["assessment_kind"] != "cross_sensor_static":
+            continue
+        for direction_name, direction in item["directions"].items():
+            frame_count = sum(map(len, direction["clips"]))
+            for roi, regions in direction["roi_metrics"].items():
+                x0, y0, x1, y1 = entries[item["id"]]["roi_plan"]["panel_crops_raw_xyxy"][roi]
+                budget = frame_count * 4 * (x1 // 2 - (x0 + 1) // 2) * (y1 // 2 - (y0 + 1) // 2)
+                for region, branches in regions.items():
+                    for branch, values in branches.items():
+                        static_rows.append({"sequence": item["id"], "direction": direction_name, "roi": roi, "region": region, "branch": branch,
+                                            "full_roi_value_budget": budget, "scored_fraction_of_full_roi": values["values"] / budget,
+                                            **values})
+    coverage = records["coverage"]["coverage_summary"]
+    summary = {
+        "date": "2026-10-29", "status": "evaluation_and_training_preparation_complete_training_not_started",
+        "sources": {key: {"path": path, "sha256": hashlib.sha256((ROOT / path).read_bytes()).hexdigest()} for key, path in sources.items()},
+        "frozen_sequences": len(records["protocol"]["sequences"]), "new_roi_sequences": len(measured), "new_roi_frames": frames,
+        "dynamic_probe_comparison": rows, "static_roi_measurements_with_coverage": static_rows,
+        "sampling_coverage": coverage, "training_started": False,
+        "limitations": records["joint"]["limitations"] + [records["a3"]["scope"], "Constructed global-translation boundaries are artificial and visible to the model; this is a mechanism probe, not an isolated proof of real-motion causality.", "The first 200 updates are a pipeline pilot, not a multi-epoch or matched causal experiment."],
+    }
+    destination = ROOT / "docs/assets/a12_20261029"
+    destination.mkdir(parents=True, exist_ok=True)
+    (destination / "stage_summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2, allow_nan=False) + "\n", encoding="utf-8")
+    with (destination / "dynamic_probe_comparison.csv").open("w", newline="", encoding="utf-8") as handle:
+        writer = csv.DictWriter(handle, fieldnames=list(rows[0]), lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(rows)
+    text = [
+        "# A12 联合验收、动态诊断与采样修正（2026-10-29）", "",
+        "本轮已经完成评测基础和训练准备；没有启动模型训练，没有产生或采纳新的去噪权重。默认模型仍为 A3 step-5000 EMA。", "",
+        "冻结配置覆盖4种传感器、11条开发序列。8条跨传感器序列重新读取 RAW 与历史 A3 预测缓存，共328帧；MIS20S1三条序列登记原有评测身份和历史证据。本轮新ROI数字与历史整图指标分开记录。所有这些场景已用于开发，不构成新的最终未见测试集。", "",
+        "静态采用互斥奇偶参考，记录重建、高通、局部低通、带符号梯度误差、逐通道偏差及裁剪。3×3支持区域必须有效，但不会把细线类别本身当作无效邻域。区域类别由参考统计生成，仍需人工核验。汇总JSON补充了每类指标相对于完整ROI的可评分比例。pooled residual spread包含结构误差和通道偏差，不能全部解释为随机噪声；3×3低通误差也不能替代大尺度色斑评价。", "",
+        "新运行校验了预测、参考和协议配置的SHA-256，并核对RAW尺寸、位移解释、CFA、文件大小和帧索引；本轮没有重新计算全部原始RAW文件的完整SHA-256。", "",
+        "**受控运动探针。** 从A3训练使用的MIS20S1静态参考取细节、暗部两裁块，组合静止、全局整数平移和局部物体平移，以及两档标定噪声，共12组八帧64×64 packed样本。两模型使用同一冻结输入、归一化裁剪与推理路径。以下静止行统计全有效区，运动行统计运动扫过区；各行有效区域不同，不能把跨行变化当成严格同像素损失量。标定档800/12800不等于公司场景文件中的增益标签。", "",
+        "| 构造样本 | 模型实际输入RMSE | 官方CRVD RMSE | A3 RMSE | 官方时序差分误差 | A3时序差分误差 |",
+        "| --- | ---: | ---: | ---: | ---: | ---: |",
+    ]
+    for row in rows:
+        text.append(f"| {row['case']} | {row['input_rmse_dn']:.3f} | {row['official_rmse_dn']:.3f} | {row['a3_rmse_dn']:.3f} | {row['official_temporal_difference_error_rmse_dn']:.3f} | {row['a3_temporal_difference_error_rmse_dn']:.3f} |")
+    text.extend([
+        "", "表内单位均为参考DN。A3在这12组样本的重建RMSE均低于官方权重，但部分高噪运动的时序差分误差高于官方。例如细节全局平移、标定档12800：官方107.528 DN，A3为130.418 DN。低噪细节平移时，A3重建RMSE为69.494 DN，高于模型实际输入31.129 DN；说明该构造条件下已发生净恢复退化。", "",
+        "这些结果支持继续针对运动保真开展实验，不能解释为已经证明微调整体遗忘动态能力。全局平移的无效边界是人为黑带，虽不计分，模型仍能看到；局部贴片也不模拟真实光学运动、曝光模糊或滚动快门。探针来自训练参考，不能作为独立真实动态或跨传感器成绩。", "",
+        "**采样修正。** 新A12采样器由绝对样本索引确定裁块、真实时窗和逐帧合成噪声。每512样本保持256真实/256合成，交错读取；新周期会改变裁块与噪声，固定索引仍可复现。合成只生成所需裁块，避免重建整幅噪声缓存。原A3训练实现保留用于历史复现。", "",
+        "已审计两个周期的1024个计划，每周期512个不同裁块/时窗配置、511次来源切换；另实际读取首200个训练样本，真实/合成各100个，没有空掩码。平均有效比例为82.15%，最低0.0977%；低于1%的样本为[0,77,104,189]。本轮保留原静态掩码规则，低有效覆盖仍是后续应单独消融的问题。", "",
+        "**待确认的首次训练配置。** 从A3 step-5000 EMA初始化模型和EMA，新建Adam，FP32、batch 1、8帧64×64 packed、学习率1e-5、200步、原结构损失0.1/0.1，每50步保存到独立目录。1000x真实数据继续排除。当前PyTorch cuda:1对应3090；启动前必须重新检查设备和显存。", "",
+        "200步仅验证训练管线和短程回退，不跨完整512样本周期。即使出现改善，也不能单独归因于采样修正；进一步结论需要同初始化、优化器、学习率和步数的旧采样对照，以及至少两个周期的实验。后续动态监督、多传感器退化适配和新独立动态采集尚未完成。", "",
+        "训练入口默认只做CPU prepare，只有显式 --train 才优化。保存Python/NumPy/PyTorch CPU/CUDA RNG、采样位置、模型、EMA和优化器；完整恢复依赖数据内容和运行环境不变。本轮未验证GPU训练恢复等价性、训练峰值显存或时长。", "",
+        "**验证与产物。** 33项新增测试和13项既有回归测试通过（此前33与20两次运行有7项重叠）。原A3权重SHA-256为97c4332f685f98959b243e4b100434469f714aed6329e100d22b6d8552592e0b。", "",
+        "- 联合验收：`artifacts/a12_joint_acceptance_20261029/report.json`",
+        "- A3探针统一评分：`artifacts/a12_dynamic_probe_20261029/a3_baseline_rescored/evaluation.json`",
+        "- 官方参照：`artifacts/a12_dynamic_probe_20261029/official_crvd/evaluation.json`",
+        "- 采样与覆盖：`artifacts/a12_sampling_audit_20261029/audit.json`、`artifacts/a12_sampling_pilot_coverage_20261029/audit.json`",
+        "- 训练准备：`artifacts/a12_sampling_pilot_ready_20261029/prepare.json`",
+        "- 可追溯汇总：`docs/assets/a12_20261029/stage_summary.json`、`dynamic_probe_comparison.csv`", "",
+        "复现命令从项目根目录执行；评测输出目录已存在时应指定新目录，不能覆盖历史产物。训练仍需先讨论确认。", "",
+        "```bash",
+        "/home/jingzeliang/miniconda3/envs/aaa_312/bin/python scripts/run_a12_joint_acceptance.py --output-dir artifacts/a12_joint_acceptance_recheck",
+        "/home/jingzeliang/miniconda3/envs/aaa_312/bin/python scripts/run_a12_dynamic_probe.py --phase evaluate --evaluation-name a3_recheck --device cuda:1",
+        "/home/jingzeliang/miniconda3/envs/aaa_312/bin/python scripts/run_a12_train.py --prepare",
+        "```", "",
+        "训练后的检查将优先复测冻结受控探针与MIS20S1静态回退，再运行跨传感器固定ROI和真实动态视觉检查。候选仍需生成同协议预测缓存；当前联合验收入口固定核对A3基线身份，尚未实现候选自动晋级或最终画质阈值。",
+    ])
+    (ROOT / "docs/A12_JOINT_ACCEPTANCE_AND_SAMPLING_2026-10-29.md").write_text("\n".join(text) + "\n", encoding="utf-8")
+    print(json.dumps({"frozen_sequences": summary["frozen_sequences"], "recomputed_frames": frames, "probe_cases": len(rows), "training_started": False}))
+
+
+if __name__ == "__main__":
+    main()

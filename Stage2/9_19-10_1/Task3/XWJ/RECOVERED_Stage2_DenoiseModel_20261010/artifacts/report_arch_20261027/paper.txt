@@ -1,0 +1,1113 @@
+                                         IEEE TRANSACTIONS ON CIRCUITS AND SYSTEMS FOR VIDEO TECHNOLOGY                                                                                  1
+
+
+
+
+                                                 RViDeformer: Efficient Raw Video Denoising
+                                                 Transformer with a Larger Benchmark Dataset
+                                                     Huanjing Yue, Senior Member, IEEE, Cong Cao, Lei Liao, Jingyu Yang, Senior Member, IEEE
+
+
+
+
+                                            Abstract—In recent years, raw video denoising has garnered                    denoising methods. However, capturing paired noisy-clean raw
+                                         increased attention due to the consistency with the imaging                      videos is challenging. For image denoising, the ground truth
+                                         process and well-studied noise modeling in the raw domain.                       is usually captured with long exposure time or via averaging
+arXiv:2305.00767v2 [cs.CV] 16 Mar 2025
+
+
+
+
+                                         However, two problems still hinder the denoising performance.
+                                         Firstly, there is no large dataset with realistic motions for                    a lot of noisy images to get a clean image. However, this
+                                         supervised raw video denoising, as capturing noisy and clean                     will lead to motion blur or large displacements when applied
+                                         frames for real dynamic scenes is difficult. To address this, we                 to video ground truth capturing. The work in [1] tried to
+                                         propose recapturing existing high-resolution videos displayed on                 solve the problem by capturing with stop-and-motion manner,
+                                         a 4K screen with high-low ISO settings to construct noisy-clean                  which captured each noisy-clean pair with a static scene, and
+                                         paired frames. In this way, we construct a video denoising dataset
+                                         (named as ReCRVD) with 120 groups of noisy-clean videos,                         concatenated frames with temporal order to generate paired
+                                         whose ISO values ranging from 1600 to 25600. Secondly, while                     noisy-clean raw videos, building the CRVD dataset. However,
+                                         non-local temporal-spatial attention is beneficial for denoising, it             the motions in CRVD are unnatural and the scene number is
+                                         often leads to heavy computation costs. We propose an efficient                  limited (11 scenes). The work in [2] moved cameras rather
+                                         raw video denoising transformer network (RViDeformer) that                       than moving the objects to create translation motions, and
+                                         explores both short and long-distance correlations. Specifically,
+                                         we propose multi-branch spatial and temporal attention mod-                      they only captured sRGB video pairs. Neither moving toys
+                                         ules, which explore the patch correlations from local window,                    nor moving cameras can simulate the various motions in
+                                         local low-resolution window, global downsampled window, and                      real world. Training with the two datasets limits the model’s
+                                         neighbor-involved window, and then they are fused together. We                   ability in dealing with real-world noisy videos. Based on the
+                                         employ reparameterization to reduce computation costs. Our                       above observations, we propose to recapture the existing high-
+                                         network is trained in both supervised and unsupervised manners,
+                                         achieving the best performance compared with state-of-the-art                    resolution videos displayed on a 4K screen to construct our
+                                         methods. Additionally, the model trained with our proposed                       dataset. Specifically, we recapture the screen content with
+                                         dataset (ReCRVD) outperforms the model trained with previous                     high and low ISO settings to construct noisy-clean paired
+                                         benchmark dataset (CRVD) when evaluated on the real-world                        frames, and concatenate them with temporal order to construct
+                                         outdoor noisy videos. Our code and dataset are available at                      paired videos. In this way, our recaptured raw video denoising
+                                         https://github.com/cao-cong/RViDeformer.
+                                                                                                                          (ReCRVD) dataset contains various real motions and a large
+                                           Index Terms—Raw video denoising, Video denoising dataset,                      amount of scenes.
+                                         Raw video denoising transformer (RViDeformer).                                      When this paper was written, we became aware of a very
+                                                                                                                          recent work [3] which also utilizes the similar way to capture
+                                                                   I. I NTRODUCTION                                       noisy-clean video pairs displayed on the screen. But [3]
+                                           Noise is inherent to every imaging sensor, which not only                      focuses on low-light raw video denoising and actually captures
+                                         degrades the visual quality but also affects the following                       low-normal light video pairs. The ISO setting is fixed to
+                                         understanding and analysis tasks. Generally, video denoising                     100 and the noisy frames are constructed by linearly scaling
+                                         can achieve better results than single-frame based denoising                     the low-light frames to match the brightness of normal-light
+                                         due to the temporal correlations between neighboring frames.                     frames. Therefore, the analog gain of the camera is small and
+                                         In addition, the noise distribution in raw domain (the directly                  the noise in their dataset mainly depends on the digital gain of
+                                         output of the sensor) is much simpler than that in sRGB                          the camera. In contrast, we directly capture noisy-clean frames
+                                         domain due to the nonlinear image signal processor (ISP).                        with almost the same brightness and the ISO settings cover
+                                         Therefore, raw video denoising is attractive for improving the                   a large range (i.e., the analog gain spanning a large range),
+                                         video imaging quality.                                                           which is more consistent with general video capturing. In this
+                                           However, there is still some challenges in raw video de-                       way, our work focuses on general raw video denoising other
+                                         noising. The first problem is how to build a large scale video                   than low light video enhancement.
+                                         denoising dataset. Building a benchmark dataset with paired                         Besides the dataset, we also explore raw video de-
+                                         noisy-clean raw videos is important for supervised training                      noising methods. Recently, transformer-based video denois-
+                                         and evaluating both supervised and unsupervised raw video                        ing methods [3]–[6] have shown promising performance.
+                                                                                                                          These networks are based on shift-window self-attention
+                                              This work was supported in part by the National Natural Science             from Swin Transformer [7], [8], which divides input im-
+                                         Foundation of China under Grant 62472308 and Grant 62231018. H. Yue,             ages into non-overlapping windows and the attention is cal-
+                                         C. Cao, L. Liao, and J. Yang (corresponding author) are with the School
+                                         of Electrical and Information Engineering, Tianjin University, Tianjin, China,   culated inside the window. The information of neighbor-
+                                         300072.                                                                          ing windows is exchanged through window shift operation.
+2                                                                     IEEE TRANSACTIONS ON CIRCUITS AND SYSTEMS FOR VIDEO TECHNOLOGY
+
+
+
+Since it forces the self-attention in a window, the long-                   unsupervised manners, and they achieve the best per-
+range spatial and temporal information cannot be utilized                   formance on our proposed ReCRVD dataset and CRVD
+for video denoising. Based on the above observations, we                    indoor dataset with the smallest computation cost when
+propose Multi-branch Spatial Self-Attention (MSSA) and                      compared with state-of-the-art denoising methods. In ad-
+Multi-branch Temporal Self-Attention (MTSA) modules. Be-                    dition, our method has better generalization performance
+sides the plain shift-window self-attention (SWSA) branch,                  on the real-world outdoor noisy videos.
+we propose Low-Resolution-Window Self-Attention (LWSA),
+Global-Window Self-Attention (GWSA) and Neighbour-                                          II. R ELATED W ORKS
+Window Self-Attention (NWSA) branch for spatial reconstruc-
+tion, where the queries are the same as that in plain SWSA,            A. Supervised Video Denoising
+while the keys and values of the transformer are constructed              Different from image denoising [10]–[17], video denoising
+by tokens in the low-resolution window, downsampled global             [18], [19] utilize both spatial and temporal correlations in the
+window, and neighbor involved window, respectively. The                noisy frames. Traditional video denoising method VBM4D
+long-range temporal correlations are also explored in a similar        [20] exploits the mutual similarity between 3D spatio-temporal
+way. The additional self-attention branches enable the network         volumes and filters the volumes according to the sparse repre-
+to utilize the information from long-range similar patches             sentation. For CNN-based methods, [21] first applies CNN to
+in spatial and temporal dimensions. The information from               video denoising and the information from previous frame is
+different self-attention branches are balanced and fused in the        utilized based on a recurrent network. Xue et al. [22] proposed
+proposed multi-branch architecture. Besides the improvement            a task-oriented flow (TOFlow) to align neighbour frames to
+of self-attention mechanism, we combine linear layer with              the current frame. Yue et al. [1] proposed to utilize temporal
+convolution in the bottom of each block to increase the                fusion, spatial fusion, and non-local attention to fully explore
+receptive field. We further utilize reparameterization to reduce       the correlations between neighboring frames. Besides, efficient
+the computation cost. In this way, we propose an efficient             video denoising is attracting more and more attention, such
+transformer network for raw video denoising (RViDeformer).             as the binarized low-light raw video denoising [23], efficient
+   We would like to point out that the process of generating           multi-stage video denoising [24], bidirection recurrent network
+noisy-clean raw video pairs is labor-intensive. If we lack             with look-ahead recurrent module [25], and FastDVDnet [26],
+access to noisy-clean pairs, can our network still produce             which is constructed by two UNet denoisers. Inspired by the
+satisfactory results? Leveraging advances in unsupervised loss         two denoiser structure, [27] and [28] further utilize temporal
+functions for image denoising [9], we find that applying               shift and grouped spatial-temporal shift for temporal fusion,
+unsupervised loss directly to our proposed network yields              respectively.
+satisfactory performance. This highlights the efficacy of our             Recently, transformer-based video denoising methods [3]–
+network for both supervised and unsupervised denoising.                [6] have shown promising performance. Song et al. [4] pro-
+Additionally, our unsupervised method exhibits superior gen-           posed joint Spatio-Temporal Mixer for each transformer block
+eralization performance on real-world outdoor noisy videos.            to aggregate features. Liang et al. [5] proposed Temporal
+Our contributions are summarized as follows                            Mutual Self-Attention to exploit temporal information. Then,
+                                                                       they [6] further combine transformer with recurrent network
+    •   First, we construct a large scale raw video denoising          and flow-guided deformable attention. Recently, Fu et al. [3]
+        dataset (named as ReCRVD, including 120 scenes) by             proposed a low-light raw video denoising network based on
+        recapturing the videos displayed on the screen. To make        3D (Shifted) Window-based Multi-head Self-attention. All the
+        the noisy-clean pairs to be pixel-aligned and approximate      denoising transformers are based on Swin Transformer [7],
+        outdoor capturing, we propose intensity correction, spa-       [8], which calculates attention inside a local window and
+        tial alignment, and color correction for post-processing.      information between different windows exchanges through
+        The model trained on ReCRVD generalizes better to real-        window shift operation. The local-window based attention
+        world outdoor noisy videos compared with that trained          restricts the long-distance correlation utilization. In this work,
+        on the widely used CRVD.To our knowledge, our dataset          we propose global-window attention and neighbour-window
+        is the first recaptured raw video dataset that targets at      attention to enable exploiting information from global and
+        general raw video denoising with various ISO settings.         neighbour context and utilize multi-branch architecture to
+    •   Second, we propose an efficient raw video denoising            comprehensively utilize different attention mechanisms.
+        transformer network (RViDeformer) by designing differ-
+        ent windows in transformer. In order to explore long-
+        range correlations with modest computation costs, we           B. Unsupervised Video Denoising
+        propose neighbor window, and global down-sampled win-             Since supervised denoising relies on expensive paired noisy-
+        dow for attention calculation. To utilize multiscale infor-    clean data collection, unsupervised denoising methods have
+        mation inside the transformer block, we further propose        been proposed to alleviate this problem. Representative un-
+        low-resolution window. They construct our multi-branch         supervised image denoising methods include Noise2Noise
+        spatial and temporal attention modules to capture the          [29], Noise2Void [30], R2R [31], and NBR2NBR [9]. These
+        short and long distance correlations efficiently.              methods either utilize another noisy image [29] or regenerated
+    •   Third, our network is trained in both supervised and           noisy image [31] [9] as labels, or utilize blind-spot strategy,
+YUE et al.: RVIDEFORMER: EFFICIENT RAW VIDEO DENOISING WITH A LARGER BENCHMARK DATASET                                              3
+
+
+
+which predicts the center pixel from its context noisy pixels         However, there are only a few works dealing with raw video
+[30].                                                              denoising due to the unavailable of dynamic video sequence
+   For unsupervised video denoising, noisy-noisy pairs can be      pairs. Chen et al. [58] proposed to transform low-light noisy
+constructed by warping neighboring frames. F2F [32] utilizes       raw frames to the normal-light sRGB ones and their dataset
+optical flow to warp the neighbor noisy frame to serve as the      is constructed by static sequences. RViDeNet [1] proposed to
+label of target frame, and utilizes image denoising network        pack the noisy Bayer videos into four branches and perform
+DnCNN [33] for video denoising. On the basis of F2F, MF2F          denoising separately and then combine them together. In this
+[34] designs a multi-input network, which selects different        work, we construct a larger raw video denoising dataset and
+neighbor frames for network inputs and labels, respectively.       propose an efficient transformer-based raw video denoising
+However, since the warping process will introduce errors,          network.
+the performances of F2F and MF2F are limited. UDVD
+[35] utilizes half-plane convolution to construct blind-spot       D. Real-World Image and Video Denoising Datasets
+video denoising network. TAP [36] integrates tunable temporal
+                                                                      In order to benchmark realistic noise removal, many paired
+modules into a pre-trained image denoiser and proposes a
+                                                                   noisy-clean image denoising datasets have been proposed. The
+progressive fine-tuning strategy to refine the temporal module
+                                                                   clean image is usually captured with long exposure (RENOIR
+using pseudo labels. Different from them, we utilize our
+                                                                   [52], DND [54] and SMID [58] datasets) or by averaging many
+proposed network for unsupervised denoising, and utilize
+                                                                   noisy shots [53], [59]–[61]. The captured real noisy images in
+NBR2NBR [9] strategy to get two sub-frames to construct
+                                                                   these datasets are saved either in sRGB format [59]–[61] or
+the noisy-noisy pairs.
+                                                                   raw format [48], [52]–[54], whose sRGB images are generated
+   Besides unsupervised video denoising, zero-shot video de-       by simple ISP algorithms.
+noising [37] has also been proposed to avoid the expensive            Real-world video denoising datasets are relatively scarce
+collection of paired noisy-clean data. The work in [37] adapts     compared to image denoising datasets since capturing clean
+the diffusion-based image denoising model to temporally con-       frames for dynamic scenes in real-time is challenging. The
+sistent video denoising without additional training. However,      work in [58], [62] solved this problem by constructing static
+its performance may be severely degraded when encountering         videos with no dynamic objects, whose ground truth can be
+new noisy video due to lack of training. In contrast, our          directly generated by frame averaging. In our previous work
+proposed method can still perform well through unsupervised        [1], we constructed a raw video denoising dataset (CRVD)
+fine-tuning on the new noisy video data.                           by introducing the stop-and-motion capturing method, which
+                                                                   captures each static scene many times to generate a clean
+C. Image and Video Processing with Raw Data                        frame, and repeats this process after moving the objects.
+                                                                   Similarly, IOCV dataset [2] is constructed by moving cameras
+   During image capturing, the raw data collected by sensors
+                                                                   automatically rather than moving the objects, but the frames
+usually goes through a complex ISP module (including de-
+                                                                   are saved in sRGB domain. However, both datasets have
+mosaicing, white balance, tone mapping etc ) to generate the
+                                                                   simple motions that differ from real-world motions. Another
+final sRGB image. Without complex nonlinear transform and
+                                                                   strategy is to utilize a beam splitter in a co-axis optical system
+quantization, the noise distribution in raw domain is much
+                                                                   [63] to capture realistic motions in the wild. However, the
+simpler and the raw image has wider bit depth (12/14 bits per
+                                                                   photons are divided in half by the beam splitter, making the
+pixel). Therefore, many image reconstruction works turn to
+                                                                   ground truth frames affected by noise and thus limiting the
+raw domain processing and have achieved better performance,
+                                                                   quality of the dataset. In this work, we address the issue
+such as image (video) super-resolution [38]–[40], joint restora-
+                                                                   by recapturing existing videos displayed on a screen using
+tion and enhancement [41]–[44], image deblurring [45], image
+                                                                   high-low ISO settings to create noisy-clean pairs frame by
+demoiréing [46].
+                                                                   frame. This capturing approach resulted in a larger dataset
+   For denoising, many raw image denoising methods have
+                                                                   with diverse motions, which will facilitate future research on
+been proposed [47]–[51], and several raw image denoising
+                                                                   raw video denoising. While [3] also utilizes screen recapturing
+datasets [48], [52]–[54] were constructed. Since sRGB images
+                                                                   to construct the dataset, their dataset is designed for low light
+are more common in our daily life, Brooks et al. [55] proposed
+                                                                   video enhancement while our dataset is designed for general
+a simple inverse ISP method to unprocess sRGB images back
+                                                                   video denoising, as described in Sec. I.
+to the raw domain, which is helpful to generate more training
+data to improve raw image denoising performance. Similarly,
+                                                                             III. R E CRVD DATASET C ONSTRUCTION
+Zamir et al. [56] proposed to use a CNN to learn inverse ISP to
+better synthesize raw noisy-clean pairs. Besides directly using    A. Capturing Procedure
+noise synthesis for data augmentation, Liu et al. [49] proposed       As mentioned in Sec. I, the main challenge for creating
+Bayer pattern unification and Bayer preserving augmentation        a video denoising dataset is capturing both noisy and clean
+method and achieved the winner of NTIRE 2019 Real Image            frames for dynamic scenes concurrently. We observe that
+Denoising Challenge. Considering the huge computing cost           utilizing screens for paired image capturing [64] is a good
+of previous denoising networks, Wang et al. [57] proposed a        substitution when the ground truth is difficult to be col-
+lightweight model which is designed for raw image denoising        lected. Therefore, we propose capturing noisy-clean pairs by
+on mobile devices.                                                 sequentially displaying existing high-resolution video frames
+4                                                                             IEEE TRANSACTIONS ON CIRCUITS AND SYSTEMS FOR VIDEO TECHNOLOGY
+
+
+
+on a 4K screen and recapturing the screen content. For each                                                TABLE I
+displayed video frame, we randomly select one ISO value                           C OMPARISON OF THE CRVD INDOOR DATASET AND THE PROPOSED
+                                                                                                      R E CRVD DATASET.
+from a set of five settings (1600, 3200, 6400, 12800, 25600)
+and continuously capture ten noisy samples with the selected                         Methods                    CRVD Indoor     ReCRVD
+ISO and short exposure time. Subsequently, we capture one                            Total scenes                   11            120
+clean frame with low ISO (100) and long exposure time. After                         Training scenes                 6            90
+                                                                                     Testing scenes                  5            30
+capturing all frames for the current video, we group them                            Number of noise levels          5             5
+according to their temporal order to generate the dynamic                            Number of paired videos        55            120
+noisy video and its corresponding clean video. Note that,                            Realistic motion               ×              ✓
+capturing ten noisy samples for each displayed frame increases
+the diversity of noise samples in our dataset. We employ
+a surveillance camera equipped with the IMX385 sensor,                         screen to ensure that the luminance around the camera is low,
+identical to the one utilized in the CRVD dataset [1], for                     approximately 1 lux. We captured 120 pairs of dynamic noisy-
+video capturing. The raw image sequences are captured at                       clean videos under five different ISO levels ranging from 1600
+a rate of 20 frames per second, and the resolution for the                     to 25600, with 24 videos captured for each ISO value. These
+Bayer frame is 1920 × 1080. The displayed videos include                       120 scenes are divided into a training set (90 scenes) and a
+100, 16, and 4 high-quality videos from the DAVIS [65], UVG                    testing set (30 scenes). Table I lists the summary information
+[66], and Adobe240fps [67] datasets, respectively. The frame                   of the proposed ReCRVD dataset and compares it with the
+rates for the three datasets are 30 fps, 50/120 fps, and 240                   widely used CRVD indoor dataset. It can be observed that
+fps, respectively. As a result, our dataset includes videos with               the ReCRVD dataset is richer than the CRVD indoor dataset.
+various frame rates, which enhances its generalization in real-                Please refer to our supplementary file for more details about
+world scenarios.                                                               our dataset.
+                                                                                  We would like to point out that it is difficult to capture
+                                                                               different noise levels under arbitrary environmental conditions.
+                                                                               For practical, we randomly selecting a set of ISO values to
+                                                                               capture different noise levels, which is a common strategy
+                                                                               in the construction of denoising datasets [53], [54], [63].
+                                                                               The captured noise is more realistic than simulated noise.
+                                                                               Recently, there are some works focusing on simulating noise
+                                                                               under different environmental conditions, such as [69]–[71].
+                                                                               However, they are also trying to learn statistic information
+                                                                               from real captured noisy frames. Although we cannot capture
+                                                                               under all the environmental conditions in the real-world, our
+                                                                               captured dataset is a good representation for a large range
+                                                                               of noise levels. In addition, these noisy-clean videos can
+                                                                               also help the learning process for noise simulation [69]–
+                                                                               [71]. It would be a good research topic to combine the two
+                                                                               strategies, namely capturing noisy-clean pairs and simulating
+                                                                               noise under arbitrary conditions, to construct more realistic
+Fig. 1. Illustration of our capturing system (top row), the captured noisy-
+                                                                               denoising datasets.
+clean pairs (middle row), and the close-up of three regions (bottom row).
+                                                                               B. Post Processing
+   It should be noted that recapturing the screen content may
+                                                                                  There often exists brightness difference and spatial mis-
+introduce unwanted moiré patterns due to the aliasing between
+                                                                               alignment between the captured noisy frame and the corre-
+the grids of the display screen and color filter array (CFA) in
+                                                                               sponding clean frame due to the different ISO settings, expo-
+the camera sensor. Fortunately, Thongkamwitoon et al. [68]
+                                                                               sure times, illuminations, and the minuscule destabilization of
+have demonstrated that such patterns can be prevented by
+                                                                               the camera. Therefore, we further apply post-processing to our
+adjusting the diaphragm aperture or focal length. In practice,
+                                                                               captured data to correct brightness difference, align the clean
+we place the camera and screen as shown in Fig. 1. We
+                                                                               frame to the noisy frame, and correct the color cast.
+maintain a constant diaphragm aperture and carefully adjust
+                                                                                  1) Linear Intensity Correction: We capture the displayed
+the focal length to prevent moiré patterns and lens blur in the
+                                                                               videos in a darkroom and keep screen luminance as a constant
+recaptured content. Fig. 1 displays a recaptured noisy frame
+                                                                               value so that the brightness of the captured raw frame is only
+and its corresponding noise-free frame, along with a close-up
+                                                                               influenced by ISO settings and exposure time, which can be
+view of the difference between the noisy and clean frames. It
+                                                                               formulated as
+can be observed that the difference is pixel-independent noise
+                                                                                                        B = G × E,                          (1)
+without any characteristic color stripes, i.e., moiré patterns.
+   To eliminate the influence of ambient lighting, our dataset is              where B is the brightness of the raw frame pixels, G is
+captured in a darkroom. We adjust the brightness of the display                the ISO gain and E is the exposure time. We denote the
+YUE et al.: RVIDEFORMER: EFFICIENT RAW VIDEO DENOISING WITH A LARGER BENCHMARK DATASET                                                                 5
+
+
+
+                                                                                 left column of Fig. 2, the residual B channel (obtained by In -
+                                                                                 Ic (Îc ), where Îc is the intensity corrected version) has large
+                                                                                 difference at the over-exposed regions, such as the person’s
+                                                                                 hat and the wings of air plane. Therefore, during capturing,
+                                                                                 we tune the exposure time and screen luminance to make the
+                                                                                 recaptured clean image a bit darker than the noisy image. In
+                                                                                 this way, the derived Gcor is larger than 1. As shown in the
+                                                                                 right column of Fig. 2, after intensity correction, Îc has the
+                                                                                 same brightness as that of In , even in the over-exposed regions.
+                                                                                      We would like to point out that the exposure compensation
+                                                                                 method may not be physically accurate. But this is the most
+                                                                                 practical strategy, and our experiments (in the supplementary
+                                                                                 file) also demonstrate the superiority of our dataset.
+                                                                                      2) Spatial Alignment: Due to the minuscule destabilization
+                                                                                 of the camera, there are spatial misalignments between In and
+                                                                                 Îc . In this work, we utilize DeepFlow [72] to align Îc with
+                                                                                 In . Specifically, we utilize DeepFlow to compute the optical
+                                                                                 flow between Gr channel of Îc and In , and then apply the
+                                                                                 same flow to the packed four channels of Îc to perform the
+                                                                                 warping. In this way, the Bayer pattern of the raw image can
+                                                                                 be kept. From Fig. 3, it can be observed that there exists sharp
+                                                                                 object edge in (c) but they disappear in (d). It means that after
+                                                                                 spatial alignment, raw clean frame is well aligned to raw noisy
+                                                                                 frame. Note that, the spatial reinterpolation with subsampled 4-
+                                                                                 channel CFA may lead to aliasing problems in high-frequency
+                                                                                 regions. Fortunately, we checked our dataset and did not find
+                                                                                 these problems. All warping frames are manually carefully
+                                                                                 checked and the ones with alignment errors are removed from
+                                                                                 our dataset.
+
+
+Fig. 2. From top to bottom, each row lists the original clean frame, noisy
+frame, clean frame after intensity correction, the residual brightness channel
+before and after intensity correction. Left: processing with Gcor < 1; Right:
+processing with Gcor > 1 (proposed).
+
+
+
+brightness, ISO gain, exposure time for raw clean (noisy)
+image as Bc (Bn ), Gc (Gn ), and Ec (En ), respectively. In
+order to not change the distribution of the noise in noisy
+frame, we correct the clean raw frame by multiplying it with
+a brightness compensation coefficient Gcor to make the clean
+frame have the same brightness as noisy frame. This process
+can be formulated as
+                            Bc × Gcor = Bn .                              (2)
+                                                                                 Fig. 3. Differences between blue channels of noisy and clean raw frames
+For a raw image, the pixel value after black level correction                    before and after spatial alignment. Zoom in for better observation.
+is linearly to B. In other words, the average brightness of a
+raw image can be estimated by averaging the pixel values.                           3) Color Correction: Due to the blue light of the electronic
+Therefore, Gcor can be derived as follows                                        monitor, the images captured by the camera may have color
+                              P        n                                         cast, which will make the data set biased to blue tone. The
+                        Bn       i,j (Iij − bl)
+                Gcor =      =P         c                  (3)                    color offset can be measured by the color temperature (Ki ) of
+                        Bc       i,j (Iij − bl)                                  different channels,
+where Inij (Icij ) denotes the pixel value of the raw noisy (clean)                                       C̄R + C̄Gr + C̄Gb + C̄B
+image at coordinates (i, j), and bl is the black level. Note that,                                 Ki =                           ,                 (4)
+                                                                                                                    4C̄i
+the over-exposed pixel values are clipped to white level and
+is not linearly to B. When Gcor is smaller than 1, directly                      where C̄i , i ∈ {R, Gr , Gb , B} represents the average value of
+applying Gcor to Ic will cause the over-exposed pixel values                     channel i. In order to obtain the correct color temperature
+in Ic become smaller than the white level. As shown in the                       for each channel, we utilize [55] to convert the original RGB
+6                                                                      IEEE TRANSACTIONS ON CIRCUITS AND SYSTEMS FOR VIDEO TECHNOLOGY
+
+
+
+frame into raw frame and obtain its original color temperature             We would like to point out that multi-branch structure
+K̂i . Therefore, we can obtain the correction coefficients (αi )        has been applied to build transformer in classification [73],
+of the blue and green channels based on the red channel by              [74] and image super-resolution [75]. Among them, [73]
+solving the following equations:                                        utilizes dual branch to combine image tokens of different
+                                                                        sizes, [74] designs two parallel branch to combine MobileNet
+   C̄R + αGr C̄Gr + αGb C̄Gb + αB C̄B
+                                      = K̂i , i ∈ {Gr , Gb , B} .       and transformer, and [75] constructs a multi-branch structure
+                   4C̄i                                                 where different branches utilize different window size for self-
+                                                                 (5)
+The corrected noisy frame can be obtained by Îni = αi Ini , i ∈        attention. In contrast, we utilize the same window size for
+{Gr , Gb , B}. The corresponding clean frame is also processed          the Queries but utilize different window sizes for Keys and
+with the same αi . Note that, our color calibration coefficients        Values. In this way, we can utilize correlated information from
+can be treated as linear digital gains. After color correction,         different receptive fields for video denoising.
+the noise distributions in our dataset are close to real normal            1) Shift-Window Self-Attention (SWSA): The SWSA is the
+noisy videos.                                                           same as that defined in SwinIR [8]. Given a noisy frame
+   In summary, after intensity correction, spatial alignment,           feature F ∈ RH×W ×C , we split it into ⌊ H        W
+                                                                                                                   h ⌋ × ⌊ w ⌋ windows,
+and color correction, we obtain the paired noisy-clean frames           where the window size is h × w. For the i-th window
+for supervised learning. For brevity, we still utilize In to denote     Fi ∈ RN ×C (where N = hw), we project it into query Qi ,
+the noisy frames in the following.                                      key Ki , and value Vi by linear projection,
+                                                                                 Qi = Fi PQ ,     Ki = Fi PK ,    Vi = Fi PV ,        (6)
+             IV. T HE P ROPOSED RV I D EFORMER                                   Q    K
+                                                                        where P , P , P ∈ RV        C×D
+                                                                                                         are projection matrices and
+  In this section, we first introduce the network structure of          D is the channel number of projected features. We use
+our proposed raw video denoising transformer (RViDeformer),             Qi to query Ki in order    √ to generate the attention map
+and then present its key components, i.e., the multi-branch             Ai = SoftMax(Qi (Ki )T / D) ∈ RN ×N , and Ai is used for
+spatial self-attention block (MSSB) and temporal self-attention         weighted sum of Vi , namely SWSA(Qi , Ki , Vi ) = Ai Vi .
+block (MTSB).                                                           The SoftMax denotes the row softmax operation. In this way,
+                                                                        we generate the enhanced feature Foi ∈ RN ×D , whose noise
+A. Network Structure Overview                                           is reduced through the weighted average of similar features
+                                                                        inside the window itself.
+    Given a set of consecutive Bayer raw noisy frames In[1:T ] , we
+                                                                           2) Global-Window Self-Attention (GWSA): In SWSA, we
+aim to recover the raw clean frames IGT   [1:T ] through our network    utilize the same window to generate the query, key, and
+RViDeformer, as illustrated in Fig. 4. The noisy sequence               value of the transformer. However, this approach limits the
+In[1:T ] is first packed into four channels, and goes through           calculation of correlations to only occur within the window.
+the MTSB and MSSB block alternatively to exploit temporal-              For GWSA, we propose to down sample the whole feature
+spatial correlations. After temporal-spatial reconstruction, the        map F ∈ RH×W ×C to the window size to construct a global
+features are fed into the spatial refinement module to generate         window Fg ∈ RN ×C . For the i-th window, the queries are
+the denoised raw frames IO    [1:T ] , which are then transformed       obtained by linear projection of Fi (as defined in SWSA),
+to sRGB domain via a pre-trained ISP module. There are                  while the keys and values are obtained by linear projection of
+MTR blocks in the temporal-spatial reconstruction module and            Fg . Namely
+MSR blocks in the spatial refinement module. The crucial
+components of our network are the MSSB and MTSB blocks,                          Qgi = Fi PQ
+                                                                                           g,    K g = Fg P K
+                                                                                                            g,    V g = Fg P V
+                                                                                                                             g,       (7)
+which are described in detail in the following.                                                  C×D g
+                                                                        where  PQ    K    V
+                                                                                g , Pg , Pg  ∈R         are projection matrices and Dg
+                                                                        is the channel number of projected features. Afterwards,√ we
+B. Multi-Branch Spatial Self-Attention (MSSA)                           generate the attention map Agi = SoftMax(Qgi (Kg )T / Dg ) ∈
+                                                                                                                               N ×D g
+   The recent transformer-based video denoising methods [4]–            RN ×N to fuse the values Vg , resulting in Fog  i ∈ R         . In
+[6] are all based on Swin Transformer [7], [8], which divides           this way, the feature of each local window is predicted by the
+images with non-overlapping windows and only apply self-                fusion of global downsampled features.
+                                                                           3) Neighbour-Window Self-Attention (NWSA): When the
+attention inside the window. Although Swin Transformer tries
+                                                                        window number ⌊ H          W
+                                                                                            h ⌋ × ⌊ w ⌋ is large, the global window F
+                                                                                                                                         g
+to exchange the information between windows through win-
+                                                                        cannot represent the detailed features. Therefore, we further
+dow shift operation, but the exchanged areas are limited and
+                                                                        propose Neighbour-Window Self-Attention (NWSA), which
+the long-range information can not be utilized. To solve this
+                                                                        utilizes the information from a large neighbour area rather
+problem, we propose Global-Window and Neighbour-Window
+                                                                        than the global feature map. As shown in Fig. 5, for the i-
+Self-Attention to enable exploring correlation from global
+                                                                        th window Fi , we downsample its neighbour area to make
+and the neighbor areas. Since the downsampling operation
+                                                                        the large neighbor have the same size as Fi , generating a
+can reduce noise but preserve the low frequency information,
+                                                                        neighbour-window Fni ∈ Rh×w×C , reshaped as Fni ∈ RN ×C .
+we further propose Low-Resolution Self-Attention to make
+                                                                        Then we compute the query Qni , key Kni and value Vin from
+each window not only learn from itself but also from its
+                                                                        Fi and Fni by linear projections as
+downsampled version. Afterward, we combine the multiple
+self-attention branches via feature fusion.                                      Qni = Fi PQ
+                                                                                           n,    Kni = Fni PK
+                                                                                                            n,    Vni = Fni PV
+                                                                                                                             n,       (8)
+YUE et al.: RVIDEFORMER: EFFICIENT RAW VIDEO DENOISING WITH A LARGER BENCHMARK DATASET                                                             7
+
+
+
+
+Fig. 4. The framework of proposed RViDeformer, which is constructed by temporal-spatial reconstruction (containing MTR blocks) and spatial refinement
+(containing MSR blocks) modules.
+
+
+                                                                                                 N
+                                                                            window Fli ∈ R 4 ×C . Fli reduces the noise in Fi but still
+                                                                            preserves the structure of input image. Then, the query Qli ,
+                                                                            key Kli and value Vil are derived by
+
+                                                                                      Qli = Fi PQ
+                                                                                                l ,      Kli = Fli PK
+                                                                                                                    l ,    Vli = Fli PV
+                                                                                                                                      l ,        (9)
+                                                                                                              l
+                                                                            where PQ       K    V
+                                                                                      l , Pl , Pl ∈ R
+                                                                                                      C×D
+                                                                                                            are projection matrices and Dl
+                                                                            is the channel number of projected features. Then we √  calculate
+                                                                            the attention weights Ali = SoftMax(Qli (Kli )T / Dl ) ∈
+                                                                                  N
+                                                                                                                      N ×D l
+                                                                            RN × 4 to fuse Vil , generating Foli ∈R          .
+                                                                               As shown in Fig. 5, we construct three self-attention
+                                                                            branches, namely SWSA, LWSA, and GWSA (or NWSA)
+                                                                            respectively. Specifically, we apply NWSA for the MSSB and
+                                                                            MTSB blocks in the original resolution and GWSA is applied
+                                                                            on the other blocks since applying GWSA on the original
+                                                                            resolution will lose much information. Since the proposed
+                                                                            GWSA, NWSA, and LWSA are also window based, we utilize
+Fig. 5. The framework of proposed MSSA.                                     the shift window operation on them for better performance.
+                                                                                                                               og
+                                                                            Finally, we fuse the three outputs Foi , Fol   on
+                                                                                                                      i , Fi (Fi ) via a 1×1
+
+                                    n
+                                                                            convolution layer and adjust the contributions of each branch
+                            C×D
+where PQ         K   V
+           n , Pn , Pn ∈ R         are projection matrices and              by the parameters D, Dl and Dn (Dg ). We utilize NS MSSA
+   n
+D is the channel number of projected features. We use                       to construct one MSSA Group (MSSAG).
+Qni to query Kni √     to generate the attention map Ani =                     Through our proposed GWSA and NWSA, RViDeformer
+SoftMax(Qi (Ki ) / Dn ) ∈ RN ×N , and Ani is used for
+               n   n T
+                                                                            can utilize the information within large windows. In addition,
+weighted sum of Vin , generating the enhanced feature Fon  i ∈              the multi-scale architecture in the temporal-spatial recon-
+        n
+RN ×D . In other words, the feature of each local window is                 struction implicitly enlarges the window size and helps the
+predicted by the feature in down-sampled neighbor window.                   information flow from a long distance.
+Note that, when the token is located at the corner or edge of
+the whole patch, part of the neighbor window will be outside
+the patch. In this case, we pad these areas with zeros.                     C. Multi-Branch Temporal Mutual Self-Attention (MTSA)
+   4) Low-Resolution-Window Self-Attention (LWSA): Multi-                      VRT [5] proposes Temporal Mutual Self-Attention to ex-
+scale architecture is beneficial for denoising. In RViDeformer,             ploit temporal information from neighbour frames, but the self-
+we not only utilize it in constructing the UNet-like backbone,              attention operation is limited inside the window, which can not
+but also apply it in the transformer structure, namely the                  process large movements. Therefore, they further introduce
+values of the transformer are from windows with different                   warping module to align the neighbor frames (i.e., supporting
+receptive fields. For GWSA and NWSA, we are actually                        frames) with the reference frame. Different from it, we pro-
+utilizing the information from large areas. Therefore, we                   pose to utilize transformer to perform implicit alignment by
+further propose to utilize the information from the window                  adjusting the window region of the supporting frames. Similar
+itself but in a low-resolution version. For the i-th window Fi ,            to our proposed MSSA block, we further propose Multi-branch
+we downsample it with scale 2 to construct a lower resolution               Temporal Mutual Self-Attention (MTSA), which utilizes the
+8                                                                     IEEE TRANSACTIONS ON CIRCUITS AND SYSTEMS FOR VIDEO TECHNOLOGY
+
+
+
+                                                                       (NTMA). Similar to MSSA, NTMA is applied on the blocks
+                                                                       with original resolution and GTMA is applied on the other
+                                                                       blocks with low resolution. Through our proposed GTMA and
+                                                                       NTMA, RViDeformer can utilize the information with large
+                                                                       movements from the supporting frames. Note that, we also
+                                                                       introduce the MSSA module during temporal reconstruction to
+                                                                       further enhance the spatial correlations. We utilize NT MTSA
+                                                                       to construct one MTSA Group (MTSAG).
+                                                                          Through our proposed GTMA and NTMA, RViDeformer
+                                                                       can utilize the information with large movements from the
+                                                                       supporting frame. In addition, the multi-scale architecture
+                                                                       in the temporal-spatial reconstruction implicitly enlarges the
+                                                                       window size and helps the information flow from a long
+                                                                       distance. These strategies help our model to deal with videos
+                                                                       with large motions.
+                                                                          The spatial self-attention and temporal mutual self-attention
+                                                                       modules follow the window shift operation of SWSA. After
+                                                                       the shift operation, original window may be composed of sev-
+Fig. 6. The framework of proposed MTSA.                                eral sub-windows that are not adjacent. In this case, we utilize
+                                                                       the original mask mechanism in SWSA to limit self-attention
+                                                                       computation to within each sub-window or between the sub-
+Global-Window and Neighbour-Window Self-Attention to pro-              window and its corresponding global window, neighboring
+cess the movements between the reference and supporting                window, or low-resolution window.
+frames, as shown in Fig. 6.
+   Given a reference frame feature FR ∈ RH×W ×C and                    D. Reparameterization
+a supporting frame feature FS ∈ RH×W ×C , we first split
+                                                                          Reparameterized MLP (RepMLP). For transformer, we
+them into windows. For the reference frame, we split it into
+                                                                       usually utilize MLP after the self-attention layers. In this
+⌊H        W
+  h ⌋ × ⌊ w ⌋ windows, where the window size is h × w,                 work, we propose to utilize two MLPs during training to
+and the i-th window can be denoted as FRi ∈ Rh×w×C .
+                                                                       increase the capability of the network. During test, we utilize
+For the supporting frame, we split it into windows in three
+                                                                       reparameterization to fuse the two linear layers into one linear
+ways. The first is the same as that in reference frame, namely
+                                                                       layer. In this way, the inference cost is the same as that
+the i-th window is FSi ∈ Rh×w×C . The second is global-
+                                                                       for one MLP layer. Specifically, during training, the Cin -
+window, namely we directly down-sample the whole feature
+                                                                       channel feature map I ∈ RCin ×H×W goes through two parallel
+map to the window size, constructing the global window
+                                                                       linear layers with weights WL1 , WL2 ∈ RCout ×Cin and bias
+FSg ∈ Rh×w×C . The third is neighbor window, namely
+                                                                       bL1 , bL2 ∈ RCout , generating the corresponding Cout -channel
+we downsample a large neighbor region centered at the i-th
+                       h×w×C                                           feature maps OL1 and OL2 ∈ RCout ×H×W , respectively. OL1
+window into FSn i ∈ R         . According to different window
+                                                                       and OL2 are then added together and activated by GELU layer,
+settings in the supporting frame, we construct three different
+                                                                       then goes through a dropout and a linear layer to generate the
+temporal self-attention mechanisms, i.e., the plain Temporal
+                                                                       final result. When inference, based on the linearity of the linear
+Mutual Attention (TMA), Global-Window Temporal Mutual
+                                                                       layer, two parallel linear layers can be fused into one linear
+Attention (GTMA), and Neighbour-Window Temporal Mutual
+                                                                       layer with weights WLf and bLf , which can be formulated as
+Attention (NTMA). Specifically, the query, key, and value for
+the three attentions are denoted as                                                         WLf = WL1 + WL2 ,
+                                                                                                                                    (11)
+    TMA: QRi = FRi PQ    S    S K      S      S V                                             bLf = bL1 + bL2 .
+                    R , Ki = Fi PS , Vi = Fi PS
+    GTSA: QRg      R Q
+            i = Fi PRg , K
+                           Sg
+                              = FSg PKSg , V
+                                             Sg
+                                                = FSg PV
+                                                       Sg
+                                                                          Reparameterized Convolution (RepConv). In the end of
+            Rn     R Q     Sn    Sn K        Sn    Sn V                each MTSB (MSSB), we further utilize a 3×3 2D convo-
+    NTSA: Qi = Fi PRn , Ki = Fi PSn , Vi = Fi PSn ,                    lution to model the local spatial context. Therefore, the last
+                                                               (10)    linear layer (which is equal to a 1×1 2D convolution) in
+where PQ        K   V      C×DT
+                                  , PQ     K     V     C×DTg           the transformer (MTSAG or MSSAG) can be fused with the
+          R , PS , PS ∈ R            Rg , PSg , PSg ∈ R       and
+  Q     K     V      C×DTn                                             convolution layer during inference. The weights of two convo-
+PRn , PSn , PSn ∈ R         are projection matrices. Note that all
+                                                                       lutions before fusion can be denoted as WC1 ∈ RCout ×Cin ×1×1 ,
+the features are reshaped into N × C before the projection op-
+                                                                       WC2 ∈ RCout ×Cin ×3×3 . Similarly, the bias can be denoted as
+eration. Then, we calculate the attention coefficients between
+                                                                       bC1 , bC2 ∈ RCout . The weight and bias of fused convolution
+the query and corresponding key, and then generate the fusion
+                                                                       can be denoted as WCf ∈ RCout ×Cin ×3×3 and bCf ∈ RCout .
+result by weighted average of the corresponding values based
+                                                                       According to [76], the fused convolution parameters are
+on the attention coefficients, similar to that in MSSA.
+                                                                                                          T
+   As shown in Fig. 6, we construct the first branch of MTSA                            WCf = conv(WC2 , WC1 ),
+                                                                                                                                    (12)
+with TMA, and construct the second branch with GTMA                                       bCf = sum(WC2 bC1 ) + bC2 .
+YUE et al.: RVIDEFORMER: EFFICIENT RAW VIDEO DENOISING WITH A LARGER BENCHMARK DATASET                                                   9
+
+
+                                                                                                  TABLE II
+E. ISP                                                                   D ETAILED CONFIGURATIONS OF DIFFERENT VERSIONS OF OUR
+                                                                     RV I D EFORMER . T HE MAC S ARE CALCULATED BASED ON THE BAYER
+   We utilize the ISP module proposed by [1] to transfer raw                   RAW INPUT WITH A RESOLUTION OF 1920×1080.
+denoising results IO                            O
+                    [1:T ] to the sRGB domain S[1:T ] . The ISP         Models           DT D MTR MSR NT NS heads GMACs
+module has a UNet architecture, which is trained with 230
+clean raw and sRGB pairs from SID dataset [48]. By changing             RViDeformer-T     24   24    14   2    1   1    6      38.81
+                                                                        RViDeformer-S     24   30    14   3    2   1    6      71.30
+the training pairs, we can simulate ISPs of different cameras.          RViDeformer-M     24   30    14   4    4   2    6     143.67
+In addition, ISP module can also be replaced by traditional             RViDeformer-L     84   108   14   4    4   2    6     1790.86
+ISP pipelines [56].
+
+F. Loss Functions                                                                             TABLE III
+                                                                     Q UANTITATIVE COMPARISONS OF PSNR AND SSIM FOR SUPERVISED
+   In this work, we adopt two kinds of loss functions, which are     RAW VIDEO DENOISING ON THE R E CRVD TEST SET. T HE GMAC S FOR
+used for supervised and unsupervised video denoising tasks,         ONE FRAME ARE CALCULATED BASED ON THE BAYER RAW INPUT WITH A
+                                                                                      RESOLUTION OF 1920×1080.
+respectively.
+   Supervised loss. Our supervised loss function includes
+                                                                     Methods            Params(M)    GMACs         raw          sRGB
+raw and sRGB domain reconstruction losses, which can be              VBM4D [20]             -           -      39.68/0.9475   33.65/0.8962
+formulated as                                                        FastDVDnet [26]      2.48       332.23    43.49/0.9806   38.87/0.9615
+                                                                     EMVD∗ [24]           2.62       177.82    43.32/0.9794   38.60/0.9587
+                     Lraw =∥IO    GT
+                             t − It ∥1                               BSVD-32 [27]         2.45       153.65    43.56/0.9807   39.06/0.9619
+                                                                     BRVE∗ [23]          35.89       157.13    43.86/0.9822   39.27/0.9651
+                    LsRGB =∥SO    GT
+                             t − St ∥1                      (13)     RViDeformer-M        1.12       143.67    43.98/0.9823   39.57/0.9652
+                     Lsup =Lraw + β1 LsRGB                           RViDeNet [1]         8.57       2079.74   43.71/0.9811   39.09/0.9627
+                                                                     MaskDnGAN [77]       2.91       3006.49   43.98/0.9815   39.05/0.9629
+where IO         O
+         t and St denote the raw and sRGB output of the net-
+                                                                     FloRNN [25]         11.82       2316.73   44.01/0.9829   39.42/0.9672
+                                                                     RVRT∗ [6]            9.07       3152.25   43.97/0.9821   39.43/0.9648
+work for the t-th frame, IGT        GT
+                           t and St denote the corresponding         VRT∗ [5]             7.15       3056.48   44.07/0.9826   39.69/0.9662
+ground truths. The parameters of the pretrained ISP are fixed        ShiftNet∗ [28]       6.93       2350.27   44.22/0.9833   39.91/0.9682
+when training the denoising network, which is beneficial for         RViDeformer-L        6.77       1790.86   44.37/0.9837   40.15/0.9695
+improving the reconstruction quality in the sRGB domain. β1
+is the hyper-parameter to balance the two losses.
+   Unsupervised loss. For unsupervised video denoising, the         (i.e., MTR and MSR ), and the number of self-attention block
+key is to build noisy-noisy pairs for Noise2Noise training [29]     in MTSAG and MSSAG (i.e., NT and NS ). For all the four
+from video data. F2F [32] and MF2F [34] utilize neighboring         versions, the head number in multi-head self-attention is set to
+frames after warping for Noise2Noise training, where the            6. The channel numbers of projected features in LWSA (Dl ),
+warping error negatively impact the performance. Therefore          GWSA (Dg ), and NWSA (Dn ) branches are half of that (D)
+we construct noisy-noisy pairs only from single frame. In this      in SWSA branch of MSSA block, respectively. The channel
+work, we utilize the NBR2NBR loss [9]. Specifically, for the        numbers of projected features in GTMA (DTg ) and NTMA
+t-th noisy frame Int , we sub-sample it with a neighbor down-       (DTn ) branches are half of that (DT ) in TMA branch of MTSA
+sampler to get sub-frames Ins1
+                             t   and Ins2
+                                        t . We feed the network     block, respectively.
+with It to generate the denoising result IsO1
+       ns1                                                   n
+                                             t . Then, with It as      Since LLRVD [3] has not released their dataset, we compare
+                O                     O                             our method with state-of-the-art raw video denoising methods
+input, we get It and downsample It with the same neighbor
+down-sampler to get sub-frames IOs1   t    and IOs2
+                                                 t . The spatial    on our proposed ReCRVD dataset and CRVD dataset [1]. For
+NBR2NBR loss can be formulated as                                   supervised and unsupervised video denoising on ReCRVD
+              Lrec =∥IsO1 − Ins2 2                                  dataset, we train our network with 12000 epochs, and the
+                      t      t ∥2
+                                              2
+                                                                    learning rate starts with 1e-4 and drops to 5e-5 and 2e-5 after
+              Lreg =∥IsO1
+                      t   − Ins2   Os1
+                             t − (It   − IOs2
+                                          t )∥2             (14)    2/6 and 5/6 of total epochs. For supervised and unsupervised
+            Lunsup =Lrec + β2 Lreg ,                                video denoising on CRVD dataset, we train our network with
+where β2 is the hyper-parameter controlling the strength of         30000 epochs, and the learning rate starts with 1e-4 and drops
+the Lreg .                                                          to 5e-5 and 2e-5 after 4/6 and 5/6 of total epochs. The hyper-
+                                                                    parameter β1 in supervised loss is set to 0.5, and the hyper-
+                      V. E XPERIMENTS                               parameter β2 in unsupervised loss is set to 2×(epoch/(total
+                                                                    epoch)). The batch size and patch size are set to 1 and 64,
+A. Implementation Details                                           respectively. The temporal number T is set to 6 during training.
+   For a fair comparison with other video denoising methods         The experiments are conducted with an NVIDIA 3090 GPU.
+under similar computation cost, we build four different ver-
+sions of RViDeformer as shown in Table II: RViDeformer-T
+(Tiny), RViDeformer-S (Small), RViDeformer-M (Medium),              B. Comparison with State-of-the-art Methods
+and RViDeformer-L (Large). They are designed by changing               To demonstrate the effectiveness of the proposed raw video
+the base channel number of projected features in MTSA and           denoising methods, we compare with state-of-the-art video
+MSSA (i.e. DT in Eq. 10 and D in Eq. 6), the block number in        denoising methods for supervised learning and unsupervised
+temporal-spatial reconstruction and spatial refinement modules      learning, respectively.
+10                                                                          IEEE TRANSACTIONS ON CIRCUITS AND SYSTEMS FOR VIDEO TECHNOLOGY
+
+
+
+
+Fig. 7. Visual quality comparison on ReCRVD test set for supervised raw video denoising. Zoom in for better observation.
+
+
+
+                             TABLE IV                                        into two groups based on their computation costs. The first
+ Q UANTITATIVE COMPARISONS OF PSNR AND SSIM FOR SUPERVISED                   group is constructed by lightweight video denoising methods
+RAW VIDEO DENOISING ON THE CRVD TEST SET. T HE GMAC S FOR ONE
+  FRAME ARE CALCULATED BASED ON THE BAYER RAW INPUT WITH A                   (FastDVDnet, EMVD, BSVD-32, BRVE) and the traditional
+ RESOLUTION OF 1920×1080. T HE RESULTS OF VBM4D ARE QUOTED                   denoising method VBM4D. Among them, BSVD-32 is a
+  FROM [1]. T HE RESULTS OF EDVR AND FAST DVD NET ARE QUOTED                 lighter version of BSVD. Since the code of EMVD has not
+FROM [24]. T HE RESULTS OF FAST DVD NET-S ARE QUOTED FROM [78].
+                                                                             been released, we use an unofficial implementation 1 , and we
+ Methods               Params(M)   GMACs          raw          sRGB          denote it as EMVD∗ . To unify the computation cost of the
+ VBM4D [20]                -          -             -        34.16/0.9220    first group to a similar level, we increase the base channel
+ EMVD [24]                 -        39.76     44.05/0.9890   39.53/0.9796    number of BRVE for a fair comparison, which is denoted
+ BSVD-16 [27]              -        39.38     44.10/0.9884   40.17/0.9804
+ RViDeformer-T           0.43       38.81     44.34/0.9887   40.60/0.9813
+                                                                             as BRVE∗ . For VBM4D, we observe that processing in raw
+ FastDVDnet-S [26]         -       146.99     44.25/0.9887        -          domain can achieve better results. Therefore, we pack the
+ BSVD-24 [27]              -        87.73     44.39/0.9894   40.48/0.9820    Bayer raw input into 4 channels and process each channel
+ BP-EVD [78]             2.56       72.39     44.42/0.9889        -
+ RViDeformer-S           0.63       71.30     44.65/0.9894   41.00/0.9828
+                                                                             with VBM4D separately. We compare these light-weight video
+ LLRVD [3]               6.36      1724.52    44.18/0.9880        -          denoising methods with RViDeformer-M, which is a lighter
+ EDVR [79]                 -       1544.49    44.71/0.9902   40.89/0.9838    version of our network. The second group contains large video
+ EMVD-L [24]               -       1272.75    44.58/0.9899        -
+ FastDVDnet [26]         2.48      332.50     44.30/0.9891   39.91/0.9812
+                                                                             denoising models (RViDeNet, MaskDnGAN, FloRNN, RVRT,
+ BRVE∗ [23]             35.89      157.13     44.20/0.9885   40.33/0.9811    VRT, ShiftNet) with more computation costs, and we compare
+ RViDeformer-M           1.12      143.67     44.89/0.9901   41.29/0.9840    them with our RViDeformer-L. Since the optical flow network
+ MaskDnGAN [77]          2.91      3006.49    43.04/0.9756   39.62/0.9640    in VRT and RVRT can only process 3-channel RGB inputs and
+ RViDeNet [1]            8.57      2079.74    43.97/0.9874   39.95/0.9792
+ FloRNN [25]            11.82      2316.73    45.16/0.9907   41.01/0.9843    can not process raw data, we apply a simple ISP to the raw
+ ShiftNet∗ [28]          6.93      2350.27    44.82/0.9900   40.91/0.9836    inputs before feeding them to the optical flow network. To
+ RViDeformer-L           6.77      1790.86    45.45/0.9913   41.86/0.9860    unify the computation cost of the second group to a similar
+                                                                             level, we reduce the base channel number and the depths of
+                                                                             VRT for a fair comparison, which is denoted as VRT∗ . For
+                                                                             the same reason, we reduce the base channel number of RVRT
+   Supervised learning on ReCRVD dataset. For supervised
+                                                                             and ShiftNet, which are denoted as RVRT∗ and ShiftNet∗ ,
+learning, we compare our method with eleven video denoising
+                                                                             respectively. We evaluate these methods on the test set of
+methods, i.e., VBM4D [20], FastDVDnet [26], RViDeNet [1],
+                                                                             proposed ReCRVD dataset.
+MaskDnGAN [77], EMVD [24], BSVD [27], FloRNN [25],
+                                                                                Table III lists the average PSNR and SSIM values of raw
+RVRT [6], VRT [5], ShiftNet [28] and BRVE [23]. For a fair
+                                                                             video denoising results in raw and sRGB domains on ReCRVD
+comparison, all the methods are retrained on the training set of
+                                                                             test set, which contains 30 videos and each video contains 25
+ReCRVD. Due to the significant variation in computation costs
+among these video denoising methods, we categorize them                          1 https://github.com/Baymax-chen/EMVD
+YUE et al.: RVIDEFORMER: EFFICIENT RAW VIDEO DENOISING WITH A LARGER BENCHMARK DATASET                                           11
+
+
+
+frames. It can be observed that our model greatly outperforms          Table IV lists the average PSNR and SSIM values of raw
+the state-of-the-art small and large video denoising models.        video denoising results in raw and sRGB domains on CRVD
+For lighter video denoising methods, RViDeformer-M outper-          test set. It can be observed that our models greatly outperform
+forms the second best method BRVE∗ by 0.12 (0.30) dB in             the SOTA video denoising methods in each group. For the first
+raw (sRGB) domain. For heavier video denoising methods,             group, RViDeformer-T outperforms the second best method
+RViDeformer-L outperforms the second best method ShiftNet∗          BSVD-16 by 0.24 (0.43) dB in raw (sRGB) domain. For the
+0.15 (0.24) dB in raw (sRGB) domain. In addition, our               second group, RViDeformer-S outperforms the second best
+model consumes the lowest MACs (multiply-add operations).           method BP-EVD by 0.23 dB in raw domain. For the third
+In terms of parameters, RViDeformer-M has fewer parameters          group, RViDeformer-M outperforms the second best method
+than other lighter video denoising methods, even fewer than         BRVE∗ by 0.69 (0.96) dB in raw (sRGB) domain. For the
+heavier methods RViDeNet, MaskDnGAN, and RVRT∗ , but                fourth group, RViDeformer-L outperforms the second best
+it achieves better PSNR and SSIM. RViDeformer-L also has            method FloRNN by 0.29 (0.85) dB in raw (sRGB) domain. For
+fewer parameters compared to other heavier video denoising          each group, our method has the lowest MACs. Fig. 8 presents
+methods except for MaskDnGAN. Fig. 7 presents the visual            the visual comparison results on three scenes of CRVD indoor
+comparison results on four scenes of ReCRVD test set. It can        test set. Since only RViDeNet and FloRNN have released
+be observed that our method can remove the noise clearly            their models, we only compare them and VBM4D on CRVD
+and recover the most details. VBM4D either cannot remove            dataset. It can be observed that our method recovers the most
+the noise (such as the first scene) or generate over-smooth         details in all three scenes.
+results (such as the second scene). The results of light-weight        Unsupervised learning on ReCRVD dataset. For unsu-
+methods, i.e., FastDVDnet, EMVD∗ , BSVD-32 and BRVE∗                pervised learning, we compare our method with state-of-the-
+are a bit smooth in the first scene, and contain artifacts in the   art unsupervised video denoising methods F2F [32], MF2F
+second scene. Compared with computational heavy methods,            [34], UDVD [35] and TAP [36]. All methods are retrained
+our method recovers more details, as shown in the third and         on the training set of ReCRVD dataset without utilizing
+fourth scenes of Fig. 7.                                            the ground truths. F2F and MF2F utilize DnCNN [33] and
+   Compared with the transformer-based methods RVRT and             FastDVDNet as their denoising network, respectively. We
+VRT, our method can utilize long-range information in the           utilize RViDeformer-L as our denoising network. For a fair
+frame and handle large movements between frames due                 comparison, we increase the channel number of DnCNN,
+to the proposed global and neighbor window self-attention.          FastDVDnet and TAP to unify the computation cost of them
+Thus our method has better quantitative results and restores        to be similar to that of our method, and we denote them
+more details. Benefiting from the transformer architecture, our     as F2F∗ , MF2F∗ and TAP∗ , respectively. The original TAP
+method performs better than CNN-based methods FastDVD-              utilizes an image denoiser NAFNet with supervised training
+net, EMVD, BSVD, RViDeNet, MaskDnGAN, FloRNN and                    as backbone. For a fair comparison, we retrained its backbone
+ShiftNet. Among them, the GAN-based method MaskDnGAN                in an unsupervised manner using the NBR2NBR loss. We
+restores details that result in good visual quality. However,       evaluate all methods on the test set of ReCRVD dataset. Table
+since the generated details deviate from ground truth, it leads     V lists the average PSNR and SSIM values of unsupervised
+to lower PSNR and SSIM values. Our method can restore               raw video denoising results on ReCRVD test set in both
+details with high fidelity. The employed reparameterization         raw and sRGB domains. It can be observed that our model
+in our method further reduces computation costs, resulting in       outperforms the SOTA unsupervised video denoising methods.
+lower MACs and parameters.                                          Compared with the second and third best methods UDVD and
+   Supervised learning on CRVD indoor dataset. We also              TAP∗ , our method achieves 0.02 (1.11) and 0.62 (0.86) dB in
+give the comparison results on CRVD indoor dataset [1].             raw (sRGB) domain, respectively. In addition, our method has
+CRVD indoor dataset is a popular benchmark dataset for raw          much higher SSIM values than UDVD. The main reason is
+video denoising, which contains 55 videos among which 6             that UDVD tends to generate smooth results in raw domain
+scenes are used for training and the other 5 scenes are used        (which leads to good PSNR result but worse SSIM value
+for testing. Most of the above mentioned methods have been          in raw domain) and its sRGB domain results contain many
+evaluated on this dataset. Therefore, we directly quote their       artifacts (which leads to worse PSNR values in sRGB domain).
+scores from their papers. We further introduce BP-EVD [78]          Our method also has the lowest MACs. It proves that our
+and LLRVD [3] for comparison. Since they are not open-              proposed network RViDeformer is also a good architecture
+sourced, we did not compare them on ReCRVD dataset. We              for unsupervised video denoising. Fig. 9 presents the visual
+also retrain and compare BRVE∗ and ShiftNet∗ on CRVD                comparison results on the ReCRVD test set for unsupervised
+dataset, which have been ranked as the second best methods          raw video denoising. It can be observed that the results of
+on ReCRVD dataset. Since we have compared with RVRT                 compared three unsupervised methods contains much chroma
+and VRT on ReCRVD dataset, we do not retrain and compare            noise. The results of F2F∗ and MF2F∗ contain some artifacts.
+them on CRVD dataset. For the methods with light-weight             Meanwhile, the results of F2F∗ , UDVD and TAP∗ are over-
+models, we compare these methods with RViDeformer-S or              smooth in the third scene. In contrast, our method removes
+RViDeformer-T. In summary, we categorize these methods              the noise clearly and recover the most details.
+into four groups and the methods in each group have similar            The main reason for our superior performance is as follows.
+computation costs.                                                  F2F and MF2F warp the neighboring frames for Noise2Noise
+12                                                                         IEEE TRANSACTIONS ON CIRCUITS AND SYSTEMS FOR VIDEO TECHNOLOGY
+
+
+
+
+Fig. 8. Visual quality comparison on CRVD test set for supervised raw video denoising. Zoom in for better observation.
+
+
+
+
+Fig. 9. Visual quality comparison on ReCRVD test set for unsupervised raw video denoising. Zoom in for better observation.
+
+
+
+training, the warping error limits the performance. UDVD                     on the test set of CRVD. In UDVD [35], its results are
+integrates the blind-spot network into the FastDVDnet. Since                 generated by training and testing on the same scenes of CRVD
+UDVD applies the same blind spot processing to both the                      test set. Since it is inconsistent with the real-world case, we
+current frame and the neighboring frames, the information of                 retrain UDVD on the training set and evaluate it with the
+the neighbor frame is lost, which also destroys the utilization              test set. Table VI lists the average PSNR and SSIM values
+of temporal similarity. TAP generates pseudo labels from its                 of unsupervised raw video denoising results on CRVD test
+image denoising backbone, which limits the performance.                      set. It can be observed that our model outperforms the second
+Different from these methods, we combine NBR2NBR loss                        best method TAP* with 0.65 dB gain in sRGB domain. Due to
+with our RViDeformer. The NBR2NBR loss subsamples each                       page limitations, the visual comparison results are presented
+frame to construct noisy pairs for Noise2Noise training. The                 in the supplementary material.
+constructed noisy pairs have better quality than the pairs                      To demonstrate the effectiveness of our proposed ReCRVD
+by warping the neighboring frames. Meanwhile, our RViDe-                     dataset and raw video denoising method RViDeformer, we
+former can still take full advantage of the temporal similarity.             use the CRVD outdoor test set [1] for the generalization
+Therefore, our method still generates the best results via                   test. Due to page limitations, the results are presented in the
+unsupervised learning.                                                       supplementary material.
+   Unsupervised learning on CRVD indoor dataset. We also
+give the comparison results of unsupervised video denoising                  C. Ablation Study
+methods on CRVD indoor dataset. We retrain the above four                       In this section, we perform ablation study to demonstrate the
+unsupervised methods on the training set and evaluate them                   effectiveness of the proposed MTSB, MSSB, and multi-branch
+YUE et al.: RVIDEFORMER: EFFICIENT RAW VIDEO DENOISING WITH A LARGER BENCHMARK DATASET                                                       13
+
+
+
+                           TABLE V                                                                  TABLE VII
+Q UANTITATIVE COMPARISONS OF PSNR AND SSIM FOR UNSUPERVISED                 A BLATION STUDY FOR THE MTSB, MSSB BLOCK AND THE
+RAW VIDEO DENOISING ON R E CRVD TEST SET. T HE GMAC S FOR ONE         MULTI - BRANCH SELF - ATTENTION IN RV I D EFORMER -M BY EVALUATING
+  FRAME ARE CALCULATED BASED ON THE BAYER RAW INPUT WITH A                                    ON R E CRVD TEST SET.
+                  RESOLUTION OF 1920×1080.
+                                                                                        MTSB           ×         ✓         ×         ✓
+   Methods       Params(M)   GMACs          raw          sRGB              Block        MSSB           ×         ×         ✓         ✓
+   F2F∗ [32]        4.16     2157.57    39.00/0.9621   32.93/0.9224                   raw PSNR        43.58     43.82     43.86     43.98
+   MF2F∗ [34]       21.9     2584.41    41.83/0.9726   36.15/0.9442                   raw SSIM       0.9804    0.9816    0.9616    0.9823
+   UDVD [35]        2.98     17077.07   43.11/0.9785   37.87/0.9560                  sRGB PSNR        39.08     39.34     39.39     39.57
+   TAP∗ [36]       60.18     2689.45    42.51/0.9780   38.12/0.9586                  sRGB SSIM       0.9613    0.9631    0.9636    0.9652
+   Ours             6.77     1790.86    43.13/0.9810   38.98/0.9639                     GTMA           ×         ✓         ✓
+                                                                           MTSB         NTMA           ×         ×         ✓
+                                                                                      raw PSNR        43.74     43.79     43.82
+                          TABLE VI                                                    raw SSIM       0.9812    0.9814    0.9816
+Q UANTITATIVE COMPARISONS OF PSNR AND SSIM FOR UNSUPERVISED                          sRGB PSNR        39.24     39.30     39.34
+RAW VIDEO DENOISING ON THE CRVD TEST SET. T HE GMAC S FOR ONE                        sRGB SSIM       0.9627    0.9629    0.9631
+  FRAME ARE CALCULATED BASED ON THE BAYER RAW INPUT WITH A                              LWSA           ×         ✓         ✓         ✓
+                  RESOLUTION OF 1920×1080.                                 MSSB         GWSA           ×         ×         ✓         ✓
+                                                                                        NWSA           ×         ×         ×         ✓
+   Methods       Params(M)   GMACs          raw          sRGB                         raw PSNR        43.71     43.76     43.82     43.86
+   F2F∗ [32]        4.16     2157.57    35.31/0.9516   27.49/0.9099                   raw SSIM       0.9812    0.9813    0.9815    0.9816
+   MF2F∗ [34]       21.9     2584.41    41.24/0.9774   36.95/0.9607                  sRGB PSNR        39.19     39.26     39.35     39.39
+   UDVD [35]        2.98     17077.07   43.08/0.9851   38.71/0.9755                  sRGB SSIM       0.9627    0.9630    0.9636    0.9636
+   TAP∗ [36]       60.18     2689.45    43.11/0.9861   39.62/0.9775
+   Ours             6.77     1790.86    43.12/0.9879   40.27/0.9812
+
+
+
+self-attention. Table VII lists the quantitative comparison re-
+sults on ReCRVD test set by removing these modules one
+by one from RViDeformer-M. In the first row of Table VII,
+we replace the proposed MSSB and MTSB by the existed
+solution to create the baseline model. Specifically, removing
+MSSB means that we replace the MSSA module in MSSB by a
+plain SWSA in VRT [5] and the RepConv module in MSSB is
+replaced by the linear layer in VRT. Removing MTSB means
+that we replace MTSA with the temporal mutual self-attention
+(TMSA) in VRT. Therefore, our model without MSSB and
+MTSB can be regarded as the VRT [5] model without optical
+flow. As shown in Table VII, MSSB brings 0.28 (0.31) dB gain
+in raw (sRGB) domain. MTSB brings 0.24 (0.26) dB gain in
+raw (sRGB) domain. It demonstrates that the proposed multi-
+branch self-attention and RepConv are beneficial for video            Fig. 10. Failure cases of our method (c) and BRVE* (b). The inputs (a) are
+denoising.                                                            from the SMID dataset.
+
+   The main component for MTSB is the proposed MTSA
+module, which contains the plain TMA, GTSA, and NTSA                  domain. For the version without LWSA, GWSA, and NWSA,
+module. Therefore, we further ablate the proposed GTSA and            namely that we only utilize the plain SWSA branch, the PSNR
+NTSA branch. Since we apply NTSA on the features with                 value is decreased by 0.15 (0.2) dB in raw (sRGB) domain.
+original resolution and GTSA is applied on low-resolution             For reparameterization, the computation cost is reduced by
+features. We replace NTMA with GTMA when removing                     3.37 and 13.92 GMACs for the 1920×1080 Bayer input
+NTMA. It can be observed that PSNR value in the raw (sRGB)            by introducing the proposed RepMLP and RepConv method
+domain is decreased by 0.03 (0.04) dB by removing NTMA.               during inference, respectively.
+If we remove both GTMA and NTMA, namely that there is
+only TMA and MSSA branches in MTSA, the performance
+is decreased by 0.08 and 0.1 dB in raw and sRGB domain,               D. Limitation
+respectively. The key component of MSSB is the proposed                  We would like to point out that our method also has some
+MSSA module, which is constructed by three branches. Sim-             limitations. Our model is trained with the data captured by
+ilar to NTMA, for the version without NWSA, we utilize                sensor IMX385 under five ISO levels. The denoising perfor-
+GWSA on all the blocks. It can be observed that PSNR value            mance may be degraded when directly applying the model
+in the raw (sRGB) domain is decreased by 0.04 (0.04) dB               to noisy videos captured by other sensors, or the noisy level
+by removing NWSA. For the version without GWSA, we                    is much higher than our ISO settings. Fig. 10 presents the
+remove both GWSA and NWSA, and the PSNR value for                     denoising results of our method (c), namely RViDeformer-
+this version is decreased by 0.1 (0.13) dB in raw (sRGB)              M, and BRVE* [23] (b) on the SMID [58] dataset, which
+14                                                                                IEEE TRANSACTIONS ON CIRCUITS AND SYSTEMS FOR VIDEO TECHNOLOGY
+
+
+
+is captured by another sensor. Our model and BRVE* are                              [8] J. Liang, J. Cao, G. Sun, K. Zhang, L. Van Gool, and R. Timofte,
+both trained on ReCRVD dataset. The noise level of the                                  “Swinir: Image restoration using swin transformer,” in Proceedings of
+                                                                                        the IEEE/CVF international conference on computer vision, 2021, pp.
+second scene is much higher than that in our dataset. For                               1833–1844.
+the first scene our method can remove the noise but the                             [9] T. Huang, S. Li, X. Jia, H. Lu, and J. Liu, “Neighbor2neighbor: Self-
+result contains purple-colored artifacts. For the second scene,                         supervised denoising from single noisy images,” in Proceedings of the
+                                                                                        IEEE/CVF conference on computer vision and pattern recognition, 2021,
+our method cannot remove the noise clearly and results in                               pp. 14 781–14 790.
+severe artifacts. Note that, this is the common limitations of                     [10] W. Dong, P. Wang, W. Yin, G. Shi, F. Wu, and X. Lu, “Denoising prior
+supervised learning, and the second best method BRVE* also                              driven deep neural network for image restoration,” IEEE transactions
+                                                                                        on pattern analysis and machine intelligence, vol. 41, no. 10, pp. 2305–
+generates this kind of artifacts, as shown in Fig. 10 (b). In the                       2318, 2018.
+future, we would like to introduce more accurate noise models                      [11] S. Guo, Z. Yan, K. Zhang, W. Zuo, and L. Zhang, “Toward convolutional
+to enrich our dataset and make it adapt to various sensors.                             blind denoising of real photographs,” in Proceedings of the IEEE
+                                                                                        Conference on Computer Vision and Pattern Recognition, 2019, pp.
+                                                                                        1712–1722.
+                           VI. C ONCLUSION                                         [12] C. Chen, Z. Xiong, X. Tian, Z.-J. Zha, and F. Wu, “Real-world image
+                                                                                        denoising with deep boosting,” IEEE transactions on pattern analysis
+   In this work, we construct a benchmark dataset (ReCRVD)                              and machine intelligence, vol. 42, no. 12, pp. 3071–3087, 2019.
+                                                                                   [13] Y. Zhang, Y. Tian, Y. Kong, B. Zhong, and Y. Fu, “Residual dense
+for raw video denoising to facilitate futher works on raw video                         network for image restoration,” IEEE Transactions on Pattern Analysis
+denoising. Compared with CRVD, the motions in ReCRVD                                    and Machine Intelligence, 2020.
+are real and the number of scenes (120) is much larger.                            [14] B. Jiang, Y. Lu, J. Wang, G. Lu, and D. Zhang, “Deep image denoising
+                                                                                        with adaptive priors,” IEEE Transactions on Circuits and Systems for
+Correspondingly we propose an efficient raw video denois-                               Video Technology, vol. 32, no. 8, pp. 5124–5136, 2022.
+ing transformer network (RViDeformer), which is mainly                             [15] Y. Pan, C. Ren, X. Wu, J. Huang, and X. He, “Real image denoising
+constructed by multi-branch spatial self-attention and multi-                           via guided residual estimation and noise correction,” IEEE Transactions
+branch temporal self-attention blocks. RViDeformer is evalu-                            on Circuits and Systems for Video Technology, vol. 33, no. 4, pp. 1994–
+                                                                                        2000, 2022.
+ated by supervised learning and unsupervised learning, and                         [16] Z. Zhou, Y. Chen, and Y. Zhou, “Deep dynamic memory augmented
+it achieves the best results on both ReCRVD and CRVD                                    attentional dictionary learning for image denoising,” IEEE Transactions
+datasets for both the two learning manners. In addition, the                            on Circuits and Systems for Video Technology, 2023.
+                                                                                   [17] Z. Lu, Y. Liu, M. Jin, X. Luo, H. Yue, Z. Wang, S. Zuo, Y. Zeng,
+models trained on ReCRVD outperforms that trained on CRVD                               J. Fan, Y. Pang et al., “Virtual-scanning light-field microscopy for robust
+when testing on the third real test set (CRVD outdoor), which                           snapshot high-resolution volumetric imaging,” Nature Methods, vol. 20,
+demonstrates that the noise model of ReCRVD is consistent                               no. 5, pp. 735–746, 2023.
+                                                                                   [18] A. Buades and J. Duran, “Cfa video denoising and demosaicking chain
+with that of real-world noisy videos.                                                   via spatio-temporal patch-based filtering,” IEEE Transactions on Circuits
+   It should be noted that the proposed RViDeformer is not                              and Systems for Video Technology, vol. 30, no. 11, pp. 4143–4157, 2019.
+specifically designed for raw data. It can also be applied to                      [19] L. Sun, Y. Wang, F. Wu, X. Li, W. Dong, and G. Shi, “Deep unfolding
+                                                                                        network for efficient mixed video noise removal,” IEEE Transactions on
+sRGB video denoising. In addition, the proposed MSSA and                                Circuits and Systems for Video Technology, 2023.
+MTSA modules can also be applied to other restoration tasks,                       [20] M. Matteo, G. Boracchi, F. Alessandro, E. Karen et al., “Video denois-
+such as super-resolution [80] and adverse weather removal                               ing using separable 4d nonlocal spatiotemporal transforms.” in Image
+                                                                                        Processing: Algorithms and Systems IX. SPIE, 2011, pp. 1–11.
+[81], [82], since these tasks can also benefit from a large                        [21] X. Chen, L. Song, and X. Yang, “Deep rnns for video denoising,” in Ap-
+receptive field. In the future, we would like to extend our                             plications of Digital Image Processing XXXIX, vol. 9971. International
+work to these restoration tasks.                                                        Society for Optics and Photonics, 2016, p. 99711T.
+                                                                                   [22] T. Xue, B. Chen, J. Wu, D. Wei, and W. T. Freeman, “Video enhance-
+                                                                                        ment with task-oriented flow,” International Journal of Computer Vision,
+                              R EFERENCES                                               vol. 127, no. 8, pp. 1106–1125, 2019.
+                                                                                   [23] G. Zhang, Y. Zhang, X. Yuan, and Y. Fu, “Binarized low-light raw
+ [1] H. Yue, C. Cao, L. Liao, R. Chu, and J. Yang, “Supervised raw                      video enhancement,” in Proceedings of the IEEE/CVF Conference on
+     video denoising with a benchmark dataset on dynamic scenes,” in                    Computer Vision and Pattern Recognition, 2024, pp. 25 753–25 762.
+     Proceedings of the IEEE/CVF Conference on Computer Vision and                 [24] M. Maggioni, Y. Huang, C. Li, S. Xiao, Z. Fu, and F. Song, “Efficient
+     Pattern Recognition, 2020, pp. 2301–2310.                                          multi-stage video denoising with recurrent spatio-temporal fusion,” in
+ [2] Z. Kong, X. Yang, and L. He, “A comprehensive comparison                           Proceedings of the IEEE/CVF Conference on Computer Vision and
+     of multi-dimensional image denoising methods,” arXiv preprint                      Pattern Recognition, 2021, pp. 3466–3475.
+     arXiv:2011.03462, 2020.                                                       [25] J. Li, X. Wu, Z. Niu, and W. Zuo, “Unidirectional video denoising by
+ [3] Y. Fu, Z. Wang, T. Zhang, and J. Zhang, “Low-light raw video denoising             mimicking backward recurrent modules with look-ahead forward ones,”
+     with a high-quality realistic motion dataset,” IEEE Transactions on                in European Conference on Computer Vision. Springer, 2022, pp. 592–
+     Multimedia, 2022.                                                                  609.
+ [4] M. Song, Y. Zhang, and T. O. Aydın, “Tempformer: Temporally con-              [26] M. Tassano, J. Delon, and T. Veit, “Fastdvdnet: Towards real-time
+     sistent transformer for video denoising,” in European Conference on                deep video denoising without flow estimation,” in Proceedings of the
+     Computer Vision. Springer, 2022, pp. 481–496.                                      IEEE/CVF Conference on Computer Vision and Pattern Recognition,
+ [5] J. Liang, J. Cao, Y. Fan, K. Zhang, R. Ranjan, Y. Li, R. Timofte, and              2020, pp. 1354–1363.
+     L. Van Gool, “Vrt: A video restoration transformer,” IEEE Transactions        [27] C. Qi, J. Chen, X. Yang, and Q. Chen, “Real-time streaming video
+     on Image Processing, 2024.                                                         denoising with bidirectional buffers,” in Proceedings of the 30th ACM
+ [6] J. Liang, Y. Fan, X. Xiang, R. Ranjan, E. Ilg, S. Green, J. Cao, K. Zhang,         International Conference on Multimedia, 2022, pp. 2758–2766.
+     R. Timofte, and L. Van Gool, “Recurrent video restoration transformer         [28] D. Li, X. Shi, Y. Zhang, K. C. Cheung, S. See, X. Wang, H. Qin,
+     with guided deformable attention,” arXiv preprint arXiv:2206.02146,                and H. Li, “A simple baseline for video restoration with grouped
+     2022.                                                                              spatial-temporal shift,” in Proceedings of the IEEE/CVF Conference on
+ [7] Z. Liu, Y. Lin, Y. Cao, H. Hu, Y. Wei, Z. Zhang, S. Lin, and                       Computer Vision and Pattern Recognition, 2023, pp. 9822–9832.
+     B. Guo, “Swin transformer: Hierarchical vision transformer using shifted      [29] J. Lehtinen, J. Munkberg, J. Hasselgren, S. Laine, T. Karras, M. Aittala,
+     windows,” in Proceedings of the IEEE/CVF International Conference on               and T. Aila, “Noise2noise: Learning image restoration without clean
+     Computer Vision, 2021, pp. 10 012–10 022.                                          data,” arXiv preprint arXiv:1803.04189, 2018.
+YUE et al.: RVIDEFORMER: EFFICIENT RAW VIDEO DENOISING WITH A LARGER BENCHMARK DATASET                                                                      15
+
+
+
+[30] A. Krull, T.-O. Buchholz, and F. Jug, “Noise2void-learning denoising        [54] T. Plotz and S. Roth, “Benchmarking denoising algorithms with real
+     from single noisy images,” in Proceedings of the IEEE Conference on              photographs,” in Proceedings of the IEEE Conference on Computer
+     Computer Vision and Pattern Recognition, 2019, pp. 2129–2137.                    Vision and Pattern Recognition, 2017, pp. 1586–1595.
+[31] T. Pang, H. Zheng, Y. Quan, and H. Ji, “Recorrupted-to-recorrupted:         [55] T. Brooks, B. Mildenhall, T. Xue, J. Chen, D. Sharlet, and J. T. Barron,
+     unsupervised deep learning for image denoising,” in Proceedings of the           “Unprocessing images for learned raw denoising,” CVPR, 2019.
+     IEEE/CVF conference on computer vision and pattern recognition, 2021,       [56] S. W. Zamir, A. Arora, S. Khan, M. Hayat, F. S. Khan, M.-H. Yang, and
+     pp. 2043–2052.                                                                   L. Shao, “Cycleisp: Real image restoration via improved data synthesis,”
+[32] T. Ehret, A. Davy, J.-M. Morel, G. Facciolo, and P. Arias, “Model-               in Proceedings of the IEEE/CVF Conference on Computer Vision and
+     blind video denoising via frame-to-frame training,” in Proceedings of the        Pattern Recognition, 2020, pp. 2696–2705.
+     IEEE Conference on Computer Vision and Pattern Recognition, 2019,           [57] Y. Wang, H. Huang, Q. Xu, J. Liu, Y. Liu, and J. Wang, “Practical deep
+     pp. 11 369–11 378.                                                               raw image denoising on mobile devices,” in European Conference on
+[33] K. Zhang, W. Zuo, Y. Chen, D. Meng, and L. Zhang, “Beyond a gaussian             Computer Vision. Springer, 2020, pp. 1–16.
+     denoiser: Residual learning of deep cnn for image denoising,” IEEE          [58] C. Chen, Q. Chen, M. N. Do, and V. Koltun, “Seeing motion in the dark,”
+     Transactions on Image Processing, vol. 26, no. 7, pp. 3142–3155, 2017.           in Proceedings of the IEEE International Conference on Computer
+[34] V. Dewil, J. Anger, A. Davy, T. Ehret, G. Facciolo, and P. Arias,                Vision, 2019.
+     “Self-supervised training for blind multi-frame video denoising,” in        [59] S. Nam, Y. Hwang, Y. Matsushita, and S. Joo Kim, “A holistic approach
+     Proceedings of the IEEE/CVF winter conference on applications of                 to cross-channel image noise modeling and its application to image
+     computer vision, 2021, pp. 2724–2734.                                            denoising,” in Proceedings of the IEEE Conference on Computer Vision
+[35] D. Y. Sheth, S. Mohan, J. L. Vincent, R. Manzorro, P. A. Crozier, M. M.          and Pattern Recognition, 2016, pp. 1683–1691.
+     Khapra, E. P. Simoncelli, and C. Fernandez-Granda, “Unsupervised            [60] H. Yue, J. Liu, J. Yang, T. Nguyen, and F. Wu, “High iso jpeg image
+     deep video denoising,” in Proceedings of the IEEE/CVF International              denoising by deep fusion of collaborative and convolutional filtering,”
+     Conference on Computer Vision, 2021, pp. 1759–1768.                              IEEE Transactions on Image Processing, 2019.
+[36] Z. Fu, L. Guo, C. Wang, Y. Wang, Z. Li, and B. Wen, “Temporal as a          [61] J. Xu, H. Li, Z. Liang, D. Zhang, and L. Zhang, “Real-world noisy
+     plugin: Unsupervised video denoising with pre-trained image denoisers,”          image denoising: A new benchmark,” arXiv preprint arXiv:1804.02603,
+     ECCV, 2024.                                                                      2018.
+[37] C. Cao, H. Yue, X. Liu, and J. Yang, “Zero-shot video restoration and       [62] X. Xu, Y. Yu, N. Jiang, J. Lu, B. Yu, and J. Jia, “Pvdd: A practical
+     enhancement using pre-trained image diffusion model,” AAAI, 2025.                video denoising dataset with real-world dynamic scenes,” arXiv preprint
+[38] X. Xu, Y. Ma, and W. Sun, “Towards real scene super-resolution with              arXiv:2207.01356, 2022.
+     raw images,” in Proceedings of the IEEE Conference on Computer Vision       [63] H. Jiang and Y. Zheng, “Learning to see moving objects in the dark,”
+     and Pattern Recognition, 2019, pp. 1723–1731.                                    in Proceedings of the IEEE/CVF international conference on computer
+[39] X. Zhang, Q. Chen, R. Ng, and V. Koltun, “Zoom to learn, learn to                vision, 2019, pp. 7324–7333.
+     zoom,” in Proceedings of the IEEE Conference on Computer Vision and         [64] Y. Peng, Q. Sun, X. Dun, G. Wetzstein, W. Heidrich, and F. Heide,
+     Pattern Recognition, 2019, pp. 3762–3770.                                        “Learned large field-of-view imaging with thin-plate optics.” ACM
+[40] H. Yue, Z. Zhang, and J. Yang, “Real-rawvsr: Real-world raw video                Trans. Graph., vol. 38, no. 6, pp. 219–1, 2019.
+     super-resolution with a benchmark dataset,” in European Conference on       [65] F. Perazzi, J. Pont-Tuset, B. McWilliams, L. Van Gool, M. Gross, and
+     Computer Vision. Springer, 2022, pp. 608–624.                                    A. Sorkine-Hornung, “A benchmark dataset and evaluation methodology
+[41] S. Ratnasingam, “Deep camera: A fully convolutional neural network               for video object segmentation,” in Proceedings of the IEEE conference
+     for image signal processing,” in Proceedings of the IEEE International           on computer vision and pattern recognition, 2016, pp. 724–732.
+     Conference on Computer Vision Workshops, 2019, pp. 0–0.                     [66] A. Mercat, M. Viitanen, and J. Vanne, “Uvg dataset: 50/120fps 4k
+[42] E. Schwartz, R. Giryes, and A. M. Bronstein, “Deepisp: learning end-to-          sequences for video codec analysis and development,” in Proceedings
+     end image processing pipeline,” arXiv preprint arXiv:1801.06724, 2018.           of the 11th ACM Multimedia Systems Conference, 2020, pp. 297–302.
+[43] Z. Liang, J. Cai, Z. Cao, and L. Zhang, “Cameranet: A two-                  [67] S. Su, M. Delbracio, J. Wang, G. Sapiro, W. Heidrich, and O. Wang,
+     stage framework for effective camera isp learning,” arXiv preprint               “Deep video deblurring for hand-held cameras,” in Proceedings of the
+     arXiv:1908.01481, 2019.                                                          IEEE conference on computer vision and pattern recognition, 2017, pp.
+[44] A. Ignatov, R. Timofte, Z. Zhang, M. Liu, H. Wang, W. Zuo, J. Zhang,             1279–1288.
+     R. Zhang, Z. Peng, S. Ren et al., “Aim 2020 challenge on learned image      [68] T. Thongkamwitoon, H. Muammar, and P.-L. Dragotti, “An image
+     signal processing pipeline,” arXiv preprint arXiv:2011.04994, 2020.              recapture detection algorithm based on learning dictionaries of edge
+[45] C.-H. Liang, Y.-A. Chen, Y.-C. Liu, and W. Hsu, “Raw image deblur-               profiles,” IEEE Transactions on Information Forensics and Security,
+     ring,” IEEE Transactions on Multimedia, 2020.                                    vol. 10, no. 5, pp. 953–968, 2015.
+[46] H. Yue, Y. Cheng, Y. Mao, C. Cao, and J. Yang, “Recaptured screen           [69] K. Wei, Y. Fu, J. Yang, and H. Huang, “A physics-based noise formation
+     image demoiréing in raw domain,” IEEE Transactions on Multimedia,               model for extreme low-light raw denoising,” in Proceedings of the
+     2022.                                                                            IEEE/CVF Conference on Computer Vision and Pattern Recognition,
+[47] M. Gharbi, G. Chaurasia, S. Paris, and F. Durand, “Deep joint demo-              2020, pp. 2758–2767.
+     saicking and denoising,” ACM Transactions on Graphics (TOG), vol. 35,       [70] Y. Zhang, H. Qin, X. Wang, and H. Li, “Rethinking noise synthesis
+     no. 6, p. 191, 2016.                                                             and modeling in raw denoising,” in Proceedings of the IEEE/CVF
+[48] C. Chen, Q. Chen, M. N. Do, and V. Koltun, “Learning to see in the               International Conference on Computer Vision, 2021, pp. 4593–4601.
+     dark,” in Proceedings of the IEEE Conference on Computer Vision and         [71] H. Feng, L. Wang, Y. Wang, and H. Huang, “Learnability enhancement
+     Pattern Recognition, 2018.                                                       for low-light raw denoising: Where paired real data meets noise mod-
+[49] J. Liu, C.-H. Wu, Y. Wang, Q. Xu, Y. Zhou, H. Huang, C. Wang,                    eling,” in Proceedings of the 30th ACM International Conference on
+     S. Cai, Y. Ding, H. Fan et al., “Learning raw image denoising with bayer         Multimedia, 2022, pp. 1436–1444.
+     pattern unification and bayer preserving augmentation,” in Proceedings      [72] P. Weinzaepfel, J. Revaud, Z. Harchaoui, and C. Schmid, “Deepflow:
+     of the IEEE Conference on Computer Vision and Pattern Recognition                Large displacement optical flow with deep matching,” in Proceedings of
+     Workshops, 2019, pp. 0–0.                                                        the IEEE international conference on computer vision, 2013, pp. 1385–
+[50] A. Abdelhamed, R. Timofte, and M. S. Brown, “Ntire 2019 challenge on             1392.
+     real image denoising: Methods and results,” in Proceedings of the IEEE      [73] C.-F. R. Chen, Q. Fan, and R. Panda, “Crossvit: Cross-attention multi-
+     Conference on Computer Vision and Pattern Recognition Workshops,                 scale vision transformer for image classification,” in Proceedings of the
+     2019, pp. 0–0.                                                                   IEEE/CVF international conference on computer vision, 2021, pp. 357–
+[51] A. Abdelhamed, M. Afifi, R. Timofte, and M. S. Brown, “Ntire 2020                366.
+     challenge on real image denoising: Dataset, methods and results,” in        [74] Y. Chen, X. Dai, D. Chen, M. Liu, X. Dong, L. Yuan, and Z. Liu,
+     Proceedings of the IEEE/CVF Conference on Computer Vision and                    “Mobile-former: Bridging mobilenet and transformer,” in Proceedings of
+     Pattern Recognition Workshops, 2020, pp. 496–497.                                the IEEE/CVF Conference on Computer Vision and Pattern Recognition,
+[52] J. Anaya and A. Barbu, “Renoir-a dataset for real low-light image noise          2022, pp. 5270–5279.
+     reduction,” arXiv preprint arXiv:1409.8230, 2014.                           [75] X. Zhang, H. Zeng, S. Guo, and L. Zhang, “Efficient long-range attention
+[53] A. Abdelhamed, S. Lin, and M. S. Brown, “A high-quality denoising                network for image super-resolution,” in Computer Vision–ECCV 2022:
+     dataset for smartphone cameras,” in Proceedings of the IEEE Conference           17th European Conference, Tel Aviv, Israel, October 23–27, 2022,
+     on Computer Vision and Pattern Recognition, 2018, pp. 1692–1700.                 Proceedings, Part XVII. Springer, 2022, pp. 649–667.
+16                                                                              IEEE TRANSACTIONS ON CIRCUITS AND SYSTEMS FOR VIDEO TECHNOLOGY
+
+
+
+[76] X. Ding, X. Zhang, J. Han, and G. Ding, “Diverse branch block:
+     Building a convolution as an inception-like unit,” in Proceedings of the
+     IEEE/CVF Conference on Computer Vision and Pattern Recognition,
+     2021, pp. 10 886–10 895.
+[77] A. Paliwal, L. Zeng, and N. K. Kalantari, “Multi-stage raw video denois-
+     ing with adversarial loss and gradient mask,” in 2021 IEEE International
+     Conference on Computational Photography (ICCP). IEEE, 2021, pp.
+     1–10.
+[78] P. K. Ostrowski, E. Katsaros, D. Wesierski, and A. Jezierska, “Bp-evd:
+     Forward block-output propagation for efficient video denoising,” IEEE
+     Transactions on Image Processing, vol. 31, pp. 3809–3824, 2022.
+[79] X. Wang, K. C. Chan, K. Yu, C. Dong, and C. Change Loy, “Edvr:
+     Video restoration with enhanced deformable convolutional networks,” in
+     Proceedings of the IEEE Conference on Computer Vision and Pattern
+     Recognition Workshops, 2019, pp. 0–0.
+[80] C. Fang, D. Zhang, L. Wang, Y. Zhang, L. Cheng, and J. Han, “Cross-
+     modality high-frequency transformer for mr image super-resolution,” in
+     Proceedings of the 30th ACM International Conference on Multimedia,
+     2022, pp. 1584–1592.
+[81] D. Cheng, Y. Li, D. Zhang, N. Wang, J. Sun, and X. Gao, “Progressive
+     negative enhancing contrastive learning for image dehazing and beyond,”
+     IEEE Transactions on Multimedia, 2024.
+[82] D. Cheng, Y. Ji, D. Gong, Y. Li, N. Wang, J. Han, and D. Zhang,
+     “Continual all-in-one adverse weather removal with knowledge replay
+     on a unified network structure,” IEEE Transactions on Multimedia, 2024.
+

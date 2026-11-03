@@ -1,0 +1,747 @@
+\documentclass[11pt,a4paper,UTF8,fontset=fandol]{ctexart}
+
+\usepackage{geometry}
+\geometry{left=2.35cm,right=2.35cm,top=2.55cm,bottom=2.55cm}
+\usepackage{graphicx}
+\usepackage{booktabs,longtable,array}
+\usepackage{amsmath,amssymb}
+\usepackage{float,xcolor}
+\usepackage{hyperref,url}
+\urlstyle{tt}
+\makeatletter
+\g@addto@macro\UrlBreaks{\do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j\do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t\do\u\do\v\do\w\do\x\do\y\do\z\do\0\do\1\do\2\do\3\do\4\do\5\do\6\do\7\do\8\do\9}
+\makeatother
+\graphicspath{{assets/stage2_report_20261023/}}
+\hypersetup{unicode=true,colorlinks=true,linkcolor=black,citecolor=black,
+  urlcolor=blue,pdftitle={Stage2 RAW Video Denoising Research Report},
+  pdfauthor={Stage2 DenoiseModel Project}}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0.30em}
+\setlength{\emergencystretch}{3em}
+\setlength{\tabcolsep}{4.5pt}
+\renewcommand{\arraystretch}{1.16}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcommand{\dn}{\ensuremath{\,\mathrm{DN}}}
+\newcommand{\db}{\ensuremath{\,\mathrm{dB}}}
+\newcommand{\psnr}{\ensuremath{\mathrm{PSNR}}}
+\newcommand{\rmse}{\ensuremath{\mathrm{RMSE}}}
+\newcommand{\pairhead}{\makebox[0.49\textwidth]{输入}\hfill\makebox[0.49\textwidth]{方法3（EMA）}\\[0.25em]}
+\newcommand{\triplehead}{\makebox[0.32\textwidth]{输入}\hfill\makebox[0.32\textwidth]{方法3}\hfill\makebox[0.32\textwidth]{方法8专用输出头}\\[0.25em]}
+
+\title{\textbf{视频去噪研究报告}\\[0.4em]
+\large 方法探索、最终方案与多数据集泛化效果}
+\author{肖纬杰\quad 邸锦承}
+\date{}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+\noindent
+本报告记录 Stage2 RAW 视频去噪项目从公司数据适配、静态监督构建到跨传感器验证的研究过程。针对预训练教师在公司 RAW 上噪声与细节难以兼顾的问题，项目先建立可信的时域均值参考和实测噪声合成管线，再依次考察动态监督、冻结运动专家、教师融合、传感器适配、统一微调及推理门控。最终采用方法3：以 RViDeformer-L 为基座，混合真实跨增益样本与标定噪声合成样本，使用带有效区域掩码的重建、梯度和高通损失进行全参数微调，并固定第5000步的 EMA 权重用于推理。sc635hai 另保留方法8的专用可选输出头。
+
+效果展示覆盖公司 MIS20S1、SC465SL、sc635hai 和 sc450ai 多个数据集与拍摄条件。方法3在 MIS20S1 645x 跨增益参考评测中达到29.57\db，在未参与训练的1000x原生参考评测中达到53.27\db；在未进行目标传感器训练的 SC465SL 和 sc635hai 静态序列上，零样本 PSNR 分别提升约10.52--13.21\db 和13.59\db。报告同时展示高增益动态及 sc450ai 的实际输出，按静态定量、动态观察和专用适配三种协议解释结果。正文依次介绍方法探索、最终方案和多数据集效果，附录集中列出采纳方案的训练超参数、损失、模型与推理配置。
+
+\vspace{0.6em}
+\noindent\textbf{关键词：} RAW 视频去噪；RViDeformer；时域均值监督；跨传感器泛化；固定 ISP
+\end{abstract}
+
+\newpage
+{\small\setlength{\parskip}{0pt}\tableofcontents}
+\newpage
+
+\section{引言}
+
+\subsection{项目起点与研究目标}
+
+Stage1 使用预训练的 RViDeformer-L\_CRVD 教师生成伪干净目标。在公司 MIS20S1 数据上，该教师对图卡细线、棋盘和文字边缘的处理偏软，影响了下游监督质量。Stage2 因而把研究对象转向教师本身：利用现有公司 RAW 数据进行微调，兼顾噪声抑制与高频结构，并检查模型在不同传感器、增益和运动条件下的表现。
+
+项目没有公司数据的逐像素干净动态真值。可利用的资源是低增益静态序列、同场景不同增益拍摄、平场与黑帧标定，以及少量其他传感器的真实场景流。因此，研究首先需要解决监督从哪里来，再判断相应监督能够支撑哪些模型改动。
+
+\subsection{研究过程与报告主线}
+
+项目从静态去噪出发。方法0至方法4依次完成数据适配、参考构建、噪声合成、模型微调和评估，形成方法3这一可用基线。随后，静态监督中的运动排除机制暴露出动态内容被过度平滑的现象，推动了方法5至方法7的运动保真探索。跨传感器测试又引出了方法8至方法10的适配与退化建模。最后，全数据集预览中的高增益动态表现促成了方法11的置信门控实验。
+
+这些探索均以同一基线作比较，最终默认权重仍为方法3的第5000步 EMA；方法8仅保留 sc635hai 专用输出头。下文先简述各条路线的设计、结果及取舍，再完整说明最终采纳方案，最后集中展示其在多种公司数据集上的泛化效果。方法编号沿用原实验顺序；复现文件保留项目中的原始名称。
+
+\section{相关工作与数据基础}
+
+\subsection{技术背景}
+
+RAW 保留了传感器的线性响应和 Bayer 采样信息，适合在噪声统计层面建立恢复模型。CRVD/RViDeNet\cite{r1}、RViDeformer\cite{r2} 和 RVRT\cite{r3} 利用多帧信息进行恢复；HDR+\cite{r10}、Deep Burst Denoising\cite{r9} 与核预测方法\cite{r17} 则体现了对齐和帧间融合对低照度成像的作用。EMVD\cite{r15}、FastDVDNet\cite{r16} 以及 DnCNN\cite{r14}、CBDNet\cite{r20} 提供了不同的时空恢复与真实噪声建模思路；NL-means\cite{r18} 和 BM3D\cite{r19} 是非局部恢复的经典参照。本项目采用官方 CRVD 权重初始化 RViDeformer-L，在公司数据上微调。
+
+在缺少干净真值时，Noise2Noise\cite{r4} 依赖噪声观测之间的统计关系，Noise2Void\cite{r5} 与 Noise2Self\cite{r6} 通过盲点构造自监督。静态长序列还可利用时域均值降低随机噪声，但运动区域的均值会混合不同时间的内容。项目据此将静态均值监督与动态探索分开处理，不把动态均值直接当作干净目标。
+
+噪声标定以信号相关方差模型\cite{r7}为基础，并参考 RAW 数据合成的思路\cite{r8}。实际生成器采用逐增益经验系数、通道相关高斯采样、固定图样偏置和量化。动态探针使用 DIS 光流\cite{r11}。视觉比较在各自协议内冻结 ISP 参数；全数据集预览使用 Reinhard 色调映射\cite{r12}，奇偶参考面板和专用头比较沿用原审计渲染。
+
+\subsection{公司数据集与实验分工}
+
+全数据集预览覆盖4种传感器的45条原始 RAW 流，其中27条为场景流、18条为标定流。按传感器统计，MIS20S1 为29条（含18条标定），SC465SL 为12条，sc635hai 和 sc450ai 各2条。包含其他算法2DNR/3DNR处理的03组派生流不计入这45条。
+
+\begin{table}[H]
+\centering\small
+\caption{主要数据集、内容与实验用途。}
+\label{tab:dataset}
+\begin{tabular}{P{0.20\textwidth}P{0.29\textwidth}P{0.40\textwidth}}
+\toprule
+数据集 & 内容 & 用途 \\
+\midrule
+MIS20S1 暗房 & 同场景7档增益，10x--1000x & 10x静态主参考；128x/313x/632x/645x真实训练；1000x真实增益留出 \\
+MIS20S1 室外 & 黄昏公园、人物运动，4档增益 & 场景迁移与高增益动态展示 \\
+MIS20S1 标定 & 9档平场、9档黑帧，每流50帧 & 噪声拟合与合成验证；不作为场景泛化成绩 \\
+SC465SL 暗室 & 256x、2000x，各300帧 & 未参与方法3训练的跨传感器静态定量 \\
+SC465SL 超市与复杂纹理 & 增益梯子及 difficultpattern，共10流 & 多场景视觉与复杂纹理动态测试 \\
+sc635hai & 131x低色温150帧、16x运动彩色200帧 & 方法3零样本测试；131x另用于方法8适配，16x保留 \\
+sc450ai & 804x灯光变化150帧、1435x黑物运动210帧 & 跨传感器压力测试；1435x不参与适配 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{RAW 适配与参考资格}
+
+不同数据源的位对齐、CFA和黑电平并不统一。04场景流和05组通常需要从高12位右移4位；02组采用低位对齐。sc450ai 虽然附带说明写为高12位和4128\dn 黑电平，实测却是低位对齐、有效10位，样本均落在4\dn 格点，黑电平约256--258\dn。若直接套用说明，会把有效信号裁掉。场景流以 RGGB 为主，标定流为 GRBG；所有数据经适配器转换到统一的 R/Gr/Gb/B 通道顺序。
+
+黑电平逐流、逐通道测量；帧数从文件字节数核实。标称增益不作为网络输入条件，因为不同档位伴随照明变化，实际噪声不随标签单调增加。例如暗房128x的分半绿色通道噪声约79.05\dn，1000x约28.93\dn。噪声合成因此使用标定实测系数，而非只按场景文件名推断强度。
+
+监督资格随数据而定。10x低增益静态参考用于主方法训练；同流奇偶分半参考用于可信静态区域的测试或适配。旧教师输出、运动时域均值和盲点观测只作为对应探索的信号，不被登记为干净动态真值。
+
+\subsection{评测口径}
+
+静态评测在有效区域计算对应参考 DN 域的 PSNR、RMSE、高频保持率和残差。645x使用映射到10x亮度的参考域，1000x及跨传感器静态测试使用各自 native DN 域。跨传感器测试采用互斥奇偶帧池：偶数帧片段对奇数帧参考，再交换方向；只保留在全部、奇数、偶数帧池中均达到90\%静态置信度的像素。运动筛选采用 $\mathrm{median}+3\times1.4826\times\mathrm{MAD}$ 的鲁棒阈值。
+
+动态序列没有干净逐帧目标，报告其时序响应、高频与裁剪等诊断量，并结合固定 ISP 视频观察。高频比下降既可能来自去噪，也可能来自结构损失；temporal MAD 下降既可能表示抑制噪声，也可能表示运动被平均。因此，两者均与视觉结果一起解释。
+
+所有同序列输入与输出共享白平衡和曝光，关闭 ISP 的2DNR/3DNR。全数据集展示采用 edge-aware 去马赛克、高光重建和 Reinhard 映射。PSNR 在 RAW 域计算，展示视频用于观察降噪、纹理与运动；不同数据集的参考域和有效区域不同，绝对 PSNR 不作跨数据集排名。
+
+\section{试过的方法与方案选择}
+\label{sec:exploration}
+
+\subsection{方法0至方法4：形成静态基线}
+
+方法0建立逐流适配、配准、曝光映射与运动掩码。方法1用暗房10x的200帧构建静态参考，奇偶均值残差为0.51--0.80\dn，曝光归一化后的跨增益偏差为1.17--1.86\dn。方法2利用平场和黑帧生成9档合成噪声，最大逐通道统计误差8.66\%，低于15\%验收阈值。上述准备共同支撑方法3的混合数据微调，方法4负责评估。
+
+评估中出现过一次口径修正：1000x与10x跨捕获曝光关系在高亮处偏离线性，同一模型按该映射仅有18.84\db；配准复核后，改用1000x自身的静态参考得到53.27\db，奇偶互斥验证为53.10/53.07\db。该结果使项目保留方法3，并将跨捕获映射与模型误差分开检查。方法3的监督、损失和推理流程在第\ref{sec:adopted}节统一说明。
+
+\subsection{方法5至方法7：运动保真探索}
+
+方法3的静态去噪改善后，645x视频中的运动人物仍有半透明残影。原运动审计中，输出的运动区帧差仅为输入的27\%--32\%。这推动了三条后续路线，比较时均要求运动响应改善且静态、原生增益及高频指标不回退。
+
+\begin{table}[H]
+\centering\small
+\caption{运动保真路线的简要比较。}
+\label{tab:motion_trials}
+\begin{tabular}{P{0.10\textwidth}P{0.30\textwidth}P{0.38\textwidth}P{0.10\textwidth}}
+\toprule
+方法 & 设计 & 主要结果 & 取舍 \\
+\midrule
+方法5 & 光流对齐的动态 N2N；教师静态锚；冻结范围与损失权重实验 & 收紧运动置信规则后覆盖仅1.81\%--3.82\%；多组候选未同时通过运动、静态和1000x门槛 & 未采纳 \\
+方法6 & 冻结方法3，训练空间残差运动专家；共4版 & 门控 IoU 达0.533，但真实动态内容未稳定恢复；更强残差伴随静态偏移或目标误差增大 & 未采纳 \\
+方法7 & 在运动区融合旧教师残差，扫描36组配置 & 最强配置的运动比相对增加0.9162\%；固定 ISP 未见稳定的人物轮廓改善 & 未采纳 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+方法5用 DIS 光流将后帧对齐到当前帧，以前后向误差和光度误差筛选可信像素。增加严格的1像素运动门槛后，监督覆盖明显缩小。方法6转而冻结主干，减少全模型漂移；方法7再取消训练，检验旧教师残差是否能直接补充运动信息。三者依次减少了参数更新带来的影响，但在既定数据与验收条件下，均未得到足以替换基线的结果。
+
+因此，后续实验继续保留方法3，研究重心转向跨传感器：先测同一权重在哪些数据域有效，再决定是否需要目标域适配。
+
+\subsection{方法8至方法10：跨传感器适配与退化验证}
+
+零样本测试表明，方法3在 SC465SL 暗室和 sc635hai 低色温静态域有明显降噪收益，而 sc450ai 黑色运动物体仍明显发软。方法8据此考察逐传感器适配：sc635hai 使用奇偶静态监督，sc450ai 使用单帧盲点监督，均混入 MIS20S1 回放。结果仅保留 sc635hai 的专用输出头，详细配置见第\ref{sec:head}节；sc450ai 的5个检查点均没有恢复高频，1435x端点裁剪还从3.28\%升至4.64\%。
+
+方法9尝试统一微调4种传感器，只更新15,508个参数、训练100步。SC465SL和sc635hai静态指标略升，但 sc450ai 的高频比由0.126621降至0.126589，未改善黑衣与运动轮廓，故没有作为统一模型采纳。
+
+方法10随后检查 sc450ai 的监督来源。现有数据只有两条动态场景流，没有独立暗场、平场或干净 RAW 配对。其补充退化实验比较了原独立噪声、4\dn{}量化独立噪声和频谱整形噪声；频谱整形虽改善804x的聚合相关误差，却未通过逐通道噪声与1435x保留集验证。该生成器未进入最终方法。
+
+这组实验使最终方案保持清晰：默认使用同一方法3权重评测泛化，仅给 sc635hai 保留一个专用可选头。目标域的零样本结果与专用适配结果分别报告。
+
+\subsection{方法11：高增益推理门控}
+
+全数据集预览显示，MIS20S1室外1500x等序列仍有运动朦胧。四路诊断比较原始输入、正常时域推理、加权空间拼接和单帧重复8次的推理：改变拼接权重对主体影响很小，单帧重复则恢复了更多当前帧结构，同时带回明显彩噪。这些观察支持将时域融合视为该现象的重要来源。
+
+方法11尝试用输入残差、梯度和光流置信度，在正常时域输出与单帧重复输出之间融合。两条代表序列的非零门控覆盖仅0.487\%和0.713\%，全局输出接近原时域分支，逐帧观察也未见稳定的主体重影改善，因此未纳入最终推理流程。
+
+\subsection{最终方案的确定}
+
+上述探索分别检验了训练监督、可训练模块、教师残差、传感器适配和推理融合。最终保留的方法3具有完整的监督与评测记录，静态恢复结果稳定；后续路线未在各自目标上满足替换条件。方法8的 sc635hai 输出头则以专用可选权重单独保留。接下来围绕这两项说明最终实现，并将其效果统一放到多数据集测试中展示。
+
+\section{最终采纳的方法}
+\label{sec:adopted}
+
+\subsection{整体流程}
+
+默认方法由四个环节组成：RAW适配、可信静态监督、真实与合成混合训练、EMA多帧推理。方法0至方法2提供的数据处理和监督构造均属于方法3的完整训练管线。
+
+\begin{figure}[H]
+\centering\small
+\fbox{\parbox[c][1.5cm][c]{0.25\textwidth}{\centering 原始 RAW\\位对齐、CFA、黑电平\\配准与曝光映射}}
+$\longrightarrow$
+\fbox{\parbox[c][1.5cm][c]{0.25\textwidth}{\centering 静态参考与有效掩码\\实测噪声合成\\真实:合成约1:1}}
+$\longrightarrow$
+\fbox{\parbox[c][1.5cm][c]{0.25\textwidth}{\centering RViDeformer-L\\全参数微调5000步\\EMA权重推理}}
+\caption{最终方法3的完整流程。训练数据进入统一参考域；输出在对应协议的参考 DN 域评测，再使用该协议的固定 ISP 展示。}
+\label{fig:adopted_pipeline}
+\end{figure}
+
+模型输入为8帧、4通道的 packed Bayer，输出对应的8帧。训练采用 $64\times64$ packed patch，即原 Bayer 的 $128\times128$ 区域；推理通过重叠分块处理完整画面。方法3不增加增益标签输入或传感器条件分支。
+
+\subsection{真实样本与静态监督构建}
+
+主参考来自 MIS20S1 暗房10x序列的200帧平均。参考构建包含固定图样修正，并记录运动及无效区域。参考形状为 $4\times540\times960$。奇偶分半残差在 R/Gr/Gb/B 上分别为0.511、0.797、0.763和0.560\dn；图卡高频检查确认平均后仍保留可用结构。
+
+真实输入选用128x、313x、632x和645x。对每个输入增益，先读取其位对齐、黑电平和运动记录，再使用整数配准及逐通道仿射曝光映射进入主参考坐标和亮度域。设映射后的像素为 $x_c$，参考黑电平为 $b_c$，归一化为
+\begin{equation}
+ \widetilde{x}_c=\operatorname{clip}\left(\frac{x_c-b_c}{4095-b_c},0,1\right).
+ \label{eq:normalization}
+\end{equation}
+目标为相同位置的静态参考，在8个时间位置上重复。
+
+有效掩码同时满足参考有效、输入8帧均为静态、全部输入通道均未饱和。饱和阈值为映射域3800\dn，运动掩码阈值为0.5。只有这些位置参与损失，避免对错位运动和饱和内容施加静态均值目标。1000x真实序列不进入训练。
+
+\subsection{实测噪声合成与混合采样}
+
+合成分支仍以同一静态参考为干净目标，通过9档平场与黑帧建立噪声模型。信号相关方差可写为
+\begin{equation}
+ \sigma_c^2(s,G)=a_c\,sG+b_c^{\mathrm{read}}G^2.
+\end{equation}
+实际生成器保留了每档增益的经验 shot 系数 $\alpha_{c,g}$ 和 read variance $v_{c,g}$，用于处理标定中的非单调变化。令 $d$ 为固定图样偏置，$z\sim\mathcal N(0,I)$，$LL^\top=C$ 为聚合通道相关矩阵的 Cholesky 分解，则合成为
+\begin{align}
+ q &= y+d,\qquad s_c=\max(q_c-b_c,0),\\
+ x^{\mathrm{syn}} &= \operatorname{clip}\left(
+ \operatorname{round}\left[q+\sqrt{\alpha_g\odot s+v_g}\odot(Lz)\right],0,4095\right).
+ \label{eq:synthetic}
+\end{align}
+该实现使用相关高斯采样匹配信号相关方差。合成后按1\dn{}格点量化，保留原始黑电平与合法范围。
+
+合成增益标签为100、200、400、800、1600、3200、6400、12800和25600，每档生成8个独立噪声时序变体。8帧具有相同干净内容和不同噪声，真实与合成分支按约1:1混合。真实性检验比较合成与真实同档数据的高通差分噪声，最大逐通道相对误差8.66\%，通过15\%阈值。逐档参数列于附录。
+
+\subsection{网络与优化目标}
+
+网络采用 RViDeformer-L，严格加载官方 CRVD 权重后全参数微调。构造配置包含11组深度参数，前7组深度为4、嵌入维度84，后4组深度为2、嵌入维度108；注意力头数均为6，时空窗口为 $6\times8\times8$。重建使用浅层特征残差连接，最终卷积输出再与输入 RAW 相加。实际模型共有7,505,716个可训练参数。完整构造参数见表\ref{tab:model_config}。
+
+训练先将预测裁剪到 $[0,1]$，再计算带掩码的损失。记
+\begin{equation}
+ \langle z\rangle_M=\frac{\sum M\odot z}{\max(\sum M,1)},
+\end{equation}
+其中掩码沿通道维展开。总损失为
+\begin{equation}
+ \mathcal L=\mathcal L_{\mathrm{char}}+0.1\mathcal L_{\mathrm{grad}}+0.1\mathcal L_{\mathrm{hp}}.
+ \label{eq:loss}
+\end{equation}
+Charbonnier 项\cite{r13}约束重建误差：
+\begin{equation}
+ \mathcal L_{\mathrm{char}}=\left\langle\sqrt{(\hat y-y)^2+10^{-6}}\right\rangle_M.
+\end{equation}
+若写为 $\epsilon^2$，则 $\epsilon=10^{-3}$。梯度项约束水平、垂直梯度的幅值差：
+\begin{equation}
+ \mathcal L_{\mathrm{grad}}=\tfrac12\left(
+ \left\langle\left||D_x\hat y|-|D_xy|\right|\right\rangle_{M_x}+
+ \left\langle\left||D_y\hat y|-|D_yy|\right|\right\rangle_{M_y}\right),
+\end{equation}
+其中 $M_x,M_y$ 是相邻有效掩码的乘积。高通项为
+\begin{equation}
+ H(u)=u-\operatorname{AvgPool}_{3\times3}(u),\qquad
+ \mathcal L_{\mathrm{hp}}=\langle|H(\hat y)-H(y)|\rangle_M.
+\end{equation}
+高通仅在空间计算，不跨时间平均。重建项负责整体恢复，两个0.1权重的结构项补充边缘和局部高频约束。
+
+\subsection{训练、权重选定与完整画面推理}
+
+方法3使用 batch size 1、固定学习率 $10^{-4}$ 的 Adam，以FP32完成总计5000步训练。训练从第200步恢复至第5000步；总步数不额外累加。EMA衰减为0.999，逐优化步更新。最终固定第5000步 EMA，后续探索和多数据集测试均使用该权重作为默认模型。
+
+完整画面推理采用8帧时间窗口、时间步长4，空间 tile 为 $64\times64$ packed、步长56。空间和时间重叠处等权平均；不足8帧时重复末帧补齐。输出归一化裁剪后，按相应评测管线恢复 DN 值。分块批大小仅影响一次并行处理多少 tile，不改变训练 batch size。
+
+\subsection{sc635hai 专用可选输出头}
+\label{sec:head}
+
+方法8在方法3 EMA基础上冻结主干，仅更新 \texttt{norm}、\texttt{conv\_after\_body} 和 \texttt{conv\_last}，共6个张量、12,400个参数。对应头部由108维 LayerNorm、$108\rightarrow84$线性映射及 $84\rightarrow4$、核为 $1\times3\times3$ 的卷积组成。
+
+适配使用 sc635hai 131x低色温序列，奇偶输入与参考帧池互斥；以0.5概率混入 MIS20S1 回放，减少原域漂移。batch size为1、学习率 $10^{-5}$、训练500步，采用BF16 autocast、FP32损失和0.999 EMA；梯度范数裁剪为1.0。实际500步中，sc635hai采样238步，回放262步。16x运动彩色序列完整保留，不参与反向传播。
+
+该输出头通过既定自动检查并被登记为 sc635hai 专用可选权重；默认方法3继续用于统一比较。下节分别展示默认权重的零样本结果和专用头的适配结果。
+
+\section{多数据集泛化效果展示}
+\label{sec:results}
+
+\subsection{展示范围与分组}
+
+本节展示的是\textbf{公司多数据集、跨传感器及跨拍摄条件的泛化表现}。默认方法3只在 MIS20S1暗房真实样本及其合成噪声上训练；SC465SL、sc635hai和sc450ai均以同一权重先做零样本测试。MIS20S1室外用于检查场景变化，1000x用于检查未参与训练的真实增益。另列的方法8结果只表示 sc635hai 专用适配。
+
+45条原始流均完成输入与方法3的固定 ISP 对比。每流取首、中、尾3个连续8帧片段，共24帧，总计1080帧。27条场景流用于观察画质，18条标定流用于噪声与数值诊断；45/45表示推理覆盖。以下按具体数据集给出静态指标和代表画面。
+
+\subsection{MIS20S1：训练覆盖增益与未见真实增益}
+
+\begin{table}[H]
+\centering\small
+\caption{MIS20S1静态结果。645x在训练覆盖内，使用10x跨增益参考；1000x真实序列未参与训练，使用原生静态参考。}
+\label{tab:mis20s1}
+\begin{tabular}{lrrrrrr}
+\toprule
+协议 & 输入PSNR & 方法3 PSNR & 提升 & 输入RMSE & 方法3 RMSE & HF比 \\
+ & (dB) & (dB) & (dB) & (DN) & (DN) & \\
+\midrule
+645x跨增益参考 & 24.3519 & 29.5729 & +5.2210 & 248.1197 & 136.0228 & 0.9712 \\
+1000x原生参考 & 44.6204 & 53.2675 & +8.6471 & 24.0565 & 8.8895 & 0.8562 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+645x的噪声显著下降，高频比0.9712，说明静态图卡结构与参考较为接近。图\ref{fig:mis645}展示同帧输入与最终输出：墙面和图卡周围的彩噪减少，棋盘、文字及卡片轮廓仍可分辨。由于645x参与训练，这一行用于说明训练域的恢复效果，不作为未见增益成绩。
+
+\begin{figure}[H]
+\centering\pairhead
+\includegraphics[width=\textwidth,trim=0 0 0 44,clip]{fig04_a3_645x_isp.jpg}
+\caption{MIS20S1暗房645x固定 ISP 对比，上为全景，下为固定中心裁剪。该图展示最终方法3在训练覆盖域的恢复效果；静态定量只统计有效区域。}
+\label{fig:mis645}
+\end{figure}
+
+1000x原生参考评测的PSNR提升8.65\db，RMSE由24.06\dn{}降至8.89\dn。为检查同流参考的影响，另使用互斥奇偶帧池验证，方法3得到53.10/53.07\db。该结果与完整原生参考评测接近，支持模型对未参与训练的1000x真实流具有静态去噪能力；它仍是同一暗房场景下的真实增益测试。
+
+\begin{figure}[H]
+\centering
+\makebox[0.32\textwidth]{输入}\hfill\makebox[0.32\textwidth]{方法3（EMA）}\hfill\makebox[0.32\textwidth]{1000x原生参考}\\[0.25em]
+\includegraphics[width=\textwidth,trim=0 133 0 135,clip]{fig20_native_1000x.jpg}
+\caption{MIS20S1 1000x输入、方法3与原生参考。该序列不参与主方法训练；展示保持相同亮度映射，定量按表\ref{tab:mis20s1}所列协议计算。}
+\label{fig:mis1000}
+\end{figure}
+
+\subsection{SC465SL与sc635hai：跨传感器零样本静态泛化}
+
+表\ref{tab:zero_shot}中所有结果使用同一方法3 EMA，没有目标传感器训练。SC465SL两档增益的提升为10.52--13.21\db，sc635hai低色温静态提升约13.59\db。两个奇偶方向的结果接近，且高频保持率为0.911--0.958；输出 legal RAW fraction 均为100\%。
+
+\begin{table}[H]
+\centering\small
+\caption{不同数据集上的零样本静态泛化。偶/奇表示输入帧池，参考使用相反奇偶池；HF为输出/参考高频 RMS，MAD为时序平均绝对差。}
+\label{tab:zero_shot}
+\begin{tabular}{llrrrrr}
+\toprule
+数据集 & 输入池 & 输入PSNR & 方法3 PSNR & 提升 & HF比 & MAD 输入$\to$输出 \\
+ & & (dB) & (dB) & (dB) & & (DN) \\
+\midrule
+SC465SL 256x & 偶 & 41.840 & 55.052 & +13.211 & 0.957 & 31.889$\to$1.567 \\
+ & 奇 & 41.840 & 54.999 & +13.158 & 0.958 & 31.886$\to$1.578 \\
+SC465SL 2000x & 偶 & 46.039 & 56.563 & +10.523 & 0.911 & 20.238$\to$1.312 \\
+ & 奇 & 46.034 & 56.647 & +10.613 & 0.912 & 20.248$\to$1.301 \\
+sc635hai 131x & 偶 & 38.737 & 52.325 & +13.588 & 0.919 & 47.481$\to$2.165 \\
+ & 奇 & 38.736 & 52.324 & +13.587 & 0.921 & 47.481$\to$2.163 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{generalization_static.pdf}
+\caption{方法3在三组未参与训练的目标域静态数据上的泛化：左为相对输入的 PSNR 提升，右为高频保持率。数据来自表\ref{tab:zero_shot}，参考均采用互斥奇偶帧池。}
+\label{fig:zero_shot_plot}
+\end{figure}
+
+SC465SL两档结果在图\ref{fig:sc465_256}和图\ref{fig:sc465_2000}中展示。输入中的细碎彩噪和背景波动得到抑制，风扇、人偶、线缆及背景卡片仍可辨。两图来自完整画面预览，静态定量则按各自的有效区域计算。
+
+\begin{figure}[H]
+\centering\pairhead
+\includegraphics[width=\textwidth,trim=0 0 0 47,clip]{generalization_sc465sl_256x.png}
+\caption{SC465SL暗室256x的零样本结果，上为全景，下为中心裁剪。模型未在SC465SL训练；固定 ISP 下可观察到明显降噪及背景结构保留。}
+\label{fig:sc465_256}
+\end{figure}
+
+\begin{figure}[H]
+\centering\pairhead
+\includegraphics[width=\textwidth,trim=0 0 0 47,clip]{generalization_sc465sl_2000x.png}
+\caption{SC465SL暗室2000x的零样本结果，使用与256x相同的方法3权重和推理流程。静态PSNR提升约10.52--10.61\db，高频比约0.911--0.912。}
+\label{fig:sc465_2000}
+\end{figure}
+
+sc635hai 131x在低色温和较大蓝通道白平衡补偿下，仍显示较强的静态去噪能力。图\ref{fig:sc635_static}给出输入、方法3与相反奇偶池静态参考，展示背景卡片和人偶结构的保留。表\ref{tab:zero_shot}对应方法3的零样本结果；后续使用131x训练专用头所得的数字单独列在第\ref{sec:head_results}节，保持两个实验的含义独立。
+
+\begin{figure}[H]
+\centering
+\makebox[0.32\textwidth]{输入}\hfill\makebox[0.32\textwidth]{方法3（零样本）}\hfill\makebox[0.32\textwidth]{相反奇偶池参考}\\[0.25em]
+\includegraphics[width=\textwidth,trim=0 710 0 40,clip]{generalization_sc635hai_131x.png}
+\caption{sc635hai 131x低色温数据集的零样本静态对比，选自偶输入方向的第8帧。参考为对侧奇数帧池的静态均值，动态像素不计入静态指标。}
+\label{fig:sc635_static}
+\end{figure}
+
+\subsection{sc635hai专用输出头：适配域与动态保留集}
+\label{sec:head_results}
+
+方法8的131x指标来自训练数据尾段复评，该尾段参与过训练采样，不计为独立泛化结果。表\ref{tab:head_results}显示，专用头在静态域仅带来约0.034\db{}的小幅变化，高频与时序指标保持接近。其16x动态保留集未参加训练；由于缺少干净动态目标，只报告诊断量。
+
+\begin{table}[H]
+\centering\small
+\caption{sc635hai专用头效果。131x为训练数据尾段复评，16x为完整保留的动态序列；本表与零样本表采用不同评测样本，基线数值不混用。}
+\label{tab:head_results}
+\begin{tabular}{llrr}
+\toprule
+数据与协议 & 指标 & 方法3 & 方法8专用头 \\
+\midrule
+131x适配域 & 静态PSNR，偶方向(dB) & 52.3535 & 52.3875 \\
+ & 静态PSNR，奇方向(dB) & 52.3552 & 52.3884 \\
+ & HF比（约） & 0.9199 & 0.9181 \\
+ & temporal MAD(DN) & 2.1628 & 2.1247 \\
+\midrule
+16x动态保留集 & HF诊断比 & 0.763605 & 0.763078 \\
+ & motion/input ratio & 0.599602 & 0.596438 \\
+ & temporal MAD(DN) & 14.6745 & 14.6218 \\
+ & 端点裁剪 & 2.1994\% & 1.9344\% \\
+ & legal RAW fraction & 100\% & 100\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[H]
+\centering\triplehead
+\includegraphics[width=\textwidth,trim=0 0 0 44,clip]{fig11_a8_sc635hai.jpg}
+\caption{sc635hai 16x动态保留集：输入、默认方法3和方法8专用输出头。两种输出在结构与纹理上接近，固定 ISP 首、中、末帧复核未见明显新增重影、断边或色偏。}
+\label{fig:sc635_head}
+\end{figure}
+
+方法8的变化主要集中在输出映射，未形成可辨的动态结构提升，因此保留其“sc635hai专用可选头”的身份。跨传感器静态泛化的主要证据仍是未经目标域适配的方法3。
+
+\subsection{室外、高增益和sc450ai数据集的实际输出}
+
+多数据集展示也包含强噪声、运动和复杂纹理。MIS20S1室外1500x与训练暗房具有场景和噪声差异。图\ref{fig:outdoor}中方法3明显压低彩噪，但人物局部有姿态平均，树木纹理偏软。该序列没有干净动态参考，因此不提供动态PSNR。
+
+\begin{figure}[H]
+\centering\pairhead
+\includegraphics[width=\textwidth,trim=0 0 0 44,clip]{fig15_a3_1500x_isp.jpg}
+\caption{MIS20S1室外1500x跨场景输出。上为全景，下为中心裁剪；同一默认方法3显著降噪，同时可见人物与背景细节的平滑现象。}
+\label{fig:outdoor}
+\end{figure}
+
+sc450ai 1435x黑物运动在零样本诊断中，高频比为0.127，端点裁剪约3.28\%，运动/静态时序比为0.057/0.088。图\ref{fig:sc450}保留了方法3原始结果：黑衣内部结构偏空、边界偏软。804x灯光变化的高频比为0.690，暗部仍有低频色斑。SC465SL difficultpattern视频也观察到拖影和重影。上述画面与前三组静态定量共同构成了多数据集展示的完整结果。
+
+\begin{figure}[H]
+\centering\pairhead
+\includegraphics[width=\textwidth,trim=0 0 600 44,clip]{fig12_a8_sc450ai.jpg}
+\caption{sc450ai 1435x黑物运动的零样本结果。此处仅显示原对比图的输入与最终方法3两列；黑色衣物内部与运动轮廓仍偏软。}
+\label{fig:sc450}
+\end{figure}
+
+\begin{table}[H]
+\centering\small
+\caption{最终方法在不同公司数据集中的展示结果。}
+\label{tab:result_scope}
+\begin{tabular}{P{0.26\textwidth}P{0.23\textwidth}P{0.40\textwidth}}
+\toprule
+数据条件 & 使用权重与协议 & 已观察结果 \\
+\midrule
+MIS20S1暗房645x & 方法3；训练覆盖域、跨增益参考 & +5.22\db，HF 0.971 \\
+MIS20S1暗房1000x & 方法3；真实增益留出、原生参考 & +8.65\db；互斥奇偶验证53.10/53.07\db \\
+SC465SL暗室256x/2000x & 方法3；跨传感器零样本静态 & +10.52--13.21\db，HF 0.911--0.958 \\
+sc635hai低色温131x & 方法3；跨传感器零样本静态 & 约+13.59\db，HF 0.919--0.921 \\
+sc635hai动态16x & 方法3及方法8专用头；动态保留集 & 两者画面接近；专用头未见明显新增伪影 \\
+MIS20S1室外1500x & 方法3；跨场景动态观察 & 噪声下降，人物姿态与树木结构偏平滑 \\
+sc450ai、复杂纹理动态 & 方法3；零样本压力测试 & 可见结构平滑、色斑或重影，不计为通过的静态泛化结果 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\clearpage
+
+\begin{thebibliography}{99}
+%========================================================
+
+\bibitem{r1} H. Yue, C. Cao, L. Liao, R. Chu, and J. Yang. Supervised Raw Video Denoising With a Benchmark Dataset on Dynamic Scenes. In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}, pp. 2301--2310, 2020.
+
+\bibitem{r2} H. Yue, C. Cao, L. Liao, and J. Yang. RViDeformer: Efficient Raw Video Denoising Transformer With a Larger Benchmark Dataset. \emph{IEEE Transactions on Circuits and Systems for Video Technology}, 35(9):8929--8944, 2025. DOI: 10.1109/TCSVT.2025.3553160.
+
+\bibitem{r3} J. Liang, Y. Fan, X. Xiang, R. Ranjan, E. Ilg, S. Green, J. Cao, K. Zhang, R. Timofte, and L. Van Gool. Recurrent Video Restoration Transformer with Guided Deformable Attention. In \emph{Advances in Neural Information Processing Systems (NeurIPS)}, 2022.
+
+\bibitem{r4} J. Lehtinen, J. Munkberg, J. Hasselgren, S. Laine, T. Karras, M. Aittala, and T. Aila. Noise2Noise: Learning Image Restoration without Clean Data. In \emph{Proceedings of the International Conference on Machine Learning (ICML)}, PMLR 80:2965--2974, 2018.
+
+\bibitem{r5} A. Krull, T.-O. Buchholz, and F. Jug. Noise2Void -- Learning Denoising from Single Noisy Images. In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}, pp. 2129--2137, 2019.
+
+\bibitem{r6} J. Batson and L. Royer. Noise2Self: Blind Denoising by Self-Supervision. In \emph{Proceedings of the International Conference on Machine Learning (ICML)}, PMLR 97:524--533, 2019.
+
+\bibitem{r7} A. Foi, M. Trimeche, V. Katkovnik, and K. Egiazarian. Practical Poissonian-Gaussian Noise Modeling and Fitting for Single-Image Raw-Data. \emph{IEEE Transactions on Image Processing}, 17(10):1737--1754, 2008.
+
+\bibitem{r8} T. Brooks, B. Mildenhall, J. T. Barron, J. Chen, D. Sharlet, and R. Ng. Unprocessing Images for Learned Raw Denoising. In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}, pp. 11036--11045, 2019.
+
+\bibitem{r9} C. Godard, K. Matzen, and M. Uyttendaele. Deep Burst Denoising. In \emph{Proceedings of the European Conference on Computer Vision (ECCV)}, 2018.
+
+\bibitem{r10} S. W. Hasinoff, D. Sharlet, R. Geiss, A. Adams, J. T. Barron, F. Kainz, J. Chen, and M. Levoy. Burst Photography for High Dynamic Range and Low-Light Imaging on Mobile Cameras. \emph{ACM Transactions on Graphics}, 35(6):192, 2016.
+
+\bibitem{r11} T. Kroeger, R. Timofte, D. Dai, and L. Van Gool. Fast Optical Flow Using Dense Inverse Search. In \emph{Proceedings of the European Conference on Computer Vision (ECCV)}, pp. 471--488, 2016.
+
+\bibitem{r12} E. Reinhard, M. Stark, P. Shirley, and J. Ferwerda. Photographic Tone Reproduction for Digital Images. \emph{ACM Transactions on Graphics}, 21(3):267--276, 2002.
+
+\bibitem{r13} P. Charbonnier, L. Blanc-Feraud, G. Aubert, and M. Barlaud. Two Deterministic Half-Quadratic Regularization Algorithms for Computed Imaging. In \emph{Proceedings of the IEEE International Conference on Image Processing (ICIP)}, vol. 2, pp. 168--172, 1994.
+
+\bibitem{r14} K. Zhang, W. Zuo, Y. Chen, D. Meng, and L. Zhang. Beyond a Gaussian Denoiser: Residual Learning of Deep CNN for Image Denoising. \emph{IEEE Transactions on Image Processing}, 26(7):3142--3155, 2017.
+
+\bibitem{r15} D. Maggioni, E. Sanchez-Monge, and A. Foi. Efficient Multi-Stage Video Denoising With Recurrent Spatio-Temporal Fusion. In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}, 2021.
+
+\bibitem{r16} M. Tassano, J. Delon, and T. Veit. FastDVDNet: Towards Real-Time Deep Video Denoising Without Flow Estimation. In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}, 2020.
+
+\bibitem{r17} B. Mildenhall, J. T. Barron, J. Chen, D. Sharlet, R. Ng, and R. Carroll. Burst Denoising with Kernel Prediction Networks. In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}, 2018.
+
+\bibitem{r18} A. Buades, B. Coll, and J.-M. Morel. A Non-Local Algorithm for Image Denoising. In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}, 2005.
+
+\bibitem{r19} K. Dabov, A. Foi, V. Katkovnik, and K. Egiazarian. Image Denoising by Sparse 3-D Transform-Domain Collaborative Filtering. \emph{IEEE Transactions on Image Processing}, 16(8):2080--2095, 2007.
+
+\bibitem{r20} S. Guo, Z. Yan, K. Zhang, L. Zhang, and W. Zuo. Toward Convolutional Blind Denoising of Real Photographs. In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}, 2019.
+
+\end{thebibliography}
+
+\clearpage
+\appendix
+\section{采纳方法的超参数与模型配置}
+\label{app:configuration}
+
+本附录记录最终方法3及方法8的 sc635hai 专用可选头。训练设置以最终 checkpoint 中保存的配置和优化器状态为准，模型与损失以对应实现核对；展示视频的编码以实际产物为准。下列路径均相对于项目根目录。
+
+\subsection{权重与运行环境}
+
+\begin{description}\raggedright
+\item[项目目录] \path{/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010}
+\item[Python] \path{/home/jingzeliang/miniconda3/envs/aaa_312/bin/python}
+\item[方法3最终权重] \path{artifacts/finetune_mis20s1/training/checkpoint_step_005000.pth}，读取 \texttt{ema} 字段。
+\item[方法3 SHA-256] {\small\path{97c4332f685f98959b243e4b100434469f714aed6329e100d22b6d8552592e0b}}
+\item[方法8专用权重] \path{artifacts/a8_sensor_adaptation/sc635hai/training_20261013/checkpoint_step_000500.pth}，读取 \texttt{ema} 字段。
+\item[方法8 SHA-256] {\small\path{8e4980a43767b5b83ecc064e8cdce2f685ea452e94af48a1f4ca252004765b3f}}
+\end{description}
+
+\subsection{方法3训练超参数}
+
+\begin{longtable}{P{0.27\textwidth}P{0.65\textwidth}}
+\caption{最终主方法的训练与采样配置。}\label{tab:training_config}\\
+\toprule 项目 & 实际设置 \\ \midrule
+\endfirsthead
+\toprule 项目 & 实际设置（续） \\ \midrule
+\endhead
+\bottomrule\endfoot
+初始化 & 官方 \texttt{RViDeformer-L\_CRVD.pth}，strict加载；恢复后的本地预训练文件位于 \path{artifacts/pretrained/} \\
+可训练范围 & 全模型，共7,505,716个参数、1208个参数张量 \\
+总优化步数 & 5000；从step 200恢复至step 5000 \\
+训练batch size & 1；每次优化包含1个8帧样本 \\
+学习率 & 固定 $1\times10^{-4}$，无学习率调度器 \\
+优化器 & Adam，$\beta_1=0.9$、$\beta_2=0.999$、$\epsilon=10^{-8}$ \\
+优化器其他项 & weight decay为0，amsgrad为False \\
+数值精度 & FP32；无autocast、GradScaler或梯度累积 \\
+梯度裁剪 & 未使用 \\
+EMA & decay=0.999，每次optimizer step后更新参数，buffer直接复制；推理读取EMA \\
+随机种子 & 20260921；设置Python、NumPy、PyTorch和CUDA随机种子 \\
+输入/输出 & $(B,T,C,H,W)=(1,8,4,64,64)$，输出对应8帧 \\
+真实:合成比例 & 配置0.5:0.5；512项采样序列的前256项为真实、后256项为合成 \\
+真实训练序列 & MIS20S1暗房128x、313x、632x、645x；不含1000x真实序列 \\
+真实时间采样 & 随机起点的连续8帧，frame stride=1 \\
+合成时间采样 & 每个增益8个噪声变体，从变体池循环取8帧，干净内容相同 \\
+裁剪与增强 & 随机 $64\times64$ packed裁剪、真实时窗、合成噪声；未加入翻转或旋转 \\
+样本随机状态 & 索引 $i$ 使用 \texttt{seed + i * 104729}；合成变体使用 \texttt{seed + record\_index * 1009 + variant} \\
+DataLoader & 默认512项，shuffle=False，num\_workers=0，drop\_last=True；耗尽后重新遍历 \\
+训练输出裁剪 & 预测先clamp到 $[0,1]$，再计算损失 \\
+最终权重选择 & step-5000 EMA；未将后续运动、统一微调或门控候选合并进去 \\
+\end{longtable}
+
+实际配置文件为 \path{artifacts/finetune_mis20s1/training/a3_config.json}；训练及采样实现为 \path{src/raw_fusion/finetune/a3.py}。
+
+\subsection{参考、归一化与损失设置}
+
+\begin{longtable}{P{0.27\textwidth}P{0.65\textwidth}}
+\caption{主方法监督与损失参数。}\label{tab:loss_config}\\
+\toprule 项目 & 设置 \\ \midrule
+\endfirsthead
+\toprule 项目 & 设置（续） \\ \midrule
+\endhead
+\bottomrule\endfoot
+主参考 & MIS20S1暗房10x的200帧；packed形状 $(4,540,960)$ \\
+通道顺序 & R、Gr、Gb、B \\
+主参考黑电平 & R=266.125、Gr=275.625、Gb=275.375、B=267.0\dn \\
+白电平 & 4095\dn \\
+真实输入映射 & 按每条流manifest中的整数位移配准；逐通道slope/intercept映射到参考域，再按式\eqref{eq:normalization}归一化 \\
+有效掩码 & 参考有效区 $\cap$ 8帧均静态 $\cap$ 全部8帧/4通道均未饱和；合成样本不另加运动掩码 \\
+饱和阈值 & 映射参考域3800\dn，归一化阈值按各参考通道黑电平换算 \\
+运动阈值 & 对应采样位置的运动mask $<0.5$，全部8帧同时满足 \\
+损失总式 & $\mathcal L_{\mathrm{char}}+0.1\mathcal L_{\mathrm{grad}}+0.1\mathcal L_{\mathrm{hp}}$ \\
+Charbonnier & $\sqrt{(\hat y-y)^2+10^{-6}}$；标准 $\epsilon^2$ 记法下 $\epsilon=10^{-3}$ \\
+梯度损失 & 水平、垂直梯度幅值差的masked L1，两方向各0.5；相邻mask相乘 \\
+高通损失 & $H(u)=u-\mathrm{AvgPool3d}(u)$ 后的masked L1 \\
+高通池化 & kernel=$(1,3,3)$，stride=1，padding=$(0,1,1)$；默认零填充且包含填充计数 \\
+掩码归约 & 掩码沿通道展开；分母为mask.sum().clamp\_min(1)，逐有效元素平均 \\
+动态损失/教师蒸馏 & 最终方法3未使用 \\
+\end{longtable}
+
+参考统计与空间资源分别见 \path{artifacts/finetune_mis20s1/supervision/references/a1_reference_report.json} 和同目录 \path{a1_reference_manifest.json}。配准、曝光系数与运动掩码逐流记录于 \path{artifacts/finetune_mis20s1/supervision/stream_manifests/}，因此不以单组曝光系数替代所有流。
+
+\subsection{网络构造参数}
+
+\begin{longtable}{P{0.31\textwidth}P{0.61\textwidth}}
+\caption{RViDeformer-L在最终方法中的实际构造配置。}\label{tab:model_config}\\
+\toprule 参数 & 设置 \\ \midrule
+\endfirsthead
+\toprule 参数 & 设置（续） \\ \midrule
+\endhead
+\bottomrule\endfoot
+输入/输出通道 & 4 / 4 \\
+\texttt{upscale} & 1 \\
+\texttt{img\_size} & [8, 64, 64] \\
+\texttt{window\_size} & [6, 8, 8] \\
+\texttt{depths} & [4, 4, 4, 4, 4, 4, 4, 2, 2, 2, 2] \\
+\texttt{embed\_dims} & [84, 84, 84, 84, 84, 84, 84, 108, 108, 108, 108] \\
+\texttt{num\_heads} & [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6] \\
+\texttt{indep\_reconsts} & [11, 12]，按构造实参记录 \\
+\texttt{mul\_attn\_ratio} & 0.75 \\
+\texttt{mlp\_ratio} & 2 \\
+\texttt{qkv\_bias / qk\_scale} & True / None \\
+\texttt{drop\_path\_rate} & 0.2（配置最大值） \\
+归一化 & LayerNorm \\
+\texttt{pa\_frames} & 2 \\
+\texttt{deformable\_groups} & 12 \\
+\texttt{spynet\_path} & None \\
+\texttt{recal\_all\_flows} & False \\
+\texttt{nonblind\_denoising} & False \\
+激活检查点构造参数 & \texttt{use\_checkpoint\_attn=False}，\texttt{use\_checkpoint\_ffn=False}；\texttt{no\_checkpoint\_attn\_blocks} 和 \texttt{no\_checkpoint\_ffn\_blocks} 均为空列表 \\
+前7级空间尺度 & [1, 2, 4, 8, 4, 2, 1]；先降采样再恢复 \\
+参数与buffer & 参数7,505,716个；buffer 57个，共2,668,800个元素 \\
+状态字典 & 每套model/EMA共1265张量，其中1208个为参数张量；张量个数不等于参数量 \\
+\end{longtable}
+
+模型配置入口为 \path{src/raw_fusion/finetune/a3.py} 的 \texttt{build\_rvideformer}，结构实现为 \path{src/raw_fusion/finetune/rvideformer_arch.py}。
+
+\subsection{噪声合成参数}
+
+表\ref{tab:shot}和表\ref{tab:read}列出实际生成器使用的逐档经验参数。增益标签 $g$ 对应的 $G$ 为标签除以100；shot系数已包含该档增益，不应在式\eqref{eq:synthetic}中再乘一次 $G$。表中数值保留6位小数，精确复现读取原JSON的完整精度。
+
+\begin{table}[H]
+\centering\small
+\caption{逐增益经验shot系数 $\alpha_{c,g}$，单位DN。}
+\label{tab:shot}
+\begin{tabular}{rrrrrr}
+\toprule
+增益标签 & $G$ & R & Gr & Gb & B \\
+\midrule
+100 & 1 & 0.146240 & 0.133124 & 0.134059 & 0.153964 \\
+200 & 2 & 0.303604 & 0.262204 & 0.263975 & 0.301672 \\
+400 & 4 & 0.595802 & 0.525547 & 0.529092 & 0.569351 \\
+800 & 8 & 1.234060 & 1.038338 & 1.045279 & 1.185013 \\
+1600 & 16 & 2.553175 & 2.271041 & 2.286595 & 2.535520 \\
+3200 & 32 & 5.057363 & 4.411844 & 4.442612 & 4.909565 \\
+6400 & 64 & 10.160087 & 8.932881 & 8.913312 & 10.015178 \\
+12800 & 128 & 24.593596 & 24.830152 & 24.722971 & 25.129168 \\
+25600 & 256 & 48.717270 & 50.454506 & 50.209071 & 50.189296 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering\small
+\caption{逐增益read variance $v_{c,g}$，单位DN$^2$。}
+\label{tab:read}
+\begin{tabular}{rrrrrr}
+\toprule
+增益标签 & $G$ & R & Gr & Gb & B \\
+\midrule
+100 & 1 & 1.582505 & 1.582505 & 1.582505 & 1.582505 \\
+200 & 2 & 2.813700 & 2.813700 & 2.813700 & 2.813700 \\
+400 & 4 & 8.617427 & 8.616957 & 8.616957 & 8.617427 \\
+800 & 8 & 29.718838 & 29.718838 & 29.718838 & 29.718838 \\
+1600 & 16 & 4.396071 & 4.396071 & 4.396071 & 4.396071 \\
+3200 & 32 & 11.254265 & 11.254265 & 11.254265 & 11.254265 \\
+6400 & 64 & 39.564642 & 34.466890 & 34.466890 & 34.467829 \\
+12800 & 128 & 114.346263 & 114.346263 & 114.346263 & 114.346263 \\
+25600 & 256 & 364.052709 & 364.046605 & 364.049657 & 364.049657 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+生成器使用的聚合通道相关矩阵为
+\begin{equation}
+C=\begin{bmatrix}
+1 & 0.01588756 & 0.00647320 & 0.00093781\\
+0.01588756 & 1 & 0.00753526 & 0.00049242\\
+0.00647320 & 0.00753526 & 1 & 0.02030878\\
+0.00093781 & 0.00049242 & 0.02030878 & 1
+\end{bmatrix}.
+\end{equation}
+固定图样偏置读取主参考manifest中的 \texttt{fpn\_paths.offset\_dn} 空间数组。每档8个噪声变体使用独立随机数，随后先round至1\dn{}格点、再clip至 $[0,4095]$，保存为uint16。完整模型位于 \path{artifacts/finetune_mis20s1/noise_model/noise_model.json}；生成器位于 \path{src/raw_fusion/finetune/noise.py} 的 \texttt{generate\_noisy\_frame}。
+
+\subsection{推理、评测与固定 ISP 参数}
+
+\begin{longtable}{P{0.27\textwidth}P{0.65\textwidth}}
+\caption{最终主方法的推理与展示配置。}\label{tab:inference_config}\\
+\toprule 项目 & 设置 \\ \midrule
+\endfirsthead
+\toprule 项目 & 设置（续） \\ \midrule
+\endhead
+\bottomrule\endfoot
+模型状态 & EMA，eval模式；不更新参数 \\
+连续视频时间窗口 & 8帧，窗口步长4；不足8帧时重复末帧，丢弃补齐位置的输出 \\
+空间tile/步长 & $64\times64$ packed / 56 packed；完整画面覆盖 \\
+重叠区域 & 时域和空域均采用等权累计、除以覆盖计数 \\
+分块并行批大小 & 全数据集展示使用tile\_batch=12；跨传感器审计入口配置为2，原始全帧评估入口常用8；均不改变训练bs=1 \\
+输出裁剪 & 归一化域 $[0,1]$，再按对应管线恢复DN \\
+跨传感器静态采样 & 输入与参考奇偶帧池互斥；每片段8帧、原视频stride=2。SC465SL每方向5片段（40帧），sc635hai零样本每方向3片段（24帧），专用头尾段复评每方向1片段（8帧） \\
+静态有效区 & 奇偶参考置信度 $\ge0.9$ \\
+展示采样 & 每流首、中、尾各1个连续8帧片段，共24帧；45流共1080帧 \\
+去马赛克 & canonical Bayer重建，OpenCV edge-aware \\
+曝光选择 & 每条流由输入99.5百分位确定；Reinhard后线性目标0.8，EV范围 $[-6,8]$；输入与输出共享冻结值 \\
+白平衡 & 各流manifest中的固定WB，输入与输出共享 \\
+色调与高光 & Reinhard tone mapping；高光重建开启；随后sRGB gamma \\
+其他ISP项 & 2DNR/3DNR关闭，false color suppression关闭 \\
+色彩模式 & uncalibrated camera RGB；未使用传感器ColorMatrix \\
+实际预览视频 & HEVC（libx265），CRF16，yuv444p，1920$\times$1080，6fps；每视频24帧 \\
+面板布局 & 输入左、方法3右；上为全景、下为固定中心裁剪 \\
+\end{longtable}
+
+表\ref{tab:inference_config}的 ISP 与视频项对应45流全数据集预览。奇偶参考面板和方法8对比使用原审计固定渲染：固定白平衡与曝光、普通 Bayer 去马赛克、sRGB变换，不包含 Reinhard 与高光重建；各对比内部共享参数。
+
+分块实现见 \path{src/raw_fusion/finetune/a4.py}；跨传感器清单见 \path{configs/a3_cross_sensor_zero_shot_20261012.json} 和 \path{configs/a3_cross_sensor_extension_20261012.json}；全数据集设置见 \path{configs/a3_all_dataset_traditional_isp_preview_20261017.json}。该配置的 \texttt{preferred\_encoder} 记为libx264，但45个实际视频及对应 \texttt{video\_manifest.json} 均为libx265，表\ref{tab:inference_config}按实际产物记录。
+
+\subsection{方法8的sc635hai专用头完整配置}
+
+\begin{longtable}{P{0.27\textwidth}P{0.65\textwidth}}
+\caption{专用可选输出头的训练设置。}\label{tab:head_config}\\
+\toprule 项目 & 实际设置 \\ \midrule
+\endfirsthead
+\toprule 项目 & 实际设置（续） \\ \midrule
+\endhead
+\bottomrule\endfoot
+初始化与范围 & 方法3 step-5000 EMA；主干冻结且eval，仅训练输出头 \\
+可训练模块 & \texttt{norm}、\texttt{conv\_after\_body}、\texttt{conv\_last}，共6张量、12,400参数 \\
+头部结构与参数 & LayerNorm108：216；Linear108$\to$84：9156；Conv3d84$\to$4，kernel=$(1,3,3)$：3028 \\
+目标传感器样本 & sc635hai 131x低色温，共150帧，完整范围 $[0,150)$ \\
+输入/目标帧池 & 偶池0,2,\ldots,148与奇池1,3,\ldots,149互换；每池75帧，目标为对侧静态均值 \\
+时间窗口 & 同一池8帧，即原视频frame stride=2 \\
+训练batch / 步数 & 1 / 500 \\
+随机种子 & 20261013 \\
+学习率与优化器 & 固定 $10^{-5}$，Adam，betas=$(0.9,0.999)$，eps=$10^{-8}$，weight decay=0，amsgrad=False；无调度器 \\
+精度与损失 & BF16 autocast，损失转FP32；与式\eqref{eq:loss}相同，权重1/0.1/0.1 \\
+EMA / 梯度裁剪 & decay=0.999 / gradient norm=1.0 \\
+patch与有效区域 & $64\times64$ packed；静态置信度 $\ge0.9$，输入未饱和；有效比例至少0.25，最多尝试32次裁剪 \\
+目标域增强 & 水平翻转、垂直翻转、转置，各以0.5概率施加 \\
+回放概率与实绩 & MIS20S1回放概率0.5；实际回放262步，sc635hai采样238步；回放沿用主方法数据管线 \\
+检查点间隔 & 每100步保存，最终保留step-500 EMA \\
+131x静态复评片段 & 偶输入134,136,\ldots,148；奇输入135,137,\ldots,149。该尾段参与训练采样，不作为独立留出 \\
+独立动态保留集 & sc635hai 16x运动彩色200帧，不参与训练；仅无参考诊断与固定ISP观察 \\
+用途 & sc635hai专用可选头，不替代默认方法3 \\
+\end{longtable}
+
+配置为 \path{configs/a8_sc635hai_adaptation_20261013.json}；实际训练摘要与保存配置位于 \path{artifacts/a8_sensor_adaptation/sc635hai/training_20261013/}；实现为 \path{src/raw_fusion/finetune/a8_adaptation.py}。
+
+\subsection{结果来源与复现入口}
+
+主方法静态评估位于 \path{artifacts/finetune_mis20s1/evaluation/}；跨传感器静态结果位于 \path{artifacts/a3_cross_sensor_zero_shot_20261012/} 和 \path{artifacts/a3_cross_sensor_extension_20261012/}；45流完整预览位于 \path{artifacts/a3_all_dataset_traditional_isp_preview_20261017/}。专用输出头的解释与检查结果见 \path{docs/A8_SC635HAI_ADAPTATION_RESULT_2026-10-13.md}。这些文件名保留原始实验标识，以便定位已有产物。
+
+从项目根目录执行以下只评测命令，可按对应协议复现主要结果；命令中的 \texttt{python} 指本附录记录的Python环境。
+
+{\small
+\begin{verbatim}
+python scripts/run_a4_eval.py --max-frames 200 \
+  --tile-batch 8 \
+  --output-dir artifacts/finetune_mis20s1/evaluation
+python scripts/run_native_1000x_eval.py --max-frames 200 \
+  --tile-batch 8 \
+  --output-dir artifacts/finetune_mis20s1/evaluation/native_1000x
+python scripts/evaluate_a3_cross_sensor.py \
+  --config configs/a3_cross_sensor_zero_shot_20261012.json \
+  --output-dir artifacts/a3_cross_sensor_zero_shot_20261012 \
+  --phase all --device cuda:0 --tile-batch 2
+python scripts/evaluate_a3_cross_sensor.py \
+  --config configs/a3_cross_sensor_extension_20261012.json \
+  --output-dir artifacts/a3_cross_sensor_extension_20261012 \
+  --phase all --device cuda:0 --tile-batch 2
+\end{verbatim}
+}
+
+结果表中的645x为训练覆盖域复评，1000x为真实增益留出；零样本跨传感器表只使用方法3，sc635hai专用头的131x尾段属于训练数据复评。复现时应沿用这些数据身份与各自参考定义。
+
+\end{document}

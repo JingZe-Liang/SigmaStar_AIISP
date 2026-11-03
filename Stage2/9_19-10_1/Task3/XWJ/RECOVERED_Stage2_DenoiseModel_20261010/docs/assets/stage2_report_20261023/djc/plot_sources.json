@@ -1,0 +1,20 @@
+{
+  "source_root": "/Data4/Xiao/任务三-djc/deliverable_20261025",
+  "sources": {
+    "archive/server/reports/gpu_start/completion_audit.json": "ea347d737cc3e92a32e82f73bacbd37a348e08d6aebfeaa3621caa34d866a418",
+    "results/tables/v3_curve_50_validations.csv": "8533bc4757f289946e53dcf07e7cd9da2a17e6acd0411ef715e3221dcc0c8e56",
+    "results/tables/v3_domain_comparison.csv": "b7448b0abb95ea5ed6e0c5378ad5d6e261e00534cd23179513b8363f21895f7f",
+    "project/work_v3/runs/residual_v3_001/baseline_validation.json": "4db206dc3cce91be180aea3395d8374b370f85ed9bb6d60ccef7cd317a05f219",
+    "project/work_v3/runs/residual_v3_001/validation_2300.json": "65a5c4b9d31b9469a172abaa628d81582d8eff3bfe5783f34a84029d19686913",
+    "project/work_v3/runs/residual_v3_001/validation_5000.json": "3077adf88571f9481f374a71ac4bf6cde5528c26076a1e394c46159c76ea333d"
+  },
+  "protocols": {
+    "exposure": "fixed 40 development crops; mixed N2N/teacher proxy MSE",
+    "v3": "fixed 20 development crops; equal-domain mixed proxy MSE; baseline from step 0"
+  },
+  "domain_percent_columns": {
+    "best_2300": "best_improvement_percent",
+    "final_5000": "improvement_percent"
+  },
+  "no_clean_gt": true
+}

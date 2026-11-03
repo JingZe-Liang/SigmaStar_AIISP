@@ -1,0 +1,216 @@
+\appendix
+\section{采纳方法的超参数与模型配置}
+\label{app:configuration}
+
+本附录记录最终方法3及方法8的 sc635hai 专用可选头。训练设置以最终 checkpoint 中保存的配置和优化器状态为准，模型与损失以对应实现核对；展示视频的编码以实际产物为准。下列路径均相对于项目根目录。
+
+\subsection{权重与运行环境}
+
+\begin{description}
+\item[项目目录] \path{/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010}
+\item[Python] \path{/home/jingzeliang/miniconda3/envs/aaa_312/bin/python}
+\item[方法3最终权重] \path{artifacts/finetune_mis20s1/training/checkpoint_step_005000.pth}，读取 \texttt{ema} 字段。
+\item[方法3 SHA-256] {\small\path{97c4332f685f98959b243e4b100434469f714aed6329e100d22b6d8552592e0b}}
+\item[方法8专用权重] \path{artifacts/a8_sensor_adaptation/sc635hai/training_20261013/checkpoint_step_000500.pth}，读取 \texttt{ema} 字段。
+\item[方法8 SHA-256] {\small\path{8e4980a43767b5b83ecc064e8cdce2f685ea452e94af48a1f4ca252004765b3f}}
+\end{description}
+
+\subsection{方法3训练超参数}
+
+\begin{longtable}{p{0.27\textwidth}p{0.65\textwidth}}
+\caption{最终主方法的训练与采样配置。}\label{tab:training_config}\\
+\toprule 项目 & 实际设置 \\ \midrule
+\endfirsthead
+\toprule 项目 & 实际设置（续） \\ \midrule
+\endhead
+\bottomrule\endfoot
+初始化 & 官方 \texttt{RViDeformer-L\_CRVD.pth}，strict加载；恢复后的本地预训练文件位于 \path{artifacts/pretrained/} \\
+可训练范围 & 全模型，共7,505,716个参数、1208个参数张量 \\
+总优化步数 & 5000；从step 200恢复至step 5000 \\
+训练batch size & 1；每次优化包含1个8帧样本 \\
+学习率 & 固定 $1\times10^{-4}$，无学习率调度器 \\
+优化器 & Adam，$\beta_1=0.9$、$\beta_2=0.999$、$\epsilon=10^{-8}$ \\
+优化器其他项 & weight decay为0，amsgrad为False \\
+数值精度 & FP32；无autocast、GradScaler或梯度累积 \\
+梯度裁剪 & 未使用 \\
+EMA & decay=0.999，每次optimizer step后更新参数，buffer直接复制；推理读取EMA \\
+随机种子 & 20260921；设置Python、NumPy、PyTorch和CUDA随机种子 \\
+输入/输出 & $(B,T,C,H,W)=(1,8,4,64,64)$，输出对应8帧 \\
+真实:合成比例 & 配置0.5:0.5；512项采样序列的前256项为真实、后256项为合成 \\
+真实训练序列 & MIS20S1暗房128x、313x、632x、645x；不含1000x真实序列 \\
+真实时间采样 & 随机起点的连续8帧，frame stride=1 \\
+合成时间采样 & 每个增益8个噪声变体，从变体池循环取8帧，干净内容相同 \\
+裁剪与增强 & 随机 $64\times64$ packed裁剪、真实时窗、合成噪声；未加入翻转或旋转 \\
+样本随机状态 & 索引 $i$ 使用 \texttt{seed + i * 104729}；合成变体使用 \texttt{seed + record\_index * 1009 + variant} \\
+DataLoader & 默认512项，shuffle=False，num\_workers=0，drop\_last=True；耗尽后重新遍历 \\
+训练输出裁剪 & 预测先clamp到 $[0,1]$，再计算损失 \\
+最终权重选择 & step-5000 EMA；未将后续运动、统一微调或门控候选合并进去 \\
+\end{longtable}
+
+实际配置文件为 \path{artifacts/finetune_mis20s1/training/a3_config.json}；训练及采样实现为 \path{src/raw_fusion/finetune/a3.py}。
+
+\subsection{参考、归一化与损失设置}
+
+\begin{longtable}{p{0.27\textwidth}p{0.65\textwidth}}
+\caption{主方法监督与损失参数。}\label{tab:loss_config}\\
+\toprule 项目 & 设置 \\ \midrule
+\endfirsthead
+\toprule 项目 & 设置（续） \\ \midrule
+\endhead
+\bottomrule\endfoot
+主参考 & MIS20S1暗房10x的200帧；packed形状 $(4,540,960)$ \\
+通道顺序 & R、Gr、Gb、B \\
+主参考黑电平 & R=266.125、Gr=275.625、Gb=275.375、B=267.0\dn \\
+白电平 & 4095\dn \\
+真实输入映射 & 按每条流manifest中的整数位移配准；逐通道slope/intercept映射到参考域，再按式\eqref{eq:normalization}归一化 \\
+有效掩码 & 参考有效区 $\cap$ 8帧均静态 $\cap$ 全部8帧/4通道均未饱和；合成样本不另加运动掩码 \\
+饱和阈值 & 映射参考域3800\dn，归一化阈值按各参考通道黑电平换算 \\
+运动阈值 & 对应采样位置的运动mask $<0.5$，全部8帧同时满足 \\
+损失总式 & $\mathcal L_{\mathrm{char}}+0.1\mathcal L_{\mathrm{grad}}+0.1\mathcal L_{\mathrm{hp}}$ \\
+Charbonnier & $\sqrt{(\hat y-y)^2+10^{-6}}$；标准 $\epsilon^2$ 记法下 $\epsilon=10^{-3}$ \\
+梯度损失 & 水平、垂直梯度幅值差的masked L1，两方向各0.5；相邻mask相乘 \\
+高通损失 & $H(u)=u-\mathrm{AvgPool3d}(u)$ 后的masked L1 \\
+高通池化 & kernel=$(1,3,3)$，stride=1，padding=$(0,1,1)$；默认零填充且包含填充计数 \\
+掩码归约 & 掩码沿通道展开；分母为mask.sum().clamp\_min(1)，逐有效元素平均 \\
+动态损失/教师蒸馏 & 最终方法3未使用 \\
+\end{longtable}
+
+参考统计与空间资源分别见 \path{artifacts/finetune_mis20s1/supervision/references/a1_reference_report.json} 和同目录 \path{a1_reference_manifest.json}。配准、曝光系数与运动掩码逐流记录于 \path{artifacts/finetune_mis20s1/supervision/stream_manifests/}，因此不以单组曝光系数替代所有流。
+
+\subsection{网络构造参数}
+
+\begin{longtable}{p{0.31\textwidth}p{0.61\textwidth}}
+\caption{RViDeformer-L在最终方法中的实际构造配置。}\label{tab:model_config}\\
+\toprule 参数 & 设置 \\ \midrule
+\endfirsthead
+\toprule 参数 & 设置（续） \\ \midrule
+\endhead
+\bottomrule\endfoot
+输入/输出通道 & 4 / 4 \\
+\texttt{upscale} & 1 \\
+\texttt{img\_size} & [8, 64, 64] \\
+\texttt{window\_size} & [6, 8, 8] \\
+\texttt{depths} & [4, 4, 4, 4, 4, 4, 4, 2, 2, 2, 2] \\
+\texttt{embed\_dims} & [84, 84, 84, 84, 84, 84, 84, 108, 108, 108, 108] \\
+\texttt{num\_heads} & [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6] \\
+\texttt{indep\_reconsts} & [11, 12]，按构造实参记录 \\
+\texttt{mul\_attn\_ratio} & 0.75 \\
+\texttt{mlp\_ratio} & 2 \\
+\texttt{qkv\_bias / qk\_scale} & True / None \\
+\texttt{drop\_path\_rate} & 0.2（配置最大值） \\
+归一化 & LayerNorm \\
+\texttt{pa\_frames} & 2 \\
+\texttt{deformable\_groups} & 12 \\
+\texttt{spynet\_path} & None \\
+\texttt{nonblind\_denoising} & False \\
+参数与buffer & 参数7,505,716个；buffer 57个，共2,668,800个元素 \\
+状态字典 & 每套model/EMA共1265张量，其中1208个为参数张量；张量个数不等于参数量 \\
+\end{longtable}
+
+模型配置入口为 \path{src/raw_fusion/finetune/a3.py} 的 \texttt{build\_rvideformer}，结构实现为 \path{src/raw_fusion/finetune/rvideformer_arch.py}。
+
+\subsection{噪声合成参数}
+
+表\ref{tab:shot}和表\ref{tab:read}列出实际生成器使用的逐档经验参数。增益标签 $g$ 对应的 $G$ 为标签除以100；shot系数已包含该档增益，不应在式\eqref{eq:synthetic}中再乘一次 $G$。表中数值保留6位小数，精确复现读取原JSON的完整精度。
+
+% NOISE_PARAMETER_TABLES
+
+生成器使用的聚合通道相关矩阵为
+\begin{equation}
+C=\begin{bmatrix}
+1 & 0.01588756 & 0.00647320 & 0.00093781\\
+0.01588756 & 1 & 0.00753526 & 0.00049242\\
+0.00647320 & 0.00753526 & 1 & 0.02030878\\
+0.00093781 & 0.00049242 & 0.02030878 & 1
+\end{bmatrix}.
+\end{equation}
+固定图样偏置读取主参考manifest中的 \texttt{fpn\_paths.offset\_dn} 空间数组。每档8个噪声变体使用独立随机数，随后先round至1\dn格点、再clip至 $[0,4095]$，保存为uint16。完整模型位于 \path{artifacts/finetune_mis20s1/noise_model/noise_model.json}；生成器位于 \path{src/raw_fusion/finetune/noise.py} 的 \texttt{generate\_noisy\_frame}。
+
+\subsection{推理、评测与固定 ISP 参数}
+
+\begin{longtable}{p{0.27\textwidth}p{0.65\textwidth}}
+\caption{最终主方法的推理与展示配置。}\label{tab:inference_config}\\
+\toprule 项目 & 设置 \\ \midrule
+\endfirsthead
+\toprule 项目 & 设置（续） \\ \midrule
+\endhead
+\bottomrule\endfoot
+模型状态 & EMA，eval模式；不更新参数 \\
+时间窗口/步长 & 8帧 / 4帧；不足8帧时重复末帧，丢弃补齐位置的输出 \\
+空间tile/步长 & $64\times64$ packed / 56 packed；完整画面覆盖 \\
+重叠区域 & 时域和空域均采用等权累计、除以覆盖计数 \\
+分块并行批大小 & 全数据集展示使用tile\_batch=12；跨传感器审计入口配置为2，原始全帧评估入口常用8；均不改变训练bs=1 \\
+输出裁剪 & 归一化域 $[0,1]$，再按对应管线恢复DN \\
+跨传感器参考 & 输入与参考奇偶帧池互斥；每方向8帧片段；静态置信度 $\ge0.9$ \\
+展示采样 & 每流首、中、尾各1个连续8帧片段，共24帧；45流共1080帧 \\
+去马赛克 & canonical Bayer重建，OpenCV edge-aware \\
+曝光选择 & 每条流由输入99.5百分位确定；Reinhard后线性目标0.8，EV范围 $[-6,8]$；输入与输出共享冻结值 \\
+白平衡 & 各流manifest中的固定WB，输入与输出共享 \\
+色调与高光 & Reinhard tone mapping；高光重建开启；随后sRGB gamma \\
+其他ISP项 & 2DNR/3DNR关闭，false color suppression关闭 \\
+色彩模式 & uncalibrated camera RGB；未使用传感器ColorMatrix \\
+实际预览视频 & HEVC（libx265），CRF16，yuv444p，1920$\times$1080，6fps；每视频24帧 \\
+面板布局 & 输入左、方法3右；上为全景、下为固定中心裁剪 \\
+\end{longtable}
+
+分块实现见 \path{src/raw_fusion/finetune/a4.py}；跨传感器清单见 \path{configs/a3_cross_sensor_zero_shot_20261012.json} 和 \path{configs/a3_cross_sensor_extension_20261012.json}；全数据集设置见 \path{configs/a3_all_dataset_traditional_isp_preview_20261017.json}。该配置的 \texttt{preferred\_encoder} 记为libx264，但45个实际视频及对应 \texttt{video\_manifest.json} 均为libx265，表\ref{tab:inference_config}按实际产物记录。
+
+\subsection{方法8的sc635hai专用头完整配置}
+
+\begin{longtable}{p{0.27\textwidth}p{0.65\textwidth}}
+\caption{专用可选输出头的训练设置。}\label{tab:head_config}\\
+\toprule 项目 & 实际设置 \\ \midrule
+\endfirsthead
+\toprule 项目 & 实际设置（续） \\ \midrule
+\endhead
+\bottomrule\endfoot
+初始化与范围 & 方法3 step-5000 EMA；主干冻结且eval，仅训练输出头 \\
+可训练模块 & \texttt{norm}、\texttt{conv\_after\_body}、\texttt{conv\_last}，共6张量、12,400参数 \\
+头部结构与参数 & LayerNorm108：216；Linear108$\to$84：9156；Conv3d84$\to$4，kernel=$(1,3,3)$：3028 \\
+目标传感器样本 & sc635hai 131x低色温，共150帧，完整范围 $[0,150)$ \\
+输入/目标帧池 & 偶池0,2,\ldots,148与奇池1,3,\ldots,149互换；每池75帧，目标为对侧静态均值 \\
+时间窗口 & 同一池8帧，即原视频frame stride=2 \\
+训练batch / 步数 & 1 / 500 \\
+随机种子 & 20261013 \\
+学习率与优化器 & 固定 $10^{-5}$，Adam，betas=$(0.9,0.999)$，eps=$10^{-8}$，weight decay=0，amsgrad=False；无调度器 \\
+精度与损失 & BF16 autocast，损失转FP32；与式\eqref{eq:loss}相同，权重1/0.1/0.1 \\
+EMA / 梯度裁剪 & decay=0.999 / gradient norm=1.0 \\
+patch与有效区域 & $64\times64$ packed；静态置信度 $\ge0.9$，输入未饱和；有效比例至少0.25，最多尝试32次裁剪 \\
+目标域增强 & 水平翻转、垂直翻转、转置，各以0.5概率施加 \\
+回放概率与实绩 & MIS20S1回放概率0.5；实际回放262步，sc635hai采样238步；回放沿用主方法数据管线 \\
+检查点间隔 & 每100步保存，最终保留step-500 EMA \\
+131x静态复评片段 & 偶输入134,136,\ldots,148；奇输入135,137,\ldots,149。该尾段参与训练采样，不作为独立留出 \\
+独立动态保留集 & sc635hai 16x运动彩色200帧，不参与训练；仅无参考诊断与固定ISP观察 \\
+用途 & sc635hai专用可选头，不替代默认方法3 \\
+\end{longtable}
+
+配置为 \path{configs/a8_sc635hai_adaptation_20261013.json}；实际训练摘要与保存配置位于 \path{artifacts/a8_sensor_adaptation/sc635hai/training_20261013/}；实现为 \path{src/raw_fusion/finetune/a8_adaptation.py}。
+
+\subsection{结果来源与复现入口}
+
+主方法静态评估位于 \path{artifacts/finetune_mis20s1/evaluation/}；跨传感器静态结果位于 \path{artifacts/a3_cross_sensor_zero_shot_20261012/} 和 \path{artifacts/a3_cross_sensor_extension_20261012/}；45流完整预览位于 \path{artifacts/a3_all_dataset_traditional_isp_preview_20261017/}。专用输出头的解释与检查结果见 \path{docs/A8_SC635HAI_ADAPTATION_RESULT_2026-10-13.md}。这些文件名保留原始实验标识，以便定位已有产物。
+
+从项目根目录执行以下只评测命令，可按对应协议复现主要结果；命令中的 \texttt{python} 指本附录记录的Python环境。
+
+{\small
+\begin{verbatim}
+python scripts/run_a4_eval.py --max-frames 200 \
+  --tile-batch 8 \
+  --output-dir artifacts/finetune_mis20s1/evaluation
+python scripts/run_native_1000x_eval.py --max-frames 200 \
+  --tile-batch 8 \
+  --output-dir artifacts/finetune_mis20s1/evaluation/native_1000x
+python scripts/evaluate_a3_cross_sensor.py \
+  --config configs/a3_cross_sensor_zero_shot_20261012.json \
+  --output-dir artifacts/a3_cross_sensor_zero_shot_20261012 \
+  --phase all --device cuda:0 --tile-batch 2
+python scripts/evaluate_a3_cross_sensor.py \
+  --config configs/a3_cross_sensor_extension_20261012.json \
+  --output-dir artifacts/a3_cross_sensor_extension_20261012 \
+  --phase all --device cuda:0 --tile-batch 2
+\end{verbatim}
+}
+
+结果表中的645x为训练覆盖域复评，1000x为真实增益留出；零样本跨传感器表只使用方法3，sc635hai专用头的131x尾段属于训练数据复评。复现时应沿用这些数据身份与各自参考定义。
+
+\end{document}

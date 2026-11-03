@@ -1,0 +1,137 @@
+{
+  "schema": "a14_static_training_v1",
+  "status": "stopped_oom",
+  "completed_steps": 0,
+  "config": {
+    "schema": "a14_static_training_v1",
+    "dataset_root": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset",
+    "a3_checkpoint": "artifacts/finetune_mis20s1/training/checkpoint_step_005000.pth",
+    "a3_checkpoint_sha256": "97c4332f685f98959b243e4b100434469f714aed6329e100d22b6d8552592e0b",
+    "mis_supervision_dir": "artifacts/finetune_mis20s1/supervision",
+    "mis_noise_dir": "artifacts/finetune_mis20s1/noise_model",
+    "prepared_dir": "artifacts/a14_static_20261030/prepared_training",
+    "output_dir": "artifacts/a14_static_20261030/training",
+    "expected_gpu_uuid": "GPU-07a5046e-9b56-8557-3845-d6cca9ea0497",
+    "seed": 20261030,
+    "steps": 900,
+    "learning_rate": 1e-06,
+    "ema_decay": 0.99,
+    "checkpoint_interval": 300,
+    "min_valid_fraction": 0.25,
+    "max_candidates_per_slot": 64,
+    "precision": "bfloat16",
+    "gradient_weight": 0.1,
+    "highpass_weight": 0.1,
+    "gradient_clip_norm": 1.0,
+    "static_sources": [
+      {
+        "name": "sc465sl_static_split_half",
+        "source": {
+          "name": "sc465sl_darkroom18_256x",
+          "sensor": "SC465SL",
+          "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/02_SC465SL_darkroom18/256x/raw_stream_sc465sl_2560x1440_AG109568_darkroom18_256x.raw",
+          "width": 2560,
+          "height": 1440,
+          "frames_used": 300,
+          "bit_shift": 0,
+          "cfa": "RGGB",
+          "nominal_black_dn": 252.0,
+          "reference_mode": "motion_aware_split_half",
+          "clip_starts": [
+            0,
+            72,
+            144,
+            216,
+            284
+          ],
+          "fixed_isp_wb": [
+            1.8,
+            1.0,
+            1.0,
+            1.6
+          ],
+          "fixed_isp_exposure": 2.5,
+          "panel_crops": {
+            "motion_center": [
+              900,
+              250,
+              1900,
+              1400
+            ],
+            "dark_left": [
+              120,
+              250,
+              1000,
+              1350
+            ],
+            "static_right": [
+              1800,
+              250,
+              2500,
+              1350
+            ]
+          }
+        },
+        "source_sha256": "cec46afe5696c9e2bfc569670a0cc93814d4ad851677275fd4f77c274e6c35cd",
+        "reference_dir": "artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_256x/reference"
+      },
+      {
+        "name": "sc635hai_static_split_half",
+        "source": {
+          "name": "sc635hai_131x_low_cct",
+          "sensor": "sc635hai",
+          "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/01_fist_company/sc635hai/131x_low_cct/raw_stream_normal_3200x1800_16_RG_0205213025917_131x.raw",
+          "width": 3200,
+          "height": 1800,
+          "frames_used": 150,
+          "bit_shift": 4,
+          "cfa": "RGGB",
+          "nominal_black_dn": 257.5,
+          "reference_mode": "motion_aware_split_half",
+          "clip_starts": [
+            0,
+            66,
+            134
+          ],
+          "fixed_isp_wb": [
+            1.128,
+            1.0,
+            1.0,
+            3.604
+          ],
+          "fixed_isp_exposure": 0.65,
+          "panel_crops": {
+            "center_detail": [
+              600,
+              300,
+              2400,
+              1700
+            ],
+            "color_chart": [
+              850,
+              80,
+              2300,
+              850
+            ],
+            "right_subject": [
+              2100,
+              250,
+              3150,
+              1750
+            ]
+          }
+        },
+        "source_sha256": "80445b9133f49dfa7f5117d93bcf9fd5a9dfae1de0e0faae69c9f4144dac440a",
+        "reference_dir": "artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_131x_low_cct/reference"
+      }
+    ]
+  },
+  "audit_sha256": "d333aa8b49e170d64dd87afd1f6dacb81c462e162da47aea7cecbba82d21bf97",
+  "gpu_uuid": "GPU-07a5046e-9b56-8557-3845-d6cca9ea0497",
+  "gpu_name": "NVIDIA GeForce RTX 3090",
+  "precision": "BF16 autocast forward; FP32 parameters, loss, optimizer and EMA",
+  "torch_version": "2.5.1+cu124",
+  "oom_policy": "abort immediately; no retry or device switch",
+  "error": "CUDA out of memory. Tried to allocate 216.00 MiB. GPU 0 has a total capacity of 23.59 GiB of which 119.88 MiB is free. Process 1237194 has 8.15 GiB memory in use. Including non-PyTorch memory, this process has 15.28 GiB memory in use. Of the allocated memory 14.53 GiB is allocated by PyTorch, and 439.64 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)",
+  "elapsed_seconds": 1.488296846859157
+}

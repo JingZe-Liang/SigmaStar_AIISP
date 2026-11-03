@@ -1,0 +1,103 @@
+Rc files read (in order):
+  NONE
+Latexmk: This is Latexmk, John Collins, 9 March 2026. Version 4.88.
+Latexmk: applying rule 'xelatex'...
+Rule 'xelatex':  Reasons for rerun
+Changed files or newly in use/created:
+  Stage2_RAW_Denoising_Research_Report_2026-10-23.tex
+Category 'changed_user':
+  Stage2_RAW_Denoising_Research_Report_2026-10-23.tex
+
+------------
+Run number 1 of rule 'xelatex'
+------------
+------------
+Running 'xelatex -no-pdf -interaction=nonstopmode -halt-on-error -recorder  "Stage2_RAW_Denoising_Research_Report_2026-10-23.tex"'
+------------
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex)
+ restricted \write18 enabled.
+entering extended mode
+(./Stage2_RAW_Denoising_Research_Report_2026-10-23.tex
+LaTeX2e <2026-06-01>
+L3 programming layer <2026-06-18>
+(/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/ctex/ctexart.cls (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/ctex/config/ctexbackend.cfg) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-xetex.def))
+Document Class: ctexart 2026/08/11 v2.6.5 Chinese adapter for class article (CTEX)
+(/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/ctex/ctexhook.sty) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/ctex/ctexpatch.sty) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/base/fix-cm.sty (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/base/ts1enc.def)) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/ctex/config/ctexopts.cfg) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/base/size11.clo)) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/ctex/engine/ctex-engine-xetex.def (/home/jingzeliang/.TinyTeX/texmf-dist/tex/xelatex/xecjk/xeCJK.sty (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/l3packages/xtemplate/xtemplate.sty) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/fontspec/fontspec.sty (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xparse.sty) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/base/fontenc.sty) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/fontspec/fontspec.cfg))) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/xelatex/xecjk/xeCJK.cfg))) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/zhnumber/zhnumber.sty (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/zhnumber/zhnumber-utf8.cfg)) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/ctex/scheme/ctex-scheme-chinese-article.def (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/ctex/config/ctex-name-utf8.cfg)) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-fandol.def)) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/ctex/config/ctex.cfg) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/geometry/geometry.sty (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/generic/iftex/ifvtex.sty (/home/jingzeliang/.TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty))) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/graphics/trig.sty) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/graphics-def/xetex.def))) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.sty) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/tools/longtable.sty) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/tools/array.sty) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty)) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty)) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty)) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/float/float.sty) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx)) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/placeins/placeins.sty) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/base/flafter.sty) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.sty (/home/jingzeliang/.TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty (/home/jingzeliang/.TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.sty))) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty))) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/generic/stringenc/stringenc.sty) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/url/url.sty) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty (/home/jingzeliang/.TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/hyperref/hxetex.def (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty (/home/jingzeliang/.TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty))) (./Stage2_RAW_Denoising_Research_Report_2026-10-23.aux)
+*geometry* driver: auto-detecting
+*geometry* detected driver: xetex
+(./Stage2_RAW_Denoising_Research_Report_2026-10-23.out) (./Stage2_RAW_Denoising_Research_Report_2026-10-23.out) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd) [1] (./Stage2_RAW_Denoising_Research_Report_2026-10-23.toc) [2]
+Underfull \hbox (badness 4505) in paragraph at lines 95--96
+[]\TU/FandolSong-Regular(0)/m/n/10.95 在 缺 少 干 净 真 值 时，| \TU/lmr/m/n/10.95 Noise2Noise[[]] \TU/FandolSong-Regular(0)/m/n/10.95 依 赖 噪 声 观 测 之 间 的 统 计 关 系，| \TU/lmr/m/n/10.95 Noise2Void[[]] \TU/FandolSong-Regular(0)/m/n/10.95 与
+[3] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21] [22] [23] [24] [25] [26] [27] [28] [29] [30] [31] [32] [33] [34] [35] (./Stage2_RAW_Denoising_Research_Report_2026-10-23.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ )
+(see the transcript file for additional information)
+Output written on Stage2_RAW_Denoising_Research_Report_2026-10-23.xdv (35 pages, 602340 bytes).
+Transcript written on Stage2_RAW_Denoising_Research_Report_2026-10-23.log.
+Latexmk: Getting log file 'Stage2_RAW_Denoising_Research_Report_2026-10-23.log'
+Latexmk: Examining 'Stage2_RAW_Denoising_Research_Report_2026-10-23.fls'
+Latexmk: Examining 'Stage2_RAW_Denoising_Research_Report_2026-10-23.log'
+Latexmk: References changed.
+Latexmk: Log file says output to 'Stage2_RAW_Denoising_Research_Report_2026-10-23.xdv'
+Latexmk: applying rule 'xelatex'...
+Rule 'xelatex':  Reasons for rerun
+Changed files or newly in use/created:
+  Stage2_RAW_Denoising_Research_Report_2026-10-23.aux
+  Stage2_RAW_Denoising_Research_Report_2026-10-23.toc
+
+------------
+Run number 2 of rule 'xelatex'
+------------
+------------
+Running 'xelatex -no-pdf -interaction=nonstopmode -halt-on-error -recorder  "Stage2_RAW_Denoising_Research_Report_2026-10-23.tex"'
+------------
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex)
+ restricted \write18 enabled.
+entering extended mode
+(./Stage2_RAW_Denoising_Research_Report_2026-10-23.tex
+LaTeX2e <2026-06-01>
+L3 programming layer <2026-06-18>
+(/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/ctex/ctexart.cls (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/ctex/config/ctexbackend.cfg) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-xetex.def))
+Document Class: ctexart 2026/08/11 v2.6.5 Chinese adapter for class article (CTEX)
+(/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/ctex/ctexhook.sty) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/ctex/ctexpatch.sty) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/base/fix-cm.sty (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/base/ts1enc.def)) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/ctex/config/ctexopts.cfg) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/base/size11.clo)) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/ctex/engine/ctex-engine-xetex.def (/home/jingzeliang/.TinyTeX/texmf-dist/tex/xelatex/xecjk/xeCJK.sty (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/l3packages/xtemplate/xtemplate.sty) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/fontspec/fontspec.sty (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xparse.sty) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/base/fontenc.sty) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/fontspec/fontspec.cfg))) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/xelatex/xecjk/xeCJK.cfg))) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/zhnumber/zhnumber.sty (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/zhnumber/zhnumber-utf8.cfg)) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/ctex/scheme/ctex-scheme-chinese-article.def (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/ctex/config/ctex-name-utf8.cfg)) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-fandol.def)) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/ctex/config/ctex.cfg) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/geometry/geometry.sty (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/generic/iftex/ifvtex.sty (/home/jingzeliang/.TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty))) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/graphics/trig.sty) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/graphics-def/xetex.def))) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.sty) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/tools/longtable.sty) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/tools/array.sty) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty)) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty)) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty)) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/float/float.sty) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx)) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/placeins/placeins.sty) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/base/flafter.sty) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.sty (/home/jingzeliang/.TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty (/home/jingzeliang/.TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.sty))) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty))) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/generic/stringenc/stringenc.sty) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/url/url.sty) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty (/home/jingzeliang/.TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/hyperref/hxetex.def (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty (/home/jingzeliang/.TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty))) (./Stage2_RAW_Denoising_Research_Report_2026-10-23.aux)
+*geometry* driver: auto-detecting
+*geometry* detected driver: xetex
+(./Stage2_RAW_Denoising_Research_Report_2026-10-23.out) (./Stage2_RAW_Denoising_Research_Report_2026-10-23.out) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd) (/home/jingzeliang/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd) [1] (./Stage2_RAW_Denoising_Research_Report_2026-10-23.toc) [2]
+Underfull \hbox (badness 4505) in paragraph at lines 95--96
+[]\TU/FandolSong-Regular(0)/m/n/10.95 在 缺 少 干 净 真 值 时，| \TU/lmr/m/n/10.95 Noise2Noise[[]] \TU/FandolSong-Regular(0)/m/n/10.95 依 赖 噪 声 观 测 之 间 的 统 计 关 系，| \TU/lmr/m/n/10.95 Noise2Void[[]] \TU/FandolSong-Regular(0)/m/n/10.95 与
+[3] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21] [22] [23] [24] [25] [26] [27] [28] [29] [30] [31] [32] [33] [34] [35] (./Stage2_RAW_Denoising_Research_Report_2026-10-23.aux) )
+(see the transcript file for additional information)
+Output written on Stage2_RAW_Denoising_Research_Report_2026-10-23.xdv (35 pages, 602340 bytes).
+Transcript written on Stage2_RAW_Denoising_Research_Report_2026-10-23.log.
+Latexmk: Getting log file 'Stage2_RAW_Denoising_Research_Report_2026-10-23.log'
+Latexmk: Examining 'Stage2_RAW_Denoising_Research_Report_2026-10-23.fls'
+Latexmk: Examining 'Stage2_RAW_Denoising_Research_Report_2026-10-23.log'
+Latexmk: Log file says output to 'Stage2_RAW_Denoising_Research_Report_2026-10-23.xdv'
+Latexmk: applying rule 'xdvipdfmx'...
+Rule 'xdvipdfmx':  Reasons for rerun
+Changed files or newly in use/created:
+  Stage2_RAW_Denoising_Research_Report_2026-10-23.xdv
+Category 'changed_source_rules':
+  xelatex
+
+------------
+Run number 1 of rule 'xdvipdfmx'
+------------
+------------
+Running 'xdvipdfmx -E -o "Stage2_RAW_Denoising_Research_Report_2026-10-23.pdf"  "Stage2_RAW_Denoising_Research_Report_2026-10-23.xdv"'
+------------
+Stage2_RAW_Denoising_Research_Report_2026-10-23.xdv -> Stage2_RAW_Denoising_Research_Report_2026-10-23.pdf
+[1][2][3][4][5][6][7][8][9][10][11][12][13][14][15][16][17][18][19][20][21][22][23][24][25][26][27][28][29][30][31][32][33][34][35]
+18277448 bytes written
+Latexmk: All targets (Stage2_RAW_Denoising_Research_Report_2026-10-23.xdv Stage2_RAW_Denoising_Research_Report_2026-10-23.pdf) are up-to-date
+

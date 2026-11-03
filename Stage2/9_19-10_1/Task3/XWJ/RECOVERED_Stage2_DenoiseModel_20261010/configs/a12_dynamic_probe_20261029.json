@@ -1,0 +1,32 @@
+{
+  "protocol": "A12 controlled packed-RAW motion mechanism diagnostic v1",
+  "scope": "MIS20S1 A3 training-reference-derived constructed targets; development diagnostic, not independent real dynamic or cross-sensor validation",
+  "checkpoint": "artifacts/finetune_mis20s1/training/checkpoint_step_005000.pth",
+  "checkpoint_sha256": "97c4332f685f98959b243e4b100434469f714aed6329e100d22b6d8552592e0b",
+  "output_dir": "artifacts/a12_dynamic_probe_20261029",
+  "source": {
+    "reference": "artifacts/finetune_mis20s1/supervision/references/04_shdarkroom_10x_clean_reference.npy",
+    "valid_mask": "artifacts/finetune_mis20s1/supervision/references/04_shdarkroom_10x_valid_region.npy",
+    "fpn": "artifacts/finetune_mis20s1/supervision/references/04_shdarkroom_fpn_offset_dn.npy",
+    "reference_report": "artifacts/finetune_mis20s1/supervision/references/a1_reference_report.json",
+    "noise_model": "artifacts/finetune_mis20s1/noise_model/noise_model.json"
+  },
+  "seed": 20261029,
+  "frames": 8,
+  "patch_size": 64,
+  "gains": ["800", "12800"],
+  "modes": ["static", "global_translation", "moving_patch"],
+  "velocity_yx": [0, 2],
+  "crops": [
+    {"name": "detail", "source_yx": [384, 576]},
+    {"name": "dark", "source_yx": [96, 288]}
+  ],
+  "foreground": {"source_yx": [288, 160], "size": 32, "origin_yx": [16, 8]},
+  "limitations": [
+    "Targets inherit the static reference's residual error and scene overlap with A3 training.",
+    "Same-colour packed-plane integer shifts preserve CFA but do not simulate optical subpixel motion, motion blur or rolling shutter.",
+    "Moving-patch boundaries are artificial and are used to expose temporal averaging and disocclusion behaviour.",
+    "Two calibrated MIS20S1 noise levels do not represent other sensor noise distributions.",
+    "No pass/fail quality threshold is inferred from one scalar metric; fixed error vectors are reported per region."
+  ]
+}

@@ -1,0 +1,439 @@
+{
+  "source_root": "/Data4/Xiao/任务三-djc/deliverable_20261025",
+  "target_project": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010",
+  "copied_images": [
+    {
+      "source": "/Data4/Xiao/任务三-djc/deliverable_20261025/results/report_comparisons/mis20s1_ac9e58a75df1/frame_0099/best_detail.png",
+      "destination": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/docs/assets/stage2_report_20261023/djc/djc_1000x_detail.png",
+      "sha256": "305e45b2c16fd84c41b87a500e75e6cd6b8f6871a4ecbe3c134bad0d394f03f3",
+      "copy_mode": "byte_identical",
+      "size_px": [
+        2560,
+        752
+      ],
+      "header_height_px": 112,
+      "image_body_size_px": [
+        2560,
+        640
+      ],
+      "title": "MIS20S1 / 1000x / 中心帧 99 / 同区域放大",
+      "displayed_checkpoint": "best2300",
+      "checkpoint_sha256": "5abf0450505cf1771af6e150df45471e1406bf4b0d01b04fb6e8016c414180ef",
+      "provenance": "/Data4/Xiao/任务三-djc/deliverable_20261025/results/all165/mis20s1_ac9e58a75df1/frame_0099/provenance.json",
+      "best_provenance": "/Data4/Xiao/任务三-djc/deliverable_20261025/results/all165/mis20s1_ac9e58a75df1/frame_0099/best_provenance.json",
+      "role": "heldout_test",
+      "frame": 99,
+      "zero_based_frame": true,
+      "clean_gt": false,
+      "source_detail_crop_xyxy": [
+        800,
+        380,
+        1120,
+        700
+      ],
+      "original_detail_sampling": "320x320 raw-display RGB crop, nearest-neighbor enlarged to 640x640 per panel",
+      "wb_red_blue": [
+        1.7828768437971099,
+        1.7440954082336386
+      ],
+      "shared_display_scale": 0.3925902843475342,
+      "display_reference_frame": 8,
+      "input_frames": {
+        "company": [
+          99
+        ],
+        "v3": [
+          97,
+          98,
+          99,
+          100,
+          101
+        ],
+        "rvi": [
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103
+        ]
+      },
+      "caption_facts": "未参与此路线训练与选权重的室内测试流；五帧补偿与单帧基准接近，官方 RVi 输出中棋盘与玩偶条纹更易辨认。",
+      "recommended_latex_trim": "0 0 0 0",
+      "recommended_layout": "两张 detail 以完整正文宽度上下排列；保留全部 112px 标题区，每张内容含四列。",
+      "source_index_hash_verified": true,
+      "copied_image_visually_checked": true,
+      "visible_checkpoint_label": "验证最优权重 · 第2300步"
+    },
+    {
+      "source": "/Data4/Xiao/任务三-djc/deliverable_20261025/results/report_comparisons/mis20s1_95abebb62dd9/frame_0008/best_detail.png",
+      "destination": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/docs/assets/stage2_report_20261023/djc/djc_10x_detail.png",
+      "sha256": "5f22de8d7f1f12fed8486a6151f0ec1ae91e051e6f5783179db7b6ddd2e9aeb8",
+      "copy_mode": "byte_identical",
+      "size_px": [
+        2560,
+        752
+      ],
+      "header_height_px": 112,
+      "image_body_size_px": [
+        2560,
+        640
+      ],
+      "title": "MIS20S1 / 10x / 中心帧 8 / 同区域放大",
+      "displayed_checkpoint": "best2300",
+      "checkpoint_sha256": "5abf0450505cf1771af6e150df45471e1406bf4b0d01b04fb6e8016c414180ef",
+      "provenance": "/Data4/Xiao/任务三-djc/deliverable_20261025/results/all165/mis20s1_95abebb62dd9/frame_0008/provenance.json",
+      "best_provenance": "/Data4/Xiao/任务三-djc/deliverable_20261025/results/all165/mis20s1_95abebb62dd9/frame_0008/best_provenance.json",
+      "role": "heldout_test",
+      "frame": 8,
+      "zero_based_frame": true,
+      "clean_gt": false,
+      "source_detail_crop_xyxy": [
+        800,
+        380,
+        1120,
+        700
+      ],
+      "original_detail_sampling": "320x320 raw-display RGB crop, nearest-neighbor enlarged to 640x640 per panel",
+      "wb_red_blue": [
+        1.9828029550369328,
+        1.83737133968294
+      ],
+      "shared_display_scale": 0.9726905226707458,
+      "display_reference_frame": 8,
+      "input_frames": {
+        "company": [
+          8
+        ],
+        "v3": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "rvi": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      "caption_facts": "未参与此路线训练与选权重的室内测试流；低噪输入已有较清楚结构，模型间差异小于 1000x 样本。",
+      "recommended_latex_trim": "0 0 0 0",
+      "recommended_layout": "两张 detail 以完整正文宽度上下排列；保留全部 112px 标题区，每张内容含四列。",
+      "source_index_hash_verified": true,
+      "copied_image_visually_checked": true,
+      "visible_checkpoint_label": "验证最优权重 · 第2300步"
+    },
+    {
+      "source": "/Data4/Xiao/任务三-djc/deliverable_20261025/results/report_comparisons/sc450ai_57878d7435b2/frame_0132/best_detail.png",
+      "destination": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/docs/assets/stage2_report_20261023/djc/djc_sc450_detail.png",
+      "sha256": "ee9d0697bf390c032036bc596e0dbee5d84e6d616192104f5563b1e0a0a56fcf",
+      "copy_mode": "byte_identical",
+      "size_px": [
+        2560,
+        752
+      ],
+      "header_height_px": 112,
+      "image_body_size_px": [
+        2560,
+        640
+      ],
+      "title": "SC450AI / 804x_lightchanging / 中心帧 132 / 同区域放大",
+      "displayed_checkpoint": "best2300",
+      "checkpoint_sha256": "5abf0450505cf1771af6e150df45471e1406bf4b0d01b04fb6e8016c414180ef",
+      "provenance": "/Data4/Xiao/任务三-djc/deliverable_20261025/results/all165/sc450ai_57878d7435b2/frame_0132/provenance.json",
+      "best_provenance": "/Data4/Xiao/任务三-djc/deliverable_20261025/results/all165/sc450ai_57878d7435b2/frame_0132/best_provenance.json",
+      "role": "development_validation",
+      "frame": 132,
+      "zero_based_frame": true,
+      "clean_gt": false,
+      "source_detail_crop_xyxy": [
+        1184,
+        600,
+        1504,
+        920
+      ],
+      "original_detail_sampling": "320x320 raw-display RGB crop, nearest-neighbor enlarged to 640x640 per panel",
+      "wb_red_blue": [
+        1.391586763953732,
+        2.1125335552271722
+      ],
+      "shared_display_scale": 0.2951297163963318,
+      "display_reference_frame": 120,
+      "input_frames": {
+        "company": [
+          132
+        ],
+        "v3": [
+          130,
+          131,
+          132,
+          133,
+          134
+        ],
+        "rvi": [
+          129,
+          130,
+          131,
+          132,
+          133,
+          134,
+          135,
+          136
+        ]
+      },
+      "caption_facts": "训练已见场景的时间留出验证帧；单帧基准和五帧模型在人像运动细节上较接近。",
+      "recommended_latex_trim": "0 0 0 0",
+      "recommended_layout": "两张 detail 以完整正文宽度上下排列；保留全部 112px 标题区，每张内容含四列。",
+      "source_index_hash_verified": true,
+      "copied_image_visually_checked": true,
+      "visible_checkpoint_label": "验证最优权重 · 第2300步"
+    },
+    {
+      "source": "/Data4/Xiao/任务三-djc/deliverable_20261025/results/report_comparisons/sc635hai_fff725f9cdc8/frame_0132/best_detail.png",
+      "destination": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/docs/assets/stage2_report_20261023/djc/djc_sc635_detail.png",
+      "sha256": "5aa15ac9cf901a2b7833d4509fd069431a42cac0ee77ea7e4436f7773be05643",
+      "copy_mode": "byte_identical",
+      "size_px": [
+        2560,
+        752
+      ],
+      "header_height_px": 112,
+      "image_body_size_px": [
+        2560,
+        640
+      ],
+      "title": "SC635HAI / 131x_low_cct / 中心帧 132 / 同区域放大",
+      "displayed_checkpoint": "best2300",
+      "checkpoint_sha256": "5abf0450505cf1771af6e150df45471e1406bf4b0d01b04fb6e8016c414180ef",
+      "provenance": "/Data4/Xiao/任务三-djc/deliverable_20261025/results/all165/sc635hai_fff725f9cdc8/frame_0132/provenance.json",
+      "best_provenance": "/Data4/Xiao/任务三-djc/deliverable_20261025/results/all165/sc635hai_fff725f9cdc8/frame_0132/best_provenance.json",
+      "role": "development_validation",
+      "frame": 132,
+      "zero_based_frame": true,
+      "clean_gt": false,
+      "source_detail_crop_xyxy": [
+        1440,
+        740,
+        1760,
+        1060
+      ],
+      "original_detail_sampling": "320x320 raw-display RGB crop, nearest-neighbor enlarged to 640x640 per panel",
+      "wb_red_blue": [
+        1.1484875965233152,
+        3.5394779515439336
+      ],
+      "shared_display_scale": 0.9652784466743469,
+      "display_reference_frame": 120,
+      "input_frames": {
+        "company": [
+          132
+        ],
+        "v3": [
+          130,
+          131,
+          132,
+          133,
+          134
+        ],
+        "rvi": [
+          129,
+          130,
+          131,
+          132,
+          133,
+          134,
+          135,
+          136
+        ]
+      },
+      "caption_facts": "训练已见场景的时间留出验证帧；本帧局部比较不足以将域级代理误差下降解释为普遍细节恢复。",
+      "recommended_latex_trim": "0 0 0 0",
+      "recommended_layout": "两张 detail 以完整正文宽度上下排列；保留全部 112px 标题区，每张内容含四列。",
+      "source_index_hash_verified": true,
+      "copied_image_visually_checked": true,
+      "visible_checkpoint_label": "验证最优权重 · 第2300步"
+    },
+    {
+      "source": "/Data4/Xiao/任务三-djc/deliverable_20261025/results/report_comparisons/mis20s1_ac9e58a75df1/frame_0099/best_full.png",
+      "destination": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/docs/assets/stage2_report_20261023/djc/djc_1000x_full.png",
+      "sha256": "34978096cabd89430fd3c449e7ef32927f7e5a56debce459c707270afc4b07f5",
+      "copy_mode": "byte_identical",
+      "size_px": [
+        2560,
+        472
+      ],
+      "header_height_px": 112,
+      "image_body_size_px": [
+        2560,
+        360
+      ],
+      "title": "MIS20S1 / 1000x / 中心帧 99",
+      "displayed_checkpoint": "best2300",
+      "checkpoint_sha256": "5abf0450505cf1771af6e150df45471e1406bf4b0d01b04fb6e8016c414180ef",
+      "provenance": "/Data4/Xiao/任务三-djc/deliverable_20261025/results/all165/mis20s1_ac9e58a75df1/frame_0099/provenance.json",
+      "best_provenance": "/Data4/Xiao/任务三-djc/deliverable_20261025/results/all165/mis20s1_ac9e58a75df1/frame_0099/best_provenance.json",
+      "role": "heldout_test",
+      "frame": 99,
+      "zero_based_frame": true,
+      "clean_gt": false,
+      "source_detail_crop_xyxy": null,
+      "original_detail_sampling": null,
+      "wb_red_blue": [
+        1.7828768437971099,
+        1.7440954082336386
+      ],
+      "shared_display_scale": 0.3925902843475342,
+      "display_reference_frame": 8,
+      "input_frames": {
+        "company": [
+          99
+        ],
+        "v3": [
+          97,
+          98,
+          99,
+          100,
+          101
+        ],
+        "rvi": [
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103
+        ]
+      },
+      "caption_facts": "与 1000x 细节图对应的完整场景，四列共享该流的白平衡与亮度显示映射。",
+      "recommended_latex_trim": "0 0 0 0",
+      "recommended_layout": "两张 detail 以完整正文宽度上下排列；保留全部 112px 标题区，每张内容含四列。",
+      "source_index_hash_verified": true,
+      "copied_image_visually_checked": true,
+      "visible_checkpoint_label": "验证最优权重 · 第2300步"
+    }
+  ],
+  "chart_sources": [
+    {
+      "figure": "/Data4/Xiao/任务三-djc/deliverable_20261025/figures/02_company_base_curve.png",
+      "size_px": [
+        1440,
+        640
+      ],
+      "data": "/Data4/Xiao/任务三-djc/deliverable_20261025/archive/server/reports/gpu_start/completion_audit.json",
+      "fields": [
+        "initial_validation_loss",
+        "checkpoint_records.step",
+        "checkpoint_records.validation_loss"
+      ],
+      "facts": "同一固定验证规则：0.00018024990571575473 至 0.0001602097759996468，误差下降 11.118%。"
+    },
+    {
+      "figure": "/Data4/Xiao/任务三-djc/deliverable_20261025/figures/04_v3_curves.png",
+      "size_px": [
+        1600,
+        752
+      ],
+      "data": "/Data4/Xiao/任务三-djc/deliverable_20261025/results/tables/v3_curve_50_validations.csv",
+      "fields": [
+        "step",
+        "validation",
+        "train_monitor"
+      ],
+      "baselines": {
+        "validation": 0.00017944181461643894,
+        "train_monitor": 0.00010013677920142072
+      },
+      "formula": "100*(1-loss/baseline_for_same_sample_group)",
+      "facts": "best2300 固定验证改善 1.223873%，final5000 固定验证改善 -0.578842%；两条曲线对应不同样本组，不能比较绝对误差；3000 步标线只标记执行优化。"
+    },
+    {
+      "figure": "/Data4/Xiao/任务三-djc/deliverable_20261025/figures/05_domain_results.png",
+      "size_px": [
+        1600,
+        720
+      ],
+      "data": "/Data4/Xiao/任务三-djc/deliverable_20261025/results/tables/v3_domain_comparison.csv",
+      "fields": [
+        "sensor",
+        "base",
+        "trained",
+        "improvement_percent",
+        "best_loss",
+        "best_improvement_percent"
+      ],
+      "field_meanings": {
+        "trained": "final5000 loss",
+        "improvement_percent": "final5000 improvement",
+        "best_loss": "best2300 loss",
+        "best_improvement_percent": "best2300 improvement"
+      },
+      "facts": "五个域均出现在训练开发集；验证为时间尾段，不是未见传感器零样本。"
+    },
+    {
+      "figure": "/Data4/Xiao/任务三-djc/deliverable_20261025/figures/06_extra_validation.png",
+      "size_px": [
+        1280,
+        640
+      ],
+      "data": "/Data4/Xiao/任务三-djc/deliverable_20261025/results/tables/supplement_validation.csv",
+      "fields": [
+        "seed",
+        "checkpoint",
+        "step",
+        "baseline_loss",
+        "candidate_loss",
+        "improvement_percent"
+      ],
+      "facts": "两个种子仅选择补充开发裁块，不是训练随机种子或新数据集；未用于重选 checkpoint。"
+    }
+  ],
+  "columns": [
+    "含噪输入（Noisy）",
+    "RViDeformer",
+    "单帧基准模型",
+    "多帧时序补偿模型"
+  ],
+  "column_subtitles": [
+    "中心帧",
+    "8帧输入",
+    "1帧输入",
+    "5帧输入 / 验证最优权重 · 第2300步"
+  ],
+  "comparator": {
+    "identity": "冻结官方 RViDeformer-L CRVD 权重；不是本报告最终微调方法3",
+    "checkpoint": "/Data4/Xiao/任务三-djc/deliverable_20261025/project/weights/RViDeformer-L_CRVD.pth",
+    "sha256": "0870c25a4eede7fd77a8da2131c5d5d357c5e9a94e9bbc7d24651aa07d7f2e37"
+  },
+  "rendering": {
+    "source": "/Data4/Xiao/任务三-djc/deliverable_20261025/tools/publication_labels.py",
+    "headers_only_relabelled": true,
+    "original_picture_body_preserved": true,
+    "display_scale_rule": "该流第一个展示输入帧 RGB 的 99.5% 分位；同流所有方法共用 WB 与 scale"
+  },
+  "interpretation": [
+    "无干净 GT，不计算或推断 PSNR/SSIM。",
+    "8 帧 RVi 对 5 帧补偿模型，不是同预算架构消融。",
+    "1000x、10x、804x、131x 是原路径场景名，不直接当作统一曝光测量。",
+    "开发集也含 MIS20S1 室外流，测试留出不等于未见 MIS20S1 型号。",
+    "展示静帧不能证明连续视频时序稳定性。",
+    "单帧适配与 V3 使用不同固定裁块/验证协议，二者百分比不能相加。"
+  ],
+  "recommended_layout": {
+    "detail_pair": "保留表头，两张 detail 每张宽为 textwidth，上下放置；总图高约 0.588*textwidth，不含图注，适合 A4 纵版单页。",
+    "chart_panel": "02 与 04 重新绘制为上/下或并列曲线，05 作为分域条形图；采用相同字体与正负方向。",
+    "no_source_images_modified": true,
+    "printed_label_size": "原图表头为23px/18px；图片缩放到约16cm正文宽时约4.1pt/3.2pt，打印可能偏小。",
+    "optional_latex_header_replacement": "若页面预览表头不清晰，可只在 LaTeX 中裁去顶部112px，完整保留图像内容，以 LaTeX 文字重排四列标题和场景、帧号、step2300；不要直接编辑源图。四个 detail 的 viewport body 是 x=[0,2560), y=[112,752)。"
+  }
+}

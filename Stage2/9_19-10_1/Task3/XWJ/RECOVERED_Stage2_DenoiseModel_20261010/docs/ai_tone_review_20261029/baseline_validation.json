@@ -1,0 +1,156 @@
+{
+  "source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/docs/Stage2_RAW_Denoising_Research_Report_2026-10-23.tex",
+  "source_sha256": "14cf8b1b1c2ef1f727b8da88b035c5ec012bb1581610a2e0dc0384fef3ff9789",
+  "backup_matches": true,
+  "command": "/home/jingzeliang/.local/bin/latexmk -xelatex -interaction=nonstopmode -halt-on-error -outdir=ai_tone_review_20261029/build_before Stage2_RAW_Denoising_Research_Report_2026-10-23.tex",
+  "working_directory": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/docs",
+  "exit_code": 0,
+  "pdf": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/docs/ai_tone_review_20261029/build_before/Stage2_RAW_Denoising_Research_Report_2026-10-23.pdf",
+  "pdf_size": 23932366,
+  "pdfinfo": "Title:          Stage2 RAW Video Denoising Research Report\nAuthor:         Stage2 DenoiseModel Project\nCreator:        LaTeX with hyperref\nProducer:       xdvipdfmx (20260317)\nCreationDate:   Thu Oct 29 08:32:14 2026 CST\nTagged:         no\nUserProperties: no\nSuspects:       no\nForm:           none\nJavaScript:     no\nPages:          33\nEncrypted:      no\nPage size:      595.28 x 841.89 pts (A4)\nPage rot:       0\nFile size:      23932366 bytes\nOptimized:      no\nPDF version:    1.7\n",
+  "pages": 33,
+  "warnings": {
+    "underfull_hbox": [
+      "Underfull \\hbox (badness 4505) in paragraph at lines 95--96"
+    ],
+    "overfull_hbox": [],
+    "package_or_latex_warning": [],
+    "missing_character": [],
+    "errors": []
+  },
+  "figures": [
+    {
+      "source_line": 236,
+      "reference": "djc/djc_training_curves.pdf",
+      "resolved": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/docs/assets/stage2_report_20261023/djc/djc_training_curves.pdf",
+      "exists": true
+    },
+    {
+      "source_line": 245,
+      "reference": "djc/djc_domain_results.pdf",
+      "resolved": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/docs/assets/stage2_report_20261023/djc/djc_domain_results.pdf",
+      "exists": true
+    },
+    {
+      "source_line": 261,
+      "reference": "djc/djc_1000x_full.png",
+      "resolved": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/docs/assets/stage2_report_20261023/djc/djc_1000x_full.png",
+      "exists": true
+    },
+    {
+      "source_line": 262,
+      "reference": "djc/djc_1000x_detail.png",
+      "resolved": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/docs/assets/stage2_report_20261023/djc/djc_1000x_detail.png",
+      "exists": true
+    },
+    {
+      "source_line": 272,
+      "reference": "djc/djc_10x_detail.png",
+      "resolved": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/docs/assets/stage2_report_20261023/djc/djc_10x_detail.png",
+      "exists": true
+    },
+    {
+      "source_line": 282,
+      "reference": "djc/djc_sc450_detail.png",
+      "resolved": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/docs/assets/stage2_report_20261023/djc/djc_sc450_detail.png",
+      "exists": true
+    },
+    {
+      "source_line": 283,
+      "reference": "djc/djc_sc635_detail.png",
+      "resolved": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/docs/assets/stage2_report_20261023/djc/djc_sc635_detail.png",
+      "exists": true
+    },
+    {
+      "source_line": 373,
+      "reference": "assets/RVIDeformer/屏幕截图 2026-01-30 151658.png",
+      "resolved": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/docs/assets/RVIDeformer/屏幕截图 2026-01-30 151658.png",
+      "exists": true
+    },
+    {
+      "source_line": 386,
+      "reference": "assets/RVIDeformer/屏幕截图 2026-01-30 183700.png",
+      "resolved": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/docs/assets/RVIDeformer/屏幕截图 2026-01-30 183700.png",
+      "exists": true
+    },
+    {
+      "source_line": 390,
+      "reference": "assets/RVIDeformer/屏幕截图 2026-01-30 204604.png",
+      "resolved": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/docs/assets/RVIDeformer/屏幕截图 2026-01-30 204604.png",
+      "exists": true
+    },
+    {
+      "source_line": 501,
+      "reference": "fig04_a3_645x_isp.jpg",
+      "resolved": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/docs/assets/stage2_report_20261023/fig04_a3_645x_isp.jpg",
+      "exists": true
+    },
+    {
+      "source_line": 511,
+      "reference": "fig11_native_1000x_traditional_isp.png",
+      "resolved": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/docs/assets/stage2_report_20261023/fig11_native_1000x_traditional_isp.png",
+      "exists": true
+    },
+    {
+      "source_line": 541,
+      "reference": "generalization_static.pdf",
+      "resolved": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/docs/assets/stage2_report_20261023/generalization_static.pdf",
+      "exists": true
+    },
+    {
+      "source_line": 552,
+      "reference": "generalization_sc465sl_256x.png",
+      "resolved": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/docs/assets/stage2_report_20261023/generalization_sc465sl_256x.png",
+      "exists": true
+    },
+    {
+      "source_line": 557,
+      "reference": "generalization_sc465sl_2000x.png",
+      "resolved": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/docs/assets/stage2_report_20261023/generalization_sc465sl_2000x.png",
+      "exists": true
+    },
+    {
+      "source_line": 568,
+      "reference": "generalization_sc635hai_131x.png",
+      "resolved": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/docs/assets/stage2_report_20261023/generalization_sc635hai_131x.png",
+      "exists": true
+    },
+    {
+      "source_line": 602,
+      "reference": "fig16_sc635hai_traditional_isp.png",
+      "resolved": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/docs/assets/stage2_report_20261023/fig16_sc635hai_traditional_isp.png",
+      "exists": true
+    },
+    {
+      "source_line": 617,
+      "reference": "fig15_a3_1500x_isp.jpg",
+      "resolved": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/docs/assets/stage2_report_20261023/fig15_a3_1500x_isp.jpg",
+      "exists": true
+    },
+    {
+      "source_line": 629,
+      "reference": "fig18_sc450ai_traditional_isp.png",
+      "resolved": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/docs/assets/stage2_report_20261023/fig18_sc450ai_traditional_isp.png",
+      "exists": true
+    }
+  ],
+  "projection_review": {
+    "missing_ordinary_prose_found": false,
+    "intentional_exclusions": [
+      "标题作者与关键词",
+      "图中流程标签及面板标题",
+      "附录配置列表",
+      "表格、公式、参考文献"
+    ],
+    "caption_label_leak_lines": [
+      640,
+      729,
+      763,
+      791,
+      883,
+      915,
+      977
+    ],
+    "caption_label_leak_reported_to_parent": true
+  }
+}

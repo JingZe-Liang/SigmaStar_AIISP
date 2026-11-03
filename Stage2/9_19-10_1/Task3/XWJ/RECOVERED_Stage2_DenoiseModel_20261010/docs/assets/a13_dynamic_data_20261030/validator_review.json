@@ -1,0 +1,123 @@
+{
+  "scope": "Read-only review followed by parent-authorized minimal validator fixes; all counterexamples are synthetic fixtures, never training data.",
+  "before_sha256": {
+    "src/raw_fusion/finetune/a7_capture.py": {
+      "sha256": "938a31a75249eefeaff202e8ca12cc9cbd21b8eca9913a6b58440fee1e448666",
+      "backup": "artifacts/a13_dynamic_data_20261030/prechange/a7_capture.py"
+    },
+    "src/tests/test_finetune_a7_capture.py": {
+      "sha256": "11ce998ad0136cdcc534b717dcfb7c2414c7077a28a6966adb55c72c69ed7971",
+      "backup": "artifacts/a13_dynamic_data_20261030/prechange/test_finetune_a7_capture.py"
+    }
+  },
+  "after_sha256": {
+    "src/raw_fusion/finetune/a7_capture.py": "084d73717e9cd94490ea1e5cc2cee18028945ce7e1740990c019a43fa522c761",
+    "src/tests/test_finetune_a7_capture.py": "378757021c96fa81bed89fc644e72fd34dee7a992869ae6c6b3a7476dd8fca6b"
+  },
+  "findings": [
+    {
+      "priority": "P1",
+      "status": "fixed",
+      "original_lines": "a7_capture.py:170-172,240-245,376-383",
+      "finding": "Distinct path strings can alias a single RAW across all declared train/validation scenes. No canonical/inode/content identity check existed.",
+      "reproduction": "30 clips, 6 scene labels, 1 resolved RAW: overall_pass=true before fix.",
+      "fix": "Resolve within dataset root; require relative paths; group by physical inode and full SHA256; reject physical aliases, symlinks, hardlinks and byte-identical copies; store source identities.",
+      "after_fix_overall_pass": false
+    },
+    {
+      "priority": "P1",
+      "status": "fixed",
+      "original_lines": "a7_capture.py:107,420-424",
+      "finding": "Non-finite positive numbers and black level at/above white were accepted. NaN black and infinite fps passed full validation.",
+      "fix": "Require finite positive numbers and black < white.",
+      "after_fix": {
+        "rejected": true,
+        "error": "black_level_dn must be a finite positive number"
+      }
+    },
+    {
+      "priority": "P2",
+      "status": "report_boundary_hardened",
+      "original_lines": "a7_capture.py:201-210,319-331,383",
+      "finding": "Automatic pass cannot prove physical scene independence, actual motion labels, processing bypass, sharp dynamic target, optical motion blur, true low gain or correct CFA/black level.",
+      "fix": "Report training_ready=false, admission_status and mandatory manual-review evidence even when automatic checks pass."
+    },
+    {
+      "priority": "P2",
+      "status": "fixed",
+      "original_lines": "a7_capture.py:259-277",
+      "finding": "Zero/one-frame clips could fail with memmap/IndexError rather than an explicit missing temporal pair error.",
+      "fix": "Clear ValueError for fewer than two complete frames."
+    },
+    {
+      "priority": "limitation",
+      "status": "documented",
+      "original_lines": "a7_capture.py:451-458",
+      "finding": "Quiet adjacent-frame noise underestimates temporally correlated or fixed-pattern target error; smoothing/NR can improve this proxy while removing true detail.",
+      "evidence": {
+        "spatially_blurred": {
+          "passed_automatic_clip_checks": true,
+          "metrics": {
+            "frames": 160,
+            "sampled_adjacent_pairs": 24,
+            "high12_alignment_fraction": 1.0,
+            "target_noise_dn": 0.3342524963061433,
+            "background_level_dn": 520.0,
+            "background_cv": 5.440720579853612e-06,
+            "background_max_deviation": 3.0048076923076925e-05,
+            "saturation_fraction": 0.0,
+            "active_pair_fraction": 1.0,
+            "mean_motion_fraction": 0.13107638888888887,
+            "detail_energy_dn": 0.0
+          },
+          "limitation": "Declared nr_disabled=true is not hardware verification; temporal differences do not estimate time-invariant pattern error."
+        },
+        "static_pattern_added": {
+          "passed_automatic_clip_checks": true,
+          "metrics": {
+            "frames": 160,
+            "sampled_adjacent_pairs": 24,
+            "high12_alignment_fraction": 1.0,
+            "target_noise_dn": 1.4905108052618687,
+            "background_level_dn": 518.6875,
+            "background_cv": 0.00023265582443595038,
+            "background_max_deviation": 0.0006206037625015062,
+            "saturation_fraction": 0.0,
+            "active_pair_fraction": 1.0,
+            "mean_motion_fraction": 0.052083333333333336,
+            "detail_energy_dn": 31.75
+          },
+          "limitation": "Declared nr_disabled=true is not hardware verification; temporal differences do not estimate time-invariant pattern error."
+        }
+      }
+    },
+    {
+      "priority": "limitation",
+      "status": "documented",
+      "original_lines": "a7_capture.py:103-106,275-303",
+      "finding": "Dimensions are declared even integers, not inferred; only sampled pairs/pixels are checked for alignment and quality. No proof of every frame, CFA or full-time metadata stability.",
+      "recommendation": "Keep actual capture settings, chart/lens-cap controls, and fixed-ISP visual review as admission evidence; do not relabel automatic diagnostics as independent clean truth."
+    },
+    {
+      "priority": "P1",
+      "status": "fixed",
+      "finding": "Original symlinks could be retargeted after source hashing; mutable metadata was not bound to the report.",
+      "fix": "Before/after parsing and final manifest SHA256 checks, report manifest SHA256, and final re-resolution of every source clip against its recorded target.",
+      "tests": "Manifest mutation during parsing/quality checks and symlink retargeting are rejected."
+    }
+  ],
+  "tests": {
+    "passed": 24,
+    "log": "artifacts/a13_dynamic_data_20261030/a7_capture_tests_final.log",
+    "coverage": "Existing 5 plus 19 new cases; duplicates, distinct-file automatic-pass fixture with manual review outstanding, invalid metadata/path/frame counts, mutable manifest and retargeted symlink."
+  },
+  "source_data_modified": false,
+  "gpu_used": false,
+  "training_started": false,
+  "final_alias_counterexample": {
+    "overall_pass": false,
+    "training_ready": false,
+    "manifest_sha256": "080f97336d02f933c41f277cc66f0e9353c3417617a5f83a0055dc6b379d761f",
+    "path": "artifacts/a13_dynamic_data_20261030/validator_review_fixtures/alias_validation_final.json"
+  }
+}

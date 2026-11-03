@@ -1,0 +1,68 @@
+\contentsline {section}{\numberline {1}引言}{5}{section.1}%
+\contentsline {subsection}{\numberline {1.1}研究背景}{5}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}研究问题}{5}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}主要工作与贡献}{5}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}报告组织}{6}{subsection.1.4}%
+\contentsline {section}{\numberline {2}相关工作与技术背景}{7}{section.2}%
+\contentsline {subsection}{\numberline {2.1}RAW 视频去噪}{7}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}无干净真值的监督}{7}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}噪声建模与合成}{7}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}运动对齐、光流与固定 ISP}{7}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}本文的定位}{8}{subsection.2.5}%
+\contentsline {section}{\numberline {3}数据、监督与评测}{8}{section.3}%
+\contentsline {subsection}{\numberline {3.1}数据集全景}{8}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}五类元数据陷阱}{9}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}噪声统计：标称增益为何不可信}{9}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}监督资源分级}{10}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}评测协议与指标}{11}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}小结}{11}{subsection.3.6}%
+\contentsline {section}{\numberline {4}静态基线：A0--A4}{11}{section.4}%
+\contentsline {subsection}{\numberline {4.1}技术路线}{11}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}A0：数据管线与适配层}{12}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}A1：干净参考构建}{12}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}A2：噪声模型与合成数据}{13}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}A3：RViDeformer 微调}{13}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}A4：第一次评估与“假失败”}{14}{subsection.4.6}%
+\contentsline {subsection}{\numberline {4.7}A3 的接受与残余风险}{16}{subsection.4.7}%
+\contentsline {subsection}{\numberline {4.8}小结}{16}{subsection.4.8}%
+\contentsline {section}{\numberline {5}运动保真：A5--A7 的连续否决}{17}{section.5}%
+\contentsline {subsection}{\numberline {5.1}现象：运动被时域平均掉}{17}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}根因：静态监督把运动排除了}{17}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}A5：动态监督探针与第一次修正}{17}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}A5：九组训练实验与标量扫描的关闭}{18}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}为什么 A5 注定失败：N2N 目标不是干净真值}{20}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.6}A6：冻结运动专家 v1--v4}{20}{subsection.5.6}%
+\contentsline {subsection}{\numberline {5.7}A7：旧教师确定性融合的 36 组配置}{21}{subsection.5.7}%
+\contentsline {subsection}{\numberline {5.8}A7 真实运动采集方案：一条未能执行的路}{22}{subsection.5.8}%
+\contentsline {subsection}{\numberline {5.9}阶段结论}{22}{subsection.5.9}%
+\contentsline {section}{\numberline {6}跨传感器泛化：审计、A8--A10b}{22}{section.6}%
+\contentsline {subsection}{\numberline {6.1}零样本审计协议}{22}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}审计结果：支持边界并不一致}{23}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}A8 数据准入：先证明“能训”，再谈“怎么训”}{24}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}A8 sc635hai：输出头适配的条件通过}{24}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}A8 sc450ai：盲点适配的全部否决}{25}{subsection.6.5}%
+\contentsline {subsection}{\numberline {6.6}A9：统一多传感器小步微调}{26}{subsection.6.6}%
+\contentsline {subsection}{\numberline {6.7}A10：sc450ai 现有数据到底能支持什么}{27}{subsection.6.7}%
+\contentsline {subsection}{\numberline {6.8}A10b：退化生成器的独立验证与全部否决}{28}{subsection.6.8}%
+\contentsline {subsection}{\numberline {6.9}阶段结论}{30}{subsection.6.9}%
+\contentsline {section}{\numberline {7}高增益动态失效：全数据集预览、四路诊断与 A11}{30}{section.7}%
+\contentsline {subsection}{\numberline {7.1}45 条序列的全数据集预览}{30}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}失效模式：时域对齐/融合在低信噪比下失效}{31}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}四路诊断结果}{32}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}A11：输入证据驱动的置信门控}{33}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5}A11 结果：保守、干净，但覆盖不足}{34}{subsection.7.5}%
+\contentsline {subsection}{\numberline {7.6}A11 的逐项裁决}{36}{subsection.7.6}%
+\contentsline {subsection}{\numberline {7.7}为什么 A11 失败：覆盖与证据的悖论}{37}{subsection.7.7}%
+\contentsline {subsection}{\numberline {7.8}阶段结论}{37}{subsection.7.8}%
+\contentsline {section}{\numberline {8}综合讨论}{38}{section.8}%
+\contentsline {subsection}{\numberline {8.1}已经建立的能力}{38}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}失败模式分类}{38}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}方法论反思}{38}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}核心科学判断：缺少可信动态/空间真值}{39}{subsection.8.4}%
+\contentsline {subsection}{\numberline {8.5}局限性}{39}{subsection.8.5}%
+\contentsline {subsection}{\numberline {8.6}后续工作建议}{40}{subsection.8.6}%
+\contentsline {subsection}{\numberline {8.7}小结}{40}{subsection.8.7}%
+\contentsline {section}{\numberline {9}结论}{41}{section.9}%
+\contentsline {section}{\numberline {A}实验索引}{45}{appendix.A}%
+\contentsline {section}{\numberline {B}关键产物与复现入口}{45}{appendix.B}%
+\contentsline {section}{\numberline {C}术语表}{46}{appendix.C}%

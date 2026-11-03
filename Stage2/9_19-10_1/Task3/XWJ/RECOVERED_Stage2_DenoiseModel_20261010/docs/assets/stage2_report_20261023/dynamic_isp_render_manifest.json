@@ -1,0 +1,268 @@
+{
+  "protocol": "Re-render report figures 16 and 18 from the original cached RAW frame 0",
+  "channel_order_check": {
+    "expected_rgb": [
+      30000,
+      20000,
+      10000
+    ],
+    "legacy_COLOR_BayerRG2RGB": [
+      10000,
+      20000,
+      30000
+    ],
+    "traditional_COLOR_BayerRGGB2RGB_EA": [
+      30000,
+      20000,
+      10000
+    ]
+  },
+  "code_sha256": {
+    "docs/assets/stage2_report_20261023/rerender_dynamic_isp.py": "78e518f25db38b46dd352af5ccb569b76d4a93545fed7713ee112a5cd50e8ead",
+    "src/raw_fusion/finetune/all_dataset_preview.py": "463d24bb22c1b5bb230430371b571c0713ab7c85d682174b3c05fb991e79a714",
+    "ISP_traditional/opencv_source_match/pipeline.py": "005e42d20c49b2ce6c1428b4e295c03c52a69c5d7ca63985a6ec885ba414a705",
+    "ISP_traditional/opencv_source_match/highlight_recovery.py": "2f4d9bbe00f3f9b3bf4198a11ea6e6dc41d819d93162d2d5fb0df0d95a309ece"
+  },
+  "figures": [
+    {
+      "sequence": "sc635hai_16x_motion_color",
+      "source_raw": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/01_fist_company/sc635hai/16x_motion_color/3200x1800_RG_motion_color_16x.raw",
+      "source_frame": 0,
+      "source_frame_sha256": "2a5901985f774c7fb8cc8dee819464fd4fd82601861104c50b8e84fede942a4a",
+      "source_metadata": {
+        "sensor": "sc635hai",
+        "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/01_fist_company/sc635hai/16x_motion_color/3200x1800_RG_motion_color_16x.raw",
+        "width": 3200,
+        "height": 1800,
+        "frames_used": 200,
+        "bit_shift": 4,
+        "cfa": "RGGB",
+        "nominal_black_dn": 257.5,
+        "reference_mode": "stress_only",
+        "clip_starts": [
+          0,
+          96,
+          192
+        ],
+        "fixed_isp_wb": [
+          1.2,
+          1.0,
+          1.0,
+          2.8
+        ],
+        "fixed_isp_exposure": 0.65,
+        "panel_crops": {
+          "left_motion": [
+            0,
+            200,
+            1400,
+            1800
+          ],
+          "center_detail": [
+            800,
+            250,
+            2400,
+            1750
+          ],
+          "right_motion": [
+            1800,
+            200,
+            3200,
+            1800
+          ]
+        }
+      },
+      "prediction_sources": [
+        {
+          "method": "method3_ema",
+          "path": "artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_16x_motion_color/inference/prediction_stress.npy",
+          "sha256": "63880922e301dda6b54a7df82fae69aa5ffaf547cf647b7704a3b431af2948c1",
+          "frame_index": 0,
+          "shape": [
+            24,
+            4,
+            900,
+            1600
+          ],
+          "dtype": "float16"
+        },
+        {
+          "method": "method8_sc635hai_head_ema",
+          "path": "artifacts/a8_sensor_adaptation/sc635hai/evaluation_step500_20261013/dynamic_holdout/inference/prediction_stress.npy",
+          "sha256": "4da2ca513500d1a73cc8213f12b5fd56b4599430bc06ef4af757e8d1598fb4e1",
+          "frame_index": 0,
+          "shape": [
+            24,
+            4,
+            900,
+            1600
+          ],
+          "dtype": "float16"
+        }
+      ],
+      "prediction_provenance": "artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_16x_motion_color/inference/manifest.json",
+      "frozen_isp_manifest": "artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/01/raw_scene/sc635hai_16x_motion_color/traditional_isp_video/video_manifest.json",
+      "frozen_isp_manifest_sha256": "69320bc7af7f0391ec6eb82332233973d042e609ec4328181f4ed9a1116c8997",
+      "isp": {
+        "module_root": "ISP_traditional",
+        "demosaic": "COLOR_BayerRGGB2RGB_EA",
+        "black_levels_R_Gr_Gb_B": [
+          271.5,
+          283.5,
+          283.5,
+          272.0
+        ],
+        "white_level_dn": 4095,
+        "wb_rgb": [
+          1.2,
+          1.0,
+          2.8
+        ],
+        "fixed_exposure_ev": 2.0011359625573153,
+        "highlight_recovery": true,
+        "tone_map": "reinhard",
+        "gamma": "sRGB",
+        "camera_color_mode": "uncalibrated_camera_rgb",
+        "all_columns_share_parameters": true,
+        "false_color_suppression": false,
+        "2DNR": false,
+        "3DNR": false
+      },
+      "layout": {
+        "columns": [
+          "input",
+          "method3_ema",
+          "method8_sc635hai_head_ema"
+        ],
+        "detail_crop_xyxy": [
+          800,
+          250,
+          2400,
+          1750
+        ],
+        "original_header_rows_removed": 46,
+        "column_width": 640,
+        "shape": [
+          918,
+          1920,
+          3
+        ]
+      },
+      "output": "docs/assets/stage2_report_20261023/fig16_sc635hai_traditional_isp.png",
+      "output_sha256": "8ae1b44d7d149bd549637453a194b65d94899fab9e60376f83c6df7273bab4a5"
+    },
+    {
+      "sequence": "sc450ai_1435x_motion_black_object",
+      "source_raw": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/01_fist_company/sc450ai/1435x_motion_black_object/raw_stream_2688x1520_16bit@RG[Shutter=83328,SenserG=61440,IspG=24493,R=1620,G=1024,B=2409][bl_R=4128_Gr=4128_Gb=4128_B=4128].raw",
+      "source_frame": 0,
+      "source_frame_sha256": "6470293aaead908a456de7bf7dcc2b44e12d77ff7e21ad86d1d5cbe64680e5c8",
+      "source_metadata": {
+        "sensor": "sc450ai",
+        "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/01_fist_company/sc450ai/1435x_motion_black_object/raw_stream_2688x1520_16bit@RG[Shutter=83328,SenserG=61440,IspG=24493,R=1620,G=1024,B=2409][bl_R=4128_Gr=4128_Gb=4128_B=4128].raw",
+        "width": 2688,
+        "height": 1520,
+        "frames_used": 210,
+        "bit_shift": 0,
+        "cfa": "RGGB",
+        "nominal_black_dn": 258.0,
+        "reference_mode": "stress_only",
+        "clip_starts": [
+          0,
+          101,
+          202
+        ],
+        "fixed_isp_wb": [
+          1.582,
+          1.0,
+          1.0,
+          2.352
+        ],
+        "fixed_isp_exposure": 12.0,
+        "panel_crops": {
+          "black_subject": [
+            700,
+            100,
+            2050,
+            1520
+          ],
+          "flat_wall": [
+            0,
+            0,
+            1300,
+            1050
+          ],
+          "floor_detail": [
+            250,
+            750,
+            2200,
+            1520
+          ]
+        }
+      },
+      "prediction_sources": [
+        {
+          "method": "method3_ema",
+          "path": "artifacts/a3_cross_sensor_extension_20261012/sequences/sc450ai/sc450ai_1435x_motion_black_object/inference/prediction_stress.npy",
+          "sha256": "edc0f2e8fbd00e9d3020fa79cf270643fbacad7756153c4269daba1da03c6a7e",
+          "frame_index": 0,
+          "shape": [
+            24,
+            4,
+            760,
+            1344
+          ],
+          "dtype": "float16"
+        }
+      ],
+      "prediction_provenance": "artifacts/a3_cross_sensor_extension_20261012/sequences/sc450ai/sc450ai_1435x_motion_black_object/inference/manifest.json",
+      "frozen_isp_manifest": "artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/01/raw_scene/sc450ai_1435x_motion_black_object/traditional_isp_video/video_manifest.json",
+      "frozen_isp_manifest_sha256": "8af854897d3914a074a6c27f0e814bc8032c1c5f6b7e6f3970c098c8c2ebf66c",
+      "isp": {
+        "module_root": "ISP_traditional",
+        "demosaic": "COLOR_BayerRGGB2RGB_EA",
+        "black_levels_R_Gr_Gb_B": [
+          257.0,
+          258.0,
+          257.75,
+          256.0
+        ],
+        "white_level_dn": 4095,
+        "wb_rgb": [
+          1.582,
+          1.0,
+          2.352
+        ],
+        "fixed_exposure_ev": 6.280309441653558,
+        "highlight_recovery": true,
+        "tone_map": "reinhard",
+        "gamma": "sRGB",
+        "camera_color_mode": "uncalibrated_camera_rgb",
+        "all_columns_share_parameters": true,
+        "false_color_suppression": false,
+        "2DNR": false,
+        "3DNR": false
+      },
+      "layout": {
+        "columns": [
+          "input",
+          "method3_ema"
+        ],
+        "detail_crop_xyxy": [
+          700,
+          100,
+          2050,
+          1520
+        ],
+        "original_header_rows_removed": 46,
+        "column_width": 640,
+        "shape": [
+          918,
+          1280,
+          3
+        ]
+      },
+      "output": "docs/assets/stage2_report_20261023/fig18_sc450ai_traditional_isp.png",
+      "output_sha256": "b8e75a8ca1d9a9971196c7d0bbec944e91c473878bb928815dcaab93182ffd35"
+    }
+  ]
+}

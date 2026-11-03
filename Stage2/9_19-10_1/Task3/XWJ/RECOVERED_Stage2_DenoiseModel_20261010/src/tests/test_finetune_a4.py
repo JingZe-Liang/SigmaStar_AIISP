@@ -10,7 +10,7 @@ class IdentityWindow(torch.nn.Module):
 
 
 def test_infer_video_blends_identity_windows():
-    video = np.random.default_rng(4).random((8, 4, 540, 960), dtype=np.float32)
+    video = np.random.default_rng(4).random((9, 4, 72, 88), dtype=np.float32)
     output = infer_video(IdentityWindow(), video, torch.device("cpu"))
     np.testing.assert_allclose(output, video, rtol=0, atol=1e-6)
 

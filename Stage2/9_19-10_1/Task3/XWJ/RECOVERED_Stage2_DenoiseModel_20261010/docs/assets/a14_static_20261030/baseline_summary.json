@@ -1,0 +1,928 @@
+{
+  "identity": {
+    "schema": "a14_static_roi_v1",
+    "label": "a3_ema",
+    "weights": "ema",
+    "checkpoint": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/training/checkpoint_step_005000.pth",
+      "sha256": "97c4332f685f98959b243e4b100434469f714aed6329e100d22b6d8552592e0b",
+      "size_bytes": 163925266
+    },
+    "prepared_manifest": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a14_static_20261030/prepared_evaluation/manifest.json",
+      "sha256": "706e3d43ef7899f5f2a2d99a845415f3084bc5a5a053ac00b3ddffe82e301c8e",
+      "size_bytes": 663436
+    },
+    "device": "cuda:0",
+    "gpu_uuid": "GPU-07a5046e-9b56-8557-3845-d6cca9ea0497",
+    "gpu_name": "NVIDIA GeForce RTX 3090",
+    "cuda_visible_devices": "GPU-07a5046e-9b56-8557-3845-d6cca9ea0497",
+    "torch_version": "2.5.1+cu124",
+    "cuda_version": "12.4",
+    "precision": "float32",
+    "tf32": false,
+    "output_clip": [
+      0.0,
+      1.0
+    ],
+    "code": [
+      {
+        "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/src/raw_fusion/finetune/a14_static_eval.py",
+        "sha256": "94ab1f52a2a6ee250a9e35a311a6571341a963f5d377ac4d52a218644c0783ef",
+        "size_bytes": 30138
+      },
+      {
+        "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/src/raw_fusion/finetune/a12_paired_eval.py",
+        "sha256": "3f2dae813ecf78fd27466eadb68ab3fcc95c4e1bd75925eac84a4f0bf73ee0b0",
+        "size_bytes": 11828
+      }
+    ],
+    "scope": "Native static ROI diagnostics; training-domain reevaluation is not unseen-scene or unseen-sensor generalization. Opposite parity prevents direct target averaging of evaluated input frames, but masks, reference selection and brightness estimation may still depend on the full sequence.",
+    "source_roles": {
+      "mis20s1_1000x": "gain_holdout",
+      "sc465sl_2000x": "gain_holdout",
+      "sc465sl_darkroom18_256x": "train_distribution",
+      "sc635hai_131x_low_cct": "train_distribution"
+    }
+  },
+  "scope": "A3 baseline only. A14 stopped on first backward due to CUDA OOM; no optimizer update, no candidate checkpoint.",
+  "sources": {
+    "mis20s1_1000x": {
+      "role": "gain_holdout",
+      "case_count": 18,
+      "metrics": {
+        "raw_input": {
+          "all": {
+            "pixels": 563440,
+            "rmse_dn": 21.280269385263484,
+            "psnr_db": 45.68553569477593,
+            "bias_dn": 0.0033123904088334607,
+            "residual_sigma_dn": 21.280269127467633,
+            "highpass_rmse_dn": 18.286694573969605,
+            "gradient_rmse_dn": 28.955375879334046,
+            "temporal_difference_error_rmse_dn": 29.92037328901159,
+            "temporal_mad_dn": 22.44413297904708,
+            "statistics": {
+              "count": 2253760,
+              "error_sum": 7465.3330078125,
+              "squared_error_sum": 1020614911.9889214,
+              "highpass_squared_sum": 672979748.7998505,
+              "highpass_count": 2012480,
+              "gradient_squared_sum": 3669167047.577503,
+              "gradient_count": 4376320,
+              "temporal_error_squared_sum": 1765426880.0,
+              "temporal_abs_sum": 44260728.0,
+              "temporal_count": 1972040
+            }
+          },
+          "flat": {
+            "pixels": 52016,
+            "rmse_dn": 22.66881748651983,
+            "psnr_db": 45.136500804950956,
+            "bias_dn": -0.079799875044082,
+            "residual_sigma_dn": 22.66867702838192,
+            "highpass_rmse_dn": 21.010073786468244,
+            "gradient_rmse_dn": 32.510629180756695,
+            "temporal_difference_error_rmse_dn": 31.920386625232876,
+            "temporal_mad_dn": 24.90691875027464,
+            "statistics": {
+              "count": 208064,
+              "error_sum": -16603.481201171875,
+              "squared_error_sum": 106918947.55564581,
+              "highpass_squared_sum": 81928146.0151831,
+              "highpass_count": 185600,
+              "gradient_squared_sum": 158321307.72927672,
+              "gradient_count": 149792,
+              "temporal_error_squared_sum": 185498876.0,
+              "temporal_abs_sum": 4534454.0,
+              "temporal_count": 182056
+            }
+          },
+          "detail": {
+            "pixels": 40848,
+            "rmse_dn": 35.77672963188256,
+            "psnr_db": 41.173065342377406,
+            "bias_dn": -0.07262962825429986,
+            "residual_sigma_dn": 35.7766559098237,
+            "highpass_rmse_dn": 25.52748570421937,
+            "gradient_rmse_dn": 50.575789488598616,
+            "temporal_difference_error_rmse_dn": 50.31106723271522,
+            "temporal_mad_dn": 37.538679984332155,
+            "statistics": {
+              "count": 163392,
+              "error_sum": -11867.100219726562,
+              "squared_error_sum": 209137574.41210616,
+              "highpass_squared_sum": 42602435.56456162,
+              "highpass_count": 65376,
+              "gradient_squared_sum": 480641611.283958,
+              "gradient_count": 187904,
+              "temporal_error_squared_sum": 361881100.0,
+              "temporal_abs_sum": 5366830.0,
+              "temporal_count": 142968
+            }
+          }
+        },
+        "model_input": {
+          "all": {
+            "pixels": 563440,
+            "rmse_dn": 19.343571205916604,
+            "psnr_db": 46.51434499188462,
+            "bias_dn": 2.4044609710030405,
+            "residual_sigma_dn": 19.1935487713265,
+            "highpass_rmse_dn": 16.07959772613386,
+            "gradient_rmse_dn": 25.961390787949497,
+            "temporal_difference_error_rmse_dn": 26.80820663206116,
+            "temporal_mad_dn": 18.712263759862882,
+            "statistics": {
+              "count": 2253760,
+              "error_sum": 5419077.9580078125,
+              "squared_error_sum": 843297824.0350373,
+              "highpass_squared_sum": 520333673.2872461,
+              "highpass_count": 2012480,
+              "gradient_squared_sum": 2949612597.7766232,
+              "gradient_count": 4376320,
+              "temporal_error_squared_sum": 1417265594.453125,
+              "temporal_abs_sum": 36901332.625,
+              "temporal_count": 1972040
+            }
+          },
+          "flat": {
+            "pixels": 52016,
+            "rmse_dn": 20.918045999422382,
+            "psnr_db": 45.83465584814122,
+            "bias_dn": 1.4496423879134694,
+            "residual_sigma_dn": 20.867754679915024,
+            "highpass_rmse_dn": 19.30152929718378,
+            "gradient_rmse_dn": 30.09345009371443,
+            "temporal_difference_error_rmse_dn": 29.314191676840828,
+            "temporal_mad_dn": 22.26591543261414,
+            "statistics": {
+              "count": 208064,
+              "error_sum": 301618.3937988281,
+              "squared_error_sum": 91041451.01176153,
+              "highpass_squared_sum": 69145100.56378412,
+              "highpass_count": 185600,
+              "gradient_squared_sum": 135653992.70781523,
+              "gradient_count": 149792,
+              "temporal_error_squared_sum": 156444695.75,
+              "temporal_abs_sum": 4053643.5,
+              "temporal_count": 182056
+            }
+          },
+          "detail": {
+            "pixels": 40848,
+            "rmse_dn": 35.02668749911412,
+            "psnr_db": 41.35709676802634,
+            "bias_dn": 0.7872258114245094,
+            "residual_sigma_dn": 35.017839920280984,
+            "highpass_rmse_dn": 24.29572595063948,
+            "gradient_rmse_dn": 49.50637114791182,
+            "temporal_difference_error_rmse_dn": 49.20479455443246,
+            "temporal_mad_dn": 36.03814315091489,
+            "statistics": {
+              "count": 163392,
+              "error_sum": 128626.39978027344,
+              "squared_error_sum": 200460553.04134429,
+              "highpass_squared_sum": 38590295.61005767,
+              "highpass_count": 65376,
+              "gradient_squared_sum": 460530302.88085514,
+              "gradient_count": 187904,
+              "temporal_error_squared_sum": 346141512.84375,
+              "temporal_abs_sum": 5152301.25,
+              "temporal_count": 142968
+            }
+          }
+        },
+        "prediction": {
+          "all": {
+            "pixels": 563440,
+            "rmse_dn": 7.291895994700522,
+            "psnr_db": 54.988268809405945,
+            "bias_dn": -3.418805830048411,
+            "residual_sigma_dn": 6.440769666270989,
+            "highpass_rmse_dn": 4.771541414751988,
+            "gradient_rmse_dn": 7.703265324623401,
+            "temporal_difference_error_rmse_dn": 2.3803220319999054,
+            "temporal_mad_dn": 1.2918079472630772,
+            "statistics": {
+              "count": 2253760,
+              "error_sum": -7705167.827529907,
+              "squared_error_sum": 119836356.96390411,
+              "highpass_squared_sum": 45819354.68664603,
+              "highpass_count": 2012480,
+              "gradient_squared_sum": 259692127.08585382,
+              "gradient_count": 4376320,
+              "temporal_error_squared_sum": 11173446.466038682,
+              "temporal_abs_sum": 2547496.9443206787,
+              "temporal_count": 1972040
+            }
+          },
+          "flat": {
+            "pixels": 52016,
+            "rmse_dn": 7.397642606782796,
+            "psnr_db": 54.863211202918066,
+            "bias_dn": -4.956651874558077,
+            "residual_sigma_dn": 5.491513300733056,
+            "highpass_rmse_dn": 4.779882379679319,
+            "gradient_rmse_dn": 6.887985990260285,
+            "temporal_difference_error_rmse_dn": 1.7836517010250212,
+            "temporal_mad_dn": 1.2420277565975686,
+            "statistics": {
+              "count": 208064,
+              "error_sum": -1031300.8156280518,
+              "squared_error_sum": 11386326.56407195,
+              "highpass_squared_sum": 4240454.344598374,
+              "highpass_count": 185600,
+              "gradient_squared_sum": 7106784.225294872,
+              "gradient_count": 149792,
+              "temporal_error_squared_sum": 579195.3962335121,
+              "temporal_abs_sum": 226118.60525512695,
+              "temporal_count": 182056
+            }
+          },
+          "detail": {
+            "pixels": 40848,
+            "rmse_dn": 14.323383212017038,
+            "psnr_db": 49.12416589549562,
+            "bias_dn": -2.4177679462709287,
+            "residual_sigma_dn": 14.117850572813001,
+            "highpass_rmse_dn": 7.109016781220968,
+            "gradient_rmse_dn": 15.165890756851084,
+            "temporal_difference_error_rmse_dn": 6.852049594646932,
+            "temporal_mad_dn": 4.019384581603372,
+            "statistics": {
+              "count": 163392,
+              "error_sum": -395043.9402770996,
+              "squared_error_sum": 33521389.43024373,
+              "highpass_squared_sum": 3303980.106687263,
+              "highpass_count": 65376,
+              "gradient_squared_sum": 43218717.17308825,
+              "gradient_count": 187904,
+              "temporal_error_squared_sum": 6712431.042915948,
+              "temporal_abs_sum": 574643.3748626709,
+              "temporal_count": 142968
+            }
+          }
+        }
+      }
+    },
+    "sc465sl_2000x": {
+      "role": "gain_holdout",
+      "case_count": 18,
+      "metrics": {
+        "raw_input": {
+          "all": {
+            "pixels": 470856,
+            "rmse_dn": 23.44022386029814,
+            "psnr_db": 44.8458430220828,
+            "bias_dn": -0.011191915205551996,
+            "residual_sigma_dn": 23.440221188417233,
+            "highpass_rmse_dn": 21.034949358833437,
+            "gradient_rmse_dn": 32.50691645531241,
+            "temporal_difference_error_rmse_dn": 33.016243292820015,
+            "temporal_mad_dn": 25.516522491559446,
+            "statistics": {
+              "count": 1883424,
+              "error_sum": -21079.121704101562,
+              "squared_error_sum": 1034836194.4672554,
+              "highpass_squared_sum": 632313114.3507876,
+              "highpass_count": 1429056,
+              "gradient_squared_sum": 3778216801.735069,
+              "gradient_count": 3575488,
+              "temporal_error_squared_sum": 1796434825.0,
+              "temporal_abs_sum": 42051127.0,
+              "temporal_count": 1647996
+            }
+          },
+          "flat": {
+            "pixels": 43632,
+            "rmse_dn": 26.980452026726194,
+            "psnr_db": 43.62409369180974,
+            "bias_dn": -0.11795798421649212,
+            "residual_sigma_dn": 26.980194170547275,
+            "highpass_rmse_dn": 25.2774586132326,
+            "gradient_rmse_dn": 37.66455965874369,
+            "temporal_difference_error_rmse_dn": 38.04642733326202,
+            "temporal_mad_dn": 30.034391534391535,
+            "statistics": {
+              "count": 174528,
+              "error_sum": -20586.971069335938,
+              "squared_error_sum": 127046748.58251353,
+              "highpass_squared_sum": 69599536.22605793,
+              "highpass_count": 108928,
+              "gradient_squared_sum": 173729763.86421084,
+              "gradient_count": 122464,
+              "temporal_error_squared_sum": 221055298.0,
+              "temporal_abs_sum": 4586612.0,
+              "temporal_count": 152712
+            }
+          },
+          "detail": {
+            "pixels": 54848,
+            "rmse_dn": 28.318050082504396,
+            "psnr_db": 43.20381121188735,
+            "bias_dn": -0.0012809554225783643,
+            "residual_sigma_dn": 28.318050053532648,
+            "highpass_rmse_dn": 24.842154483749997,
+            "gradient_rmse_dn": 39.29271650948491,
+            "temporal_difference_error_rmse_dn": 39.8806358271446,
+            "temporal_mad_dn": 30.974407192865478,
+            "statistics": {
+              "count": 219392,
+              "error_sum": -281.0313720703125,
+              "squared_error_sum": 175933068.83258104,
+              "highpass_squared_sum": 67953709.1890072,
+              "highpass_count": 110112,
+              "gradient_squared_sum": 382644530.72098637,
+              "gradient_count": 247840,
+              "temporal_error_squared_sum": 305318407.0,
+              "temporal_abs_sum": 5946095.0,
+              "temporal_count": 191968
+            }
+          }
+        },
+        "model_input": {
+          "all": {
+            "pixels": 470856,
+            "rmse_dn": 20.144542405201477,
+            "psnr_db": 46.16192999014925,
+            "bias_dn": 3.126976455272896,
+            "residual_sigma_dn": 19.900367005739607,
+            "highpass_rmse_dn": 17.525543939091435,
+            "gradient_rmse_dn": 27.48817713817557,
+            "temporal_difference_error_rmse_dn": 27.92842401479619,
+            "temporal_mad_dn": 20.307135037038925,
+            "statistics": {
+              "count": 1883424,
+              "error_sum": 5889422.503295898,
+              "squared_error_sum": 764298334.8478858,
+              "highpass_squared_sum": 438926962.62856436,
+              "highpass_count": 1429056,
+              "gradient_squared_sum": 2701638312.250093,
+              "gradient_count": 3575488,
+              "temporal_error_squared_sum": 1285431718.3945312,
+              "temporal_abs_sum": 33466077.3125,
+              "temporal_count": 1647996
+            }
+          },
+          "flat": {
+            "pixels": 43632,
+            "rmse_dn": 24.1664347183618,
+            "psnr_db": 44.58082645126265,
+            "bias_dn": 2.135180838780391,
+            "residual_sigma_dn": 24.07192492889897,
+            "highpass_rmse_dn": 22.538531982000354,
+            "gradient_rmse_dn": 33.63626089300504,
+            "temporal_difference_error_rmse_dn": 33.8748038283394,
+            "temporal_mad_dn": 26.069279919063334,
+            "statistics": {
+              "count": 174528,
+              "error_sum": 372648.84143066406,
+              "squared_error_sum": 101927243.40482493,
+              "highpass_squared_sum": 55333836.25497709,
+              "highpass_count": 108928,
+              "gradient_squared_sum": 138555530.4109447,
+              "gradient_count": 122464,
+              "temporal_error_squared_sum": 175237376.4921875,
+              "temporal_abs_sum": 3981091.875,
+              "temporal_count": 152712
+            }
+          },
+          "detail": {
+            "pixels": 54848,
+            "rmse_dn": 25.61091049883065,
+            "psnr_db": 44.07657775319355,
+            "bias_dn": 2.3469624285658988,
+            "residual_sigma_dn": 25.503146941858255,
+            "highpass_rmse_dn": 21.92205425094113,
+            "gradient_rmse_dn": 35.35042061862505,
+            "temporal_difference_error_rmse_dn": 35.83479813272678,
+            "temporal_mad_dn": 26.890748392961328,
+            "statistics": {
+              "count": 219392,
+              "error_sum": 514904.7811279297,
+              "squared_error_sum": 143903323.45556498,
+              "highpass_squared_sum": 52917235.44774176,
+              "highpass_count": 110112,
+              "gradient_squared_sum": 309713810.6445342,
+              "gradient_count": 247840,
+              "temporal_error_squared_sum": 246512397.13671875,
+              "temporal_abs_sum": 5162163.1875,
+              "temporal_count": 191968
+            }
+          }
+        },
+        "prediction": {
+          "all": {
+            "pixels": 470856,
+            "rmse_dn": 5.694968753957144,
+            "psnr_db": 57.135251209539334,
+            "bias_dn": -3.651151097112287,
+            "residual_sigma_dn": 4.370556574923145,
+            "highpass_rmse_dn": 3.174625258283283,
+            "gradient_rmse_dn": 4.994763010717266,
+            "temporal_difference_error_rmse_dn": 1.6400249450717979,
+            "temporal_mad_dn": 1.1751059749842219,
+            "statistics": {
+              "count": 1883424,
+              "error_sum": -6876665.603927612,
+              "squared_error_sum": 61084467.38309826,
+              "highpass_squared_sum": 14402377.244877366,
+              "highpass_count": 1429056,
+              "gradient_squared_sum": 89200050.13817134,
+              "gradient_count": 3575488,
+              "temporal_error_squared_sum": 4432584.881387096,
+              "temporal_abs_sum": 1936569.9463500977,
+              "temporal_count": 1647996
+            }
+          },
+          "flat": {
+            "pixels": 43632,
+            "rmse_dn": 5.98570394611607,
+            "psnr_db": 56.70277346672583,
+            "bias_dn": -4.239251347658264,
+            "residual_sigma_dn": 4.225801668550842,
+            "highpass_rmse_dn": 3.5482364654810903,
+            "gradient_rmse_dn": 4.682718975212825,
+            "temporal_difference_error_rmse_dn": 1.611718248643638,
+            "temporal_mad_dn": 1.2066819473099537,
+            "statistics": {
+              "count": 174528,
+              "error_sum": -739868.0592041016,
+              "squared_error_sum": 6253102.929229341,
+              "highpass_squared_sum": 1371401.5609266239,
+              "highpass_count": 108928,
+              "gradient_squared_sum": 2685373.079748206,
+              "gradient_count": 122464,
+              "temporal_error_squared_sum": 396690.145005323,
+              "temporal_abs_sum": 184274.81353759766,
+              "temporal_count": 152712
+            }
+          },
+          "detail": {
+            "pixels": 54848,
+            "rmse_dn": 7.514845306196719,
+            "psnr_db": 54.72667722149183,
+            "bias_dn": -2.5073496457297995,
+            "residual_sigma_dn": 7.08421468690253,
+            "highpass_rmse_dn": 4.148794712716008,
+            "gradient_rmse_dn": 6.9849194578287985,
+            "temporal_difference_error_rmse_dn": 2.6046831617258546,
+            "temporal_mad_dn": 1.7285460741405865,
+            "statistics": {
+              "count": 219392,
+              "error_sum": -550092.4534759521,
+              "squared_error_sum": 12389702.471549261,
+              "highpass_squared_sum": 1895302.5322362785,
+              "highpass_count": 110112,
+              "gradient_squared_sum": 12091890.502450952,
+              "gradient_count": 247840,
+              "temporal_error_squared_sum": 1302382.779631878,
+              "temporal_abs_sum": 331825.5327606201,
+              "temporal_count": 191968
+            }
+          }
+        }
+      }
+    },
+    "sc465sl_darkroom18_256x": {
+      "role": "train_distribution",
+      "case_count": 18,
+      "metrics": {
+        "raw_input": {
+          "all": {
+            "pixels": 399920,
+            "rmse_dn": 29.0690410909933,
+            "psnr_db": 42.97646400579019,
+            "bias_dn": 0.17356098661138478,
+            "residual_sigma_dn": 29.068522950672666,
+            "highpass_rmse_dn": 25.683254067916874,
+            "gradient_rmse_dn": 39.84931049332998,
+            "temporal_difference_error_rmse_dn": 40.9547194553482,
+            "temporal_mad_dn": 31.52240233761038,
+            "statistics": {
+              "count": 1599680,
+              "error_sum": 277642.0390625,
+              "squared_error_sum": 1351744236.9917872,
+              "highpass_squared_sum": 902035479.7352539,
+              "highpass_count": 1367488,
+              "gradient_squared_sum": 4889263150.395548,
+              "gradient_count": 3078944,
+              "temporal_error_squared_sum": 2347735023.0,
+              "temporal_abs_sum": 44122537.0,
+              "temporal_count": 1399720
+            }
+          },
+          "flat": {
+            "pixels": 135696,
+            "rmse_dn": 27.226477518629245,
+            "psnr_db": 43.54524897722846,
+            "bias_dn": 0.1527313004826448,
+            "residual_sigma_dn": 27.226049129873335,
+            "highpass_rmse_dn": 25.45976059676202,
+            "gradient_rmse_dn": 38.285846791286076,
+            "temporal_difference_error_rmse_dn": 38.34052463010496,
+            "temporal_mad_dn": 30.185458672326376,
+            "statistics": {
+              "count": 542784,
+              "error_sum": 82900.10620117188,
+              "squared_error_sum": 402355508.6804624,
+              "highpass_squared_sum": 323581145.29450244,
+              "highpass_count": 499200,
+              "gradient_squared_sum": 825541975.5409477,
+              "gradient_count": 563200,
+              "temporal_error_squared_sum": 698153939.0,
+              "temporal_abs_sum": 14336161.0,
+              "temporal_count": 474936
+            }
+          },
+          "detail": {
+            "pixels": 43528,
+            "rmse_dn": 42.169378497747545,
+            "psnr_db": 39.74513411537952,
+            "bias_dn": 0.19140464868249316,
+            "residual_sigma_dn": 42.1689441075628,
+            "highpass_rmse_dn": 33.281938488214486,
+            "gradient_rmse_dn": 58.150156114645426,
+            "temporal_difference_error_rmse_dn": 59.444195518695196,
+            "temporal_mad_dn": 44.9439769475149,
+            "statistics": {
+              "count": 174112,
+              "error_sum": 33325.84619140625,
+              "squared_error_sum": 309615792.7482982,
+              "highpass_squared_sum": 68127207.66601565,
+              "highpass_count": 61504,
+              "gradient_squared_sum": 822258161.4765399,
+              "gradient_count": 243168,
+              "temporal_error_squared_sum": 538338779.0,
+              "temporal_abs_sum": 6847125.0,
+              "temporal_count": 152348
+            }
+          }
+        },
+        "model_input": {
+          "all": {
+            "pixels": 399920,
+            "rmse_dn": 26.031940900511295,
+            "psnr_db": 43.93494712935009,
+            "bias_dn": 3.1287202606536932,
+            "residual_sigma_dn": 25.843240055733876,
+            "highpass_rmse_dn": 22.368976835880193,
+            "gradient_rmse_dn": 35.19107075024603,
+            "temporal_difference_error_rmse_dn": 36.32758241563862,
+            "temporal_mad_dn": 26.541812782199298,
+            "statistics": {
+              "count": 1599680,
+              "error_sum": 5004951.2265625,
+              "squared_error_sum": 1084042263.4532852,
+              "highpass_squared_sum": 684251508.5520717,
+              "highpass_count": 1367488,
+              "gradient_squared_sum": 3812999535.9880304,
+              "gradient_count": 3078944,
+              "temporal_error_squared_sum": 1847201027.7226562,
+              "temporal_abs_sum": 37151106.1875,
+              "temporal_count": 1399720
+            }
+          },
+          "flat": {
+            "pixels": 135696,
+            "rmse_dn": 23.897104103891515,
+            "psnr_db": 44.67817261166935,
+            "bias_dn": 3.079481628421567,
+            "residual_sigma_dn": 23.697855967417027,
+            "highpass_rmse_dn": 22.13619326131741,
+            "gradient_rmse_dn": 33.3995912563664,
+            "temporal_difference_error_rmse_dn": 33.317351435408504,
+            "temporal_mad_dn": 25.203100128227803,
+            "statistics": {
+              "count": 542784,
+              "error_sum": 1671493.3562011719,
+              "squared_error_sum": 309968518.94959694,
+              "highpass_squared_sum": 244613517.20951518,
+              "highpass_count": 499200,
+              "gradient_squared_sum": 628268014.4392098,
+              "gradient_count": 563200,
+              "temporal_error_squared_sum": 527200762.73046875,
+              "temporal_abs_sum": 11969859.5625,
+              "temporal_count": 474936
+            }
+          },
+          "detail": {
+            "pixels": 43528,
+            "rmse_dn": 40.62761479783672,
+            "psnr_db": 40.0686515993704,
+            "bias_dn": 1.7205514765863712,
+            "residual_sigma_dn": 40.59116636385087,
+            "highpass_rmse_dn": 31.270204122078038,
+            "gradient_rmse_dn": 55.87366309989181,
+            "temporal_difference_error_rmse_dn": 57.155991895221504,
+            "temporal_mad_dn": 42.23259658807467,
+            "statistics": {
+              "count": 174112,
+              "error_sum": 299568.65869140625,
+              "squared_error_sum": 287389804.1895099,
+              "highpass_squared_sum": 60140189.751603566,
+              "highpass_count": 61504,
+              "gradient_squared_sum": 759137966.9789889,
+              "gradient_count": 243168,
+              "temporal_error_squared_sum": 497691575.2265625,
+              "temporal_abs_sum": 6434051.625,
+              "temporal_count": 152348
+            }
+          }
+        },
+        "prediction": {
+          "all": {
+            "pixels": 399920,
+            "rmse_dn": 7.072867188348707,
+            "psnr_db": 55.25316805913128,
+            "bias_dn": -2.8947089952906504,
+            "residual_sigma_dn": 6.453379742166359,
+            "highpass_rmse_dn": 3.61243972961728,
+            "gradient_rmse_dn": 6.4193114949838135,
+            "temporal_difference_error_rmse_dn": 2.765392451425286,
+            "temporal_mad_dn": 1.6211801864963709,
+            "statistics": {
+              "count": 1599680,
+              "error_sum": -4630608.085586548,
+              "squared_error_sum": 80024712.2783471,
+              "highpass_squared_sum": 17845336.597510897,
+              "highpass_count": 1367488,
+              "gradient_squared_sum": 126875769.83103094,
+              "gradient_count": 3078944,
+              "temporal_error_squared_sum": 10704212.303845022,
+              "temporal_abs_sum": 2269198.3306427,
+              "temporal_count": 1399720
+            }
+          },
+          "flat": {
+            "pixels": 135696,
+            "rmse_dn": 5.835038174365538,
+            "psnr_db": 56.924204088724025,
+            "bias_dn": -4.1964437060304975,
+            "residual_sigma_dn": 4.054322473412806,
+            "highpass_rmse_dn": 3.387740841534607,
+            "gradient_rmse_dn": 4.763967113889927,
+            "temporal_difference_error_rmse_dn": 1.6372034742835535,
+            "temporal_mad_dn": 1.219332445452344,
+            "statistics": {
+              "count": 542784,
+              "error_sum": -2277762.5005340576,
+              "squared_error_sum": 18480530.78266539,
+              "highpass_squared_sum": 5729212.574293282,
+              "highpass_count": 499200,
+              "gradient_squared_sum": 12782039.51536496,
+              "gradient_count": 563200,
+              "temporal_error_squared_sum": 1273035.1798440784,
+              "temporal_abs_sum": 579104.8743133545,
+              "temporal_count": 474936
+            }
+          },
+          "detail": {
+            "pixels": 43528,
+            "rmse_dn": 14.796049507546318,
+            "psnr_db": 48.84216260604701,
+            "bias_dn": 1.0856587578763508,
+            "residual_sigma_dn": 14.756165697470601,
+            "highpass_rmse_dn": 7.040524262445073,
+            "gradient_rmse_dn": 14.729756703751056,
+            "temporal_difference_error_rmse_dn": 6.6782803245203155,
+            "temporal_mad_dn": 4.409639413256561,
+            "statistics": {
+              "count": 174112,
+              "error_sum": 189026.2176513672,
+              "squared_error_sum": 38117135.48425386,
+              "highpass_squared_sum": 3048690.6621673414,
+              "highpass_count": 61504,
+              "gradient_squared_sum": 52759123.253131576,
+              "gradient_count": 243168,
+              "temporal_error_squared_sum": 6794633.671093347,
+              "temporal_abs_sum": 671799.7453308105,
+              "temporal_count": 152348
+            }
+          }
+        }
+      }
+    },
+    "sc635hai_131x_low_cct": {
+      "role": "train_distribution",
+      "case_count": 18,
+      "metrics": {
+        "raw_input": {
+          "all": {
+            "pixels": 443536,
+            "rmse_dn": 40.346024557619494,
+            "psnr_db": 40.12906315129782,
+            "bias_dn": 0.09551852776595625,
+            "residual_sigma_dn": 40.345911488215116,
+            "highpass_rmse_dn": 30.207306000654413,
+            "gradient_rmse_dn": 52.43064958407804,
+            "temporal_difference_error_rmse_dn": 56.63246591271418,
+            "temporal_mad_dn": 41.68338340711271,
+            "statistics": {
+              "count": 1774144,
+              "error_sum": 169463.6229248047,
+              "squared_error_sum": 2887954614.9940133,
+              "highpass_squared_sum": 1252858773.629037,
+              "highpass_count": 1373024,
+              "gradient_squared_sum": 9135035257.588394,
+              "gradient_count": 3323072,
+              "temporal_error_squared_sum": 4978836496.0,
+              "temporal_abs_sum": 64708284.0,
+              "temporal_count": 1552376
+            }
+          },
+          "flat": {
+            "pixels": 108304,
+            "rmse_dn": 34.235400991852806,
+            "psnr_db": 41.55556974131806,
+            "bias_dn": 0.0687169241119759,
+            "residual_sigma_dn": 34.23533202785241,
+            "highpass_rmse_dn": 30.40511943568593,
+            "gradient_rmse_dn": 44.87974111645093,
+            "temporal_difference_error_rmse_dn": 48.093480682487154,
+            "temporal_mad_dn": 37.178545047801954,
+            "statistics": {
+              "count": 433216,
+              "error_sum": 29769.27099609375,
+              "squared_error_sum": 507756306.44370174,
+              "highpass_squared_sum": 366061046.9265244,
+              "highpass_count": 395968,
+              "gradient_squared_sum": 1052729096.3214984,
+              "gradient_count": 522656,
+              "temporal_error_squared_sum": 876768544.0,
+              "temporal_abs_sum": 14093048.0,
+              "temporal_count": 379064
+            }
+          },
+          "detail": {
+            "pixels": 64832,
+            "rmse_dn": 60.57105627167262,
+            "psnr_db": 36.59977517798119,
+            "bias_dn": 0.19560132021965185,
+            "residual_sigma_dn": 60.57074044445601,
+            "highpass_rmse_dn": 48.15181107909456,
+            "gradient_rmse_dn": 81.02009266098186,
+            "temporal_difference_error_rmse_dn": 85.03050834942819,
+            "temporal_mad_dn": 65.86474051614722,
+            "statistics": {
+              "count": 259328,
+              "error_sum": 50724.899169921875,
+              "squared_error_sum": 951436273.924708,
+              "highpass_squared_sum": 128951085.75750597,
+              "highpass_count": 55616,
+              "gradient_squared_sum": 2231006616.3368955,
+              "gradient_count": 339872,
+              "temporal_error_squared_sum": 1640616272.0,
+              "temporal_abs_sum": 14945500.0,
+              "temporal_count": 226912
+            }
+          }
+        },
+        "model_input": {
+          "all": {
+            "pixels": 443536,
+            "rmse_dn": 36.937976913911356,
+            "psnr_db": 40.895616011368425,
+            "bias_dn": 5.198716182522278,
+            "residual_sigma_dn": 36.57030883854045,
+            "highpass_rmse_dn": 25.000888121594446,
+            "gradient_rmse_dn": 46.60450896444481,
+            "temporal_difference_error_rmse_dn": 51.08008836816179,
+            "temporal_mad_dn": 33.85806016068272,
+            "statistics": {
+              "count": 1774144,
+              "error_sum": 9223271.122924805,
+              "squared_error_sum": 2420667157.3219013,
+              "highpass_squared_sum": 858200971.696191,
+              "highpass_count": 1373024,
+              "gradient_squared_sum": 7217646772.658365,
+              "gradient_count": 3323072,
+              "temporal_error_squared_sum": 4050421313.75,
+              "temporal_abs_sum": 52560440.0,
+              "temporal_count": 1552376
+            }
+          },
+          "flat": {
+            "pixels": 108304,
+            "rmse_dn": 29.520238573277737,
+            "psnr_db": 42.842680861998524,
+            "bias_dn": 5.489119217656074,
+            "residual_sigma_dn": 29.0054142469573,
+            "highpass_rmse_dn": 25.113261347895186,
+            "gradient_rmse_dn": 37.0792110136648,
+            "temporal_difference_error_rmse_dn": 40.489427623856386,
+            "temporal_mad_dn": 28.687858118945613,
+            "statistics": {
+              "count": 433216,
+              "error_sum": 2377974.2709960938,
+              "squared_error_sum": 377523694.1971121,
+              "highpass_squared_sum": 249727473.00030693,
+              "highpass_count": 395968,
+              "gradient_squared_sum": 718582951.6000936,
+              "gradient_count": 522656,
+              "temporal_error_squared_sum": 621435152.1875,
+              "temporal_abs_sum": 10874534.25,
+              "temporal_count": 379064
+            }
+          },
+          "detail": {
+            "pixels": 64832,
+            "rmse_dn": 59.20531333902407,
+            "psnr_db": 36.79786444345999,
+            "bias_dn": 1.5713706162463053,
+            "residual_sigma_dn": 59.184456759848864,
+            "highpass_rmse_dn": 46.16303116686415,
+            "gradient_rmse_dn": 78.95501683573956,
+            "temporal_difference_error_rmse_dn": 83.01952036621982,
+            "temporal_mad_dn": 63.42663455436469,
+            "statistics": {
+              "count": 259328,
+              "error_sum": 407500.3991699219,
+              "squared_error_sum": 909014432.3149973,
+              "highpass_squared_sum": 118519111.23325984,
+              "highpass_count": 55616,
+              "gradient_squared_sum": 2118726253.8813596,
+              "gradient_count": 339872,
+              "temporal_error_squared_sum": 1563932135.75,
+              "temporal_abs_sum": 14392264.5,
+              "temporal_count": 226912
+            }
+          }
+        },
+        "prediction": {
+          "all": {
+            "pixels": 443536,
+            "rmse_dn": 9.059131094375418,
+            "psnr_db": 53.10334723465019,
+            "bias_dn": -2.123197758259279,
+            "residual_sigma_dn": 8.806809153399564,
+            "highpass_rmse_dn": 4.897249163467062,
+            "gradient_rmse_dn": 8.986106532342852,
+            "temporal_difference_error_rmse_dn": 3.1232430925122125,
+            "temporal_mad_dn": 2.0351498286967993,
+            "statistics": {
+              "count": 1774144,
+              "error_sum": -3766858.5636291504,
+              "squared_error_sum": 145600194.64362183,
+              "highpass_squared_sum": 32929302.376930095,
+              "highpass_count": 1373024,
+              "gradient_squared_sum": 268338431.56703722,
+              "gradient_count": 3323072,
+              "temporal_error_squared_sum": 15142880.535392,
+              "temporal_abs_sum": 3159317.7504730225,
+              "temporal_count": 1552376
+            }
+          },
+          "flat": {
+            "pixels": 108304,
+            "rmse_dn": 7.6739653445854605,
+            "psnr_db": 54.54468144983079,
+            "bias_dn": -4.835917144040798,
+            "residual_sigma_dn": 5.958493894086906,
+            "highpass_rmse_dn": 4.547765957389312,
+            "gradient_rmse_dn": 6.528724462922262,
+            "temporal_difference_error_rmse_dn": 2.2789147437635093,
+            "temporal_mad_dn": 1.7311360893541754,
+            "statistics": {
+              "count": 433216,
+              "error_sum": -2094996.6814727783,
+              "squared_error_sum": 25511979.38431385,
+              "highpass_squared_sum": 8189479.550856392,
+              "highpass_count": 395968,
+              "gradient_squared_sum": 22277816.40834247,
+              "gradient_count": 522656,
+              "temporal_error_squared_sum": 1968650.8440950816,
+              "temporal_abs_sum": 656211.3705749512,
+              "temporal_count": 379064
+            }
+          },
+          "detail": {
+            "pixels": 64832,
+            "rmse_dn": 16.01190028039281,
+            "psnr_db": 48.156220587459245,
+            "bias_dn": 1.8635236789184637,
+            "residual_sigma_dn": 15.903088696456217,
+            "highpass_rmse_dn": 9.275386195787142,
+            "gradient_rmse_dn": 17.122800470772297,
+            "temporal_difference_error_rmse_dn": 5.873705459386375,
+            "temporal_mad_dn": 4.065591242766955,
+            "statistics": {
+              "count": 259328,
+              "error_sum": 483263.8686065674,
+              "squared_error_sum": 66486759.154407285,
+              "highpass_squared_sum": 4784799.597528823,
+              "highpass_count": 55616,
+              "gradient_squared_sum": 99647172.26915608,
+              "gradient_count": 339872,
+              "temporal_error_squared_sum": 7828558.355370467,
+              "temporal_abs_sum": 922531.4400787354,
+              "temporal_count": 226912
+            }
+          }
+        }
+      }
+    }
+  },
+  "case_count": 72
+}

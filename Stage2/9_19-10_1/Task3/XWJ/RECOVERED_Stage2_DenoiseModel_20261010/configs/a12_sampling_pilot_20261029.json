@@ -1,0 +1,23 @@
+{
+  "dataset_root": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset",
+  "supervision_dir": "artifacts/finetune_mis20s1/supervision",
+  "noise_dir": "artifacts/finetune_mis20s1/noise_model",
+  "output_dir": "artifacts/a12_sampling_pilot_ready_20261029",
+  "checkpoint": "artifacts/finetune_mis20s1/training/checkpoint_step_005000.pth",
+  "expected_checkpoint_sha256": "97c4332f685f98959b243e4b100434469f714aed6329e100d22b6d8552592e0b",
+  "seed": 20260921,
+  "steps": 200,
+  "temporal_frames": 8,
+  "patch_size": 64,
+  "batch_size": 1,
+  "learning_rate": 0.00001,
+  "real_fraction": 0.5,
+  "holdout_gain": "1000x",
+  "gradient_weight": 0.1,
+  "highpass_weight": 0.1,
+  "device": "cuda:1",
+  "synthetic_temporal_variants": 8,
+  "samples_per_epoch": 512,
+  "checkpoint_interval": 50,
+  "resume_checkpoint": null
+}

@@ -1,0 +1,76 @@
+{
+  "protocol": "A10 sc450ai existing-data supervision feasibility audit",
+  "date": "2026-10-16",
+  "dataset_root": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset",
+  "noise_profile_path": "artifacts/a9_multi_sensor_generalization/sc450ai_noise_profile_20261016/noise_profile.json",
+  "noise_profile_sha256": "7ff6292a188bcf1cc03aea9431691ea154cf84aaef7dcac8f9b65afbd880de70",
+  "output": "artifacts/a10_sc450ai_supervision_audit_20261016/audit.json",
+  "sources": [
+    {
+      "name": "sc450ai_804x_lightchanging",
+      "role": "noise_statistics_source",
+      "source_sha256": "8e74a2b96de1943a0180eba82650613d98c0398d0e984c3d0ac4c6b1e12359fe",
+      "analysis_crop_sensor_xyxy": [0, 150, 1500, 1350],
+      "source": {
+        "sensor": "sc450ai",
+        "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/01_fist_company/sc450ai/804x_lightchanging/lightchanging_804x.raw",
+        "width": 2688,
+        "height": 1520,
+        "frames_used": 150,
+        "bit_shift": 0,
+        "cfa": "RGGB",
+        "nominal_black_dn": 258.0,
+        "reference_mode": "stress_only",
+        "clip_starts": [0, 71, 142],
+        "fixed_isp_wb": [1.445, 1.0, 1.0, 2.437],
+        "fixed_isp_exposure": 8.5,
+        "panel_crops": {
+          "flat_transition": [0, 150, 1500, 1350],
+          "center_subject": [700, 200, 2100, 1500],
+          "right_shelf": [1600, 100, 2688, 1450]
+        }
+      }
+    },
+    {
+      "name": "sc450ai_1435x_motion_black_object",
+      "role": "hard_holdout",
+      "source_sha256": "7896fd9346aa8f82b67d7d2a3a02b4929d9ff58e6da952b4ff7aaf3a7e0acba0",
+      "analysis_crop_sensor_xyxy": [0, 0, 1300, 1050],
+      "source": {
+        "sensor": "sc450ai",
+        "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/01_fist_company/sc450ai/1435x_motion_black_object/raw_stream_2688x1520_16bit@RG[Shutter=83328,SenserG=61440,IspG=24493,R=1620,G=1024,B=2409][bl_R=4128_Gr=4128_Gb=4128_B=4128].raw",
+        "width": 2688,
+        "height": 1520,
+        "frames_used": 210,
+        "bit_shift": 0,
+        "cfa": "RGGB",
+        "nominal_black_dn": 258.0,
+        "reference_mode": "stress_only",
+        "clip_starts": [0, 101, 202],
+        "fixed_isp_wb": [1.582, 1.0, 1.0, 2.352],
+        "fixed_isp_exposure": 12.0,
+        "panel_crops": {
+          "black_subject": [700, 100, 2050, 1520],
+          "flat_wall": [0, 0, 1300, 1050],
+          "floor_detail": [250, 750, 2200, 1520]
+        }
+      }
+    }
+  ],
+  "window_length": 8,
+  "window_stride": 4,
+  "pair_stride": 4,
+  "spatial_sample_stride": 4,
+  "flat_percentile": 35.0,
+  "temporal_outlier_percentile": 99.5,
+  "static_sigma_multiplier": 3.0,
+  "max_correlation_train_validation_delta": 0.05,
+  "min_nontrivial_correlation": 0.02,
+  "semantic_constraints": {
+    "dataset_read_only": true,
+    "old_teacher_used_as_clean_target": false,
+    "dynamic_temporal_mean_used_as_clean_target": false,
+    "hard_holdout_used_for_training": false,
+    "training_launched": false
+  }
+}

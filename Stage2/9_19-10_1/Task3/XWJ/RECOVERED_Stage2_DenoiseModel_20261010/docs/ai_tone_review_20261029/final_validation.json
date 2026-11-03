@@ -1,0 +1,185 @@
+{
+  "source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/docs/Stage2_RAW_Denoising_Research_Report_2026-10-23.tex",
+  "source_sha256": "6cd5f640cde350dee8b0e4dcc273011713b10154fefe584c0df7d8311bb575a7",
+  "command": "/home/jingzeliang/.local/bin/latexmk -xelatex -interaction=nonstopmode -halt-on-error -outdir=ai_tone_review_20261029/build_after Stage2_RAW_Denoising_Research_Report_2026-10-23.tex",
+  "working_directory": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/docs",
+  "exit_code": 0,
+  "pdf": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/docs/ai_tone_review_20261029/build_after/Stage2_RAW_Denoising_Research_Report_2026-10-23.pdf",
+  "pdf_size": 23932213,
+  "pdf_sha256": "cc5fc2eddafd161e7383bc403abff4a59a7b03ce71a1bef9c25c87d6c3b4ad28",
+  "pages": 33,
+  "pdfinfo": "Title:          Stage2 RAW Video Denoising Research Report\nAuthor:         Stage2 DenoiseModel Project\nCreator:        LaTeX with hyperref\nProducer:       xdvipdfmx (20260317)\nCreationDate:   Thu Oct 29 08:43:37 2026 CST\nTagged:         no\nUserProperties: no\nSuspects:       no\nForm:           none\nJavaScript:     no\nPages:          33\nEncrypted:      no\nPage size:      595.28 x 841.89 pts (A4)\nPage rot:       0\nFile size:      23932213 bytes\nOptimized:      no\nPDF version:    1.7\n",
+  "warnings": {
+    "underfull_hbox": [
+      "Underfull \\hbox (badness 4505) in paragraph at lines 95--96"
+    ],
+    "overfull_hbox": [],
+    "package_or_latex_warning": [],
+    "missing_character": [],
+    "errors": []
+  },
+  "warnings_new_since_baseline": [],
+  "figures": [
+    {
+      "reference": "djc/djc_training_curves.pdf",
+      "source_line": 236,
+      "exists": true
+    },
+    {
+      "reference": "djc/djc_domain_results.pdf",
+      "source_line": 245,
+      "exists": true
+    },
+    {
+      "reference": "djc/djc_1000x_full.png",
+      "source_line": 261,
+      "exists": true
+    },
+    {
+      "reference": "djc/djc_1000x_detail.png",
+      "source_line": 262,
+      "exists": true
+    },
+    {
+      "reference": "djc/djc_10x_detail.png",
+      "source_line": 272,
+      "exists": true
+    },
+    {
+      "reference": "djc/djc_sc450_detail.png",
+      "source_line": 282,
+      "exists": true
+    },
+    {
+      "reference": "djc/djc_sc635_detail.png",
+      "source_line": 283,
+      "exists": true
+    },
+    {
+      "reference": "assets/RVIDeformer/屏幕截图 2026-01-30 151658.png",
+      "source_line": 373,
+      "exists": true
+    },
+    {
+      "reference": "assets/RVIDeformer/屏幕截图 2026-01-30 183700.png",
+      "source_line": 386,
+      "exists": true
+    },
+    {
+      "reference": "assets/RVIDeformer/屏幕截图 2026-01-30 204604.png",
+      "source_line": 390,
+      "exists": true
+    },
+    {
+      "reference": "fig04_a3_645x_isp.jpg",
+      "source_line": 501,
+      "exists": true
+    },
+    {
+      "reference": "fig11_native_1000x_traditional_isp.png",
+      "source_line": 511,
+      "exists": true
+    },
+    {
+      "reference": "generalization_static.pdf",
+      "source_line": 541,
+      "exists": true
+    },
+    {
+      "reference": "generalization_sc465sl_256x.png",
+      "source_line": 552,
+      "exists": true
+    },
+    {
+      "reference": "generalization_sc465sl_2000x.png",
+      "source_line": 557,
+      "exists": true
+    },
+    {
+      "reference": "generalization_sc635hai_131x.png",
+      "source_line": 568,
+      "exists": true
+    },
+    {
+      "reference": "fig16_sc635hai_traditional_isp.png",
+      "source_line": 602,
+      "exists": true
+    },
+    {
+      "reference": "fig15_a3_1500x_isp.jpg",
+      "source_line": 617,
+      "exists": true
+    },
+    {
+      "reference": "fig18_sc450ai_traditional_isp.png",
+      "source_line": 629,
+      "exists": true
+    }
+  ],
+  "independent_checks": {
+    "integrity_validation_passed": true,
+    "compiled_source_hash_matches_integrity_record": true,
+    "numbers_unchanged": true,
+    "inline_math_unchanged": true,
+    "latex_commands_unchanged": true,
+    "all_images_exist": true,
+    "warnings_match_baseline": true,
+    "page_count_unchanged": true,
+    "no_unresolved_references": true,
+    "no_missing_glyphs": true,
+    "table_blocks_unchanged": true,
+    "longtable_blocks_unchanged": true,
+    "tabular_blocks_unchanged": true,
+    "equation_blocks_unchanged": true,
+    "align_blocks_unchanged": true,
+    "verbatim_blocks_unchanged": true,
+    "thebibliography_blocks_unchanged": true
+  },
+  "all_checks_passed": true,
+  "semantic_review": [
+    {
+      "line": 151,
+      "change": "固定结构 → 固定图样",
+      "review": "本段前文明确给出固定图样 RMSE，后文汇总同一评价对象；统一术语不增加结论，不改变指标或限定。",
+      "risk": "未见语义变化"
+    },
+    {
+      "line": 267,
+      "change": "取舍依据后的冒号改句号",
+      "review": "保留图引用、比较条件及不是等参数或等帧数消融的限定，下一句仍给出依据。",
+      "risk": "未见语义变化"
+    },
+    {
+      "line": 290,
+      "change": "删除“这条探索并非所有环节都无效：”",
+      "review": "下句完整列出单帧适配及补偿/解冻收益，已承担被删总括句的事实内容；保留未达到采用要求的范围限定。",
+      "risk": "未见语义变化"
+    },
+    {
+      "line": 292,
+      "change": "删除“这些实验给方案选择带来的启发是明确的：”",
+      "review": "仅删除评价性提示，后续邻帧利用不足、既有教师表征与方案转向内容完整保留。",
+      "risk": "未见语义变化"
+    },
+    {
+      "line": 334,
+      "change": "“这组实验使最终方案保持清晰：”改为“根据这组实验，”",
+      "review": "保留实验与方案选择的依据关系，未改统一权重、专用头及分别报告的要求。",
+      "risk": "未见语义变化"
+    }
+  ],
+  "visual_review": {
+    "pages": [
+      5,
+      11,
+      13
+    ],
+    "finding": "抽查页面正文、图像和图注排列正常，未见溢出或重叠。",
+    "rendered_images": [
+      "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/docs/ai_tone_review_20261029/build_after/page_5.png",
+      "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/docs/ai_tone_review_20261029/build_after/page_11.png",
+      "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/docs/ai_tone_review_20261029/build_after/page_13.png"
+    ]
+  },
+  "ready_to_replace_existing_pdf": true
+}

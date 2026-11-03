@@ -1,0 +1,57 @@
+B       补充探索的记录与图表来源                                                                      33
+
+
+    --output-dir artifacts/a3_cross_sensor_zero_shot_20261012 \
+    --phase all --device cuda:0 --tile-batch 2
+python scripts/evaluate_a3_cross_sensor.py \
+    --config configs/a3_cross_sensor_extension_20261012.json \
+    --output-dir artifacts/a3_cross_sensor_extension_20261012 \
+    --phase all --device cuda:0 --tile-batch 2
+
+
+        结果表中的 645x 为训练覆盖域复评，1000x 为真实增益留出；零样本跨传感器表只使用方法
+3，sc635hai 专用头的 131x 尾段属于训练数据复评。复现时应沿用这些数据身份与各自参考定义。
+
+
+                           B 补充探索的记录与图表来源
+
+        第 3 节依据“任务三-djc”文件夹下的 deliverable_20261025/ 整理；以下路径均相对此交
+付目录。核查范围包括研究报告与台账、服务器历史实验、本地训练与补充验证、模型实现和图
+像来源。正文按研究问题归纳，不将部署自检、草案预算和实际优化器更新混为一谈。
+                           表 16: ExposureDiffusion 路线的主要证据入口。
+
+
+    内容                 对应记录
+
+    早期噪声研究             project/code/noise_model/ 下的 TWO_SHOTS_CVPR2026.md、
+                       ONE_FRAME_DARK_VALIDATION.md、PNNP_DECOMPOSITION_COMPARISON.md、
+                       QUANTIZED_LIKELIHOOD.md 与 STATIC_CONDITIONAL_RESIDUAL.md
+    多传感器自标定            archive/server/calibration/report.md
+    单帧 1000 步适配        archive/server/reports/gpu_start/completion_audit.json，及
+                       archive/server/runs/company_mixed_gpu_001/
+    历史模块试验与解冻          archive/server/experiments/、archive/server/runs/、
+                       archive/server/evaluation/；汇总表
+                       results/tables/historical_validation_all_metrics.csv
+    最终五帧结构与实际训         project/code/company_exposure/burst_detail/model.py；
+    练                  project/code/scripts/exposure_output_residual_local.py；
+                       project/work_v3/runs/residual_v3_001/
+    固定与补充验证            上述运行目录中的 fixed_validation.json、baseline_validation.json 与
+                       validation_2300.json；results/tables/supplement_validation.csv、
+                       supplement_sensitivity.csv
+    165 例图像与权重身份       results/report_comparisons/ 中各流的 best_full.png、best_detail.png 及
+                       best_provenance.json；results/all165/inference_contract.json
+
+
+        早期噪声建模的数值按上述研究记录转述；对应 runs/noise/ 的原始拟合 JSON 与 NPZ 未
+包含在本次交付包中，故本次仅核对其报告与实现，不将它们作为新完成的独立验收。后续历史
+训练的 352 项汇总指标已与原运行 JSON 逐项比对；五帧候选的固定验证、补充裁块和图像权重
+身份亦分别核对。
+        本报告插入的五张场景图保持原始 PNG 内容，排版仅裁去原小字号表头并重排标签。复制
+来源、文件哈希和最佳权重身份保存在本项目 docs/assets/stage2_report_20261023/djc/fig
+ure_sources.json。曲线与分域图由同目录 plot_djc_results.py 基于随附最小 CSV 重绘，来
+B   补充探索的记录与图表来源                                           34
+
+
+源记录为 plot_sources.json。这组图中的官方 RViDeformer 与第 5 节的微调方法 3 始终作为
+不同权重处理。
+

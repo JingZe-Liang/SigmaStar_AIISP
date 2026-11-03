@@ -1,0 +1,26 @@
+{
+  "schema": "a13_dynamic_readiness_completion_v1",
+  "date": "2026-10-30",
+  "status": "readiness_audit_completed_data_not_ready",
+  "user_confirmed_no_new_data": true,
+  "training_started": false,
+  "gpu_used": false,
+  "real_data_modified": false,
+  "training_ready": false,
+  "tests_passed": 24,
+  "alias_cli_expected_exit_code": 2,
+  "draft_plan_rejected": true,
+  "source_sha256": {
+    "scripts/audit_a13_existing_dynamic.py": "22bce945f248c3d707f3c8691dc6d1faf6a70ef39299c33fe0a92219b79367aa",
+    "scripts/validate_a7_motion_capture.py": "2b6a68dc66ba758ab9bdf23d8c75c824a1ad4f34ef65c82e81799cecaed29292",
+    "src/raw_fusion/finetune/a7_capture.py": "084d73717e9cd94490ea1e5cc2cee18028945ce7e1740990c019a43fa522c761",
+    "src/tests/test_finetune_a7_capture.py": "378757021c96fa81bed89fc644e72fd34dee7a992869ae6c6b3a7476dd8fca6b",
+    "configs/a13_dynamic_capture_plan_20261030.json": "aa9203642cd9a941dbc8a1cd65e6d3429a27aa0d37fd5489fad784608a397cdf",
+    "artifacts/a13_dynamic_data_20261030/a7_capture_tests_final.log": "a829f0e4f19a50184d10ab864e7812487712e19436cf8e1da14e971196248a1f",
+    "artifacts/a13_dynamic_data_20261030/alias_cli_validation.json": "ff67a5e5efec2bd2216c909339d62f2039dea62f3d46a86cfac95b6e26c98e6f",
+    "artifacts/a13_dynamic_data_20261030/plan_rejection_check.json": "1a3eed9dda8f6ebad0fb224c174c6966f69738ec242b6211ee483b09a20c3255",
+    "docs/assets/a13_dynamic_data_20261030/existing_source_screen.json": "1c13a35071a4ee6a701e7582b1b080ea6bfe91496452e437268c117e89d92f1f",
+    "docs/assets/a13_dynamic_data_20261030/historical_data_review.json": "81845a95a65fd242cd277feec23ab4faf2ce15e37e81182064c5c7ee23e26962",
+    "docs/assets/a13_dynamic_data_20261030/validator_review.json": "d4800700c7938858aae13f2f135fd2dd1807a1a88b9120a08b5501a9e71bbf6e"
+  }
+}

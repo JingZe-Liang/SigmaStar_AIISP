@@ -38,6 +38,8 @@ def main() -> int:
     write_validation_report(report, args.out)
     summary = {
         "overall_pass": report["overall_pass"],
+        "training_ready": report["training_ready"],
+        "admission_status": report["admission_status"],
         "clips_passed": sum(clip["passed"] for clip in report["clips"]),
         "clips_total": len(report["clips"]),
         "inventory_passed": report["inventory"]["passed"],

@@ -1,0 +1,11 @@
+{
+  "specs": [
+    {"label": "a3_ema", "phase": "baseline", "weights": "ema", "output_dir": "artifacts/a12_paired_eval_a3_20261030"},
+    {"label": "shared512_ema", "phase": "shared", "weights": "ema", "output_dir": "artifacts/a12_paired_eval_shared512_ema_20261030"},
+    {"label": "shared512_model", "phase": "shared", "weights": "model", "output_dir": "artifacts/a12_paired_eval_shared512_model_20261030"},
+    {"label": "fixed1024_ema", "phase": "fixed", "weights": "ema", "output_dir": "artifacts/a12_paired_eval_fixed1024_ema_20261030"},
+    {"label": "fixed1024_model", "phase": "fixed", "weights": "model", "output_dir": "artifacts/a12_paired_eval_fixed1024_model_20261030"},
+    {"label": "refresh1024_ema", "phase": "refresh", "weights": "ema", "output_dir": "artifacts/a12_paired_eval_refresh1024_ema_20261030"},
+    {"label": "refresh1024_model", "phase": "refresh", "weights": "model", "output_dir": "artifacts/a12_paired_eval_refresh1024_model_20261030"}
+  ]
+}

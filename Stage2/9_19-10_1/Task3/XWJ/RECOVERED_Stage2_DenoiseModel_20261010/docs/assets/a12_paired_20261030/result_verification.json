@@ -1,0 +1,215 @@
+{
+  "schema": "a12_paired_versioned_evidence_v1",
+  "date": "2026-10-30",
+  "scope": "Single-seed development diagnostic; A3 retained; no quality acceptance claim.",
+  "training_verification_sha256": "3ec37370ba374125e058afe19d9bdb0eefa3e7319b9637b3dfd1c16b742e7e9b",
+  "summary_sha256": "5dfed3ac6c31a8ec292377b9896831824ffaea66ac61f138bd32df7cb87c7fa6",
+  "total_actual_updates": 1536,
+  "total_training_elapsed_seconds": 1984.1972985242028,
+  "peak_allocated_bytes": 14597869056,
+  "peak_reserved_bytes": 15281946624,
+  "both_branch_initial_states_identical": true,
+  "shared_state_sha256": {
+    "model": "1c63a989ef72eb01854891934bc30a2f49d82e48fed66c1774deae2c9632cf2a",
+    "ema": "b5e824f0b79b16ae8885f3a60a351d5cc40989bacefafaf41036e90de7e77df5",
+    "optimizer": "fba780a7c667fa4f6b8dbf1eb53dbccdf3967074e45755f86360528881f4e09e",
+    "rng": "f60c1800bd0ea5e8ddacb81a91243339678cfa16f2d18085e3a63eaa63a4babb"
+  },
+  "audit_sha256": "cad9e3589f44d85d268084d808896186c6943f2541c98e111d178fac5d90ad1a",
+  "sample_overrides_sha256": "737bba11b22a81397a2531761652e2b8ff4be74d20bfd548ae13d45ed263e931",
+  "strict_gpu_trajectory_tolerance_passed": false,
+  "gpu_repeatability_report_sha256": "70eadcd891d20cb42c9f121b85701cf8edf0086d182a04a08e1181a1804628c3",
+  "interruption_recovery": {
+    "status": "interrupted_attempt_preserved",
+    "evidence": "Previous exec session is unavailable, no paired evaluation process remains on host, log ends during second native window without traceback or OOM, native status remained running.",
+    "original_batch_status": "evaluation_batch_status.json",
+    "native_partial_sha256": {
+      "native/frames_000000_000007.npy": "a7266c4210c5f89204c410e6a214dafb31e5dde1c2f62ee379210e002736d287",
+      "native/frames_000000_metrics.json": "85a1bc91975c546717dfbdd94ffb711aac105a2366bbb10c248fffb2d363a4d4"
+    },
+    "archive_native": "native_interrupted_20261030",
+    "archive_status": "status_native_interrupted_20261030.json",
+    "action": "Preserve partial attempt and repeat all three native windows under the same evaluation identity; no training restart.",
+    "oom_policy": "stop_without_retry"
+  },
+  "evaluations": [
+    {
+      "schema": "a12_paired_evaluation_v1",
+      "checkpoint": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/training/checkpoint_step_005000.pth",
+      "checkpoint_sha256": "97c4332f685f98959b243e4b100434469f714aed6329e100d22b6d8552592e0b",
+      "weights": "ema",
+      "label": "a3_ema",
+      "device": "cuda:0",
+      "gpu_name": "NVIDIA GeForce RTX 3090",
+      "cuda_visible_devices": "GPU-07a5046e-9b56-8557-3845-d6cca9ea0497",
+      "torch_version": "2.5.1+cu124",
+      "cuda_version": "12.4",
+      "prepared_manifest_sha256": "e9837bcff07e3b2fa301da5db3fac7c2282f6083fdc2d8c243ab54c271840e25",
+      "native_starts": [
+        0,
+        96,
+        192
+      ],
+      "native_frames": 8,
+      "tile_batch": 1,
+      "phase": "baseline"
+    },
+    {
+      "schema": "a12_paired_evaluation_v1",
+      "checkpoint": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_shared_20261030/checkpoint_step_000512.pth",
+      "checkpoint_sha256": "ffd832ecfbb35e29dae699121b44034777c62be7c8aaf9476e840c1839bb4919",
+      "weights": "ema",
+      "label": "shared512_ema",
+      "device": "cuda:0",
+      "gpu_name": "NVIDIA GeForce RTX 3090",
+      "cuda_visible_devices": "GPU-07a5046e-9b56-8557-3845-d6cca9ea0497",
+      "torch_version": "2.5.1+cu124",
+      "cuda_version": "12.4",
+      "prepared_manifest_sha256": "e9837bcff07e3b2fa301da5db3fac7c2282f6083fdc2d8c243ab54c271840e25",
+      "native_starts": [
+        0,
+        96,
+        192
+      ],
+      "native_frames": 8,
+      "tile_batch": 1,
+      "phase": "shared"
+    },
+    {
+      "schema": "a12_paired_evaluation_v1",
+      "checkpoint": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_shared_20261030/checkpoint_step_000512.pth",
+      "checkpoint_sha256": "ffd832ecfbb35e29dae699121b44034777c62be7c8aaf9476e840c1839bb4919",
+      "weights": "model",
+      "label": "shared512_model",
+      "device": "cuda:0",
+      "gpu_name": "NVIDIA GeForce RTX 3090",
+      "cuda_visible_devices": "GPU-07a5046e-9b56-8557-3845-d6cca9ea0497",
+      "torch_version": "2.5.1+cu124",
+      "cuda_version": "12.4",
+      "prepared_manifest_sha256": "e9837bcff07e3b2fa301da5db3fac7c2282f6083fdc2d8c243ab54c271840e25",
+      "native_starts": [
+        0,
+        96,
+        192
+      ],
+      "native_frames": 8,
+      "tile_batch": 1,
+      "phase": "shared"
+    },
+    {
+      "schema": "a12_paired_evaluation_v1",
+      "checkpoint": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_fixed_20261030/checkpoint_step_001024.pth",
+      "checkpoint_sha256": "eec225e4d5de8ca10667c3aac2f5325631ac5da4135c26c6a9a67217279a882b",
+      "weights": "ema",
+      "label": "fixed1024_ema",
+      "device": "cuda:0",
+      "gpu_name": "NVIDIA GeForce RTX 3090",
+      "cuda_visible_devices": "GPU-07a5046e-9b56-8557-3845-d6cca9ea0497",
+      "torch_version": "2.5.1+cu124",
+      "cuda_version": "12.4",
+      "prepared_manifest_sha256": "e9837bcff07e3b2fa301da5db3fac7c2282f6083fdc2d8c243ab54c271840e25",
+      "native_starts": [
+        0,
+        96,
+        192
+      ],
+      "native_frames": 8,
+      "tile_batch": 1,
+      "phase": "fixed"
+    },
+    {
+      "schema": "a12_paired_evaluation_v1",
+      "checkpoint": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_fixed_20261030/checkpoint_step_001024.pth",
+      "checkpoint_sha256": "eec225e4d5de8ca10667c3aac2f5325631ac5da4135c26c6a9a67217279a882b",
+      "weights": "model",
+      "label": "fixed1024_model",
+      "device": "cuda:0",
+      "gpu_name": "NVIDIA GeForce RTX 3090",
+      "cuda_visible_devices": "GPU-07a5046e-9b56-8557-3845-d6cca9ea0497",
+      "torch_version": "2.5.1+cu124",
+      "cuda_version": "12.4",
+      "prepared_manifest_sha256": "e9837bcff07e3b2fa301da5db3fac7c2282f6083fdc2d8c243ab54c271840e25",
+      "native_starts": [
+        0,
+        96,
+        192
+      ],
+      "native_frames": 8,
+      "tile_batch": 1,
+      "phase": "fixed"
+    },
+    {
+      "schema": "a12_paired_evaluation_v1",
+      "checkpoint": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_refresh_20261030/checkpoint_step_001024.pth",
+      "checkpoint_sha256": "f75a2d42cffff00af234b305423bd5582bb7d4762dbf5ff0ee43146ef917abd4",
+      "weights": "ema",
+      "label": "refresh1024_ema",
+      "device": "cuda:0",
+      "gpu_name": "NVIDIA GeForce RTX 3090",
+      "cuda_visible_devices": "GPU-07a5046e-9b56-8557-3845-d6cca9ea0497",
+      "torch_version": "2.5.1+cu124",
+      "cuda_version": "12.4",
+      "prepared_manifest_sha256": "e9837bcff07e3b2fa301da5db3fac7c2282f6083fdc2d8c243ab54c271840e25",
+      "native_starts": [
+        0,
+        96,
+        192
+      ],
+      "native_frames": 8,
+      "tile_batch": 1,
+      "phase": "refresh"
+    },
+    {
+      "schema": "a12_paired_evaluation_v1",
+      "checkpoint": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_refresh_20261030/checkpoint_step_001024.pth",
+      "checkpoint_sha256": "f75a2d42cffff00af234b305423bd5582bb7d4762dbf5ff0ee43146ef917abd4",
+      "weights": "model",
+      "label": "refresh1024_model",
+      "device": "cuda:0",
+      "gpu_name": "NVIDIA GeForce RTX 3090",
+      "cuda_visible_devices": "GPU-07a5046e-9b56-8557-3845-d6cca9ea0497",
+      "torch_version": "2.5.1+cu124",
+      "cuda_version": "12.4",
+      "prepared_manifest_sha256": "e9837bcff07e3b2fa301da5db3fac7c2282f6083fdc2d8c243ab54c271840e25",
+      "native_starts": [
+        0,
+        96,
+        192
+      ],
+      "native_frames": 8,
+      "tile_batch": 1,
+      "phase": "refresh"
+    }
+  ],
+  "source_file_sha256": {
+    "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_eval_a3_20261030/identity.json": "efc5b7cbcb082f803ba9e48d34b3cf6608f56972723ce972b6c167bd05cff194",
+    "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_eval_a3_20261030/probes/evaluation.json": "1d0f7cea6679fc014698ff543e5e233bbff612036f252b2dea6cffa8b875face",
+    "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_eval_a3_20261030/native/evaluation.json": "b21b9e70f400ab0147b420732efe96bb02ee00e3ffbc0180866b2b0148e11fd3",
+    "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/training/checkpoint_step_005000.pth": "97c4332f685f98959b243e4b100434469f714aed6329e100d22b6d8552592e0b",
+    "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_eval_shared512_ema_20261030/identity.json": "3913f6a88839fafe006e296762e1c7ec2dcc5d100d613098073bc25ed1f5d1c2",
+    "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_eval_shared512_ema_20261030/probes/evaluation.json": "d9833653a65fb986c78ce030e95d0e57d00002fcaa65b275eed7b4c7c6ae196f",
+    "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_eval_shared512_ema_20261030/native/evaluation.json": "cfad8ea600f7321805f493213120285b00ae9a61b8c42ab3d938c59178538983",
+    "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_shared_20261030/checkpoint_step_000512.pth": "ffd832ecfbb35e29dae699121b44034777c62be7c8aaf9476e840c1839bb4919",
+    "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_eval_shared512_model_20261030/identity.json": "f626f695f6542f0d619d69cb9a1fabc13872d73bb2b58925e98d297de83fa75e",
+    "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_eval_shared512_model_20261030/probes/evaluation.json": "03ac81a7f905b533ee27a2e7920d5810f3405b04fc7b6485f705f2599ea8c46a",
+    "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_eval_shared512_model_20261030/native/evaluation.json": "1d3711c779a364ef8bc78695debf47721c811bea7372855fbe0066f17a98827b",
+    "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_eval_fixed1024_ema_20261030/identity.json": "6f24d4516e2994887a89582ee24989ccb963fc07ff0c84fddf271b853d9330b1",
+    "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_eval_fixed1024_ema_20261030/probes/evaluation.json": "8ab50734d0b8bf1393bac0c6022e0943cb99df791127b4e54e770a90a03536d6",
+    "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_eval_fixed1024_ema_20261030/native/evaluation.json": "a5610b4a0d15ce53607858c99a1313698f2253164725ac6f7a40562bb01c1cee",
+    "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_fixed_20261030/checkpoint_step_001024.pth": "eec225e4d5de8ca10667c3aac2f5325631ac5da4135c26c6a9a67217279a882b",
+    "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_eval_fixed1024_model_20261030/identity.json": "a3bd36902bf3f32a1f2aea4da91cca5abdc3717179a60f4226ba54fa5b4e4e9a",
+    "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_eval_fixed1024_model_20261030/probes/evaluation.json": "c56a7e4b1f8227f2ec022e70bcf7c032600409e304a700544b98e8f4ed7de432",
+    "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_eval_fixed1024_model_20261030/native/evaluation.json": "22add432a7fc7c54dedf9ecaba703bcb11df00714c41df6078a6662b24bf33cb",
+    "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_eval_refresh1024_ema_20261030/identity.json": "79f0d22ab97a4d2fb07c88ea57cbf19f39f36bb9c7efa76de98c2d699f62336e",
+    "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_eval_refresh1024_ema_20261030/probes/evaluation.json": "eb035358eee26483425831ca0c8c4eb231c52f9528b2cc6f18660b54c45523fc",
+    "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_eval_refresh1024_ema_20261030/native/evaluation.json": "93131ca0bfcef6ca3f96b4cd2d2929b6fe8d7746fbefaadcd5c21347597b1ece",
+    "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_refresh_20261030/checkpoint_step_001024.pth": "f75a2d42cffff00af234b305423bd5582bb7d4762dbf5ff0ee43146ef917abd4",
+    "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_eval_refresh1024_model_20261030/identity.json": "c2d4470f561cd2315e625a1f7b39c175bc35bf68a34469238768f949352658d3",
+    "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_eval_refresh1024_model_20261030/probes/evaluation.json": "d10b2c807eb602be532e8ae741ebb22e1e4d6363cab5afd98caabdb9891a663c",
+    "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a12_paired_eval_refresh1024_model_20261030/native/evaluation.json": "fb70c0982b7a02701dba7b23a0f0e1e6b1c18567830b79b1b8f22aab4a2e347f"
+  },
+  "exported_metrics_sha256": {
+    "probe": "e6c732ba6211761fea4d9fc1417abc5453187f66fc9f6a8b5b1e417cd9452202",
+    "native": "3d51f52ea0ad8f62b96d1651d6334f469cd7fe90f149d25546ec01f46cd6ad5e"
+  }
+}

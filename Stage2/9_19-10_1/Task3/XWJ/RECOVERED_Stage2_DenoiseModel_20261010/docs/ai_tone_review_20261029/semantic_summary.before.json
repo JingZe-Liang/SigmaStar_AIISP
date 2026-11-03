@@ -1,0 +1,14 @@
+{
+  "full_candidates": 282,
+  "rename_covered_paragraphs": 123,
+  "rename_groups": 1,
+  "rename_per_covered_paragraph": 0.0081,
+  "rename_per_all_projection_blocks": 0.0068,
+  "cohesion_raw_longest": 25,
+  "cohesion_prose_longest": 4,
+  "cohesion_prose_eligible": 43,
+  "conclusion_colons": 4,
+  "colon_candidates": 28,
+  "iso3_candidates": 6,
+  "iso3_confirmed": 0
+}
