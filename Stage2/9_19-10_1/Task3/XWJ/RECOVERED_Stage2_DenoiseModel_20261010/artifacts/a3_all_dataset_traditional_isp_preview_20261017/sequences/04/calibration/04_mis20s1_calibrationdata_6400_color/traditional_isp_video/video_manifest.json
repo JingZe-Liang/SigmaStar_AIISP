@@ -1,0 +1,125 @@
+{
+  "sequence": {
+    "name": "04_mis20s1_calibrationdata_6400_color",
+    "group": "04",
+    "category": "calibration",
+    "sensor": "MIS20S1",
+    "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/mis20s1_calibrationdata/color/6400/raw_stream_normal_1920x1080_16_GR_0205174305901_[FN=10,US=1275,AG=65536,DG=1046,BV=-23138,R=2353,G=1024,B=1869].raw",
+    "width": 1920,
+    "height": 1080,
+    "frames": 50,
+    "bit_shift": 4,
+    "cfa": "GRBG",
+    "role": "calibration_flat",
+    "wb_rgb": [
+      2.2978515625,
+      1.0,
+      1.8251953125
+    ],
+    "black_levels": [
+      302.875,
+      356.875,
+      356.0,
+      314.75
+    ],
+    "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/stream_manifests/04_mis20s1_calibrationdata_6400_color.json"
+  },
+  "frames": 24,
+  "source_frame_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49
+  ],
+  "fps": 6,
+  "encoder": "libx265",
+  "pixel_format": "yuv444p",
+  "video": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/calibration/04_mis20s1_calibrationdata_6400_color/traditional_isp_video/04_mis20s1_calibrationdata_6400_color_input_vs_a3_traditional_isp.mp4",
+  "video_sha256": "a4ec0fcbb921cd457d7424cdae2a5d717e5f96c83bc1ce91f091b1486f50c066",
+  "preview": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/calibration/04_mis20s1_calibrationdata_6400_color/traditional_isp_video/04_mis20s1_calibrationdata_6400_color_frame0000.png",
+  "preview_sha256": "f96a582cf5199a5df0090f9faa481849e78a9157b6d6b46b6e37ce1e3ee1c896",
+  "layout": "Input left, A3 EMA right; overview above, fixed center crop below",
+  "isp": {
+    "implementation": "ISP_traditional OpenCV edge-aware Bayer demosaic plus fixed exposure and sRGB gamma",
+    "camera_color_mode": "uncalibrated_camera_rgb",
+    "sensor_color_matrix_available": false,
+    "false_color_suppression": false,
+    "highlight_recovery": true,
+    "tone_map": "reinhard",
+    "exposure_selection": "per-sequence input-only 99.5th percentile targets 0.8 after Reinhard, then freezes EV for Input and A3",
+    "exposure_target_after_tone_map_linear": 0.8,
+    "exposure_ev_limits": [
+      -6.0,
+      8.0
+    ],
+    "output_layout": "Input left, A3 EMA right; overview above, fixed center crop below",
+    "module_root": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/ISP_traditional",
+    "black_levels_R_Gr_Gb_B": [
+      302.875,
+      356.875,
+      356.0,
+      314.75
+    ],
+    "wb_rgb": [
+      2.2978515625,
+      1.0,
+      1.8251953125
+    ],
+    "fixed_exposure_ev": 2.5092655149129146,
+    "input_and_a3_share_identical_parameters": true,
+    "canonical_channel_order": [
+      "R",
+      "Gr",
+      "Gb",
+      "B"
+    ],
+    "sensor_color_accuracy_claimed": false
+  },
+  "ffmpeg_command": [
+    "ffmpeg",
+    "-y",
+    "-f",
+    "rawvideo",
+    "-pix_fmt",
+    "rgb24",
+    "-s",
+    "1920x1080",
+    "-r",
+    "6",
+    "-i",
+    "-",
+    "-c:v",
+    "libx265",
+    "-x265-params",
+    "crf=16",
+    "-pix_fmt",
+    "yuv444p",
+    "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/calibration/04_mis20s1_calibrationdata_6400_color/traditional_isp_video/04_mis20s1_calibrationdata_6400_color_input_vs_a3_traditional_isp.mp4"
+  ],
+  "limitations": [
+    "No clean target is shown; this is a visual Input-versus-A3 comparison.",
+    "Sensor ColorMatrix data is absent, so camera RGB color is not calibrated.",
+    "Video compression and resize can conceal fine-grained noise differences.",
+    "Exposure is frozen within each sequence but is not comparable across sequences."
+  ]
+}

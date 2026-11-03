@@ -1,0 +1,45 @@
+{
+  "sequence": {
+    "name": "04_mis20s1_outdoor_128x",
+    "group": "04",
+    "category": "raw_scene",
+    "sensor": "MIS20S1",
+    "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/mis20s1_outdoor/128x/raw_stream_1920x1080_16bit@RG_[Shutter=79999,SenserG=131072,IspG=1123,R=1896,G=1024,B=2221].raw",
+    "width": 1920,
+    "height": 1080,
+    "frames": 200,
+    "bit_shift": 4,
+    "cfa": "RGGB",
+    "role": "noisy",
+    "wb_rgb": [
+      1.8515625,
+      1.0,
+      2.1689453125
+    ],
+    "black_levels": [
+      270.25,
+      287.0,
+      286.75,
+      270.0
+    ],
+    "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/stream_manifests/04_mis20s1_outdoor_128x.json"
+  },
+  "source_sha256": "b45b28fba176b2d95486f2a9dbc3528752e57e38cb00b8f469f7ade0dafa48de",
+  "clip_starts": [
+    0,
+    96,
+    192
+  ],
+  "black_levels_R_Gr_Gb_B": [
+    270.25,
+    287.0,
+    286.75,
+    270.0
+  ],
+  "black_level_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/stream_manifests/04_mis20s1_outdoor_128x.json",
+  "fixed_exposure_ev": 2.0000000000000004,
+  "input_normalized_p995_after_wb": 1.0,
+  "exposure_target_before_tone_map_linear": 4.000000000000001,
+  "exposure_target_after_tone_map_linear": 0.8,
+  "dataset_read_only": true
+}

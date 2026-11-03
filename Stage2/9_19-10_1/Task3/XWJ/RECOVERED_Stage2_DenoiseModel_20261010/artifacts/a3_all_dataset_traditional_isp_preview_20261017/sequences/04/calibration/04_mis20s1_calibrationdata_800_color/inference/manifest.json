@@ -1,0 +1,64 @@
+{
+  "provenance": {
+    "sequence": {
+      "name": "04_mis20s1_calibrationdata_800_color",
+      "group": "04",
+      "category": "calibration",
+      "sensor": "MIS20S1",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/mis20s1_calibrationdata/color/800/raw_stream_normal_1920x1080_16_GR_0205173829970_[FN=10,US=10400,AG=8192,DG=1025,BV=-25381,R=2316,G=1024,B=1983].raw",
+      "width": 1920,
+      "height": 1080,
+      "frames": 50,
+      "bit_shift": 4,
+      "cfa": "GRBG",
+      "role": "calibration_flat",
+      "wb_rgb": [
+        2.26171875,
+        1.0,
+        1.9365234375
+      ],
+      "black_levels": [
+        300.125,
+        351.5,
+        350.875,
+        311.25
+      ],
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/stream_manifests/04_mis20s1_calibrationdata_800_color.json"
+    },
+    "source_sha256": "a393114232ceb54f5796b86252b92e6720e2c441e2adc3b28a5691bb38718edf",
+    "checkpoint_sha256": "97c4332f685f98959b243e4b100434469f714aed6329e100d22b6d8552592e0b",
+    "config_sha256": "dee8a5575ac8a166c9eb8ed682a7fffa5a08adaf458c467d364bf4e6fbdd518a",
+    "weights": "ema",
+    "clip_starts": [
+      0,
+      21,
+      42
+    ],
+    "temporal_frames": 8,
+    "black_levels_R_Gr_Gb_B": [
+      300.125,
+      351.5,
+      350.875,
+      311.25
+    ],
+    "normalization": "clip((DN-black)/(4095-black),0,1)",
+    "canonical_channel_order": [
+      "R",
+      "Gr",
+      "Gb",
+      "B"
+    ],
+    "tile": 64,
+    "stride": 56,
+    "tile_batch": 12
+  },
+  "prediction": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/calibration/04_mis20s1_calibrationdata_800_color/inference/prediction.npy",
+  "prediction_shape": [
+    24,
+    4,
+    540,
+    960
+  ],
+  "prediction_dtype": "float16 normalized native domain",
+  "prediction_sha256": "d568c00bbd326f332fe8edf4f5fd4b42b7806ae0388d8595c768d32b5fc8761d"
+}
