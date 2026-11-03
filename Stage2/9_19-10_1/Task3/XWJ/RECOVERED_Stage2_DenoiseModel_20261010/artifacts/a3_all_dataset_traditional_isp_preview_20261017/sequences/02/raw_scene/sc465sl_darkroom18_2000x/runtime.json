@@ -1,0 +1,40 @@
+{
+  "sequence": {
+    "name": "sc465sl_darkroom18_2000x",
+    "group": "02",
+    "category": "raw_scene",
+    "sensor": "SC465SL",
+    "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/02_SC465SL_darkroom18/2000x/raw_stream_sc465sl_2560x1440_AG109568_darkroom18_2000x.raw",
+    "width": 2560,
+    "height": 1440,
+    "frames": 300,
+    "bit_shift": 0,
+    "cfa": "RGGB",
+    "role": "auxiliary",
+    "wb_rgb": [
+      1.8,
+      1.0,
+      1.6
+    ],
+    "black_levels": null,
+    "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/configs/a3_cross_sensor_zero_shot_20261012.json"
+  },
+  "source_sha256": "8df12bc10c7b2191791d1d7f4a9715167a6b6c1a6a1805554ef27b2b05aef7b0",
+  "clip_starts": [
+    0,
+    146,
+    292
+  ],
+  "black_levels_R_Gr_Gb_B": [
+    251.1875,
+    252.4375,
+    252.4375,
+    250.9375
+  ],
+  "black_level_source": "deterministic 16-frame project pedestal measurement",
+  "fixed_exposure_ev": 2.7872467082118355,
+  "input_normalized_p995_after_wb": 0.5794488787651062,
+  "exposure_target_before_tone_map_linear": 4.000000000000001,
+  "exposure_target_after_tone_map_linear": 0.8,
+  "dataset_read_only": true
+}

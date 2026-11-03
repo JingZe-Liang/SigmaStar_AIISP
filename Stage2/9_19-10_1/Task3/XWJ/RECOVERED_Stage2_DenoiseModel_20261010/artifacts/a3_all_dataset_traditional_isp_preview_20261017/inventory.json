@@ -1,0 +1,1050 @@
+{
+  "count": 45,
+  "sequences": [
+    {
+      "name": "sc450ai_1435x_motion_black_object",
+      "group": "01",
+      "category": "raw_scene",
+      "sensor": "sc450ai",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/01_fist_company/sc450ai/1435x_motion_black_object/raw_stream_2688x1520_16bit@RG[Shutter=83328,SenserG=61440,IspG=24493,R=1620,G=1024,B=2409][bl_R=4128_Gr=4128_Gb=4128_B=4128].raw",
+      "width": 2688,
+      "height": 1520,
+      "frames": 210,
+      "bit_shift": 0,
+      "cfa": "RGGB",
+      "role": "auxiliary",
+      "wb_rgb": [
+        1.582,
+        1.0,
+        2.352
+      ],
+      "black_levels": null,
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/configs/a3_cross_sensor_extension_20261012.json"
+    },
+    {
+      "name": "sc450ai_804x_lightchanging",
+      "group": "01",
+      "category": "raw_scene",
+      "sensor": "sc450ai",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/01_fist_company/sc450ai/804x_lightchanging/lightchanging_804x.raw",
+      "width": 2688,
+      "height": 1520,
+      "frames": 150,
+      "bit_shift": 0,
+      "cfa": "RGGB",
+      "role": "auxiliary",
+      "wb_rgb": [
+        1.445,
+        1.0,
+        2.437
+      ],
+      "black_levels": null,
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/configs/a3_cross_sensor_extension_20261012.json"
+    },
+    {
+      "name": "sc635hai_131x_low_cct",
+      "group": "01",
+      "category": "raw_scene",
+      "sensor": "sc635hai",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/01_fist_company/sc635hai/131x_low_cct/raw_stream_normal_3200x1800_16_RG_0205213025917_131x.raw",
+      "width": 3200,
+      "height": 1800,
+      "frames": 150,
+      "bit_shift": 4,
+      "cfa": "RGGB",
+      "role": "auxiliary",
+      "wb_rgb": [
+        1.128,
+        1.0,
+        3.604
+      ],
+      "black_levels": null,
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/configs/a3_cross_sensor_extension_20261012.json"
+    },
+    {
+      "name": "sc635hai_16x_motion_color",
+      "group": "01",
+      "category": "raw_scene",
+      "sensor": "sc635hai",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/01_fist_company/sc635hai/16x_motion_color/3200x1800_RG_motion_color_16x.raw",
+      "width": 3200,
+      "height": 1800,
+      "frames": 200,
+      "bit_shift": 4,
+      "cfa": "RGGB",
+      "role": "auxiliary",
+      "wb_rgb": [
+        1.2,
+        1.0,
+        2.8
+      ],
+      "black_levels": null,
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/configs/a3_cross_sensor_extension_20261012.json"
+    },
+    {
+      "name": "sc465sl_darkroom18_2000x",
+      "group": "02",
+      "category": "raw_scene",
+      "sensor": "SC465SL",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/02_SC465SL_darkroom18/2000x/raw_stream_sc465sl_2560x1440_AG109568_darkroom18_2000x.raw",
+      "width": 2560,
+      "height": 1440,
+      "frames": 300,
+      "bit_shift": 0,
+      "cfa": "RGGB",
+      "role": "auxiliary",
+      "wb_rgb": [
+        1.8,
+        1.0,
+        1.6
+      ],
+      "black_levels": null,
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/configs/a3_cross_sensor_zero_shot_20261012.json"
+    },
+    {
+      "name": "sc465sl_darkroom18_256x",
+      "group": "02",
+      "category": "raw_scene",
+      "sensor": "SC465SL",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/02_SC465SL_darkroom18/256x/raw_stream_sc465sl_2560x1440_AG109568_darkroom18_256x.raw",
+      "width": 2560,
+      "height": 1440,
+      "frames": 300,
+      "bit_shift": 0,
+      "cfa": "RGGB",
+      "role": "auxiliary",
+      "wb_rgb": [
+        1.8,
+        1.0,
+        1.6
+      ],
+      "black_levels": null,
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/configs/a3_cross_sensor_zero_shot_20261012.json"
+    },
+    {
+      "name": "04_mis20s1_calibrationdata_100_black",
+      "group": "04",
+      "category": "calibration",
+      "sensor": "MIS20S1",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/mis20s1_calibrationdata/black/100/raw_stream_normal_1920x1080_16_GR_0205175115888_[FN=10,US=83317,AG=1024,DG=1024,BV=-168611,R=2631,G=1024,B=1986].raw",
+      "width": 1920,
+      "height": 1080,
+      "frames": 50,
+      "bit_shift": 4,
+      "cfa": "GRBG",
+      "role": "calibration_black",
+      "wb_rgb": [
+        2.5693359375,
+        1.0,
+        1.939453125
+      ],
+      "black_levels": [
+        256.625,
+        256.75,
+        256.75,
+        256.625
+      ],
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/stream_manifests/04_mis20s1_calibrationdata_100_black.json"
+    },
+    {
+      "name": "04_mis20s1_calibrationdata_100_color",
+      "group": "04",
+      "category": "calibration",
+      "sensor": "MIS20S1",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/mis20s1_calibrationdata/color/100/raw_stream_normal_1920x1080_16_GR_0205173227758_[FN=10,US=83317,AG=1024,DG=1024,BV=-24417,R=2299,G=1024,B=1952].raw",
+      "width": 1920,
+      "height": 1080,
+      "frames": 50,
+      "bit_shift": 4,
+      "cfa": "GRBG",
+      "role": "calibration_flat",
+      "wb_rgb": [
+        2.2451171875,
+        1.0,
+        1.90625
+      ],
+      "black_levels": [
+        304.25,
+        357.0,
+        356.375,
+        315.625
+      ],
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/stream_manifests/04_mis20s1_calibrationdata_100_color.json"
+    },
+    {
+      "name": "04_mis20s1_calibrationdata_12800_black",
+      "group": "04",
+      "category": "calibration",
+      "sensor": "MIS20S1",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/mis20s1_calibrationdata/black/12800/raw_stream_normal_1920x1080_16_GR_0205175518026_[FN=10,US=83317,AG=131072,DG=1024,BV=-283299,R=2631,G=1024,B=1986].raw",
+      "width": 1920,
+      "height": 1080,
+      "frames": 50,
+      "bit_shift": 4,
+      "cfa": "GRBG",
+      "role": "calibration_black",
+      "wb_rgb": [
+        2.5693359375,
+        1.0,
+        1.939453125
+      ],
+      "black_levels": [
+        256.875,
+        256.5,
+        256.375,
+        257.0
+      ],
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/stream_manifests/04_mis20s1_calibrationdata_12800_black.json"
+    },
+    {
+      "name": "04_mis20s1_calibrationdata_12800_color",
+      "group": "04",
+      "category": "calibration",
+      "sensor": "MIS20S1",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/mis20s1_calibrationdata/color/12800/raw_stream_normal_1920x1080_16_GR_0205174434739_[FN=10,US=623,AG=131072,DG=1071,BV=-23609,R=2420,G=1024,B=1908].raw",
+      "width": 1920,
+      "height": 1080,
+      "frames": 50,
+      "bit_shift": 4,
+      "cfa": "GRBG",
+      "role": "calibration_flat",
+      "wb_rgb": [
+        2.36328125,
+        1.0,
+        1.86328125
+      ],
+      "black_levels": [
+        298.0,
+        346.625,
+        345.75,
+        308.75
+      ],
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/stream_manifests/04_mis20s1_calibrationdata_12800_color.json"
+    },
+    {
+      "name": "04_mis20s1_calibrationdata_1600_black",
+      "group": "04",
+      "category": "calibration",
+      "sensor": "MIS20S1",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/mis20s1_calibrationdata/black/1600/raw_stream_normal_1920x1080_16_GR_0205175401348_[FN=10,US=83317,AG=16384,DG=1024,BV=-234147,R=2631,G=1024,B=1986].raw",
+      "width": 1920,
+      "height": 1080,
+      "frames": 50,
+      "bit_shift": 4,
+      "cfa": "GRBG",
+      "role": "calibration_black",
+      "wb_rgb": [
+        2.5693359375,
+        1.0,
+        1.939453125
+      ],
+      "black_levels": [
+        256.375,
+        256.375,
+        256.375,
+        256.375
+      ],
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/stream_manifests/04_mis20s1_calibrationdata_1600_black.json"
+    },
+    {
+      "name": "04_mis20s1_calibrationdata_1600_color",
+      "group": "04",
+      "category": "calibration",
+      "sensor": "MIS20S1",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/mis20s1_calibrationdata/color/1600/raw_stream_normal_1920x1080_16_GR_0205174019158_[FN=10,US=5186,AG=16384,DG=1028,BV=-22874,R=2316,G=1024,B=1983].raw",
+      "width": 1920,
+      "height": 1080,
+      "frames": 50,
+      "bit_shift": 4,
+      "cfa": "GRBG",
+      "role": "calibration_flat",
+      "wb_rgb": [
+        2.26171875,
+        1.0,
+        1.9365234375
+      ],
+      "black_levels": [
+        306.125,
+        362.375,
+        361.75,
+        318.25
+      ],
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/stream_manifests/04_mis20s1_calibrationdata_1600_color.json"
+    },
+    {
+      "name": "04_mis20s1_calibrationdata_200_black",
+      "group": "04",
+      "category": "calibration",
+      "sensor": "MIS20S1",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/mis20s1_calibrationdata/black/200/raw_stream_normal_1920x1080_16_GR_0205175245601_[FN=10,US=83317,AG=2048,DG=1024,BV=-184995,R=2631,G=1024,B=1986].raw",
+      "width": 1920,
+      "height": 1080,
+      "frames": 50,
+      "bit_shift": 4,
+      "cfa": "GRBG",
+      "role": "calibration_black",
+      "wb_rgb": [
+        2.5693359375,
+        1.0,
+        1.939453125
+      ],
+      "black_levels": [
+        256.375,
+        256.5,
+        256.5,
+        256.375
+      ],
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/stream_manifests/04_mis20s1_calibrationdata_200_black.json"
+    },
+    {
+      "name": "04_mis20s1_calibrationdata_200_color",
+      "group": "04",
+      "category": "calibration",
+      "sensor": "MIS20S1",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/mis20s1_calibrationdata/color/200/raw_stream_normal_1920x1080_16_GR_0205173424232_[FN=10,US=41659,AG=2048,DG=1024,BV=-25117,R=2310,G=1024,B=1980].raw",
+      "width": 1920,
+      "height": 1080,
+      "frames": 50,
+      "bit_shift": 4,
+      "cfa": "GRBG",
+      "role": "calibration_flat",
+      "wb_rgb": [
+        2.255859375,
+        1.0,
+        1.93359375
+      ],
+      "black_levels": [
+        302.75,
+        354.5,
+        354.0,
+        314.0
+      ],
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/stream_manifests/04_mis20s1_calibrationdata_200_color.json"
+    },
+    {
+      "name": "04_mis20s1_calibrationdata_25600_black",
+      "group": "04",
+      "category": "calibration",
+      "sensor": "MIS20S1",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/mis20s1_calibrationdata/black/25600/raw_stream_normal_1920x1080_16_GR_0205175549943_[FN=10,US=83317,AG=262144,DG=1024,BV=-299683,R=2631,G=1024,B=1986].raw",
+      "width": 1920,
+      "height": 1080,
+      "frames": 50,
+      "bit_shift": 4,
+      "cfa": "GRBG",
+      "role": "calibration_black",
+      "wb_rgb": [
+        2.5693359375,
+        1.0,
+        1.939453125
+      ],
+      "black_levels": [
+        257.5,
+        256.75,
+        256.5,
+        257.5
+      ],
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/stream_manifests/04_mis20s1_calibrationdata_25600_black.json"
+    },
+    {
+      "name": "04_mis20s1_calibrationdata_25600_color",
+      "group": "04",
+      "category": "calibration",
+      "sensor": "MIS20S1",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/mis20s1_calibrationdata/color/25600/raw_stream_normal_1920x1080_16_GR_0205174518964_[FN=10,US=326,AG=262144,DG=1024,BV=-24141,R=2484,G=1024,B=1933].raw",
+      "width": 1920,
+      "height": 1080,
+      "frames": 50,
+      "bit_shift": 4,
+      "cfa": "GRBG",
+      "role": "calibration_flat",
+      "wb_rgb": [
+        2.42578125,
+        1.0,
+        1.8876953125
+      ],
+      "black_levels": [
+        295.625,
+        342.5,
+        341.75,
+        306.375
+      ],
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/stream_manifests/04_mis20s1_calibrationdata_25600_color.json"
+    },
+    {
+      "name": "04_mis20s1_calibrationdata_3200_black",
+      "group": "04",
+      "category": "calibration",
+      "sensor": "MIS20S1",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/mis20s1_calibrationdata/black/3200/raw_stream_normal_1920x1080_16_GR_0205175419790_[FN=10,US=83317,AG=32768,DG=1024,BV=-250531,R=2631,G=1024,B=1986].raw",
+      "width": 1920,
+      "height": 1080,
+      "frames": 50,
+      "bit_shift": 4,
+      "cfa": "GRBG",
+      "role": "calibration_black",
+      "wb_rgb": [
+        2.5693359375,
+        1.0,
+        1.939453125
+      ],
+      "black_levels": [
+        256.75,
+        256.625,
+        256.625,
+        256.75
+      ],
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/stream_manifests/04_mis20s1_calibrationdata_3200_black.json"
+    },
+    {
+      "name": "04_mis20s1_calibrationdata_3200_color",
+      "group": "04",
+      "category": "calibration",
+      "sensor": "MIS20S1",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/mis20s1_calibrationdata/color/3200/raw_stream_normal_1920x1080_16_GR_0205174119530_[FN=10,US=2578,AG=32768,DG=1034,BV=-23174,R=2316,G=1024,B=1983].raw",
+      "width": 1920,
+      "height": 1080,
+      "frames": 50,
+      "bit_shift": 4,
+      "cfa": "GRBG",
+      "role": "calibration_flat",
+      "wb_rgb": [
+        2.26171875,
+        1.0,
+        1.9365234375
+      ],
+      "black_levels": [
+        305.25,
+        360.375,
+        359.5,
+        317.375
+      ],
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/stream_manifests/04_mis20s1_calibrationdata_3200_color.json"
+    },
+    {
+      "name": "04_mis20s1_calibrationdata_400_black",
+      "group": "04",
+      "category": "calibration",
+      "sensor": "MIS20S1",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/mis20s1_calibrationdata/black/400/raw_stream_normal_1920x1080_16_GR_0205175308935_[FN=10,US=83317,AG=4096,DG=1024,BV=-201379,R=2631,G=1024,B=1986].raw",
+      "width": 1920,
+      "height": 1080,
+      "frames": 50,
+      "bit_shift": 4,
+      "cfa": "GRBG",
+      "role": "calibration_black",
+      "wb_rgb": [
+        2.5693359375,
+        1.0,
+        1.939453125
+      ],
+      "black_levels": [
+        256.375,
+        256.625,
+        256.5,
+        256.375
+      ],
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/stream_manifests/04_mis20s1_calibrationdata_400_black.json"
+    },
+    {
+      "name": "04_mis20s1_calibrationdata_400_color",
+      "group": "04",
+      "category": "calibration",
+      "sensor": "MIS20S1",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/mis20s1_calibrationdata/color/400/raw_stream_normal_1920x1080_16_GR_0205173607994_[FN=10,US=20830,AG=4096,DG=1024,BV=-25282,R=2304,G=1024,B=1982].raw",
+      "width": 1920,
+      "height": 1080,
+      "frames": 50,
+      "bit_shift": 4,
+      "cfa": "GRBG",
+      "role": "calibration_flat",
+      "wb_rgb": [
+        2.25,
+        1.0,
+        1.935546875
+      ],
+      "black_levels": [
+        302.75,
+        354.5,
+        353.875,
+        314.125
+      ],
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/stream_manifests/04_mis20s1_calibrationdata_400_color.json"
+    },
+    {
+      "name": "04_mis20s1_calibrationdata_6400_black",
+      "group": "04",
+      "category": "calibration",
+      "sensor": "MIS20S1",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/mis20s1_calibrationdata/black/6400/raw_stream_normal_1920x1080_16_GR_0205175442048_[FN=10,US=83317,AG=65536,DG=1024,BV=-266915,R=2631,G=1024,B=1986].raw",
+      "width": 1920,
+      "height": 1080,
+      "frames": 50,
+      "bit_shift": 4,
+      "cfa": "GRBG",
+      "role": "calibration_black",
+      "wb_rgb": [
+        2.5693359375,
+        1.0,
+        1.939453125
+      ],
+      "black_levels": [
+        256.625,
+        256.375,
+        256.25,
+        256.625
+      ],
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/stream_manifests/04_mis20s1_calibrationdata_6400_black.json"
+    },
+    {
+      "name": "04_mis20s1_calibrationdata_6400_color",
+      "group": "04",
+      "category": "calibration",
+      "sensor": "MIS20S1",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/mis20s1_calibrationdata/color/6400/raw_stream_normal_1920x1080_16_GR_0205174305901_[FN=10,US=1275,AG=65536,DG=1046,BV=-23138,R=2353,G=1024,B=1869].raw",
+      "width": 1920,
+      "height": 1080,
+      "frames": 50,
+      "bit_shift": 4,
+      "cfa": "GRBG",
+      "role": "calibration_flat",
+      "wb_rgb": [
+        2.2978515625,
+        1.0,
+        1.8251953125
+      ],
+      "black_levels": [
+        302.875,
+        356.875,
+        356.0,
+        314.75
+      ],
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/stream_manifests/04_mis20s1_calibrationdata_6400_color.json"
+    },
+    {
+      "name": "04_mis20s1_calibrationdata_800_black",
+      "group": "04",
+      "category": "calibration",
+      "sensor": "MIS20S1",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/mis20s1_calibrationdata/black/800/raw_stream_normal_1920x1080_16_GR_0205175339636_[FN=10,US=83317,AG=8192,DG=1024,BV=-217763,R=2631,G=1024,B=1986].raw",
+      "width": 1920,
+      "height": 1080,
+      "frames": 50,
+      "bit_shift": 4,
+      "cfa": "GRBG",
+      "role": "calibration_black",
+      "wb_rgb": [
+        2.5693359375,
+        1.0,
+        1.939453125
+      ],
+      "black_levels": [
+        256.25,
+        256.75,
+        256.75,
+        256.375
+      ],
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/stream_manifests/04_mis20s1_calibrationdata_800_black.json"
+    },
+    {
+      "name": "04_mis20s1_calibrationdata_800_color",
+      "group": "04",
+      "category": "calibration",
+      "sensor": "MIS20S1",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/mis20s1_calibrationdata/color/800/raw_stream_normal_1920x1080_16_GR_0205173829970_[FN=10,US=10400,AG=8192,DG=1025,BV=-25381,R=2316,G=1024,B=1983].raw",
+      "width": 1920,
+      "height": 1080,
+      "frames": 50,
+      "bit_shift": 4,
+      "cfa": "GRBG",
+      "role": "calibration_flat",
+      "wb_rgb": [
+        2.26171875,
+        1.0,
+        1.9365234375
+      ],
+      "black_levels": [
+        300.125,
+        351.5,
+        350.875,
+        311.25
+      ],
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/stream_manifests/04_mis20s1_calibrationdata_800_color.json"
+    },
+    {
+      "name": "04_mis20s1_outdoor_1000x",
+      "group": "04",
+      "category": "raw_scene",
+      "sensor": "MIS20S1",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/mis20s1_outdoor/1000x/raw_stream_1920x1080_16bit@RG_[Shutter=79999,SenserG=131072,IspG=8192,R=1829,G=1024,B=2349].raw",
+      "width": 1920,
+      "height": 1080,
+      "frames": 200,
+      "bit_shift": 4,
+      "cfa": "RGGB",
+      "role": "noisy",
+      "wb_rgb": [
+        1.7861328125,
+        1.0,
+        2.2939453125
+      ],
+      "black_levels": [
+        254.25,
+        256.625,
+        256.375,
+        253.75
+      ],
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/stream_manifests/04_mis20s1_outdoor_1000x.json"
+    },
+    {
+      "name": "04_mis20s1_outdoor_128x",
+      "group": "04",
+      "category": "raw_scene",
+      "sensor": "MIS20S1",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/mis20s1_outdoor/128x/raw_stream_1920x1080_16bit@RG_[Shutter=79999,SenserG=131072,IspG=1123,R=1896,G=1024,B=2221].raw",
+      "width": 1920,
+      "height": 1080,
+      "frames": 200,
+      "bit_shift": 4,
+      "cfa": "RGGB",
+      "role": "noisy",
+      "wb_rgb": [
+        1.8515625,
+        1.0,
+        2.1689453125
+      ],
+      "black_levels": [
+        270.25,
+        287.0,
+        286.75,
+        270.0
+      ],
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/stream_manifests/04_mis20s1_outdoor_128x.json"
+    },
+    {
+      "name": "04_mis20s1_outdoor_1500x",
+      "group": "04",
+      "category": "raw_scene",
+      "sensor": "MIS20S1",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/mis20s1_outdoor/1500x/raw_stream_1920x1080_16bit@RG_[Shutter=79999,SenserG=131072,IspG=10455,R=1679,G=1024,B=2473].raw",
+      "width": 1920,
+      "height": 1080,
+      "frames": 195,
+      "bit_shift": 4,
+      "cfa": "RGGB",
+      "role": "noisy",
+      "wb_rgb": [
+        1.6396484375,
+        1.0,
+        2.4150390625
+      ],
+      "black_levels": [
+        253.0,
+        254.625,
+        254.5,
+        252.625
+      ],
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/stream_manifests/04_mis20s1_outdoor_1500x.json"
+    },
+    {
+      "name": "04_mis20s1_outdoor_512x",
+      "group": "04",
+      "category": "raw_scene",
+      "sensor": "MIS20S1",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/mis20s1_outdoor/512x/raw_stream_1920x1080_16bit@RG_[Shutter=79999,SenserG=131072,IspG=3957,R=1837,G=1024,B=2283].raw",
+      "width": 1920,
+      "height": 1080,
+      "frames": 198,
+      "bit_shift": 4,
+      "cfa": "RGGB",
+      "role": "noisy",
+      "wb_rgb": [
+        1.7939453125,
+        1.0,
+        2.2294921875
+      ],
+      "black_levels": [
+        256.625,
+        260.375,
+        260.125,
+        255.75
+      ],
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/stream_manifests/04_mis20s1_outdoor_512x.json"
+    },
+    {
+      "name": "04_shdarkroom_1000x",
+      "group": "04",
+      "category": "raw_scene",
+      "sensor": "MIS20S1",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/shdarkroom/1000x/raw_stream_1920x1080_16bit@RG_[Shutter=79999,SenserG=131072,IspG=7656,R=1878,G=1024,B=2218].raw",
+      "width": 1920,
+      "height": 1080,
+      "frames": 200,
+      "bit_shift": 4,
+      "cfa": "RGGB",
+      "role": "noisy",
+      "wb_rgb": [
+        1.833984375,
+        1.0,
+        2.166015625
+      ],
+      "black_levels": [
+        254.75,
+        257.125,
+        256.875,
+        255.125
+      ],
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/stream_manifests/04_shdarkroom_1000x.json"
+    },
+    {
+      "name": "04_shdarkroom_10x",
+      "group": "04",
+      "category": "raw_scene",
+      "sensor": "MIS20S1",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/shdarkroom/10x/raw_stream_1920x1080_16bit@RG_[Shutter=40000,SenserG=9500,IspG=1024,R=2113,G=1024,B=1789].raw",
+      "width": 1920,
+      "height": 1080,
+      "frames": 200,
+      "bit_shift": 4,
+      "cfa": "RGGB",
+      "role": "reference",
+      "wb_rgb": [
+        2.0634765625,
+        1.0,
+        1.7470703125
+      ],
+      "black_levels": [
+        266.125,
+        275.625,
+        275.375,
+        267.0
+      ],
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/stream_manifests/04_shdarkroom_10x.json"
+    },
+    {
+      "name": "04_shdarkroom_128x",
+      "group": "04",
+      "category": "raw_scene",
+      "sensor": "MIS20S1",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/shdarkroom/128x/raw_stream_1920x1080_16bit@RG_[Shutter=54992,SenserG=131072,IspG=1024,R=2159,G=1024,B=1849].raw",
+      "width": 1920,
+      "height": 1080,
+      "frames": 200,
+      "bit_shift": 4,
+      "cfa": "RGGB",
+      "role": "noisy",
+      "wb_rgb": [
+        2.1083984375,
+        1.0,
+        1.8056640625
+      ],
+      "black_levels": [
+        262.75,
+        269.875,
+        269.625,
+        263.625
+      ],
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/stream_manifests/04_shdarkroom_128x.json"
+    },
+    {
+      "name": "04_shdarkroom_313x",
+      "group": "04",
+      "category": "raw_scene",
+      "sensor": "MIS20S1",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/shdarkroom/313x/raw_stream_1920x1080_16bit@RG_[Shutter=79999,SenserG=131072,IspG=2504,R=2065,G=1024,B=2021].raw",
+      "width": 1920,
+      "height": 1080,
+      "frames": 300,
+      "bit_shift": 4,
+      "cfa": "RGGB",
+      "role": "noisy",
+      "wb_rgb": [
+        2.0166015625,
+        1.0,
+        1.9736328125
+      ],
+      "black_levels": [
+        257.5,
+        260.375,
+        260.125,
+        257.875
+      ],
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/stream_manifests/04_shdarkroom_313x.json"
+    },
+    {
+      "name": "04_shdarkroom_632x",
+      "group": "04",
+      "category": "raw_scene",
+      "sensor": "MIS20S1",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/shdarkroom/632x/raw_stream_1920x1080_16bit@RG_[Shutter=79999,SenserG=131072,IspG=5055,R=2094,G=1024,B=1968].raw",
+      "width": 1920,
+      "height": 1080,
+      "frames": 200,
+      "bit_shift": 4,
+      "cfa": "RGGB",
+      "role": "noisy",
+      "wb_rgb": [
+        2.044921875,
+        1.0,
+        1.921875
+      ],
+      "black_levels": [
+        256.5,
+        259.625,
+        259.375,
+        256.875
+      ],
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/stream_manifests/04_shdarkroom_632x.json"
+    },
+    {
+      "name": "04_shdarkroom_645x",
+      "group": "04",
+      "category": "raw_scene",
+      "sensor": "MIS20S1",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/shdarkroom/645x/raw_stream_1920x1080_16bit@RG_[Shutter=79999,SenserG=131072,IspG=5167,R=2120,G=1024,B=1956].raw",
+      "width": 1920,
+      "height": 1080,
+      "frames": 200,
+      "bit_shift": 4,
+      "cfa": "RGGB",
+      "role": "noisy",
+      "wb_rgb": [
+        2.0703125,
+        1.0,
+        1.91015625
+      ],
+      "black_levels": [
+        256.375,
+        258.875,
+        258.75,
+        256.875
+      ],
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/stream_manifests/04_shdarkroom_645x.json"
+    },
+    {
+      "name": "04_shdarkroom_64x",
+      "group": "04",
+      "category": "raw_scene",
+      "sensor": "MIS20S1",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/shdarkroom/64x/raw_stream_1920x1080_16bit@RG_[Shutter=40000,SenserG=69631,IspG=1024,R=2137,G=1024,B=1825].raw",
+      "width": 1920,
+      "height": 1080,
+      "frames": 200,
+      "bit_shift": 4,
+      "cfa": "RGGB",
+      "role": "noisy",
+      "wb_rgb": [
+        2.0869140625,
+        1.0,
+        1.7822265625
+      ],
+      "black_levels": [
+        264.0,
+        271.5,
+        271.375,
+        264.625
+      ],
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/stream_manifests/04_shdarkroom_64x.json"
+    },
+    {
+      "name": "sc465sl_difficultpattern_4717",
+      "group": "05",
+      "category": "raw_scene",
+      "sensor": "SC465SL",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/05_2DNR3DNR/465_difficultpattern/shutter_83315/sensorG__ispG_4717_WB_1930_1024_2381/raw_stream_2560x1440_16bit@RG_[Shutter=83315,SenserG=109572,IspG=4717,R=1930,G=1024,B=2381].raw",
+      "width": 2560,
+      "height": 1440,
+      "frames": 200,
+      "bit_shift": 4,
+      "cfa": "RGGB",
+      "role": "auxiliary",
+      "wb_rgb": [
+        1.885,
+        1.0,
+        2.325
+      ],
+      "black_levels": null,
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/configs/a3_cross_sensor_extension_20261012.json"
+    },
+    {
+      "name": "sc465sl_difficultpattern_8880",
+      "group": "05",
+      "category": "raw_scene",
+      "sensor": "SC465SL",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/05_2DNR3DNR/465_difficultpattern/shutter_83315/sensorG__ispG_8880_WB_1962_1024_2172/raw_stream_2560x1440_16bit@RG_[Shutter=83315,SenserG=109572,IspG=8880,R=1962,G=1024,B=2172].raw",
+      "width": 2560,
+      "height": 1440,
+      "frames": 200,
+      "bit_shift": 4,
+      "cfa": "RGGB",
+      "role": "auxiliary",
+      "wb_rgb": [
+        1.916,
+        1.0,
+        2.121
+      ],
+      "black_levels": null,
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/configs/a3_cross_sensor_extension_20261012.json"
+    },
+    {
+      "name": "sc465sl_normal_1024",
+      "group": "05",
+      "category": "raw_scene",
+      "sensor": "SC465SL",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/05_2DNR3DNR/465_sh_normal/shutter_39999/sensorG__ispG_1024_WB_1535_1024_3003/raw_stream_2560x1440_16bit@RG_[Shutter=39999,SenserG=1079,IspG=1024,R=1535,G=1024,B=3003].raw",
+      "width": 2560,
+      "height": 1440,
+      "frames": 100,
+      "bit_shift": 4,
+      "cfa": "RGGB",
+      "role": "auxiliary",
+      "wb_rgb": [
+        1.4990234375,
+        1.0,
+        2.9326171875
+      ],
+      "black_levels": null,
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/configs/a8_sensor_training_data_20261013.json"
+    },
+    {
+      "name": "sc465sl_normal_1223",
+      "group": "05",
+      "category": "raw_scene",
+      "sensor": "SC465SL",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/05_2DNR3DNR/465_sh_normal/shutter_39999/sensorG__ispG_1223_WB_1960_1024_2402/raw_stream_2560x1440_16bit@RG_[Shutter=39999,SenserG=109572,IspG=1223,R=1960,G=1024,B=2402].raw",
+      "width": 2560,
+      "height": 1440,
+      "frames": 200,
+      "bit_shift": 4,
+      "cfa": "RGGB",
+      "role": "auxiliary",
+      "wb_rgb": [
+        1.9140625,
+        1.0,
+        2.345703125
+      ],
+      "black_levels": null,
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/configs/a8_sensor_training_data_20261013.json"
+    },
+    {
+      "name": "sc465sl_normal_19598",
+      "group": "05",
+      "category": "raw_scene",
+      "sensor": "SC465SL",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/05_2DNR3DNR/465_sh_normal/shutter_83315/sensorG__ispG_19598_WB_2003_1024_1964/raw_stream_2560x1440_16bit@RG_[Shutter=83315,SenserG=109572,IspG=19598,R=2003,G=1024,B=1964].raw",
+      "width": 2560,
+      "height": 1440,
+      "frames": 200,
+      "bit_shift": 4,
+      "cfa": "RGGB",
+      "role": "auxiliary",
+      "wb_rgb": [
+        1.9560546875,
+        1.0,
+        1.91796875
+      ],
+      "black_levels": null,
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/configs/a8_sensor_training_data_20261013.json"
+    },
+    {
+      "name": "sc465sl_normal_2391",
+      "group": "05",
+      "category": "raw_scene",
+      "sensor": "SC465SL",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/05_2DNR3DNR/465_sh_normal/shutter_83315/sensorG__ispG_2391_WB_1945_1024_2433/raw_stream_2560x1440_16bit@RG_[Shutter=83315,SenserG=109572,IspG=2391,R=1945,G=1024,B=2433].raw",
+      "width": 2560,
+      "height": 1440,
+      "frames": 200,
+      "bit_shift": 4,
+      "cfa": "RGGB",
+      "role": "auxiliary",
+      "wb_rgb": [
+        1.8994140625,
+        1.0,
+        2.3759765625
+      ],
+      "black_levels": null,
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/configs/a8_sensor_training_data_20261013.json"
+    },
+    {
+      "name": "sc465sl_normal_3560",
+      "group": "05",
+      "category": "raw_scene",
+      "sensor": "SC465SL",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/05_2DNR3DNR/465_sh_normal/shutter_83315/sensorG__ispG_3560_WB_1976_1024_2365/raw_stream_2560x1440_16bit@RG_[Shutter=83315,SenserG=109572,IspG=3560,R=1976,G=1024,B=2365].raw",
+      "width": 2560,
+      "height": 1440,
+      "frames": 200,
+      "bit_shift": 4,
+      "cfa": "RGGB",
+      "role": "auxiliary",
+      "wb_rgb": [
+        1.9296875,
+        1.0,
+        2.3095703125
+      ],
+      "black_levels": null,
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/configs/a8_sensor_training_data_20261013.json"
+    },
+    {
+      "name": "sc465sl_normal_5023",
+      "group": "05",
+      "category": "raw_scene",
+      "sensor": "SC465SL",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/05_2DNR3DNR/465_sh_normal/shutter_83315/sensorG__ispG_5023_WB_1949_1024_2208/raw_stream_2560x1440_16bit@RG_[Shutter=83315,SenserG=109572,IspG=5023,R=1949,G=1024,B=2208].raw",
+      "width": 2560,
+      "height": 1440,
+      "frames": 200,
+      "bit_shift": 4,
+      "cfa": "RGGB",
+      "role": "auxiliary",
+      "wb_rgb": [
+        1.9033203125,
+        1.0,
+        2.15625
+      ],
+      "black_levels": null,
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/configs/a8_sensor_training_data_20261013.json"
+    },
+    {
+      "name": "sc465sl_normal_6373",
+      "group": "05",
+      "category": "raw_scene",
+      "sensor": "SC465SL",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/05_2DNR3DNR/465_sh_normal/shutter_83315/sensorG__ispG_6373_WB_1949_1024_2208/raw_stream_2560x1440_16bit@RG_[Shutter=83315,SenserG=109572,IspG=6373,R=1949,G=1024,B=2208].raw",
+      "width": 2560,
+      "height": 1440,
+      "frames": 200,
+      "bit_shift": 4,
+      "cfa": "RGGB",
+      "role": "auxiliary",
+      "wb_rgb": [
+        1.9033203125,
+        1.0,
+        2.15625
+      ],
+      "black_levels": null,
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/configs/a8_sensor_training_data_20261013.json"
+    },
+    {
+      "name": "sc465sl_normal_9798",
+      "group": "05",
+      "category": "raw_scene",
+      "sensor": "SC465SL",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/05_2DNR3DNR/465_sh_normal/shutter_83315/sensorG__ispG_9798_WB_1970_1024_2143/raw_stream_2560x1440_16bit@RG_[Shutter=83315,SenserG=109572,IspG=9798,R=1970,G=1024,B=2143].raw",
+      "width": 2560,
+      "height": 1440,
+      "frames": 200,
+      "bit_shift": 4,
+      "cfa": "RGGB",
+      "role": "auxiliary",
+      "wb_rgb": [
+        1.923828125,
+        1.0,
+        2.0927734375
+      ],
+      "black_levels": null,
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/configs/a8_sensor_training_data_20261013.json"
+    }
+  ]
+}

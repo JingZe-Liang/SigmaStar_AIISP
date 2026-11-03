@@ -1,0 +1,59 @@
+{
+  "provenance": {
+    "sequence": {
+      "name": "sc635hai_131x_low_cct",
+      "group": "01",
+      "category": "raw_scene",
+      "sensor": "sc635hai",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/01_fist_company/sc635hai/131x_low_cct/raw_stream_normal_3200x1800_16_RG_0205213025917_131x.raw",
+      "width": 3200,
+      "height": 1800,
+      "frames": 150,
+      "bit_shift": 4,
+      "cfa": "RGGB",
+      "role": "auxiliary",
+      "wb_rgb": [
+        1.128,
+        1.0,
+        3.604
+      ],
+      "black_levels": null,
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/configs/a3_cross_sensor_extension_20261012.json"
+    },
+    "source_sha256": "80445b9133f49dfa7f5117d93bcf9fd5a9dfae1de0e0faae69c9f4144dac440a",
+    "checkpoint_sha256": "97c4332f685f98959b243e4b100434469f714aed6329e100d22b6d8552592e0b",
+    "config_sha256": "dee8a5575ac8a166c9eb8ed682a7fffa5a08adaf458c467d364bf4e6fbdd518a",
+    "weights": "ema",
+    "clip_starts": [
+      0,
+      71,
+      142
+    ],
+    "temporal_frames": 8,
+    "black_levels_R_Gr_Gb_B": [
+      261.75,
+      263.0,
+      263.5,
+      254.75
+    ],
+    "normalization": "clip((DN-black)/(4095-black),0,1)",
+    "canonical_channel_order": [
+      "R",
+      "Gr",
+      "Gb",
+      "B"
+    ],
+    "tile": 64,
+    "stride": 56,
+    "tile_batch": 12
+  },
+  "prediction": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/01/raw_scene/sc635hai_131x_low_cct/inference/prediction.npy",
+  "prediction_shape": [
+    24,
+    4,
+    900,
+    1600
+  ],
+  "prediction_dtype": "float16 normalized native domain",
+  "prediction_sha256": "30bf5e279aa73b7cf6851e66c957c0e108a212925ec50b942d034cbbe57188f0"
+}

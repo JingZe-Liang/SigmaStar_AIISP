@@ -1,0 +1,120 @@
+{
+  "sequence": {
+    "name": "sc635hai_16x_motion_color",
+    "group": "01",
+    "category": "raw_scene",
+    "sensor": "sc635hai",
+    "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/01_fist_company/sc635hai/16x_motion_color/3200x1800_RG_motion_color_16x.raw",
+    "width": 3200,
+    "height": 1800,
+    "frames": 200,
+    "bit_shift": 4,
+    "cfa": "RGGB",
+    "role": "auxiliary",
+    "wb_rgb": [
+      1.2,
+      1.0,
+      2.8
+    ],
+    "black_levels": null,
+    "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/configs/a3_cross_sensor_extension_20261012.json"
+  },
+  "frames": 24,
+  "source_frame_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    192,
+    193,
+    194,
+    195,
+    196,
+    197,
+    198,
+    199
+  ],
+  "fps": 6,
+  "encoder": "libx265",
+  "pixel_format": "yuv444p",
+  "video": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/01/raw_scene/sc635hai_16x_motion_color/traditional_isp_video/sc635hai_16x_motion_color_input_vs_a3_traditional_isp.mp4",
+  "video_sha256": "50566c49263b3906707136ad9ce863436c01ad985a6e58a8592d639785233eb9",
+  "preview": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/01/raw_scene/sc635hai_16x_motion_color/traditional_isp_video/sc635hai_16x_motion_color_frame0000.png",
+  "preview_sha256": "9c2e88606d26eddb0fec9888723895460a72846aea1633e78613223d8cd8f720",
+  "layout": "Input left, A3 EMA right; overview above, fixed center crop below",
+  "isp": {
+    "implementation": "ISP_traditional OpenCV edge-aware Bayer demosaic plus fixed exposure and sRGB gamma",
+    "camera_color_mode": "uncalibrated_camera_rgb",
+    "sensor_color_matrix_available": false,
+    "false_color_suppression": false,
+    "highlight_recovery": true,
+    "tone_map": "reinhard",
+    "exposure_selection": "per-sequence input-only 99.5th percentile targets 0.8 after Reinhard, then freezes EV for Input and A3",
+    "exposure_target_after_tone_map_linear": 0.8,
+    "exposure_ev_limits": [
+      -6.0,
+      8.0
+    ],
+    "output_layout": "Input left, A3 EMA right; overview above, fixed center crop below",
+    "module_root": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/ISP_traditional",
+    "black_levels_R_Gr_Gb_B": [
+      271.5,
+      283.5,
+      283.5,
+      272.0
+    ],
+    "wb_rgb": [
+      1.2,
+      1.0,
+      2.8
+    ],
+    "fixed_exposure_ev": 2.0011359625573153,
+    "input_and_a3_share_identical_parameters": true,
+    "canonical_channel_order": [
+      "R",
+      "Gr",
+      "Gb",
+      "B"
+    ],
+    "sensor_color_accuracy_claimed": false
+  },
+  "ffmpeg_command": [
+    "ffmpeg",
+    "-y",
+    "-f",
+    "rawvideo",
+    "-pix_fmt",
+    "rgb24",
+    "-s",
+    "1920x1080",
+    "-r",
+    "6",
+    "-i",
+    "-",
+    "-c:v",
+    "libx265",
+    "-x265-params",
+    "crf=16",
+    "-pix_fmt",
+    "yuv444p",
+    "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/01/raw_scene/sc635hai_16x_motion_color/traditional_isp_video/sc635hai_16x_motion_color_input_vs_a3_traditional_isp.mp4"
+  ],
+  "limitations": [
+    "No clean target is shown; this is a visual Input-versus-A3 comparison.",
+    "Sensor ColorMatrix data is absent, so camera RGB color is not calibrated.",
+    "Video compression and resize can conceal fine-grained noise differences.",
+    "Exposure is frozen within each sequence but is not comparable across sequences."
+  ]
+}

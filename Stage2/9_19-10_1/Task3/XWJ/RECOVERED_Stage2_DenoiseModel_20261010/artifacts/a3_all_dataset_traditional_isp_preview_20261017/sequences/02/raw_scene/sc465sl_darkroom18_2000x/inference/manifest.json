@@ -1,0 +1,59 @@
+{
+  "provenance": {
+    "sequence": {
+      "name": "sc465sl_darkroom18_2000x",
+      "group": "02",
+      "category": "raw_scene",
+      "sensor": "SC465SL",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/02_SC465SL_darkroom18/2000x/raw_stream_sc465sl_2560x1440_AG109568_darkroom18_2000x.raw",
+      "width": 2560,
+      "height": 1440,
+      "frames": 300,
+      "bit_shift": 0,
+      "cfa": "RGGB",
+      "role": "auxiliary",
+      "wb_rgb": [
+        1.8,
+        1.0,
+        1.6
+      ],
+      "black_levels": null,
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/configs/a3_cross_sensor_zero_shot_20261012.json"
+    },
+    "source_sha256": "8df12bc10c7b2191791d1d7f4a9715167a6b6c1a6a1805554ef27b2b05aef7b0",
+    "checkpoint_sha256": "97c4332f685f98959b243e4b100434469f714aed6329e100d22b6d8552592e0b",
+    "config_sha256": "dee8a5575ac8a166c9eb8ed682a7fffa5a08adaf458c467d364bf4e6fbdd518a",
+    "weights": "ema",
+    "clip_starts": [
+      0,
+      146,
+      292
+    ],
+    "temporal_frames": 8,
+    "black_levels_R_Gr_Gb_B": [
+      251.1875,
+      252.4375,
+      252.4375,
+      250.9375
+    ],
+    "normalization": "clip((DN-black)/(4095-black),0,1)",
+    "canonical_channel_order": [
+      "R",
+      "Gr",
+      "Gb",
+      "B"
+    ],
+    "tile": 64,
+    "stride": 56,
+    "tile_batch": 12
+  },
+  "prediction": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/02/raw_scene/sc465sl_darkroom18_2000x/inference/prediction.npy",
+  "prediction_shape": [
+    24,
+    4,
+    720,
+    1280
+  ],
+  "prediction_dtype": "float16 normalized native domain",
+  "prediction_sha256": "8b2ae6058bd9ffe01ec4dd89bd3b1657c2ec92490491e0ff7ba93d4f3b5c421e"
+}

@@ -1,0 +1,40 @@
+{
+  "sequence": {
+    "name": "sc635hai_131x_low_cct",
+    "group": "01",
+    "category": "raw_scene",
+    "sensor": "sc635hai",
+    "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/01_fist_company/sc635hai/131x_low_cct/raw_stream_normal_3200x1800_16_RG_0205213025917_131x.raw",
+    "width": 3200,
+    "height": 1800,
+    "frames": 150,
+    "bit_shift": 4,
+    "cfa": "RGGB",
+    "role": "auxiliary",
+    "wb_rgb": [
+      1.128,
+      1.0,
+      3.604
+    ],
+    "black_levels": null,
+    "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/configs/a3_cross_sensor_extension_20261012.json"
+  },
+  "source_sha256": "80445b9133f49dfa7f5117d93bcf9fd5a9dfae1de0e0faae69c9f4144dac440a",
+  "clip_starts": [
+    0,
+    71,
+    142
+  ],
+  "black_levels_R_Gr_Gb_B": [
+    261.75,
+    263.0,
+    263.5,
+    254.75
+  ],
+  "black_level_source": "deterministic 16-frame project pedestal measurement",
+  "fixed_exposure_ev": 2.0011300244943446,
+  "input_normalized_p995_after_wb": 0.9992170333862305,
+  "exposure_target_before_tone_map_linear": 4.000000000000001,
+  "exposure_target_after_tone_map_linear": 0.8,
+  "dataset_read_only": true
+}

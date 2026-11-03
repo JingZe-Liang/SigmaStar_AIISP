@@ -1,0 +1,120 @@
+{
+  "sequence": {
+    "name": "sc465sl_darkroom18_2000x",
+    "group": "02",
+    "category": "raw_scene",
+    "sensor": "SC465SL",
+    "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/02_SC465SL_darkroom18/2000x/raw_stream_sc465sl_2560x1440_AG109568_darkroom18_2000x.raw",
+    "width": 2560,
+    "height": 1440,
+    "frames": 300,
+    "bit_shift": 0,
+    "cfa": "RGGB",
+    "role": "auxiliary",
+    "wb_rgb": [
+      1.8,
+      1.0,
+      1.6
+    ],
+    "black_levels": null,
+    "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/configs/a3_cross_sensor_zero_shot_20261012.json"
+  },
+  "frames": 24,
+  "source_frame_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    146,
+    147,
+    148,
+    149,
+    150,
+    151,
+    152,
+    153,
+    292,
+    293,
+    294,
+    295,
+    296,
+    297,
+    298,
+    299
+  ],
+  "fps": 6,
+  "encoder": "libx265",
+  "pixel_format": "yuv444p",
+  "video": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/02/raw_scene/sc465sl_darkroom18_2000x/traditional_isp_video/sc465sl_darkroom18_2000x_input_vs_a3_traditional_isp.mp4",
+  "video_sha256": "253b172f0d0b53ce83f68245aa402217bc385e7552ceb9aa613511218c3f48b6",
+  "preview": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/02/raw_scene/sc465sl_darkroom18_2000x/traditional_isp_video/sc465sl_darkroom18_2000x_frame0000.png",
+  "preview_sha256": "9312871878dbe08f4df978e90bb76e6e326e007d451052e76f76b9e2cff4c9c6",
+  "layout": "Input left, A3 EMA right; overview above, fixed center crop below",
+  "isp": {
+    "implementation": "ISP_traditional OpenCV edge-aware Bayer demosaic plus fixed exposure and sRGB gamma",
+    "camera_color_mode": "uncalibrated_camera_rgb",
+    "sensor_color_matrix_available": false,
+    "false_color_suppression": false,
+    "highlight_recovery": true,
+    "tone_map": "reinhard",
+    "exposure_selection": "per-sequence input-only 99.5th percentile targets 0.8 after Reinhard, then freezes EV for Input and A3",
+    "exposure_target_after_tone_map_linear": 0.8,
+    "exposure_ev_limits": [
+      -6.0,
+      8.0
+    ],
+    "output_layout": "Input left, A3 EMA right; overview above, fixed center crop below",
+    "module_root": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/ISP_traditional",
+    "black_levels_R_Gr_Gb_B": [
+      251.1875,
+      252.4375,
+      252.4375,
+      250.9375
+    ],
+    "wb_rgb": [
+      1.8,
+      1.0,
+      1.6
+    ],
+    "fixed_exposure_ev": 2.7872467082118355,
+    "input_and_a3_share_identical_parameters": true,
+    "canonical_channel_order": [
+      "R",
+      "Gr",
+      "Gb",
+      "B"
+    ],
+    "sensor_color_accuracy_claimed": false
+  },
+  "ffmpeg_command": [
+    "ffmpeg",
+    "-y",
+    "-f",
+    "rawvideo",
+    "-pix_fmt",
+    "rgb24",
+    "-s",
+    "1920x1080",
+    "-r",
+    "6",
+    "-i",
+    "-",
+    "-c:v",
+    "libx265",
+    "-x265-params",
+    "crf=16",
+    "-pix_fmt",
+    "yuv444p",
+    "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/02/raw_scene/sc465sl_darkroom18_2000x/traditional_isp_video/sc465sl_darkroom18_2000x_input_vs_a3_traditional_isp.mp4"
+  ],
+  "limitations": [
+    "No clean target is shown; this is a visual Input-versus-A3 comparison.",
+    "Sensor ColorMatrix data is absent, so camera RGB color is not calibrated.",
+    "Video compression and resize can conceal fine-grained noise differences.",
+    "Exposure is frozen within each sequence but is not comparable across sequences."
+  ]
+}

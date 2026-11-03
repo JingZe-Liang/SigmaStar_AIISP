@@ -1,0 +1,40 @@
+{
+  "sequence": {
+    "name": "sc450ai_1435x_motion_black_object",
+    "group": "01",
+    "category": "raw_scene",
+    "sensor": "sc450ai",
+    "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/01_fist_company/sc450ai/1435x_motion_black_object/raw_stream_2688x1520_16bit@RG[Shutter=83328,SenserG=61440,IspG=24493,R=1620,G=1024,B=2409][bl_R=4128_Gr=4128_Gb=4128_B=4128].raw",
+    "width": 2688,
+    "height": 1520,
+    "frames": 210,
+    "bit_shift": 0,
+    "cfa": "RGGB",
+    "role": "auxiliary",
+    "wb_rgb": [
+      1.582,
+      1.0,
+      2.352
+    ],
+    "black_levels": null,
+    "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/configs/a3_cross_sensor_extension_20261012.json"
+  },
+  "source_sha256": "7896fd9346aa8f82b67d7d2a3a02b4929d9ff58e6da952b4ff7aaf3a7e0acba0",
+  "clip_starts": [
+    0,
+    101,
+    202
+  ],
+  "black_levels_R_Gr_Gb_B": [
+    257.0,
+    258.0,
+    257.75,
+    256.0
+  ],
+  "black_level_source": "deterministic 16-frame project pedestal measurement",
+  "fixed_exposure_ev": 6.280309441653558,
+  "input_normalized_p995_after_wb": 0.051463399082422256,
+  "exposure_target_before_tone_map_linear": 4.000000000000001,
+  "exposure_target_after_tone_map_linear": 0.8,
+  "dataset_read_only": true
+}

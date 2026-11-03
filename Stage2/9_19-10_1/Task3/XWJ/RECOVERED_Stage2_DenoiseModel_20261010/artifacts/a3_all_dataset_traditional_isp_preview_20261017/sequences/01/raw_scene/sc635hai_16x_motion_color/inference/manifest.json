@@ -1,0 +1,59 @@
+{
+  "provenance": {
+    "sequence": {
+      "name": "sc635hai_16x_motion_color",
+      "group": "01",
+      "category": "raw_scene",
+      "sensor": "sc635hai",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/01_fist_company/sc635hai/16x_motion_color/3200x1800_RG_motion_color_16x.raw",
+      "width": 3200,
+      "height": 1800,
+      "frames": 200,
+      "bit_shift": 4,
+      "cfa": "RGGB",
+      "role": "auxiliary",
+      "wb_rgb": [
+        1.2,
+        1.0,
+        2.8
+      ],
+      "black_levels": null,
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/configs/a3_cross_sensor_extension_20261012.json"
+    },
+    "source_sha256": "da64b7a39af359bdd5aa3f16b6456458f620492e57230ac5fee4a57012b2896c",
+    "checkpoint_sha256": "97c4332f685f98959b243e4b100434469f714aed6329e100d22b6d8552592e0b",
+    "config_sha256": "dee8a5575ac8a166c9eb8ed682a7fffa5a08adaf458c467d364bf4e6fbdd518a",
+    "weights": "ema",
+    "clip_starts": [
+      0,
+      96,
+      192
+    ],
+    "temporal_frames": 8,
+    "black_levels_R_Gr_Gb_B": [
+      271.5,
+      283.5,
+      283.5,
+      272.0
+    ],
+    "normalization": "clip((DN-black)/(4095-black),0,1)",
+    "canonical_channel_order": [
+      "R",
+      "Gr",
+      "Gb",
+      "B"
+    ],
+    "tile": 64,
+    "stride": 56,
+    "tile_batch": 12
+  },
+  "prediction": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/01/raw_scene/sc635hai_16x_motion_color/inference/prediction.npy",
+  "prediction_shape": [
+    24,
+    4,
+    900,
+    1600
+  ],
+  "prediction_dtype": "float16 normalized native domain",
+  "prediction_sha256": "f71f5cf4909717986ec0be2ee6fd18b555f2a20defb2d202cea435e7e7887670"
+}

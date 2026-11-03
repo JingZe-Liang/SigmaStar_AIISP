@@ -1,0 +1,372 @@
+{
+  "protocol": "A14 minimal static multi-sensor supervision review",
+  "date": "2026-10-30",
+  "scope": "Read-only source/config/checkpoint review; no GPU execution or training performed by this reviewer.",
+  "current_user_authorization": "Train on usable static GT to prioritize static denoising. Preserve named previous holdouts unless separately authorized.",
+  "a3_fact_check": {
+    "checkpoint": "artifacts/finetune_mis20s1/training/checkpoint_step_005000.pth",
+    "checkpoint_inspected_with_cpu_torch_load": true,
+    "step": 5000,
+    "input_sensors": [
+      "MIS20S1"
+    ],
+    "real_input_gains": [
+      "128x",
+      "313x",
+      "632x",
+      "645x"
+    ],
+    "clean_target_source": "04/shdarkroom/10x; 200 frames, A1 multi-frame static reference",
+    "synthetic_noise_gain_labels": [
+      "100",
+      "200",
+      "400",
+      "800",
+      "1600",
+      "3200",
+      "6400",
+      "12800",
+      "25600"
+    ],
+    "synthetic_target_scene": "Same MIS20S1 A1 reference; noise variants do not add scene diversity.",
+    "real_fraction": 0.5,
+    "holdout_gain": "1000x",
+    "included_sc465sl_256x": false,
+    "included_sc635hai_131x": false,
+    "later_A8_A9_runs_are_separate_checkpoints": true,
+    "evidence": [
+      "artifacts/finetune_mis20s1/training/a3_config.json",
+      "src/raw_fusion/finetune/a3.py:77",
+      "src/raw_fusion/finetune/a3.py:108",
+      "src/raw_fusion/finetune/a3.py:143",
+      "configs/a9_multi_sensor_generalization_20261016.json"
+    ]
+  },
+  "recommended_training_sources": [
+    {
+      "name": "MIS20S1 original real and synthetic static supervision",
+      "target": "A1 10x clean reference",
+      "reuse": "A12SamplingDataset",
+      "real_fraction_within_source": 0.5,
+      "target_quality": "A1 qualified approximate static clean reference; A13 single-frame dynamic target rejection does not invalidate this mean.",
+      "proposed_weight": 0.3333333333333333
+    },
+    {
+      "name": "sc465sl_static_split_half",
+      "source": {
+        "name": "sc465sl_darkroom18_256x",
+        "sensor": "SC465SL",
+        "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/02_SC465SL_darkroom18/256x/raw_stream_sc465sl_2560x1440_AG109568_darkroom18_256x.raw",
+        "width": 2560,
+        "height": 1440,
+        "frames_used": 300,
+        "bit_shift": 0,
+        "cfa": "RGGB",
+        "nominal_black_dn": 252.0,
+        "reference_mode": "motion_aware_split_half",
+        "clip_starts": [
+          0,
+          72,
+          144,
+          216,
+          284
+        ],
+        "fixed_isp_wb": [
+          1.8,
+          1.0,
+          1.0,
+          1.6
+        ],
+        "fixed_isp_exposure": 2.5,
+        "panel_crops": {
+          "motion_center": [
+            900,
+            250,
+            1900,
+            1400
+          ],
+          "dark_left": [
+            120,
+            250,
+            1000,
+            1350
+          ],
+          "static_right": [
+            1800,
+            250,
+            2500,
+            1350
+          ]
+        }
+      },
+      "source_sha256_pinned_by_prior_manifest": "cec46afe5696c9e2bfc569670a0cc93814d4ad851677275fd4f77c274e6c35cd",
+      "reference_dir": "artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_256x/reference",
+      "reuse": "StaticSplitHalfDataset",
+      "input": "Eight frames of one parity at stride 2.",
+      "target": "Opposite-parity mean repeated across eight static frames.",
+      "acceptance": "Saved valid region AND opposite target confidence >= 0.9 AND all eight inputs static AND all inputs unsaturated; crop valid fraction >= 0.25.",
+      "proposed_weight": 0.3333333333333333
+    },
+    {
+      "name": "sc635hai_static_split_half",
+      "source": {
+        "name": "sc635hai_131x_low_cct",
+        "sensor": "sc635hai",
+        "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/01_fist_company/sc635hai/131x_low_cct/raw_stream_normal_3200x1800_16_RG_0205213025917_131x.raw",
+        "width": 3200,
+        "height": 1800,
+        "frames_used": 150,
+        "bit_shift": 4,
+        "cfa": "RGGB",
+        "nominal_black_dn": 257.5,
+        "reference_mode": "motion_aware_split_half",
+        "clip_starts": [
+          0,
+          66,
+          134
+        ],
+        "fixed_isp_wb": [
+          1.128,
+          1.0,
+          1.0,
+          3.604
+        ],
+        "fixed_isp_exposure": 0.65,
+        "panel_crops": {
+          "center_detail": [
+            600,
+            300,
+            2400,
+            1700
+          ],
+          "color_chart": [
+            850,
+            80,
+            2300,
+            850
+          ],
+          "right_subject": [
+            2100,
+            250,
+            3150,
+            1750
+          ]
+        }
+      },
+      "source_sha256_pinned_by_prior_manifest": "80445b9133f49dfa7f5117d93bcf9fd5a9dfae1de0e0faae69c9f4144dac440a",
+      "reference_dir": "artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_131x_low_cct/reference",
+      "reuse": "StaticSplitHalfDataset",
+      "input": "Eight frames of one parity at stride 2.",
+      "target": "Opposite-parity mean repeated across eight static frames.",
+      "acceptance": "Saved valid region AND opposite target confidence >= 0.9 AND all eight inputs static AND all inputs unsaturated; crop valid fraction >= 0.25.",
+      "proposed_weight": 0.3333333333333333
+    }
+  ],
+  "excluded_from_training": {
+    "preserved_prior_holdouts": [
+      "MIS20S1 shdarkroom 1000x",
+      "SC465SL darkroom18 2000x",
+      "sc635hai 16x motion color",
+      "sc450ai 1435x motion black object",
+      "sc450ai 804x frames 120-149"
+    ],
+    "unqualified_targets": [
+      "Motion temporal means",
+      "Old model predictions",
+      "ISP denoised or fused outputs",
+      "sc450ai 804x/1435x as clean GT without qualified static references"
+    ],
+    "meaning_of_all_usable": "All currently qualified training-side static source families; not a silent reclassification of named holdout sequences."
+  },
+  "reuse_assessment": {
+    "A8_StaticSplitHalfDataset": "Reusable lower-level dataset; uses source metadata, reference source-path/hash consistency, sensor black level, confidence and motion masks. Does not recompute raw SHA itself.",
+    "A9_UnifiedA9Dataset": "Useful composition precedent, but PhaseADataset uses finite old samples; A9Config also requires nonempty synthetic_sources and fixes input_output_heads. Prefer separate A14 wrapper.",
+    "A12SamplingDataset": "Reusable corrected MIS crop/window/noise refresh; min valid fraction still needs checking because inherited real sampling can produce sparse or empty masks.",
+    "sample_addressing": "Use deterministic global source schedule with independent per-source increasing sample indices. This preserves each source parity and MIS real/synthetic scheduling. Persist accepted child indices after any deterministic retries.",
+    "resume": "Start at next unconsumed global sample and reconstruct source-local counts; no cyclic reuse of a fixed small dataset unless explicitly intended."
+  },
+  "required_cpu_audit_before_gpu": [
+    "Resolve all raw/reference files and sensor adapters; verify dimensions, frame count, CFA, bit shift, black-level and normalization convention.",
+    "Pin checkpoint, source, reference, mask and config identities. Distinguish hashes actually recomputed from historical pinned hashes.",
+    "Enumerate every planned training index, not only a small preview; execute actual __getitem__ and record source, accepted child index, parity/frame indices when applicable.",
+    "Verify tensor shapes (8,4,64,64), masks (8,64,64), float32, finiteness and normalized range.",
+    "Require nonempty usable masks, preferably >= 0.25 for every sample; log per-source minimum, p5, median and retry/rejection counts.",
+    "Check both split-half input parities are represented; ensure target frame parity is disjoint from input parity.",
+    "Check MIS real/synthetic and per-gain coverage; confirm no heldout RAW filename is loaded by the training dataset.",
+    "Check crops/windows change across run sections and synthetic patch noise is independently regenerated; ensure a stateless index can be replayed exactly.",
+    "Inspect valid-mask neighborhoods for high-frequency losses: original A3 highpass term masks only its center while a 3x3 operator touches invalid neighbors. Prefer eroded valid masks for new high-frequency terms or exclude mask boundaries during evaluation."
+  ],
+  "evaluation_protocol": {
+    "baseline": "Same A3 step5000 parameters and same exact evaluator/input windows/masks/precision as A14; evaluate model and EMA separately.",
+    "primary_static_gain_holdouts": [
+      "MIS20S1 shdarkroom 1000x",
+      "SC465SL darkroom18 2000x"
+    ],
+    "development_static": [
+      "MIS20S1 training scenes",
+      "SC465SL 256x",
+      "sc635hai 131x"
+    ],
+    "sc635hai_warning": "Existing 131x frames and aggregate references participated in A8/A9 training. Fixed tails/crops are same-source development unless both A14 training input and target pools are rebuilt to exclude them; no independent unseen-scene claim.",
+    "cross_sensor_claim": "Training three sensors supports multi-sensor adaptation evidence, not zero-shot generalization to an unseen sensor.",
+    "motion_regression_only": [
+      "sc635hai 16x",
+      "sc450ai 1435x",
+      "existing synthetic-motion probe where available"
+    ],
+    "metrics": [
+      "Per-source masked native-DN PSNR/RMSE and channel bias",
+      "Reference-based gradient and highpass error on valid interior texture/edge regions",
+      "Flat-region residual standard deviation and temporal MAD",
+      "Secondary high-frequency amplitude ratio with reference error to avoid rewarding noise",
+      "Fixed-ISP side-by-side crops for text, fabric/edges, flat dark patches and halos"
+    ],
+    "selection": "Select using denoising plus preserved detail; a PSNR gain alone does not establish less blur. Report per-source outcomes, both live model and EMA, and any regression honestly.",
+    "limits": "Static references remain approximate and only a few scene families are available. Dynamic GT is not required to start this authorized static training."
+  },
+  "source_hash_verification": {
+    "artifact": "artifacts/a14_static_20261030/source_reference_hash_audit.json",
+    "method": "Independent full-file SHA256 via CPU hashlib",
+    "file_records": 29,
+    "unique_files": 25,
+    "all_pinned_hashes_match": true,
+    "raws": [
+      {
+        "name": "MIS20S1_10x_raw",
+        "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/shdarkroom/10x/raw_stream_1920x1080_16bit@RG_[Shutter=40000,SenserG=9500,IspG=1024,R=2113,G=1024,B=1789].raw",
+        "size_bytes": 829440000,
+        "sha256": "258ead1a456c0573047f2a555f3cafa87a7724ca1ab4fed075a5a967c8d4a368",
+        "expected_sha256": null,
+        "matches_expected": null
+      },
+      {
+        "name": "sc465sl_static_split_half_raw",
+        "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/02_SC465SL_darkroom18/256x/raw_stream_sc465sl_2560x1440_AG109568_darkroom18_256x.raw",
+        "size_bytes": 2211840000,
+        "sha256": "cec46afe5696c9e2bfc569670a0cc93814d4ad851677275fd4f77c274e6c35cd",
+        "expected_sha256": "cec46afe5696c9e2bfc569670a0cc93814d4ad851677275fd4f77c274e6c35cd",
+        "matches_expected": true
+      },
+      {
+        "name": "sc635hai_static_split_half_raw",
+        "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/01_fist_company/sc635hai/131x_low_cct/raw_stream_normal_3200x1800_16_RG_0205213025917_131x.raw",
+        "size_bytes": 1728000000,
+        "sha256": "80445b9133f49dfa7f5117d93bcf9fd5a9dfae1de0e0faae69c9f4144dac440a",
+        "expected_sha256": "80445b9133f49dfa7f5117d93bcf9fd5a9dfae1de0e0faae69c9f4144dac440a",
+        "matches_expected": true
+      }
+    ]
+  },
+  "available_static_target_eligibility": {
+    "eligible_training_source_families_count": 3,
+    "scope": "All existing qualified static-reference artifacts found recursively under this repository artifacts directory, cross-checked against A8/A9 configs and the A13 dataset inventory. This is not a claim that every unaudited raw region is ineligible forever.",
+    "items": [
+      {
+        "source": "MIS20S1 10x A1 reference, 200 frames",
+        "eligible": true,
+        "role": "Static clean target for MIS real128x/313x/632x/645x plus synthetic noise",
+        "reason": "Existing A1 quality-qualified reference with separately estimated FPN correction; only one physical scene."
+      },
+      {
+        "source": "SC465SL darkroom18 256x, 300 frames",
+        "eligible": true,
+        "role": "Opposite-parity static training target",
+        "reason": "Existing motion-aware split-half reference; previously authorized A9 training."
+      },
+      {
+        "source": "sc635hai 131x low CCT, 150 frames",
+        "eligible": true,
+        "role": "Opposite-parity static training target",
+        "reason": "Existing motion-aware split-half reference; later A8/A9 authorized use supersedes the initial frozen-only A8 gate."
+      },
+      {
+        "source": "MIS20S1 1000x",
+        "eligible": false,
+        "role": "Preserved real gain holdout",
+        "reason": "An available A1 cross-gain evaluation pair does not authorize consuming the preserved holdout."
+      },
+      {
+        "source": "SC465SL darkroom18 2000x, 300 frames",
+        "eligible": false,
+        "role": "Preserved static gain holdout",
+        "reason": "Qualified split-half reference exists but stream remains evaluation-only."
+      },
+      {
+        "source": "sc635hai 16x motion color",
+        "eligible": false,
+        "role": "Preserved dynamic diagnostic",
+        "reason": "No qualified static reference artifact or per-frame clean target; low gain label alone is insufficient."
+      },
+      {
+        "source": "sc450ai 1435x motion black object",
+        "eligible": false,
+        "role": "Preserved dynamic diagnostic",
+        "reason": "No qualified clean static target; motion average is invalid in moving regions."
+      },
+      {
+        "source": "sc450ai 804x light-changing",
+        "eligible": false,
+        "role": "Prior noise/adaptation development, tail frames120-149 preserved",
+        "reason": "Illumination varies and no qualified clean static target exists; noise calibration does not create GT."
+      },
+      {
+        "source": "MIS20S1 outdoor streams",
+        "eligible": false,
+        "role": "Existing stress/development diagnostics",
+        "reason": "No qualified same-time clean pairing or saved static-reference artifacts; cannot reuse darkroom GT for another scene."
+      },
+      {
+        "source": "03 group denoised/fused results",
+        "eligible": false,
+        "role": "Processed comparison outputs",
+        "reason": "Existing denoising/fusion may remove texture or leave artifacts; not independent clean sensor GT."
+      },
+      {
+        "source": "05 group SC465SL normal/difficultpattern processed streams",
+        "eligible": false,
+        "role": "Processed comparison/stress outputs",
+        "reason": "Prior manifests identify processed display streams, not independent clean RAW references."
+      },
+      {
+        "source": "18 calibration streams (dark/flat/color)",
+        "eligible": false,
+        "role": "Noise/FPN calibration",
+        "reason": "They contribute calibrated noise/FPN parameters to existing supervision; not additional natural-scene clean target families."
+      }
+    ],
+    "evidence": [
+      "configs/a8_sensor_training_data_20261013.json",
+      "configs/a8_sc635hai_adaptation_20261013.json",
+      "configs/a9_multi_sensor_generalization_20261016.json",
+      "docs/A13_DYNAMIC_DATA_READINESS_2026-10-30.md"
+    ]
+  },
+  "raw_split_half_limitations": [
+    "Disjoint parity prevents a training input frame from entering its own target average, but does not guarantee independence of sensor noise across frames.",
+    "Persistent FPN/PRNU/DSNU and slow drift can be shared between both parity averages; split-half differences can hide that shared error.",
+    "SC465SL/sc635hai native references are motion-aware means, without separately calibrated FPN correction in the current cross_sensor reference builder. MIS A1 does apply estimated FPN correction.",
+    "Residual target noise and reference blur can cap attainable texture fidelity. Use approximate static GT wording, and interpret gradient/highpass and flat residual metrics jointly.",
+    "Reported static gains cannot by themselves establish dynamic denoising or generalization to an unseen sensor."
+  ],
+  "proposed_run_review": {
+    "steps": 900,
+    "source_counts": {
+      "MIS20S1": 300,
+      "SC465SL_256x": 300,
+      "sc635hai_131x": 300
+    },
+    "scope": "full network",
+    "learning_rate": 1e-06,
+    "precision": "bfloat16 autocast with FP32 master parameters and optimizer state",
+    "ema_decay": 0.99,
+    "min_valid_fraction": 0.25,
+    "assessment": "Reasonable bounded first static adaptation from A3; LR and finite budget limit drift, and shorter EMA memory allows meaningful comparison within 900 updates. Success remains empirical.",
+    "checks": [
+      "Keep loss accumulation in FP32, verify finite forward/loss/gradients, and retain model plus EMA separately.",
+      "Preserve per-source local indexing, MIS real/synthetic share, both split-half parities, and deterministic accepted sample addresses.",
+      "Evaluate A3, live and EMA with identical fixed precision and frozen clips/masks.",
+      "For proposed 72 clips across four sources, label MIS1000/SC2000 as gain holdouts and SC256/sc635131 as same-source development; overlapping clips are not independent scenes.",
+      "OOM means stop and report, not automatic fallback or silent batch/precision changes."
+    ]
+  }
+}

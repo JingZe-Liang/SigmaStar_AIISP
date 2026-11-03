@@ -1,0 +1,120 @@
+{
+  "sequence": {
+    "name": "sc450ai_804x_lightchanging",
+    "group": "01",
+    "category": "raw_scene",
+    "sensor": "sc450ai",
+    "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/01_fist_company/sc450ai/804x_lightchanging/lightchanging_804x.raw",
+    "width": 2688,
+    "height": 1520,
+    "frames": 150,
+    "bit_shift": 0,
+    "cfa": "RGGB",
+    "role": "auxiliary",
+    "wb_rgb": [
+      1.445,
+      1.0,
+      2.437
+    ],
+    "black_levels": null,
+    "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/configs/a3_cross_sensor_extension_20261012.json"
+  },
+  "frames": 24,
+  "source_frame_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    142,
+    143,
+    144,
+    145,
+    146,
+    147,
+    148,
+    149
+  ],
+  "fps": 6,
+  "encoder": "libx265",
+  "pixel_format": "yuv444p",
+  "video": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/01/raw_scene/sc450ai_804x_lightchanging/traditional_isp_video/sc450ai_804x_lightchanging_input_vs_a3_traditional_isp.mp4",
+  "video_sha256": "89412ec3eb80fc36b765867320cb198fcb0414d9796ee0e68af504ff7c934bab",
+  "preview": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/01/raw_scene/sc450ai_804x_lightchanging/traditional_isp_video/sc450ai_804x_lightchanging_frame0000.png",
+  "preview_sha256": "70dcd2f54092c2ed56733b7a0d74cdd2d4ce2cba42db9c05d911bd7bcead8280",
+  "layout": "Input left, A3 EMA right; overview above, fixed center crop below",
+  "isp": {
+    "implementation": "ISP_traditional OpenCV edge-aware Bayer demosaic plus fixed exposure and sRGB gamma",
+    "camera_color_mode": "uncalibrated_camera_rgb",
+    "sensor_color_matrix_available": false,
+    "false_color_suppression": false,
+    "highlight_recovery": true,
+    "tone_map": "reinhard",
+    "exposure_selection": "per-sequence input-only 99.5th percentile targets 0.8 after Reinhard, then freezes EV for Input and A3",
+    "exposure_target_after_tone_map_linear": 0.8,
+    "exposure_ev_limits": [
+      -6.0,
+      8.0
+    ],
+    "output_layout": "Input left, A3 EMA right; overview above, fixed center crop below",
+    "module_root": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/ISP_traditional",
+    "black_levels_R_Gr_Gb_B": [
+      256.0,
+      257.5,
+      257.5,
+      255.25
+    ],
+    "wb_rgb": [
+      1.445,
+      1.0,
+      2.437
+    ],
+    "fixed_exposure_ev": 5.675005619591749,
+    "input_and_a3_share_identical_parameters": true,
+    "canonical_channel_order": [
+      "R",
+      "Gr",
+      "Gb",
+      "B"
+    ],
+    "sensor_color_accuracy_claimed": false
+  },
+  "ffmpeg_command": [
+    "ffmpeg",
+    "-y",
+    "-f",
+    "rawvideo",
+    "-pix_fmt",
+    "rgb24",
+    "-s",
+    "1920x1080",
+    "-r",
+    "6",
+    "-i",
+    "-",
+    "-c:v",
+    "libx265",
+    "-x265-params",
+    "crf=16",
+    "-pix_fmt",
+    "yuv444p",
+    "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/01/raw_scene/sc450ai_804x_lightchanging/traditional_isp_video/sc450ai_804x_lightchanging_input_vs_a3_traditional_isp.mp4"
+  ],
+  "limitations": [
+    "No clean target is shown; this is a visual Input-versus-A3 comparison.",
+    "Sensor ColorMatrix data is absent, so camera RGB color is not calibrated.",
+    "Video compression and resize can conceal fine-grained noise differences.",
+    "Exposure is frozen within each sequence but is not comparable across sequences."
+  ]
+}

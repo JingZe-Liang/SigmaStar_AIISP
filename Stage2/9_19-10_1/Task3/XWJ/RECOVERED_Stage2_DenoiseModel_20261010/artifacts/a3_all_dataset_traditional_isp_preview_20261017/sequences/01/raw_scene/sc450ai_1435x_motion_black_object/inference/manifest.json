@@ -1,0 +1,59 @@
+{
+  "provenance": {
+    "sequence": {
+      "name": "sc450ai_1435x_motion_black_object",
+      "group": "01",
+      "category": "raw_scene",
+      "sensor": "sc450ai",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/01_fist_company/sc450ai/1435x_motion_black_object/raw_stream_2688x1520_16bit@RG[Shutter=83328,SenserG=61440,IspG=24493,R=1620,G=1024,B=2409][bl_R=4128_Gr=4128_Gb=4128_B=4128].raw",
+      "width": 2688,
+      "height": 1520,
+      "frames": 210,
+      "bit_shift": 0,
+      "cfa": "RGGB",
+      "role": "auxiliary",
+      "wb_rgb": [
+        1.582,
+        1.0,
+        2.352
+      ],
+      "black_levels": null,
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/configs/a3_cross_sensor_extension_20261012.json"
+    },
+    "source_sha256": "7896fd9346aa8f82b67d7d2a3a02b4929d9ff58e6da952b4ff7aaf3a7e0acba0",
+    "checkpoint_sha256": "97c4332f685f98959b243e4b100434469f714aed6329e100d22b6d8552592e0b",
+    "config_sha256": "dee8a5575ac8a166c9eb8ed682a7fffa5a08adaf458c467d364bf4e6fbdd518a",
+    "weights": "ema",
+    "clip_starts": [
+      0,
+      101,
+      202
+    ],
+    "temporal_frames": 8,
+    "black_levels_R_Gr_Gb_B": [
+      257.0,
+      258.0,
+      257.75,
+      256.0
+    ],
+    "normalization": "clip((DN-black)/(4095-black),0,1)",
+    "canonical_channel_order": [
+      "R",
+      "Gr",
+      "Gb",
+      "B"
+    ],
+    "tile": 64,
+    "stride": 56,
+    "tile_batch": 12
+  },
+  "prediction": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/01/raw_scene/sc450ai_1435x_motion_black_object/inference/prediction.npy",
+  "prediction_shape": [
+    24,
+    4,
+    760,
+    1344
+  ],
+  "prediction_dtype": "float16 normalized native domain",
+  "prediction_sha256": "15ed5a813471e4458c571f06b16d38967689b3819edcf7b6f5d2977803ead057"
+}

@@ -1,0 +1,64 @@
+{
+  "provenance": {
+    "sequence": {
+      "name": "04_mis20s1_calibrationdata_12800_color",
+      "group": "04",
+      "category": "calibration",
+      "sensor": "MIS20S1",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/mis20s1_calibrationdata/color/12800/raw_stream_normal_1920x1080_16_GR_0205174434739_[FN=10,US=623,AG=131072,DG=1071,BV=-23609,R=2420,G=1024,B=1908].raw",
+      "width": 1920,
+      "height": 1080,
+      "frames": 50,
+      "bit_shift": 4,
+      "cfa": "GRBG",
+      "role": "calibration_flat",
+      "wb_rgb": [
+        2.36328125,
+        1.0,
+        1.86328125
+      ],
+      "black_levels": [
+        298.0,
+        346.625,
+        345.75,
+        308.75
+      ],
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/stream_manifests/04_mis20s1_calibrationdata_12800_color.json"
+    },
+    "source_sha256": "79e1e423f02b2eb0448cb128b48ff140b9b6b05bbea9b771cb3d8d677077e018",
+    "checkpoint_sha256": "97c4332f685f98959b243e4b100434469f714aed6329e100d22b6d8552592e0b",
+    "config_sha256": "dee8a5575ac8a166c9eb8ed682a7fffa5a08adaf458c467d364bf4e6fbdd518a",
+    "weights": "ema",
+    "clip_starts": [
+      0,
+      21,
+      42
+    ],
+    "temporal_frames": 8,
+    "black_levels_R_Gr_Gb_B": [
+      298.0,
+      346.625,
+      345.75,
+      308.75
+    ],
+    "normalization": "clip((DN-black)/(4095-black),0,1)",
+    "canonical_channel_order": [
+      "R",
+      "Gr",
+      "Gb",
+      "B"
+    ],
+    "tile": 64,
+    "stride": 56,
+    "tile_batch": 12
+  },
+  "prediction": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/calibration/04_mis20s1_calibrationdata_12800_color/inference/prediction.npy",
+  "prediction_shape": [
+    24,
+    4,
+    540,
+    960
+  ],
+  "prediction_dtype": "float16 normalized native domain",
+  "prediction_sha256": "e79ac8db40f3d15c1f2e40bb7b656e6c91d155765ffc0c88f296a7f71315f607"
+}
