@@ -1,0 +1,62 @@
+{
+  "roots": [
+    {
+      "root": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_zero_shot_20261012",
+      "protocol_sha256": "e84d3cac26acb90637b95a0d5ebb2e7bd07320180dd04a5c18ebc891d1e88bfd",
+      "checkpoint_sha256": "97c4332f685f98959b243e4b100434469f714aed6329e100d22b6d8552592e0b",
+      "require_complete": false,
+      "verify_sources": false,
+      "sequences": {
+        "sc465sl_darkroom18_256x": {
+          "source_sha256": "cec46afe5696c9e2bfc569670a0cc93814d4ad851677275fd4f77c274e6c35cd",
+          "data_report": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_256x/reference/report.json",
+          "complete": false
+        },
+        "sc465sl_darkroom18_2000x": {
+          "source_sha256": "8df12bc10c7b2191791d1d7f4a9715167a6b6c1a6a1805554ef27b2b05aef7b0",
+          "data_report": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_zero_shot_20261012/sequences/SC465SL/sc465sl_darkroom18_2000x/reference/report.json",
+          "complete": false
+        }
+      }
+    },
+    {
+      "root": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012",
+      "protocol_sha256": "996ba97dba96e0021b697733f947b170f93d1f276888031bb5b6cf6bc9aa88aa",
+      "checkpoint_sha256": "97c4332f685f98959b243e4b100434469f714aed6329e100d22b6d8552592e0b",
+      "require_complete": false,
+      "verify_sources": false,
+      "sequences": {
+        "sc635hai_131x_low_cct": {
+          "source_sha256": "80445b9133f49dfa7f5117d93bcf9fd5a9dfae1de0e0faae69c9f4144dac440a",
+          "data_report": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_131x_low_cct/reference/report.json",
+          "complete": false
+        },
+        "sc635hai_16x_motion_color": {
+          "source_sha256": "da64b7a39af359bdd5aa3f16b6456458f620492e57230ac5fee4a57012b2896c",
+          "data_report": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_16x_motion_color/profile/report.json",
+          "complete": false
+        },
+        "sc450ai_1435x_motion_black_object": {
+          "source_sha256": "7896fd9346aa8f82b67d7d2a3a02b4929d9ff58e6da952b4ff7aaf3a7e0acba0",
+          "data_report": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc450ai/sc450ai_1435x_motion_black_object/profile/report.json",
+          "complete": false
+        },
+        "sc450ai_804x_lightchanging": {
+          "source_sha256": "8e74a2b96de1943a0180eba82650613d98c0398d0e984c3d0ac4c6b1e12359fe",
+          "data_report": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc450ai/sc450ai_804x_lightchanging/profile/report.json",
+          "complete": false
+        },
+        "sc465sl_difficultpattern_4717": {
+          "source_sha256": "b9a4b244e049af9b167ec4e67dc83c951b271d3f9ae077ed74944e9cb98a09d6",
+          "data_report": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/SC465SL/sc465sl_difficultpattern_4717/profile/report.json",
+          "complete": false
+        },
+        "sc465sl_difficultpattern_8880": {
+          "source_sha256": "5551672d7d9c5c12b437b7211515b03fe9249531add833242ed520a945c04f41",
+          "data_report": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/SC465SL/sc465sl_difficultpattern_8880/profile/report.json",
+          "complete": false
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "provenance": {
+    "protocol_sha256": "996ba97dba96e0021b697733f947b170f93d1f276888031bb5b6cf6bc9aa88aa",
+    "source_path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/01_fist_company/sc635hai/16x_motion_color/3200x1800_RG_motion_color_16x.raw",
+    "source_size_bytes": 2304000000,
+    "source_sha256": "da64b7a39af359bdd5aa3f16b6456458f620492e57230ac5fee4a57012b2896c",
+    "width": 3200,
+    "height": 1800,
+    "frames_used": 200,
+    "bit_shift": 4,
+    "cfa": "RGGB",
+    "checkpoint_sha256": "97c4332f685f98959b243e4b100434469f714aed6329e100d22b6d8552592e0b",
+    "weights": "ema",
+    "tile_batch": 2
+  },
+  "directions": {
+    "stress": {
+      "clips": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        [
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103
+        ],
+        [
+          192,
+          193,
+          194,
+          195,
+          196,
+          197,
+          198,
+          199
+        ]
+      ],
+      "prediction_shape": [
+        24,
+        4,
+        900,
+        1600
+      ],
+      "prediction_dtype": "float16",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_16x_motion_color/inference/prediction_stress.npy",
+      "sha256": "63880922e301dda6b54a7df82fae69aa5ffaf547cf647b7704a3b431af2948c1"
+    }
+  }
+}

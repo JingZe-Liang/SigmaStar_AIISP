@@ -1,0 +1,40 @@
+{
+  "sequence": {
+    "name": "sc465sl_normal_19598",
+    "group": "05",
+    "category": "raw_scene",
+    "sensor": "SC465SL",
+    "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/05_2DNR3DNR/465_sh_normal/shutter_83315/sensorG__ispG_19598_WB_2003_1024_1964/raw_stream_2560x1440_16bit@RG_[Shutter=83315,SenserG=109572,IspG=19598,R=2003,G=1024,B=1964].raw",
+    "width": 2560,
+    "height": 1440,
+    "frames": 200,
+    "bit_shift": 4,
+    "cfa": "RGGB",
+    "role": "auxiliary",
+    "wb_rgb": [
+      1.9560546875,
+      1.0,
+      1.91796875
+    ],
+    "black_levels": null,
+    "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/configs/a8_sensor_training_data_20261013.json"
+  },
+  "source_sha256": "9dac63a49883a5975cb2c0a9cd658701a2620ae1eb81487ab8e24cd9d4de2687",
+  "clip_starts": [
+    0,
+    96,
+    192
+  ],
+  "black_levels_R_Gr_Gb_B": [
+    250.9375,
+    252.25,
+    252.1875,
+    250.625
+  ],
+  "black_level_source": "deterministic 16-frame project pedestal measurement",
+  "fixed_exposure_ev": 6.6402792555669805,
+  "input_normalized_p995_after_wb": 0.04009929671883583,
+  "exposure_target_before_tone_map_linear": 4.000000000000001,
+  "exposure_target_after_tone_map_linear": 0.8,
+  "dataset_read_only": true
+}

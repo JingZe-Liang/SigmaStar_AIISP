@@ -1,0 +1,82 @@
+{
+  "fixed_isp": {
+    "black_levels": {
+      "R": 271.5,
+      "Gr": 283.5,
+      "Gb": 283.5,
+      "B": 272.0
+    },
+    "white_level_dn": 4095.0,
+    "wb_packed_R_Gr_Gb_B": [
+      1.2,
+      1.0,
+      1.0,
+      2.8
+    ],
+    "exposure": 0.65,
+    "transfer": "linear Bayer demosaic then IEC-like sRGB transfer"
+  },
+  "clean_target_available": false,
+  "columns": [
+    "Input t",
+    "A3 t",
+    "A3 t+1"
+  ],
+  "panels": {
+    "stress_overview": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_16x_motion_color/panels/stress_overview.png",
+      "shape": [
+        1065,
+        1680,
+        3
+      ],
+      "sha256": "f39e0e86c72d29149bac6074aa1eb36a137669a17ac4d6e2f33b4ce441a36660",
+      "crop_sensor_xyxy": null
+    },
+    "stress_left_motion": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_16x_motion_color/panels/stress_left_motion.png",
+      "shape": [
+        2040,
+        1680,
+        3
+      ],
+      "sha256": "9430b22bb193fa3f587c05a548360db05e5b4ccc6e9610648b86932c3560092f",
+      "crop_sensor_xyxy": [
+        0,
+        200,
+        1400,
+        1800
+      ]
+    },
+    "stress_center_detail": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_16x_motion_color/panels/stress_center_detail.png",
+      "shape": [
+        1695,
+        1680,
+        3
+      ],
+      "sha256": "a243a898c2d99761005d2d1e5770536453c690912adf80e4a1c919ac8f0fa9e4",
+      "crop_sensor_xyxy": [
+        800,
+        250,
+        2400,
+        1750
+      ]
+    },
+    "stress_right_motion": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_16x_motion_color/panels/stress_right_motion.png",
+      "shape": [
+        2040,
+        1680,
+        3
+      ],
+      "sha256": "0f9824f011e0c3184ac0176d83ebfaed75e197bfc087c0691bd8ffeed8368cfe",
+      "crop_sensor_xyxy": [
+        1800,
+        200,
+        3200,
+        1800
+      ]
+    }
+  }
+}

@@ -1,0 +1,855 @@
+{
+  "protocol_sha256": "996ba97dba96e0021b697733f947b170f93d1f276888031bb5b6cf6bc9aa88aa",
+  "sequences": {
+    "sc635hai_131x_low_cct": {
+      "source_manifest": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_131x_low_cct/source_manifest.json",
+      "data_report": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_131x_low_cct/reference/report.json",
+      "data_profile": {
+        "frames_used": 150,
+        "packed_shape": [
+          4,
+          900,
+          1600
+        ],
+        "black_levels": {
+          "R": 261.75,
+          "Gr": 263.0,
+          "Gb": 263.5,
+          "B": 254.75
+        },
+        "saturation_fraction": 0.0,
+        "frame_drift": {
+          "frame_mean_cv": 0.0008097596220022413,
+          "frame_mean_max_dev": 0.0025635613271043417
+        },
+        "motion_fraction_mean": 0.06239486574074075,
+        "motion_fraction_max": 0.06295069444444444,
+        "motion_threshold_dn_min": 79.44129785766602,
+        "motion_threshold_dn_max": 79.88661964111327,
+        "valid_fraction": 0.7767527777777777,
+        "confidence_threshold": 0.9,
+        "split_half_reference_difference": {
+          "R": {
+            "rmse_dn": 8.706146240234375,
+            "median_abs_dn": 5.069061279296875
+          },
+          "Gr": {
+            "rmse_dn": 8.782342910766602,
+            "median_abs_dn": 5.17333984375
+          },
+          "Gb": {
+            "rmse_dn": 8.837313652038574,
+            "median_abs_dn": 5.2172393798828125
+          },
+          "B": {
+            "rmse_dn": 6.3468146324157715,
+            "median_abs_dn": 3.839996337890625
+          }
+        },
+        "protocol": "cross-sensor motion-aware native reference",
+        "provenance": {
+          "protocol_sha256": "996ba97dba96e0021b697733f947b170f93d1f276888031bb5b6cf6bc9aa88aa",
+          "source_path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/01_fist_company/sc635hai/131x_low_cct/raw_stream_normal_3200x1800_16_RG_0205213025917_131x.raw",
+          "source_size_bytes": 1728000000,
+          "source_sha256": "80445b9133f49dfa7f5117d93bcf9fd5a9dfae1de0e0faae69c9f4144dac440a",
+          "width": 3200,
+          "height": 1800,
+          "frames_used": 150,
+          "bit_shift": 4,
+          "cfa": "RGGB"
+        },
+        "outputs": {
+          "mean": {
+            "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_131x_low_cct/reference/full_mean_dn.npy",
+            "shape": [
+              4,
+              900,
+              1600
+            ],
+            "dtype": "float32",
+            "sha256": "70c3c9f376eafcbe7db0c944a81d7a5650e17cfa66c9389e5cc70dc43a2f9763"
+          },
+          "even_mean": {
+            "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_131x_low_cct/reference/even_mean_dn.npy",
+            "shape": [
+              4,
+              900,
+              1600
+            ],
+            "dtype": "float32",
+            "sha256": "08e7d8d9067f1c4558439fb2282f0e13468086f0d9579ad166654e11f3b7551e"
+          },
+          "odd_mean": {
+            "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_131x_low_cct/reference/odd_mean_dn.npy",
+            "shape": [
+              4,
+              900,
+              1600
+            ],
+            "dtype": "float32",
+            "sha256": "f7d2212af0ae8f77736995084ece45c3b18a183d4d51fa301e24ab5ef75163c9"
+          },
+          "confidence": {
+            "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_131x_low_cct/reference/confidence.npy",
+            "shape": [
+              900,
+              1600
+            ],
+            "dtype": "float32",
+            "sha256": "7a9d9c85d95c6cb81ea3b8c83d208f970048fbe3f6a76bc24808cb98606f6a3c"
+          },
+          "even_confidence": {
+            "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_131x_low_cct/reference/even_confidence.npy",
+            "shape": [
+              900,
+              1600
+            ],
+            "dtype": "float32",
+            "sha256": "fa3e7229b712639d487cba194ba1e78fb4b14b181467c5c3f75f65bd6c4f5855"
+          },
+          "odd_confidence": {
+            "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_131x_low_cct/reference/odd_confidence.npy",
+            "shape": [
+              900,
+              1600
+            ],
+            "dtype": "float32",
+            "sha256": "8a3f601d54a6c3073a65a0fa466edbbdbf865e5ecabfd2aebeaaecd89e7c51e0"
+          },
+          "valid_region": {
+            "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_131x_low_cct/reference/valid_region.npy",
+            "shape": [
+              900,
+              1600
+            ],
+            "dtype": "bool",
+            "sha256": "fa1877d6c6168bc8745c00484a82684ca9d3c3e1762ea9958478e406ed14f3b4"
+          },
+          "frame_means": {
+            "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_131x_low_cct/reference/frame_means.npy",
+            "shape": [
+              150
+            ],
+            "dtype": "float64",
+            "sha256": "40e93db39be6e2fe6fcab85d4098c9b3595cc0e1dc45b628337a4d735a16f909"
+          },
+          "motion_fraction": {
+            "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_131x_low_cct/reference/motion_fraction_per_frame.npy",
+            "shape": [
+              150
+            ],
+            "dtype": "float64",
+            "sha256": "d013cfda58c1be69d3b36afc1ec0161bce104c66acbab5889ba44b5639d20220"
+          },
+          "motion_threshold": {
+            "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_131x_low_cct/reference/motion_threshold_per_frame.npy",
+            "shape": [
+              150
+            ],
+            "dtype": "float64",
+            "sha256": "2a0ee9399af9af994653144712aa51dc2f9761b07cc2bbf744ab0f4ec4c0d259"
+          }
+        }
+      },
+      "metrics": {
+        "protocol": "mutually exclusive native split-half zero-shot evaluation",
+        "even_input_vs_odd_reference": {
+          "input_parity": "even",
+          "target": "odd_reference",
+          "clips": [
+            [
+              0,
+              2,
+              4,
+              6,
+              8,
+              10,
+              12,
+              14
+            ],
+            [
+              66,
+              68,
+              70,
+              72,
+              74,
+              76,
+              78,
+              80
+            ],
+            [
+              134,
+              136,
+              138,
+              140,
+              142,
+              144,
+              146,
+              148
+            ]
+          ],
+          "evaluated_frames": 24,
+          "input": {
+            "rmse_dn": 47.35945009113054,
+            "psnr_db": 38.7369451022658
+          },
+          "a3": {
+            "rmse_dn": 9.908768014854429,
+            "psnr_db": 52.32468490631187
+          },
+          "a3_psnr_gain_db": 13.587739804046073,
+          "static_values": 105808720,
+          "usable_spatial_fraction": 0.7653987268518518,
+          "detected_motion_fraction": 0.06792942708333333,
+          "motion_threshold_dn_min": 75.81352723693848,
+          "motion_threshold_dn_max": 76.28424279174806,
+          "input_temporal_mad_dn": 47.480551015164416,
+          "a3_temporal_mad_dn": 2.164659636265725,
+          "a3_output_bias_dn": -0.8818692109724998,
+          "legal_raw_fraction": 1.0,
+          "normalized_clip_fraction": 0.007430447048611111,
+          "input_high_frequency_ratio": 2.1081337694730546,
+          "a3_high_frequency_ratio": 0.919451450338402,
+          "a3_flat_residual_sigma_dn": 7.4728249046103485,
+          "detail_values": 22647772,
+          "flat_values": 23200768
+        },
+        "odd_input_vs_even_reference": {
+          "input_parity": "odd",
+          "target": "even_reference",
+          "clips": [
+            [
+              1,
+              3,
+              5,
+              7,
+              9,
+              11,
+              13,
+              15
+            ],
+            [
+              67,
+              69,
+              71,
+              73,
+              75,
+              77,
+              79,
+              81
+            ],
+            [
+              135,
+              137,
+              139,
+              141,
+              143,
+              145,
+              147,
+              149
+            ]
+          ],
+          "evaluated_frames": 24,
+          "input": {
+            "rmse_dn": 47.362314042963604,
+            "psnr_db": 38.736419859312704
+          },
+          "a3": {
+            "rmse_dn": 9.909721217848494,
+            "psnr_db": 52.32384938187625
+          },
+          "a3_psnr_gain_db": 13.587429522563546,
+          "static_values": 105809604,
+          "usable_spatial_fraction": 0.7654051215277777,
+          "detected_motion_fraction": 0.06797392939814814,
+          "motion_threshold_dn_min": 75.83678437194824,
+          "motion_threshold_dn_max": 76.18484721984863,
+          "input_temporal_mad_dn": 47.48143076866553,
+          "a3_temporal_mad_dn": 2.1627896780339553,
+          "a3_output_bias_dn": -0.8367750334669304,
+          "legal_raw_fraction": 1.0,
+          "normalized_clip_fraction": 0.0072486834490740745,
+          "input_high_frequency_ratio": 2.1091340206971494,
+          "a3_high_frequency_ratio": 0.9206183094245731,
+          "a3_flat_residual_sigma_dn": 7.481471678484224,
+          "detail_values": 22651288,
+          "flat_values": 23201244
+        },
+        "summary": {
+          "minimum_a3_psnr_gain_db": 13.587429522563546,
+          "mean_a3_psnr_gain_db": 13.58758466330481,
+          "maximum_a3_output_bias_abs_dn": 0.8818692109724998,
+          "minimum_legal_raw_fraction": 1.0,
+          "maximum_normalized_clip_fraction": 0.007430447048611111,
+          "a3_temporal_mad_ratio_mean": 0.04557033510364002,
+          "a3_high_frequency_ratio_range": [
+            0.919451450338402,
+            0.9206183094245731
+          ]
+        },
+        "panel_manifest": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_131x_low_cct/panels/panel_manifest.json",
+        "panel_count": 8
+      }
+    },
+    "sc635hai_16x_motion_color": {
+      "source_manifest": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_16x_motion_color/source_manifest.json",
+      "data_report": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_16x_motion_color/profile/report.json",
+      "data_profile": {
+        "frames_used": 200,
+        "packed_shape": [
+          4,
+          900,
+          1600
+        ],
+        "black_levels": {
+          "R": 271.5,
+          "Gr": 283.5,
+          "Gb": 283.5,
+          "B": 272.0
+        },
+        "saturation_fraction": 0.0,
+        "frame_drift": {
+          "frame_mean_cv": 0.0677528071959632,
+          "frame_mean_max_dev": 0.1577802752758957
+        },
+        "temporal_mean_semantics": "display/statistics only; never a clean target",
+        "protocol": "cross-sensor no-reference stress profile",
+        "provenance": {
+          "protocol_sha256": "996ba97dba96e0021b697733f947b170f93d1f276888031bb5b6cf6bc9aa88aa",
+          "source_path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/01_fist_company/sc635hai/16x_motion_color/3200x1800_RG_motion_color_16x.raw",
+          "source_size_bytes": 2304000000,
+          "source_sha256": "da64b7a39af359bdd5aa3f16b6456458f620492e57230ac5fee4a57012b2896c",
+          "width": 3200,
+          "height": 1800,
+          "frames_used": 200,
+          "bit_shift": 4,
+          "cfa": "RGGB"
+        },
+        "outputs": {
+          "temporal_mean": {
+            "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_16x_motion_color/profile/temporal_mean_display_only_dn.npy",
+            "shape": [
+              4,
+              900,
+              1600
+            ],
+            "dtype": "float32",
+            "sha256": "f982e81f1db8a506ad9ee981a89f0dc60887510453d4b4dc7c201da0add1890c"
+          },
+          "frame_means": {
+            "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_16x_motion_color/profile/frame_means.npy",
+            "shape": [
+              200
+            ],
+            "dtype": "float64",
+            "sha256": "4e7c691630a21fa96227465661eb58076af974e1e0351224fe2331a151ecd45c"
+          }
+        }
+      },
+      "metrics": {
+        "protocol": "diagnostic-only no-reference stress evaluation",
+        "clean_target_available": false,
+        "clips": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          [
+            96,
+            97,
+            98,
+            99,
+            100,
+            101,
+            102,
+            103
+          ],
+          [
+            192,
+            193,
+            194,
+            195,
+            196,
+            197,
+            198,
+            199
+          ]
+        ],
+        "evaluated_frames": 24,
+        "mean_output_bias_dn": -2.369127557363775,
+        "mean_abs_output_change_dn": 29.71001603524685,
+        "input_temporal_mad_dn": 51.63571957258598,
+        "a3_temporal_mad_dn": 14.674536679034762,
+        "temporal_mad_ratio": 0.28419351566131074,
+        "motion_temporal_ratio": 0.5996022168842369,
+        "static_temporal_ratio": 0.10132929645712353,
+        "spatial_high_frequency_ratio": 0.7636050739952669,
+        "legal_raw_fraction": 1.0,
+        "normalized_clip_fraction": 0.02199410445601852,
+        "diagnostic_populations": {
+          "temporal_values": 120960000,
+          "motion_values": 12225976,
+          "static_values": 61624420,
+          "detail_values": 34562340
+        },
+        "interpretation": "Ratios are diagnostics only; none is a clean-target quality score or pass gate.",
+        "panel_manifest": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_16x_motion_color/panels/panel_manifest.json",
+        "panel_count": 4
+      }
+    },
+    "sc450ai_1435x_motion_black_object": {
+      "source_manifest": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc450ai/sc450ai_1435x_motion_black_object/source_manifest.json",
+      "data_report": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc450ai/sc450ai_1435x_motion_black_object/profile/report.json",
+      "data_profile": {
+        "frames_used": 210,
+        "packed_shape": [
+          4,
+          760,
+          1344
+        ],
+        "black_levels": {
+          "R": 257.0,
+          "Gr": 258.0,
+          "Gb": 257.75,
+          "B": 256.0
+        },
+        "saturation_fraction": 0.0,
+        "frame_drift": {
+          "frame_mean_cv": 0.004068607938688848,
+          "frame_mean_max_dev": 0.007073929409543794
+        },
+        "temporal_mean_semantics": "display/statistics only; never a clean target",
+        "protocol": "cross-sensor no-reference stress profile",
+        "provenance": {
+          "protocol_sha256": "996ba97dba96e0021b697733f947b170f93d1f276888031bb5b6cf6bc9aa88aa",
+          "source_path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/01_fist_company/sc450ai/1435x_motion_black_object/raw_stream_2688x1520_16bit@RG[Shutter=83328,SenserG=61440,IspG=24493,R=1620,G=1024,B=2409][bl_R=4128_Gr=4128_Gb=4128_B=4128].raw",
+          "source_size_bytes": 1716019200,
+          "source_sha256": "7896fd9346aa8f82b67d7d2a3a02b4929d9ff58e6da952b4ff7aaf3a7e0acba0",
+          "width": 2688,
+          "height": 1520,
+          "frames_used": 210,
+          "bit_shift": 0,
+          "cfa": "RGGB"
+        },
+        "outputs": {
+          "temporal_mean": {
+            "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc450ai/sc450ai_1435x_motion_black_object/profile/temporal_mean_display_only_dn.npy",
+            "shape": [
+              4,
+              760,
+              1344
+            ],
+            "dtype": "float32",
+            "sha256": "06791c550a6b1dfa64b48f1048cb08e9080fef95b4ee1193f8ee53a9d85c82c3"
+          },
+          "frame_means": {
+            "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc450ai/sc450ai_1435x_motion_black_object/profile/frame_means.npy",
+            "shape": [
+              210
+            ],
+            "dtype": "float64",
+            "sha256": "a987f4687ccd6282c9b246bc55272eae2dff004c6d145390c192010a460ac416"
+          }
+        }
+      },
+      "metrics": {
+        "protocol": "diagnostic-only no-reference stress evaluation",
+        "clean_target_available": false,
+        "clips": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          [
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108
+          ],
+          [
+            202,
+            203,
+            204,
+            205,
+            206,
+            207,
+            208,
+            209
+          ]
+        ],
+        "evaluated_frames": 24,
+        "mean_output_bias_dn": -4.828743760163274,
+        "mean_abs_output_change_dn": 15.367343794533932,
+        "input_temporal_mad_dn": 21.295393239189863,
+        "a3_temporal_mad_dn": 1.3466082925887706,
+        "temporal_mad_ratio": 0.06323472299683155,
+        "motion_temporal_ratio": 0.056887085770443505,
+        "static_temporal_ratio": 0.08790800929873575,
+        "spatial_high_frequency_ratio": 0.12662123831402974,
+        "legal_raw_fraction": 1.0,
+        "normalized_clip_fraction": 0.03279834514672097,
+        "diagnostic_populations": {
+          "temporal_values": 85800960,
+          "motion_values": 8754792,
+          "static_values": 43477444,
+          "detail_values": 24516316
+        },
+        "interpretation": "Ratios are diagnostics only; none is a clean-target quality score or pass gate.",
+        "panel_manifest": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc450ai/sc450ai_1435x_motion_black_object/panels/panel_manifest.json",
+        "panel_count": 4
+      }
+    },
+    "sc450ai_804x_lightchanging": {
+      "source_manifest": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc450ai/sc450ai_804x_lightchanging/source_manifest.json",
+      "data_report": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc450ai/sc450ai_804x_lightchanging/profile/report.json",
+      "data_profile": {
+        "frames_used": 150,
+        "packed_shape": [
+          4,
+          760,
+          1344
+        ],
+        "black_levels": {
+          "R": 256.0,
+          "Gr": 257.5,
+          "Gb": 257.5,
+          "B": 255.25
+        },
+        "saturation_fraction": 0.0,
+        "frame_drift": {
+          "frame_mean_cv": 0.008382813141870626,
+          "frame_mean_max_dev": 0.020297240160530042
+        },
+        "temporal_mean_semantics": "display/statistics only; never a clean target",
+        "protocol": "cross-sensor no-reference stress profile",
+        "provenance": {
+          "protocol_sha256": "996ba97dba96e0021b697733f947b170f93d1f276888031bb5b6cf6bc9aa88aa",
+          "source_path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/01_fist_company/sc450ai/804x_lightchanging/lightchanging_804x.raw",
+          "source_size_bytes": 1225728000,
+          "source_sha256": "8e74a2b96de1943a0180eba82650613d98c0398d0e984c3d0ac4c6b1e12359fe",
+          "width": 2688,
+          "height": 1520,
+          "frames_used": 150,
+          "bit_shift": 0,
+          "cfa": "RGGB"
+        },
+        "outputs": {
+          "temporal_mean": {
+            "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc450ai/sc450ai_804x_lightchanging/profile/temporal_mean_display_only_dn.npy",
+            "shape": [
+              4,
+              760,
+              1344
+            ],
+            "dtype": "float32",
+            "sha256": "722440a2bb8b936745ac0e2f4ee0bc89546c5b84ee547f944141095198ccd35e"
+          },
+          "frame_means": {
+            "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc450ai/sc450ai_804x_lightchanging/profile/frame_means.npy",
+            "shape": [
+              150
+            ],
+            "dtype": "float64",
+            "sha256": "d4c0b1d1ec744e0b69864e49be120d7de372cb62e81ff9c4cf64653b948e30fc"
+          }
+        }
+      },
+      "metrics": {
+        "protocol": "diagnostic-only no-reference stress evaluation",
+        "clean_target_available": false,
+        "clips": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          [
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78
+          ],
+          [
+            142,
+            143,
+            144,
+            145,
+            146,
+            147,
+            148,
+            149
+          ]
+        ],
+        "evaluated_frames": 24,
+        "mean_output_bias_dn": -4.64562494593362,
+        "mean_abs_output_change_dn": 15.571363871463994,
+        "input_temporal_mad_dn": 21.6236516322195,
+        "a3_temporal_mad_dn": 1.2742577907229284,
+        "temporal_mad_ratio": 0.058928890105881516,
+        "motion_temporal_ratio": 0.04976263670310816,
+        "static_temporal_ratio": 0.08369724204474094,
+        "spatial_high_frequency_ratio": 0.6903108490426755,
+        "legal_raw_fraction": 1.0,
+        "normalized_clip_fraction": 0.018549343736946534,
+        "diagnostic_populations": {
+          "temporal_values": 85800960,
+          "motion_values": 8771064,
+          "static_values": 43151532,
+          "detail_values": 24515144
+        },
+        "interpretation": "Ratios are diagnostics only; none is a clean-target quality score or pass gate.",
+        "panel_manifest": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc450ai/sc450ai_804x_lightchanging/panels/panel_manifest.json",
+        "panel_count": 4
+      }
+    },
+    "sc465sl_difficultpattern_4717": {
+      "source_manifest": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/SC465SL/sc465sl_difficultpattern_4717/source_manifest.json",
+      "data_report": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/SC465SL/sc465sl_difficultpattern_4717/profile/report.json",
+      "data_profile": {
+        "frames_used": 200,
+        "packed_shape": [
+          4,
+          720,
+          1280
+        ],
+        "black_levels": {
+          "R": 254.4375,
+          "Gr": 257.5625,
+          "Gb": 257.5625,
+          "B": 253.875
+        },
+        "saturation_fraction": 5.8441840277777777e-05,
+        "frame_drift": {
+          "frame_mean_cv": 0.0005071276854756363,
+          "frame_mean_max_dev": 0.001198350014422907
+        },
+        "temporal_mean_semantics": "display/statistics only; never a clean target",
+        "protocol": "cross-sensor no-reference stress profile",
+        "provenance": {
+          "protocol_sha256": "996ba97dba96e0021b697733f947b170f93d1f276888031bb5b6cf6bc9aa88aa",
+          "source_path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/05_2DNR3DNR/465_difficultpattern/shutter_83315/sensorG__ispG_4717_WB_1930_1024_2381/raw_stream_2560x1440_16bit@RG_[Shutter=83315,SenserG=109572,IspG=4717,R=1930,G=1024,B=2381].raw",
+          "source_size_bytes": 1474560000,
+          "source_sha256": "b9a4b244e049af9b167ec4e67dc83c951b271d3f9ae077ed74944e9cb98a09d6",
+          "width": 2560,
+          "height": 1440,
+          "frames_used": 200,
+          "bit_shift": 4,
+          "cfa": "RGGB"
+        },
+        "outputs": {
+          "temporal_mean": {
+            "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/SC465SL/sc465sl_difficultpattern_4717/profile/temporal_mean_display_only_dn.npy",
+            "shape": [
+              4,
+              720,
+              1280
+            ],
+            "dtype": "float32",
+            "sha256": "4283ea4105b1fd9bab1bb9493de047069a2480450ee22ad4f1ff388d8b9f687e"
+          },
+          "frame_means": {
+            "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/SC465SL/sc465sl_difficultpattern_4717/profile/frame_means.npy",
+            "shape": [
+              200
+            ],
+            "dtype": "float64",
+            "sha256": "7f126cc39d5ed17c1f22790a67cd2e56a9e7540d759a2c46da6522e2b4e9e954"
+          }
+        }
+      },
+      "metrics": {
+        "protocol": "diagnostic-only no-reference stress evaluation",
+        "clean_target_available": false,
+        "clips": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          [
+            96,
+            97,
+            98,
+            99,
+            100,
+            101,
+            102,
+            103
+          ],
+          [
+            192,
+            193,
+            194,
+            195,
+            196,
+            197,
+            198,
+            199
+          ]
+        ],
+        "evaluated_frames": 24,
+        "mean_output_bias_dn": -5.458651224258873,
+        "mean_abs_output_change_dn": 24.200151816017375,
+        "input_temporal_mad_dn": 33.88234861182157,
+        "a3_temporal_mad_dn": 1.979172479983163,
+        "temporal_mad_ratio": 0.058413084129965785,
+        "motion_temporal_ratio": 0.05641649880155972,
+        "static_temporal_ratio": 0.07640453532339415,
+        "spatial_high_frequency_ratio": 0.6352408898617704,
+        "legal_raw_fraction": 1.0,
+        "normalized_clip_fraction": 0.0025662570529513887,
+        "diagnostic_populations": {
+          "temporal_values": 77414400,
+          "motion_values": 7756444,
+          "static_values": 38735652,
+          "detail_values": 22118424
+        },
+        "interpretation": "Ratios are diagnostics only; none is a clean-target quality score or pass gate.",
+        "panel_manifest": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/SC465SL/sc465sl_difficultpattern_4717/panels/panel_manifest.json",
+        "panel_count": 4
+      }
+    },
+    "sc465sl_difficultpattern_8880": {
+      "source_manifest": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/SC465SL/sc465sl_difficultpattern_8880/source_manifest.json",
+      "data_report": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/SC465SL/sc465sl_difficultpattern_8880/profile/report.json",
+      "data_profile": {
+        "frames_used": 200,
+        "packed_shape": [
+          4,
+          720,
+          1280
+        ],
+        "black_levels": {
+          "R": 252.25,
+          "Gr": 254.0625,
+          "Gb": 254.0625,
+          "B": 251.8125
+        },
+        "saturation_fraction": 1.4756944444444444e-06,
+        "frame_drift": {
+          "frame_mean_cv": 0.0003587527792000831,
+          "frame_mean_max_dev": 0.0009404237651700676
+        },
+        "temporal_mean_semantics": "display/statistics only; never a clean target",
+        "protocol": "cross-sensor no-reference stress profile",
+        "provenance": {
+          "protocol_sha256": "996ba97dba96e0021b697733f947b170f93d1f276888031bb5b6cf6bc9aa88aa",
+          "source_path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/05_2DNR3DNR/465_difficultpattern/shutter_83315/sensorG__ispG_8880_WB_1962_1024_2172/raw_stream_2560x1440_16bit@RG_[Shutter=83315,SenserG=109572,IspG=8880,R=1962,G=1024,B=2172].raw",
+          "source_size_bytes": 1474560000,
+          "source_sha256": "5551672d7d9c5c12b437b7211515b03fe9249531add833242ed520a945c04f41",
+          "width": 2560,
+          "height": 1440,
+          "frames_used": 200,
+          "bit_shift": 4,
+          "cfa": "RGGB"
+        },
+        "outputs": {
+          "temporal_mean": {
+            "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/SC465SL/sc465sl_difficultpattern_8880/profile/temporal_mean_display_only_dn.npy",
+            "shape": [
+              4,
+              720,
+              1280
+            ],
+            "dtype": "float32",
+            "sha256": "2a07839ff80f929fada5dc95a8bb1f6607b94f4d6af0694235d9ab3869314e43"
+          },
+          "frame_means": {
+            "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/SC465SL/sc465sl_difficultpattern_8880/profile/frame_means.npy",
+            "shape": [
+              200
+            ],
+            "dtype": "float64",
+            "sha256": "b38ad64cf82ac3831fc47ea4b2fb04e65417fac0b0aea9fd26795ed7ec61012e"
+          }
+        }
+      },
+      "metrics": {
+        "protocol": "diagnostic-only no-reference stress evaluation",
+        "clean_target_available": false,
+        "clips": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          [
+            96,
+            97,
+            98,
+            99,
+            100,
+            101,
+            102,
+            103
+          ],
+          [
+            192,
+            193,
+            194,
+            195,
+            196,
+            197,
+            198,
+            199
+          ]
+        ],
+        "evaluated_frames": 24,
+        "mean_output_bias_dn": -6.376007530081121,
+        "mean_abs_output_change_dn": 18.042697690009934,
+        "input_temporal_mad_dn": 24.884360793986648,
+        "a3_temporal_mad_dn": 1.3925422458291528,
+        "temporal_mad_ratio": 0.055960539125668965,
+        "motion_temporal_ratio": 0.04381661694837088,
+        "static_temporal_ratio": 0.08360545235597457,
+        "spatial_high_frequency_ratio": 0.527119534413917,
+        "legal_raw_fraction": 1.0,
+        "normalized_clip_fraction": 0.0011433806242766205,
+        "diagnostic_populations": {
+          "temporal_values": 77414400,
+          "motion_values": 7753300,
+          "static_values": 38750248,
+          "detail_values": 22118424
+        },
+        "interpretation": "Ratios are diagnostics only; none is a clean-target quality score or pass gate.",
+        "panel_manifest": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/SC465SL/sc465sl_difficultpattern_8880/panels/panel_manifest.json",
+        "panel_count": 4
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "frames_used": 210,
+  "packed_shape": [
+    4,
+    760,
+    1344
+  ],
+  "black_levels": {
+    "R": 257.0,
+    "Gr": 258.0,
+    "Gb": 257.75,
+    "B": 256.0
+  },
+  "saturation_fraction": 0.0,
+  "frame_drift": {
+    "frame_mean_cv": 0.004068607938688848,
+    "frame_mean_max_dev": 0.007073929409543794
+  },
+  "temporal_mean_semantics": "display/statistics only; never a clean target",
+  "protocol": "cross-sensor no-reference stress profile",
+  "provenance": {
+    "protocol_sha256": "996ba97dba96e0021b697733f947b170f93d1f276888031bb5b6cf6bc9aa88aa",
+    "source_path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/01_fist_company/sc450ai/1435x_motion_black_object/raw_stream_2688x1520_16bit@RG[Shutter=83328,SenserG=61440,IspG=24493,R=1620,G=1024,B=2409][bl_R=4128_Gr=4128_Gb=4128_B=4128].raw",
+    "source_size_bytes": 1716019200,
+    "source_sha256": "7896fd9346aa8f82b67d7d2a3a02b4929d9ff58e6da952b4ff7aaf3a7e0acba0",
+    "width": 2688,
+    "height": 1520,
+    "frames_used": 210,
+    "bit_shift": 0,
+    "cfa": "RGGB"
+  },
+  "outputs": {
+    "temporal_mean": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc450ai/sc450ai_1435x_motion_black_object/profile/temporal_mean_display_only_dn.npy",
+      "shape": [
+        4,
+        760,
+        1344
+      ],
+      "dtype": "float32",
+      "sha256": "06791c550a6b1dfa64b48f1048cb08e9080fef95b4ee1193f8ee53a9d85c82c3"
+    },
+    "frame_means": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc450ai/sc450ai_1435x_motion_black_object/profile/frame_means.npy",
+      "shape": [
+        210
+      ],
+      "dtype": "float64",
+      "sha256": "a987f4687ccd6282c9b246bc55272eae2dff004c6d145390c192010a460ac416"
+    }
+  }
+}

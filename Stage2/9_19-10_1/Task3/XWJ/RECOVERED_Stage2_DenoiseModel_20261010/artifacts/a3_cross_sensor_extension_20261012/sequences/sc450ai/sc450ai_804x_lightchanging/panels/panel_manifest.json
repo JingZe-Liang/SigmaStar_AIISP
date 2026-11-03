@@ -1,0 +1,82 @@
+{
+  "fixed_isp": {
+    "black_levels": {
+      "R": 256.0,
+      "Gr": 257.5,
+      "Gb": 257.5,
+      "B": 255.25
+    },
+    "white_level_dn": 4095.0,
+    "wb_packed_R_Gr_Gb_B": [
+      1.445,
+      1.0,
+      1.0,
+      2.437
+    ],
+    "exposure": 8.5,
+    "transfer": "linear Bayer demosaic then IEC-like sRGB transfer"
+  },
+  "clean_target_available": false,
+  "columns": [
+    "Input t",
+    "A3 t",
+    "A3 t+1"
+  ],
+  "panels": {
+    "stress_overview": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc450ai/sc450ai_804x_lightchanging/panels/stress_overview.png",
+      "shape": [
+        1071,
+        1680,
+        3
+      ],
+      "sha256": "c91d05254ea9e2d8461cb7985137871de60ab6c17d3d5b20c7f5a3085511578f",
+      "crop_sensor_xyxy": null
+    },
+    "stress_flat_transition": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc450ai/sc450ai_804x_lightchanging/panels/stress_flat_transition.png",
+      "shape": [
+        1464,
+        1680,
+        3
+      ],
+      "sha256": "58e1f828c02be569aa1b8f71cfdd34a751d5b004d81568f81179cc987f1fd0b2",
+      "crop_sensor_xyxy": [
+        0,
+        150,
+        1500,
+        1350
+      ]
+    },
+    "stress_center_subject": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc450ai/sc450ai_804x_lightchanging/panels/stress_center_subject.png",
+      "shape": [
+        1680,
+        1680,
+        3
+      ],
+      "sha256": "51d3e4b05364c9d0cdbaa9fa87e0b2f0b469c7dc7d6b7479178849648200bc1b",
+      "crop_sensor_xyxy": [
+        700,
+        200,
+        2100,
+        1500
+      ]
+    },
+    "stress_right_shelf": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc450ai/sc450ai_804x_lightchanging/panels/stress_right_shelf.png",
+      "shape": [
+        2205,
+        1680,
+        3
+      ],
+      "sha256": "14c91d85b968ce63b46d021c42fcb6169dab5887e4276e234f679e1456b41fc4",
+      "crop_sensor_xyxy": [
+        1600,
+        100,
+        2688,
+        1450
+      ]
+    }
+  }
+}

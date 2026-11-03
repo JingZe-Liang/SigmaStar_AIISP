@@ -1,0 +1,61 @@
+{
+  "provenance": {
+    "protocol_sha256": "996ba97dba96e0021b697733f947b170f93d1f276888031bb5b6cf6bc9aa88aa",
+    "source_path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/05_2DNR3DNR/465_difficultpattern/shutter_83315/sensorG__ispG_4717_WB_1930_1024_2381/raw_stream_2560x1440_16bit@RG_[Shutter=83315,SenserG=109572,IspG=4717,R=1930,G=1024,B=2381].raw",
+    "source_size_bytes": 1474560000,
+    "source_sha256": "b9a4b244e049af9b167ec4e67dc83c951b271d3f9ae077ed74944e9cb98a09d6",
+    "width": 2560,
+    "height": 1440,
+    "frames_used": 200,
+    "bit_shift": 4,
+    "cfa": "RGGB",
+    "checkpoint_sha256": "97c4332f685f98959b243e4b100434469f714aed6329e100d22b6d8552592e0b",
+    "weights": "ema",
+    "tile_batch": 2
+  },
+  "directions": {
+    "stress": {
+      "clips": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        [
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103
+        ],
+        [
+          192,
+          193,
+          194,
+          195,
+          196,
+          197,
+          198,
+          199
+        ]
+      ],
+      "prediction_shape": [
+        24,
+        4,
+        720,
+        1280
+      ],
+      "prediction_dtype": "float16",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/SC465SL/sc465sl_difficultpattern_4717/inference/prediction_stress.npy",
+      "sha256": "8b7b6c3706546f2dee9289a75ca553e1cdb1a7adaff37fff694390860fa9b2bf"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "protocol_sha256": "996ba97dba96e0021b697733f947b170f93d1f276888031bb5b6cf6bc9aa88aa",
+  "source_path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/01_fist_company/sc635hai/131x_low_cct/raw_stream_normal_3200x1800_16_RG_0205213025917_131x.raw",
+  "source_size_bytes": 1728000000,
+  "source_sha256": "80445b9133f49dfa7f5117d93bcf9fd5a9dfae1de0e0faae69c9f4144dac440a",
+  "width": 3200,
+  "height": 1800,
+  "frames_used": 150,
+  "bit_shift": 4,
+  "cfa": "RGGB"
+}

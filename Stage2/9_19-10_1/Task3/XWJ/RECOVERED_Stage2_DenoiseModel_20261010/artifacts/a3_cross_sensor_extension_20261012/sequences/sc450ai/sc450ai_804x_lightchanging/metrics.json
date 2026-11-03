@@ -1,0 +1,56 @@
+{
+  "protocol": "diagnostic-only no-reference stress evaluation",
+  "clean_target_available": false,
+  "clips": [
+    [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    [
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78
+    ],
+    [
+      142,
+      143,
+      144,
+      145,
+      146,
+      147,
+      148,
+      149
+    ]
+  ],
+  "evaluated_frames": 24,
+  "mean_output_bias_dn": -4.64562494593362,
+  "mean_abs_output_change_dn": 15.571363871463994,
+  "input_temporal_mad_dn": 21.6236516322195,
+  "a3_temporal_mad_dn": 1.2742577907229284,
+  "temporal_mad_ratio": 0.058928890105881516,
+  "motion_temporal_ratio": 0.04976263670310816,
+  "static_temporal_ratio": 0.08369724204474094,
+  "spatial_high_frequency_ratio": 0.6903108490426755,
+  "legal_raw_fraction": 1.0,
+  "normalized_clip_fraction": 0.018549343736946534,
+  "diagnostic_populations": {
+    "temporal_values": 85800960,
+    "motion_values": 8771064,
+    "static_values": 43151532,
+    "detail_values": 24515144
+  },
+  "interpretation": "Ratios are diagnostics only; none is a clean-target quality score or pass gate.",
+  "panel_manifest": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc450ai/sc450ai_804x_lightchanging/panels/panel_manifest.json",
+  "panel_count": 4
+}

@@ -1,0 +1,82 @@
+{
+  "fixed_isp": {
+    "black_levels": {
+      "R": 257.0,
+      "Gr": 258.0,
+      "Gb": 257.75,
+      "B": 256.0
+    },
+    "white_level_dn": 4095.0,
+    "wb_packed_R_Gr_Gb_B": [
+      1.582,
+      1.0,
+      1.0,
+      2.352
+    ],
+    "exposure": 12.0,
+    "transfer": "linear Bayer demosaic then IEC-like sRGB transfer"
+  },
+  "clean_target_available": false,
+  "columns": [
+    "Input t",
+    "A3 t",
+    "A3 t+1"
+  ],
+  "panels": {
+    "stress_overview": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc450ai/sc450ai_1435x_motion_black_object/panels/stress_overview.png",
+      "shape": [
+        1071,
+        1680,
+        3
+      ],
+      "sha256": "a5f21401088387ca0d103a45135010a6c80248b736e3940f7661591138ebe535",
+      "crop_sensor_xyxy": null
+    },
+    "stress_black_subject": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc450ai/sc450ai_1435x_motion_black_object/panels/stress_black_subject.png",
+      "shape": [
+        1887,
+        1680,
+        3
+      ],
+      "sha256": "66b284f798962fc74f1ae8ce02f333ba2649416a8be4880efb9f3f60c8a0bf26",
+      "crop_sensor_xyxy": [
+        700,
+        100,
+        2050,
+        1520
+      ]
+    },
+    "stress_flat_wall": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc450ai/sc450ai_1435x_motion_black_object/panels/stress_flat_wall.png",
+      "shape": [
+        1476,
+        1680,
+        3
+      ],
+      "sha256": "3804e7e000cabadc5239b84c57f04e3e29f5cea77a9110bf5426b58cbe841dc3",
+      "crop_sensor_xyxy": [
+        0,
+        0,
+        1300,
+        1050
+      ]
+    },
+    "stress_floor_detail": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc450ai/sc450ai_1435x_motion_black_object/panels/stress_floor_detail.png",
+      "shape": [
+        783,
+        1680,
+        3
+      ],
+      "sha256": "da4a61d0d6e655f85a5d64a4f401e0b1e2e849801f6de3a450ae05b42e84f5eb",
+      "crop_sensor_xyxy": [
+        250,
+        750,
+        2200,
+        1520
+      ]
+    }
+  }
+}

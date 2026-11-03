@@ -1,0 +1,59 @@
+{
+  "provenance": {
+    "sequence": {
+      "name": "sc465sl_normal_1024",
+      "group": "05",
+      "category": "raw_scene",
+      "sensor": "SC465SL",
+      "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/05_2DNR3DNR/465_sh_normal/shutter_39999/sensorG__ispG_1024_WB_1535_1024_3003/raw_stream_2560x1440_16bit@RG_[Shutter=39999,SenserG=1079,IspG=1024,R=1535,G=1024,B=3003].raw",
+      "width": 2560,
+      "height": 1440,
+      "frames": 100,
+      "bit_shift": 4,
+      "cfa": "RGGB",
+      "role": "auxiliary",
+      "wb_rgb": [
+        1.4990234375,
+        1.0,
+        2.9326171875
+      ],
+      "black_levels": null,
+      "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/configs/a8_sensor_training_data_20261013.json"
+    },
+    "source_sha256": "913fc19c54f5957e377e96a9f8c0f7a7dfbc8ca3ef7069c033be400738ce9ec5",
+    "checkpoint_sha256": "97c4332f685f98959b243e4b100434469f714aed6329e100d22b6d8552592e0b",
+    "config_sha256": "dee8a5575ac8a166c9eb8ed682a7fffa5a08adaf458c467d364bf4e6fbdd518a",
+    "weights": "ema",
+    "clip_starts": [
+      0,
+      46,
+      92
+    ],
+    "temporal_frames": 8,
+    "black_levels_R_Gr_Gb_B": [
+      274.5625,
+      284.125,
+      284.0,
+      267.25
+    ],
+    "normalization": "clip((DN-black)/(4095-black),0,1)",
+    "canonical_channel_order": [
+      "R",
+      "Gr",
+      "Gb",
+      "B"
+    ],
+    "tile": 64,
+    "stride": 56,
+    "tile_batch": 12
+  },
+  "prediction": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/05/raw_scene/sc465sl_normal_1024/inference/prediction.npy",
+  "prediction_shape": [
+    24,
+    4,
+    720,
+    1280
+  ],
+  "prediction_dtype": "float16 normalized native domain",
+  "prediction_sha256": "37e0ae64febd88995c57e50b4aef4419e4df7e2d44545a32202e779ab33921c5"
+}

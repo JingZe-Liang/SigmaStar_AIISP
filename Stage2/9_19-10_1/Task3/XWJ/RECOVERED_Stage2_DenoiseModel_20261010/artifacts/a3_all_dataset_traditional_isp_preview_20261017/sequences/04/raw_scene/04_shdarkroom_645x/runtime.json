@@ -1,0 +1,45 @@
+{
+  "sequence": {
+    "name": "04_shdarkroom_645x",
+    "group": "04",
+    "category": "raw_scene",
+    "sensor": "MIS20S1",
+    "path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/04_Sigmastar_7_30/shdarkroom/645x/raw_stream_1920x1080_16bit@RG_[Shutter=79999,SenserG=131072,IspG=5167,R=2120,G=1024,B=1956].raw",
+    "width": 1920,
+    "height": 1080,
+    "frames": 200,
+    "bit_shift": 4,
+    "cfa": "RGGB",
+    "role": "noisy",
+    "wb_rgb": [
+      2.0703125,
+      1.0,
+      1.91015625
+    ],
+    "black_levels": [
+      256.375,
+      258.875,
+      258.75,
+      256.875
+    ],
+    "metadata_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/stream_manifests/04_shdarkroom_645x.json"
+  },
+  "source_sha256": "d6141bc2e4c62c014ba770e22ebfd19e9ffd702c222eaf31611ad4dd321fa8c0",
+  "clip_starts": [
+    0,
+    96,
+    192
+  ],
+  "black_levels_R_Gr_Gb_B": [
+    256.375,
+    258.875,
+    258.75,
+    256.875
+  ],
+  "black_level_source": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/finetune_mis20s1/supervision/stream_manifests/04_shdarkroom_645x.json",
+  "fixed_exposure_ev": 3.937051847077049,
+  "input_normalized_p995_after_wb": 0.2611495554447174,
+  "exposure_target_before_tone_map_linear": 4.000000000000001,
+  "exposure_target_after_tone_map_linear": 0.8,
+  "dataset_read_only": true
+}

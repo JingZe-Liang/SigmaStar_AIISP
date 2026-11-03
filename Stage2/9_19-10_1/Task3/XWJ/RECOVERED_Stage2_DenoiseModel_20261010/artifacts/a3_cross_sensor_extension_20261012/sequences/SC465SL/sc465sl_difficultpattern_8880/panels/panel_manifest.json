@@ -1,0 +1,82 @@
+{
+  "fixed_isp": {
+    "black_levels": {
+      "R": 252.25,
+      "Gr": 254.0625,
+      "Gb": 254.0625,
+      "B": 251.8125
+    },
+    "white_level_dn": 4095.0,
+    "wb_packed_R_Gr_Gb_B": [
+      1.916,
+      1.0,
+      1.0,
+      2.121
+    ],
+    "exposure": 4.75,
+    "transfer": "linear Bayer demosaic then IEC-like sRGB transfer"
+  },
+  "clean_target_available": false,
+  "columns": [
+    "Input t",
+    "A3 t",
+    "A3 t+1"
+  ],
+  "panels": {
+    "stress_overview": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/SC465SL/sc465sl_difficultpattern_8880/panels/stress_overview.png",
+      "shape": [
+        1065,
+        1680,
+        3
+      ],
+      "sha256": "a73d437ff1354bb6d54c54ed16304665717b53165e5717fc4103308142a04317",
+      "crop_sensor_xyxy": null
+    },
+    "stress_foreground_detail": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/SC465SL/sc465sl_difficultpattern_8880/panels/stress_foreground_detail.png",
+      "shape": [
+        768,
+        1680,
+        3
+      ],
+      "sha256": "2d9b39e37fe1e3bff1179a40d3f58ca1be1ba9e74aabd8a358fc2e30e26a2aaa",
+      "crop_sensor_xyxy": [
+        0,
+        650,
+        2050,
+        1440
+      ]
+    },
+    "stress_center_shelves": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/SC465SL/sc465sl_difficultpattern_8880/panels/stress_center_shelves.png",
+      "shape": [
+        1530,
+        1680,
+        3
+      ],
+      "sha256": "904709a8746ccf5d5e6c74a49b5c5357d43b34e2edeace86f675d7139fb28533",
+      "crop_sensor_xyxy": [
+        650,
+        250,
+        1900,
+        1300
+      ]
+    },
+    "stress_right_line": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/SC465SL/sc465sl_difficultpattern_8880/panels/stress_right_line.png",
+      "shape": [
+        2610,
+        1680,
+        3
+      ],
+      "sha256": "84d9fb4478ade2f70274f0e1608ca490139d8f25551d5ae34e3878fbf352c01a",
+      "crop_sensor_xyxy": [
+        1750,
+        200,
+        2560,
+        1400
+      ]
+    }
+  }
+}

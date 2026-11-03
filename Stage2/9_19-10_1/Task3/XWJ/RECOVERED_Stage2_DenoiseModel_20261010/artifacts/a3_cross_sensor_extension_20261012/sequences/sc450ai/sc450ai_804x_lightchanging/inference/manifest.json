@@ -1,0 +1,61 @@
+{
+  "provenance": {
+    "protocol_sha256": "996ba97dba96e0021b697733f947b170f93d1f276888031bb5b6cf6bc9aa88aa",
+    "source_path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/01_fist_company/sc450ai/804x_lightchanging/lightchanging_804x.raw",
+    "source_size_bytes": 1225728000,
+    "source_sha256": "8e74a2b96de1943a0180eba82650613d98c0398d0e984c3d0ac4c6b1e12359fe",
+    "width": 2688,
+    "height": 1520,
+    "frames_used": 150,
+    "bit_shift": 0,
+    "cfa": "RGGB",
+    "checkpoint_sha256": "97c4332f685f98959b243e4b100434469f714aed6329e100d22b6d8552592e0b",
+    "weights": "ema",
+    "tile_batch": 2
+  },
+  "directions": {
+    "stress": {
+      "clips": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        [
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78
+        ],
+        [
+          142,
+          143,
+          144,
+          145,
+          146,
+          147,
+          148,
+          149
+        ]
+      ],
+      "prediction_shape": [
+        24,
+        4,
+        760,
+        1344
+      ],
+      "prediction_dtype": "float16",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc450ai/sc450ai_804x_lightchanging/inference/prediction_stress.npy",
+      "sha256": "02069934bd2098e7dd6dde6afe261c4c4ff8ef49ff8db139f276f4d3e3110bd0"
+    }
+  }
+}

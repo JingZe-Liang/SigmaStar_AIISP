@@ -1,0 +1,56 @@
+{
+  "protocol": "diagnostic-only no-reference stress evaluation",
+  "clean_target_available": false,
+  "clips": [
+    [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    [
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108
+    ],
+    [
+      202,
+      203,
+      204,
+      205,
+      206,
+      207,
+      208,
+      209
+    ]
+  ],
+  "evaluated_frames": 24,
+  "mean_output_bias_dn": -4.828743760163274,
+  "mean_abs_output_change_dn": 15.367343794533932,
+  "input_temporal_mad_dn": 21.295393239189863,
+  "a3_temporal_mad_dn": 1.3466082925887706,
+  "temporal_mad_ratio": 0.06323472299683155,
+  "motion_temporal_ratio": 0.056887085770443505,
+  "static_temporal_ratio": 0.08790800929873575,
+  "spatial_high_frequency_ratio": 0.12662123831402974,
+  "legal_raw_fraction": 1.0,
+  "normalized_clip_fraction": 0.03279834514672097,
+  "diagnostic_populations": {
+    "temporal_values": 85800960,
+    "motion_values": 8754792,
+    "static_values": 43477444,
+    "detail_values": 24516316
+  },
+  "interpretation": "Ratios are diagnostics only; none is a clean-target quality score or pass gate.",
+  "panel_manifest": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc450ai/sc450ai_1435x_motion_black_object/panels/panel_manifest.json",
+  "panel_count": 4
+}

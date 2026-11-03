@@ -1,0 +1,324 @@
+{
+  "status": "complete",
+  "phase": "all",
+  "completed": 45,
+  "failed": 0,
+  "sequences": {
+    "sc450ai_1435x_motion_black_object": {
+      "status": "complete",
+      "index": 1,
+      "total": 45,
+      "runtime": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/01/raw_scene/sc450ai_1435x_motion_black_object/runtime.json",
+      "video": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/01/raw_scene/sc450ai_1435x_motion_black_object/traditional_isp_video/sc450ai_1435x_motion_black_object_input_vs_a3_traditional_isp.mp4"
+    },
+    "sc450ai_804x_lightchanging": {
+      "status": "complete",
+      "index": 2,
+      "total": 45,
+      "runtime": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/01/raw_scene/sc450ai_804x_lightchanging/runtime.json",
+      "video": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/01/raw_scene/sc450ai_804x_lightchanging/traditional_isp_video/sc450ai_804x_lightchanging_input_vs_a3_traditional_isp.mp4"
+    },
+    "sc635hai_131x_low_cct": {
+      "status": "complete",
+      "index": 3,
+      "total": 45,
+      "runtime": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/01/raw_scene/sc635hai_131x_low_cct/runtime.json",
+      "video": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/01/raw_scene/sc635hai_131x_low_cct/traditional_isp_video/sc635hai_131x_low_cct_input_vs_a3_traditional_isp.mp4"
+    },
+    "sc635hai_16x_motion_color": {
+      "status": "complete",
+      "index": 4,
+      "total": 45,
+      "runtime": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/01/raw_scene/sc635hai_16x_motion_color/runtime.json",
+      "video": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/01/raw_scene/sc635hai_16x_motion_color/traditional_isp_video/sc635hai_16x_motion_color_input_vs_a3_traditional_isp.mp4"
+    },
+    "sc465sl_darkroom18_2000x": {
+      "status": "complete",
+      "index": 5,
+      "total": 45,
+      "runtime": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/02/raw_scene/sc465sl_darkroom18_2000x/runtime.json",
+      "video": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/02/raw_scene/sc465sl_darkroom18_2000x/traditional_isp_video/sc465sl_darkroom18_2000x_input_vs_a3_traditional_isp.mp4"
+    },
+    "sc465sl_darkroom18_256x": {
+      "status": "complete",
+      "index": 6,
+      "total": 45,
+      "runtime": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/02/raw_scene/sc465sl_darkroom18_256x/runtime.json",
+      "video": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/02/raw_scene/sc465sl_darkroom18_256x/traditional_isp_video/sc465sl_darkroom18_256x_input_vs_a3_traditional_isp.mp4"
+    },
+    "04_mis20s1_calibrationdata_100_black": {
+      "status": "complete",
+      "index": 7,
+      "total": 45,
+      "runtime": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/calibration/04_mis20s1_calibrationdata_100_black/runtime.json",
+      "video": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/calibration/04_mis20s1_calibrationdata_100_black/traditional_isp_video/04_mis20s1_calibrationdata_100_black_input_vs_a3_traditional_isp.mp4"
+    },
+    "04_mis20s1_calibrationdata_100_color": {
+      "status": "complete",
+      "index": 8,
+      "total": 45,
+      "runtime": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/calibration/04_mis20s1_calibrationdata_100_color/runtime.json",
+      "video": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/calibration/04_mis20s1_calibrationdata_100_color/traditional_isp_video/04_mis20s1_calibrationdata_100_color_input_vs_a3_traditional_isp.mp4"
+    },
+    "04_mis20s1_calibrationdata_12800_black": {
+      "status": "complete",
+      "index": 9,
+      "total": 45,
+      "runtime": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/calibration/04_mis20s1_calibrationdata_12800_black/runtime.json",
+      "video": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/calibration/04_mis20s1_calibrationdata_12800_black/traditional_isp_video/04_mis20s1_calibrationdata_12800_black_input_vs_a3_traditional_isp.mp4"
+    },
+    "04_mis20s1_calibrationdata_12800_color": {
+      "status": "complete",
+      "index": 10,
+      "total": 45,
+      "runtime": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/calibration/04_mis20s1_calibrationdata_12800_color/runtime.json",
+      "video": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/calibration/04_mis20s1_calibrationdata_12800_color/traditional_isp_video/04_mis20s1_calibrationdata_12800_color_input_vs_a3_traditional_isp.mp4"
+    },
+    "04_mis20s1_calibrationdata_1600_black": {
+      "status": "complete",
+      "index": 11,
+      "total": 45,
+      "runtime": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/calibration/04_mis20s1_calibrationdata_1600_black/runtime.json",
+      "video": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/calibration/04_mis20s1_calibrationdata_1600_black/traditional_isp_video/04_mis20s1_calibrationdata_1600_black_input_vs_a3_traditional_isp.mp4"
+    },
+    "04_mis20s1_calibrationdata_1600_color": {
+      "status": "complete",
+      "index": 12,
+      "total": 45,
+      "runtime": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/calibration/04_mis20s1_calibrationdata_1600_color/runtime.json",
+      "video": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/calibration/04_mis20s1_calibrationdata_1600_color/traditional_isp_video/04_mis20s1_calibrationdata_1600_color_input_vs_a3_traditional_isp.mp4"
+    },
+    "04_mis20s1_calibrationdata_200_black": {
+      "status": "complete",
+      "index": 13,
+      "total": 45,
+      "runtime": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/calibration/04_mis20s1_calibrationdata_200_black/runtime.json",
+      "video": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/calibration/04_mis20s1_calibrationdata_200_black/traditional_isp_video/04_mis20s1_calibrationdata_200_black_input_vs_a3_traditional_isp.mp4"
+    },
+    "04_mis20s1_calibrationdata_200_color": {
+      "status": "complete",
+      "index": 14,
+      "total": 45,
+      "runtime": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/calibration/04_mis20s1_calibrationdata_200_color/runtime.json",
+      "video": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/calibration/04_mis20s1_calibrationdata_200_color/traditional_isp_video/04_mis20s1_calibrationdata_200_color_input_vs_a3_traditional_isp.mp4"
+    },
+    "04_mis20s1_calibrationdata_25600_black": {
+      "status": "complete",
+      "index": 15,
+      "total": 45,
+      "runtime": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/calibration/04_mis20s1_calibrationdata_25600_black/runtime.json",
+      "video": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/calibration/04_mis20s1_calibrationdata_25600_black/traditional_isp_video/04_mis20s1_calibrationdata_25600_black_input_vs_a3_traditional_isp.mp4"
+    },
+    "04_mis20s1_calibrationdata_25600_color": {
+      "status": "complete",
+      "index": 16,
+      "total": 45,
+      "runtime": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/calibration/04_mis20s1_calibrationdata_25600_color/runtime.json",
+      "video": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/calibration/04_mis20s1_calibrationdata_25600_color/traditional_isp_video/04_mis20s1_calibrationdata_25600_color_input_vs_a3_traditional_isp.mp4"
+    },
+    "04_mis20s1_calibrationdata_3200_black": {
+      "status": "complete",
+      "index": 17,
+      "total": 45,
+      "runtime": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/calibration/04_mis20s1_calibrationdata_3200_black/runtime.json",
+      "video": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/calibration/04_mis20s1_calibrationdata_3200_black/traditional_isp_video/04_mis20s1_calibrationdata_3200_black_input_vs_a3_traditional_isp.mp4"
+    },
+    "04_mis20s1_calibrationdata_3200_color": {
+      "status": "complete",
+      "index": 18,
+      "total": 45,
+      "runtime": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/calibration/04_mis20s1_calibrationdata_3200_color/runtime.json",
+      "video": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/calibration/04_mis20s1_calibrationdata_3200_color/traditional_isp_video/04_mis20s1_calibrationdata_3200_color_input_vs_a3_traditional_isp.mp4"
+    },
+    "04_mis20s1_calibrationdata_400_black": {
+      "status": "complete",
+      "index": 19,
+      "total": 45,
+      "runtime": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/calibration/04_mis20s1_calibrationdata_400_black/runtime.json",
+      "video": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/calibration/04_mis20s1_calibrationdata_400_black/traditional_isp_video/04_mis20s1_calibrationdata_400_black_input_vs_a3_traditional_isp.mp4"
+    },
+    "04_mis20s1_calibrationdata_400_color": {
+      "status": "complete",
+      "index": 20,
+      "total": 45,
+      "runtime": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/calibration/04_mis20s1_calibrationdata_400_color/runtime.json",
+      "video": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/calibration/04_mis20s1_calibrationdata_400_color/traditional_isp_video/04_mis20s1_calibrationdata_400_color_input_vs_a3_traditional_isp.mp4"
+    },
+    "04_mis20s1_calibrationdata_6400_black": {
+      "status": "complete",
+      "index": 21,
+      "total": 45,
+      "runtime": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/calibration/04_mis20s1_calibrationdata_6400_black/runtime.json",
+      "video": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/calibration/04_mis20s1_calibrationdata_6400_black/traditional_isp_video/04_mis20s1_calibrationdata_6400_black_input_vs_a3_traditional_isp.mp4"
+    },
+    "04_mis20s1_calibrationdata_6400_color": {
+      "status": "complete",
+      "index": 22,
+      "total": 45,
+      "runtime": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/calibration/04_mis20s1_calibrationdata_6400_color/runtime.json",
+      "video": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/calibration/04_mis20s1_calibrationdata_6400_color/traditional_isp_video/04_mis20s1_calibrationdata_6400_color_input_vs_a3_traditional_isp.mp4"
+    },
+    "04_mis20s1_calibrationdata_800_black": {
+      "status": "complete",
+      "index": 23,
+      "total": 45,
+      "runtime": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/calibration/04_mis20s1_calibrationdata_800_black/runtime.json",
+      "video": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/calibration/04_mis20s1_calibrationdata_800_black/traditional_isp_video/04_mis20s1_calibrationdata_800_black_input_vs_a3_traditional_isp.mp4"
+    },
+    "04_mis20s1_calibrationdata_800_color": {
+      "status": "complete",
+      "index": 24,
+      "total": 45,
+      "runtime": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/calibration/04_mis20s1_calibrationdata_800_color/runtime.json",
+      "video": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/calibration/04_mis20s1_calibrationdata_800_color/traditional_isp_video/04_mis20s1_calibrationdata_800_color_input_vs_a3_traditional_isp.mp4"
+    },
+    "04_mis20s1_outdoor_1000x": {
+      "status": "complete",
+      "index": 25,
+      "total": 45,
+      "runtime": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/raw_scene/04_mis20s1_outdoor_1000x/runtime.json",
+      "video": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/raw_scene/04_mis20s1_outdoor_1000x/traditional_isp_video/04_mis20s1_outdoor_1000x_input_vs_a3_traditional_isp.mp4"
+    },
+    "04_mis20s1_outdoor_128x": {
+      "status": "complete",
+      "index": 26,
+      "total": 45,
+      "runtime": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/raw_scene/04_mis20s1_outdoor_128x/runtime.json",
+      "video": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/raw_scene/04_mis20s1_outdoor_128x/traditional_isp_video/04_mis20s1_outdoor_128x_input_vs_a3_traditional_isp.mp4"
+    },
+    "04_mis20s1_outdoor_1500x": {
+      "status": "complete",
+      "index": 27,
+      "total": 45,
+      "runtime": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/raw_scene/04_mis20s1_outdoor_1500x/runtime.json",
+      "video": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/raw_scene/04_mis20s1_outdoor_1500x/traditional_isp_video/04_mis20s1_outdoor_1500x_input_vs_a3_traditional_isp.mp4"
+    },
+    "04_mis20s1_outdoor_512x": {
+      "status": "complete",
+      "index": 28,
+      "total": 45,
+      "runtime": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/raw_scene/04_mis20s1_outdoor_512x/runtime.json",
+      "video": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/raw_scene/04_mis20s1_outdoor_512x/traditional_isp_video/04_mis20s1_outdoor_512x_input_vs_a3_traditional_isp.mp4"
+    },
+    "04_shdarkroom_1000x": {
+      "status": "complete",
+      "index": 29,
+      "total": 45,
+      "runtime": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/raw_scene/04_shdarkroom_1000x/runtime.json",
+      "video": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/raw_scene/04_shdarkroom_1000x/traditional_isp_video/04_shdarkroom_1000x_input_vs_a3_traditional_isp.mp4"
+    },
+    "04_shdarkroom_10x": {
+      "status": "complete",
+      "index": 30,
+      "total": 45,
+      "runtime": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/raw_scene/04_shdarkroom_10x/runtime.json",
+      "video": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/raw_scene/04_shdarkroom_10x/traditional_isp_video/04_shdarkroom_10x_input_vs_a3_traditional_isp.mp4"
+    },
+    "04_shdarkroom_128x": {
+      "status": "complete",
+      "index": 31,
+      "total": 45,
+      "runtime": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/raw_scene/04_shdarkroom_128x/runtime.json",
+      "video": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/raw_scene/04_shdarkroom_128x/traditional_isp_video/04_shdarkroom_128x_input_vs_a3_traditional_isp.mp4"
+    },
+    "04_shdarkroom_313x": {
+      "status": "complete",
+      "index": 32,
+      "total": 45,
+      "runtime": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/raw_scene/04_shdarkroom_313x/runtime.json",
+      "video": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/raw_scene/04_shdarkroom_313x/traditional_isp_video/04_shdarkroom_313x_input_vs_a3_traditional_isp.mp4"
+    },
+    "04_shdarkroom_632x": {
+      "status": "complete",
+      "index": 33,
+      "total": 45,
+      "runtime": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/raw_scene/04_shdarkroom_632x/runtime.json",
+      "video": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/raw_scene/04_shdarkroom_632x/traditional_isp_video/04_shdarkroom_632x_input_vs_a3_traditional_isp.mp4"
+    },
+    "04_shdarkroom_645x": {
+      "status": "complete",
+      "index": 34,
+      "total": 45,
+      "runtime": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/raw_scene/04_shdarkroom_645x/runtime.json",
+      "video": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/raw_scene/04_shdarkroom_645x/traditional_isp_video/04_shdarkroom_645x_input_vs_a3_traditional_isp.mp4"
+    },
+    "04_shdarkroom_64x": {
+      "status": "complete",
+      "index": 35,
+      "total": 45,
+      "runtime": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/raw_scene/04_shdarkroom_64x/runtime.json",
+      "video": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/04/raw_scene/04_shdarkroom_64x/traditional_isp_video/04_shdarkroom_64x_input_vs_a3_traditional_isp.mp4"
+    },
+    "sc465sl_difficultpattern_4717": {
+      "status": "complete",
+      "index": 36,
+      "total": 45,
+      "runtime": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/05/raw_scene/sc465sl_difficultpattern_4717/runtime.json",
+      "video": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/05/raw_scene/sc465sl_difficultpattern_4717/traditional_isp_video/sc465sl_difficultpattern_4717_input_vs_a3_traditional_isp.mp4"
+    },
+    "sc465sl_difficultpattern_8880": {
+      "status": "complete",
+      "index": 37,
+      "total": 45,
+      "runtime": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/05/raw_scene/sc465sl_difficultpattern_8880/runtime.json",
+      "video": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/05/raw_scene/sc465sl_difficultpattern_8880/traditional_isp_video/sc465sl_difficultpattern_8880_input_vs_a3_traditional_isp.mp4"
+    },
+    "sc465sl_normal_1024": {
+      "status": "complete",
+      "index": 38,
+      "total": 45,
+      "runtime": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/05/raw_scene/sc465sl_normal_1024/runtime.json",
+      "video": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/05/raw_scene/sc465sl_normal_1024/traditional_isp_video/sc465sl_normal_1024_input_vs_a3_traditional_isp.mp4"
+    },
+    "sc465sl_normal_1223": {
+      "status": "complete",
+      "index": 39,
+      "total": 45,
+      "runtime": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/05/raw_scene/sc465sl_normal_1223/runtime.json",
+      "video": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/05/raw_scene/sc465sl_normal_1223/traditional_isp_video/sc465sl_normal_1223_input_vs_a3_traditional_isp.mp4"
+    },
+    "sc465sl_normal_19598": {
+      "status": "complete",
+      "index": 40,
+      "total": 45,
+      "runtime": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/05/raw_scene/sc465sl_normal_19598/runtime.json",
+      "video": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/05/raw_scene/sc465sl_normal_19598/traditional_isp_video/sc465sl_normal_19598_input_vs_a3_traditional_isp.mp4"
+    },
+    "sc465sl_normal_2391": {
+      "status": "complete",
+      "index": 41,
+      "total": 45,
+      "runtime": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/05/raw_scene/sc465sl_normal_2391/runtime.json",
+      "video": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/05/raw_scene/sc465sl_normal_2391/traditional_isp_video/sc465sl_normal_2391_input_vs_a3_traditional_isp.mp4"
+    },
+    "sc465sl_normal_3560": {
+      "status": "complete",
+      "index": 42,
+      "total": 45,
+      "runtime": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/05/raw_scene/sc465sl_normal_3560/runtime.json",
+      "video": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/05/raw_scene/sc465sl_normal_3560/traditional_isp_video/sc465sl_normal_3560_input_vs_a3_traditional_isp.mp4"
+    },
+    "sc465sl_normal_5023": {
+      "status": "complete",
+      "index": 43,
+      "total": 45,
+      "runtime": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/05/raw_scene/sc465sl_normal_5023/runtime.json",
+      "video": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/05/raw_scene/sc465sl_normal_5023/traditional_isp_video/sc465sl_normal_5023_input_vs_a3_traditional_isp.mp4"
+    },
+    "sc465sl_normal_6373": {
+      "status": "complete",
+      "index": 44,
+      "total": 45,
+      "runtime": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/05/raw_scene/sc465sl_normal_6373/runtime.json",
+      "video": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/05/raw_scene/sc465sl_normal_6373/traditional_isp_video/sc465sl_normal_6373_input_vs_a3_traditional_isp.mp4"
+    },
+    "sc465sl_normal_9798": {
+      "status": "complete",
+      "index": 45,
+      "total": 45,
+      "runtime": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/05/raw_scene/sc465sl_normal_9798/runtime.json",
+      "video": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_all_dataset_traditional_isp_preview_20261017/sequences/05/raw_scene/sc465sl_normal_9798/traditional_isp_video/sc465sl_normal_9798_input_vs_a3_traditional_isp.mp4"
+    }
+  },
+  "summary_sha256": "ac9de3f6cba2429c55de2f7706ccef0669a79cb4d279a458f955aa3ae48eadb7"
+}

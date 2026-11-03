@@ -1,0 +1,52 @@
+{
+  "frames_used": 200,
+  "packed_shape": [
+    4,
+    900,
+    1600
+  ],
+  "black_levels": {
+    "R": 271.5,
+    "Gr": 283.5,
+    "Gb": 283.5,
+    "B": 272.0
+  },
+  "saturation_fraction": 0.0,
+  "frame_drift": {
+    "frame_mean_cv": 0.0677528071959632,
+    "frame_mean_max_dev": 0.1577802752758957
+  },
+  "temporal_mean_semantics": "display/statistics only; never a clean target",
+  "protocol": "cross-sensor no-reference stress profile",
+  "provenance": {
+    "protocol_sha256": "996ba97dba96e0021b697733f947b170f93d1f276888031bb5b6cf6bc9aa88aa",
+    "source_path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/01_fist_company/sc635hai/16x_motion_color/3200x1800_RG_motion_color_16x.raw",
+    "source_size_bytes": 2304000000,
+    "source_sha256": "da64b7a39af359bdd5aa3f16b6456458f620492e57230ac5fee4a57012b2896c",
+    "width": 3200,
+    "height": 1800,
+    "frames_used": 200,
+    "bit_shift": 4,
+    "cfa": "RGGB"
+  },
+  "outputs": {
+    "temporal_mean": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_16x_motion_color/profile/temporal_mean_display_only_dn.npy",
+      "shape": [
+        4,
+        900,
+        1600
+      ],
+      "dtype": "float32",
+      "sha256": "f982e81f1db8a506ad9ee981a89f0dc60887510453d4b4dc7c201da0add1890c"
+    },
+    "frame_means": {
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_16x_motion_color/profile/frame_means.npy",
+      "shape": [
+        200
+      ],
+      "dtype": "float64",
+      "sha256": "4e7c691630a21fa96227465661eb58076af974e1e0351224fe2331a151ecd45c"
+    }
+  }
+}

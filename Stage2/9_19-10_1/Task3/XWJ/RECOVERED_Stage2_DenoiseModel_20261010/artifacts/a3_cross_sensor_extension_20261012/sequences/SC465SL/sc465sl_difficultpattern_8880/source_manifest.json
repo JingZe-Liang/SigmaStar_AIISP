@@ -1,0 +1,11 @@
+{
+  "protocol_sha256": "996ba97dba96e0021b697733f947b170f93d1f276888031bb5b6cf6bc9aa88aa",
+  "source_path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/05_2DNR3DNR/465_difficultpattern/shutter_83315/sensorG__ispG_8880_WB_1962_1024_2172/raw_stream_2560x1440_16bit@RG_[Shutter=83315,SenserG=109572,IspG=8880,R=1962,G=1024,B=2172].raw",
+  "source_size_bytes": 1474560000,
+  "source_sha256": "5551672d7d9c5c12b437b7211515b03fe9249531add833242ed520a945c04f41",
+  "width": 2560,
+  "height": 1440,
+  "frames_used": 200,
+  "bit_shift": 4,
+  "cfa": "RGGB"
+}

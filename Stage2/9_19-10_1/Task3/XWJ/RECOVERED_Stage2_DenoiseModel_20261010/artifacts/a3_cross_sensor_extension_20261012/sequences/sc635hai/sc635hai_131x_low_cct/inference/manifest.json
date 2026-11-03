@@ -1,0 +1,106 @@
+{
+  "provenance": {
+    "protocol_sha256": "996ba97dba96e0021b697733f947b170f93d1f276888031bb5b6cf6bc9aa88aa",
+    "source_path": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset/01_fist_company/sc635hai/131x_low_cct/raw_stream_normal_3200x1800_16_RG_0205213025917_131x.raw",
+    "source_size_bytes": 1728000000,
+    "source_sha256": "80445b9133f49dfa7f5117d93bcf9fd5a9dfae1de0e0faae69c9f4144dac440a",
+    "width": 3200,
+    "height": 1800,
+    "frames_used": 150,
+    "bit_shift": 4,
+    "cfa": "RGGB",
+    "checkpoint_sha256": "97c4332f685f98959b243e4b100434469f714aed6329e100d22b6d8552592e0b",
+    "weights": "ema",
+    "tile_batch": 2
+  },
+  "directions": {
+    "even_input": {
+      "parity": 0,
+      "clips": [
+        [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10,
+          12,
+          14
+        ],
+        [
+          66,
+          68,
+          70,
+          72,
+          74,
+          76,
+          78,
+          80
+        ],
+        [
+          134,
+          136,
+          138,
+          140,
+          142,
+          144,
+          146,
+          148
+        ]
+      ],
+      "prediction_shape": [
+        24,
+        4,
+        900,
+        1600
+      ],
+      "prediction_dtype": "float16",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_131x_low_cct/inference/prediction_even_input.npy",
+      "sha256": "b6d9b15f733da337e2c5a91a60dea43d6b8f80feee565fef318e3c4282ed34a5"
+    },
+    "odd_input": {
+      "parity": 1,
+      "clips": [
+        [
+          1,
+          3,
+          5,
+          7,
+          9,
+          11,
+          13,
+          15
+        ],
+        [
+          67,
+          69,
+          71,
+          73,
+          75,
+          77,
+          79,
+          81
+        ],
+        [
+          135,
+          137,
+          139,
+          141,
+          143,
+          145,
+          147,
+          149
+        ]
+      ],
+      "prediction_shape": [
+        24,
+        4,
+        900,
+        1600
+      ],
+      "prediction_dtype": "float16",
+      "path": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010/artifacts/a3_cross_sensor_extension_20261012/sequences/sc635hai/sc635hai_131x_low_cct/inference/prediction_odd_input.npy",
+      "sha256": "2a4d0d117216490c460ea5afbe55fa007527c89bbde17cf5c91289aea1cdc1e6"
+    }
+  }
+}
