@@ -370,7 +370,7 @@ $\longrightarrow$
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=\textwidth]{assets/RVIDeformer/屏幕截图 2026-01-30 151658.png}
+\includegraphics[width=\textwidth]{assets/STaR-RAW/屏幕截图 2026-01-30 151658.png}
 \caption{RViDeformer整体架构\cite{r2}。左侧为U形时空重建，右侧为全分辨率特征细化，长跳接用于残差重建。入口Conv2d在本项目中对应时间核为1的$1\times3\times3$卷积，逐帧提取空间特征。}
 \label{fig:rvideformer_overview}
 \end{figure}
@@ -383,11 +383,11 @@ $\longrightarrow$
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.82\textwidth]{assets/RVIDeformer/屏幕截图 2026-01-30 183700.png}
+\includegraphics[width=0.82\textwidth]{assets/STaR-RAW/屏幕截图 2026-01-30 183700.png}
 \caption{多分支空间自注意力MSSA\cite{r2}。不同分支从不同空间范围提取信息；图中C表示拼接，圆圈加号表示逐元素相加。}
 \label{fig:rvideformer_mssa}
 \vspace{0.6em}
-\includegraphics[width=0.82\textwidth]{assets/RVIDeformer/屏幕截图 2026-01-30 204604.png}
+\includegraphics[width=0.82\textwidth]{assets/STaR-RAW/屏幕截图 2026-01-30 204604.png}
 \caption{多分支时域互注意力MTSA\cite{r2}。参考帧生成查询，支持帧提供键和值，融合局部与较大范围的跨帧信息。}
 \label{fig:rvideformer_mtsa}
 \end{figure}

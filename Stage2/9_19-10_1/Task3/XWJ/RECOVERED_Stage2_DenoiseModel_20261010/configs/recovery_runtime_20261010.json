@@ -3,7 +3,7 @@
   "recovery_date": "2026-10-10",
   "project_root": "/Data4/Xiao/RECOVERED_Stage2_DenoiseModel_20261010",
   "dataset_root": "/HardDisk/jingzeliang/Data/Company_Dataset/dataset",
-  "teacher_checkpoint": "artifacts/pretrained/RViDeformer-L_CRVD.pth",
+  "teacher_checkpoint": "artifacts/pretrained/STaR-RAW-L_CRVD.pth",
   "a3_checkpoint": "artifacts/finetune_mis20s1/training/checkpoint_step_005000.pth",
   "supervision_dir": "artifacts/finetune_mis20s1/supervision",
   "noise_dir": "artifacts/finetune_mis20s1/noise_model",

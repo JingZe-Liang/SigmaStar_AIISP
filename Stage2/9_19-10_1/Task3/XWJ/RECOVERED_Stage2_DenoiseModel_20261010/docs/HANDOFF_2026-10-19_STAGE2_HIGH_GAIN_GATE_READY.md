@@ -61,7 +61,7 @@
 - 接受报告：
   `docs/A3_BASELINE_ACCEPTANCE_2026-09-23.md`
 - 微调总结：
-  `docs/RVIDEFORMER_FINETUNE_SUMMARY_2026-09-24.md`
+  `docs/STaR-RAW_FINETUNE_SUMMARY_2026-09-24.md`
 
 A3 来源是 CRVD 预训练 RViDeformer 在 MIS20S1 公司数据上的谨慎微调。公司真实数据量有限，因此采用了静态时域均值参考、实测噪声模型、真实/合成混合数据，并排除运动和饱和区域的静态监督。A3 在 MIS20S1 静态域显著优于官方预训练模型：native 1000x 输入 `44.6204 dB`，A3 为 `53.2675 dB`；RMSE 从 `24.0565 DN` 降到 `8.8895 DN`。645x 跨增益 holdout 从 `24.3519 dB` 提升到 `29.5729 dB`。这证明 A3 是当前最可靠的静态基线，但不等于它已经解决动态和跨传感器问题。
 

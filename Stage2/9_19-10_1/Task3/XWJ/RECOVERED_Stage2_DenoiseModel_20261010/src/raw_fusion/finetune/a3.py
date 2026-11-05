@@ -17,13 +17,13 @@ from torch.utils.data import Dataset
 from raw_fusion.finetune.adapters import resolve_adapter
 from raw_fusion.finetune.noise import generate_noisy_frame
 from raw_fusion.finetune.stream_io import open_stream, pack_frame
-from raw_fusion.finetune.rvideformer_arch import RViDeformer
+from raw_fusion.finetune.STaR_RAW_arch import RViDeformer
 
 
 _REFERENCE_ROOT = Path("/Data2/Bad_Example_Do_Not_Follow/Jaime/Projects/RViDeformer_distill/RViDeformer")
 _RECOVERED_OFFICIAL_CHECKPOINT = (
     Path(__file__).resolve().parents[3]
-    / "artifacts/pretrained/RViDeformer-L_CRVD.pth"
+    / "artifacts/pretrained/STaR-RAW-L_CRVD.pth"
 )
 _CHANNEL_NAMES = ("R", "Gr", "Gb", "B")
 _WHITE_LEVEL = 4095.0
@@ -312,7 +312,7 @@ def load_official_state(checkpoint: Path) -> dict[str, Tensor]:
         module_name = "models.RViDeformer_arch"
         spec = importlib.util.spec_from_file_location(
             module_name,
-            Path(__file__).with_name("rvideformer_arch.py"),
+            Path(__file__).with_name("STaR_RAW_arch.py"),
         )
         if spec is None or spec.loader is None:
             raise ImportError(f"cannot load recovered module {module_name}")

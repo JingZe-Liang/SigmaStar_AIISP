@@ -15,7 +15,7 @@
 ## 2. 工作目录与权威资料
 
 - 项目根目录：`/Data2/Bad_Example_Do_Not_Follow/Jaime/Projects/Stage2_DenoiseModel`
-- 主要计划：`docs/RVIDEFORMER_FINETUNE_PLAN_2026-09-20.md`
+- 主要计划：`docs/STaR-RAW_FINETUNE_PLAN_2026-09-20.md`
 - 上一份交接背景：`docs/HANDOFF_2026-09-20.md`
 - 数据集（只读）：`/HardDisk/jingzeliang/Data/Company_Dataset/dataset`
 - 官方 RViDeformer（只读）：`/Data2/Bad_Example_Do_Not_Follow/Jaime/Projects/RViDeformer_distill/RViDeformer`

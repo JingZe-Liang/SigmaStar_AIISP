@@ -110,7 +110,7 @@ Relevant result documents:
 
 - `docs/A6_FROZEN_MOTION_EXPERT_RESULT_2026-10-09.md`
 - `docs/A7_REAL_MOTION_CAPTURE_PILOT_2026-10-09.md`
-- `docs/RVIDEFORMER_FINETUNE_PLAN_2026-09-20.md`
+- `docs/STaR-RAW_FINETUNE_PLAN_2026-09-20.md`
 
 The A7 capture document remains useful as a statement of the missing ideal
 supervision, but its capture route is currently unavailable because the user

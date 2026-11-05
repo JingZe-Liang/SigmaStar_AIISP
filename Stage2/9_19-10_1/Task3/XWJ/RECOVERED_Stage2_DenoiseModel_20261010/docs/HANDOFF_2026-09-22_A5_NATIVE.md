@@ -17,7 +17,7 @@
 
 ## 2. 权威资料与环境
 
-- 计划文档：`docs/RVIDEFORMER_FINETUNE_PLAN_2026-09-20.md`
+- 计划文档：`docs/STaR-RAW_FINETUNE_PLAN_2026-09-20.md`
 - 上一份 A4 交接：`docs/HANDOFF_2026-09-22_A4.md`
 - 数据集（只读）：`/HardDisk/jingzeliang/Data/Company_Dataset/dataset`
 - 官方 RViDeformer（只读）：`/Data2/Bad_Example_Do_Not_Follow/Jaime/Projects/RViDeformer_distill/RViDeformer`

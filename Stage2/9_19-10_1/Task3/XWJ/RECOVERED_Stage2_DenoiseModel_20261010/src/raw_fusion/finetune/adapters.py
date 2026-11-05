@@ -1,7 +1,7 @@
 """Per-source adaptation table for the company RAW dataset.
 
 Every interpretation decision below comes from the 2026-09-20 pixel-level survey
-(docs/RVIDEFORMER_FINETUNE_PLAN_2026-09-20.md section 2). The dataset's own
+(docs/STaR-RAW_FINETUNE_PLAN_2026-09-20.md section 2). The dataset's own
 metadata is unreliable (filenames state wrong frame counts, readme files state
 wrong black levels, gain labels are swapped), so the reader layer never trusts
 anything but this table plus per-stream measurements.

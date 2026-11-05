@@ -15,7 +15,7 @@ from raw_fusion.finetune.a3 import (
 )
 
 
-_CHECKPOINT = Path("/Data2/Bad_Example_Do_Not_Follow/Jaime/Projects/RViDeformer_distill/RViDeformer/checkpoints/RViDeformer-L_CRVD.pth")
+_CHECKPOINT = Path(__file__).resolve().parents[2] / "artifacts/pretrained/STaR-RAW-L_CRVD.pth"
 
 
 def test_official_checkpoint_matches_local_training_architecture() -> None:

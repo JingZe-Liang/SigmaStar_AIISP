@@ -16,7 +16,7 @@ def main() -> int:
     parser.add_argument("--supervision-dir", type=Path, default=REPO_ROOT / "artifacts/finetune_mis20s1/supervision")
     parser.add_argument("--noise-dir", type=Path, default=REPO_ROOT / "artifacts/finetune_mis20s1/noise_model")
     parser.add_argument("--output-dir", type=Path, default=REPO_ROOT / "artifacts/finetune_mis20s1/training")
-    parser.add_argument("--checkpoint", type=Path, default=Path("/Data2/Bad_Example_Do_Not_Follow/Jaime/Projects/RViDeformer_distill/RViDeformer/checkpoints/RViDeformer-L_CRVD.pth"))
+    parser.add_argument("--checkpoint", type=Path, default=REPO_ROOT / "artifacts/pretrained/STaR-RAW-L_CRVD.pth")
     parser.add_argument("--steps", type=int, default=200)
     parser.add_argument("--batch-size", type=int, default=1)
     parser.add_argument("--seed", type=int, default=20260921)
